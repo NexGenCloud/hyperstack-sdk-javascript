@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property stripeUserId (base name: "stripe_user_id")', function() {
+      // uncomment below and update the code to test the property stripeUserId
+      //var instance = new HyperstackApi.UsersInfoFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property vatNumber (base name: "vat_number")', function() {
       // uncomment below and update the code to test the property vatNumber
       //var instance = new HyperstackApi.UsersInfoFields();

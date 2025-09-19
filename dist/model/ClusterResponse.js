@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ClusterResponse model module.
  * @module model/ClusterResponse
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var ClusterResponse = /*#__PURE__*/function () {
   /**

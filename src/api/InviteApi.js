@@ -22,7 +22,7 @@ import InviteUserResponseModel from '../model/InviteUserResponseModel';
 /**
 * Invite service.
 * @module api/InviteApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class InviteApi {
 
@@ -40,8 +40,56 @@ export default class InviteApi {
 
 
     /**
-     * Delete Invite
-     * Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/delete-invite).
+     * Accept Invite
+     * Accept an invitation for a user to join your organization.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
+     */
+    acceptInviteWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling acceptInvite");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CommonResponseModel;
+      return this.apiClient.callApi(
+        '/auth/invites/{id}/accept', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Accept Invite
+     * Accept an invitation for a user to join your organization.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
+     */
+    acceptInvite(id) {
+      return this.acceptInviteWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Accept Invite
+     * Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
      */
@@ -62,7 +110,7 @@ export default class InviteApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CommonResponseModel;
@@ -74,8 +122,8 @@ export default class InviteApi {
     }
 
     /**
-     * Delete Invite
-     * Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/delete-invite).
+     * Accept Invite
+     * Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
      */
@@ -89,7 +137,7 @@ export default class InviteApi {
 
     /**
      * Invite User to Organization
-     * Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/invite-member).
+     * Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
      * @param {module:model/InviteUserPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InviteUserResponseModel} and HTTP response
      */
@@ -109,7 +157,7 @@ export default class InviteApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = InviteUserResponseModel;
@@ -122,7 +170,7 @@ export default class InviteApi {
 
     /**
      * Invite User to Organization
-     * Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/invite-member).
+     * Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
      * @param {module:model/InviteUserPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InviteUserResponseModel}
      */
@@ -136,7 +184,7 @@ export default class InviteApi {
 
     /**
      * List Invites
-     * Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/list-invites).
+     * Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetInvitesResponseModel} and HTTP response
      */
     listInvitesWithHttpInfo() {
@@ -151,7 +199,7 @@ export default class InviteApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GetInvitesResponseModel;
@@ -164,7 +212,7 @@ export default class InviteApi {
 
     /**
      * List Invites
-     * Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/list-invites).
+     * Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetInvitesResponseModel}
      */
     listInvites() {

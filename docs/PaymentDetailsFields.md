@@ -9,9 +9,11 @@ Name | Type | Description | Notes
 **currency** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **gatewayResponse** | **String** |  | [optional] 
+**invoice** | **String** |  | [optional] 
 **paidFrom** | **String** |  | [optional] 
 **paymentId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
+**taxAmount** | **Number** |  | [optional] 
 **transactionId** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

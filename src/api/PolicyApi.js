@@ -19,7 +19,7 @@ import GetPoliciesResponseModel from '../model/GetPoliciesResponseModel';
 /**
 * Policy service.
 * @module api/PolicyApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class PolicyApi {
 
@@ -38,7 +38,7 @@ export default class PolicyApi {
 
     /**
      * List Policies
-     * Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/policies).
+     * Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/policies).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetPoliciesResponseModel} and HTTP response
      */
     listPoliciesWithHttpInfo() {
@@ -53,7 +53,7 @@ export default class PolicyApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GetPoliciesResponseModel;
@@ -66,7 +66,7 @@ export default class PolicyApi {
 
     /**
      * List Policies
-     * Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/policies).
+     * Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/policies).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetPoliciesResponseModel}
      */
     listPolicies() {

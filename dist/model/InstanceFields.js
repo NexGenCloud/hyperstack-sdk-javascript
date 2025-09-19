@@ -9,7 +9,7 @@ var _InstanceEnvironmentFields = _interopRequireDefault(require("./InstanceEnvir
 var _InstanceFlavorFields = _interopRequireDefault(require("./InstanceFlavorFields"));
 var _InstanceImageFields = _interopRequireDefault(require("./InstanceImageFields"));
 var _InstanceKeypairFields = _interopRequireDefault(require("./InstanceKeypairFields"));
-var _SecurityRulesFieldsforInstance = _interopRequireDefault(require("./SecurityRulesFieldsforInstance"));
+var _SecurityRulesFieldsForInstance = _interopRequireDefault(require("./SecurityRulesFieldsForInstance"));
 var _VolumeAttachmentFields = _interopRequireDefault(require("./VolumeAttachmentFields"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -35,7 +35,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InstanceFields model module.
  * @module model/InstanceFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var InstanceFields = /*#__PURE__*/function () {
   /**
@@ -80,6 +80,9 @@ var InstanceFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('environment')) {
           obj['environment'] = _InstanceEnvironmentFields["default"].constructFromObject(data['environment']);
         }
+        if (data.hasOwnProperty('features')) {
+          obj['features'] = _ApiClient["default"].convertToType(data['features'], Object);
+        }
         if (data.hasOwnProperty('fixed_ip')) {
           obj['fixed_ip'] = _ApiClient["default"].convertToType(data['fixed_ip'], 'String');
         }
@@ -122,8 +125,11 @@ var InstanceFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('power_state')) {
           obj['power_state'] = _ApiClient["default"].convertToType(data['power_state'], 'String');
         }
+        if (data.hasOwnProperty('requires_public_ip')) {
+          obj['requires_public_ip'] = _ApiClient["default"].convertToType(data['requires_public_ip'], 'Boolean');
+        }
         if (data.hasOwnProperty('security_rules')) {
-          obj['security_rules'] = _ApiClient["default"].convertToType(data['security_rules'], [_SecurityRulesFieldsforInstance["default"]]);
+          obj['security_rules'] = _ApiClient["default"].convertToType(data['security_rules'], [_SecurityRulesFieldsForInstance["default"]]);
         }
         if (data.hasOwnProperty('status')) {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
@@ -214,7 +220,7 @@ var InstanceFields = /*#__PURE__*/function () {
         try {
           for (_iterator.s(); !(_step = _iterator.n()).done;) {
             var item = _step.value;
-            _SecurityRulesFieldsforInstance["default"].validateJSON(item);
+            _SecurityRulesFieldsForInstance["default"].validateJSON(item);
           }
         } catch (err) {
           _iterator.e(err);
@@ -275,6 +281,11 @@ InstanceFields.prototype['created_at'] = undefined;
  * @member {module:model/InstanceEnvironmentFields} environment
  */
 InstanceFields.prototype['environment'] = undefined;
+
+/**
+ * @member {Object} features
+ */
+InstanceFields.prototype['features'] = undefined;
 
 /**
  * @member {String} fixed_ip
@@ -347,7 +358,12 @@ InstanceFields.prototype['port_randomization_status'] = undefined;
 InstanceFields.prototype['power_state'] = undefined;
 
 /**
- * @member {Array.<module:model/SecurityRulesFieldsforInstance>} security_rules
+ * @member {Boolean} requires_public_ip
+ */
+InstanceFields.prototype['requires_public_ip'] = undefined;
+
+/**
+ * @member {Array.<module:model/SecurityRulesFieldsForInstance>} security_rules
  */
 InstanceFields.prototype['security_rules'] = undefined;
 

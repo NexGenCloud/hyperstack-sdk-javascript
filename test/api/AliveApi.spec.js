@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('getDoc', function() {
+      it('should call getDoc successfully', function(done) {
+        //uncomment below and update the code to test getDoc
+        //instance.getDoc(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

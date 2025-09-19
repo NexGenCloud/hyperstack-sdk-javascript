@@ -21,7 +21,7 @@ import RbacRoleDetailResponseModel from '../model/RbacRoleDetailResponseModel';
 /**
 * AssigningMemberRole service.
 * @module api/AssigningMemberRoleApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class AssigningMemberRoleApi {
 
@@ -40,20 +40,20 @@ export default class AssigningMemberRoleApi {
 
     /**
      * Assign RBAC Role
-     * Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+     * Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
      * @param {Number} userId 
      * @param {module:model/AssignRbacRolePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RbacRoleDetailResponseModel} and HTTP response
      */
-    assignRbacRoleWithHttpInfo(userId, payload) {
+    assignRBACRoleToUserWithHttpInfo(userId, payload) {
       let postBody = payload;
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling assignRbacRole");
+        throw new Error("Missing the required parameter 'userId' when calling assignRBACRoleToUser");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling assignRbacRole");
+        throw new Error("Missing the required parameter 'payload' when calling assignRBACRoleToUser");
       }
 
       let pathParams = {
@@ -66,7 +66,7 @@ export default class AssigningMemberRoleApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RbacRoleDetailResponseModel;
@@ -79,13 +79,13 @@ export default class AssigningMemberRoleApi {
 
     /**
      * Assign RBAC Role
-     * Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+     * Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
      * @param {Number} userId 
      * @param {module:model/AssignRbacRolePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RbacRoleDetailResponseModel}
      */
-    assignRbacRole(userId, payload) {
-      return this.assignRbacRoleWithHttpInfo(userId, payload)
+    assignRBACRoleToUser(userId, payload) {
+      return this.assignRBACRoleToUserWithHttpInfo(userId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -94,15 +94,15 @@ export default class AssigningMemberRoleApi {
 
     /**
      * Remove RBAC Role From User
-     * Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+     * Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
      * @param {Number} userId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
      */
-    removeRbacRoleFromUserWithHttpInfo(userId) {
+    removeRBACRoleFromUserWithHttpInfo(userId) {
       let postBody = null;
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling removeRbacRoleFromUser");
+        throw new Error("Missing the required parameter 'userId' when calling removeRBACRoleFromUser");
       }
 
       let pathParams = {
@@ -115,7 +115,7 @@ export default class AssigningMemberRoleApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CommonResponseModel;
@@ -128,12 +128,12 @@ export default class AssigningMemberRoleApi {
 
     /**
      * Remove RBAC Role From User
-     * Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+     * Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
      * @param {Number} userId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
      */
-    removeRbacRoleFromUser(userId) {
-      return this.removeRbacRoleFromUserWithHttpInfo(userId)
+    removeRBACRoleFromUser(userId) {
+      return this.removeRBACRoleFromUserWithHttpInfo(userId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

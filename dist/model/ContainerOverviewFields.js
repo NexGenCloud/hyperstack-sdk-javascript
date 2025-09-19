@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ContainerOverviewFields model module.
  * @module model/ContainerOverviewFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var ContainerOverviewFields = /*#__PURE__*/function () {
   /**

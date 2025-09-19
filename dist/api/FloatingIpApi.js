@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * FloatingIp service.
 * @module api/FloatingIpApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,82 +45,82 @@ var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Attach public IP to virtual machine
-   * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-   * @param {Number} id 
+   * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
+   * @param {Number} vmId 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
    */
   return _createClass(FloatingIpApi, [{
-    key: "attachPublicIpToVirtualMachineWithHttpInfo",
-    value: function attachPublicIpToVirtualMachineWithHttpInfo(id) {
+    key: "attachPublicIPToVirtualMachineWithHttpInfo",
+    value: function attachPublicIPToVirtualMachineWithHttpInfo(vmId) {
       var postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling attachPublicIpToVirtualMachine");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling attachPublicIPToVirtualMachine");
       }
       var pathParams = {
-        'id': id
+        'vm_id': vmId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{id}/attach-floatingip', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/attach-floatingip', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Attach public IP to virtual machine
-     * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-     * @param {Number} id 
+     * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "attachPublicIpToVirtualMachine",
-    value: function attachPublicIpToVirtualMachine(id) {
-      return this.attachPublicIpToVirtualMachineWithHttpInfo(id).then(function (response_and_data) {
+    key: "attachPublicIPToVirtualMachine",
+    value: function attachPublicIPToVirtualMachine(vmId) {
+      return this.attachPublicIPToVirtualMachineWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Detach public IP from virtual machine
-     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-     * @param {Number} id 
+     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "detachPublicIpFromVirtualMachineWithHttpInfo",
-    value: function detachPublicIpFromVirtualMachineWithHttpInfo(id) {
+    key: "detachPublicIPFromVirtualMachineWithHttpInfo",
+    value: function detachPublicIPFromVirtualMachineWithHttpInfo(vmId) {
       var postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling detachPublicIpFromVirtualMachine");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling detachPublicIPFromVirtualMachine");
       }
       var pathParams = {
-        'id': id
+        'vm_id': vmId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{id}/detach-floatingip', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/detach-floatingip', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Detach public IP from virtual machine
-     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-     * @param {Number} id 
+     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "detachPublicIpFromVirtualMachine",
-    value: function detachPublicIpFromVirtualMachine(id) {
-      return this.detachPublicIpFromVirtualMachineWithHttpInfo(id).then(function (response_and_data) {
+    key: "detachPublicIPFromVirtualMachine",
+    value: function detachPublicIPFromVirtualMachine(vmId) {
+      return this.detachPublicIPFromVirtualMachineWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

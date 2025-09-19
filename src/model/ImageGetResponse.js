@@ -17,7 +17,7 @@ import ImageFields from './ImageFields';
 /**
  * The ImageGetResponse model module.
  * @module model/ImageGetResponse
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class ImageGetResponse {
     /**

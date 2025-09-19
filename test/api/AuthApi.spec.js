@@ -48,6 +48,46 @@
   }
 
   describe('AuthApi', function() {
+    describe('changeOrganizationForToken', function() {
+      it('should call changeOrganizationForToken successfully', function(done) {
+        //uncomment below and update the code to test changeOrganizationForToken
+        //instance.changeOrganizationForToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('disableMFA', function() {
+      it('should call disableMFA successfully', function(done) {
+        //uncomment below and update the code to test disableMFA
+        //instance.disableMFA(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserMFAStatus', function() {
+      it('should call getUserMFAStatus successfully', function(done) {
+        //uncomment below and update the code to test getUserMFAStatus
+        //instance.getUserMFAStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserOrganizations', function() {
+      it('should call getUserOrganizations successfully', function(done) {
+        //uncomment below and update the code to test getUserOrganizations
+        //instance.getUserOrganizations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('retrieveAuthenticatedUserDetails', function() {
       it('should call retrieveAuthenticatedUserDetails successfully', function(done) {
         //uncomment below and update the code to test retrieveAuthenticatedUserDetails

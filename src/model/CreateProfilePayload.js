@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateProfilePayload model module.
  * @module model/CreateProfilePayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class CreateProfilePayload {
     /**
      * Constructs a new <code>CreateProfilePayload</code>.
      * @alias module:model/CreateProfilePayload
-     * @param data {Object.<String, String>} The data object which contains the configuration of the virtual machine profile being created.
+     * @param data {Object.<String, String>} The data object containing the configuration details of the virtual machine profile being created.
      * @param name {String} The name of the profile being created.
      */
     constructor(data, name) { 
@@ -94,7 +94,7 @@ class CreateProfilePayload {
 CreateProfilePayload.RequiredProperties = ["data", "name"];
 
 /**
- * The data object which contains the configuration of the virtual machine profile being created.
+ * The data object containing the configuration details of the virtual machine profile being created.
  * @member {Object.<String, String>} data
  */
 CreateProfilePayload.prototype['data'] = undefined;

@@ -54,8 +54,20 @@
       //expect(instance).to.be.a(HyperstackApi.RegionFields);
     });
 
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
+      //var instance = new HyperstackApi.RegionFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
+      //var instance = new HyperstackApi.RegionFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property greenStatus (base name: "green_status")', function() {
+      // uncomment below and update the code to test the property greenStatus
       //var instance = new HyperstackApi.RegionFields();
       //expect(instance).to.be();
     });

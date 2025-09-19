@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Remove Organization Member
 
-Removes a member from your organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/remove-member).
+Removes a member from your organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/remove-member).
 
 ### Example
 
@@ -28,11 +28,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.OrganizationApi();
 let payload = new HyperstackApi.RemoveMemberPayload(); // RemoveMemberPayload | 
@@ -57,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -71,7 +66,7 @@ Name | Type | Description  | Notes
 
 Retrieve Organization Information
 
-Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/retrieve-org-details).
+Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
 
 ### Example
 
@@ -83,11 +78,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.OrganizationApi();
 apiInstance.retrieveOrganizationInformation().then((data) => {
@@ -108,7 +98,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -122,7 +112,7 @@ This endpoint does not need any parameter.
 
 Update Organization Information
 
-Updates the name of the organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/update-org-name).
+Updates the name of the organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/update-org-name).
 
 ### Example
 
@@ -134,11 +124,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.OrganizationApi();
 let payload = new HyperstackApi.UpdateOrganizationPayload(); // UpdateOrganizationPayload | 
@@ -163,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

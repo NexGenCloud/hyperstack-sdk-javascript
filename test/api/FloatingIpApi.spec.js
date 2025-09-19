@@ -48,20 +48,20 @@
   }
 
   describe('FloatingIpApi', function() {
-    describe('attachPublicIpToVirtualMachine', function() {
-      it('should call attachPublicIpToVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test attachPublicIpToVirtualMachine
-        //instance.attachPublicIpToVirtualMachine(function(error) {
+    describe('attachPublicIPToVirtualMachine', function() {
+      it('should call attachPublicIPToVirtualMachine successfully', function(done) {
+        //uncomment below and update the code to test attachPublicIPToVirtualMachine
+        //instance.attachPublicIPToVirtualMachine(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('detachPublicIpFromVirtualMachine', function() {
-      it('should call detachPublicIpFromVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test detachPublicIpFromVirtualMachine
-        //instance.detachPublicIpFromVirtualMachine(function(error) {
+    describe('detachPublicIPFromVirtualMachine', function() {
+      it('should call detachPublicIPFromVirtualMachine successfully', function(done) {
+        //uncomment below and update the code to test detachPublicIPFromVirtualMachine
+        //instance.detachPublicIPFromVirtualMachine(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

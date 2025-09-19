@@ -19,7 +19,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * FloatingIp service.
 * @module api/FloatingIpApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class FloatingIpApi {
 
@@ -38,19 +38,19 @@ export default class FloatingIpApi {
 
     /**
      * Attach public IP to virtual machine
-     * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-     * @param {Number} id 
+     * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    attachPublicIpToVirtualMachineWithHttpInfo(id) {
+    attachPublicIPToVirtualMachineWithHttpInfo(vmId) {
       let postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling attachPublicIpToVirtualMachine");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling attachPublicIPToVirtualMachine");
       }
 
       let pathParams = {
-        'id': id
+        'vm_id': vmId
       };
       let queryParams = {
       };
@@ -59,12 +59,12 @@ export default class FloatingIpApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
       return this.apiClient.callApi(
-        '/core/virtual-machines/{id}/attach-floatingip', 'POST',
+        '/core/virtual-machines/{vm_id}/attach-floatingip', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -72,12 +72,12 @@ export default class FloatingIpApi {
 
     /**
      * Attach public IP to virtual machine
-     * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-     * @param {Number} id 
+     * Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    attachPublicIpToVirtualMachine(id) {
-      return this.attachPublicIpToVirtualMachineWithHttpInfo(id)
+    attachPublicIPToVirtualMachine(vmId) {
+      return this.attachPublicIPToVirtualMachineWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -86,19 +86,19 @@ export default class FloatingIpApi {
 
     /**
      * Detach public IP from virtual machine
-     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-     * @param {Number} id 
+     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    detachPublicIpFromVirtualMachineWithHttpInfo(id) {
+    detachPublicIPFromVirtualMachineWithHttpInfo(vmId) {
       let postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling detachPublicIpFromVirtualMachine");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling detachPublicIPFromVirtualMachine");
       }
 
       let pathParams = {
-        'id': id
+        'vm_id': vmId
       };
       let queryParams = {
       };
@@ -107,12 +107,12 @@ export default class FloatingIpApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
       return this.apiClient.callApi(
-        '/core/virtual-machines/{id}/detach-floatingip', 'POST',
+        '/core/virtual-machines/{vm_id}/detach-floatingip', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -120,12 +120,12 @@ export default class FloatingIpApi {
 
     /**
      * Detach public IP from virtual machine
-     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
-     * @param {Number} id 
+     * Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    detachPublicIpFromVirtualMachine(id) {
-      return this.detachPublicIpFromVirtualMachineWithHttpInfo(id)
+    detachPublicIPFromVirtualMachine(vmId) {
+      return this.detachPublicIPFromVirtualMachineWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

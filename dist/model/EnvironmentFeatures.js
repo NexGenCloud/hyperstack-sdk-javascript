@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The EnvironmentFeatures model module.
  * @module model/EnvironmentFeatures
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var EnvironmentFeatures = /*#__PURE__*/function () {
   /**
@@ -59,6 +59,9 @@ var EnvironmentFeatures = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new EnvironmentFeatures();
+        if (data.hasOwnProperty('green_status')) {
+          obj['green_status'] = _ApiClient["default"].convertToType(data['green_status'], 'String');
+        }
         if (data.hasOwnProperty('network_optimised')) {
           obj['network_optimised'] = _ApiClient["default"].convertToType(data['network_optimised'], 'Boolean');
         }
@@ -74,12 +77,44 @@ var EnvironmentFeatures = /*#__PURE__*/function () {
   }, {
     key: "validateJSON",
     value: function validateJSON(data) {
+      // ensure the json data is a string
+      if (data['green_status'] && !(typeof data['green_status'] === 'string' || data['green_status'] instanceof String)) {
+        throw new Error("Expected the field `green_status` to be a primitive type in the JSON string but got " + data['green_status']);
+      }
       return true;
     }
   }]);
 }();
 /**
+ * @member {module:model/EnvironmentFeatures.GreenStatusEnum} green_status
+ */
+EnvironmentFeatures.prototype['green_status'] = undefined;
+
+/**
  * @member {Boolean} network_optimised
  */
 EnvironmentFeatures.prototype['network_optimised'] = undefined;
+
+/**
+ * Allowed values for the <code>green_status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+EnvironmentFeatures['GreenStatusEnum'] = {
+  /**
+   * value: "GREEN"
+   * @const
+   */
+  "GREEN": "GREEN",
+  /**
+   * value: "PARTIALLY_GREEN"
+   * @const
+   */
+  "PARTIALLY_GREEN": "PARTIALLY_GREEN",
+  /**
+   * value: "NOT_GREEN"
+   * @const
+   */
+  "NOT_GREEN": "NOT_GREEN"
+};
 var _default = exports["default"] = EnvironmentFeatures;

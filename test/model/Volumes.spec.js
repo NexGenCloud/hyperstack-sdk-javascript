@@ -54,8 +54,26 @@
       //expect(instance).to.be.a(HyperstackApi.Volumes);
     });
 
+    it('should have the property count (base name: "count")', function() {
+      // uncomment below and update the code to test the property count
+      //var instance = new HyperstackApi.Volumes();
+      //expect(instance).to.be();
+    });
+
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
+      //var instance = new HyperstackApi.Volumes();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property page (base name: "page")', function() {
+      // uncomment below and update the code to test the property page
+      //var instance = new HyperstackApi.Volumes();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pageSize (base name: "page_size")', function() {
+      // uncomment below and update the code to test the property pageSize
       //var instance = new HyperstackApi.Volumes();
       //expect(instance).to.be();
     });
@@ -66,8 +84,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property volume (base name: "volume")', function() {
-      // uncomment below and update the code to test the property volume
+    it('should have the property volumes (base name: "volumes")', function() {
+      // uncomment below and update the code to test the property volumes
       //var instance = new HyperstackApi.Volumes();
       //expect(instance).to.be();
     });

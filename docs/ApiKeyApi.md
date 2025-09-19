@@ -4,16 +4,16 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteApiKey**](ApiKeyApi.md#deleteApiKey) | **DELETE** /api-key/{api_key_id} | Delete API Key
-[**generateApiKey**](ApiKeyApi.md#generateApiKey) | **POST** /api-key/generate | Generate API Key
-[**retrieveApiKeys**](ApiKeyApi.md#retrieveApiKeys) | **GET** /api-key | Retrieve API Keys
-[**updateApiKey**](ApiKeyApi.md#updateApiKey) | **PUT** /api-key/{api_key_id} | Update API Key
+[**deleteAPIKey**](ApiKeyApi.md#deleteAPIKey) | **DELETE** /api-key/{api_key_id} | Delete API Key
+[**generateAPIKey**](ApiKeyApi.md#generateAPIKey) | **POST** /api-key/generate | Generate API Key
+[**retrieveAPIKey**](ApiKeyApi.md#retrieveAPIKey) | **GET** /api-key | Retrieve API Keys
+[**updateAPIKey**](ApiKeyApi.md#updateAPIKey) | **PUT** /api-key/{api_key_id} | Update API Key
 
 
 
-## deleteApiKey
+## deleteAPIKey
 
-> CommonResponseModel deleteApiKey(apiKeyId)
+> CommonResponseModel deleteAPIKey(apiKeyId)
 
 Delete API Key
 
@@ -29,15 +29,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ApiKeyApi();
 let apiKeyId = 56; // Number | 
-apiInstance.deleteApiKey(apiKeyId).then((data) => {
+apiInstance.deleteAPIKey(apiKeyId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -58,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -66,28 +61,22 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## generateApiKey
+## generateAPIKey
 
-> GenerateUpdateApiKeyResponseModel generateApiKey(payload)
+> GenerateUpdateApiKeyResponseModel generateAPIKey(payload)
 
 Generate API Key
 
-Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/generate-api-key).
+Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
 ### Example
 
 ```javascript
 import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ApiKeyApi();
 let payload = new HyperstackApi.GenerateUpdateApiKeyPayload(); // GenerateUpdateApiKeyPayload | 
-apiInstance.generateApiKey(payload).then((data) => {
+apiInstance.generateAPIKey(payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -108,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -116,13 +105,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveApiKeys
+## retrieveAPIKey
 
-> GetApiKeysResponseModel retrieveApiKeys()
+> GetApiKeysResponseModel retrieveAPIKey()
 
 Retrieve API Keys
 
-Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
 ### Example
 
@@ -134,14 +123,9 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ApiKeyApi();
-apiInstance.retrieveApiKeys().then((data) => {
+apiInstance.retrieveAPIKey().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -159,7 +143,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -167,9 +151,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## updateApiKey
+## updateAPIKey
 
-> GenerateUpdateApiKeyResponseModel updateApiKey(apiKeyId, payload)
+> GenerateUpdateApiKeyResponseModel updateAPIKey(apiKeyId, payload)
 
 Update API Key
 
@@ -185,16 +169,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ApiKeyApi();
 let apiKeyId = 56; // Number | 
 let payload = new HyperstackApi.GenerateUpdateApiKeyPayload(); // GenerateUpdateApiKeyPayload | 
-apiInstance.updateApiKey(apiKeyId, payload).then((data) => {
+apiInstance.updateAPIKey(apiKeyId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -216,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

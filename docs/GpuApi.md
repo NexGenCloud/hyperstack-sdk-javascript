@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listGpus**](GpuApi.md#listGpus) | **GET** /core/gpus | List GPUs
+[**listGPUs**](GpuApi.md#listGPUs) | **GET** /core/gpus | List GPUs
 
 
 
-## listGpus
+## listGPUs
 
-> GPUList listGpus()
+> GPUList listGPUs()
 
 List GPUs
 
@@ -26,14 +26,9 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.GpuApi();
-apiInstance.listGpus().then((data) => {
+apiInstance.listGPUs().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -51,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

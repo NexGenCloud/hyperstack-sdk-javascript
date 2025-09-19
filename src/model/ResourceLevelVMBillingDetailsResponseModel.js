@@ -17,7 +17,7 @@ import ResourceLevelBillingDetailsVM from './ResourceLevelBillingDetailsVM';
 /**
  * The ResourceLevelVMBillingDetailsResponseModel model module.
  * @module model/ResourceLevelVMBillingDetailsResponseModel
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class ResourceLevelVMBillingDetailsResponseModel {
     /**

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property invoice (base name: "invoice")', function() {
+      // uncomment below and update the code to test the property invoice
+      //var instance = new HyperstackApi.PaymentDetailsFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paidFrom (base name: "paid_from")', function() {
       // uncomment below and update the code to test the property paidFrom
       //var instance = new HyperstackApi.PaymentDetailsFields();
@@ -98,6 +104,12 @@
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
+      //var instance = new HyperstackApi.PaymentDetailsFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxAmount (base name: "tax_amount")', function() {
+      // uncomment below and update the code to test the property taxAmount
       //var instance = new HyperstackApi.PaymentDetailsFields();
       //expect(instance).to.be();
     });

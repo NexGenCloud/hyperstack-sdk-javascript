@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * ClusterEvents service.
 * @module api/ClusterEventsApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class ClusterEventsApi {
 
@@ -58,7 +58,7 @@ export default class ClusterEventsApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ClusterEvents;

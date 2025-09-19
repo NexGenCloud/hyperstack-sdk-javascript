@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **discountStatus** | **String** |  | [optional] 
 **discountType** | **String** |  | [optional] 
 **id** | **Number** |  | [optional] 
+**remainingCount** | **Number** |  | [optional] 
 **resourceCount** | **Number** |  | [optional] 
 **resourceId** | **Number** |  | [optional] 
 **resourceName** | **String** |  | [optional] 

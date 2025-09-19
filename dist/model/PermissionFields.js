@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The PermissionFields model module.
  * @module model/PermissionFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var PermissionFields = /*#__PURE__*/function () {
   /**

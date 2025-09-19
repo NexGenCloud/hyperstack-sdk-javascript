@@ -23,7 +23,7 @@ import UpdateOrganizationResponseModel from '../model/UpdateOrganizationResponse
 /**
 * Organization service.
 * @module api/OrganizationApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class OrganizationApi {
 
@@ -42,7 +42,7 @@ export default class OrganizationApi {
 
     /**
      * Remove Organization Member
-     * Removes a member from your organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/remove-member).
+     * Removes a member from your organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/remove-member).
      * @param {module:model/RemoveMemberPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RemoveMemberFromOrganizationResponseModel} and HTTP response
      */
@@ -62,7 +62,7 @@ export default class OrganizationApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RemoveMemberFromOrganizationResponseModel;
@@ -75,7 +75,7 @@ export default class OrganizationApi {
 
     /**
      * Remove Organization Member
-     * Removes a member from your organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/remove-member).
+     * Removes a member from your organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/remove-member).
      * @param {module:model/RemoveMemberPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RemoveMemberFromOrganizationResponseModel}
      */
@@ -89,7 +89,7 @@ export default class OrganizationApi {
 
     /**
      * Retrieve Organization Information
-     * Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/retrieve-org-details).
+     * Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetOrganizationResponseModel} and HTTP response
      */
     retrieveOrganizationInformationWithHttpInfo() {
@@ -104,7 +104,7 @@ export default class OrganizationApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GetOrganizationResponseModel;
@@ -117,7 +117,7 @@ export default class OrganizationApi {
 
     /**
      * Retrieve Organization Information
-     * Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/retrieve-org-details).
+     * Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetOrganizationResponseModel}
      */
     retrieveOrganizationInformation() {
@@ -130,7 +130,7 @@ export default class OrganizationApi {
 
     /**
      * Update Organization Information
-     * Updates the name of the organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/update-org-name).
+     * Updates the name of the organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/update-org-name).
      * @param {module:model/UpdateOrganizationPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateOrganizationResponseModel} and HTTP response
      */
@@ -150,7 +150,7 @@ export default class OrganizationApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = UpdateOrganizationResponseModel;
@@ -163,7 +163,7 @@ export default class OrganizationApi {
 
     /**
      * Update Organization Information
-     * Updates the name of the organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/update-org-name).
+     * Updates the name of the organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/update-org-name).
      * @param {module:model/UpdateOrganizationPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateOrganizationResponseModel}
      */

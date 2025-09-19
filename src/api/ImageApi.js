@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Image service.
 * @module api/ImageApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class ImageApi {
 
@@ -45,11 +45,11 @@ export default class ImageApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    deleteAnImageWithHttpInfo(id) {
+    deleteImageWithHttpInfo(id) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteAnImage");
+        throw new Error("Missing the required parameter 'id' when calling deleteImage");
       }
 
       let pathParams = {
@@ -62,7 +62,7 @@ export default class ImageApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
@@ -79,8 +79,8 @@ export default class ImageApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    deleteAnImage(id) {
-      return this.deleteAnImageWithHttpInfo(id)
+    deleteImage(id) {
+      return this.deleteImageWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -93,11 +93,11 @@ export default class ImageApi {
      * @param {String} name 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NameAvailableModel} and HTTP response
      */
-    fetchNameAvailabilityForImagesWithHttpInfo(name) {
+    fetchImageNameAvailabilityWithHttpInfo(name) {
       let postBody = null;
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
-        throw new Error("Missing the required parameter 'name' when calling fetchNameAvailabilityForImages");
+        throw new Error("Missing the required parameter 'name' when calling fetchImageNameAvailability");
       }
 
       let pathParams = {
@@ -110,7 +110,7 @@ export default class ImageApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = NameAvailableModel;
@@ -127,8 +127,8 @@ export default class ImageApi {
      * @param {String} name 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NameAvailableModel}
      */
-    fetchNameAvailabilityForImages(name) {
-      return this.fetchNameAvailabilityForImagesWithHttpInfo(name)
+    fetchImageNameAvailability(name) {
+      return this.fetchImageNameAvailabilityWithHttpInfo(name)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -143,12 +143,12 @@ export default class ImageApi {
      * @param {Boolean} [includeRelatedVms] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-    getPrivateImageDetailsWithHttpInfo(id, opts) {
+    getImageDetailsWithHttpInfo(id, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getPrivateImageDetails");
+        throw new Error("Missing the required parameter 'id' when calling getImageDetails");
       }
 
       let pathParams = {
@@ -162,7 +162,7 @@ export default class ImageApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Image;
@@ -181,8 +181,8 @@ export default class ImageApi {
      * @param {Boolean} opts.includeRelatedVms 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
-    getPrivateImageDetails(id, opts) {
-      return this.getPrivateImageDetailsWithHttpInfo(id, opts)
+    getImageDetails(id, opts) {
+      return this.getImageDetailsWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -191,7 +191,7 @@ export default class ImageApi {
 
     /**
      * List Images
-     * Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images).
+     * Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/images).
      * @param {Object} opts Optional parameters
      * @param {String} [region] Region Name
      * @param {Boolean} [includePublic] Flag to include public images in the response (true/false). Default is true.
@@ -200,7 +200,7 @@ export default class ImageApi {
      * @param {Number} [perPage] Number of Images per page
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Images} and HTTP response
      */
-    listImagesWithHttpInfo(opts) {
+    listImages2WithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -218,7 +218,7 @@ export default class ImageApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Images;
@@ -231,7 +231,7 @@ export default class ImageApi {
 
     /**
      * List Images
-     * Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images).
+     * Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/images).
      * @param {Object} opts Optional parameters
      * @param {String} opts.region Region Name
      * @param {Boolean} opts.includePublic Flag to include public images in the response (true/false). Default is true.
@@ -240,8 +240,8 @@ export default class ImageApi {
      * @param {Number} opts.perPage Number of Images per page
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Images}
      */
-    listImages(opts) {
-      return this.listImagesWithHttpInfo(opts)
+    listImages2(opts) {
+      return this.listImages2WithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

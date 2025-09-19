@@ -48,30 +48,30 @@
   }
 
   describe('CustomerContractApi', function() {
-    describe('listContracts', function() {
-      it('should call listContracts successfully', function(done) {
-        //uncomment below and update the code to test listContracts
-        //instance.listContracts(function(error) {
+    describe('getCustomerContract', function() {
+      it('should call getCustomerContract successfully', function(done) {
+        //uncomment below and update the code to test getCustomerContract
+        //instance.getCustomerContract(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveContractDetails', function() {
-      it('should call retrieveContractDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveContractDetails
-        //instance.retrieveContractDetails(function(error) {
+    describe('getCustomerContractDetails', function() {
+      it('should call getCustomerContractDetails successfully', function(done) {
+        //uncomment below and update the code to test getCustomerContractDetails
+        //instance.getCustomerContractDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveGpuAllocationGraphForContract', function() {
-      it('should call retrieveGpuAllocationGraphForContract successfully', function(done) {
-        //uncomment below and update the code to test retrieveGpuAllocationGraphForContract
-        //instance.retrieveGpuAllocationGraphForContract(function(error) {
+    describe('getCustomerContractGpuAllocationGraph', function() {
+      it('should call getCustomerContractGpuAllocationGraph successfully', function(done) {
+        //uncomment below and update the code to test getCustomerContractGpuAllocationGraph
+        //instance.getCustomerContractGpuAllocationGraph(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

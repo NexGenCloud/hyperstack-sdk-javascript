@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
-var _Getcreditandthresholdinfoinresponse = _interopRequireDefault(require("../model/Getcreditandthresholdinfoinresponse"));
+var _GetCreditAndThresholdInfoInResponse = _interopRequireDefault(require("../model/GetCreditAndThresholdInfoInResponse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Credit service.
 * @module api/CreditApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var CreditApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,31 +45,33 @@ var CreditApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * GET: View credit and threshold
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Getcreditandthresholdinfoinresponse} and HTTP response
+   * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCreditAndThresholdInfoInResponse} and HTTP response
    */
   return _createClass(CreditApi, [{
-    key: "getViewCreditAndThresholdWithHttpInfo",
-    value: function getViewCreditAndThresholdWithHttpInfo() {
+    key: "getCredit2WithHttpInfo",
+    value: function getCredit2WithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Getcreditandthresholdinfoinresponse["default"];
+      var returnType = _GetCreditAndThresholdInfoInResponse["default"];
       return this.apiClient.callApi('/billing/user-credit/credit', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * GET: View credit and threshold
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Getcreditandthresholdinfoinresponse}
+     * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCreditAndThresholdInfoInResponse}
      */
   }, {
-    key: "getViewCreditAndThreshold",
-    value: function getViewCreditAndThreshold() {
-      return this.getViewCreditAndThresholdWithHttpInfo().then(function (response_and_data) {
+    key: "getCredit2",
+    value: function getCredit2() {
+      return this.getCredit2WithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

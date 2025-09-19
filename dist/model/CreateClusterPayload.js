@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+var _CreateClusterNodeGroupPayload = _interopRequireDefault(require("./CreateClusterNodeGroupPayload"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
@@ -29,24 +30,21 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateClusterPayload model module.
  * @module model/CreateClusterPayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var CreateClusterPayload = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateClusterPayload</code>.
    * @alias module:model/CreateClusterPayload
    * @param environmentName {String} 
-   * @param imageName {String} 
    * @param keypairName {String} 
    * @param kubernetesVersion {String} 
    * @param masterFlavorName {String} 
    * @param name {String} 
-   * @param nodeCount {Number} 
-   * @param nodeFlavorName {String} 
    */
-  function CreateClusterPayload(environmentName, imageName, keypairName, kubernetesVersion, masterFlavorName, name, nodeCount, nodeFlavorName) {
+  function CreateClusterPayload(environmentName, keypairName, kubernetesVersion, masterFlavorName, name) {
     _classCallCheck(this, CreateClusterPayload);
-    CreateClusterPayload.initialize(this, environmentName, imageName, keypairName, kubernetesVersion, masterFlavorName, name, nodeCount, nodeFlavorName);
+    CreateClusterPayload.initialize(this, environmentName, keypairName, kubernetesVersion, masterFlavorName, name);
   }
 
   /**
@@ -56,15 +54,13 @@ var CreateClusterPayload = /*#__PURE__*/function () {
    */
   return _createClass(CreateClusterPayload, null, [{
     key: "initialize",
-    value: function initialize(obj, environmentName, imageName, keypairName, kubernetesVersion, masterFlavorName, name, nodeCount, nodeFlavorName) {
+    value: function initialize(obj, environmentName, keypairName, kubernetesVersion, masterFlavorName, name) {
+      obj['deployment_mode'] = 'full';
       obj['environment_name'] = environmentName;
-      obj['image_name'] = imageName;
       obj['keypair_name'] = keypairName;
       obj['kubernetes_version'] = kubernetesVersion;
       obj['master_flavor_name'] = masterFlavorName;
       obj['name'] = name;
-      obj['node_count'] = nodeCount;
-      obj['node_flavor_name'] = nodeFlavorName;
     }
 
     /**
@@ -79,17 +75,20 @@ var CreateClusterPayload = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new CreateClusterPayload();
+        if (data.hasOwnProperty('deployment_mode')) {
+          obj['deployment_mode'] = _ApiClient["default"].convertToType(data['deployment_mode'], 'String');
+        }
         if (data.hasOwnProperty('environment_name')) {
           obj['environment_name'] = _ApiClient["default"].convertToType(data['environment_name'], 'String');
-        }
-        if (data.hasOwnProperty('image_name')) {
-          obj['image_name'] = _ApiClient["default"].convertToType(data['image_name'], 'String');
         }
         if (data.hasOwnProperty('keypair_name')) {
           obj['keypair_name'] = _ApiClient["default"].convertToType(data['keypair_name'], 'String');
         }
         if (data.hasOwnProperty('kubernetes_version')) {
           obj['kubernetes_version'] = _ApiClient["default"].convertToType(data['kubernetes_version'], 'String');
+        }
+        if (data.hasOwnProperty('master_count')) {
+          obj['master_count'] = _ApiClient["default"].convertToType(data['master_count'], 'Number');
         }
         if (data.hasOwnProperty('master_flavor_name')) {
           obj['master_flavor_name'] = _ApiClient["default"].convertToType(data['master_flavor_name'], 'String');
@@ -102,6 +101,9 @@ var CreateClusterPayload = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('node_flavor_name')) {
           obj['node_flavor_name'] = _ApiClient["default"].convertToType(data['node_flavor_name'], 'String');
+        }
+        if (data.hasOwnProperty('node_groups')) {
+          obj['node_groups'] = _ApiClient["default"].convertToType(data['node_groups'], [_CreateClusterNodeGroupPayload["default"]]);
         }
       }
       return obj;
@@ -131,12 +133,12 @@ var CreateClusterPayload = /*#__PURE__*/function () {
       } finally {
         _iterator.f();
       }
-      if (data['environment_name'] && !(typeof data['environment_name'] === 'string' || data['environment_name'] instanceof String)) {
-        throw new Error("Expected the field `environment_name` to be a primitive type in the JSON string but got " + data['environment_name']);
+      if (data['deployment_mode'] && !(typeof data['deployment_mode'] === 'string' || data['deployment_mode'] instanceof String)) {
+        throw new Error("Expected the field `deployment_mode` to be a primitive type in the JSON string but got " + data['deployment_mode']);
       }
       // ensure the json data is a string
-      if (data['image_name'] && !(typeof data['image_name'] === 'string' || data['image_name'] instanceof String)) {
-        throw new Error("Expected the field `image_name` to be a primitive type in the JSON string but got " + data['image_name']);
+      if (data['environment_name'] && !(typeof data['environment_name'] === 'string' || data['environment_name'] instanceof String)) {
+        throw new Error("Expected the field `environment_name` to be a primitive type in the JSON string but got " + data['environment_name']);
       }
       // ensure the json data is a string
       if (data['keypair_name'] && !(typeof data['keypair_name'] === 'string' || data['keypair_name'] instanceof String)) {
@@ -158,21 +160,43 @@ var CreateClusterPayload = /*#__PURE__*/function () {
       if (data['node_flavor_name'] && !(typeof data['node_flavor_name'] === 'string' || data['node_flavor_name'] instanceof String)) {
         throw new Error("Expected the field `node_flavor_name` to be a primitive type in the JSON string but got " + data['node_flavor_name']);
       }
+      if (data['node_groups']) {
+        // data not null
+        // ensure the json data is an array
+        if (!Array.isArray(data['node_groups'])) {
+          throw new Error("Expected the field `node_groups` to be an array in the JSON data but got " + data['node_groups']);
+        }
+        // validate the optional field `node_groups` (array)
+        var _iterator2 = _createForOfIteratorHelper(data['node_groups']),
+          _step2;
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var item = _step2.value;
+            _CreateClusterNodeGroupPayload["default"].validateJSON(item);
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
+        ;
+      }
       return true;
     }
   }]);
 }();
-CreateClusterPayload.RequiredProperties = ["environment_name", "image_name", "keypair_name", "kubernetes_version", "master_flavor_name", "name", "node_count", "node_flavor_name"];
+CreateClusterPayload.RequiredProperties = ["environment_name", "keypair_name", "kubernetes_version", "master_flavor_name", "name"];
+
+/**
+ * @member {module:model/CreateClusterPayload.DeploymentModeEnum} deployment_mode
+ * @default 'full'
+ */
+CreateClusterPayload.prototype['deployment_mode'] = 'full';
 
 /**
  * @member {String} environment_name
  */
 CreateClusterPayload.prototype['environment_name'] = undefined;
-
-/**
- * @member {String} image_name
- */
-CreateClusterPayload.prototype['image_name'] = undefined;
 
 /**
  * @member {String} keypair_name
@@ -183,6 +207,11 @@ CreateClusterPayload.prototype['keypair_name'] = undefined;
  * @member {String} kubernetes_version
  */
 CreateClusterPayload.prototype['kubernetes_version'] = undefined;
+
+/**
+ * @member {Number} master_count
+ */
+CreateClusterPayload.prototype['master_count'] = undefined;
 
 /**
  * @member {String} master_flavor_name
@@ -203,4 +232,27 @@ CreateClusterPayload.prototype['node_count'] = undefined;
  * @member {String} node_flavor_name
  */
 CreateClusterPayload.prototype['node_flavor_name'] = undefined;
+
+/**
+ * @member {Array.<module:model/CreateClusterNodeGroupPayload>} node_groups
+ */
+CreateClusterPayload.prototype['node_groups'] = undefined;
+
+/**
+ * Allowed values for the <code>deployment_mode</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CreateClusterPayload['DeploymentModeEnum'] = {
+  /**
+   * value: "full"
+   * @const
+   */
+  "full": "full",
+  /**
+   * value: "standard"
+   * @const
+   */
+  "standard": "standard"
+};
 var _default = exports["default"] = CreateClusterPayload;

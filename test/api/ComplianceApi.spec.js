@@ -68,10 +68,10 @@
         done();
       });
     });
-    describe('retrieveGpuCompliance', function() {
-      it('should call retrieveGpuCompliance successfully', function(done) {
-        //uncomment below and update the code to test retrieveGpuCompliance
-        //instance.retrieveGpuCompliance(function(error) {
+    describe('retrieveCompliance', function() {
+      it('should call retrieveCompliance successfully', function(done) {
+        //uncomment below and update the code to test retrieveCompliance
+        //instance.retrieveCompliance(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 List My User Permissions
 
-Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
 
 ### Example
 
@@ -27,11 +27,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.UserPermissionApi();
 apiInstance.listMyUserPermissions().then((data) => {
@@ -52,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -66,7 +61,7 @@ This endpoint does not need any parameter.
 
 List User Permissions
 
-Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
 
 ### Example
 
@@ -78,11 +73,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.UserPermissionApi();
 let id = 56; // Number | 
@@ -107,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachVolumeFields model module.
  * @module model/AttachVolumeFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class AttachVolumeFields {
     /**
@@ -50,11 +50,17 @@ class AttachVolumeFields {
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
+            if (data.hasOwnProperty('device')) {
+                obj['device'] = ApiClient.convertToType(data['device'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('instance_id')) {
                 obj['instance_id'] = ApiClient.convertToType(data['instance_id'], 'Number');
+            }
+            if (data.hasOwnProperty('protected')) {
+                obj['protected'] = ApiClient.convertToType(data['protected'], 'Boolean');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -72,6 +78,10 @@ class AttachVolumeFields {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>AttachVolumeFields</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['device'] && !(typeof data['device'] === 'string' || data['device'] instanceof String)) {
+            throw new Error("Expected the field `device` to be a primitive type in the JSON string but got " + data['device']);
+        }
         // ensure the json data is a string
         if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
             throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
@@ -91,6 +101,11 @@ class AttachVolumeFields {
 AttachVolumeFields.prototype['created_at'] = undefined;
 
 /**
+ * @member {String} device
+ */
+AttachVolumeFields.prototype['device'] = undefined;
+
+/**
  * @member {Number} id
  */
 AttachVolumeFields.prototype['id'] = undefined;
@@ -99,6 +114,11 @@ AttachVolumeFields.prototype['id'] = undefined;
  * @member {Number} instance_id
  */
 AttachVolumeFields.prototype['instance_id'] = undefined;
+
+/**
+ * @member {Boolean} protected
+ */
+AttachVolumeFields.prototype['protected'] = undefined;
 
 /**
  * @member {String} status

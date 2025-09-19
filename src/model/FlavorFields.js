@@ -17,7 +17,7 @@ import LableResonse from './LableResonse';
 /**
  * The FlavorFields model module.
  * @module model/FlavorFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class FlavorFields {
     /**
@@ -62,6 +62,9 @@ class FlavorFields {
             }
             if (data.hasOwnProperty('ephemeral')) {
                 obj['ephemeral'] = ApiClient.convertToType(data['ephemeral'], 'Number');
+            }
+            if (data.hasOwnProperty('features')) {
+                obj['features'] = ApiClient.convertToType(data['features'], Object);
             }
             if (data.hasOwnProperty('gpu')) {
                 obj['gpu'] = ApiClient.convertToType(data['gpu'], 'String');
@@ -156,6 +159,11 @@ FlavorFields.prototype['display_name'] = undefined;
  * @member {Number} ephemeral
  */
 FlavorFields.prototype['ephemeral'] = undefined;
+
+/**
+ * @member {Object} features
+ */
+FlavorFields.prototype['features'] = undefined;
 
 /**
  * @member {String} gpu

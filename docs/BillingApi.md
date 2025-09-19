@@ -4,31 +4,95 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAllThresholdsForOrganization**](BillingApi.md#getAllThresholdsForOrganization) | **GET** /billing/billing/threshold | GET: All Thresholds for Organization
-[**getBillingUsage**](BillingApi.md#getBillingUsage) | **GET** /billing/billing/usage | GET: Billing usage
 [**getLastDayCost**](BillingApi.md#getLastDayCost) | **GET** /billing/billing/last-day-cost | GET: Last Day Cost
-[**retrieveBillingHistoryForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryForASpecificBillingCycle) | **GET** /billing/billing/history | Retrieve Billing History for a specific Billing Cycle
-[**retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle) | **GET** /billing/billing/history/snapshot/{snapshot_id} | Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-[**retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle) | **GET** /billing/billing/history/virtual-machine/{vm_id} | Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-[**retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle) | **GET** /billing/billing/history/volume/{volume_id} | Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-[**retrieveBillingHistoryOfContractForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryOfContractForASpecificBillingCycle) | **GET** /billing/billing/history/contract | Retrieve Billing History of Contract for a specific Billing Cycle
-[**retrieveBillingHistoryOfSnapshotForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryOfSnapshotForASpecificBillingCycle) | **GET** /billing/billing/history/snapshot | Retrieve Billing History of Snapshot for a specific Billing Cycle
-[**retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle) | **GET** /billing/billing/history/virtual-machine | Retrieve Billing History of Virtual Machine for a specific Billing Cycle
-[**retrieveBillingHistoryOfVolumeForASpecificBillingCycle**](BillingApi.md#retrieveBillingHistoryOfVolumeForASpecificBillingCycle) | **GET** /billing/billing/history/volume | Retrieve Billing History of Volume for a specific Billing Cycle
-[**retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle**](BillingApi.md#retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle) | **GET** /billing/billing/history/snapshot/{snapshot_id}/graph | Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
-[**retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle**](BillingApi.md#retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle) | **GET** /billing/billing/history/virtual-machine/{vm_id}/graph | Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
-[**retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle**](BillingApi.md#retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle) | **GET** /billing/billing/history/volume/{volume_id}/graph | Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
-[**retrieveSubResourcesHistoricalCostDatapointsOfAVirtual**](BillingApi.md#retrieveSubResourcesHistoricalCostDatapointsOfAVirtual) | **GET** /billing/billing/virtual-machine/{vm_id}/sub-resource/graph | Retrieve Sub-Resources Historical Cost datapoints of a Virtual
-[**retrieveTotalCostsAndNonDiscountCostsForSubResources**](BillingApi.md#retrieveTotalCostsAndNonDiscountCostsForSubResources) | **GET** /billing/billing/virtual-machine/{vm_id}/sub-resource | Retrieve Total Costs and Non Discount Costs for Sub Resources
-[**retrieveVmBillingEventsHistory**](BillingApi.md#retrieveVmBillingEventsHistory) | **GET** /billing/billing/virtual-machine/{vm_id}/billing-events | Retrieve VM billing events history
-[**retrieveVolumeBillingEventsHistory**](BillingApi.md#retrieveVolumeBillingEventsHistory) | **GET** /billing/billing/volume/{volume_id}/billing-events | Retrieve Volume billing events history
-[**updateSubscribeOrUnsubscribeNotificationThreshold**](BillingApi.md#updateSubscribeOrUnsubscribeNotificationThreshold) | **PUT** /billing/billing/threshold/{threshold_id} | Update: Subscribe or Unsubscribe Notification Threshold
+[**getOrganizationThreshold**](BillingApi.md#getOrganizationThreshold) | **GET** /billing/billing/threshold | GET: All Thresholds for Organization
+[**getUsage2**](BillingApi.md#getUsage2) | **GET** /billing/billing/usage | GET: Billing usage
+[**getUserBillingBucketDetailsGraph**](BillingApi.md#getUserBillingBucketDetailsGraph) | **GET** /billing/billing/history/bucket/{bucket_id}/graph | Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
+[**getUserBillingClusterDetailsGraph**](BillingApi.md#getUserBillingClusterDetailsGraph) | **GET** /billing/billing/history/cluster/{cluster_id}/graph | Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+[**getUserBillingDataSynthesisDetailsGraph**](BillingApi.md#getUserBillingDataSynthesisDetailsGraph) | **GET** /billing/billing/history/data_synthesis/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+[**getUserBillingFineTuningDetailsGraph**](BillingApi.md#getUserBillingFineTuningDetailsGraph) | **GET** /billing/billing/history/fine_tuning/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+[**getUserBillingHistory2**](BillingApi.md#getUserBillingHistory2) | **GET** /billing/billing/history | Retrieve Billing History for a specific Billing Cycle
+[**getUserBillingHistoryBucket2**](BillingApi.md#getUserBillingHistoryBucket2) | **GET** /billing/billing/history/bucket | Retrieve Billing History of Volume for a specific Billing Cycle
+[**getUserBillingHistoryBucketDetails**](BillingApi.md#getUserBillingHistoryBucketDetails) | **GET** /billing/billing/history/bucket/{bucket_id} | Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+[**getUserBillingHistoryCluster**](BillingApi.md#getUserBillingHistoryCluster) | **GET** /billing/billing/history/cluster | Retrieve Billing History of Clusters for a specific Billing Cycle
+[**getUserBillingHistoryClusterDetails**](BillingApi.md#getUserBillingHistoryClusterDetails) | **GET** /billing/billing/history/cluster/{cluster_id} | Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
+[**getUserBillingHistoryContract**](BillingApi.md#getUserBillingHistoryContract) | **GET** /billing/billing/history/contract | Retrieve Billing History of Contract for a specific Billing Cycle
+[**getUserBillingHistoryDataSynthesis**](BillingApi.md#getUserBillingHistoryDataSynthesis) | **GET** /billing/billing/history/data_synthesis | Retrieve Billing History of data synthesis for a specific Billing Cycle
+[**getUserBillingHistoryDataSynthesisDetails**](BillingApi.md#getUserBillingHistoryDataSynthesisDetails) | **GET** /billing/billing/history/data_synthesis/{resource_id} | 
+[**getUserBillingHistoryFineTuning**](BillingApi.md#getUserBillingHistoryFineTuning) | **GET** /billing/billing/history/fine_tuning | Retrieve Billing History of model evaluation for a specific Billing Cycle
+[**getUserBillingHistoryFineTuningDetails**](BillingApi.md#getUserBillingHistoryFineTuningDetails) | **GET** /billing/billing/history/fine_tuning/{resource_id} | Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+[**getUserBillingHistoryModelEvaluation**](BillingApi.md#getUserBillingHistoryModelEvaluation) | **GET** /billing/billing/history/model_evaluation | Retrieve Billing History of model evaluation for a specific Billing Cycle
+[**getUserBillingHistoryModelEvaluationDetails**](BillingApi.md#getUserBillingHistoryModelEvaluationDetails) | **GET** /billing/billing/history/model_evaluation/{resource_id} | 
+[**getUserBillingHistoryServerlessInference**](BillingApi.md#getUserBillingHistoryServerlessInference) | **GET** /billing/billing/history/serverless_inference | Retrieve Billing History of serverless inference for a specific Billing Cycle
+[**getUserBillingHistoryServerlessInferenceDetails**](BillingApi.md#getUserBillingHistoryServerlessInferenceDetails) | **GET** /billing/billing/history/serverless_inference/{resource_id} | 
+[**getUserBillingHistorySnapshot**](BillingApi.md#getUserBillingHistorySnapshot) | **GET** /billing/billing/history/snapshot | Retrieve Billing History of Snapshot for a specific Billing Cycle
+[**getUserBillingHistorySnapshotDetails**](BillingApi.md#getUserBillingHistorySnapshotDetails) | **GET** /billing/billing/history/snapshot/{snapshot_id} | Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+[**getUserBillingHistoryVm2**](BillingApi.md#getUserBillingHistoryVm2) | **GET** /billing/billing/history/virtual-machine | Retrieve Billing History of Virtual Machine for a specific Billing Cycle
+[**getUserBillingHistoryVmDetails2**](BillingApi.md#getUserBillingHistoryVmDetails2) | **GET** /billing/billing/history/virtual-machine/{vm_id} | Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+[**getUserBillingHistoryVmSubResourceGraph2**](BillingApi.md#getUserBillingHistoryVmSubResourceGraph2) | **GET** /billing/billing/virtual-machine/{vm_id}/sub-resource/graph | Retrieve Sub-Resources Historical Cost datapoints of a Virtual
+[**getUserBillingHistoryVmTotalCosts**](BillingApi.md#getUserBillingHistoryVmTotalCosts) | **GET** /billing/billing/virtual-machine/{vm_id}/sub-resource | Retrieve Total Costs and Non Discount Costs for Sub Resources
+[**getUserBillingHistoryVolume2**](BillingApi.md#getUserBillingHistoryVolume2) | **GET** /billing/billing/history/volume | Retrieve Billing History of Volume for a specific Billing Cycle
+[**getUserBillingHistoryVolumeDetails2**](BillingApi.md#getUserBillingHistoryVolumeDetails2) | **GET** /billing/billing/history/volume/{volume_id} | Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+[**getUserBillingModelEvaluationDetailsGraph**](BillingApi.md#getUserBillingModelEvaluationDetailsGraph) | **GET** /billing/billing/history/model_evaluation/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
+[**getUserBillingServerlessInferenceDetailsGraph**](BillingApi.md#getUserBillingServerlessInferenceDetailsGraph) | **GET** /billing/billing/history/serverless_inference/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
+[**getUserBillingSnapshotDetailsGraph**](BillingApi.md#getUserBillingSnapshotDetailsGraph) | **GET** /billing/billing/history/snapshot/{snapshot_id}/graph | Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
+[**getUserBillingVmDetailsGraph2**](BillingApi.md#getUserBillingVmDetailsGraph2) | **GET** /billing/billing/history/virtual-machine/{vm_id}/graph | Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+[**getUserBillingVolumeDetailsGraph**](BillingApi.md#getUserBillingVolumeDetailsGraph) | **GET** /billing/billing/history/volume/{volume_id}/graph | Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
+[**getUserVmBillingEvents**](BillingApi.md#getUserVmBillingEvents) | **GET** /billing/billing/virtual-machine/{vm_id}/billing-events | Retrieve VM billing events history
+[**getUserVolumeBillingEvents**](BillingApi.md#getUserVolumeBillingEvents) | **GET** /billing/billing/volume/{volume_id}/billing-events | Retrieve Volume billing events history
+[**putOrganizationThreshold**](BillingApi.md#putOrganizationThreshold) | **PUT** /billing/billing/threshold/{threshold_id} | Update: Subscribe or Unsubscribe Notification Threshold
 
 
 
-## getAllThresholdsForOrganization
+## getLastDayCost
 
-> Organizationthresholdsresponse getAllThresholdsForOrganization()
+> LastDayCostResponse getLastDayCost()
+
+GET: Last Day Cost
+
+Retrieve the previous day&#39;s costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+apiInstance.getLastDayCost().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**LastDayCostResponse**](LastDayCostResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getOrganizationThreshold
+
+> OrganizationThresholdsResponse getOrganizationThreshold()
 
 GET: All Thresholds for Organization
 
@@ -44,14 +108,9 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
-apiInstance.getAllThresholdsForOrganization().then((data) => {
+apiInstance.getOrganizationThreshold().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -65,11 +124,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Organizationthresholdsresponse**](Organizationthresholdsresponse.md)
+[**OrganizationThresholdsResponse**](OrganizationThresholdsResponse.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -77,13 +136,13 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## getBillingUsage
+## getUsage2
 
-> Billingmetricesresponse getBillingUsage(opts)
+> BillingMetricesResponse getUsage2(opts)
 
 GET: Billing usage
 
-Retrieve active billing metrics for the organization&#39;s resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(&#x60;deleted&#x3D;false&#x60; will return active resources). Additionally, adding &#x60;deleted&#x3D;true&#x60; in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/billing-features#view-usage-costs-for-all-resources)
+Retrieve active billing metrics for the organization&#39;s resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(&#x60;deleted&#x3D;false&#x60; will return active resources). Additionally, adding &#x60;deleted&#x3D;true&#x60; in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
 
 ### Example
 
@@ -95,18 +154,13 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let opts = {
   'deleted': "deleted_example", // String | `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
   'environment': "environment_example" // String | Filter resources by environment ID or Name
 };
-apiInstance.getBillingUsage(opts).then((data) => {
+apiInstance.getUsage2(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -124,11 +178,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Billingmetricesresponse**](Billingmetricesresponse.md)
+[**BillingMetricesResponse**](BillingMetricesResponse.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -136,13 +190,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getLastDayCost
+## getUserBillingBucketDetailsGraph
 
-> Lastdaycostresponse getLastDayCost()
+> ResourceLevelGraphBillingDetailsBucket getUserBillingBucketDetailsGraph(bucketId, opts)
 
-GET: Last Day Cost
+Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
 
-Retrieve the previous day&#39;s costs for instances, volumes, and clusters. Returns a breakdown of the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/billing-resources/last-day-usage/)
+User will recieve hourly cost datapoints for a Bucket for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
 
 ### Example
 
@@ -154,14 +208,14 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
-apiInstance.getLastDayCost().then((data) => {
+let bucketId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingBucketDetailsGraph(bucketId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -171,15 +225,20 @@ apiInstance.getLastDayCost().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bucketId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
 
 ### Return type
 
-[**Lastdaycostresponse**](Lastdaycostresponse.md)
+[**ResourceLevelGraphBillingDetailsBucket**](ResourceLevelGraphBillingDetailsBucket.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -187,9 +246,177 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryForASpecificBillingCycle
+## getUserBillingClusterDetailsGraph
 
-> OrganizationLevelBillingHistoryResponseModel retrieveBillingHistoryForASpecificBillingCycle(opts)
+> ResourceLevelClusterGraphBillingDetailsResponseModel getUserBillingClusterDetailsGraph(clusterId, opts)
+
+Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+
+User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let clusterId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingClusterDetailsGraph(clusterId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelClusterGraphBillingDetailsResponseModel**](ResourceLevelClusterGraphBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingDataSynthesisDetailsGraph
+
+> DataSynthesisBillingHistoryDetailsResponseSchema getUserBillingDataSynthesisDetailsGraph(resourceId, opts)
+
+Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+
+User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints. billing cycle
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingDataSynthesisDetailsGraph(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**DataSynthesisBillingHistoryDetailsResponseSchema**](DataSynthesisBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingFineTuningDetailsGraph
+
+> ResourceLevelVolumeGraphBillingDetailsResponseModel getUserBillingFineTuningDetailsGraph(resourceId, opts)
+
+Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+
+User will recieve hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingFineTuningDetailsGraph(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeGraphBillingDetailsResponseModel**](ResourceLevelVolumeGraphBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistory2
+
+> OrganizationLevelBillingHistoryResponseModel getUserBillingHistory2(opts)
 
 Retrieve Billing History for a specific Billing Cycle
 
@@ -205,11 +432,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let opts = {
@@ -217,7 +439,7 @@ let opts = {
   'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'graph': "graph_example" // String | Set this value to \"true\" for getting graph value
 };
-apiInstance.retrieveBillingHistoryForASpecificBillingCycle(opts).then((data) => {
+apiInstance.getUserBillingHistory2(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -240,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -248,13 +470,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle
+## getUserBillingHistoryBucket2
 
-> ResourceLevelVolumeBillingDetailsResponseModel retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle(snapshotId, opts)
+> ResourceLevelBucketBillingHistoryResponseModel getUserBillingHistoryBucket2(opts)
 
-Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+Retrieve Billing History of Volume for a specific Billing Cycle
 
-Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;non_discounted_bill&#39;.
+User will recieve billing history of buckets for thespecified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;status&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;price_per_hour&#39;
 
 ### Example
 
@@ -266,19 +488,16 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
-let snapshotId = 56; // Number | 
 let opts = {
-  'startDate': "startDate_example", // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-  'endDate': "endDate_example" // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
 };
-apiInstance.retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle(snapshotId, opts).then((data) => {
+apiInstance.getUserBillingHistoryBucket2(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -291,17 +510,75 @@ apiInstance.retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle(sn
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **snapshotId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
+
+### Return type
+
+[**ResourceLevelBucketBillingHistoryResponseModel**](ResourceLevelBucketBillingHistoryResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryBucketDetails
+
+> ResourceLevelBucketBillingDetailsResponseModel getUserBillingHistoryBucketDetails(bucketId, opts)
+
+Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+
+Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;non_discounted_bill&#39;.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let bucketId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingHistoryBucketDetails(bucketId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bucketId** | **Number**|  | 
  **startDate** | **String**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **endDate** | **String**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
 
 ### Return type
 
-[**ResourceLevelVolumeBillingDetailsResponseModel**](ResourceLevelVolumeBillingDetailsResponseModel.md)
+[**ResourceLevelBucketBillingDetailsResponseModel**](ResourceLevelBucketBillingDetailsResponseModel.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -309,13 +586,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle
+## getUserBillingHistoryCluster
 
-> ResourceLevelVMBillingDetailsResponseModel retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle(vmId, opts)
+> ResourceLevelClusterBillingHistoryResponseModel getUserBillingHistoryCluster(opts)
 
-Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+Retrieve Billing History of Clusters for a specific Billing Cycle
 
-User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;non_discounted_bill&#39;, &#39;usage_time&#39;, &#39;usage_time_ACTIVE&#39;, &#39;usage_time_SHUTOFF&#39;, &#39;usage_time_HIBERNATED&#39;
+User will receive billing history of clusters for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;status&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;price_per_hour&#39;
 
 ### Example
 
@@ -327,19 +604,16 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
-let vmId = 56; // Number | 
 let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
 };
-apiInstance.retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle(vmId, opts).then((data) => {
+apiInstance.getUserBillingHistoryCluster(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -352,17 +626,19 @@ apiInstance.retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vmId** | **Number**|  | 
  **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
 
 ### Return type
 
-[**ResourceLevelVMBillingDetailsResponseModel**](ResourceLevelVMBillingDetailsResponseModel.md)
+[**ResourceLevelClusterBillingHistoryResponseModel**](ResourceLevelClusterBillingHistoryResponseModel.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -370,13 +646,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle
+## getUserBillingHistoryClusterDetails
 
-> ResourceLevelVolumeBillingDetailsResponseModel retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle(volumeId, opts)
+> ResourceLevelClusterBillingDetailsResponseModel getUserBillingHistoryClusterDetails(clusterId, opts)
 
-Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
 
-Retrieve billing history of a specific Volume for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;non_discounted_bill&#39;.
+User will receive billing history of a specific Cluster for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;non_discounted_bill&#39;, &#39;usage_time&#39;, &#39;usage_time_ACTIVE&#39;, &#39;usage_time_SHUTOFF&#39;, &#39;usage_time_HIBERNATED&#39;.
 
 ### Example
 
@@ -388,19 +664,14 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
-let volumeId = 56; // Number | 
+let clusterId = 56; // Number | 
 let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
 };
-apiInstance.retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle(volumeId, opts).then((data) => {
+apiInstance.getUserBillingHistoryClusterDetails(clusterId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -413,17 +684,17 @@ apiInstance.retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle(volu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **volumeId** | **Number**|  | 
+ **clusterId** | **Number**|  | 
  **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
 
 ### Return type
 
-[**ResourceLevelVolumeBillingDetailsResponseModel**](ResourceLevelVolumeBillingDetailsResponseModel.md)
+[**ResourceLevelClusterBillingDetailsResponseModel**](ResourceLevelClusterBillingDetailsResponseModel.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -431,9 +702,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryOfContractForASpecificBillingCycle
+## getUserBillingHistoryContract
 
-> retrieveBillingHistoryOfContractForASpecificBillingCycle(opts)
+> getUserBillingHistoryContract(opts)
 
 Retrieve Billing History of Contract for a specific Billing Cycle
 
@@ -449,11 +720,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let opts = {
@@ -461,7 +727,7 @@ let opts = {
   'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'search': "search_example" // String | Search by Contract \"Description\" or \"ID\"
 };
-apiInstance.retrieveBillingHistoryOfContractForASpecificBillingCycle(opts).then(() => {
+apiInstance.getUserBillingHistoryContract(opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -484,7 +750,7 @@ null (empty response body)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -492,9 +758,473 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryOfSnapshotForASpecificBillingCycle
+## getUserBillingHistoryDataSynthesis
 
-> ResourceLevelVolumeBillingHistoryResponseModel retrieveBillingHistoryOfSnapshotForASpecificBillingCycle(opts)
+> TokenBasedBillingHistoryResponse getUserBillingHistoryDataSynthesis(opts)
+
+Retrieve Billing History of data synthesis for a specific Billing Cycle
+
+User will recieve billing history of data_synthesis for the specified billing cycle.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
+};
+apiInstance.getUserBillingHistoryDataSynthesis(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
+
+### Return type
+
+[**TokenBasedBillingHistoryResponse**](TokenBasedBillingHistoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryDataSynthesisDetails
+
+> DataSynthesisBillingHistoryDetailsResponseSchema getUserBillingHistoryDataSynthesisDetails(resourceId, opts)
+
+
+
+Retrieve billing history for a specific Data Synthesis resource. Includes: &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;base_model&#39;, &#39;base_model_display_name&#39;, &#39;lora_adapter&#39;, &#39;incurred_bill&#39;, &#39;non_discounted_bill&#39;, &#39;usage_time&#39;, &#39;input_tokens&#39;, &#39;output_tokens&#39;, &#39;input_tokens_incurred_bill&#39;, &#39;input_tokens_non_discounted_bill&#39;, &#39;output_tokens_incurred_bill&#39;, &#39;output_tokens_non_discounted_bill&#39;
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingHistoryDataSynthesisDetails(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**DataSynthesisBillingHistoryDetailsResponseSchema**](DataSynthesisBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryFineTuning
+
+> WorkloadBillingHistoryResponse getUserBillingHistoryFineTuning(opts)
+
+Retrieve Billing History of model evaluation for a specific Billing Cycle
+
+User will recieve billing history of fine_tuning for the specified billing cycle.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
+};
+apiInstance.getUserBillingHistoryFineTuning(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
+
+### Return type
+
+[**WorkloadBillingHistoryResponse**](WorkloadBillingHistoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryFineTuningDetails
+
+> ResourceLevelVolumeBillingDetailsResponseModel getUserBillingHistoryFineTuningDetails(resourceId, opts)
+
+Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+
+Retrieve billing history of a specific Fine tunning for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;non_discounted_bill&#39;.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingHistoryFineTuningDetails(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeBillingDetailsResponseModel**](ResourceLevelVolumeBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryModelEvaluation
+
+> TokenBasedBillingHistoryResponse getUserBillingHistoryModelEvaluation(opts)
+
+Retrieve Billing History of model evaluation for a specific Billing Cycle
+
+User will recieve billing history of model_evaluation for the specified billing cycle.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
+};
+apiInstance.getUserBillingHistoryModelEvaluation(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
+
+### Return type
+
+[**TokenBasedBillingHistoryResponse**](TokenBasedBillingHistoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryModelEvaluationDetails
+
+> ModelEvaluationBillingHistoryDetailsResponseSchema getUserBillingHistoryModelEvaluationDetails(resourceId, opts)
+
+
+
+Retrieve billing history for a specific Model Evaluation resource. Includes: &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;base_model&#39;, &#39;base_model_display_name&#39;, &#39;lora_adapter&#39;, &#39;incurred_bill&#39;, &#39;non_discounted_bill&#39;, &#39;usage_time&#39;, &#39;input_tokens&#39;, &#39;output_tokens&#39;, &#39;input_tokens_incurred_bill&#39;, &#39;input_tokens_non_discounted_bill&#39;, &#39;output_tokens_incurred_bill&#39;, &#39;output_tokens_non_discounted_bill&#39;
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingHistoryModelEvaluationDetails(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ModelEvaluationBillingHistoryDetailsResponseSchema**](ModelEvaluationBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryServerlessInference
+
+> TokenBasedBillingHistoryResponse getUserBillingHistoryServerlessInference(opts)
+
+Retrieve Billing History of serverless inference for a specific Billing Cycle
+
+User will recieve billing history of serverless_inference for the specified billing cycle.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
+};
+apiInstance.getUserBillingHistoryServerlessInference(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
+
+### Return type
+
+[**TokenBasedBillingHistoryResponse**](TokenBasedBillingHistoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryServerlessInferenceDetails
+
+> ServerlessInferencedBillingHistoryDetailsResponseSchema getUserBillingHistoryServerlessInferenceDetails(resourceId, opts)
+
+
+
+Retrieve billing history for a specific Serverless Inference resource. Includes: &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;base_model&#39;, &#39;base_model_display_name&#39;, &#39;lora_adapter&#39;, &#39;incurred_bill&#39;, &#39;non_discounted_bill&#39;, &#39;usage_time&#39;, &#39;input_tokens&#39;, &#39;output_tokens&#39;, &#39;input_tokens_incurred_bill&#39;, &#39;input_tokens_non_discounted_bill&#39;, &#39;output_tokens_incurred_bill&#39;, &#39;output_tokens_non_discounted_bill&#39;
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingHistoryServerlessInferenceDetails(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ServerlessInferencedBillingHistoryDetailsResponseSchema**](ServerlessInferencedBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistorySnapshot
+
+> ResourceLevelVolumeBillingHistoryResponseModel getUserBillingHistorySnapshot(opts)
 
 Retrieve Billing History of Snapshot for a specific Billing Cycle
 
@@ -510,21 +1240,16 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-  'search': "search_example", // String | Search by Volume \"Name\" or \"ID\"
-  'page': "page_example", // String | Page number
-  'perPage': "perPage_example" // String | Number of items to return per page
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
 };
-apiInstance.retrieveBillingHistoryOfSnapshotForASpecificBillingCycle(opts).then((data) => {
+apiInstance.getUserBillingHistorySnapshot(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -539,9 +1264,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
- **search** | **String**| Search by Volume \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
- **page** | **String**| Page number | [optional] 
- **perPage** | **String**| Number of items to return per page | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
 
 ### Return type
 
@@ -549,7 +1274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -557,9 +1282,65 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle
+## getUserBillingHistorySnapshotDetails
 
-> ResourceLevelVmBillingHistoryResponseModel retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle(opts)
+> ResourceLevelVolumeBillingDetailsResponseModel getUserBillingHistorySnapshotDetails(snapshotId, opts)
+
+Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+
+Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;non_discounted_bill&#39;.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let snapshotId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingHistorySnapshotDetails(snapshotId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **snapshotId** | **Number**|  | 
+ **startDate** | **String**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeBillingDetailsResponseModel**](ResourceLevelVolumeBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryVm2
+
+> ResourceLevelVmBillingHistoryResponseModel getUserBillingHistoryVm2(opts)
 
 Retrieve Billing History of Virtual Machine for a specific Billing Cycle
 
@@ -575,21 +1356,16 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-  'search': "search_example", // String | Search by Virtual Machine \"Name\" or \"ID\"
-  'perPage': "perPage_example", // String | Number of items to return per page
-  'page': "page_example" // String | Page number
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
 };
-apiInstance.retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle(opts).then((data) => {
+apiInstance.getUserBillingHistoryVm2(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -604,9 +1380,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
- **search** | **String**| Search by Virtual Machine \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
- **perPage** | **String**| Number of items to return per page | [optional] 
- **page** | **String**| Page number | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
 
 ### Return type
 
@@ -614,7 +1390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -622,13 +1398,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveBillingHistoryOfVolumeForASpecificBillingCycle
+## getUserBillingHistoryVmDetails2
 
-> ResourceLevelVolumeBillingHistoryResponseModel retrieveBillingHistoryOfVolumeForASpecificBillingCycle(opts)
+> ResourceLevelVMBillingDetailsResponseModel getUserBillingHistoryVmDetails2(vmId, opts)
 
-Retrieve Billing History of Volume for a specific Billing Cycle
+Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
 
-User will recieve billing history of volumes for thespecified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;status&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;price_per_hour&#39;
+User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;non_discounted_bill&#39;, &#39;usage_time&#39;, &#39;usage_time_ACTIVE&#39;, &#39;usage_time_SHUTOFF&#39;, &#39;usage_time_HIBERNATED&#39;
 
 ### Example
 
@@ -640,137 +1416,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.BillingApi();
-let opts = {
-  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-  'search': "search_example", // String | Search by Volume \"Name\" or \"ID\"
-  'perPage': "perPage_example", // String | Number of items to return per page
-  'page': "page_example" // String | Page number
-};
-apiInstance.retrieveBillingHistoryOfVolumeForASpecificBillingCycle(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
- **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
- **search** | **String**| Search by Volume \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
- **perPage** | **String**| Number of items to return per page | [optional] 
- **page** | **String**| Page number | [optional] 
-
-### Return type
-
-[**ResourceLevelVolumeBillingHistoryResponseModel**](ResourceLevelVolumeBillingHistoryResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle
-
-> ResourceLevelVolumeGraphBillingDetailsResponseModel retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle(snapshotId, opts)
-
-Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
-
-User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.BillingApi();
-let snapshotId = 56; // Number | 
-let opts = {
-  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-};
-apiInstance.retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle(snapshotId, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **snapshotId** | **Number**|  | 
- **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
- **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
-
-### Return type
-
-[**ResourceLevelVolumeGraphBillingDetailsResponseModel**](ResourceLevelVolumeGraphBillingDetailsResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle
-
-> ResourceLevelVmGraphBillingDetailsResponseModel retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle(vmId, opts)
-
-Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
-
-User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let vmId = 56; // Number | 
@@ -778,7 +1423,7 @@ let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
 };
-apiInstance.retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle(vmId, opts).then((data) => {
+apiInstance.getUserBillingHistoryVmDetails2(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -797,11 +1442,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceLevelVmGraphBillingDetailsResponseModel**](ResourceLevelVmGraphBillingDetailsResponseModel.md)
+[**ResourceLevelVMBillingDetailsResponseModel**](ResourceLevelVMBillingDetailsResponseModel.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -809,70 +1454,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle
+## getUserBillingHistoryVmSubResourceGraph2
 
-> ResourceLevelVolumeGraphBillingDetailsResponseModel retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle(volumeId, opts)
-
-Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
-
-User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.BillingApi();
-let volumeId = 56; // Number | 
-let opts = {
-  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
-};
-apiInstance.retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle(volumeId, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **volumeId** | **Number**|  | 
- **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
- **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
-
-### Return type
-
-[**ResourceLevelVolumeGraphBillingDetailsResponseModel**](ResourceLevelVolumeGraphBillingDetailsResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## retrieveSubResourcesHistoricalCostDatapointsOfAVirtual
-
-> SubResourcesGraphResponseModel retrieveSubResourcesHistoricalCostDatapointsOfAVirtual(vmId, opts)
+> SubResourcesGraphResponseModel getUserBillingHistoryVmSubResourceGraph2(vmId, opts)
 
 Retrieve Sub-Resources Historical Cost datapoints of a Virtual
 
@@ -888,11 +1472,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let vmId = 56; // Number | 
@@ -900,7 +1479,7 @@ let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
 };
-apiInstance.retrieveSubResourcesHistoricalCostDatapointsOfAVirtual(vmId, opts).then((data) => {
+apiInstance.getUserBillingHistoryVmSubResourceGraph2(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -923,7 +1502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -931,9 +1510,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveTotalCostsAndNonDiscountCostsForSubResources
+## getUserBillingHistoryVmTotalCosts
 
-> SubResourcesCostsResponseModel retrieveTotalCostsAndNonDiscountCostsForSubResources(vmId, opts)
+> SubResourcesCostsResponseModel getUserBillingHistoryVmTotalCosts(vmId, opts)
 
 Retrieve Total Costs and Non Discount Costs for Sub Resources
 
@@ -949,11 +1528,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let vmId = 56; // Number | 
@@ -961,7 +1535,7 @@ let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
 };
-apiInstance.retrieveTotalCostsAndNonDiscountCostsForSubResources(vmId, opts).then((data) => {
+apiInstance.getUserBillingHistoryVmTotalCosts(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -984,7 +1558,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -992,9 +1566,405 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveVmBillingEventsHistory
+## getUserBillingHistoryVolume2
 
-> ResourceBillingEventsHistoryResponse retrieveVmBillingEventsHistory(vmId, opts)
+> ResourceLevelVolumeBillingHistoryResponseModel getUserBillingHistoryVolume2(opts)
+
+Retrieve Billing History of Volume for a specific Billing Cycle
+
+User will recieve billing history of volumes for thespecified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;status&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;price_per_hour&#39;
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
+};
+apiInstance.getUserBillingHistoryVolume2(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeBillingHistoryResponseModel**](ResourceLevelVolumeBillingHistoryResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingHistoryVolumeDetails2
+
+> ResourceLevelVolumeBillingDetailsResponseModel getUserBillingHistoryVolumeDetails2(volumeId, opts)
+
+Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+
+Retrieve billing history of a specific Volume for the specified billing cycle. This data will include &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;price_per_hour&#39;, &#39;incurred_bill&#39;, &#39;usage_time&#39;, &#39;non_discounted_price_per_hour&#39;, &#39;non_discounted_bill&#39;.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let volumeId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingHistoryVolumeDetails2(volumeId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **volumeId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeBillingDetailsResponseModel**](ResourceLevelVolumeBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingModelEvaluationDetailsGraph
+
+> ModelEvaluationBillingHistoryDetailsResponseSchema getUserBillingModelEvaluationDetailsGraph(resourceId, opts)
+
+Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
+
+User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints. billing cycle
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingModelEvaluationDetailsGraph(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ModelEvaluationBillingHistoryDetailsResponseSchema**](ModelEvaluationBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingServerlessInferenceDetailsGraph
+
+> ServerlessInferencedBillingHistoryDetailsResponseSchema getUserBillingServerlessInferenceDetailsGraph(resourceId, opts)
+
+Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
+
+User will recieve hourly cost datapoints for a serverles inference for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints. billing cycle
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingServerlessInferenceDetailsGraph(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ServerlessInferencedBillingHistoryDetailsResponseSchema**](ServerlessInferencedBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingSnapshotDetailsGraph
+
+> ResourceLevelVolumeGraphBillingDetailsResponseModel getUserBillingSnapshotDetailsGraph(snapshotId, opts)
+
+Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
+
+User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let snapshotId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingSnapshotDetailsGraph(snapshotId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **snapshotId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeGraphBillingDetailsResponseModel**](ResourceLevelVolumeGraphBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingVmDetailsGraph2
+
+> ResourceLevelVmGraphBillingDetailsResponseModel getUserBillingVmDetailsGraph2(vmId, opts)
+
+Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+
+User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let vmId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingVmDetailsGraph2(vmId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVmGraphBillingDetailsResponseModel**](ResourceLevelVmGraphBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserBillingVolumeDetailsGraph
+
+> ResourceLevelVolumeGraphBillingDetailsResponseModel getUserBillingVolumeDetailsGraph(volumeId, opts)
+
+Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
+
+User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let volumeId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getUserBillingVolumeDetailsGraph(volumeId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **volumeId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeGraphBillingDetailsResponseModel**](ResourceLevelVolumeGraphBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getUserVmBillingEvents
+
+> ResourceBillingEventsHistoryResponse getUserVmBillingEvents(vmId, opts)
 
 Retrieve VM billing events history
 
@@ -1010,11 +1980,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let vmId = 56; // Number | 
@@ -1022,7 +1987,7 @@ let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
 };
-apiInstance.retrieveVmBillingEventsHistory(vmId, opts).then((data) => {
+apiInstance.getUserVmBillingEvents(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1045,7 +2010,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -1053,9 +2018,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveVolumeBillingEventsHistory
+## getUserVolumeBillingEvents
 
-> ResourceBillingEventsHistoryResponse retrieveVolumeBillingEventsHistory(volumeId, opts)
+> ResourceBillingEventsHistoryResponse getUserVolumeBillingEvents(volumeId, opts)
 
 Retrieve Volume billing events history
 
@@ -1071,11 +2036,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let volumeId = 56; // Number | 
@@ -1083,7 +2043,7 @@ let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
 };
-apiInstance.retrieveVolumeBillingEventsHistory(volumeId, opts).then((data) => {
+apiInstance.getUserVolumeBillingEvents(volumeId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1106,7 +2066,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -1114,9 +2074,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateSubscribeOrUnsubscribeNotificationThreshold
+## putOrganizationThreshold
 
-> Organizationthresholdupdateresponse updateSubscribeOrUnsubscribeNotificationThreshold(thresholdId, payload)
+> OrganizationThresholdUpdateResponse putOrganizationThreshold(thresholdId, payload)
 
 Update: Subscribe or Unsubscribe Notification Threshold
 
@@ -1132,16 +2092,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.BillingApi();
 let thresholdId = 56; // Number | 
-let payload = new HyperstackApi.Subscribeorunsubscribeupdatepayload(); // Subscribeorunsubscribeupdatepayload | 
-apiInstance.updateSubscribeOrUnsubscribeNotificationThreshold(thresholdId, payload).then((data) => {
+let payload = new HyperstackApi.SubscribeOrUnsubscribeUpdatePayload(); // SubscribeOrUnsubscribeUpdatePayload | 
+apiInstance.putOrganizationThreshold(thresholdId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1155,15 +2110,15 @@ apiInstance.updateSubscribeOrUnsubscribeNotificationThreshold(thresholdId, paylo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **thresholdId** | **Number**|  | 
- **payload** | [**Subscribeorunsubscribeupdatepayload**](Subscribeorunsubscribeupdatepayload.md)|  | 
+ **payload** | [**SubscribeOrUnsubscribeUpdatePayload**](SubscribeOrUnsubscribeUpdatePayload.md)|  | 
 
 ### Return type
 
-[**Organizationthresholdupdateresponse**](Organizationthresholdupdateresponse.md)
+[**OrganizationThresholdUpdateResponse**](OrganizationThresholdUpdateResponse.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

@@ -19,7 +19,7 @@ import GPUList from '../model/GPUList';
 /**
 * Gpu service.
 * @module api/GpuApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class GpuApi {
 
@@ -41,7 +41,7 @@ export default class GpuApi {
      * Returns a list of all available GPUs that can be utilized in the creation of custom virtual machine configurations.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GPUList} and HTTP response
      */
-    listGpusWithHttpInfo() {
+    listGPUsWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -53,7 +53,7 @@ export default class GpuApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GPUList;
@@ -69,8 +69,8 @@ export default class GpuApi {
      * Returns a list of all available GPUs that can be utilized in the creation of custom virtual machine configurations.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GPUList}
      */
-    listGpus() {
-      return this.listGpusWithHttpInfo()
+    listGPUs() {
+      return this.listGPUsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

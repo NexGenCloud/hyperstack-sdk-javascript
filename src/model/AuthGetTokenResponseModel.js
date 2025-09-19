@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import TokenFields from './TokenFields';
+import AccessTokenField from './AccessTokenField';
 
 /**
  * The AuthGetTokenResponseModel model module.
  * @module model/AuthGetTokenResponseModel
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class AuthGetTokenResponseModel {
     /**
@@ -48,9 +48,6 @@ class AuthGetTokenResponseModel {
         if (data) {
             obj = obj || new AuthGetTokenResponseModel();
 
-            if (data.hasOwnProperty('first_login')) {
-                obj['first_login'] = ApiClient.convertToType(data['first_login'], 'Boolean');
-            }
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
@@ -58,7 +55,7 @@ class AuthGetTokenResponseModel {
                 obj['status'] = ApiClient.convertToType(data['status'], 'Boolean');
             }
             if (data.hasOwnProperty('token')) {
-                obj['token'] = TokenFields.constructFromObject(data['token']);
+                obj['token'] = AccessTokenField.constructFromObject(data['token']);
             }
         }
         return obj;
@@ -76,7 +73,7 @@ class AuthGetTokenResponseModel {
         }
         // validate the optional field `token`
         if (data['token']) { // data not null
-          TokenFields.validateJSON(data['token']);
+          AccessTokenField.validateJSON(data['token']);
         }
 
         return true;
@@ -86,11 +83,6 @@ class AuthGetTokenResponseModel {
 }
 
 
-
-/**
- * @member {Boolean} first_login
- */
-AuthGetTokenResponseModel.prototype['first_login'] = undefined;
 
 /**
  * @member {String} message
@@ -103,7 +95,7 @@ AuthGetTokenResponseModel.prototype['message'] = undefined;
 AuthGetTokenResponseModel.prototype['status'] = undefined;
 
 /**
- * @member {module:model/TokenFields} token
+ * @member {module:model/AccessTokenField} token
  */
 AuthGetTokenResponseModel.prototype['token'] = undefined;
 

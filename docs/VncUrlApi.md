@@ -4,16 +4,18 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVncConsoleLink**](VncUrlApi.md#getVncConsoleLink) | **GET** /core/virtual-machines/{virtual_machine_id}/console/{job_id} | Get VNC Console Link
-[**requestInstanceConsole**](VncUrlApi.md#requestInstanceConsole) | **GET** /core/virtual-machines/{id}/request-console | Request Instance Console
+[**getVncUrl**](VncUrlApi.md#getVncUrl) | **GET** /core/virtual-machines/{vm_id}/console/{job_id} | Get VNC Console Link
+[**getVncUrl2**](VncUrlApi.md#getVncUrl2) | **GET** /core/virtual-machines/{vm_id}/request-console | Request Instance Console
 
 
 
-## getVncConsoleLink
+## getVncUrl
 
-> VNCURL getVncConsoleLink(virtualMachineId, jobId)
+> VNCURL getVncUrl(vmId, jobId)
 
 Get VNC Console Link
+
+Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
 ### Example
 
@@ -25,16 +27,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VncUrlApi();
-let virtualMachineId = 56; // Number | 
+let vmId = 56; // Number | 
 let jobId = 56; // Number | 
-apiInstance.getVncConsoleLink(virtualMachineId, jobId).then((data) => {
+apiInstance.getVncUrl(vmId, jobId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -47,7 +44,7 @@ apiInstance.getVncConsoleLink(virtualMachineId, jobId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **virtualMachineId** | **Number**|  | 
+ **vmId** | **Number**|  | 
  **jobId** | **Number**|  | 
 
 ### Return type
@@ -56,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -64,11 +61,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## requestInstanceConsole
+## getVncUrl2
 
-> RequestConsole requestInstanceConsole(id)
+> RequestConsole getVncUrl2(vmId)
 
 Request Instance Console
+
+Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
 ### Example
 
@@ -80,15 +79,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VncUrlApi();
-let id = 56; // Number | 
-apiInstance.requestInstanceConsole(id).then((data) => {
+let vmId = 56; // Number | 
+apiInstance.getVncUrl2(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -101,7 +95,7 @@ apiInstance.requestInstanceConsole(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **vmId** | **Number**|  | 
 
 ### Return type
 
@@ -109,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

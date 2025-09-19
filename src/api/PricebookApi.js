@@ -19,7 +19,7 @@ import PricebookModel from '../model/PricebookModel';
 /**
 * Pricebook service.
 * @module api/PricebookApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class PricebookApi {
 
@@ -37,9 +37,10 @@ export default class PricebookApi {
 
 
     /**
+     * Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PricebookModel>} and HTTP response
      */
-    retrivePricebookWithHttpInfo() {
+    getPricebookWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -51,7 +52,7 @@ export default class PricebookApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PricebookModel];
@@ -63,10 +64,11 @@ export default class PricebookApi {
     }
 
     /**
+     * Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PricebookModel>}
      */
-    retrivePricebook() {
-      return this.retrivePricebookWithHttpInfo()
+    getPricebook() {
+      return this.getPricebookWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -11,7 +11,7 @@ var _ImportKeypairResponse = _interopRequireDefault(require("../model/ImportKeyp
 var _Keypairs = _interopRequireDefault(require("../model/Keypairs"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
 var _UpdateKeypairName = _interopRequireDefault(require("../model/UpdateKeypairName"));
-var _UpdateKeypairnameresponse = _interopRequireDefault(require("../model/UpdateKeypairnameresponse"));
+var _UpdateKeypairNameResponse = _interopRequireDefault(require("../model/UpdateKeypairNameResponse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -33,7 +33,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Keypair service.
 * @module api/KeypairApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var KeypairApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -50,7 +50,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Delete key pair
-   * Permanently deletes a specified key pair. Include the key pair ID in the request path to remove the designated key pair.
+   * Permanently deletes a specified key pair. Provide the key pair ID in the path to remove the designated key pair.
    * @param {Number} id 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
    */
@@ -68,7 +68,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
@@ -77,7 +77,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Delete key pair
-     * Permanently deletes a specified key pair. Include the key pair ID in the request path to remove the designated key pair.
+     * Permanently deletes a specified key pair. Provide the key pair ID in the path to remove the designated key pair.
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
@@ -91,7 +91,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Import key pair
-     * Imports a new key pair for secure shell (SSH) access to your resources. To import a new key pair, include the key name, environment name, and public key in the request body. For additional information on importing SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair#importing-an-ssh-key).
+     * Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/import-keypair).
      * @param {module:model/ImportKeypairPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImportKeypairResponse} and HTTP response
      */
@@ -107,7 +107,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _ImportKeypairResponse["default"];
@@ -116,7 +116,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Import key pair
-     * Imports a new key pair for secure shell (SSH) access to your resources. To import a new key pair, include the key name, environment name, and public key in the request body. For additional information on importing SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair#importing-an-ssh-key).
+     * Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/import-keypair).
      * @param {module:model/ImportKeypairPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImportKeypairResponse}
      */
@@ -130,7 +130,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List key pairs
-     * Retrieves a list of your existing SSH key pairs, providing details for each. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/keypairs-available-features).
+     * Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
      * @param {Object} opts Optional parameters
      * @param {String} [page] Page Number
      * @param {String} [pageSize] Data Per Page
@@ -150,7 +150,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
       };
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Keypairs["default"];
@@ -159,7 +159,7 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List key pairs
-     * Retrieves a list of your existing SSH key pairs, providing details for each. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/keypairs-available-features).
+     * Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
      * @param {Object} opts Optional parameters
      * @param {String} opts.page Page Number
      * @param {String} opts.pageSize Data Per Page
@@ -176,10 +176,10 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Update key pair name
-     * Updates the name of a specified key pair. Include the key pair ID in the request path and the new `name` of the key pair in the request body.
+     * Updates the name of a specified key pair. Provide the key pair ID in the path, and include the new `name` in the request body.
      * @param {Number} id 
      * @param {module:model/UpdateKeypairName} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateKeypairnameresponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateKeypairNameResponse} and HTTP response
      */
   }, {
     key: "updateKeyPairNameWithHttpInfo",
@@ -199,19 +199,19 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _UpdateKeypairnameresponse["default"];
+      var returnType = _UpdateKeypairNameResponse["default"];
       return this.apiClient.callApi('/core/keypair/{id}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Update key pair name
-     * Updates the name of a specified key pair. Include the key pair ID in the request path and the new `name` of the key pair in the request body.
+     * Updates the name of a specified key pair. Provide the key pair ID in the path, and include the new `name` in the request body.
      * @param {Number} id 
      * @param {module:model/UpdateKeypairName} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateKeypairnameresponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateKeypairNameResponse}
      */
   }, {
     key: "updateKeyPairName",

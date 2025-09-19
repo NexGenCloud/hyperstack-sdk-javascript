@@ -6,10 +6,17 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 var _ClusterListResponse = _interopRequireDefault(require("../model/ClusterListResponse"));
+var _ClusterNodeGroupsCreateResponse = _interopRequireDefault(require("../model/ClusterNodeGroupsCreateResponse"));
+var _ClusterNodeGroupsGetResponse = _interopRequireDefault(require("../model/ClusterNodeGroupsGetResponse"));
+var _ClusterNodeGroupsListResponse = _interopRequireDefault(require("../model/ClusterNodeGroupsListResponse"));
+var _ClusterNodesListResponse = _interopRequireDefault(require("../model/ClusterNodesListResponse"));
 var _ClusterResponse = _interopRequireDefault(require("../model/ClusterResponse"));
 var _ClusterVersions = _interopRequireDefault(require("../model/ClusterVersions"));
+var _CreateClusterNodeFields = _interopRequireDefault(require("../model/CreateClusterNodeFields"));
+var _CreateClusterNodeGroupPayload = _interopRequireDefault(require("../model/CreateClusterNodeGroupPayload"));
 var _CreateClusterPayload = _interopRequireDefault(require("../model/CreateClusterPayload"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
+var _MasterFlavorsResponse = _interopRequireDefault(require("../model/MasterFlavorsResponse"));
 var _NameAvailableModel = _interopRequireDefault(require("../model/NameAvailableModel"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -33,7 +40,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var ClustersApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -65,7 +72,7 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _ClusterResponse["default"];
@@ -81,6 +88,96 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
     key: "createCluster",
     value: function createCluster(payload) {
       return this.createClusterWithHttpInfo(payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Create Node
+     * @param {Number} clusterId 
+     * @param {module:model/CreateClusterNodeFields} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodesListResponse} and HTTP response
+     */
+  }, {
+    key: "createNodeWithHttpInfo",
+    value: function createNodeWithHttpInfo(clusterId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling createNode");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling createNode");
+      }
+      var pathParams = {
+        'cluster_id': clusterId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _ClusterNodesListResponse["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/nodes', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Create Node
+     * @param {Number} clusterId 
+     * @param {module:model/CreateClusterNodeFields} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodesListResponse}
+     */
+  }, {
+    key: "createNode",
+    value: function createNode(clusterId, payload) {
+      return this.createNodeWithHttpInfo(clusterId, payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Create a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {module:model/CreateClusterNodeGroupPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsCreateResponse} and HTTP response
+     */
+  }, {
+    key: "createNodeGroupWithHttpInfo",
+    value: function createNodeGroupWithHttpInfo(clusterId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling createNodeGroup");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling createNodeGroup");
+      }
+      var pathParams = {
+        'cluster_id': clusterId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _ClusterNodeGroupsCreateResponse["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/node-groups', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Create a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {module:model/CreateClusterNodeGroupPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsCreateResponse}
+     */
+  }, {
+    key: "createNodeGroup",
+    value: function createNodeGroup(clusterId, payload) {
+      return this.createNodeGroupWithHttpInfo(clusterId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -104,7 +201,7 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
@@ -120,6 +217,98 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
     key: "deleteACluster",
     value: function deleteACluster(id) {
       return this.deleteAClusterWithHttpInfo(id).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Delete a node group
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     */
+  }, {
+    key: "deleteANodeGroupWithHttpInfo",
+    value: function deleteANodeGroupWithHttpInfo(clusterId, nodeGroupId) {
+      var postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling deleteANodeGroup");
+      }
+      // verify the required parameter 'nodeGroupId' is set
+      if (nodeGroupId === undefined || nodeGroupId === null) {
+        throw new Error("Missing the required parameter 'nodeGroupId' when calling deleteANodeGroup");
+      }
+      var pathParams = {
+        'cluster_id': clusterId,
+        'node_group_id': nodeGroupId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ResponseModel["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Delete a node group
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
+     */
+  }, {
+    key: "deleteANodeGroup",
+    value: function deleteANodeGroup(clusterId, nodeGroupId) {
+      return this.deleteANodeGroupWithHttpInfo(clusterId, nodeGroupId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Delete Cluster Node
+     * @param {Number} clusterId 
+     * @param {Number} nodeId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     */
+  }, {
+    key: "deleteClusterNodeWithHttpInfo",
+    value: function deleteClusterNodeWithHttpInfo(clusterId, nodeId) {
+      var postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling deleteClusterNode");
+      }
+      // verify the required parameter 'nodeId' is set
+      if (nodeId === undefined || nodeId === null) {
+        throw new Error("Missing the required parameter 'nodeId' when calling deleteClusterNode");
+      }
+      var pathParams = {
+        'cluster_id': clusterId,
+        'node_id': nodeId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ResponseModel["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/nodes/{node_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Delete Cluster Node
+     * @param {Number} clusterId 
+     * @param {Number} nodeId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
+     */
+  }, {
+    key: "deleteClusterNode",
+    value: function deleteClusterNode(clusterId, nodeId) {
+      return this.deleteClusterNodeWithHttpInfo(clusterId, nodeId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -144,7 +333,7 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _NameAvailableModel["default"];
@@ -166,18 +355,94 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
-     * GET Cluster Versions
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterVersions} and HTTP response
+     * Get Cluster Master Flavors
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MasterFlavorsResponse} and HTTP response
      */
   }, {
-    key: "getClusterVersionsWithHttpInfo",
-    value: function getClusterVersionsWithHttpInfo() {
+    key: "getClusterMasterFlavorsWithHttpInfo",
+    value: function getClusterMasterFlavorsWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _MasterFlavorsResponse["default"];
+      return this.apiClient.callApi('/core/clusters/master-flavors', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Get Cluster Master Flavors
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MasterFlavorsResponse}
+     */
+  }, {
+    key: "getClusterMasterFlavors",
+    value: function getClusterMasterFlavors() {
+      return this.getClusterMasterFlavorsWithHttpInfo().then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Get Cluster Nodes
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodesListResponse} and HTTP response
+     */
+  }, {
+    key: "getClusterNodesWithHttpInfo",
+    value: function getClusterNodesWithHttpInfo(clusterId) {
+      var postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling getClusterNodes");
+      }
+      var pathParams = {
+        'cluster_id': clusterId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ClusterNodesListResponse["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/nodes', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Get Cluster Nodes
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodesListResponse}
+     */
+  }, {
+    key: "getClusterNodes",
+    value: function getClusterNodes(clusterId) {
+      return this.getClusterNodesWithHttpInfo(clusterId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * List Cluster Versions
+     * Lists available Kubernetes versions, optionally filtered by region.
+     * @param {Object} opts Optional parameters
+     * @param {String} [region] Filter versions by region name (optional)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterVersions} and HTTP response
+     */
+  }, {
+    key: "getClusterVersionsWithHttpInfo",
+    value: function getClusterVersionsWithHttpInfo(opts) {
+      opts = opts || {};
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {
+        'region': opts['region']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ClusterVersions["default"];
@@ -185,13 +450,16 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
-     * GET Cluster Versions
+     * List Cluster Versions
+     * Lists available Kubernetes versions, optionally filtered by region.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.region Filter versions by region name (optional)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterVersions}
      */
   }, {
     key: "getClusterVersions",
-    value: function getClusterVersions() {
-      return this.getClusterVersionsWithHttpInfo().then(function (response_and_data) {
+    value: function getClusterVersions(opts) {
+      return this.getClusterVersionsWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -215,7 +483,7 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ClusterResponse["default"];
@@ -237,17 +505,28 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List Clusters
+     * @param {Object} opts Optional parameters
+     * @param {Number} [page] Page number for pagination
+     * @param {Number} [pageSize] Number of items per page
+     * @param {String} [environment] Environment Filter
+     * @param {String} [search] Search query to filter cluster by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterListResponse} and HTTP response
      */
   }, {
     key: "listClustersWithHttpInfo",
-    value: function listClustersWithHttpInfo() {
+    value: function listClustersWithHttpInfo(opts) {
+      opts = opts || {};
       var postBody = null;
       var pathParams = {};
-      var queryParams = {};
+      var queryParams = {
+        'page': opts['page'],
+        'pageSize': opts['pageSize'],
+        'environment': opts['environment'],
+        'search': opts['search']
+      };
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ClusterListResponse["default"];
@@ -256,12 +535,102 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List Clusters
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page Page number for pagination
+     * @param {Number} opts.pageSize Number of items per page
+     * @param {String} opts.environment Environment Filter
+     * @param {String} opts.search Search query to filter cluster by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterListResponse}
      */
   }, {
     key: "listClusters",
-    value: function listClusters() {
-      return this.listClustersWithHttpInfo().then(function (response_and_data) {
+    value: function listClusters(opts) {
+      return this.listClustersWithHttpInfo(opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * List node groups for a cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsListResponse} and HTTP response
+     */
+  }, {
+    key: "listNodeGroupsWithHttpInfo",
+    value: function listNodeGroupsWithHttpInfo(clusterId) {
+      var postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling listNodeGroups");
+      }
+      var pathParams = {
+        'cluster_id': clusterId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ClusterNodeGroupsListResponse["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/node-groups', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * List node groups for a cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsListResponse}
+     */
+  }, {
+    key: "listNodeGroups",
+    value: function listNodeGroups(clusterId) {
+      return this.listNodeGroupsWithHttpInfo(clusterId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Retrieve a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsGetResponse} and HTTP response
+     */
+  }, {
+    key: "retrieveANodeGroupWithHttpInfo",
+    value: function retrieveANodeGroupWithHttpInfo(clusterId, nodeGroupId) {
+      var postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling retrieveANodeGroup");
+      }
+      // verify the required parameter 'nodeGroupId' is set
+      if (nodeGroupId === undefined || nodeGroupId === null) {
+        throw new Error("Missing the required parameter 'nodeGroupId' when calling retrieveANodeGroup");
+      }
+      var pathParams = {
+        'cluster_id': clusterId,
+        'node_group_id': nodeGroupId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ClusterNodeGroupsGetResponse["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsGetResponse}
+     */
+  }, {
+    key: "retrieveANodeGroup",
+    value: function retrieveANodeGroup(clusterId, nodeGroupId) {
+      return this.retrieveANodeGroupWithHttpInfo(clusterId, nodeGroupId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

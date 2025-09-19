@@ -25,7 +25,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
  */
 /**
 * @module ApiClient
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 /**
 * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
@@ -55,11 +55,6 @@ var ApiClient = /*#__PURE__*/function () {
      * @type {Array.<String>}
      */
     this.authentications = {
-      'accessToken': {
-        type: 'apiKey',
-        'in': 'header',
-        name: 'Authorization'
-      },
       'apiKey': {
         type: 'apiKey',
         'in': 'header',
@@ -73,7 +68,7 @@ var ApiClient = /*#__PURE__*/function () {
      * @default {}
      */
     this.defaultHeaders = {
-      'User-Agent': 'OpenAPI-Generator/v1.25.0-alpha/Javascript'
+      'User-Agent': 'OpenAPI-Generator/v1.41.0-alpha/Javascript'
     };
 
     /**

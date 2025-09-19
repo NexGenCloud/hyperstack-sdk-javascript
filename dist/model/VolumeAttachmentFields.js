@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-var _VolumeFieldsforInstance = _interopRequireDefault(require("./VolumeFieldsforInstance"));
+var _VolumeFieldsForInstance = _interopRequireDefault(require("./VolumeFieldsForInstance"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The VolumeAttachmentFields model module.
  * @module model/VolumeAttachmentFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var VolumeAttachmentFields = /*#__PURE__*/function () {
   /**
@@ -66,11 +66,17 @@ var VolumeAttachmentFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('device')) {
           obj['device'] = _ApiClient["default"].convertToType(data['device'], 'String');
         }
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+        }
+        if (data.hasOwnProperty('protected')) {
+          obj['protected'] = _ApiClient["default"].convertToType(data['protected'], 'Boolean');
+        }
         if (data.hasOwnProperty('status')) {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
         }
         if (data.hasOwnProperty('volume')) {
-          obj['volume'] = _VolumeFieldsforInstance["default"].constructFromObject(data['volume']);
+          obj['volume'] = _VolumeFieldsForInstance["default"].constructFromObject(data['volume']);
         }
       }
       return obj;
@@ -95,7 +101,7 @@ var VolumeAttachmentFields = /*#__PURE__*/function () {
       // validate the optional field `volume`
       if (data['volume']) {
         // data not null
-        _VolumeFieldsforInstance["default"].validateJSON(data['volume']);
+        _VolumeFieldsForInstance["default"].validateJSON(data['volume']);
       }
       return true;
     }
@@ -112,12 +118,22 @@ VolumeAttachmentFields.prototype['created_at'] = undefined;
 VolumeAttachmentFields.prototype['device'] = undefined;
 
 /**
+ * @member {Number} id
+ */
+VolumeAttachmentFields.prototype['id'] = undefined;
+
+/**
+ * @member {Boolean} protected
+ */
+VolumeAttachmentFields.prototype['protected'] = undefined;
+
+/**
  * @member {String} status
  */
 VolumeAttachmentFields.prototype['status'] = undefined;
 
 /**
- * @member {module:model/VolumeFieldsforInstance} volume
+ * @member {module:model/VolumeFieldsForInstance} volume
  */
 VolumeAttachmentFields.prototype['volume'] = undefined;
 var _default = exports["default"] = VolumeAttachmentFields;

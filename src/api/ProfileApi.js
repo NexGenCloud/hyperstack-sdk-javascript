@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Profile service.
 * @module api/ProfileApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class ProfileApi {
 
@@ -41,7 +41,7 @@ export default class ProfileApi {
 
     /**
      * Create profile
-     * Creates a provisioning profile to save the configuration of a virtual machine for future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/provisioning-profiles).
+     * Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
      * @param {module:model/CreateProfilePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateProfileResponse} and HTTP response
      */
@@ -61,7 +61,7 @@ export default class ProfileApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CreateProfileResponse;
@@ -74,7 +74,7 @@ export default class ProfileApi {
 
     /**
      * Create profile
-     * Creates a provisioning profile to save the configuration of a virtual machine for future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/provisioning-profiles).
+     * Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
      * @param {module:model/CreateProfilePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateProfileResponse}
      */
@@ -109,7 +109,7 @@ export default class ProfileApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
@@ -136,7 +136,7 @@ export default class ProfileApi {
 
     /**
      * List profiles
-     * Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/provisioning-profiles#retrieve-a-list-of-profiles).
+     * Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProfileListResponse} and HTTP response
      */
     listProfilesWithHttpInfo() {
@@ -151,7 +151,7 @@ export default class ProfileApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProfileListResponse;
@@ -164,7 +164,7 @@ export default class ProfileApi {
 
     /**
      * List profiles
-     * Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/provisioning-profiles#retrieve-a-list-of-profiles).
+     * Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProfileListResponse}
      */
     listProfiles() {
@@ -177,7 +177,7 @@ export default class ProfileApi {
 
     /**
      * Retrieve profile details
-     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/provisioning-profiles).
+     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateProfileResponse} and HTTP response
      */
@@ -198,7 +198,7 @@ export default class ProfileApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CreateProfileResponse;
@@ -211,7 +211,7 @@ export default class ProfileApi {
 
     /**
      * Retrieve profile details
-     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/provisioning-profiles).
+     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateProfileResponse}
      */

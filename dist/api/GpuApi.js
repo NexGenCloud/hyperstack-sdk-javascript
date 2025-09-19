@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Gpu service.
 * @module api/GpuApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var GpuApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -49,14 +49,14 @@ var GpuApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GPUList} and HTTP response
    */
   return _createClass(GpuApi, [{
-    key: "listGpusWithHttpInfo",
-    value: function listGpusWithHttpInfo() {
+    key: "listGPUsWithHttpInfo",
+    value: function listGPUsWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _GPUList["default"];
@@ -69,9 +69,9 @@ var GpuApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GPUList}
      */
   }, {
-    key: "listGpus",
-    value: function listGpus() {
-      return this.listGpusWithHttpInfo().then(function (response_and_data) {
+    key: "listGPUs",
+    value: function listGPUs() {
+      return this.listGPUsWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

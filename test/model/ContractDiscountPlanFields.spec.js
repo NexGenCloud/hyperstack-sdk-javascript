@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property remainingCount (base name: "remaining_count")', function() {
+      // uncomment below and update the code to test the property remainingCount
+      //var instance = new HyperstackApi.ContractDiscountPlanFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property resourceCount (base name: "resource_count")', function() {
       // uncomment below and update the code to test the property resourceCount
       //var instance = new HyperstackApi.ContractDiscountPlanFields();

@@ -4,18 +4,18 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachPublicIpToVirtualMachine**](FloatingIpApi.md#attachPublicIpToVirtualMachine) | **POST** /core/virtual-machines/{id}/attach-floatingip | Attach public IP to virtual machine
-[**detachPublicIpFromVirtualMachine**](FloatingIpApi.md#detachPublicIpFromVirtualMachine) | **POST** /core/virtual-machines/{id}/detach-floatingip | Detach public IP from virtual machine
+[**attachPublicIPToVirtualMachine**](FloatingIpApi.md#attachPublicIPToVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/attach-floatingip | Attach public IP to virtual machine
+[**detachPublicIPFromVirtualMachine**](FloatingIpApi.md#detachPublicIPFromVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/detach-floatingip | Detach public IP from virtual machine
 
 
 
-## attachPublicIpToVirtualMachine
+## attachPublicIPToVirtualMachine
 
-> ResponseModel attachPublicIpToVirtualMachine(id)
+> ResponseModel attachPublicIPToVirtualMachine(vmId)
 
 Attach public IP to virtual machine
 
-Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
+Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
 
 ### Example
 
@@ -27,15 +27,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.FloatingIpApi();
-let id = 56; // Number | 
-apiInstance.attachPublicIpToVirtualMachine(id).then((data) => {
+let vmId = 56; // Number | 
+apiInstance.attachPublicIPToVirtualMachine(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -48,7 +43,7 @@ apiInstance.attachPublicIpToVirtualMachine(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **vmId** | **Number**|  | 
 
 ### Return type
 
@@ -56,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -64,13 +59,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## detachPublicIpFromVirtualMachine
+## detachPublicIPFromVirtualMachine
 
-> ResponseModel detachPublicIpFromVirtualMachine(id)
+> ResponseModel detachPublicIPFromVirtualMachine(vmId)
 
 Detach public IP from virtual machine
 
-Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip).
+Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
 
 ### Example
 
@@ -82,15 +77,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.FloatingIpApi();
-let id = 56; // Number | 
-apiInstance.detachPublicIpFromVirtualMachine(id).then((data) => {
+let vmId = 56; // Number | 
+apiInstance.detachPublicIPFromVirtualMachine(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -103,7 +93,7 @@ apiInstance.detachPublicIpFromVirtualMachine(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **vmId** | **Number**|  | 
 
 ### Return type
 
@@ -111,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

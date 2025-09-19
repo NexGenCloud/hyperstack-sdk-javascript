@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-var _DeploymentFieldsforstartdeployments = _interopRequireDefault(require("./DeploymentFieldsforstartdeployments"));
+var _DeploymentFieldsForStartDeployments = _interopRequireDefault(require("./DeploymentFieldsForStartDeployments"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The StartDeployment model module.
  * @module model/StartDeployment
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var StartDeployment = /*#__PURE__*/function () {
   /**
@@ -61,7 +61,7 @@ var StartDeployment = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new StartDeployment();
         if (data.hasOwnProperty('deployment')) {
-          obj['deployment'] = _DeploymentFieldsforstartdeployments["default"].constructFromObject(data['deployment']);
+          obj['deployment'] = _DeploymentFieldsForStartDeployments["default"].constructFromObject(data['deployment']);
         }
         if (data.hasOwnProperty('message')) {
           obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
@@ -84,7 +84,7 @@ var StartDeployment = /*#__PURE__*/function () {
       // validate the optional field `deployment`
       if (data['deployment']) {
         // data not null
-        _DeploymentFieldsforstartdeployments["default"].validateJSON(data['deployment']);
+        _DeploymentFieldsForStartDeployments["default"].validateJSON(data['deployment']);
       }
       // ensure the json data is a string
       if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
@@ -95,7 +95,7 @@ var StartDeployment = /*#__PURE__*/function () {
   }]);
 }();
 /**
- * @member {module:model/DeploymentFieldsforstartdeployments} deployment
+ * @member {module:model/DeploymentFieldsForStartDeployments} deployment
  */
 StartDeployment.prototype['deployment'] = undefined;
 

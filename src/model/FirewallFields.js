@@ -17,7 +17,7 @@ import FirewallEnvironmentFields from './FirewallEnvironmentFields';
 /**
  * The FirewallFields model module.
  * @module model/FirewallFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class FirewallFields {
     /**

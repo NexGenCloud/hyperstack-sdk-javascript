@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Snapshots model module.
  * @module model/Snapshots
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var Snapshots = /*#__PURE__*/function () {
   /**

@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(HyperstackApi.ContractInstanceFields);
     });
 
+    it('should have the property cluster (base name: "cluster")', function() {
+      // uncomment below and update the code to test the property cluster
+      //var instance = new HyperstackApi.ContractInstanceFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instance = new HyperstackApi.ContractInstanceFields();

@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Pricebook service.
 * @module api/PricebookApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var PricebookApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -44,17 +44,18 @@ var PricebookApi = exports["default"] = /*#__PURE__*/function () {
   }
 
   /**
+   * Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PricebookModel>} and HTTP response
    */
   return _createClass(PricebookApi, [{
-    key: "retrivePricebookWithHttpInfo",
-    value: function retrivePricebookWithHttpInfo() {
+    key: "getPricebookWithHttpInfo",
+    value: function getPricebookWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [_PricebookModel["default"]];
@@ -62,12 +63,13 @@ var PricebookApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
+     * Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PricebookModel>}
      */
   }, {
-    key: "retrivePricebook",
-    value: function retrivePricebook() {
-      return this.retrivePricebookWithHttpInfo().then(function (response_and_data) {
+    key: "getPricebook",
+    value: function getPricebook() {
+      return this.getPricebookWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

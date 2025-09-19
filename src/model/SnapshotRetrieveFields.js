@@ -16,12 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The SnapshotRetrieveFields model module.
  * @module model/SnapshotRetrieveFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class SnapshotRetrieveFields {
     /**
      * Constructs a new <code>SnapshotRetrieveFields</code>.
      * @alias module:model/SnapshotRetrieveFields
+     * @param createdAt {Date} Creation timestamp
      * @param description {String} Description of the snapshot
      * @param id {Number} Snapshot ID
      * @param isImage {Boolean} Indicates if the snapshot is an image
@@ -29,11 +30,12 @@ class SnapshotRetrieveFields {
      * @param regionId {Number} Region where the snapshot will be available
      * @param size {Number} Size in GB of the snapshot
      * @param status {String} Status of the snapshot
+     * @param updatedAt {Date} Last update timestamp
      * @param vmId {Number} ID of the VM from which the snapshot is created
      */
-    constructor(description, id, isImage, name, regionId, size, status, vmId) { 
+    constructor(createdAt, description, id, isImage, name, regionId, size, status, updatedAt, vmId) { 
         
-        SnapshotRetrieveFields.initialize(this, description, id, isImage, name, regionId, size, status, vmId);
+        SnapshotRetrieveFields.initialize(this, createdAt, description, id, isImage, name, regionId, size, status, updatedAt, vmId);
     }
 
     /**
@@ -41,7 +43,8 @@ class SnapshotRetrieveFields {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, description, id, isImage, name, regionId, size, status, vmId) { 
+    static initialize(obj, createdAt, description, id, isImage, name, regionId, size, status, updatedAt, vmId) { 
+        obj['created_at'] = createdAt;
         obj['description'] = description;
         obj['id'] = id;
         obj['is_image'] = isImage;
@@ -49,6 +52,7 @@ class SnapshotRetrieveFields {
         obj['region_id'] = regionId;
         obj['size'] = size;
         obj['status'] = status;
+        obj['updated_at'] = updatedAt;
         obj['vm_id'] = vmId;
     }
 
@@ -63,6 +67,12 @@ class SnapshotRetrieveFields {
         if (data) {
             obj = obj || new SnapshotRetrieveFields();
 
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('custom_image')) {
+                obj['custom_image'] = ApiClient.convertToType(data['custom_image'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -75,8 +85,14 @@ class SnapshotRetrieveFields {
             if (data.hasOwnProperty('is_image')) {
                 obj['is_image'] = ApiClient.convertToType(data['is_image'], 'Boolean');
             }
+            if (data.hasOwnProperty('labels')) {
+                obj['labels'] = ApiClient.convertToType(data['labels'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('region_id')) {
                 obj['region_id'] = ApiClient.convertToType(data['region_id'], 'Number');
@@ -87,8 +103,35 @@ class SnapshotRetrieveFields {
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
+            if (data.hasOwnProperty('vm_environment')) {
+                obj['vm_environment'] = ApiClient.convertToType(data['vm_environment'], 'String');
+            }
+            if (data.hasOwnProperty('vm_flavor')) {
+                obj['vm_flavor'] = ApiClient.convertToType(data['vm_flavor'], 'String');
+            }
             if (data.hasOwnProperty('vm_id')) {
                 obj['vm_id'] = ApiClient.convertToType(data['vm_id'], 'Number');
+            }
+            if (data.hasOwnProperty('vm_image')) {
+                obj['vm_image'] = ApiClient.convertToType(data['vm_image'], 'String');
+            }
+            if (data.hasOwnProperty('vm_keypair')) {
+                obj['vm_keypair'] = ApiClient.convertToType(data['vm_keypair'], 'String');
+            }
+            if (data.hasOwnProperty('vm_name')) {
+                obj['vm_name'] = ApiClient.convertToType(data['vm_name'], 'String');
+            }
+            if (data.hasOwnProperty('vm_status')) {
+                obj['vm_status'] = ApiClient.convertToType(data['vm_status'], 'String');
+            }
+            if (data.hasOwnProperty('volume_id')) {
+                obj['volume_id'] = ApiClient.convertToType(data['volume_id'], 'String');
+            }
+            if (data.hasOwnProperty('volume_name')) {
+                obj['volume_name'] = ApiClient.convertToType(data['volume_name'], 'String');
             }
         }
         return obj;
@@ -107,16 +150,60 @@ class SnapshotRetrieveFields {
             }
         }
         // ensure the json data is a string
+        if (data['custom_image'] && !(typeof data['custom_image'] === 'string' || data['custom_image'] instanceof String)) {
+            throw new Error("Expected the field `custom_image` to be a primitive type in the JSON string but got " + data['custom_image']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['labels'] && !(typeof data['labels'] === 'string' || data['labels'] instanceof String)) {
+            throw new Error("Expected the field `labels` to be a primitive type in the JSON string but got " + data['labels']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
         // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
+        }
+        // ensure the json data is a string
         if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
             throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
+        }
+        // ensure the json data is a string
+        if (data['vm_environment'] && !(typeof data['vm_environment'] === 'string' || data['vm_environment'] instanceof String)) {
+            throw new Error("Expected the field `vm_environment` to be a primitive type in the JSON string but got " + data['vm_environment']);
+        }
+        // ensure the json data is a string
+        if (data['vm_flavor'] && !(typeof data['vm_flavor'] === 'string' || data['vm_flavor'] instanceof String)) {
+            throw new Error("Expected the field `vm_flavor` to be a primitive type in the JSON string but got " + data['vm_flavor']);
+        }
+        // ensure the json data is a string
+        if (data['vm_image'] && !(typeof data['vm_image'] === 'string' || data['vm_image'] instanceof String)) {
+            throw new Error("Expected the field `vm_image` to be a primitive type in the JSON string but got " + data['vm_image']);
+        }
+        // ensure the json data is a string
+        if (data['vm_keypair'] && !(typeof data['vm_keypair'] === 'string' || data['vm_keypair'] instanceof String)) {
+            throw new Error("Expected the field `vm_keypair` to be a primitive type in the JSON string but got " + data['vm_keypair']);
+        }
+        // ensure the json data is a string
+        if (data['vm_name'] && !(typeof data['vm_name'] === 'string' || data['vm_name'] instanceof String)) {
+            throw new Error("Expected the field `vm_name` to be a primitive type in the JSON string but got " + data['vm_name']);
+        }
+        // ensure the json data is a string
+        if (data['vm_status'] && !(typeof data['vm_status'] === 'string' || data['vm_status'] instanceof String)) {
+            throw new Error("Expected the field `vm_status` to be a primitive type in the JSON string but got " + data['vm_status']);
+        }
+        // ensure the json data is a string
+        if (data['volume_id'] && !(typeof data['volume_id'] === 'string' || data['volume_id'] instanceof String)) {
+            throw new Error("Expected the field `volume_id` to be a primitive type in the JSON string but got " + data['volume_id']);
+        }
+        // ensure the json data is a string
+        if (data['volume_name'] && !(typeof data['volume_name'] === 'string' || data['volume_name'] instanceof String)) {
+            throw new Error("Expected the field `volume_name` to be a primitive type in the JSON string but got " + data['volume_name']);
         }
 
         return true;
@@ -125,7 +212,19 @@ class SnapshotRetrieveFields {
 
 }
 
-SnapshotRetrieveFields.RequiredProperties = ["description", "id", "is_image", "name", "region_id", "size", "status", "vm_id"];
+SnapshotRetrieveFields.RequiredProperties = ["created_at", "description", "id", "is_image", "name", "region_id", "size", "status", "updated_at", "vm_id"];
+
+/**
+ * Creation timestamp
+ * @member {Date} created_at
+ */
+SnapshotRetrieveFields.prototype['created_at'] = undefined;
+
+/**
+ * 
+ * @member {String} custom_image
+ */
+SnapshotRetrieveFields.prototype['custom_image'] = undefined;
 
 /**
  * Description of the snapshot
@@ -152,10 +251,22 @@ SnapshotRetrieveFields.prototype['id'] = undefined;
 SnapshotRetrieveFields.prototype['is_image'] = undefined;
 
 /**
+ * 
+ * @member {String} labels
+ */
+SnapshotRetrieveFields.prototype['labels'] = undefined;
+
+/**
  * Snapshot name
  * @member {String} name
  */
 SnapshotRetrieveFields.prototype['name'] = undefined;
+
+/**
+ * 
+ * @member {String} region
+ */
+SnapshotRetrieveFields.prototype['region'] = undefined;
 
 /**
  * Region where the snapshot will be available
@@ -176,10 +287,64 @@ SnapshotRetrieveFields.prototype['size'] = undefined;
 SnapshotRetrieveFields.prototype['status'] = undefined;
 
 /**
+ * Last update timestamp
+ * @member {Date} updated_at
+ */
+SnapshotRetrieveFields.prototype['updated_at'] = undefined;
+
+/**
+ * 
+ * @member {String} vm_environment
+ */
+SnapshotRetrieveFields.prototype['vm_environment'] = undefined;
+
+/**
+ * 
+ * @member {String} vm_flavor
+ */
+SnapshotRetrieveFields.prototype['vm_flavor'] = undefined;
+
+/**
  * ID of the VM from which the snapshot is created
  * @member {Number} vm_id
  */
 SnapshotRetrieveFields.prototype['vm_id'] = undefined;
+
+/**
+ * 
+ * @member {String} vm_image
+ */
+SnapshotRetrieveFields.prototype['vm_image'] = undefined;
+
+/**
+ * 
+ * @member {String} vm_keypair
+ */
+SnapshotRetrieveFields.prototype['vm_keypair'] = undefined;
+
+/**
+ * 
+ * @member {String} vm_name
+ */
+SnapshotRetrieveFields.prototype['vm_name'] = undefined;
+
+/**
+ * 
+ * @member {String} vm_status
+ */
+SnapshotRetrieveFields.prototype['vm_status'] = undefined;
+
+/**
+ * 
+ * @member {String} volume_id
+ */
+SnapshotRetrieveFields.prototype['volume_id'] = undefined;
+
+/**
+ * 
+ * @member {String} volume_name
+ */
+SnapshotRetrieveFields.prototype['volume_name'] = undefined;
 
 
 

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Regions model module.
  * @module model/Regions
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var Regions = /*#__PURE__*/function () {
   /**

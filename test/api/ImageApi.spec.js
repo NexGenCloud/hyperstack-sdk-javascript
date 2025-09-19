@@ -48,40 +48,40 @@
   }
 
   describe('ImageApi', function() {
-    describe('deleteAnImage', function() {
-      it('should call deleteAnImage successfully', function(done) {
-        //uncomment below and update the code to test deleteAnImage
-        //instance.deleteAnImage(function(error) {
+    describe('deleteImage', function() {
+      it('should call deleteImage successfully', function(done) {
+        //uncomment below and update the code to test deleteImage
+        //instance.deleteImage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fetchNameAvailabilityForImages', function() {
-      it('should call fetchNameAvailabilityForImages successfully', function(done) {
-        //uncomment below and update the code to test fetchNameAvailabilityForImages
-        //instance.fetchNameAvailabilityForImages(function(error) {
+    describe('fetchImageNameAvailability', function() {
+      it('should call fetchImageNameAvailability successfully', function(done) {
+        //uncomment below and update the code to test fetchImageNameAvailability
+        //instance.fetchImageNameAvailability(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getPrivateImageDetails', function() {
-      it('should call getPrivateImageDetails successfully', function(done) {
-        //uncomment below and update the code to test getPrivateImageDetails
-        //instance.getPrivateImageDetails(function(error) {
+    describe('getImageDetails', function() {
+      it('should call getImageDetails successfully', function(done) {
+        //uncomment below and update the code to test getImageDetails
+        //instance.getImageDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listImages', function() {
-      it('should call listImages successfully', function(done) {
-        //uncomment below and update the code to test listImages
-        //instance.listImages(function(error) {
+    describe('listImages2', function() {
+      it('should call listImages2 successfully', function(done) {
+        //uncomment below and update the code to test listImages2
+        //instance.listImages2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

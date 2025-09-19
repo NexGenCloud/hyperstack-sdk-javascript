@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import KeypairEnvironmentFields from './KeypairEnvironmentFields';
 
 /**
  * The KeypairFields model module.
  * @module model/KeypairFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class KeypairFields {
     /**
@@ -51,7 +52,7 @@ class KeypairFields {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('environment')) {
-                obj['environment'] = ApiClient.convertToType(data['environment'], 'String');
+                obj['environment'] = KeypairEnvironmentFields.constructFromObject(data['environment']);
             }
             if (data.hasOwnProperty('fingerprint')) {
                 obj['fingerprint'] = ApiClient.convertToType(data['fingerprint'], 'String');
@@ -75,9 +76,9 @@ class KeypairFields {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>KeypairFields</code>.
      */
     static validateJSON(data) {
-        // ensure the json data is a string
-        if (data['environment'] && !(typeof data['environment'] === 'string' || data['environment'] instanceof String)) {
-            throw new Error("Expected the field `environment` to be a primitive type in the JSON string but got " + data['environment']);
+        // validate the optional field `environment`
+        if (data['environment']) { // data not null
+          KeypairEnvironmentFields.validateJSON(data['environment']);
         }
         // ensure the json data is a string
         if (data['fingerprint'] && !(typeof data['fingerprint'] === 'string' || data['fingerprint'] instanceof String)) {
@@ -106,7 +107,7 @@ class KeypairFields {
 KeypairFields.prototype['created_at'] = undefined;
 
 /**
- * @member {String} environment
+ * @member {module:model/KeypairEnvironmentFields} environment
  */
 KeypairFields.prototype['environment'] = undefined;
 

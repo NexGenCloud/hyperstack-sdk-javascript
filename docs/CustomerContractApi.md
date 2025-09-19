@@ -4,19 +4,19 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listContracts**](CustomerContractApi.md#listContracts) | **GET** /pricebook/contracts | List Contracts
-[**retrieveContractDetails**](CustomerContractApi.md#retrieveContractDetails) | **GET** /pricebook/contracts/{contract_id} | Retrieve Contract Details
-[**retrieveGpuAllocationGraphForContract**](CustomerContractApi.md#retrieveGpuAllocationGraphForContract) | **GET** /pricebook/contracts/{contract_id}/gpu_allocation_graph | Retrieve GPU Allocation Graph for Contract
+[**getCustomerContract**](CustomerContractApi.md#getCustomerContract) | **GET** /pricebook/contracts | List Contracts
+[**getCustomerContractDetails**](CustomerContractApi.md#getCustomerContractDetails) | **GET** /pricebook/contracts/{contract_id} | Retrieve Contract Details
+[**getCustomerContractGpuAllocationGraph**](CustomerContractApi.md#getCustomerContractGpuAllocationGraph) | **GET** /pricebook/contracts/{contract_id}/gpu_allocation_graph | Retrieve GPU Allocation Graph for Contract
 
 
 
-## listContracts
+## getCustomerContract
 
-> GetCustomerContractsListResponseModel listContracts(opts)
+> GetCustomerContractsListResponseModel getCustomerContract(opts)
 
 List Contracts
 
-Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the &#x60;page&#x60; and &#x60;per_page&#x60; query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the &#x60;page&#x60; and &#x60;per_page&#x60; query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
 
 ### Example
 
@@ -28,18 +28,13 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CustomerContractApi();
 let opts = {
   'page': 56, // Number | 
   'perPage': 56 // Number | 
 };
-apiInstance.listContracts(opts).then((data) => {
+apiInstance.getCustomerContract(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -61,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -69,13 +64,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveContractDetails
+## getCustomerContractDetails
 
-> CustomerContractDetailResponseModel retrieveContractDetails(contractId)
+> CustomerContractDetailResponseModel getCustomerContractDetails(contractId)
 
 Retrieve Contract Details
 
-Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
 
 ### Example
 
@@ -87,15 +82,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CustomerContractApi();
 let contractId = 56; // Number | 
-apiInstance.retrieveContractDetails(contractId).then((data) => {
+apiInstance.getCustomerContractDetails(contractId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -116,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -124,9 +114,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveGpuAllocationGraphForContract
+## getCustomerContractGpuAllocationGraph
 
-> ContractGPUAllocationGraphResponse retrieveGpuAllocationGraphForContract(contractId, opts)
+> ContractGPUAllocationGraphResponse getCustomerContractGpuAllocationGraph(contractId, opts)
 
 Retrieve GPU Allocation Graph for Contract
 
@@ -142,11 +132,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CustomerContractApi();
 let contractId = 56; // Number | 
@@ -154,7 +139,7 @@ let opts = {
   'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
   'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
 };
-apiInstance.retrieveGpuAllocationGraphForContract(contractId, opts).then((data) => {
+apiInstance.getCustomerContractGpuAllocationGraph(contractId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -177,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

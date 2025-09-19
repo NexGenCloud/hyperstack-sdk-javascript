@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Environments model module.
  * @module model/Environments
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var Environments = /*#__PURE__*/function () {
   /**

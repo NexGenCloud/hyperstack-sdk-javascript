@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(HyperstackApi.SnapshotFields);
     });
 
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new HyperstackApi.SnapshotFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instance = new HyperstackApi.SnapshotFields();
@@ -104,6 +110,12 @@
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
+      //var instance = new HyperstackApi.SnapshotFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedAt (base name: "updated_at")', function() {
+      // uncomment below and update the code to test the property updatedAt
       //var instance = new HyperstackApi.SnapshotFields();
       //expect(instance).to.be();
     });

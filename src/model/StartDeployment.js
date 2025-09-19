@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import DeploymentFieldsforstartdeployments from './DeploymentFieldsforstartdeployments';
+import DeploymentFieldsForStartDeployments from './DeploymentFieldsForStartDeployments';
 
 /**
  * The StartDeployment model module.
  * @module model/StartDeployment
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class StartDeployment {
     /**
@@ -49,7 +49,7 @@ class StartDeployment {
             obj = obj || new StartDeployment();
 
             if (data.hasOwnProperty('deployment')) {
-                obj['deployment'] = DeploymentFieldsforstartdeployments.constructFromObject(data['deployment']);
+                obj['deployment'] = DeploymentFieldsForStartDeployments.constructFromObject(data['deployment']);
             }
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -69,7 +69,7 @@ class StartDeployment {
     static validateJSON(data) {
         // validate the optional field `deployment`
         if (data['deployment']) { // data not null
-          DeploymentFieldsforstartdeployments.validateJSON(data['deployment']);
+          DeploymentFieldsForStartDeployments.validateJSON(data['deployment']);
         }
         // ensure the json data is a string
         if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
@@ -85,7 +85,7 @@ class StartDeployment {
 
 
 /**
- * @member {module:model/DeploymentFieldsforstartdeployments} deployment
+ * @member {module:model/DeploymentFieldsForStartDeployments} deployment
  */
 StartDeployment.prototype['deployment'] = undefined;
 

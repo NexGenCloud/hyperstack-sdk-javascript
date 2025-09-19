@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **String** |  | [optional] 
 **status** | **Boolean** |  | [optional] 
-**versions** | **[String]** |  | [optional] 
+**versions** | [**[ClusterVersion]**](ClusterVersion.md) |  | [optional] 
 
 

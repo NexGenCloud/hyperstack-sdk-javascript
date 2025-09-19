@@ -66,6 +66,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new HyperstackApi.VolumeAttachmentFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property _protected (base name: "protected")', function() {
+      // uncomment below and update the code to test the property _protected
+      //var instance = new HyperstackApi.VolumeAttachmentFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instance = new HyperstackApi.VolumeAttachmentFields();

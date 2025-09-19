@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(HyperstackApi.ResourceLevelBillingHistoryResponseAttributes);
     });
 
+    it('should have the property contractId (base name: "contract_id")', function() {
+      // uncomment below and update the code to test the property contractId
+      //var instance = new HyperstackApi.ResourceLevelBillingHistoryResponseAttributes();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instance = new HyperstackApi.ResourceLevelBillingHistoryResponseAttributes();

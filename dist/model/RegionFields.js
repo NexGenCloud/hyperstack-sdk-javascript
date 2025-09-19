@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The RegionFields model module.
  * @module model/RegionFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var RegionFields = /*#__PURE__*/function () {
   /**
@@ -59,8 +59,14 @@ var RegionFields = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new RegionFields();
+        if (data.hasOwnProperty('country')) {
+          obj['country'] = _ApiClient["default"].convertToType(data['country'], 'String');
+        }
         if (data.hasOwnProperty('description')) {
           obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
+        }
+        if (data.hasOwnProperty('green_status')) {
+          obj['green_status'] = _ApiClient["default"].convertToType(data['green_status'], 'String');
         }
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
@@ -81,8 +87,16 @@ var RegionFields = /*#__PURE__*/function () {
     key: "validateJSON",
     value: function validateJSON(data) {
       // ensure the json data is a string
+      if (data['country'] && !(typeof data['country'] === 'string' || data['country'] instanceof String)) {
+        throw new Error("Expected the field `country` to be a primitive type in the JSON string but got " + data['country']);
+      }
+      // ensure the json data is a string
       if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
         throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+      }
+      // ensure the json data is a string
+      if (data['green_status'] && !(typeof data['green_status'] === 'string' || data['green_status'] instanceof String)) {
+        throw new Error("Expected the field `green_status` to be a primitive type in the JSON string but got " + data['green_status']);
       }
       // ensure the json data is a string
       if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -93,9 +107,20 @@ var RegionFields = /*#__PURE__*/function () {
   }]);
 }();
 /**
+ * @member {String} country
+ */
+RegionFields.prototype['country'] = undefined;
+
+/**
  * @member {String} description
  */
 RegionFields.prototype['description'] = undefined;
+
+/**
+ * Green status
+ * @member {module:model/RegionFields.GreenStatusEnum} green_status
+ */
+RegionFields.prototype['green_status'] = undefined;
 
 /**
  * @member {Number} id
@@ -106,4 +131,27 @@ RegionFields.prototype['id'] = undefined;
  * @member {String} name
  */
 RegionFields.prototype['name'] = undefined;
+
+/**
+ * Allowed values for the <code>green_status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+RegionFields['GreenStatusEnum'] = {
+  /**
+   * value: "GREEN"
+   * @const
+   */
+  "GREEN": "GREEN",
+  /**
+   * value: "PARTIALLY_GREEN"
+   * @const
+   */
+  "PARTIALLY_GREEN": "PARTIALLY_GREEN",
+  /**
+   * value: "NOT_GREEN"
+   * @const
+   */
+  "NOT_GREEN": "NOT_GREEN"
+};
 var _default = exports["default"] = RegionFields;

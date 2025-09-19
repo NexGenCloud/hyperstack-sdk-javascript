@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachVolumesPayload model module.
  * @module model/AttachVolumesPayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class AttachVolumesPayload {
     /**
@@ -34,6 +34,7 @@ class AttachVolumesPayload {
      * Only for internal use.
      */
     static initialize(obj) { 
+        obj['protected'] = false;
     }
 
     /**
@@ -47,6 +48,9 @@ class AttachVolumesPayload {
         if (data) {
             obj = obj || new AttachVolumesPayload();
 
+            if (data.hasOwnProperty('protected')) {
+                obj['protected'] = ApiClient.convertToType(data['protected'], 'Boolean');
+            }
             if (data.hasOwnProperty('volume_ids')) {
                 obj['volume_ids'] = ApiClient.convertToType(data['volume_ids'], ['Number']);
             }
@@ -72,6 +76,12 @@ class AttachVolumesPayload {
 }
 
 
+
+/**
+ * @member {Boolean} protected
+ * @default false
+ */
+AttachVolumesPayload.prototype['protected'] = false;
 
 /**
  * @member {Array.<Number>} volume_ids

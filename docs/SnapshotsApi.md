@@ -4,18 +4,18 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAnImageFromASnapshot**](SnapshotsApi.md#createAnImageFromASnapshot) | **POST** /core/snapshots/{snapshot_id}/image | Create an image from a snapshot
+[**createANewCustomImage**](SnapshotsApi.md#createANewCustomImage) | **POST** /core/snapshots/{snapshot_id}/image | Create an image from a snapshot
 [**deleteSnapshot**](SnapshotsApi.md#deleteSnapshot) | **DELETE** /core/snapshots/{id} | Delete snapshot
 [**fetchSnapshotNameAvailability**](SnapshotsApi.md#fetchSnapshotNameAvailability) | **GET** /core/snapshots/name-availability/{name} | Fetch snapshot name availability
-[**restoreASnapshot**](SnapshotsApi.md#restoreASnapshot) | **POST** /core/snapshots/{id}/restore | Restore a snapshot
-[**retrieveASnapshot**](SnapshotsApi.md#retrieveASnapshot) | **GET** /core/snapshots/{id} | Retrieve a snapshot
-[**retrieveListOfSnapshotsWithPagination**](SnapshotsApi.md#retrieveListOfSnapshotsWithPagination) | **GET** /core/snapshots | Retrieve list of snapshots with pagination
+[**getSnapshot**](SnapshotsApi.md#getSnapshot) | **GET** /core/snapshots/{id} | Retrieve a snapshot
+[**getSnapshots**](SnapshotsApi.md#getSnapshots) | **GET** /core/snapshots | Retrieve list of snapshots with pagination
+[**postSnapshotRestore**](SnapshotsApi.md#postSnapshotRestore) | **POST** /core/snapshots/{id}/restore | Restore a snapshot
 
 
 
-## createAnImageFromASnapshot
+## createANewCustomImage
 
-> CreateImage createAnImageFromASnapshot(snapshotId, payload)
+> CreateImage createANewCustomImage(snapshotId, payload)
 
 Create an image from a snapshot
 
@@ -31,16 +31,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.SnapshotsApi();
 let snapshotId = 56; // Number | 
 let payload = new HyperstackApi.CreateImagePayload(); // CreateImagePayload | 
-apiInstance.createAnImageFromASnapshot(snapshotId, payload).then((data) => {
+apiInstance.createANewCustomImage(snapshotId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -62,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -88,11 +83,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.SnapshotsApi();
 let id = 56; // Number | 
@@ -117,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -143,11 +133,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.SnapshotsApi();
 let name = "name_example"; // String | 
@@ -172,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -180,66 +165,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## restoreASnapshot
+## getSnapshot
 
-> Instance restoreASnapshot(id, payload)
-
-Restore a snapshot
-
-Restore a snapshot.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.SnapshotsApi();
-let id = 56; // Number | 
-let payload = new HyperstackApi.SnapshotRestoreRequest(); // SnapshotRestoreRequest | 
-apiInstance.restoreASnapshot(id, payload).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
- **payload** | [**SnapshotRestoreRequest**](SnapshotRestoreRequest.md)|  | 
-
-### Return type
-
-[**Instance**](Instance.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## retrieveASnapshot
-
-> SnapshotRetrieve retrieveASnapshot(id)
+> SnapshotRetrieve getSnapshot(id)
 
 Retrieve a snapshot
 
@@ -255,15 +183,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.SnapshotsApi();
 let id = 56; // Number | 
-apiInstance.retrieveASnapshot(id).then((data) => {
+apiInstance.getSnapshot(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -284,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -292,9 +215,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveListOfSnapshotsWithPagination
+## getSnapshots
 
-> Snapshots retrieveListOfSnapshotsWithPagination(opts)
+> Snapshots getSnapshots(opts)
 
 Retrieve list of snapshots with pagination
 
@@ -310,11 +233,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.SnapshotsApi();
 let opts = {
@@ -322,7 +240,7 @@ let opts = {
   'pageSize': "pageSize_example", // String | Data Per Page
   'search': "search_example" // String | Search By Snapshot ID or Name
 };
-apiInstance.retrieveListOfSnapshotsWithPagination(opts).then((data) => {
+apiInstance.getSnapshots(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -345,10 +263,62 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## postSnapshotRestore
+
+> Instance postSnapshotRestore(id, payload)
+
+Restore a snapshot
+
+Restore a snapshot.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.SnapshotsApi();
+let id = 56; // Number | 
+let payload = new HyperstackApi.SnapshotRestoreRequest(); // SnapshotRestoreRequest | 
+apiInstance.postSnapshotRestore(id, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+ **payload** | [**SnapshotRestoreRequest**](SnapshotRestoreRequest.md)|  | 
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

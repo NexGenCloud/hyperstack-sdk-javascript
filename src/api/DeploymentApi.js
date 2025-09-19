@@ -22,7 +22,7 @@ import StartDeploymentPayload from '../model/StartDeploymentPayload';
 /**
 * Deployment service.
 * @module api/DeploymentApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class DeploymentApi {
 
@@ -61,7 +61,7 @@ export default class DeploymentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
@@ -90,11 +90,11 @@ export default class DeploymentApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StartDeployment} and HTTP response
      */
-    detailsOfDeploymentByIdWithHttpInfo(id) {
+    detailsOfDeploymentByIDWithHttpInfo(id) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling detailsOfDeploymentById");
+        throw new Error("Missing the required parameter 'id' when calling detailsOfDeploymentByID");
       }
 
       let pathParams = {
@@ -107,7 +107,7 @@ export default class DeploymentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = StartDeployment;
@@ -123,8 +123,8 @@ export default class DeploymentApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StartDeployment}
      */
-    detailsOfDeploymentById(id) {
-      return this.detailsOfDeploymentByIdWithHttpInfo(id)
+    detailsOfDeploymentByID(id) {
+      return this.detailsOfDeploymentByIDWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -147,7 +147,7 @@ export default class DeploymentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Deployments;
@@ -191,7 +191,7 @@ export default class DeploymentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = StartDeployment;

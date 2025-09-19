@@ -29,19 +29,18 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateSnapshotPayload model module.
  * @module model/CreateSnapshotPayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var CreateSnapshotPayload = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateSnapshotPayload</code>.
    * @alias module:model/CreateSnapshotPayload
    * @param description {String} description
-   * @param isImage {Boolean} Indicates if the snapshot is an image
    * @param name {String} Snapshot name
    */
-  function CreateSnapshotPayload(description, isImage, name) {
+  function CreateSnapshotPayload(description, name) {
     _classCallCheck(this, CreateSnapshotPayload);
-    CreateSnapshotPayload.initialize(this, description, isImage, name);
+    CreateSnapshotPayload.initialize(this, description, name);
   }
 
   /**
@@ -51,9 +50,8 @@ var CreateSnapshotPayload = /*#__PURE__*/function () {
    */
   return _createClass(CreateSnapshotPayload, null, [{
     key: "initialize",
-    value: function initialize(obj, description, isImage, name) {
+    value: function initialize(obj, description, name) {
       obj['description'] = description;
-      obj['is_image'] = isImage;
       obj['name'] = name;
     }
 
@@ -71,9 +69,6 @@ var CreateSnapshotPayload = /*#__PURE__*/function () {
         obj = obj || new CreateSnapshotPayload();
         if (data.hasOwnProperty('description')) {
           obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
-        }
-        if (data.hasOwnProperty('is_image')) {
-          obj['is_image'] = _ApiClient["default"].convertToType(data['is_image'], 'Boolean');
         }
         if (data.hasOwnProperty('labels')) {
           obj['labels'] = _ApiClient["default"].convertToType(data['labels'], ['String']);
@@ -124,19 +119,13 @@ var CreateSnapshotPayload = /*#__PURE__*/function () {
     }
   }]);
 }();
-CreateSnapshotPayload.RequiredProperties = ["description", "is_image", "name"];
+CreateSnapshotPayload.RequiredProperties = ["description", "name"];
 
 /**
  * description
  * @member {String} description
  */
 CreateSnapshotPayload.prototype['description'] = undefined;
-
-/**
- * Indicates if the snapshot is an image
- * @member {Boolean} is_image
- */
-CreateSnapshotPayload.prototype['is_image'] = undefined;
 
 /**
  * Labels associated with snapshot

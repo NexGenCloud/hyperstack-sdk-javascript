@@ -48,20 +48,30 @@
   }
 
   describe('PaymentApi', function() {
-    describe('getViewPaymentDetails', function() {
-      it('should call getViewPaymentDetails successfully', function(done) {
-        //uncomment below and update the code to test getViewPaymentDetails
-        //instance.getViewPaymentDetails(function(error) {
+    describe('getDetails', function() {
+      it('should call getDetails successfully', function(done) {
+        //uncomment below and update the code to test getDetails
+        //instance.getDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postInitiatePayment', function() {
-      it('should call postInitiatePayment successfully', function(done) {
-        //uncomment below and update the code to test postInitiatePayment
-        //instance.postInitiatePayment(function(error) {
+    describe('getPaymentReceipt2', function() {
+      it('should call getPaymentReceipt2 successfully', function(done) {
+        //uncomment below and update the code to test getPaymentReceipt2
+        //instance.getPaymentReceipt2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postPayment', function() {
+      it('should call postPayment successfully', function(done) {
+        //uncomment below and update the code to test postPayment
+        //instance.postPayment(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

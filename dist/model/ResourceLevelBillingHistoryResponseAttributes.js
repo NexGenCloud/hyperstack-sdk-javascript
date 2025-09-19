@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ResourceLevelBillingHistoryResponseAttributes model module.
  * @module model/ResourceLevelBillingHistoryResponseAttributes
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var ResourceLevelBillingHistoryResponseAttributes = /*#__PURE__*/function () {
   /**
@@ -59,6 +59,9 @@ var ResourceLevelBillingHistoryResponseAttributes = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new ResourceLevelBillingHistoryResponseAttributes();
+        if (data.hasOwnProperty('contract_id')) {
+          obj['contract_id'] = _ApiClient["default"].convertToType(data['contract_id'], 'Number');
+        }
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
@@ -99,6 +102,11 @@ var ResourceLevelBillingHistoryResponseAttributes = /*#__PURE__*/function () {
     }
   }]);
 }();
+/**
+ * @member {Number} contract_id
+ */
+ResourceLevelBillingHistoryResponseAttributes.prototype['contract_id'] = undefined;
+
 /**
  * @member {String} id
  */

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import FlavorLabelFields from './FlavorLabelFields';
 
 /**
  * The InstanceFlavorFields model module.
  * @module model/InstanceFlavorFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class InstanceFlavorFields {
     /**
@@ -56,6 +57,9 @@ class InstanceFlavorFields {
             if (data.hasOwnProperty('ephemeral')) {
                 obj['ephemeral'] = ApiClient.convertToType(data['ephemeral'], 'Number');
             }
+            if (data.hasOwnProperty('features')) {
+                obj['features'] = ApiClient.convertToType(data['features'], Object);
+            }
             if (data.hasOwnProperty('gpu')) {
                 obj['gpu'] = ApiClient.convertToType(data['gpu'], 'String');
             }
@@ -64,6 +68,9 @@ class InstanceFlavorFields {
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('labels')) {
+                obj['labels'] = ApiClient.convertToType(data['labels'], [FlavorLabelFields]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -84,6 +91,16 @@ class InstanceFlavorFields {
         // ensure the json data is a string
         if (data['gpu'] && !(typeof data['gpu'] === 'string' || data['gpu'] instanceof String)) {
             throw new Error("Expected the field `gpu` to be a primitive type in the JSON string but got " + data['gpu']);
+        }
+        if (data['labels']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['labels'])) {
+                throw new Error("Expected the field `labels` to be an array in the JSON data but got " + data['labels']);
+            }
+            // validate the optional field `labels` (array)
+            for (const item of data['labels']) {
+                FlavorLabelFields.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -114,6 +131,11 @@ InstanceFlavorFields.prototype['disk'] = undefined;
 InstanceFlavorFields.prototype['ephemeral'] = undefined;
 
 /**
+ * @member {Object} features
+ */
+InstanceFlavorFields.prototype['features'] = undefined;
+
+/**
  * @member {String} gpu
  */
 InstanceFlavorFields.prototype['gpu'] = undefined;
@@ -127,6 +149,11 @@ InstanceFlavorFields.prototype['gpu_count'] = undefined;
  * @member {Number} id
  */
 InstanceFlavorFields.prototype['id'] = undefined;
+
+/**
+ * @member {Array.<module:model/FlavorLabelFields>} labels
+ */
+InstanceFlavorFields.prototype['labels'] = undefined;
 
 /**
  * @member {String} name

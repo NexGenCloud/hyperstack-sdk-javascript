@@ -4,22 +4,22 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachCallbackToVirtualMachine**](CallbacksApi.md#attachCallbackToVirtualMachine) | **POST** /core/virtual-machines/{id}/attach-callback | Attach callback to virtual machine
-[**attachCallbackToVolume**](CallbacksApi.md#attachCallbackToVolume) | **POST** /core/volumes/{id}/attach-callback | Attach callback to volume
-[**deleteVirtualMachineCallback**](CallbacksApi.md#deleteVirtualMachineCallback) | **DELETE** /core/virtual-machines/{id}/delete-callback | Delete virtual machine callback
-[**deleteVolumeCallback**](CallbacksApi.md#deleteVolumeCallback) | **DELETE** /core/volumes/{id}/delete-callback | Delete volume callback
-[**updateVirtualMachineCallback**](CallbacksApi.md#updateVirtualMachineCallback) | **PUT** /core/virtual-machines/{id}/update-callback | Update virtual machine callback
-[**updateVolumeCallback**](CallbacksApi.md#updateVolumeCallback) | **PUT** /core/volumes/{id}/update-callback | Update volume callback
+[**attachCallbackToVirtualMachine**](CallbacksApi.md#attachCallbackToVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/attach-callback | Attach callback to virtual machine
+[**attachCallbackToVolume**](CallbacksApi.md#attachCallbackToVolume) | **POST** /core/volumes/{volume_id}/attach-callback | Attach callback to volume
+[**deleteVirtualMachineCallback**](CallbacksApi.md#deleteVirtualMachineCallback) | **DELETE** /core/virtual-machines/{vm_id}/delete-callback | Delete virtual machine callback
+[**deleteVolumeCallback**](CallbacksApi.md#deleteVolumeCallback) | **DELETE** /core/volumes/{volume_id}/delete-callback | Delete volume callback
+[**updateVirtualMachineCallback**](CallbacksApi.md#updateVirtualMachineCallback) | **PUT** /core/virtual-machines/{vm_id}/update-callback | Update virtual machine callback
+[**updateVolumeCallback**](CallbacksApi.md#updateVolumeCallback) | **PUT** /core/volumes/{volume_id}/update-callback | Update volume callback
 
 
 
 ## attachCallbackToVirtualMachine
 
-> AttachCallbackResponse attachCallbackToVirtualMachine(id, payload)
+> AttachCallbackResponse attachCallbackToVirtualMachine(vmId, payload)
 
 Attach callback to virtual machine
 
-Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks#attach-a-callback-url-to-an-existing-virtual-machine).
+Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
 ### Example
 
@@ -31,16 +31,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CallbacksApi();
-let id = 56; // Number | 
+let vmId = 56; // Number | 
 let payload = new HyperstackApi.AttachCallbackPayload(); // AttachCallbackPayload | 
-apiInstance.attachCallbackToVirtualMachine(id, payload).then((data) => {
+apiInstance.attachCallbackToVirtualMachine(vmId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -53,7 +48,7 @@ apiInstance.attachCallbackToVirtualMachine(id, payload).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **vmId** | **Number**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -62,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -72,11 +67,11 @@ Name | Type | Description  | Notes
 
 ## attachCallbackToVolume
 
-> AttachCallbackResponse attachCallbackToVolume(id, payload)
+> AttachCallbackResponse attachCallbackToVolume(volumeId, payload)
 
 Attach callback to volume
 
-Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
 ### Example
 
@@ -88,16 +83,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CallbacksApi();
-let id = 56; // Number | 
+let volumeId = 56; // Number | 
 let payload = new HyperstackApi.AttachCallbackPayload(); // AttachCallbackPayload | 
-apiInstance.attachCallbackToVolume(id, payload).then((data) => {
+apiInstance.attachCallbackToVolume(volumeId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -110,7 +100,7 @@ apiInstance.attachCallbackToVolume(id, payload).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **volumeId** | **Number**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -119,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -129,11 +119,11 @@ Name | Type | Description  | Notes
 
 ## deleteVirtualMachineCallback
 
-> ResponseModel deleteVirtualMachineCallback(id)
+> ResponseModel deleteVirtualMachineCallback(vmId)
 
 Delete virtual machine callback
 
-Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
 ### Example
 
@@ -145,15 +135,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CallbacksApi();
-let id = 56; // Number | 
-apiInstance.deleteVirtualMachineCallback(id).then((data) => {
+let vmId = 56; // Number | 
+apiInstance.deleteVirtualMachineCallback(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -166,7 +151,7 @@ apiInstance.deleteVirtualMachineCallback(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **vmId** | **Number**|  | 
 
 ### Return type
 
@@ -174,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -184,11 +169,11 @@ Name | Type | Description  | Notes
 
 ## deleteVolumeCallback
 
-> ResponseModel deleteVolumeCallback(id)
+> ResponseModel deleteVolumeCallback(volumeId)
 
 Delete volume callback
 
-Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
 ### Example
 
@@ -200,15 +185,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CallbacksApi();
-let id = 56; // Number | 
-apiInstance.deleteVolumeCallback(id).then((data) => {
+let volumeId = 56; // Number | 
+apiInstance.deleteVolumeCallback(volumeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -221,7 +201,7 @@ apiInstance.deleteVolumeCallback(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **volumeId** | **Number**|  | 
 
 ### Return type
 
@@ -229,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -239,11 +219,11 @@ Name | Type | Description  | Notes
 
 ## updateVirtualMachineCallback
 
-> AttachCallbackResponse updateVirtualMachineCallback(id, payload)
+> AttachCallbackResponse updateVirtualMachineCallback(vmId, payload)
 
 Update virtual machine callback
 
-Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
 ### Example
 
@@ -255,16 +235,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CallbacksApi();
-let id = 56; // Number | 
+let vmId = 56; // Number | 
 let payload = new HyperstackApi.AttachCallbackPayload(); // AttachCallbackPayload | 
-apiInstance.updateVirtualMachineCallback(id, payload).then((data) => {
+apiInstance.updateVirtualMachineCallback(vmId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -277,7 +252,7 @@ apiInstance.updateVirtualMachineCallback(id, payload).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **vmId** | **Number**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -286,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -296,11 +271,11 @@ Name | Type | Description  | Notes
 
 ## updateVolumeCallback
 
-> AttachCallbackResponse updateVolumeCallback(id, payload)
+> AttachCallbackResponse updateVolumeCallback(volumeId, payload)
 
 Update volume callback
 
-Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
 ### Example
 
@@ -312,16 +287,11 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CallbacksApi();
-let id = 56; // Number | 
+let volumeId = 56; // Number | 
 let payload = new HyperstackApi.AttachCallbackPayload(); // AttachCallbackPayload | 
-apiInstance.updateVolumeCallback(id, payload).then((data) => {
+apiInstance.updateVolumeCallback(volumeId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -334,7 +304,7 @@ apiInstance.updateVolumeCallback(id, payload).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **volumeId** | **Number**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -343,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

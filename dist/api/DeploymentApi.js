@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Deployment service.
 * @module api/DeploymentApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -65,7 +65,7 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
@@ -91,12 +91,12 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StartDeployment} and HTTP response
      */
   }, {
-    key: "detailsOfDeploymentByIdWithHttpInfo",
-    value: function detailsOfDeploymentByIdWithHttpInfo(id) {
+    key: "detailsOfDeploymentByIDWithHttpInfo",
+    value: function detailsOfDeploymentByIDWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling detailsOfDeploymentById");
+        throw new Error("Missing the required parameter 'id' when calling detailsOfDeploymentByID");
       }
       var pathParams = {
         'id': id
@@ -104,7 +104,7 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _StartDeployment["default"];
@@ -117,9 +117,9 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StartDeployment}
      */
   }, {
-    key: "detailsOfDeploymentById",
-    value: function detailsOfDeploymentById(id) {
-      return this.detailsOfDeploymentByIdWithHttpInfo(id).then(function (response_and_data) {
+    key: "detailsOfDeploymentByID",
+    value: function detailsOfDeploymentByID(id) {
+      return this.detailsOfDeploymentByIDWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -136,7 +136,7 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Deployments["default"];
@@ -172,7 +172,7 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _StartDeployment["default"];

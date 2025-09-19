@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import EnvironmentFieldsforVolume from './EnvironmentFieldsforVolume';
+import AttachmentsFieldsForVolume from './AttachmentsFieldsForVolume';
+import EnvironmentFieldsForVolume from './EnvironmentFieldsForVolume';
 
 /**
  * The VolumeFields model module.
  * @module model/VolumeFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class VolumeFields {
     /**
@@ -48,6 +49,9 @@ class VolumeFields {
         if (data) {
             obj = obj || new VolumeFields();
 
+            if (data.hasOwnProperty('attachments')) {
+                obj['attachments'] = ApiClient.convertToType(data['attachments'], [AttachmentsFieldsForVolume]);
+            }
             if (data.hasOwnProperty('bootable')) {
                 obj['bootable'] = ApiClient.convertToType(data['bootable'], 'Boolean');
             }
@@ -61,7 +65,7 @@ class VolumeFields {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('environment')) {
-                obj['environment'] = EnvironmentFieldsforVolume.constructFromObject(data['environment']);
+                obj['environment'] = EnvironmentFieldsForVolume.constructFromObject(data['environment']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -97,6 +101,16 @@ class VolumeFields {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>VolumeFields</code>.
      */
     static validateJSON(data) {
+        if (data['attachments']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['attachments'])) {
+                throw new Error("Expected the field `attachments` to be an array in the JSON data but got " + data['attachments']);
+            }
+            // validate the optional field `attachments` (array)
+            for (const item of data['attachments']) {
+                AttachmentsFieldsForVolume.validateJSON(item);
+            };
+        }
         // ensure the json data is a string
         if (data['callback_url'] && !(typeof data['callback_url'] === 'string' || data['callback_url'] instanceof String)) {
             throw new Error("Expected the field `callback_url` to be a primitive type in the JSON string but got " + data['callback_url']);
@@ -107,7 +121,7 @@ class VolumeFields {
         }
         // validate the optional field `environment`
         if (data['environment']) { // data not null
-          EnvironmentFieldsforVolume.validateJSON(data['environment']);
+          EnvironmentFieldsForVolume.validateJSON(data['environment']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -135,6 +149,11 @@ class VolumeFields {
 
 
 /**
+ * @member {Array.<module:model/AttachmentsFieldsForVolume>} attachments
+ */
+VolumeFields.prototype['attachments'] = undefined;
+
+/**
  * @member {Boolean} bootable
  */
 VolumeFields.prototype['bootable'] = undefined;
@@ -155,7 +174,7 @@ VolumeFields.prototype['created_at'] = undefined;
 VolumeFields.prototype['description'] = undefined;
 
 /**
- * @member {module:model/EnvironmentFieldsforVolume} environment
+ * @member {module:model/EnvironmentFieldsForVolume} environment
  */
 VolumeFields.prototype['environment'] = undefined;
 

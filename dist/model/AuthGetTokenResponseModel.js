@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-var _TokenFields = _interopRequireDefault(require("./TokenFields"));
+var _AccessTokenField = _interopRequireDefault(require("./AccessTokenField"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The AuthGetTokenResponseModel model module.
  * @module model/AuthGetTokenResponseModel
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var AuthGetTokenResponseModel = /*#__PURE__*/function () {
   /**
@@ -60,9 +60,6 @@ var AuthGetTokenResponseModel = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new AuthGetTokenResponseModel();
-        if (data.hasOwnProperty('first_login')) {
-          obj['first_login'] = _ApiClient["default"].convertToType(data['first_login'], 'Boolean');
-        }
         if (data.hasOwnProperty('message')) {
           obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
         }
@@ -70,7 +67,7 @@ var AuthGetTokenResponseModel = /*#__PURE__*/function () {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Boolean');
         }
         if (data.hasOwnProperty('token')) {
-          obj['token'] = _TokenFields["default"].constructFromObject(data['token']);
+          obj['token'] = _AccessTokenField["default"].constructFromObject(data['token']);
         }
       }
       return obj;
@@ -91,17 +88,12 @@ var AuthGetTokenResponseModel = /*#__PURE__*/function () {
       // validate the optional field `token`
       if (data['token']) {
         // data not null
-        _TokenFields["default"].validateJSON(data['token']);
+        _AccessTokenField["default"].validateJSON(data['token']);
       }
       return true;
     }
   }]);
 }();
-/**
- * @member {Boolean} first_login
- */
-AuthGetTokenResponseModel.prototype['first_login'] = undefined;
-
 /**
  * @member {String} message
  */
@@ -113,7 +105,7 @@ AuthGetTokenResponseModel.prototype['message'] = undefined;
 AuthGetTokenResponseModel.prototype['status'] = undefined;
 
 /**
- * @member {module:model/TokenFields} token
+ * @member {module:model/AccessTokenField} token
  */
 AuthGetTokenResponseModel.prototype['token'] = undefined;
 var _default = exports["default"] = AuthGetTokenResponseModel;

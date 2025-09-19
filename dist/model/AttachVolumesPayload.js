@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The AttachVolumesPayload model module.
  * @module model/AttachVolumesPayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var AttachVolumesPayload = /*#__PURE__*/function () {
   /**
@@ -45,7 +45,9 @@ var AttachVolumesPayload = /*#__PURE__*/function () {
    */
   return _createClass(AttachVolumesPayload, null, [{
     key: "initialize",
-    value: function initialize(obj) {}
+    value: function initialize(obj) {
+      obj['protected'] = false;
+    }
 
     /**
      * Constructs a <code>AttachVolumesPayload</code> from a plain JavaScript object, optionally creating a new instance.
@@ -59,6 +61,9 @@ var AttachVolumesPayload = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new AttachVolumesPayload();
+        if (data.hasOwnProperty('protected')) {
+          obj['protected'] = _ApiClient["default"].convertToType(data['protected'], 'Boolean');
+        }
         if (data.hasOwnProperty('volume_ids')) {
           obj['volume_ids'] = _ApiClient["default"].convertToType(data['volume_ids'], ['Number']);
         }
@@ -82,6 +87,12 @@ var AttachVolumesPayload = /*#__PURE__*/function () {
     }
   }]);
 }();
+/**
+ * @member {Boolean} protected
+ * @default false
+ */
+AttachVolumesPayload.prototype['protected'] = false;
+
 /**
  * @member {Array.<Number>} volume_ids
  */

@@ -13,11 +13,10 @@
 
 
 import ApiClient from './ApiClient';
-import AddUpdateFlavorOrganizationPayload from './model/AddUpdateFlavorOrganizationPayload';
+import AccessTokenField from './model/AccessTokenField';
 import AddUserInfoSuccessResponseModel from './model/AddUserInfoSuccessResponseModel';
 import AllocatedGPUCountGraph from './model/AllocatedGPUCountGraph';
 import ApiKeyFields from './model/ApiKeyFields';
-import ApiKeyVerifyFields from './model/ApiKeyVerifyFields';
 import AssignRbacRolePayload from './model/AssignRbacRolePayload';
 import AttachCallbackPayload from './model/AttachCallbackPayload';
 import AttachCallbackResponse from './model/AttachCallbackResponse';
@@ -26,21 +25,40 @@ import AttachFirewallsToVMPayload from './model/AttachFirewallsToVMPayload';
 import AttachVolumeFields from './model/AttachVolumeFields';
 import AttachVolumes from './model/AttachVolumes';
 import AttachVolumesPayload from './model/AttachVolumesPayload';
+import AttachmentsFieldsForVolume from './model/AttachmentsFieldsForVolume';
+import Attributes from './model/Attributes';
 import AuthGetTokenResponseModel from './model/AuthGetTokenResponseModel';
-import AuthRequestLoginFields from './model/AuthRequestLoginFields';
-import AuthRequestLoginResponseModel from './model/AuthRequestLoginResponseModel';
 import AuthUserFields from './model/AuthUserFields';
 import AuthUserInfoResponseModel from './model/AuthUserInfoResponseModel';
-import BillingImmuneResourcesResponse from './model/BillingImmuneResourcesResponse';
-import BillingResponse from './model/BillingResponse';
-import Billingmetricesfields from './model/Billingmetricesfields';
-import Billingmetricesresponse from './model/Billingmetricesresponse';
+import BetaAccessRequestFields from './model/BetaAccessRequestFields';
+import BetaAccessRequestPayload from './model/BetaAccessRequestPayload';
+import BetaAccessRequestResponseModel from './model/BetaAccessRequestResponseModel';
+import BetaAccessStatusItem from './model/BetaAccessStatusItem';
+import BetaAccessStatusResponseModel from './model/BetaAccessStatusResponseModel';
+import BillingHistory from './model/BillingHistory';
+import BillingHistoryDataSynthesisDetails from './model/BillingHistoryDataSynthesisDetails';
+import BillingHistoryFineTuning from './model/BillingHistoryFineTuning';
+import BillingHistoryModelEvalutationDetails from './model/BillingHistoryModelEvalutationDetails';
+import BillingHistoryServerlessInference from './model/BillingHistoryServerlessInference';
+import BillingHistoryServerlessInferenceDetails from './model/BillingHistoryServerlessInferenceDetails';
+import BillingMetricesFields from './model/BillingMetricesFields';
+import BillingMetricesResponse from './model/BillingMetricesResponse';
 import ClusterEvents from './model/ClusterEvents';
 import ClusterEventsFields from './model/ClusterEventsFields';
 import ClusterFields from './model/ClusterFields';
+import ClusterFlavorFields from './model/ClusterFlavorFields';
 import ClusterListResponse from './model/ClusterListResponse';
+import ClusterNodeFields from './model/ClusterNodeFields';
+import ClusterNodeGroupFields from './model/ClusterNodeGroupFields';
+import ClusterNodeGroupsCreateResponse from './model/ClusterNodeGroupsCreateResponse';
+import ClusterNodeGroupsGetResponse from './model/ClusterNodeGroupsGetResponse';
+import ClusterNodeGroupsListResponse from './model/ClusterNodeGroupsListResponse';
+import ClusterNodeInstanceFields from './model/ClusterNodeInstanceFields';
+import ClusterNodesListResponse from './model/ClusterNodesListResponse';
 import ClusterResponse from './model/ClusterResponse';
+import ClusterVersion from './model/ClusterVersion';
 import ClusterVersions from './model/ClusterVersions';
+import Colors from './model/Colors';
 import CommonResponseModel from './model/CommonResponseModel';
 import ComplianceFields from './model/ComplianceFields';
 import ComplianceModelFields from './model/ComplianceModelFields';
@@ -48,28 +66,16 @@ import CompliancePayload from './model/CompliancePayload';
 import ComplianceResponse from './model/ComplianceResponse';
 import ContainerOverviewFields from './model/ContainerOverviewFields';
 import Contract from './model/Contract';
-import ContractBillingHistory from './model/ContractBillingHistory';
-import ContractBillingHistoryResponseAttributes from './model/ContractBillingHistoryResponseAttributes';
-import ContractBillingHistoryResponseModel from './model/ContractBillingHistoryResponseModel';
-import ContractChangePayload from './model/ContractChangePayload';
 import ContractDiscountPlanFields from './model/ContractDiscountPlanFields';
-import ContractEligibleInstanceFields from './model/ContractEligibleInstanceFields';
-import ContractEligibleInstancesResponse from './model/ContractEligibleInstancesResponse';
-import ContractEventCreateModel from './model/ContractEventCreateModel';
 import ContractGPUAllocationGraphResponse from './model/ContractGPUAllocationGraphResponse';
 import ContractInstanceFields from './model/ContractInstanceFields';
 import ContractInstancesResponse from './model/ContractInstancesResponse';
-import ContractResourcePayload from './model/ContractResourcePayload';
-import ContractlBillingHistoryResponseMetrics from './model/ContractlBillingHistoryResponseMetrics';
+import CreateClusterNodeFields from './model/CreateClusterNodeFields';
+import CreateClusterNodeGroupPayload from './model/CreateClusterNodeGroupPayload';
 import CreateClusterPayload from './model/CreateClusterPayload';
-import CreateContractFields from './model/CreateContractFields';
-import CreateContractPayload from './model/CreateContractPayload';
-import CreateDiscountResponse from './model/CreateDiscountResponse';
-import CreateDiscountsPayload from './model/CreateDiscountsPayload';
 import CreateEnvironment from './model/CreateEnvironment';
 import CreateFirewallPayload from './model/CreateFirewallPayload';
 import CreateFirewallRulePayload from './model/CreateFirewallRulePayload';
-import CreateGPU from './model/CreateGPU';
 import CreateImage from './model/CreateImage';
 import CreateImagePayload from './model/CreateImagePayload';
 import CreateInstancesPayload from './model/CreateInstancesPayload';
@@ -80,44 +86,24 @@ import CreateSecurityRulePayload from './model/CreateSecurityRulePayload';
 import CreateSnapshotPayload from './model/CreateSnapshotPayload';
 import CreateSnapshotResponse from './model/CreateSnapshotResponse';
 import CreateUpdateComplianceResponse from './model/CreateUpdateComplianceResponse';
-import CreateUpdatePermissionPayload from './model/CreateUpdatePermissionPayload';
-import CreateUpdatePermissionResponseModel from './model/CreateUpdatePermissionResponseModel';
-import CreateUpdatePolicyPayload from './model/CreateUpdatePolicyPayload';
-import CreateUpdatePolicyResponseModel from './model/CreateUpdatePolicyResponseModel';
 import CreateUpdateRbacRolePayload from './model/CreateUpdateRbacRolePayload';
 import CreateVolumePayload from './model/CreateVolumePayload';
-import Creditrechargelimitfield from './model/Creditrechargelimitfield';
-import Creditrechargelimitresponse from './model/Creditrechargelimitresponse';
-import Creditrequestresponse from './model/Creditrequestresponse';
-import Creditrequests from './model/Creditrequests';
 import CustomerContractDetailResponseModel from './model/CustomerContractDetailResponseModel';
 import CustomerContractFields from './model/CustomerContractFields';
-import CustomerFields from './model/CustomerFields';
-import CustomerPayload from './model/CustomerPayload';
 import DashboardInfoResponse from './model/DashboardInfoResponse';
-import Data from './model/Data';
+import DataSynthesisBillingHistoryDetailsResponseSchema from './model/DataSynthesisBillingHistoryDetailsResponseSchema';
 import DeploymentFields from './model/DeploymentFields';
-import DeploymentFieldsforstartdeployments from './model/DeploymentFieldsforstartdeployments';
+import DeploymentFieldsForStartDeployments from './model/DeploymentFieldsForStartDeployments';
 import Deployments from './model/Deployments';
 import DetachVolumes from './model/DetachVolumes';
 import DetachVolumesPayload from './model/DetachVolumesPayload';
-import DiscountEntityModel from './model/DiscountEntityModel';
-import DiscountFields from './model/DiscountFields';
-import DiscountPlanFields from './model/DiscountPlanFields';
-import DiscountResourceFields from './model/DiscountResourceFields';
-import DiscountResourcePayload from './model/DiscountResourcePayload';
-import EditlabelofanexistingVMPayload from './model/EditlabelofanexistingVMPayload';
+import EditLabelOfAnExistingVMPayload from './model/EditLabelOfAnExistingVMPayload';
 import Environment from './model/Environment';
 import EnvironmentFeatures from './model/EnvironmentFeatures';
 import EnvironmentFields from './model/EnvironmentFields';
-import EnvironmentFieldsforVolume from './model/EnvironmentFieldsforVolume';
+import EnvironmentFieldsForVolume from './model/EnvironmentFieldsForVolume';
 import Environments from './model/Environments';
 import ErrorResponseModel from './model/ErrorResponseModel';
-import ExcludeBillingPostPayload from './model/ExcludeBillingPostPayload';
-import ExcludeBillingPostResponse from './model/ExcludeBillingPostResponse';
-import ExportBillingDataRequest from './model/ExportBillingDataRequest';
-import ExportBillingDataResponse from './model/ExportBillingDataResponse';
-import FieldChange from './model/FieldChange';
 import FirewallAttachmentModel from './model/FirewallAttachmentModel';
 import FirewallAttachmentVMModel from './model/FirewallAttachmentVMModel';
 import FirewallDetailFields from './model/FirewallDetailFields';
@@ -129,55 +115,33 @@ import FirewallRule from './model/FirewallRule';
 import FirewallsListResponse from './model/FirewallsListResponse';
 import FlavorFields from './model/FlavorFields';
 import FlavorItemGetResponse from './model/FlavorItemGetResponse';
+import FlavorLabelFields from './model/FlavorLabelFields';
 import FlavorListResponse from './model/FlavorListResponse';
 import FlavorObjectFields from './model/FlavorObjectFields';
-import FlavorPayload from './model/FlavorPayload';
-import FlavorResponse from './model/FlavorResponse';
-import FlavorVMFields from './model/FlavorVMFields';
-import FlavorVMsResponse from './model/FlavorVMsResponse';
-import FutureNodeModel from './model/FutureNodeModel';
-import FutureNodeResponseModel from './model/FutureNodeResponseModel';
-import FutureNodeStockModel from './model/FutureNodeStockModel';
-import FutureNodeUpdateModel from './model/FutureNodeUpdateModel';
-import FutureNodesStockModel from './model/FutureNodesStockModel';
-import GPU from './model/GPU';
 import GPUFields from './model/GPUFields';
 import GPUList from './model/GPUList';
 import GPURegionFields from './model/GPURegionFields';
 import GenerateUpdateApiKeyPayload from './model/GenerateUpdateApiKeyPayload';
 import GenerateUpdateApiKeyResponseModel from './model/GenerateUpdateApiKeyResponseModel';
-import GetAllContractFields from './model/GetAllContractFields';
-import GetAllContractsResponseModel from './model/GetAllContractsResponseModel';
-import GetAllDiscountForAllOrganizationResponse from './model/GetAllDiscountForAllOrganizationResponse';
-import GetAllDiscountsFields from './model/GetAllDiscountsFields';
 import GetApiKeysResponseModel from './model/GetApiKeysResponseModel';
+import GetCreditAndThresholdInfo from './model/GetCreditAndThresholdInfo';
+import GetCreditAndThresholdInfoInResponse from './model/GetCreditAndThresholdInfoInResponse';
 import GetCustomerContractsListResponseModel from './model/GetCustomerContractsListResponseModel';
-import GetDiscountDetailResponse from './model/GetDiscountDetailResponse';
-import GetDiscountResponse from './model/GetDiscountResponse';
-import GetEntityDiscountDetailResponse from './model/GetEntityDiscountDetailResponse';
+import GetInstanceLogsResponse from './model/GetInstanceLogsResponse';
 import GetInvitesResponseModel from './model/GetInvitesResponseModel';
 import GetOrganizationResponseModel from './model/GetOrganizationResponseModel';
 import GetPermissionsResponseModel from './model/GetPermissionsResponseModel';
 import GetPoliciesResponseModel from './model/GetPoliciesResponseModel';
 import GetRbacRolesResponseModel from './model/GetRbacRolesResponseModel';
-import GetTokenPayload from './model/GetTokenPayload';
 import GetUserPermissionsResponseModel from './model/GetUserPermissionsResponseModel';
-import GetVersionResponse from './model/GetVersionResponse';
-import Getcreditandthresholdinfo from './model/Getcreditandthresholdinfo';
-import Getcreditandthresholdinfoinresponse from './model/Getcreditandthresholdinfoinresponse';
 import GraphDatetimeValueModel from './model/GraphDatetimeValueModel';
-import HistoricalInstance from './model/HistoricalInstance';
-import HistoricalInstancesFields from './model/HistoricalInstancesFields';
 import Image from './model/Image';
 import ImageFields from './model/ImageFields';
 import ImageGetResponse from './model/ImageGetResponse';
-import ImageLogos from './model/ImageLogos';
 import Images from './model/Images';
 import ImportKeypairPayload from './model/ImportKeypairPayload';
 import ImportKeypairResponse from './model/ImportKeypairResponse';
-import InfrahubResourceObjectResponse from './model/InfrahubResourceObjectResponse';
 import InfrahubResourceObjectResponseForCustomer from './model/InfrahubResourceObjectResponseForCustomer';
-import InsertDiscountPlanFields from './model/InsertDiscountPlanFields';
 import Instance from './model/Instance';
 import InstanceEnvironmentFields from './model/InstanceEnvironmentFields';
 import InstanceEvents from './model/InstanceEvents';
@@ -189,56 +153,42 @@ import InstanceKeypairFields from './model/InstanceKeypairFields';
 import InstanceOverviewFields from './model/InstanceOverviewFields';
 import InstanceResizePayload from './model/InstanceResizePayload';
 import Instances from './model/Instances';
-import InstancesSummaryFields from './model/InstancesSummaryFields';
-import InternalEnvironmentFields from './model/InternalEnvironmentFields';
-import InternalInstanceFields from './model/InternalInstanceFields';
-import InternalInstanceFlavorFields from './model/InternalInstanceFlavorFields';
-import InternalInstanceImageFields from './model/InternalInstanceImageFields';
-import InternalInstanceKeypairFields from './model/InternalInstanceKeypairFields';
-import InternalInstancesResponse from './model/InternalInstancesResponse';
-import InternalSecurityRulesFieldsForInstance from './model/InternalSecurityRulesFieldsForInstance';
-import InternalVolumeAttachmentFields from './model/InternalVolumeAttachmentFields';
-import InternalVolumeFields from './model/InternalVolumeFields';
-import InternalVolumesResponse from './model/InternalVolumesResponse';
 import InviteFields from './model/InviteFields';
 import InviteUserPayload from './model/InviteUserPayload';
 import InviteUserResponseModel from './model/InviteUserResponseModel';
+import KeypairEnvironmentFeatures from './model/KeypairEnvironmentFeatures';
+import KeypairEnvironmentFields from './model/KeypairEnvironmentFields';
 import KeypairFields from './model/KeypairFields';
 import Keypairs from './model/Keypairs';
 import LableResonse from './model/LableResonse';
-import Lastdaycostfields from './model/Lastdaycostfields';
-import Lastdaycostresponse from './model/Lastdaycostresponse';
-import LogoGetResponse from './model/LogoGetResponse';
-import LogoutPayload from './model/LogoutPayload';
+import LastDayCostFields from './model/LastDayCostFields';
+import LastDayCostResponse from './model/LastDayCostResponse';
+import Logos from './model/Logos';
+import MFAStatusFields from './model/MFAStatusFields';
+import MFAStatusResponse from './model/MFAStatusResponse';
+import MasterFlavorsResponse from './model/MasterFlavorsResponse';
 import MetricItemFields from './model/MetricItemFields';
 import MetricsFields from './model/MetricsFields';
+import ModelEvaluationBillingHistoryDetailsResponseSchema from './model/ModelEvaluationBillingHistoryDetailsResponseSchema';
 import NameAvailableModel from './model/NameAvailableModel';
 import NewConfigurationsResponse from './model/NewConfigurationsResponse';
 import NewModelResponse from './model/NewModelResponse';
 import NewStockResponse from './model/NewStockResponse';
 import NewStockRetriveResponse from './model/NewStockRetriveResponse';
-import NewStockUpdateResponseModel from './model/NewStockUpdateResponseModel';
-import NodeModel from './model/NodeModel';
-import NodePayloadModel from './model/NodePayloadModel';
-import NodePowerUsageModel from './model/NodePowerUsageModel';
-import NodeResponseModel from './model/NodeResponseModel';
-import NodeStockPayloadModel from './model/NodeStockPayloadModel';
-import NodeStockResponseModel from './model/NodeStockResponseModel';
-import NodeStocksPayload from './model/NodeStocksPayload';
 import OrganizationFields from './model/OrganizationFields';
 import OrganizationLevelBillingHistory from './model/OrganizationLevelBillingHistory';
 import OrganizationLevelBillingHistoryResources from './model/OrganizationLevelBillingHistoryResources';
 import OrganizationLevelBillingHistoryResponseAttributes from './model/OrganizationLevelBillingHistoryResponseAttributes';
 import OrganizationLevelBillingHistoryResponseMetrics from './model/OrganizationLevelBillingHistoryResponseMetrics';
 import OrganizationLevelBillingHistoryResponseModel from './model/OrganizationLevelBillingHistoryResponseModel';
-import OrganizationObjectResponse from './model/OrganizationObjectResponse';
-import OrganizationThresholdfields from './model/OrganizationThresholdfields';
+import OrganizationThresholdFields from './model/OrganizationThresholdFields';
+import OrganizationThresholdUpdateResponse from './model/OrganizationThresholdUpdateResponse';
+import OrganizationThresholdsResponse from './model/OrganizationThresholdsResponse';
 import OrganizationUserResponseModel from './model/OrganizationUserResponseModel';
-import Organizationcreditrechargelimitresponse from './model/Organizationcreditrechargelimitresponse';
-import Organizationthresholdsresponse from './model/Organizationthresholdsresponse';
-import Organizationthresholdupdateresponse from './model/Organizationthresholdupdateresponse';
 import OverviewInfo from './model/OverviewInfo';
+import Pagination from './model/Pagination';
 import PaginationData from './model/PaginationData';
+import PartnerConfig from './model/PartnerConfig';
 import PaymentDetailsFields from './model/PaymentDetailsFields';
 import PaymentDetailsResponse from './model/PaymentDetailsResponse';
 import PaymentInitiateFields from './model/PaymentInitiateFields';
@@ -247,10 +197,9 @@ import PaymentInitiateResponse from './model/PaymentInitiateResponse';
 import PermissionFields from './model/PermissionFields';
 import PolicyFields from './model/PolicyFields';
 import PolicyPermissionFields from './model/PolicyPermissionFields';
-import PowerUsageModel from './model/PowerUsageModel';
 import PricebookModel from './model/PricebookModel';
-import PricebookResourceObjectResponse from './model/PricebookResourceObjectResponse';
 import PricebookResourceObjectResponseForCustomer from './model/PricebookResourceObjectResponseForCustomer';
+import PrimaryColor from './model/PrimaryColor';
 import ProfileFields from './model/ProfileFields';
 import ProfileListResponse from './model/ProfileListResponse';
 import ProfileObjectFields from './model/ProfileObjectFields';
@@ -258,17 +207,17 @@ import RbacRoleDetailResponseModel from './model/RbacRoleDetailResponseModel';
 import RbacRoleDetailResponseModelFixed from './model/RbacRoleDetailResponseModelFixed';
 import RbacRoleField from './model/RbacRoleField';
 import RbacRoleFields from './model/RbacRoleFields';
-import RefreshTokenPayload from './model/RefreshTokenPayload';
 import RegionFields from './model/RegionFields';
-import RegionPayload from './model/RegionPayload';
-import RegionResponse from './model/RegionResponse';
 import Regions from './model/Regions';
 import RemoveMemberFromOrganizationResponseModel from './model/RemoveMemberFromOrganizationResponseModel';
 import RemoveMemberPayload from './model/RemoveMemberPayload';
 import RequestConsole from './model/RequestConsole';
+import RequestInstanceLogsPayload from './model/RequestInstanceLogsPayload';
+import RequestInstanceLogsResponse from './model/RequestInstanceLogsResponse';
 import ResourceBillingEventsHistoryMetrics from './model/ResourceBillingEventsHistoryMetrics';
 import ResourceBillingEventsHistoryResponse from './model/ResourceBillingEventsHistoryResponse';
 import ResourceBillingResponseForCustomer from './model/ResourceBillingResponseForCustomer';
+import ResourceLevelBillingBucketDetailsResources from './model/ResourceLevelBillingBucketDetailsResources';
 import ResourceLevelBillingDetailsAttributes from './model/ResourceLevelBillingDetailsAttributes';
 import ResourceLevelBillingDetailsMetrics from './model/ResourceLevelBillingDetailsMetrics';
 import ResourceLevelBillingDetailsVM from './model/ResourceLevelBillingDetailsVM';
@@ -277,12 +226,19 @@ import ResourceLevelBillingDetailsVolumeAttributes from './model/ResourceLevelBi
 import ResourceLevelBillingDetailsVolumeMetrics from './model/ResourceLevelBillingDetailsVolumeMetrics';
 import ResourceLevelBillingHistory from './model/ResourceLevelBillingHistory';
 import ResourceLevelBillingHistoryResources from './model/ResourceLevelBillingHistoryResources';
+import ResourceLevelBillingHistoryResourcesCluster from './model/ResourceLevelBillingHistoryResourcesCluster';
 import ResourceLevelBillingHistoryResponseAttributes from './model/ResourceLevelBillingHistoryResponseAttributes';
 import ResourceLevelBillingHistoryResponseMetrics from './model/ResourceLevelBillingHistoryResponseMetrics';
 import ResourceLevelBillingVMDetailsResources from './model/ResourceLevelBillingVMDetailsResources';
 import ResourceLevelBillingVolumeDetailsResources from './model/ResourceLevelBillingVolumeDetailsResources';
+import ResourceLevelBucketBillingDetailsResponseModel from './model/ResourceLevelBucketBillingDetailsResponseModel';
+import ResourceLevelBucketBillingHistoryResponseModel from './model/ResourceLevelBucketBillingHistoryResponseModel';
+import ResourceLevelClusterBillingDetailsResponseModel from './model/ResourceLevelClusterBillingDetailsResponseModel';
+import ResourceLevelClusterBillingHistoryResponseModel from './model/ResourceLevelClusterBillingHistoryResponseModel';
+import ResourceLevelClusterGraphBillingDetailsResponseModel from './model/ResourceLevelClusterGraphBillingDetailsResponseModel';
 import ResourceLevelGraphBillingDetailVolume from './model/ResourceLevelGraphBillingDetailVolume';
 import ResourceLevelGraphBillingDetailsAttributes from './model/ResourceLevelGraphBillingDetailsAttributes';
+import ResourceLevelGraphBillingDetailsBucket from './model/ResourceLevelGraphBillingDetailsBucket';
 import ResourceLevelGraphBillingDetailsMetrics from './model/ResourceLevelGraphBillingDetailsMetrics';
 import ResourceLevelGraphBillingDetailsVM from './model/ResourceLevelGraphBillingDetailsVM';
 import ResourceLevelGraphBillingVMDetailsResources from './model/ResourceLevelGraphBillingVMDetailsResources';
@@ -297,12 +253,12 @@ import ResourceObjectResponseForCustomer from './model/ResourceObjectResponseFor
 import ResponseModel from './model/ResponseModel';
 import RolePermissionFields from './model/RolePermissionFields';
 import RolePolicyFields from './model/RolePolicyFields';
+import SecondaryColor from './model/SecondaryColor';
 import SecurityGroupRule from './model/SecurityGroupRule';
 import SecurityGroupRuleFields from './model/SecurityGroupRuleFields';
-import SecurityRulesFieldsforInstance from './model/SecurityRulesFieldsforInstance';
+import SecurityRulesFieldsForInstance from './model/SecurityRulesFieldsForInstance';
 import SecurityRulesProtocolFields from './model/SecurityRulesProtocolFields';
-import SetDefaultsPayload from './model/SetDefaultsPayload';
-import SingleVisibilityUserResponse from './model/SingleVisibilityUserResponse';
+import ServerlessInferencedBillingHistoryDetailsResponseSchema from './model/ServerlessInferencedBillingHistoryDetailsResponseSchema';
 import SnapshotFields from './model/SnapshotFields';
 import SnapshotRestoreRequest from './model/SnapshotRestoreRequest';
 import SnapshotRetrieve from './model/SnapshotRetrieve';
@@ -310,57 +266,48 @@ import SnapshotRetrieveFields from './model/SnapshotRetrieveFields';
 import Snapshots from './model/Snapshots';
 import StartDeployment from './model/StartDeployment';
 import StartDeploymentPayload from './model/StartDeploymentPayload';
-import StockVisibilityUserListResponse from './model/StockVisibilityUserListResponse';
-import StockVisibilityUserPayload from './model/StockVisibilityUserPayload';
 import SubResourceGraphBillingDetailsMetrics from './model/SubResourceGraphBillingDetailsMetrics';
 import SubResourcesCostsResponseModel from './model/SubResourcesCostsResponseModel';
 import SubResourcesGraphBillingHistoryFields from './model/SubResourcesGraphBillingHistoryFields';
 import SubResourcesGraphResponseModel from './model/SubResourcesGraphResponseModel';
-import Subscribeorunsubscribeupdatepayload from './model/Subscribeorunsubscribeupdatepayload';
-import SuccessResponseModel from './model/SuccessResponseModel';
+import SubscribeOrUnsubscribeUpdatePayload from './model/SubscribeOrUnsubscribeUpdatePayload';
 import Template from './model/Template';
 import TemplateFields from './model/TemplateFields';
 import Templates from './model/Templates';
-import TokenFields from './model/TokenFields';
-import UpdateContractPayload from './model/UpdateContractPayload';
-import UpdateDiscountsPayload from './model/UpdateDiscountsPayload';
-import UpdateDiscountsStatusPayload from './model/UpdateDiscountsStatusPayload';
+import TokenBasedBillingHistoryResponse from './model/TokenBasedBillingHistoryResponse';
+import URIs from './model/URIs';
 import UpdateEnvironment from './model/UpdateEnvironment';
-import UpdateGPU from './model/UpdateGPU';
 import UpdateKeypairName from './model/UpdateKeypairName';
-import UpdateKeypairnameresponse from './model/UpdateKeypairnameresponse';
+import UpdateKeypairNameResponse from './model/UpdateKeypairNameResponse';
 import UpdateOrganizationPayload from './model/UpdateOrganizationPayload';
 import UpdateOrganizationResponseModel from './model/UpdateOrganizationResponseModel';
 import UpdateTemplate from './model/UpdateTemplate';
+import UpdateVolumeAttachmentPayload from './model/UpdateVolumeAttachmentPayload';
+import UpdateVolumePayload from './model/UpdateVolumePayload';
+import UpdateVolumeResponse from './model/UpdateVolumeResponse';
 import UserDefaultChoiceForUserFields from './model/UserDefaultChoiceForUserFields';
 import UserDefaultChoicesForUserResponse from './model/UserDefaultChoicesForUserResponse';
+import UserInfoPostPayload from './model/UserInfoPostPayload';
+import UserOrganizationsResponse from './model/UserOrganizationsResponse';
 import UserPermissionFields from './model/UserPermissionFields';
-import UserTransferPayload from './model/UserTransferPayload';
-import Userinfopostpayload from './model/Userinfopostpayload';
 import UsersInfoFields from './model/UsersInfoFields';
 import UsersInfoListResponse from './model/UsersInfoListResponse';
-import VMUsageRequestPayload from './model/VMUsageRequestPayload';
-import VMUsageResponse from './model/VMUsageResponse';
 import VNCURL from './model/VNCURL';
 import VNCURLFields from './model/VNCURLFields';
-import VerifyApiKeyPayload from './model/VerifyApiKeyPayload';
-import VerifyApiKeyResponseModel from './model/VerifyApiKeyResponseModel';
-import VirtualMachineUsage from './model/VirtualMachineUsage';
 import Volume from './model/Volume';
 import VolumeAttachmentFields from './model/VolumeAttachmentFields';
 import VolumeFields from './model/VolumeFields';
-import VolumeFieldsforInstance from './model/VolumeFieldsforInstance';
+import VolumeFieldsForInstance from './model/VolumeFieldsForInstance';
 import VolumeOverviewFields from './model/VolumeOverviewFields';
-import VolumeStatusChangeFields from './model/VolumeStatusChangeFields';
 import VolumeTypes from './model/VolumeTypes';
 import Volumes from './model/Volumes';
-import VolumesLastStatusChangeResponse from './model/VolumesLastStatusChangeResponse';
-import WarningMailLogFields from './model/WarningMailLogFields';
-import WarningMailLogResponse from './model/WarningMailLogResponse';
+import VolumesFields from './model/VolumesFields';
+import WorkloadBillingHistoryResponse from './model/WorkloadBillingHistoryResponse';
 import AliveApi from './api/AliveApi';
 import ApiKeyApi from './api/ApiKeyApi';
 import AssigningMemberRoleApi from './api/AssigningMemberRoleApi';
 import AuthApi from './api/AuthApi';
+import BetaAccessApi from './api/BetaAccessApi';
 import BillingApi from './api/BillingApi';
 import CalculateApi from './api/CalculateApi';
 import CallbacksApi from './api/CallbacksApi';
@@ -381,6 +328,7 @@ import ImageApi from './api/ImageApi';
 import InviteApi from './api/InviteApi';
 import KeypairApi from './api/KeypairApi';
 import OrganizationApi from './api/OrganizationApi';
+import PartnerConfigApi from './api/PartnerConfigApi';
 import PaymentApi from './api/PaymentApi';
 import PermissionApi from './api/PermissionApi';
 import PolicyApi from './api/PolicyApi';
@@ -432,7 +380,7 @@ import VolumeAttachmentApi from './api/VolumeAttachmentApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export {
     /**
@@ -442,10 +390,10 @@ export {
     ApiClient,
 
     /**
-     * The AddUpdateFlavorOrganizationPayload model constructor.
-     * @property {module:model/AddUpdateFlavorOrganizationPayload}
+     * The AccessTokenField model constructor.
+     * @property {module:model/AccessTokenField}
      */
-    AddUpdateFlavorOrganizationPayload,
+    AccessTokenField,
 
     /**
      * The AddUserInfoSuccessResponseModel model constructor.
@@ -464,12 +412,6 @@ export {
      * @property {module:model/ApiKeyFields}
      */
     ApiKeyFields,
-
-    /**
-     * The ApiKeyVerifyFields model constructor.
-     * @property {module:model/ApiKeyVerifyFields}
-     */
-    ApiKeyVerifyFields,
 
     /**
      * The AssignRbacRolePayload model constructor.
@@ -520,22 +462,22 @@ export {
     AttachVolumesPayload,
 
     /**
+     * The AttachmentsFieldsForVolume model constructor.
+     * @property {module:model/AttachmentsFieldsForVolume}
+     */
+    AttachmentsFieldsForVolume,
+
+    /**
+     * The Attributes model constructor.
+     * @property {module:model/Attributes}
+     */
+    Attributes,
+
+    /**
      * The AuthGetTokenResponseModel model constructor.
      * @property {module:model/AuthGetTokenResponseModel}
      */
     AuthGetTokenResponseModel,
-
-    /**
-     * The AuthRequestLoginFields model constructor.
-     * @property {module:model/AuthRequestLoginFields}
-     */
-    AuthRequestLoginFields,
-
-    /**
-     * The AuthRequestLoginResponseModel model constructor.
-     * @property {module:model/AuthRequestLoginResponseModel}
-     */
-    AuthRequestLoginResponseModel,
 
     /**
      * The AuthUserFields model constructor.
@@ -550,28 +492,82 @@ export {
     AuthUserInfoResponseModel,
 
     /**
-     * The BillingImmuneResourcesResponse model constructor.
-     * @property {module:model/BillingImmuneResourcesResponse}
+     * The BetaAccessRequestFields model constructor.
+     * @property {module:model/BetaAccessRequestFields}
      */
-    BillingImmuneResourcesResponse,
+    BetaAccessRequestFields,
 
     /**
-     * The BillingResponse model constructor.
-     * @property {module:model/BillingResponse}
+     * The BetaAccessRequestPayload model constructor.
+     * @property {module:model/BetaAccessRequestPayload}
      */
-    BillingResponse,
+    BetaAccessRequestPayload,
 
     /**
-     * The Billingmetricesfields model constructor.
-     * @property {module:model/Billingmetricesfields}
+     * The BetaAccessRequestResponseModel model constructor.
+     * @property {module:model/BetaAccessRequestResponseModel}
      */
-    Billingmetricesfields,
+    BetaAccessRequestResponseModel,
 
     /**
-     * The Billingmetricesresponse model constructor.
-     * @property {module:model/Billingmetricesresponse}
+     * The BetaAccessStatusItem model constructor.
+     * @property {module:model/BetaAccessStatusItem}
      */
-    Billingmetricesresponse,
+    BetaAccessStatusItem,
+
+    /**
+     * The BetaAccessStatusResponseModel model constructor.
+     * @property {module:model/BetaAccessStatusResponseModel}
+     */
+    BetaAccessStatusResponseModel,
+
+    /**
+     * The BillingHistory model constructor.
+     * @property {module:model/BillingHistory}
+     */
+    BillingHistory,
+
+    /**
+     * The BillingHistoryDataSynthesisDetails model constructor.
+     * @property {module:model/BillingHistoryDataSynthesisDetails}
+     */
+    BillingHistoryDataSynthesisDetails,
+
+    /**
+     * The BillingHistoryFineTuning model constructor.
+     * @property {module:model/BillingHistoryFineTuning}
+     */
+    BillingHistoryFineTuning,
+
+    /**
+     * The BillingHistoryModelEvalutationDetails model constructor.
+     * @property {module:model/BillingHistoryModelEvalutationDetails}
+     */
+    BillingHistoryModelEvalutationDetails,
+
+    /**
+     * The BillingHistoryServerlessInference model constructor.
+     * @property {module:model/BillingHistoryServerlessInference}
+     */
+    BillingHistoryServerlessInference,
+
+    /**
+     * The BillingHistoryServerlessInferenceDetails model constructor.
+     * @property {module:model/BillingHistoryServerlessInferenceDetails}
+     */
+    BillingHistoryServerlessInferenceDetails,
+
+    /**
+     * The BillingMetricesFields model constructor.
+     * @property {module:model/BillingMetricesFields}
+     */
+    BillingMetricesFields,
+
+    /**
+     * The BillingMetricesResponse model constructor.
+     * @property {module:model/BillingMetricesResponse}
+     */
+    BillingMetricesResponse,
 
     /**
      * The ClusterEvents model constructor.
@@ -592,10 +588,58 @@ export {
     ClusterFields,
 
     /**
+     * The ClusterFlavorFields model constructor.
+     * @property {module:model/ClusterFlavorFields}
+     */
+    ClusterFlavorFields,
+
+    /**
      * The ClusterListResponse model constructor.
      * @property {module:model/ClusterListResponse}
      */
     ClusterListResponse,
+
+    /**
+     * The ClusterNodeFields model constructor.
+     * @property {module:model/ClusterNodeFields}
+     */
+    ClusterNodeFields,
+
+    /**
+     * The ClusterNodeGroupFields model constructor.
+     * @property {module:model/ClusterNodeGroupFields}
+     */
+    ClusterNodeGroupFields,
+
+    /**
+     * The ClusterNodeGroupsCreateResponse model constructor.
+     * @property {module:model/ClusterNodeGroupsCreateResponse}
+     */
+    ClusterNodeGroupsCreateResponse,
+
+    /**
+     * The ClusterNodeGroupsGetResponse model constructor.
+     * @property {module:model/ClusterNodeGroupsGetResponse}
+     */
+    ClusterNodeGroupsGetResponse,
+
+    /**
+     * The ClusterNodeGroupsListResponse model constructor.
+     * @property {module:model/ClusterNodeGroupsListResponse}
+     */
+    ClusterNodeGroupsListResponse,
+
+    /**
+     * The ClusterNodeInstanceFields model constructor.
+     * @property {module:model/ClusterNodeInstanceFields}
+     */
+    ClusterNodeInstanceFields,
+
+    /**
+     * The ClusterNodesListResponse model constructor.
+     * @property {module:model/ClusterNodesListResponse}
+     */
+    ClusterNodesListResponse,
 
     /**
      * The ClusterResponse model constructor.
@@ -604,10 +648,22 @@ export {
     ClusterResponse,
 
     /**
+     * The ClusterVersion model constructor.
+     * @property {module:model/ClusterVersion}
+     */
+    ClusterVersion,
+
+    /**
      * The ClusterVersions model constructor.
      * @property {module:model/ClusterVersions}
      */
     ClusterVersions,
+
+    /**
+     * The Colors model constructor.
+     * @property {module:model/Colors}
+     */
+    Colors,
 
     /**
      * The CommonResponseModel model constructor.
@@ -652,52 +708,10 @@ export {
     Contract,
 
     /**
-     * The ContractBillingHistory model constructor.
-     * @property {module:model/ContractBillingHistory}
-     */
-    ContractBillingHistory,
-
-    /**
-     * The ContractBillingHistoryResponseAttributes model constructor.
-     * @property {module:model/ContractBillingHistoryResponseAttributes}
-     */
-    ContractBillingHistoryResponseAttributes,
-
-    /**
-     * The ContractBillingHistoryResponseModel model constructor.
-     * @property {module:model/ContractBillingHistoryResponseModel}
-     */
-    ContractBillingHistoryResponseModel,
-
-    /**
-     * The ContractChangePayload model constructor.
-     * @property {module:model/ContractChangePayload}
-     */
-    ContractChangePayload,
-
-    /**
      * The ContractDiscountPlanFields model constructor.
      * @property {module:model/ContractDiscountPlanFields}
      */
     ContractDiscountPlanFields,
-
-    /**
-     * The ContractEligibleInstanceFields model constructor.
-     * @property {module:model/ContractEligibleInstanceFields}
-     */
-    ContractEligibleInstanceFields,
-
-    /**
-     * The ContractEligibleInstancesResponse model constructor.
-     * @property {module:model/ContractEligibleInstancesResponse}
-     */
-    ContractEligibleInstancesResponse,
-
-    /**
-     * The ContractEventCreateModel model constructor.
-     * @property {module:model/ContractEventCreateModel}
-     */
-    ContractEventCreateModel,
 
     /**
      * The ContractGPUAllocationGraphResponse model constructor.
@@ -718,46 +732,22 @@ export {
     ContractInstancesResponse,
 
     /**
-     * The ContractResourcePayload model constructor.
-     * @property {module:model/ContractResourcePayload}
+     * The CreateClusterNodeFields model constructor.
+     * @property {module:model/CreateClusterNodeFields}
      */
-    ContractResourcePayload,
+    CreateClusterNodeFields,
 
     /**
-     * The ContractlBillingHistoryResponseMetrics model constructor.
-     * @property {module:model/ContractlBillingHistoryResponseMetrics}
+     * The CreateClusterNodeGroupPayload model constructor.
+     * @property {module:model/CreateClusterNodeGroupPayload}
      */
-    ContractlBillingHistoryResponseMetrics,
+    CreateClusterNodeGroupPayload,
 
     /**
      * The CreateClusterPayload model constructor.
      * @property {module:model/CreateClusterPayload}
      */
     CreateClusterPayload,
-
-    /**
-     * The CreateContractFields model constructor.
-     * @property {module:model/CreateContractFields}
-     */
-    CreateContractFields,
-
-    /**
-     * The CreateContractPayload model constructor.
-     * @property {module:model/CreateContractPayload}
-     */
-    CreateContractPayload,
-
-    /**
-     * The CreateDiscountResponse model constructor.
-     * @property {module:model/CreateDiscountResponse}
-     */
-    CreateDiscountResponse,
-
-    /**
-     * The CreateDiscountsPayload model constructor.
-     * @property {module:model/CreateDiscountsPayload}
-     */
-    CreateDiscountsPayload,
 
     /**
      * The CreateEnvironment model constructor.
@@ -776,12 +766,6 @@ export {
      * @property {module:model/CreateFirewallRulePayload}
      */
     CreateFirewallRulePayload,
-
-    /**
-     * The CreateGPU model constructor.
-     * @property {module:model/CreateGPU}
-     */
-    CreateGPU,
 
     /**
      * The CreateImage model constructor.
@@ -844,30 +828,6 @@ export {
     CreateUpdateComplianceResponse,
 
     /**
-     * The CreateUpdatePermissionPayload model constructor.
-     * @property {module:model/CreateUpdatePermissionPayload}
-     */
-    CreateUpdatePermissionPayload,
-
-    /**
-     * The CreateUpdatePermissionResponseModel model constructor.
-     * @property {module:model/CreateUpdatePermissionResponseModel}
-     */
-    CreateUpdatePermissionResponseModel,
-
-    /**
-     * The CreateUpdatePolicyPayload model constructor.
-     * @property {module:model/CreateUpdatePolicyPayload}
-     */
-    CreateUpdatePolicyPayload,
-
-    /**
-     * The CreateUpdatePolicyResponseModel model constructor.
-     * @property {module:model/CreateUpdatePolicyResponseModel}
-     */
-    CreateUpdatePolicyResponseModel,
-
-    /**
      * The CreateUpdateRbacRolePayload model constructor.
      * @property {module:model/CreateUpdateRbacRolePayload}
      */
@@ -878,30 +838,6 @@ export {
      * @property {module:model/CreateVolumePayload}
      */
     CreateVolumePayload,
-
-    /**
-     * The Creditrechargelimitfield model constructor.
-     * @property {module:model/Creditrechargelimitfield}
-     */
-    Creditrechargelimitfield,
-
-    /**
-     * The Creditrechargelimitresponse model constructor.
-     * @property {module:model/Creditrechargelimitresponse}
-     */
-    Creditrechargelimitresponse,
-
-    /**
-     * The Creditrequestresponse model constructor.
-     * @property {module:model/Creditrequestresponse}
-     */
-    Creditrequestresponse,
-
-    /**
-     * The Creditrequests model constructor.
-     * @property {module:model/Creditrequests}
-     */
-    Creditrequests,
 
     /**
      * The CustomerContractDetailResponseModel model constructor.
@@ -916,28 +852,16 @@ export {
     CustomerContractFields,
 
     /**
-     * The CustomerFields model constructor.
-     * @property {module:model/CustomerFields}
-     */
-    CustomerFields,
-
-    /**
-     * The CustomerPayload model constructor.
-     * @property {module:model/CustomerPayload}
-     */
-    CustomerPayload,
-
-    /**
      * The DashboardInfoResponse model constructor.
      * @property {module:model/DashboardInfoResponse}
      */
     DashboardInfoResponse,
 
     /**
-     * The Data model constructor.
-     * @property {module:model/Data}
+     * The DataSynthesisBillingHistoryDetailsResponseSchema model constructor.
+     * @property {module:model/DataSynthesisBillingHistoryDetailsResponseSchema}
      */
-    Data,
+    DataSynthesisBillingHistoryDetailsResponseSchema,
 
     /**
      * The DeploymentFields model constructor.
@@ -946,10 +870,10 @@ export {
     DeploymentFields,
 
     /**
-     * The DeploymentFieldsforstartdeployments model constructor.
-     * @property {module:model/DeploymentFieldsforstartdeployments}
+     * The DeploymentFieldsForStartDeployments model constructor.
+     * @property {module:model/DeploymentFieldsForStartDeployments}
      */
-    DeploymentFieldsforstartdeployments,
+    DeploymentFieldsForStartDeployments,
 
     /**
      * The Deployments model constructor.
@@ -970,40 +894,10 @@ export {
     DetachVolumesPayload,
 
     /**
-     * The DiscountEntityModel model constructor.
-     * @property {module:model/DiscountEntityModel}
+     * The EditLabelOfAnExistingVMPayload model constructor.
+     * @property {module:model/EditLabelOfAnExistingVMPayload}
      */
-    DiscountEntityModel,
-
-    /**
-     * The DiscountFields model constructor.
-     * @property {module:model/DiscountFields}
-     */
-    DiscountFields,
-
-    /**
-     * The DiscountPlanFields model constructor.
-     * @property {module:model/DiscountPlanFields}
-     */
-    DiscountPlanFields,
-
-    /**
-     * The DiscountResourceFields model constructor.
-     * @property {module:model/DiscountResourceFields}
-     */
-    DiscountResourceFields,
-
-    /**
-     * The DiscountResourcePayload model constructor.
-     * @property {module:model/DiscountResourcePayload}
-     */
-    DiscountResourcePayload,
-
-    /**
-     * The EditlabelofanexistingVMPayload model constructor.
-     * @property {module:model/EditlabelofanexistingVMPayload}
-     */
-    EditlabelofanexistingVMPayload,
+    EditLabelOfAnExistingVMPayload,
 
     /**
      * The Environment model constructor.
@@ -1024,10 +918,10 @@ export {
     EnvironmentFields,
 
     /**
-     * The EnvironmentFieldsforVolume model constructor.
-     * @property {module:model/EnvironmentFieldsforVolume}
+     * The EnvironmentFieldsForVolume model constructor.
+     * @property {module:model/EnvironmentFieldsForVolume}
      */
-    EnvironmentFieldsforVolume,
+    EnvironmentFieldsForVolume,
 
     /**
      * The Environments model constructor.
@@ -1040,36 +934,6 @@ export {
      * @property {module:model/ErrorResponseModel}
      */
     ErrorResponseModel,
-
-    /**
-     * The ExcludeBillingPostPayload model constructor.
-     * @property {module:model/ExcludeBillingPostPayload}
-     */
-    ExcludeBillingPostPayload,
-
-    /**
-     * The ExcludeBillingPostResponse model constructor.
-     * @property {module:model/ExcludeBillingPostResponse}
-     */
-    ExcludeBillingPostResponse,
-
-    /**
-     * The ExportBillingDataRequest model constructor.
-     * @property {module:model/ExportBillingDataRequest}
-     */
-    ExportBillingDataRequest,
-
-    /**
-     * The ExportBillingDataResponse model constructor.
-     * @property {module:model/ExportBillingDataResponse}
-     */
-    ExportBillingDataResponse,
-
-    /**
-     * The FieldChange model constructor.
-     * @property {module:model/FieldChange}
-     */
-    FieldChange,
 
     /**
      * The FirewallAttachmentModel model constructor.
@@ -1138,6 +1002,12 @@ export {
     FlavorItemGetResponse,
 
     /**
+     * The FlavorLabelFields model constructor.
+     * @property {module:model/FlavorLabelFields}
+     */
+    FlavorLabelFields,
+
+    /**
      * The FlavorListResponse model constructor.
      * @property {module:model/FlavorListResponse}
      */
@@ -1148,66 +1018,6 @@ export {
      * @property {module:model/FlavorObjectFields}
      */
     FlavorObjectFields,
-
-    /**
-     * The FlavorPayload model constructor.
-     * @property {module:model/FlavorPayload}
-     */
-    FlavorPayload,
-
-    /**
-     * The FlavorResponse model constructor.
-     * @property {module:model/FlavorResponse}
-     */
-    FlavorResponse,
-
-    /**
-     * The FlavorVMFields model constructor.
-     * @property {module:model/FlavorVMFields}
-     */
-    FlavorVMFields,
-
-    /**
-     * The FlavorVMsResponse model constructor.
-     * @property {module:model/FlavorVMsResponse}
-     */
-    FlavorVMsResponse,
-
-    /**
-     * The FutureNodeModel model constructor.
-     * @property {module:model/FutureNodeModel}
-     */
-    FutureNodeModel,
-
-    /**
-     * The FutureNodeResponseModel model constructor.
-     * @property {module:model/FutureNodeResponseModel}
-     */
-    FutureNodeResponseModel,
-
-    /**
-     * The FutureNodeStockModel model constructor.
-     * @property {module:model/FutureNodeStockModel}
-     */
-    FutureNodeStockModel,
-
-    /**
-     * The FutureNodeUpdateModel model constructor.
-     * @property {module:model/FutureNodeUpdateModel}
-     */
-    FutureNodeUpdateModel,
-
-    /**
-     * The FutureNodesStockModel model constructor.
-     * @property {module:model/FutureNodesStockModel}
-     */
-    FutureNodesStockModel,
-
-    /**
-     * The GPU model constructor.
-     * @property {module:model/GPU}
-     */
-    GPU,
 
     /**
      * The GPUFields model constructor.
@@ -1240,34 +1050,22 @@ export {
     GenerateUpdateApiKeyResponseModel,
 
     /**
-     * The GetAllContractFields model constructor.
-     * @property {module:model/GetAllContractFields}
-     */
-    GetAllContractFields,
-
-    /**
-     * The GetAllContractsResponseModel model constructor.
-     * @property {module:model/GetAllContractsResponseModel}
-     */
-    GetAllContractsResponseModel,
-
-    /**
-     * The GetAllDiscountForAllOrganizationResponse model constructor.
-     * @property {module:model/GetAllDiscountForAllOrganizationResponse}
-     */
-    GetAllDiscountForAllOrganizationResponse,
-
-    /**
-     * The GetAllDiscountsFields model constructor.
-     * @property {module:model/GetAllDiscountsFields}
-     */
-    GetAllDiscountsFields,
-
-    /**
      * The GetApiKeysResponseModel model constructor.
      * @property {module:model/GetApiKeysResponseModel}
      */
     GetApiKeysResponseModel,
+
+    /**
+     * The GetCreditAndThresholdInfo model constructor.
+     * @property {module:model/GetCreditAndThresholdInfo}
+     */
+    GetCreditAndThresholdInfo,
+
+    /**
+     * The GetCreditAndThresholdInfoInResponse model constructor.
+     * @property {module:model/GetCreditAndThresholdInfoInResponse}
+     */
+    GetCreditAndThresholdInfoInResponse,
 
     /**
      * The GetCustomerContractsListResponseModel model constructor.
@@ -1276,22 +1074,10 @@ export {
     GetCustomerContractsListResponseModel,
 
     /**
-     * The GetDiscountDetailResponse model constructor.
-     * @property {module:model/GetDiscountDetailResponse}
+     * The GetInstanceLogsResponse model constructor.
+     * @property {module:model/GetInstanceLogsResponse}
      */
-    GetDiscountDetailResponse,
-
-    /**
-     * The GetDiscountResponse model constructor.
-     * @property {module:model/GetDiscountResponse}
-     */
-    GetDiscountResponse,
-
-    /**
-     * The GetEntityDiscountDetailResponse model constructor.
-     * @property {module:model/GetEntityDiscountDetailResponse}
-     */
-    GetEntityDiscountDetailResponse,
+    GetInstanceLogsResponse,
 
     /**
      * The GetInvitesResponseModel model constructor.
@@ -1324,52 +1110,16 @@ export {
     GetRbacRolesResponseModel,
 
     /**
-     * The GetTokenPayload model constructor.
-     * @property {module:model/GetTokenPayload}
-     */
-    GetTokenPayload,
-
-    /**
      * The GetUserPermissionsResponseModel model constructor.
      * @property {module:model/GetUserPermissionsResponseModel}
      */
     GetUserPermissionsResponseModel,
 
     /**
-     * The GetVersionResponse model constructor.
-     * @property {module:model/GetVersionResponse}
-     */
-    GetVersionResponse,
-
-    /**
-     * The Getcreditandthresholdinfo model constructor.
-     * @property {module:model/Getcreditandthresholdinfo}
-     */
-    Getcreditandthresholdinfo,
-
-    /**
-     * The Getcreditandthresholdinfoinresponse model constructor.
-     * @property {module:model/Getcreditandthresholdinfoinresponse}
-     */
-    Getcreditandthresholdinfoinresponse,
-
-    /**
      * The GraphDatetimeValueModel model constructor.
      * @property {module:model/GraphDatetimeValueModel}
      */
     GraphDatetimeValueModel,
-
-    /**
-     * The HistoricalInstance model constructor.
-     * @property {module:model/HistoricalInstance}
-     */
-    HistoricalInstance,
-
-    /**
-     * The HistoricalInstancesFields model constructor.
-     * @property {module:model/HistoricalInstancesFields}
-     */
-    HistoricalInstancesFields,
 
     /**
      * The Image model constructor.
@@ -1390,12 +1140,6 @@ export {
     ImageGetResponse,
 
     /**
-     * The ImageLogos model constructor.
-     * @property {module:model/ImageLogos}
-     */
-    ImageLogos,
-
-    /**
      * The Images model constructor.
      * @property {module:model/Images}
      */
@@ -1414,22 +1158,10 @@ export {
     ImportKeypairResponse,
 
     /**
-     * The InfrahubResourceObjectResponse model constructor.
-     * @property {module:model/InfrahubResourceObjectResponse}
-     */
-    InfrahubResourceObjectResponse,
-
-    /**
      * The InfrahubResourceObjectResponseForCustomer model constructor.
      * @property {module:model/InfrahubResourceObjectResponseForCustomer}
      */
     InfrahubResourceObjectResponseForCustomer,
-
-    /**
-     * The InsertDiscountPlanFields model constructor.
-     * @property {module:model/InsertDiscountPlanFields}
-     */
-    InsertDiscountPlanFields,
 
     /**
      * The Instance model constructor.
@@ -1498,72 +1230,6 @@ export {
     Instances,
 
     /**
-     * The InstancesSummaryFields model constructor.
-     * @property {module:model/InstancesSummaryFields}
-     */
-    InstancesSummaryFields,
-
-    /**
-     * The InternalEnvironmentFields model constructor.
-     * @property {module:model/InternalEnvironmentFields}
-     */
-    InternalEnvironmentFields,
-
-    /**
-     * The InternalInstanceFields model constructor.
-     * @property {module:model/InternalInstanceFields}
-     */
-    InternalInstanceFields,
-
-    /**
-     * The InternalInstanceFlavorFields model constructor.
-     * @property {module:model/InternalInstanceFlavorFields}
-     */
-    InternalInstanceFlavorFields,
-
-    /**
-     * The InternalInstanceImageFields model constructor.
-     * @property {module:model/InternalInstanceImageFields}
-     */
-    InternalInstanceImageFields,
-
-    /**
-     * The InternalInstanceKeypairFields model constructor.
-     * @property {module:model/InternalInstanceKeypairFields}
-     */
-    InternalInstanceKeypairFields,
-
-    /**
-     * The InternalInstancesResponse model constructor.
-     * @property {module:model/InternalInstancesResponse}
-     */
-    InternalInstancesResponse,
-
-    /**
-     * The InternalSecurityRulesFieldsForInstance model constructor.
-     * @property {module:model/InternalSecurityRulesFieldsForInstance}
-     */
-    InternalSecurityRulesFieldsForInstance,
-
-    /**
-     * The InternalVolumeAttachmentFields model constructor.
-     * @property {module:model/InternalVolumeAttachmentFields}
-     */
-    InternalVolumeAttachmentFields,
-
-    /**
-     * The InternalVolumeFields model constructor.
-     * @property {module:model/InternalVolumeFields}
-     */
-    InternalVolumeFields,
-
-    /**
-     * The InternalVolumesResponse model constructor.
-     * @property {module:model/InternalVolumesResponse}
-     */
-    InternalVolumesResponse,
-
-    /**
      * The InviteFields model constructor.
      * @property {module:model/InviteFields}
      */
@@ -1580,6 +1246,18 @@ export {
      * @property {module:model/InviteUserResponseModel}
      */
     InviteUserResponseModel,
+
+    /**
+     * The KeypairEnvironmentFeatures model constructor.
+     * @property {module:model/KeypairEnvironmentFeatures}
+     */
+    KeypairEnvironmentFeatures,
+
+    /**
+     * The KeypairEnvironmentFields model constructor.
+     * @property {module:model/KeypairEnvironmentFields}
+     */
+    KeypairEnvironmentFields,
 
     /**
      * The KeypairFields model constructor.
@@ -1600,28 +1278,40 @@ export {
     LableResonse,
 
     /**
-     * The Lastdaycostfields model constructor.
-     * @property {module:model/Lastdaycostfields}
+     * The LastDayCostFields model constructor.
+     * @property {module:model/LastDayCostFields}
      */
-    Lastdaycostfields,
+    LastDayCostFields,
 
     /**
-     * The Lastdaycostresponse model constructor.
-     * @property {module:model/Lastdaycostresponse}
+     * The LastDayCostResponse model constructor.
+     * @property {module:model/LastDayCostResponse}
      */
-    Lastdaycostresponse,
+    LastDayCostResponse,
 
     /**
-     * The LogoGetResponse model constructor.
-     * @property {module:model/LogoGetResponse}
+     * The Logos model constructor.
+     * @property {module:model/Logos}
      */
-    LogoGetResponse,
+    Logos,
 
     /**
-     * The LogoutPayload model constructor.
-     * @property {module:model/LogoutPayload}
+     * The MFAStatusFields model constructor.
+     * @property {module:model/MFAStatusFields}
      */
-    LogoutPayload,
+    MFAStatusFields,
+
+    /**
+     * The MFAStatusResponse model constructor.
+     * @property {module:model/MFAStatusResponse}
+     */
+    MFAStatusResponse,
+
+    /**
+     * The MasterFlavorsResponse model constructor.
+     * @property {module:model/MasterFlavorsResponse}
+     */
+    MasterFlavorsResponse,
 
     /**
      * The MetricItemFields model constructor.
@@ -1634,6 +1324,12 @@ export {
      * @property {module:model/MetricsFields}
      */
     MetricsFields,
+
+    /**
+     * The ModelEvaluationBillingHistoryDetailsResponseSchema model constructor.
+     * @property {module:model/ModelEvaluationBillingHistoryDetailsResponseSchema}
+     */
+    ModelEvaluationBillingHistoryDetailsResponseSchema,
 
     /**
      * The NameAvailableModel model constructor.
@@ -1664,54 +1360,6 @@ export {
      * @property {module:model/NewStockRetriveResponse}
      */
     NewStockRetriveResponse,
-
-    /**
-     * The NewStockUpdateResponseModel model constructor.
-     * @property {module:model/NewStockUpdateResponseModel}
-     */
-    NewStockUpdateResponseModel,
-
-    /**
-     * The NodeModel model constructor.
-     * @property {module:model/NodeModel}
-     */
-    NodeModel,
-
-    /**
-     * The NodePayloadModel model constructor.
-     * @property {module:model/NodePayloadModel}
-     */
-    NodePayloadModel,
-
-    /**
-     * The NodePowerUsageModel model constructor.
-     * @property {module:model/NodePowerUsageModel}
-     */
-    NodePowerUsageModel,
-
-    /**
-     * The NodeResponseModel model constructor.
-     * @property {module:model/NodeResponseModel}
-     */
-    NodeResponseModel,
-
-    /**
-     * The NodeStockPayloadModel model constructor.
-     * @property {module:model/NodeStockPayloadModel}
-     */
-    NodeStockPayloadModel,
-
-    /**
-     * The NodeStockResponseModel model constructor.
-     * @property {module:model/NodeStockResponseModel}
-     */
-    NodeStockResponseModel,
-
-    /**
-     * The NodeStocksPayload model constructor.
-     * @property {module:model/NodeStocksPayload}
-     */
-    NodeStocksPayload,
 
     /**
      * The OrganizationFields model constructor.
@@ -1750,16 +1398,22 @@ export {
     OrganizationLevelBillingHistoryResponseModel,
 
     /**
-     * The OrganizationObjectResponse model constructor.
-     * @property {module:model/OrganizationObjectResponse}
+     * The OrganizationThresholdFields model constructor.
+     * @property {module:model/OrganizationThresholdFields}
      */
-    OrganizationObjectResponse,
+    OrganizationThresholdFields,
 
     /**
-     * The OrganizationThresholdfields model constructor.
-     * @property {module:model/OrganizationThresholdfields}
+     * The OrganizationThresholdUpdateResponse model constructor.
+     * @property {module:model/OrganizationThresholdUpdateResponse}
      */
-    OrganizationThresholdfields,
+    OrganizationThresholdUpdateResponse,
+
+    /**
+     * The OrganizationThresholdsResponse model constructor.
+     * @property {module:model/OrganizationThresholdsResponse}
+     */
+    OrganizationThresholdsResponse,
 
     /**
      * The OrganizationUserResponseModel model constructor.
@@ -1768,34 +1422,28 @@ export {
     OrganizationUserResponseModel,
 
     /**
-     * The Organizationcreditrechargelimitresponse model constructor.
-     * @property {module:model/Organizationcreditrechargelimitresponse}
-     */
-    Organizationcreditrechargelimitresponse,
-
-    /**
-     * The Organizationthresholdsresponse model constructor.
-     * @property {module:model/Organizationthresholdsresponse}
-     */
-    Organizationthresholdsresponse,
-
-    /**
-     * The Organizationthresholdupdateresponse model constructor.
-     * @property {module:model/Organizationthresholdupdateresponse}
-     */
-    Organizationthresholdupdateresponse,
-
-    /**
      * The OverviewInfo model constructor.
      * @property {module:model/OverviewInfo}
      */
     OverviewInfo,
 
     /**
+     * The Pagination model constructor.
+     * @property {module:model/Pagination}
+     */
+    Pagination,
+
+    /**
      * The PaginationData model constructor.
      * @property {module:model/PaginationData}
      */
     PaginationData,
+
+    /**
+     * The PartnerConfig model constructor.
+     * @property {module:model/PartnerConfig}
+     */
+    PartnerConfig,
 
     /**
      * The PaymentDetailsFields model constructor.
@@ -1846,28 +1494,22 @@ export {
     PolicyPermissionFields,
 
     /**
-     * The PowerUsageModel model constructor.
-     * @property {module:model/PowerUsageModel}
-     */
-    PowerUsageModel,
-
-    /**
      * The PricebookModel model constructor.
      * @property {module:model/PricebookModel}
      */
     PricebookModel,
 
     /**
-     * The PricebookResourceObjectResponse model constructor.
-     * @property {module:model/PricebookResourceObjectResponse}
-     */
-    PricebookResourceObjectResponse,
-
-    /**
      * The PricebookResourceObjectResponseForCustomer model constructor.
      * @property {module:model/PricebookResourceObjectResponseForCustomer}
      */
     PricebookResourceObjectResponseForCustomer,
+
+    /**
+     * The PrimaryColor model constructor.
+     * @property {module:model/PrimaryColor}
+     */
+    PrimaryColor,
 
     /**
      * The ProfileFields model constructor.
@@ -1912,28 +1554,10 @@ export {
     RbacRoleFields,
 
     /**
-     * The RefreshTokenPayload model constructor.
-     * @property {module:model/RefreshTokenPayload}
-     */
-    RefreshTokenPayload,
-
-    /**
      * The RegionFields model constructor.
      * @property {module:model/RegionFields}
      */
     RegionFields,
-
-    /**
-     * The RegionPayload model constructor.
-     * @property {module:model/RegionPayload}
-     */
-    RegionPayload,
-
-    /**
-     * The RegionResponse model constructor.
-     * @property {module:model/RegionResponse}
-     */
-    RegionResponse,
 
     /**
      * The Regions model constructor.
@@ -1960,6 +1584,18 @@ export {
     RequestConsole,
 
     /**
+     * The RequestInstanceLogsPayload model constructor.
+     * @property {module:model/RequestInstanceLogsPayload}
+     */
+    RequestInstanceLogsPayload,
+
+    /**
+     * The RequestInstanceLogsResponse model constructor.
+     * @property {module:model/RequestInstanceLogsResponse}
+     */
+    RequestInstanceLogsResponse,
+
+    /**
      * The ResourceBillingEventsHistoryMetrics model constructor.
      * @property {module:model/ResourceBillingEventsHistoryMetrics}
      */
@@ -1976,6 +1612,12 @@ export {
      * @property {module:model/ResourceBillingResponseForCustomer}
      */
     ResourceBillingResponseForCustomer,
+
+    /**
+     * The ResourceLevelBillingBucketDetailsResources model constructor.
+     * @property {module:model/ResourceLevelBillingBucketDetailsResources}
+     */
+    ResourceLevelBillingBucketDetailsResources,
 
     /**
      * The ResourceLevelBillingDetailsAttributes model constructor.
@@ -2026,6 +1668,12 @@ export {
     ResourceLevelBillingHistoryResources,
 
     /**
+     * The ResourceLevelBillingHistoryResourcesCluster model constructor.
+     * @property {module:model/ResourceLevelBillingHistoryResourcesCluster}
+     */
+    ResourceLevelBillingHistoryResourcesCluster,
+
+    /**
      * The ResourceLevelBillingHistoryResponseAttributes model constructor.
      * @property {module:model/ResourceLevelBillingHistoryResponseAttributes}
      */
@@ -2050,6 +1698,36 @@ export {
     ResourceLevelBillingVolumeDetailsResources,
 
     /**
+     * The ResourceLevelBucketBillingDetailsResponseModel model constructor.
+     * @property {module:model/ResourceLevelBucketBillingDetailsResponseModel}
+     */
+    ResourceLevelBucketBillingDetailsResponseModel,
+
+    /**
+     * The ResourceLevelBucketBillingHistoryResponseModel model constructor.
+     * @property {module:model/ResourceLevelBucketBillingHistoryResponseModel}
+     */
+    ResourceLevelBucketBillingHistoryResponseModel,
+
+    /**
+     * The ResourceLevelClusterBillingDetailsResponseModel model constructor.
+     * @property {module:model/ResourceLevelClusterBillingDetailsResponseModel}
+     */
+    ResourceLevelClusterBillingDetailsResponseModel,
+
+    /**
+     * The ResourceLevelClusterBillingHistoryResponseModel model constructor.
+     * @property {module:model/ResourceLevelClusterBillingHistoryResponseModel}
+     */
+    ResourceLevelClusterBillingHistoryResponseModel,
+
+    /**
+     * The ResourceLevelClusterGraphBillingDetailsResponseModel model constructor.
+     * @property {module:model/ResourceLevelClusterGraphBillingDetailsResponseModel}
+     */
+    ResourceLevelClusterGraphBillingDetailsResponseModel,
+
+    /**
      * The ResourceLevelGraphBillingDetailVolume model constructor.
      * @property {module:model/ResourceLevelGraphBillingDetailVolume}
      */
@@ -2060,6 +1738,12 @@ export {
      * @property {module:model/ResourceLevelGraphBillingDetailsAttributes}
      */
     ResourceLevelGraphBillingDetailsAttributes,
+
+    /**
+     * The ResourceLevelGraphBillingDetailsBucket model constructor.
+     * @property {module:model/ResourceLevelGraphBillingDetailsBucket}
+     */
+    ResourceLevelGraphBillingDetailsBucket,
 
     /**
      * The ResourceLevelGraphBillingDetailsMetrics model constructor.
@@ -2146,6 +1830,12 @@ export {
     RolePolicyFields,
 
     /**
+     * The SecondaryColor model constructor.
+     * @property {module:model/SecondaryColor}
+     */
+    SecondaryColor,
+
+    /**
      * The SecurityGroupRule model constructor.
      * @property {module:model/SecurityGroupRule}
      */
@@ -2158,10 +1848,10 @@ export {
     SecurityGroupRuleFields,
 
     /**
-     * The SecurityRulesFieldsforInstance model constructor.
-     * @property {module:model/SecurityRulesFieldsforInstance}
+     * The SecurityRulesFieldsForInstance model constructor.
+     * @property {module:model/SecurityRulesFieldsForInstance}
      */
-    SecurityRulesFieldsforInstance,
+    SecurityRulesFieldsForInstance,
 
     /**
      * The SecurityRulesProtocolFields model constructor.
@@ -2170,16 +1860,10 @@ export {
     SecurityRulesProtocolFields,
 
     /**
-     * The SetDefaultsPayload model constructor.
-     * @property {module:model/SetDefaultsPayload}
+     * The ServerlessInferencedBillingHistoryDetailsResponseSchema model constructor.
+     * @property {module:model/ServerlessInferencedBillingHistoryDetailsResponseSchema}
      */
-    SetDefaultsPayload,
-
-    /**
-     * The SingleVisibilityUserResponse model constructor.
-     * @property {module:model/SingleVisibilityUserResponse}
-     */
-    SingleVisibilityUserResponse,
+    ServerlessInferencedBillingHistoryDetailsResponseSchema,
 
     /**
      * The SnapshotFields model constructor.
@@ -2224,18 +1908,6 @@ export {
     StartDeploymentPayload,
 
     /**
-     * The StockVisibilityUserListResponse model constructor.
-     * @property {module:model/StockVisibilityUserListResponse}
-     */
-    StockVisibilityUserListResponse,
-
-    /**
-     * The StockVisibilityUserPayload model constructor.
-     * @property {module:model/StockVisibilityUserPayload}
-     */
-    StockVisibilityUserPayload,
-
-    /**
      * The SubResourceGraphBillingDetailsMetrics model constructor.
      * @property {module:model/SubResourceGraphBillingDetailsMetrics}
      */
@@ -2260,16 +1932,10 @@ export {
     SubResourcesGraphResponseModel,
 
     /**
-     * The Subscribeorunsubscribeupdatepayload model constructor.
-     * @property {module:model/Subscribeorunsubscribeupdatepayload}
+     * The SubscribeOrUnsubscribeUpdatePayload model constructor.
+     * @property {module:model/SubscribeOrUnsubscribeUpdatePayload}
      */
-    Subscribeorunsubscribeupdatepayload,
-
-    /**
-     * The SuccessResponseModel model constructor.
-     * @property {module:model/SuccessResponseModel}
-     */
-    SuccessResponseModel,
+    SubscribeOrUnsubscribeUpdatePayload,
 
     /**
      * The Template model constructor.
@@ -2290,28 +1956,16 @@ export {
     Templates,
 
     /**
-     * The TokenFields model constructor.
-     * @property {module:model/TokenFields}
+     * The TokenBasedBillingHistoryResponse model constructor.
+     * @property {module:model/TokenBasedBillingHistoryResponse}
      */
-    TokenFields,
+    TokenBasedBillingHistoryResponse,
 
     /**
-     * The UpdateContractPayload model constructor.
-     * @property {module:model/UpdateContractPayload}
+     * The URIs model constructor.
+     * @property {module:model/URIs}
      */
-    UpdateContractPayload,
-
-    /**
-     * The UpdateDiscountsPayload model constructor.
-     * @property {module:model/UpdateDiscountsPayload}
-     */
-    UpdateDiscountsPayload,
-
-    /**
-     * The UpdateDiscountsStatusPayload model constructor.
-     * @property {module:model/UpdateDiscountsStatusPayload}
-     */
-    UpdateDiscountsStatusPayload,
+    URIs,
 
     /**
      * The UpdateEnvironment model constructor.
@@ -2320,22 +1974,16 @@ export {
     UpdateEnvironment,
 
     /**
-     * The UpdateGPU model constructor.
-     * @property {module:model/UpdateGPU}
-     */
-    UpdateGPU,
-
-    /**
      * The UpdateKeypairName model constructor.
      * @property {module:model/UpdateKeypairName}
      */
     UpdateKeypairName,
 
     /**
-     * The UpdateKeypairnameresponse model constructor.
-     * @property {module:model/UpdateKeypairnameresponse}
+     * The UpdateKeypairNameResponse model constructor.
+     * @property {module:model/UpdateKeypairNameResponse}
      */
-    UpdateKeypairnameresponse,
+    UpdateKeypairNameResponse,
 
     /**
      * The UpdateOrganizationPayload model constructor.
@@ -2356,6 +2004,24 @@ export {
     UpdateTemplate,
 
     /**
+     * The UpdateVolumeAttachmentPayload model constructor.
+     * @property {module:model/UpdateVolumeAttachmentPayload}
+     */
+    UpdateVolumeAttachmentPayload,
+
+    /**
+     * The UpdateVolumePayload model constructor.
+     * @property {module:model/UpdateVolumePayload}
+     */
+    UpdateVolumePayload,
+
+    /**
+     * The UpdateVolumeResponse model constructor.
+     * @property {module:model/UpdateVolumeResponse}
+     */
+    UpdateVolumeResponse,
+
+    /**
      * The UserDefaultChoiceForUserFields model constructor.
      * @property {module:model/UserDefaultChoiceForUserFields}
      */
@@ -2368,22 +2034,22 @@ export {
     UserDefaultChoicesForUserResponse,
 
     /**
+     * The UserInfoPostPayload model constructor.
+     * @property {module:model/UserInfoPostPayload}
+     */
+    UserInfoPostPayload,
+
+    /**
+     * The UserOrganizationsResponse model constructor.
+     * @property {module:model/UserOrganizationsResponse}
+     */
+    UserOrganizationsResponse,
+
+    /**
      * The UserPermissionFields model constructor.
      * @property {module:model/UserPermissionFields}
      */
     UserPermissionFields,
-
-    /**
-     * The UserTransferPayload model constructor.
-     * @property {module:model/UserTransferPayload}
-     */
-    UserTransferPayload,
-
-    /**
-     * The Userinfopostpayload model constructor.
-     * @property {module:model/Userinfopostpayload}
-     */
-    Userinfopostpayload,
 
     /**
      * The UsersInfoFields model constructor.
@@ -2398,18 +2064,6 @@ export {
     UsersInfoListResponse,
 
     /**
-     * The VMUsageRequestPayload model constructor.
-     * @property {module:model/VMUsageRequestPayload}
-     */
-    VMUsageRequestPayload,
-
-    /**
-     * The VMUsageResponse model constructor.
-     * @property {module:model/VMUsageResponse}
-     */
-    VMUsageResponse,
-
-    /**
      * The VNCURL model constructor.
      * @property {module:model/VNCURL}
      */
@@ -2420,24 +2074,6 @@ export {
      * @property {module:model/VNCURLFields}
      */
     VNCURLFields,
-
-    /**
-     * The VerifyApiKeyPayload model constructor.
-     * @property {module:model/VerifyApiKeyPayload}
-     */
-    VerifyApiKeyPayload,
-
-    /**
-     * The VerifyApiKeyResponseModel model constructor.
-     * @property {module:model/VerifyApiKeyResponseModel}
-     */
-    VerifyApiKeyResponseModel,
-
-    /**
-     * The VirtualMachineUsage model constructor.
-     * @property {module:model/VirtualMachineUsage}
-     */
-    VirtualMachineUsage,
 
     /**
      * The Volume model constructor.
@@ -2458,22 +2094,16 @@ export {
     VolumeFields,
 
     /**
-     * The VolumeFieldsforInstance model constructor.
-     * @property {module:model/VolumeFieldsforInstance}
+     * The VolumeFieldsForInstance model constructor.
+     * @property {module:model/VolumeFieldsForInstance}
      */
-    VolumeFieldsforInstance,
+    VolumeFieldsForInstance,
 
     /**
      * The VolumeOverviewFields model constructor.
      * @property {module:model/VolumeOverviewFields}
      */
     VolumeOverviewFields,
-
-    /**
-     * The VolumeStatusChangeFields model constructor.
-     * @property {module:model/VolumeStatusChangeFields}
-     */
-    VolumeStatusChangeFields,
 
     /**
      * The VolumeTypes model constructor.
@@ -2488,22 +2118,16 @@ export {
     Volumes,
 
     /**
-     * The VolumesLastStatusChangeResponse model constructor.
-     * @property {module:model/VolumesLastStatusChangeResponse}
+     * The VolumesFields model constructor.
+     * @property {module:model/VolumesFields}
      */
-    VolumesLastStatusChangeResponse,
+    VolumesFields,
 
     /**
-     * The WarningMailLogFields model constructor.
-     * @property {module:model/WarningMailLogFields}
+     * The WorkloadBillingHistoryResponse model constructor.
+     * @property {module:model/WorkloadBillingHistoryResponse}
      */
-    WarningMailLogFields,
-
-    /**
-     * The WarningMailLogResponse model constructor.
-     * @property {module:model/WarningMailLogResponse}
-     */
-    WarningMailLogResponse,
+    WorkloadBillingHistoryResponse,
 
     /**
     * The AliveApi service constructor.
@@ -2528,6 +2152,12 @@ export {
     * @property {module:api/AuthApi}
     */
     AuthApi,
+
+    /**
+    * The BetaAccessApi service constructor.
+    * @property {module:api/BetaAccessApi}
+    */
+    BetaAccessApi,
 
     /**
     * The BillingApi service constructor.
@@ -2648,6 +2278,12 @@ export {
     * @property {module:api/OrganizationApi}
     */
     OrganizationApi,
+
+    /**
+    * The PartnerConfigApi service constructor.
+    * @property {module:api/PartnerConfigApi}
+    */
+    PartnerConfigApi,
 
     /**
     * The PaymentApi service constructor.

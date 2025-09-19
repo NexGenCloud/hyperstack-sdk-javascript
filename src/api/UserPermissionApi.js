@@ -19,7 +19,7 @@ import GetUserPermissionsResponseModel from '../model/GetUserPermissionsResponse
 /**
 * UserPermission service.
 * @module api/UserPermissionApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class UserPermissionApi {
 
@@ -38,7 +38,7 @@ export default class UserPermissionApi {
 
     /**
      * List My User Permissions
-     * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+     * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetUserPermissionsResponseModel} and HTTP response
      */
     listMyUserPermissionsWithHttpInfo() {
@@ -53,7 +53,7 @@ export default class UserPermissionApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GetUserPermissionsResponseModel;
@@ -66,7 +66,7 @@ export default class UserPermissionApi {
 
     /**
      * List My User Permissions
-     * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+     * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetUserPermissionsResponseModel}
      */
     listMyUserPermissions() {
@@ -79,7 +79,7 @@ export default class UserPermissionApi {
 
     /**
      * List User Permissions
-     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetUserPermissionsResponseModel} and HTTP response
      */
@@ -100,7 +100,7 @@ export default class UserPermissionApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GetUserPermissionsResponseModel;
@@ -113,7 +113,7 @@ export default class UserPermissionApi {
 
     /**
      * List User Permissions
-     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetUserPermissionsResponseModel}
      */

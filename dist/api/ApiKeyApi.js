@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * ApiKey service.
 * @module api/ApiKeyApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -53,12 +53,12 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
    */
   return _createClass(ApiKeyApi, [{
-    key: "deleteApiKeyWithHttpInfo",
-    value: function deleteApiKeyWithHttpInfo(apiKeyId) {
+    key: "deleteAPIKeyWithHttpInfo",
+    value: function deleteAPIKeyWithHttpInfo(apiKeyId) {
       var postBody = null;
       // verify the required parameter 'apiKeyId' is set
       if (apiKeyId === undefined || apiKeyId === null) {
-        throw new Error("Missing the required parameter 'apiKeyId' when calling deleteApiKey");
+        throw new Error("Missing the required parameter 'apiKeyId' when calling deleteAPIKey");
       }
       var pathParams = {
         'api_key_id': apiKeyId
@@ -66,7 +66,7 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _CommonResponseModel["default"];
@@ -80,32 +80,32 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
      */
   }, {
-    key: "deleteApiKey",
-    value: function deleteApiKey(apiKeyId) {
-      return this.deleteApiKeyWithHttpInfo(apiKeyId).then(function (response_and_data) {
+    key: "deleteAPIKey",
+    value: function deleteAPIKey(apiKeyId) {
+      return this.deleteAPIKeyWithHttpInfo(apiKeyId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Generate API Key
-     * Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/generate-api-key).
+     * Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
      * @param {module:model/GenerateUpdateApiKeyPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GenerateUpdateApiKeyResponseModel} and HTTP response
      */
   }, {
-    key: "generateApiKeyWithHttpInfo",
-    value: function generateApiKeyWithHttpInfo(payload) {
+    key: "generateAPIKeyWithHttpInfo",
+    value: function generateAPIKeyWithHttpInfo(payload) {
       var postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling generateApiKey");
+        throw new Error("Missing the required parameter 'payload' when calling generateAPIKey");
       }
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['accessToken'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _GenerateUpdateApiKeyResponseModel["default"];
@@ -114,32 +114,32 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Generate API Key
-     * Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/generate-api-key).
+     * Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
      * @param {module:model/GenerateUpdateApiKeyPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GenerateUpdateApiKeyResponseModel}
      */
   }, {
-    key: "generateApiKey",
-    value: function generateApiKey(payload) {
-      return this.generateApiKeyWithHttpInfo(payload).then(function (response_and_data) {
+    key: "generateAPIKey",
+    value: function generateAPIKey(payload) {
+      return this.generateAPIKeyWithHttpInfo(payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Retrieve API Keys
-     * Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+     * Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetApiKeysResponseModel} and HTTP response
      */
   }, {
-    key: "retrieveApiKeysWithHttpInfo",
-    value: function retrieveApiKeysWithHttpInfo() {
+    key: "retrieveAPIKeyWithHttpInfo",
+    value: function retrieveAPIKeyWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _GetApiKeysResponseModel["default"];
@@ -148,13 +148,13 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve API Keys
-     * Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+     * Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetApiKeysResponseModel}
      */
   }, {
-    key: "retrieveApiKeys",
-    value: function retrieveApiKeys() {
-      return this.retrieveApiKeysWithHttpInfo().then(function (response_and_data) {
+    key: "retrieveAPIKey",
+    value: function retrieveAPIKey() {
+      return this.retrieveAPIKeyWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -167,16 +167,16 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GenerateUpdateApiKeyResponseModel} and HTTP response
      */
   }, {
-    key: "updateApiKeyWithHttpInfo",
-    value: function updateApiKeyWithHttpInfo(apiKeyId, payload) {
+    key: "updateAPIKeyWithHttpInfo",
+    value: function updateAPIKeyWithHttpInfo(apiKeyId, payload) {
       var postBody = payload;
       // verify the required parameter 'apiKeyId' is set
       if (apiKeyId === undefined || apiKeyId === null) {
-        throw new Error("Missing the required parameter 'apiKeyId' when calling updateApiKey");
+        throw new Error("Missing the required parameter 'apiKeyId' when calling updateAPIKey");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateApiKey");
+        throw new Error("Missing the required parameter 'payload' when calling updateAPIKey");
       }
       var pathParams = {
         'api_key_id': apiKeyId
@@ -184,7 +184,7 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _GenerateUpdateApiKeyResponseModel["default"];
@@ -199,9 +199,9 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GenerateUpdateApiKeyResponseModel}
      */
   }, {
-    key: "updateApiKey",
-    value: function updateApiKey(apiKeyId, payload) {
-      return this.updateApiKeyWithHttpInfo(apiKeyId, payload).then(function (response_and_data) {
+    key: "updateAPIKey",
+    value: function updateAPIKey(apiKeyId, payload) {
+      return this.updateAPIKeyWithHttpInfo(apiKeyId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

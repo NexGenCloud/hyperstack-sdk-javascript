@@ -17,7 +17,7 @@ import KeypairFields from './KeypairFields';
 /**
  * The ImportKeypairResponse model module.
  * @module model/ImportKeypairResponse
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class ImportKeypairResponse {
     /**

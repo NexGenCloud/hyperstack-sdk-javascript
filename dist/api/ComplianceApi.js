@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Compliance service.
 * @module api/ComplianceApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -63,7 +63,7 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _CreateUpdateComplianceResponse["default"];
@@ -102,7 +102,7 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
@@ -124,14 +124,14 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve GPU compliance
-     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
      * @param {Object} opts Optional parameters
      * @param {String} [gpu] This is for gpu model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ComplianceResponse} and HTTP response
      */
   }, {
-    key: "retrieveGpuComplianceWithHttpInfo",
-    value: function retrieveGpuComplianceWithHttpInfo(opts) {
+    key: "retrieveComplianceWithHttpInfo",
+    value: function retrieveComplianceWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
       var pathParams = {};
@@ -140,7 +140,7 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
       };
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ComplianceResponse["default"];
@@ -149,15 +149,15 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve GPU compliance
-     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
      * @param {Object} opts Optional parameters
      * @param {String} opts.gpu This is for gpu model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ComplianceResponse}
      */
   }, {
-    key: "retrieveGpuCompliance",
-    value: function retrieveGpuCompliance(opts) {
-      return this.retrieveGpuComplianceWithHttpInfo(opts).then(function (response_and_data) {
+    key: "retrieveCompliance",
+    value: function retrieveCompliance(opts) {
+      return this.retrieveComplianceWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -179,7 +179,7 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _CreateUpdateComplianceResponse["default"];

@@ -13,13 +13,17 @@
 
 
 import ApiClient from "../ApiClient";
+import AuthGetTokenResponseModel from '../model/AuthGetTokenResponseModel';
 import AuthUserInfoResponseModel from '../model/AuthUserInfoResponseModel';
+import CommonResponseModel from '../model/CommonResponseModel';
 import ErrorResponseModel from '../model/ErrorResponseModel';
+import MFAStatusResponse from '../model/MFAStatusResponse';
+import UserOrganizationsResponse from '../model/UserOrganizationsResponse';
 
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class AuthApi {
 
@@ -37,8 +41,175 @@ export default class AuthApi {
 
 
     /**
+     * Change the organization associated with the current token. This is useful for users who have access to multiple organizations.
+     * @param {Number} orgId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthGetTokenResponseModel} and HTTP response
+     */
+    changeOrganizationForTokenWithHttpInfo(orgId) {
+      let postBody = null;
+      // verify the required parameter 'orgId' is set
+      if (orgId === undefined || orgId === null) {
+        throw new Error("Missing the required parameter 'orgId' when calling changeOrganizationForToken");
+      }
+
+      let pathParams = {
+        'org_id': orgId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = AuthGetTokenResponseModel;
+      return this.apiClient.callApi(
+        '/auth/token/change-org/{org_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Change the organization associated with the current token. This is useful for users who have access to multiple organizations.
+     * @param {Number} orgId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthGetTokenResponseModel}
+     */
+    changeOrganizationForToken(orgId) {
+      return this.changeOrganizationForTokenWithHttpInfo(orgId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Disable Multi-Factor Authentication (MFA) for the currently authenticated user. This endpoint is used to turn off MFA.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
+     */
+    disableMFAWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CommonResponseModel;
+      return this.apiClient.callApi(
+        '/auth/me/mfa/disable', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Disable Multi-Factor Authentication (MFA) for the currently authenticated user. This endpoint is used to turn off MFA.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
+     */
+    disableMFA() {
+      return this.disableMFAWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get MFA status for authenticated user
+     * Retrieve the Multi-Factor Authentication (MFA) status for the currentlyauthenticated user. Includes whether MFA is enabled.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MFAStatusResponse} and HTTP response
+     */
+    getUserMFAStatusWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = MFAStatusResponse;
+      return this.apiClient.callApi(
+        '/auth/me/mfa', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get MFA status for authenticated user
+     * Retrieve the Multi-Factor Authentication (MFA) status for the currentlyauthenticated user. Includes whether MFA is enabled.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MFAStatusResponse}
+     */
+    getUserMFAStatus() {
+      return this.getUserMFAStatusWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get User Organizations
+     * Retrieve the organizations associated with a user by their user ID. This endpoint is useful for understanding the user's organizational affiliations.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserOrganizationsResponse} and HTTP response
+     */
+    getUserOrganizationsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UserOrganizationsResponse;
+      return this.apiClient.callApi(
+        '/auth/me/organizations', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get User Organizations
+     * Retrieve the organizations associated with a user by their user ID. This endpoint is useful for understanding the user's organizational affiliations.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserOrganizationsResponse}
+     */
+    getUserOrganizations() {
+      return this.getUserOrganizationsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve Authenticated User Details
-     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/auth).
+     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthUserInfoResponseModel} and HTTP response
      */
     retrieveAuthenticatedUserDetailsWithHttpInfo() {
@@ -53,7 +224,7 @@ export default class AuthApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AuthUserInfoResponseModel;
@@ -66,7 +237,7 @@ export default class AuthApi {
 
     /**
      * Retrieve Authenticated User Details
-     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/auth).
+     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthUserInfoResponseModel}
      */
     retrieveAuthenticatedUserDetails() {

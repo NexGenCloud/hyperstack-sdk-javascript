@@ -16,19 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSnapshotPayload model module.
  * @module model/CreateSnapshotPayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class CreateSnapshotPayload {
     /**
      * Constructs a new <code>CreateSnapshotPayload</code>.
      * @alias module:model/CreateSnapshotPayload
      * @param description {String} description
-     * @param isImage {Boolean} Indicates if the snapshot is an image
      * @param name {String} Snapshot name
      */
-    constructor(description, isImage, name) { 
+    constructor(description, name) { 
         
-        CreateSnapshotPayload.initialize(this, description, isImage, name);
+        CreateSnapshotPayload.initialize(this, description, name);
     }
 
     /**
@@ -36,9 +35,8 @@ class CreateSnapshotPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, description, isImage, name) { 
+    static initialize(obj, description, name) { 
         obj['description'] = description;
-        obj['is_image'] = isImage;
         obj['name'] = name;
     }
 
@@ -55,9 +53,6 @@ class CreateSnapshotPayload {
 
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
-            if (data.hasOwnProperty('is_image')) {
-                obj['is_image'] = ApiClient.convertToType(data['is_image'], 'Boolean');
             }
             if (data.hasOwnProperty('labels')) {
                 obj['labels'] = ApiClient.convertToType(data['labels'], ['String']);
@@ -100,19 +95,13 @@ class CreateSnapshotPayload {
 
 }
 
-CreateSnapshotPayload.RequiredProperties = ["description", "is_image", "name"];
+CreateSnapshotPayload.RequiredProperties = ["description", "name"];
 
 /**
  * description
  * @member {String} description
  */
 CreateSnapshotPayload.prototype['description'] = undefined;
-
-/**
- * Indicates if the snapshot is an image
- * @member {Boolean} is_image
- */
-CreateSnapshotPayload.prototype['is_image'] = undefined;
 
 /**
  * Labels associated with snapshot

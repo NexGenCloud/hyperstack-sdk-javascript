@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(HyperstackApi.VolumeFields);
     });
 
+    it('should have the property attachments (base name: "attachments")', function() {
+      // uncomment below and update the code to test the property attachments
+      //var instance = new HyperstackApi.VolumeFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bootable (base name: "bootable")', function() {
       // uncomment below and update the code to test the property bootable
       //var instance = new HyperstackApi.VolumeFields();

@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UsersInfoFields model module.
  * @module model/UsersInfoFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var UsersInfoFields = /*#__PURE__*/function () {
   /**
@@ -95,6 +95,9 @@ var UsersInfoFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('state')) {
           obj['state'] = _ApiClient["default"].convertToType(data['state'], 'String');
         }
+        if (data.hasOwnProperty('stripe_user_id')) {
+          obj['stripe_user_id'] = _ApiClient["default"].convertToType(data['stripe_user_id'], 'String');
+        }
         if (data.hasOwnProperty('vat_number')) {
           obj['vat_number'] = _ApiClient["default"].convertToType(data['vat_number'], 'String');
         }
@@ -144,6 +147,10 @@ var UsersInfoFields = /*#__PURE__*/function () {
       // ensure the json data is a string
       if (data['state'] && !(typeof data['state'] === 'string' || data['state'] instanceof String)) {
         throw new Error("Expected the field `state` to be a primitive type in the JSON string but got " + data['state']);
+      }
+      // ensure the json data is a string
+      if (data['stripe_user_id'] && !(typeof data['stripe_user_id'] === 'string' || data['stripe_user_id'] instanceof String)) {
+        throw new Error("Expected the field `stripe_user_id` to be a primitive type in the JSON string but got " + data['stripe_user_id']);
       }
       // ensure the json data is a string
       if (data['vat_number'] && !(typeof data['vat_number'] === 'string' || data['vat_number'] instanceof String)) {
@@ -216,6 +223,11 @@ UsersInfoFields.prototype['phone'] = undefined;
  * @member {String} state
  */
 UsersInfoFields.prototype['state'] = undefined;
+
+/**
+ * @member {String} stripe_user_id
+ */
+UsersInfoFields.prototype['stripe_user_id'] = undefined;
 
 /**
  * @member {String} vat_number

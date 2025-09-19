@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import VolumeFields from './VolumeFields';
+import VolumesFields from './VolumesFields';
 
 /**
  * The Volumes model module.
  * @module model/Volumes
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class Volumes {
     /**
@@ -48,14 +48,23 @@ class Volumes {
         if (data) {
             obj = obj || new Volumes();
 
+            if (data.hasOwnProperty('count')) {
+                obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+            }
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            }
+            if (data.hasOwnProperty('page')) {
+                obj['page'] = ApiClient.convertToType(data['page'], 'Number');
+            }
+            if (data.hasOwnProperty('page_size')) {
+                obj['page_size'] = ApiClient.convertToType(data['page_size'], 'Number');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'Boolean');
             }
-            if (data.hasOwnProperty('volume')) {
-                obj['volume'] = ApiClient.convertToType(data['volume'], [VolumeFields]);
+            if (data.hasOwnProperty('volumes')) {
+                obj['volumes'] = ApiClient.convertToType(data['volumes'], [VolumesFields]);
             }
         }
         return obj;
@@ -71,14 +80,14 @@ class Volumes {
         if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
             throw new Error("Expected the field `message` to be a primitive type in the JSON string but got " + data['message']);
         }
-        if (data['volume']) { // data not null
+        if (data['volumes']) { // data not null
             // ensure the json data is an array
-            if (!Array.isArray(data['volume'])) {
-                throw new Error("Expected the field `volume` to be an array in the JSON data but got " + data['volume']);
+            if (!Array.isArray(data['volumes'])) {
+                throw new Error("Expected the field `volumes` to be an array in the JSON data but got " + data['volumes']);
             }
-            // validate the optional field `volume` (array)
-            for (const item of data['volume']) {
-                VolumeFields.validateJSON(item);
+            // validate the optional field `volumes` (array)
+            for (const item of data['volumes']) {
+                VolumesFields.validateJSON(item);
             };
         }
 
@@ -91,9 +100,24 @@ class Volumes {
 
 
 /**
+ * @member {Number} count
+ */
+Volumes.prototype['count'] = undefined;
+
+/**
  * @member {String} message
  */
 Volumes.prototype['message'] = undefined;
+
+/**
+ * @member {Number} page
+ */
+Volumes.prototype['page'] = undefined;
+
+/**
+ * @member {Number} page_size
+ */
+Volumes.prototype['page_size'] = undefined;
 
 /**
  * @member {Boolean} status
@@ -101,9 +125,9 @@ Volumes.prototype['message'] = undefined;
 Volumes.prototype['status'] = undefined;
 
 /**
- * @member {Array.<module:model/VolumeFields>} volume
+ * @member {Array.<module:model/VolumesFields>} volumes
  */
-Volumes.prototype['volume'] = undefined;
+Volumes.prototype['volumes'] = undefined;
 
 
 

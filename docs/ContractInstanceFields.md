@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cluster** | [**ClusterFields**](ClusterFields.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **flavorName** | **String** |  | [optional] 
 **gpuCount** | **Number** |  | [optional] 

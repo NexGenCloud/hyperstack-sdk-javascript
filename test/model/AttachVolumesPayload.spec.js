@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(HyperstackApi.AttachVolumesPayload);
     });
 
+    it('should have the property _protected (base name: "protected")', function() {
+      // uncomment below and update the code to test the property _protected
+      //var instance = new HyperstackApi.AttachVolumesPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property volumeIds (base name: "volume_ids")', function() {
       // uncomment below and update the code to test the property volumeIds
       //var instance = new HyperstackApi.AttachVolumesPayload();

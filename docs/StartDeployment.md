@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deployment** | [**DeploymentFieldsforstartdeployments**](DeploymentFieldsforstartdeployments.md) |  | [optional] 
+**deployment** | [**DeploymentFieldsForStartDeployments**](DeploymentFieldsForStartDeployments.md) |  | [optional] 
 **message** | **String** |  | [optional] 
 **status** | **Boolean** |  | [optional] 
 

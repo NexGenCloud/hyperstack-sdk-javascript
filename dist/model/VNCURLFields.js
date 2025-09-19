@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The VNCURLFields model module.
  * @module model/VNCURLFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var VNCURLFields = /*#__PURE__*/function () {
   /**

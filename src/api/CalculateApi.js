@@ -19,7 +19,7 @@ import ResourceBillingResponseForCustomer from '../model/ResourceBillingResponse
 /**
 * Calculate service.
 * @module api/CalculateApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class CalculateApi {
 
@@ -43,15 +43,15 @@ export default class CalculateApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceBillingResponseForCustomer} and HTTP response
      */
-    retrieveBillingRateForResourceWithHttpInfo(resourceType, id) {
+    getCalculate2WithHttpInfo(resourceType, id) {
       let postBody = null;
       // verify the required parameter 'resourceType' is set
       if (resourceType === undefined || resourceType === null) {
-        throw new Error("Missing the required parameter 'resourceType' when calling retrieveBillingRateForResource");
+        throw new Error("Missing the required parameter 'resourceType' when calling getCalculate2");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling retrieveBillingRateForResource");
+        throw new Error("Missing the required parameter 'id' when calling getCalculate2");
       }
 
       let pathParams = {
@@ -65,7 +65,7 @@ export default class CalculateApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResourceBillingResponseForCustomer;
@@ -83,8 +83,8 @@ export default class CalculateApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceBillingResponseForCustomer}
      */
-    retrieveBillingRateForResource(resourceType, id) {
-      return this.retrieveBillingRateForResourceWithHttpInfo(resourceType, id)
+    getCalculate2(resourceType, id) {
+      return this.getCalculate2WithHttpInfo(resourceType, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

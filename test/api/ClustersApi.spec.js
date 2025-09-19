@@ -58,6 +58,26 @@
         done();
       });
     });
+    describe('createNode', function() {
+      it('should call createNode successfully', function(done) {
+        //uncomment below and update the code to test createNode
+        //instance.createNode(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createNodeGroup', function() {
+      it('should call createNodeGroup successfully', function(done) {
+        //uncomment below and update the code to test createNodeGroup
+        //instance.createNodeGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteACluster', function() {
       it('should call deleteACluster successfully', function(done) {
         //uncomment below and update the code to test deleteACluster
@@ -68,10 +88,50 @@
         done();
       });
     });
+    describe('deleteANodeGroup', function() {
+      it('should call deleteANodeGroup successfully', function(done) {
+        //uncomment below and update the code to test deleteANodeGroup
+        //instance.deleteANodeGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteClusterNode', function() {
+      it('should call deleteClusterNode successfully', function(done) {
+        //uncomment below and update the code to test deleteClusterNode
+        //instance.deleteClusterNode(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fetchClusterNameAvailability', function() {
       it('should call fetchClusterNameAvailability successfully', function(done) {
         //uncomment below and update the code to test fetchClusterNameAvailability
         //instance.fetchClusterNameAvailability(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getClusterMasterFlavors', function() {
+      it('should call getClusterMasterFlavors successfully', function(done) {
+        //uncomment below and update the code to test getClusterMasterFlavors
+        //instance.getClusterMasterFlavors(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getClusterNodes', function() {
+      it('should call getClusterNodes successfully', function(done) {
+        //uncomment below and update the code to test getClusterNodes
+        //instance.getClusterNodes(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -102,6 +162,26 @@
       it('should call listClusters successfully', function(done) {
         //uncomment below and update the code to test listClusters
         //instance.listClusters(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listNodeGroups', function() {
+      it('should call listNodeGroups successfully', function(done) {
+        //uncomment below and update the code to test listNodeGroups
+        //instance.listNodeGroups(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('retrieveANodeGroup', function() {
+      it('should call retrieveANodeGroup successfully', function(done) {
+        //uncomment below and update the code to test retrieveANodeGroup
+        //instance.retrieveANodeGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

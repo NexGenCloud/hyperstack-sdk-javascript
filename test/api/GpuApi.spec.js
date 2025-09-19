@@ -48,10 +48,10 @@
   }
 
   describe('GpuApi', function() {
-    describe('listGpus', function() {
-      it('should call listGpus successfully', function(done) {
-        //uncomment below and update the code to test listGpus
-        //instance.listGpus(function(error) {
+    describe('listGPUs', function() {
+      it('should call listGPUs successfully', function(done) {
+        //uncomment below and update the code to test listGPUs
+        //instance.listGPUs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

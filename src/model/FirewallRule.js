@@ -17,7 +17,7 @@ import SecurityGroupRuleFields from './SecurityGroupRuleFields';
 /**
  * The FirewallRule model module.
  * @module model/FirewallRule
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class FirewallRule {
     /**

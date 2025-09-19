@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import ClusterVersion from './ClusterVersion';
 
 /**
  * The ClusterVersions model module.
  * @module model/ClusterVersions
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class ClusterVersions {
     /**
@@ -54,7 +55,7 @@ class ClusterVersions {
                 obj['status'] = ApiClient.convertToType(data['status'], 'Boolean');
             }
             if (data.hasOwnProperty('versions')) {
-                obj['versions'] = ApiClient.convertToType(data['versions'], ['String']);
+                obj['versions'] = ApiClient.convertToType(data['versions'], [ClusterVersion]);
             }
         }
         return obj;
@@ -70,9 +71,15 @@ class ClusterVersions {
         if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
             throw new Error("Expected the field `message` to be a primitive type in the JSON string but got " + data['message']);
         }
-        // ensure the json data is an array
-        if (!Array.isArray(data['versions'])) {
-            throw new Error("Expected the field `versions` to be an array in the JSON data but got " + data['versions']);
+        if (data['versions']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['versions'])) {
+                throw new Error("Expected the field `versions` to be an array in the JSON data but got " + data['versions']);
+            }
+            // validate the optional field `versions` (array)
+            for (const item of data['versions']) {
+                ClusterVersion.validateJSON(item);
+            };
         }
 
         return true;
@@ -94,7 +101,7 @@ ClusterVersions.prototype['message'] = undefined;
 ClusterVersions.prototype['status'] = undefined;
 
 /**
- * @member {Array.<String>} versions
+ * @member {Array.<module:model/ClusterVersion>} versions
  */
 ClusterVersions.prototype['versions'] = undefined;
 

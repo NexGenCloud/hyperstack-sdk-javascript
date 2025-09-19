@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ResourceBillingEventsHistoryMetrics model module.
  * @module model/ResourceBillingEventsHistoryMetrics
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var ResourceBillingEventsHistoryMetrics = /*#__PURE__*/function () {
   /**
