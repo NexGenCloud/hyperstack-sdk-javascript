@@ -17,13 +17,14 @@ import CreateEnvironment from '../model/CreateEnvironment';
 import Environment from '../model/Environment';
 import Environments from '../model/Environments';
 import ErrorResponseModel from '../model/ErrorResponseModel';
+import NameAvailableModel from '../model/NameAvailableModel';
 import ResponseModel from '../model/ResponseModel';
 import UpdateEnvironment from '../model/UpdateEnvironment';
 
 /**
 * Environment service.
 * @module api/EnvironmentApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class EnvironmentApi {
 
@@ -42,7 +43,7 @@ export default class EnvironmentApi {
 
     /**
      * Create environment
-     * Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions) in the request body.
+     * Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs.hyperstack.cloud/docs/resource-management/regions/) in the request body.
      * @param {module:model/CreateEnvironment} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Environment} and HTTP response
      */
@@ -62,7 +63,7 @@ export default class EnvironmentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Environment;
@@ -75,7 +76,7 @@ export default class EnvironmentApi {
 
     /**
      * Create environment
-     * Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions) in the request body.
+     * Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs.hyperstack.cloud/docs/resource-management/regions/) in the request body.
      * @param {module:model/CreateEnvironment} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Environment}
      */
@@ -110,7 +111,7 @@ export default class EnvironmentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
@@ -136,8 +137,56 @@ export default class EnvironmentApi {
 
 
     /**
+     * Fetch environment name availability
+     * Check if a Environment name is available
+     * @param {String} name 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NameAvailableModel} and HTTP response
+     */
+    fetchEnvironmentNameAvailabilityWithHttpInfo(name) {
+      let postBody = null;
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling fetchEnvironmentNameAvailability");
+      }
+
+      let pathParams = {
+        'name': name
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = NameAvailableModel;
+      return this.apiClient.callApi(
+        '/core/environments/name-availability/{name}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Fetch environment name availability
+     * Check if a Environment name is available
+     * @param {String} name 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NameAvailableModel}
+     */
+    fetchEnvironmentNameAvailability(name) {
+      return this.fetchEnvironmentNameAvailabilityWithHttpInfo(name)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * List environments
-     * Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions), and the date and time of creation. For more information on environments, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features).
+     * Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
      * @param {Object} opts Optional parameters
      * @param {String} [page] Page Number
      * @param {String} [pageSize] Data Per Page
@@ -160,7 +209,7 @@ export default class EnvironmentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Environments;
@@ -173,7 +222,7 @@ export default class EnvironmentApi {
 
     /**
      * List environments
-     * Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions), and the date and time of creation. For more information on environments, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features).
+     * Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
      * @param {Object} opts Optional parameters
      * @param {String} opts.page Page Number
      * @param {String} opts.pageSize Data Per Page
@@ -211,7 +260,7 @@ export default class EnvironmentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Environment;
@@ -264,7 +313,7 @@ export default class EnvironmentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Environment;

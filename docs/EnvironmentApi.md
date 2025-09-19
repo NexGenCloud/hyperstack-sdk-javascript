@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createEnvironment**](EnvironmentApi.md#createEnvironment) | **POST** /core/environments | Create environment
 [**deleteEnvironment**](EnvironmentApi.md#deleteEnvironment) | **DELETE** /core/environments/{id} | Delete environment
+[**fetchEnvironmentNameAvailability**](EnvironmentApi.md#fetchEnvironmentNameAvailability) | **GET** /core/environments/name-availability/{name} | Fetch environment name availability
 [**listEnvironments**](EnvironmentApi.md#listEnvironments) | **GET** /core/environments | List environments
 [**retrieveEnvironment**](EnvironmentApi.md#retrieveEnvironment) | **GET** /core/environments/{id} | Retrieve environment
 [**updateEnvironment**](EnvironmentApi.md#updateEnvironment) | **PUT** /core/environments/{id} | Update environment
@@ -18,7 +19,7 @@ Method | HTTP request | Description
 
 Create environment
 
-Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions) in the request body.
+Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs.hyperstack.cloud/docs/resource-management/regions/) in the request body.
 
 ### Example
 
@@ -30,11 +31,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.EnvironmentApi();
 let payload = new HyperstackApi.CreateEnvironment(); // CreateEnvironment | 
@@ -59,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -85,11 +81,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.EnvironmentApi();
 let id = 56; // Number | 
@@ -114,7 +105,57 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## fetchEnvironmentNameAvailability
+
+> NameAvailableModel fetchEnvironmentNameAvailability(name)
+
+Fetch environment name availability
+
+Check if a Environment name is available
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.EnvironmentApi();
+let name = "name_example"; // String | 
+apiInstance.fetchEnvironmentNameAvailability(name).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  | 
+
+### Return type
+
+[**NameAvailableModel**](NameAvailableModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -128,7 +169,7 @@ Name | Type | Description  | Notes
 
 List environments
 
-Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions), and the date and time of creation. For more information on environments, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features).
+Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
 
 ### Example
 
@@ -140,11 +181,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.EnvironmentApi();
 let opts = {
@@ -175,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -201,11 +237,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.EnvironmentApi();
 let id = 56; // Number | 
@@ -230,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -256,11 +287,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.EnvironmentApi();
 let id = 56; // Number | 
@@ -287,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

@@ -48,6 +48,16 @@
   }
 
   describe('InviteApi', function() {
+    describe('acceptInvite', function() {
+      it('should call acceptInvite successfully', function(done) {
+        //uncomment below and update the code to test acceptInvite
+        //instance.acceptInvite(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteInvite', function() {
       it('should call deleteInvite successfully', function(done) {
         //uncomment below and update the code to test deleteInvite

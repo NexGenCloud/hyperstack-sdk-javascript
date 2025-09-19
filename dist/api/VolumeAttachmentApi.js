@@ -10,6 +10,7 @@ var _AttachVolumesPayload = _interopRequireDefault(require("../model/AttachVolum
 var _DetachVolumes = _interopRequireDefault(require("../model/DetachVolumes"));
 var _DetachVolumesPayload = _interopRequireDefault(require("../model/DetachVolumesPayload"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
+var _UpdateVolumeAttachmentPayload = _interopRequireDefault(require("../model/UpdateVolumeAttachmentPayload"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -31,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VolumeAttachment service.
 * @module api/VolumeAttachmentApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var VolumeAttachmentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -48,94 +49,139 @@ var VolumeAttachmentApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Attach volumes to virtual machine
-   * Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the virtual machine ID in the path and the volume IDs in the request body to attach the specified volumes to the designated virtual machine. For additional details on volume attachment, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features#attach-a-volume-to-a-virtual-machine-1).
-   * @param {Number} virtualMachineId 
+   * Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
+   * @param {Number} vmId 
    * @param {module:model/AttachVolumesPayload} payload 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachVolumes} and HTTP response
    */
   return _createClass(VolumeAttachmentApi, [{
     key: "attachVolumesToVirtualMachineWithHttpInfo",
-    value: function attachVolumesToVirtualMachineWithHttpInfo(virtualMachineId, payload) {
+    value: function attachVolumesToVirtualMachineWithHttpInfo(vmId, payload) {
       var postBody = payload;
-      // verify the required parameter 'virtualMachineId' is set
-      if (virtualMachineId === undefined || virtualMachineId === null) {
-        throw new Error("Missing the required parameter 'virtualMachineId' when calling attachVolumesToVirtualMachine");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling attachVolumesToVirtualMachine");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
         throw new Error("Missing the required parameter 'payload' when calling attachVolumesToVirtualMachine");
       }
       var pathParams = {
-        'virtual_machine_id': virtualMachineId
+        'vm_id': vmId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _AttachVolumes["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{virtual_machine_id}/attach-volumes', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/attach-volumes', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Attach volumes to virtual machine
-     * Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the virtual machine ID in the path and the volume IDs in the request body to attach the specified volumes to the designated virtual machine. For additional details on volume attachment, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features#attach-a-volume-to-a-virtual-machine-1).
-     * @param {Number} virtualMachineId 
+     * Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
+     * @param {Number} vmId 
      * @param {module:model/AttachVolumesPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachVolumes}
      */
   }, {
     key: "attachVolumesToVirtualMachine",
-    value: function attachVolumesToVirtualMachine(virtualMachineId, payload) {
-      return this.attachVolumesToVirtualMachineWithHttpInfo(virtualMachineId, payload).then(function (response_and_data) {
+    value: function attachVolumesToVirtualMachine(vmId, payload) {
+      return this.attachVolumesToVirtualMachineWithHttpInfo(vmId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Detach volumes from virtual machine
-     * Detaches one or more volumes currently attached to an existing virtual machine. Include the virtual machine ID in the path and the volume IDs in the request body to detach the specified volumes from the designated virtual machine.
-     * @param {Number} virtualMachineId 
+     * Detaches one or more volumes attached to an existing virtual machine. Include the VM ID in the path and volume IDs in the request body to detach the specified volumes from the virtual machine.
+     * @param {Number} vmId 
      * @param {module:model/DetachVolumesPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DetachVolumes} and HTTP response
      */
   }, {
     key: "detachVolumesFromVirtualMachineWithHttpInfo",
-    value: function detachVolumesFromVirtualMachineWithHttpInfo(virtualMachineId, payload) {
+    value: function detachVolumesFromVirtualMachineWithHttpInfo(vmId, payload) {
       var postBody = payload;
-      // verify the required parameter 'virtualMachineId' is set
-      if (virtualMachineId === undefined || virtualMachineId === null) {
-        throw new Error("Missing the required parameter 'virtualMachineId' when calling detachVolumesFromVirtualMachine");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling detachVolumesFromVirtualMachine");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
         throw new Error("Missing the required parameter 'payload' when calling detachVolumesFromVirtualMachine");
       }
       var pathParams = {
-        'virtual_machine_id': virtualMachineId
+        'vm_id': vmId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _DetachVolumes["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{virtual_machine_id}/detach-volumes', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/detach-volumes', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Detach volumes from virtual machine
-     * Detaches one or more volumes currently attached to an existing virtual machine. Include the virtual machine ID in the path and the volume IDs in the request body to detach the specified volumes from the designated virtual machine.
-     * @param {Number} virtualMachineId 
+     * Detaches one or more volumes attached to an existing virtual machine. Include the VM ID in the path and volume IDs in the request body to detach the specified volumes from the virtual machine.
+     * @param {Number} vmId 
      * @param {module:model/DetachVolumesPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DetachVolumes}
      */
   }, {
     key: "detachVolumesFromVirtualMachine",
-    value: function detachVolumesFromVirtualMachine(virtualMachineId, payload) {
-      return this.detachVolumesFromVirtualMachineWithHttpInfo(virtualMachineId, payload).then(function (response_and_data) {
+    value: function detachVolumesFromVirtualMachine(vmId, payload) {
+      return this.detachVolumesFromVirtualMachineWithHttpInfo(vmId, payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Update a volume attachment
+     * @param {Number} volumeAttachmentId 
+     * @param {module:model/UpdateVolumeAttachmentPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachVolumes} and HTTP response
+     */
+  }, {
+    key: "updateAVolumeAttachmentWithHttpInfo",
+    value: function updateAVolumeAttachmentWithHttpInfo(volumeAttachmentId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'volumeAttachmentId' is set
+      if (volumeAttachmentId === undefined || volumeAttachmentId === null) {
+        throw new Error("Missing the required parameter 'volumeAttachmentId' when calling updateAVolumeAttachment");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling updateAVolumeAttachment");
+      }
+      var pathParams = {
+        'volume_attachment_id': volumeAttachmentId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _AttachVolumes["default"];
+      return this.apiClient.callApi('/core/volume-attachments/{volume_attachment_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Update a volume attachment
+     * @param {Number} volumeAttachmentId 
+     * @param {module:model/UpdateVolumeAttachmentPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachVolumes}
+     */
+  }, {
+    key: "updateAVolumeAttachment",
+    value: function updateAVolumeAttachment(volumeAttachmentId, payload) {
+      return this.updateAVolumeAttachmentWithHttpInfo(volumeAttachmentId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

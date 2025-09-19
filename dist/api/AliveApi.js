@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Alive service.
 * @module api/AliveApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var AliveApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -43,6 +43,7 @@ var AliveApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * GET: Alive
+   * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](None/docs/api-reference/billing-resources/alive/).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   return _createClass(AliveApi, [{
@@ -53,7 +54,7 @@ var AliveApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = [];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
@@ -62,12 +63,42 @@ var AliveApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: Alive
+     * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](None/docs/api-reference/billing-resources/alive/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {
     key: "getAlive",
     value: function getAlive() {
       return this.getAliveWithHttpInfo().then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+  }, {
+    key: "getDocWithHttpInfo",
+    value: function getDocWithHttpInfo() {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
+      return this.apiClient.callApi('/billing/alive/doc', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+  }, {
+    key: "getDoc",
+    value: function getDoc() {
+      return this.getDocWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

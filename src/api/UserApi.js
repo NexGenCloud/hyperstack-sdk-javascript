@@ -15,13 +15,13 @@
 import ApiClient from "../ApiClient";
 import AddUserInfoSuccessResponseModel from '../model/AddUserInfoSuccessResponseModel';
 import ErrorResponseModel from '../model/ErrorResponseModel';
-import Userinfopostpayload from '../model/Userinfopostpayload';
+import UserInfoPostPayload from '../model/UserInfoPostPayload';
 import UsersInfoListResponse from '../model/UsersInfoListResponse';
 
 /**
 * User service.
 * @module api/UserApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class UserApi {
 
@@ -39,10 +39,11 @@ export default class UserApi {
 
 
     /**
-     * GET: Fetch User Info
+     * GET: Retrieve billing info
+     * Retrieve the billing details associated with your organization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UsersInfoListResponse} and HTTP response
      */
-    getFetchUserInfoWithHttpInfo() {
+    getUserWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -54,7 +55,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UsersInfoListResponse;
@@ -66,11 +67,12 @@ export default class UserApi {
     }
 
     /**
-     * GET: Fetch User Info
+     * GET: Retrieve billing info
+     * Retrieve the billing details associated with your organization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UsersInfoListResponse}
      */
-    getFetchUserInfo() {
-      return this.getFetchUserInfoWithHttpInfo()
+    getUser() {
+      return this.getUserWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -78,15 +80,16 @@ export default class UserApi {
 
 
     /**
-     * POST: Insert user info
-     * @param {module:model/Userinfopostpayload} payload 
+     * POST: Insert billing info
+     * Add billing details associated with your organization in the request body.
+     * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AddUserInfoSuccessResponseModel} and HTTP response
      */
-    postInsertUserInfoWithHttpInfo(payload) {
+    postUserWithHttpInfo(payload) {
       let postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postInsertUserInfo");
+        throw new Error("Missing the required parameter 'payload' when calling postUser");
       }
 
       let pathParams = {
@@ -98,7 +101,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AddUserInfoSuccessResponseModel;
@@ -110,12 +113,13 @@ export default class UserApi {
     }
 
     /**
-     * POST: Insert user info
-     * @param {module:model/Userinfopostpayload} payload 
+     * POST: Insert billing info
+     * Add billing details associated with your organization in the request body.
+     * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AddUserInfoSuccessResponseModel}
      */
-    postInsertUserInfo(payload) {
-      return this.postInsertUserInfoWithHttpInfo(payload)
+    postUser(payload) {
+      return this.postUserWithHttpInfo(payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -123,15 +127,16 @@ export default class UserApi {
 
 
     /**
-     * PUT: Update user info
-     * @param {module:model/Userinfopostpayload} payload 
+     * PUT: Update billing info
+     * Update the billing information for your organization in the request body.
+     * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AddUserInfoSuccessResponseModel} and HTTP response
      */
-    putUpdateUserInfoWithHttpInfo(payload) {
+    putUserWithHttpInfo(payload) {
       let postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling putUpdateUserInfo");
+        throw new Error("Missing the required parameter 'payload' when calling putUser");
       }
 
       let pathParams = {
@@ -143,7 +148,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AddUserInfoSuccessResponseModel;
@@ -155,12 +160,13 @@ export default class UserApi {
     }
 
     /**
-     * PUT: Update user info
-     * @param {module:model/Userinfopostpayload} payload 
+     * PUT: Update billing info
+     * Update the billing information for your organization in the request body.
+     * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AddUserInfoSuccessResponseModel}
      */
-    putUpdateUserInfo(payload) {
-      return this.putUpdateUserInfoWithHttpInfo(payload)
+    putUser(payload) {
+      return this.putUserWithHttpInfo(payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

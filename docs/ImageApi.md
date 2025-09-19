@@ -4,16 +4,16 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteAnImage**](ImageApi.md#deleteAnImage) | **DELETE** /core/images/{id} | Delete an image
-[**fetchNameAvailabilityForImages**](ImageApi.md#fetchNameAvailabilityForImages) | **GET** /core/image/name-availability/{name} | Fetch name availability for Images
-[**getPrivateImageDetails**](ImageApi.md#getPrivateImageDetails) | **GET** /core/images/{id} | Get Private Image Details
-[**listImages**](ImageApi.md#listImages) | **GET** /core/images | List Images
+[**deleteImage**](ImageApi.md#deleteImage) | **DELETE** /core/images/{id} | Delete an image
+[**fetchImageNameAvailability**](ImageApi.md#fetchImageNameAvailability) | **GET** /core/image/name-availability/{name} | Fetch name availability for Images
+[**getImageDetails**](ImageApi.md#getImageDetails) | **GET** /core/images/{id} | Get Private Image Details
+[**listImages2**](ImageApi.md#listImages2) | **GET** /core/images | List Images
 
 
 
-## deleteAnImage
+## deleteImage
 
-> ResponseModel deleteAnImage(id)
+> ResponseModel deleteImage(id)
 
 Delete an image
 
@@ -29,15 +29,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ImageApi();
 let id = 56; // Number | 
-apiInstance.deleteAnImage(id).then((data) => {
+apiInstance.deleteImage(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -58,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -66,9 +61,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## fetchNameAvailabilityForImages
+## fetchImageNameAvailability
 
-> NameAvailableModel fetchNameAvailabilityForImages(name)
+> NameAvailableModel fetchImageNameAvailability(name)
 
 Fetch name availability for Images
 
@@ -84,15 +79,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ImageApi();
 let name = "name_example"; // String | 
-apiInstance.fetchNameAvailabilityForImages(name).then((data) => {
+apiInstance.fetchImageNameAvailability(name).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -113,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -121,9 +111,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getPrivateImageDetails
+## getImageDetails
 
-> Image getPrivateImageDetails(id, opts)
+> Image getImageDetails(id, opts)
 
 Get Private Image Details
 
@@ -139,18 +129,13 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ImageApi();
 let id = 56; // Number | 
 let opts = {
   'includeRelatedVms': true // Boolean | 
 };
-apiInstance.getPrivateImageDetails(id, opts).then((data) => {
+apiInstance.getImageDetails(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -172,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -180,13 +165,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## listImages
+## listImages2
 
-> Images listImages(opts)
+> Images listImages2(opts)
 
 List Images
 
-Returns a list of all available operating system (OS) images, providing details about each image&#39;s corresponding virtual machine operating system. You can include the optional &#x60;region&#x60; parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the &#x60;include_public&#x60; parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images).
+Returns a list of all available operating system (OS) images, providing details about each image&#39;s corresponding virtual machine operating system. You can include the optional &#x60;region&#x60; parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the &#x60;include_public&#x60; parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/images).
 
 ### Example
 
@@ -198,11 +183,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ImageApi();
 let opts = {
@@ -212,7 +192,7 @@ let opts = {
   'page': 56, // Number | Page number for pagination
   'perPage': 56 // Number | Number of Images per page
 };
-apiInstance.listImages(opts).then((data) => {
+apiInstance.listImages2(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -237,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

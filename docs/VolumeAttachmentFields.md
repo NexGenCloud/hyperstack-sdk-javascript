@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | **Date** |  | [optional] 
 **device** | **String** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**_protected** | **Boolean** |  | [optional] 
 **status** | **String** |  | [optional] 
-**volume** | [**VolumeFieldsforInstance**](VolumeFieldsforInstance.md) |  | [optional] 
+**volume** | [**VolumeFieldsForInstance**](VolumeFieldsForInstance.md) |  | [optional] 
 
 

@@ -58,10 +58,10 @@
         done();
       });
     });
-    describe('detailsOfDeploymentById', function() {
-      it('should call detailsOfDeploymentById successfully', function(done) {
-        //uncomment below and update the code to test detailsOfDeploymentById
-        //instance.detailsOfDeploymentById(function(error) {
+    describe('detailsOfDeploymentByID', function() {
+      it('should call detailsOfDeploymentByID successfully', function(done) {
+        //uncomment below and update the code to test detailsOfDeploymentByID
+        //instance.detailsOfDeploymentByID(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

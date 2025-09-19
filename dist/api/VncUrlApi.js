@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VncUrl service.
 * @module api/VncUrlApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var VncUrlApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -46,85 +46,89 @@ var VncUrlApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Get VNC Console Link
-   * @param {Number} virtualMachineId 
+   * Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
+   * @param {Number} vmId 
    * @param {Number} jobId 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VNCURL} and HTTP response
    */
   return _createClass(VncUrlApi, [{
-    key: "getVncConsoleLinkWithHttpInfo",
-    value: function getVncConsoleLinkWithHttpInfo(virtualMachineId, jobId) {
+    key: "getVncUrlWithHttpInfo",
+    value: function getVncUrlWithHttpInfo(vmId, jobId) {
       var postBody = null;
-      // verify the required parameter 'virtualMachineId' is set
-      if (virtualMachineId === undefined || virtualMachineId === null) {
-        throw new Error("Missing the required parameter 'virtualMachineId' when calling getVncConsoleLink");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling getVncUrl");
       }
       // verify the required parameter 'jobId' is set
       if (jobId === undefined || jobId === null) {
-        throw new Error("Missing the required parameter 'jobId' when calling getVncConsoleLink");
+        throw new Error("Missing the required parameter 'jobId' when calling getVncUrl");
       }
       var pathParams = {
-        'virtual_machine_id': virtualMachineId,
+        'vm_id': vmId,
         'job_id': jobId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _VNCURL["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{virtual_machine_id}/console/{job_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/console/{job_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Get VNC Console Link
-     * @param {Number} virtualMachineId 
+     * Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
+     * @param {Number} vmId 
      * @param {Number} jobId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VNCURL}
      */
   }, {
-    key: "getVncConsoleLink",
-    value: function getVncConsoleLink(virtualMachineId, jobId) {
-      return this.getVncConsoleLinkWithHttpInfo(virtualMachineId, jobId).then(function (response_and_data) {
+    key: "getVncUrl",
+    value: function getVncUrl(vmId, jobId) {
+      return this.getVncUrlWithHttpInfo(vmId, jobId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Request Instance Console
-     * @param {Number} id 
+     * Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestConsole} and HTTP response
      */
   }, {
-    key: "requestInstanceConsoleWithHttpInfo",
-    value: function requestInstanceConsoleWithHttpInfo(id) {
+    key: "getVncUrl2WithHttpInfo",
+    value: function getVncUrl2WithHttpInfo(vmId) {
       var postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling requestInstanceConsole");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling getVncUrl2");
       }
       var pathParams = {
-        'id': id
+        'vm_id': vmId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _RequestConsole["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{id}/request-console', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/request-console', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Request Instance Console
-     * @param {Number} id 
+     * Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestConsole}
      */
   }, {
-    key: "requestInstanceConsole",
-    value: function requestInstanceConsole(id) {
-      return this.requestInstanceConsoleWithHttpInfo(id).then(function (response_and_data) {
+    key: "getVncUrl2",
+    value: function getVncUrl2(vmId) {
+      return this.getVncUrl2WithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

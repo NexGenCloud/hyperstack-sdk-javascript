@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The DeploymentFields model module.
  * @module model/DeploymentFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var DeploymentFields = /*#__PURE__*/function () {
   /**

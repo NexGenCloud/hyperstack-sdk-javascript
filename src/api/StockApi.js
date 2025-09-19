@@ -19,7 +19,7 @@ import NewStockRetriveResponse from '../model/NewStockRetriveResponse';
 /**
 * Stock service.
 * @module api/StockApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class StockApi {
 
@@ -38,10 +38,10 @@ export default class StockApi {
 
     /**
      * Retrieve GPU stocks
-     * Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+     * Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs.hyperstack.cloud/docs/hardware/gpu-stock-information).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewStockRetriveResponse} and HTTP response
      */
-    retrieveGpuStocksWithHttpInfo() {
+    retrieveGPUStocksWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -53,7 +53,7 @@ export default class StockApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = NewStockRetriveResponse;
@@ -66,11 +66,11 @@ export default class StockApi {
 
     /**
      * Retrieve GPU stocks
-     * Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+     * Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs.hyperstack.cloud/docs/hardware/gpu-stock-information).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewStockRetriveResponse}
      */
-    retrieveGpuStocks() {
-      return this.retrieveGpuStocksWithHttpInfo()
+    retrieveGPUStocks() {
+      return this.retrieveGPUStocksWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

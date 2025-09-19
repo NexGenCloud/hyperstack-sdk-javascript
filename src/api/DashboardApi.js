@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * Dashboard service.
 * @module api/DashboardApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class DashboardApi {
 
@@ -38,7 +38,7 @@ export default class DashboardApi {
 
     /**
      * Retrieve Dashboard
-     * Returns hardware and pricing overview for your active resources, including virtual machines, containers, and volumes. For additional information on the Dashboard feature, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/dashboard).
+     * Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DashboardInfoResponse} and HTTP response
      */
     retrieveDashboardWithHttpInfo() {
@@ -53,7 +53,7 @@ export default class DashboardApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = DashboardInfoResponse;
@@ -66,7 +66,7 @@ export default class DashboardApi {
 
     /**
      * Retrieve Dashboard
-     * Returns hardware and pricing overview for your active resources, including virtual machines, containers, and volumes. For additional information on the Dashboard feature, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/dashboard).
+     * Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DashboardInfoResponse}
      */
     retrieveDashboard() {

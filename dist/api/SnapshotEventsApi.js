@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * SnapshotEvents service.
 * @module api/SnapshotEventsApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var SnapshotEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -61,7 +61,7 @@ var SnapshotEventsApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = [];
       var returnType = null;

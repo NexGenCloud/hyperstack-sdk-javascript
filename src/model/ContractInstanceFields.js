@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import ClusterFields from './ClusterFields';
 
 /**
  * The ContractInstanceFields model module.
  * @module model/ContractInstanceFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class ContractInstanceFields {
     /**
@@ -47,6 +48,9 @@ class ContractInstanceFields {
         if (data) {
             obj = obj || new ContractInstanceFields();
 
+            if (data.hasOwnProperty('cluster')) {
+                obj['cluster'] = ClusterFields.constructFromObject(data['cluster']);
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -81,6 +85,10 @@ class ContractInstanceFields {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ContractInstanceFields</code>.
      */
     static validateJSON(data) {
+        // validate the optional field `cluster`
+        if (data['cluster']) { // data not null
+          ClusterFields.validateJSON(data['cluster']);
+        }
         // ensure the json data is a string
         if (data['flavor_name'] && !(typeof data['flavor_name'] === 'string' || data['flavor_name'] instanceof String)) {
             throw new Error("Expected the field `flavor_name` to be a primitive type in the JSON string but got " + data['flavor_name']);
@@ -101,6 +109,11 @@ class ContractInstanceFields {
 }
 
 
+
+/**
+ * @member {module:model/ClusterFields} cluster
+ */
+ContractInstanceFields.prototype['cluster'] = undefined;
 
 /**
  * @member {Date} created_at

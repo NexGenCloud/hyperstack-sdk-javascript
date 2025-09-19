@@ -48,10 +48,10 @@
   }
 
   describe('CreditApi', function() {
-    describe('getViewCreditAndThreshold', function() {
-      it('should call getViewCreditAndThreshold successfully', function(done) {
-        //uncomment below and update the code to test getViewCreditAndThreshold
-        //instance.getViewCreditAndThreshold(function(error) {
+    describe('getCredit2', function() {
+      it('should call getCredit2 successfully', function(done) {
+        //uncomment below and update the code to test getCredit2
+        //instance.getCredit2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

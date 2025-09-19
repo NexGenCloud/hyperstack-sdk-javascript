@@ -29,13 +29,13 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateProfilePayload model module.
  * @module model/CreateProfilePayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var CreateProfilePayload = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateProfilePayload</code>.
    * @alias module:model/CreateProfilePayload
-   * @param data {Object.<String, String>} The data object which contains the configuration of the virtual machine profile being created.
+   * @param data {Object.<String, String>} The data object containing the configuration details of the virtual machine profile being created.
    * @param name {String} The name of the profile being created.
    */
   function CreateProfilePayload(data, name) {
@@ -120,7 +120,7 @@ var CreateProfilePayload = /*#__PURE__*/function () {
 CreateProfilePayload.RequiredProperties = ["data", "name"];
 
 /**
- * The data object which contains the configuration of the virtual machine profile being created.
+ * The data object containing the configuration details of the virtual machine profile being created.
  * @member {Object.<String, String>} data
  */
 CreateProfilePayload.prototype['data'] = undefined;

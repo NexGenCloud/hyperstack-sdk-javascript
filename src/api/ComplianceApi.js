@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Compliance service.
 * @module api/ComplianceApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class ComplianceApi {
 
@@ -60,7 +60,7 @@ export default class ComplianceApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CreateUpdateComplianceResponse;
@@ -106,7 +106,7 @@ export default class ComplianceApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
@@ -132,12 +132,12 @@ export default class ComplianceApi {
 
     /**
      * Retrieve GPU compliance
-     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
      * @param {Object} opts Optional parameters
      * @param {String} [gpu] This is for gpu model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ComplianceResponse} and HTTP response
      */
-    retrieveGpuComplianceWithHttpInfo(opts) {
+    retrieveComplianceWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -151,7 +151,7 @@ export default class ComplianceApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ComplianceResponse;
@@ -164,13 +164,13 @@ export default class ComplianceApi {
 
     /**
      * Retrieve GPU compliance
-     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+     * Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
      * @param {Object} opts Optional parameters
      * @param {String} opts.gpu This is for gpu model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ComplianceResponse}
      */
-    retrieveGpuCompliance(opts) {
-      return this.retrieveGpuComplianceWithHttpInfo(opts)
+    retrieveCompliance(opts) {
+      return this.retrieveComplianceWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -198,7 +198,7 @@ export default class ComplianceApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CreateUpdateComplianceResponse;

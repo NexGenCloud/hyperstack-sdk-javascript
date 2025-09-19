@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * UserPermission service.
 * @module api/UserPermissionApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,7 +45,7 @@ var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * List My User Permissions
-   * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+   * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetUserPermissionsResponseModel} and HTTP response
    */
   return _createClass(UserPermissionApi, [{
@@ -56,7 +56,7 @@ var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _GetUserPermissionsResponseModel["default"];
@@ -65,7 +65,7 @@ var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List My User Permissions
-     * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+     * Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetUserPermissionsResponseModel}
      */
   }, {
@@ -78,7 +78,7 @@ var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List User Permissions
-     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetUserPermissionsResponseModel} and HTTP response
      */
@@ -96,7 +96,7 @@ var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _GetUserPermissionsResponseModel["default"];
@@ -105,7 +105,7 @@ var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List User Permissions
-     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+     * Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetUserPermissionsResponseModel}
      */

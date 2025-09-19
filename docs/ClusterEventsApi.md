@@ -24,11 +24,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ClusterEventsApi();
 let clusterId = "clusterId_example"; // String | 
@@ -53,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

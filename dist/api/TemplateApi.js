@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Template service.
 * @module api/TemplateApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var TemplateApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -84,7 +84,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
         'is_public': isPublic,
         'name': name
       };
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json'];
       var returnType = _Template["default"];
@@ -128,7 +128,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
@@ -151,7 +151,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List templates
-     * Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/templates#view-a-list-of-templates).
+     * Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs.hyperstack.cloud/docs/features/templates#view-a-list-of-templates).
      * @param {Object} opts Optional parameters
      * @param {String} [visibility] Specify the `visibility` status as either `public` or `private` to filter and retrieve templates with the desired visibility.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Templates} and HTTP response
@@ -167,7 +167,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
       };
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Templates["default"];
@@ -176,7 +176,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List templates
-     * Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/templates#view-a-list-of-templates).
+     * Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs.hyperstack.cloud/docs/features/templates#view-a-list-of-templates).
      * @param {Object} opts Optional parameters
      * @param {String} opts.visibility Specify the `visibility` status as either `public` or `private` to filter and retrieve templates with the desired visibility.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Templates}
@@ -191,7 +191,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve template details
-     * Retrieves the resource configuration details for a specified template. Provide the template ID in the path to retrieve details for the specified template. For additional information on template configuration details, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/templates#retrieve-the-details-for-a-template).
+     * Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Template} and HTTP response
      */
@@ -209,7 +209,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Template["default"];
@@ -218,7 +218,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve template details
-     * Retrieves the resource configuration details for a specified template. Provide the template ID in the path to retrieve details for the specified template. For additional information on template configuration details, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/templates#retrieve-the-details-for-a-template).
+     * Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Template}
      */
@@ -232,7 +232,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Update template
-     * Updates the details of a template. Modify the template name, description and/or `is_public` status to change the public/private visibility of the template.
+     * Updates the details of a template. Modify the template name, description and/or`is_public` status to change the public/private visibility of the template.
      * @param {Number} id 
      * @param {module:model/UpdateTemplate} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Template} and HTTP response
@@ -255,7 +255,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _Template["default"];
@@ -264,7 +264,7 @@ var TemplateApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Update template
-     * Updates the details of a template. Modify the template name, description and/or `is_public` status to change the public/private visibility of the template.
+     * Updates the details of a template. Modify the template name, description and/or`is_public` status to change the public/private visibility of the template.
      * @param {Number} id 
      * @param {module:model/UpdateTemplate} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Template}

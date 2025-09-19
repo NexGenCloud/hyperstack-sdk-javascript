@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Permission service.
 * @module api/PermissionApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var PermissionApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,7 +45,7 @@ var PermissionApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * List Permissions
-   * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/permissions).
+   * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/permissions).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetPermissionsResponseModel} and HTTP response
    */
   return _createClass(PermissionApi, [{
@@ -56,7 +56,7 @@ var PermissionApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _GetPermissionsResponseModel["default"];
@@ -65,7 +65,7 @@ var PermissionApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List Permissions
-     * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/permissions).
+     * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/permissions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetPermissionsResponseModel}
      */
   }, {

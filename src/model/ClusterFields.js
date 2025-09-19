@@ -12,12 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
-import InstanceFlavorFields from './InstanceFlavorFields';
+import ClusterFlavorFields from './ClusterFlavorFields';
+import ClusterNodeFields from './ClusterNodeFields';
+import ClusterNodeGroupFields from './ClusterNodeGroupFields';
 
 /**
  * The ClusterFields model module.
  * @module model/ClusterFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class ClusterFields {
     /**
@@ -69,14 +71,17 @@ class ClusterFields {
             if (data.hasOwnProperty('kubernetes_version')) {
                 obj['kubernetes_version'] = ApiClient.convertToType(data['kubernetes_version'], 'String');
             }
+            if (data.hasOwnProperty('master_flavor')) {
+                obj['master_flavor'] = ClusterFlavorFields.constructFromObject(data['master_flavor']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('node_count')) {
-                obj['node_count'] = ApiClient.convertToType(data['node_count'], 'Number');
+            if (data.hasOwnProperty('node_groups')) {
+                obj['node_groups'] = ApiClient.convertToType(data['node_groups'], [ClusterNodeGroupFields]);
             }
-            if (data.hasOwnProperty('node_flavor')) {
-                obj['node_flavor'] = InstanceFlavorFields.constructFromObject(data['node_flavor']);
+            if (data.hasOwnProperty('nodes')) {
+                obj['nodes'] = ApiClient.convertToType(data['nodes'], [ClusterNodeFields]);
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -114,13 +119,33 @@ class ClusterFields {
         if (data['kubernetes_version'] && !(typeof data['kubernetes_version'] === 'string' || data['kubernetes_version'] instanceof String)) {
             throw new Error("Expected the field `kubernetes_version` to be a primitive type in the JSON string but got " + data['kubernetes_version']);
         }
+        // validate the optional field `master_flavor`
+        if (data['master_flavor']) { // data not null
+          ClusterFlavorFields.validateJSON(data['master_flavor']);
+        }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
-        // validate the optional field `node_flavor`
-        if (data['node_flavor']) { // data not null
-          InstanceFlavorFields.validateJSON(data['node_flavor']);
+        if (data['node_groups']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['node_groups'])) {
+                throw new Error("Expected the field `node_groups` to be an array in the JSON data but got " + data['node_groups']);
+            }
+            // validate the optional field `node_groups` (array)
+            for (const item of data['node_groups']) {
+                ClusterNodeGroupFields.validateJSON(item);
+            };
+        }
+        if (data['nodes']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['nodes'])) {
+                throw new Error("Expected the field `nodes` to be an array in the JSON data but got " + data['nodes']);
+            }
+            // validate the optional field `nodes` (array)
+            for (const item of data['nodes']) {
+                ClusterNodeFields.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
@@ -175,19 +200,24 @@ ClusterFields.prototype['kube_config'] = undefined;
 ClusterFields.prototype['kubernetes_version'] = undefined;
 
 /**
+ * @member {module:model/ClusterFlavorFields} master_flavor
+ */
+ClusterFields.prototype['master_flavor'] = undefined;
+
+/**
  * @member {String} name
  */
 ClusterFields.prototype['name'] = undefined;
 
 /**
- * @member {Number} node_count
+ * @member {Array.<module:model/ClusterNodeGroupFields>} node_groups
  */
-ClusterFields.prototype['node_count'] = undefined;
+ClusterFields.prototype['node_groups'] = undefined;
 
 /**
- * @member {module:model/InstanceFlavorFields} node_flavor
+ * @member {Array.<module:model/ClusterNodeFields>} nodes
  */
-ClusterFields.prototype['node_flavor'] = undefined;
+ClusterFields.prototype['nodes'] = undefined;
 
 /**
  * @member {String} status

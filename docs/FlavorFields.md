@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **disk** | **Number** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **ephemeral** | **Number** |  | [optional] 
+**features** | **Object** |  | [optional] 
 **gpu** | **String** |  | [optional] 
 **gpuCount** | **Number** |  | [optional] 
 **id** | **Number** |  | [optional] 

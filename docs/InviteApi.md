@@ -4,19 +4,20 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteInvite**](InviteApi.md#deleteInvite) | **DELETE** /auth/invites/{id} | Delete Invite
+[**acceptInvite**](InviteApi.md#acceptInvite) | **GET** /auth/invites/{id}/accept | Accept Invite
+[**deleteInvite**](InviteApi.md#deleteInvite) | **DELETE** /auth/invites/{id} | Accept Invite
 [**inviteUserToOrganization**](InviteApi.md#inviteUserToOrganization) | **POST** /auth/invites | Invite User to Organization
 [**listInvites**](InviteApi.md#listInvites) | **GET** /auth/invites | List Invites
 
 
 
-## deleteInvite
+## acceptInvite
 
-> CommonResponseModel deleteInvite(id)
+> CommonResponseModel acceptInvite(id)
 
-Delete Invite
+Accept Invite
 
-Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/delete-invite).
+Accept an invitation for a user to join your organization.
 
 ### Example
 
@@ -28,11 +29,56 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
+
+let apiInstance = new HyperstackApi.InviteApi();
+let id = 56; // Number | 
+apiInstance.acceptInvite(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+
+### Return type
+
+[**CommonResponseModel**](CommonResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deleteInvite
+
+> CommonResponseModel deleteInvite(id)
+
+Accept Invite
+
+Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
+//apiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.InviteApi();
 let id = 56; // Number | 
@@ -57,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -71,7 +117,7 @@ Name | Type | Description  | Notes
 
 Invite User to Organization
 
-Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/invite-member).
+Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
 
 ### Example
 
@@ -83,11 +129,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.InviteApi();
 let payload = new HyperstackApi.InviteUserPayload(); // InviteUserPayload | 
@@ -112,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -126,7 +167,7 @@ Name | Type | Description  | Notes
 
 List Invites
 
-Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/invites/list-invites).
+Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
 
 ### Example
 
@@ -138,11 +179,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.InviteApi();
 apiInstance.listInvites().then((data) => {
@@ -163,7 +199,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

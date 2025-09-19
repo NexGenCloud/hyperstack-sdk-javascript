@@ -29,13 +29,13 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateVolumePayload model module.
  * @module model/CreateVolumePayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var CreateVolumePayload = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateVolumePayload</code>.
    * @alias module:model/CreateVolumePayload
-   * @param environmentName {String} The name of the [environment](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features) within which the volume is being created.
+   * @param environmentName {String} The name of the [environment](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/) within which the volume is being created.
    * @param name {String} The name of the volume being created.
    * @param size {Number} The size of the volume in GB. 1048576GB storage capacity per volume.
    * @param volumeType {String} Specifies the type of volume being created, which determines the storage technology it will use. Call the [List volume types](https://infrahub-api-doc.nexgencloud.com/#get-/core/volumes) endpoint to retrieve a list of available volume model types.
@@ -158,7 +158,7 @@ CreateVolumePayload.prototype['callback_url'] = undefined;
 CreateVolumePayload.prototype['description'] = undefined;
 
 /**
- * The name of the [environment](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features) within which the volume is being created.
+ * The name of the [environment](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/) within which the volume is being created.
  * @member {String} environment_name
  */
 CreateVolumePayload.prototype['environment_name'] = undefined;

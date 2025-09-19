@@ -48,26 +48,6 @@
   }
 
   describe('BillingApi', function() {
-    describe('getAllThresholdsForOrganization', function() {
-      it('should call getAllThresholdsForOrganization successfully', function(done) {
-        //uncomment below and update the code to test getAllThresholdsForOrganization
-        //instance.getAllThresholdsForOrganization(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getBillingUsage', function() {
-      it('should call getBillingUsage successfully', function(done) {
-        //uncomment below and update the code to test getBillingUsage
-        //instance.getBillingUsage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getLastDayCost', function() {
       it('should call getLastDayCost successfully', function(done) {
         //uncomment below and update the code to test getLastDayCost
@@ -78,160 +58,360 @@
         done();
       });
     });
-    describe('retrieveBillingHistoryForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryForASpecificBillingCycle
-        //instance.retrieveBillingHistoryForASpecificBillingCycle(function(error) {
+    describe('getOrganizationThreshold', function() {
+      it('should call getOrganizationThreshold successfully', function(done) {
+        //uncomment below and update the code to test getOrganizationThreshold
+        //instance.getOrganizationThreshold(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle
-        //instance.retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle(function(error) {
+    describe('getUsage2', function() {
+      it('should call getUsage2 successfully', function(done) {
+        //uncomment below and update the code to test getUsage2
+        //instance.getUsage2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle
-        //instance.retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle(function(error) {
+    describe('getUserBillingBucketDetailsGraph', function() {
+      it('should call getUserBillingBucketDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingBucketDetailsGraph
+        //instance.getUserBillingBucketDetailsGraph(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle
-        //instance.retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle(function(error) {
+    describe('getUserBillingClusterDetailsGraph', function() {
+      it('should call getUserBillingClusterDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingClusterDetailsGraph
+        //instance.getUserBillingClusterDetailsGraph(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveBillingHistoryOfContractForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryOfContractForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryOfContractForASpecificBillingCycle
-        //instance.retrieveBillingHistoryOfContractForASpecificBillingCycle(function(error) {
+    describe('getUserBillingDataSynthesisDetailsGraph', function() {
+      it('should call getUserBillingDataSynthesisDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingDataSynthesisDetailsGraph
+        //instance.getUserBillingDataSynthesisDetailsGraph(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveBillingHistoryOfSnapshotForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryOfSnapshotForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryOfSnapshotForASpecificBillingCycle
-        //instance.retrieveBillingHistoryOfSnapshotForASpecificBillingCycle(function(error) {
+    describe('getUserBillingFineTuningDetailsGraph', function() {
+      it('should call getUserBillingFineTuningDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingFineTuningDetailsGraph
+        //instance.getUserBillingFineTuningDetailsGraph(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle
-        //instance.retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle(function(error) {
+    describe('getUserBillingHistory2', function() {
+      it('should call getUserBillingHistory2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistory2
+        //instance.getUserBillingHistory2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveBillingHistoryOfVolumeForASpecificBillingCycle', function() {
-      it('should call retrieveBillingHistoryOfVolumeForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingHistoryOfVolumeForASpecificBillingCycle
-        //instance.retrieveBillingHistoryOfVolumeForASpecificBillingCycle(function(error) {
+    describe('getUserBillingHistoryBucket2', function() {
+      it('should call getUserBillingHistoryBucket2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryBucket2
+        //instance.getUserBillingHistoryBucket2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle', function() {
-      it('should call retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle
-        //instance.retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle(function(error) {
+    describe('getUserBillingHistoryBucketDetails', function() {
+      it('should call getUserBillingHistoryBucketDetails successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryBucketDetails
+        //instance.getUserBillingHistoryBucketDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle', function() {
-      it('should call retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle
-        //instance.retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle(function(error) {
+    describe('getUserBillingHistoryCluster', function() {
+      it('should call getUserBillingHistoryCluster successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryCluster
+        //instance.getUserBillingHistoryCluster(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle', function() {
-      it('should call retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle successfully', function(done) {
-        //uncomment below and update the code to test retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle
-        //instance.retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle(function(error) {
+    describe('getUserBillingHistoryClusterDetails', function() {
+      it('should call getUserBillingHistoryClusterDetails successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryClusterDetails
+        //instance.getUserBillingHistoryClusterDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveSubResourcesHistoricalCostDatapointsOfAVirtual', function() {
-      it('should call retrieveSubResourcesHistoricalCostDatapointsOfAVirtual successfully', function(done) {
-        //uncomment below and update the code to test retrieveSubResourcesHistoricalCostDatapointsOfAVirtual
-        //instance.retrieveSubResourcesHistoricalCostDatapointsOfAVirtual(function(error) {
+    describe('getUserBillingHistoryContract', function() {
+      it('should call getUserBillingHistoryContract successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryContract
+        //instance.getUserBillingHistoryContract(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveTotalCostsAndNonDiscountCostsForSubResources', function() {
-      it('should call retrieveTotalCostsAndNonDiscountCostsForSubResources successfully', function(done) {
-        //uncomment below and update the code to test retrieveTotalCostsAndNonDiscountCostsForSubResources
-        //instance.retrieveTotalCostsAndNonDiscountCostsForSubResources(function(error) {
+    describe('getUserBillingHistoryDataSynthesis', function() {
+      it('should call getUserBillingHistoryDataSynthesis successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryDataSynthesis
+        //instance.getUserBillingHistoryDataSynthesis(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveVmBillingEventsHistory', function() {
-      it('should call retrieveVmBillingEventsHistory successfully', function(done) {
-        //uncomment below and update the code to test retrieveVmBillingEventsHistory
-        //instance.retrieveVmBillingEventsHistory(function(error) {
+    describe('getUserBillingHistoryDataSynthesisDetails', function() {
+      it('should call getUserBillingHistoryDataSynthesisDetails successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryDataSynthesisDetails
+        //instance.getUserBillingHistoryDataSynthesisDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveVolumeBillingEventsHistory', function() {
-      it('should call retrieveVolumeBillingEventsHistory successfully', function(done) {
-        //uncomment below and update the code to test retrieveVolumeBillingEventsHistory
-        //instance.retrieveVolumeBillingEventsHistory(function(error) {
+    describe('getUserBillingHistoryFineTuning', function() {
+      it('should call getUserBillingHistoryFineTuning successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryFineTuning
+        //instance.getUserBillingHistoryFineTuning(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateSubscribeOrUnsubscribeNotificationThreshold', function() {
-      it('should call updateSubscribeOrUnsubscribeNotificationThreshold successfully', function(done) {
-        //uncomment below and update the code to test updateSubscribeOrUnsubscribeNotificationThreshold
-        //instance.updateSubscribeOrUnsubscribeNotificationThreshold(function(error) {
+    describe('getUserBillingHistoryFineTuningDetails', function() {
+      it('should call getUserBillingHistoryFineTuningDetails successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryFineTuningDetails
+        //instance.getUserBillingHistoryFineTuningDetails(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryModelEvaluation', function() {
+      it('should call getUserBillingHistoryModelEvaluation successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryModelEvaluation
+        //instance.getUserBillingHistoryModelEvaluation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryModelEvaluationDetails', function() {
+      it('should call getUserBillingHistoryModelEvaluationDetails successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryModelEvaluationDetails
+        //instance.getUserBillingHistoryModelEvaluationDetails(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryServerlessInference', function() {
+      it('should call getUserBillingHistoryServerlessInference successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryServerlessInference
+        //instance.getUserBillingHistoryServerlessInference(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryServerlessInferenceDetails', function() {
+      it('should call getUserBillingHistoryServerlessInferenceDetails successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryServerlessInferenceDetails
+        //instance.getUserBillingHistoryServerlessInferenceDetails(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistorySnapshot', function() {
+      it('should call getUserBillingHistorySnapshot successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistorySnapshot
+        //instance.getUserBillingHistorySnapshot(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistorySnapshotDetails', function() {
+      it('should call getUserBillingHistorySnapshotDetails successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistorySnapshotDetails
+        //instance.getUserBillingHistorySnapshotDetails(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryVm2', function() {
+      it('should call getUserBillingHistoryVm2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryVm2
+        //instance.getUserBillingHistoryVm2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryVmDetails2', function() {
+      it('should call getUserBillingHistoryVmDetails2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryVmDetails2
+        //instance.getUserBillingHistoryVmDetails2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryVmSubResourceGraph2', function() {
+      it('should call getUserBillingHistoryVmSubResourceGraph2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryVmSubResourceGraph2
+        //instance.getUserBillingHistoryVmSubResourceGraph2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryVmTotalCosts', function() {
+      it('should call getUserBillingHistoryVmTotalCosts successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryVmTotalCosts
+        //instance.getUserBillingHistoryVmTotalCosts(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryVolume2', function() {
+      it('should call getUserBillingHistoryVolume2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryVolume2
+        //instance.getUserBillingHistoryVolume2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingHistoryVolumeDetails2', function() {
+      it('should call getUserBillingHistoryVolumeDetails2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingHistoryVolumeDetails2
+        //instance.getUserBillingHistoryVolumeDetails2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingModelEvaluationDetailsGraph', function() {
+      it('should call getUserBillingModelEvaluationDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingModelEvaluationDetailsGraph
+        //instance.getUserBillingModelEvaluationDetailsGraph(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingServerlessInferenceDetailsGraph', function() {
+      it('should call getUserBillingServerlessInferenceDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingServerlessInferenceDetailsGraph
+        //instance.getUserBillingServerlessInferenceDetailsGraph(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingSnapshotDetailsGraph', function() {
+      it('should call getUserBillingSnapshotDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingSnapshotDetailsGraph
+        //instance.getUserBillingSnapshotDetailsGraph(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingVmDetailsGraph2', function() {
+      it('should call getUserBillingVmDetailsGraph2 successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingVmDetailsGraph2
+        //instance.getUserBillingVmDetailsGraph2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserBillingVolumeDetailsGraph', function() {
+      it('should call getUserBillingVolumeDetailsGraph successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingVolumeDetailsGraph
+        //instance.getUserBillingVolumeDetailsGraph(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserVmBillingEvents', function() {
+      it('should call getUserVmBillingEvents successfully', function(done) {
+        //uncomment below and update the code to test getUserVmBillingEvents
+        //instance.getUserVmBillingEvents(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserVolumeBillingEvents', function() {
+      it('should call getUserVolumeBillingEvents successfully', function(done) {
+        //uncomment below and update the code to test getUserVolumeBillingEvents
+        //instance.getUserVolumeBillingEvents(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('putOrganizationThreshold', function() {
+      it('should call putOrganizationThreshold successfully', function(done) {
+        //uncomment below and update the code to test putOrganizationThreshold
+        //instance.putOrganizationThreshold(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

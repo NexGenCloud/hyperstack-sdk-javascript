@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+var _KeypairEnvironmentFields = _interopRequireDefault(require("./KeypairEnvironmentFields"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -26,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The KeypairFields model module.
  * @module model/KeypairFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var KeypairFields = /*#__PURE__*/function () {
   /**
@@ -63,7 +64,7 @@ var KeypairFields = /*#__PURE__*/function () {
           obj['created_at'] = _ApiClient["default"].convertToType(data['created_at'], 'Date');
         }
         if (data.hasOwnProperty('environment')) {
-          obj['environment'] = _ApiClient["default"].convertToType(data['environment'], 'String');
+          obj['environment'] = _KeypairEnvironmentFields["default"].constructFromObject(data['environment']);
         }
         if (data.hasOwnProperty('fingerprint')) {
           obj['fingerprint'] = _ApiClient["default"].convertToType(data['fingerprint'], 'String');
@@ -89,9 +90,10 @@ var KeypairFields = /*#__PURE__*/function () {
   }, {
     key: "validateJSON",
     value: function validateJSON(data) {
-      // ensure the json data is a string
-      if (data['environment'] && !(typeof data['environment'] === 'string' || data['environment'] instanceof String)) {
-        throw new Error("Expected the field `environment` to be a primitive type in the JSON string but got " + data['environment']);
+      // validate the optional field `environment`
+      if (data['environment']) {
+        // data not null
+        _KeypairEnvironmentFields["default"].validateJSON(data['environment']);
       }
       // ensure the json data is a string
       if (data['fingerprint'] && !(typeof data['fingerprint'] === 'string' || data['fingerprint'] instanceof String)) {
@@ -115,7 +117,7 @@ var KeypairFields = /*#__PURE__*/function () {
 KeypairFields.prototype['created_at'] = undefined;
 
 /**
- * @member {String} environment
+ * @member {module:model/KeypairEnvironmentFields} environment
  */
 KeypairFields.prototype['environment'] = undefined;
 

@@ -5,9 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-var _InstanceFlavorFields = _interopRequireDefault(require("./InstanceFlavorFields"));
+var _ClusterFlavorFields = _interopRequireDefault(require("./ClusterFlavorFields"));
+var _ClusterNodeFields = _interopRequireDefault(require("./ClusterNodeFields"));
+var _ClusterNodeGroupFields = _interopRequireDefault(require("./ClusterNodeGroupFields"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
@@ -27,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ClusterFields model module.
  * @module model/ClusterFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var ClusterFields = /*#__PURE__*/function () {
   /**
@@ -81,14 +86,17 @@ var ClusterFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('kubernetes_version')) {
           obj['kubernetes_version'] = _ApiClient["default"].convertToType(data['kubernetes_version'], 'String');
         }
+        if (data.hasOwnProperty('master_flavor')) {
+          obj['master_flavor'] = _ClusterFlavorFields["default"].constructFromObject(data['master_flavor']);
+        }
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
-        if (data.hasOwnProperty('node_count')) {
-          obj['node_count'] = _ApiClient["default"].convertToType(data['node_count'], 'Number');
+        if (data.hasOwnProperty('node_groups')) {
+          obj['node_groups'] = _ApiClient["default"].convertToType(data['node_groups'], [_ClusterNodeGroupFields["default"]]);
         }
-        if (data.hasOwnProperty('node_flavor')) {
-          obj['node_flavor'] = _InstanceFlavorFields["default"].constructFromObject(data['node_flavor']);
+        if (data.hasOwnProperty('nodes')) {
+          obj['nodes'] = _ApiClient["default"].convertToType(data['nodes'], [_ClusterNodeFields["default"]]);
         }
         if (data.hasOwnProperty('status')) {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
@@ -128,14 +136,56 @@ var ClusterFields = /*#__PURE__*/function () {
       if (data['kubernetes_version'] && !(typeof data['kubernetes_version'] === 'string' || data['kubernetes_version'] instanceof String)) {
         throw new Error("Expected the field `kubernetes_version` to be a primitive type in the JSON string but got " + data['kubernetes_version']);
       }
+      // validate the optional field `master_flavor`
+      if (data['master_flavor']) {
+        // data not null
+        _ClusterFlavorFields["default"].validateJSON(data['master_flavor']);
+      }
       // ensure the json data is a string
       if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
         throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
       }
-      // validate the optional field `node_flavor`
-      if (data['node_flavor']) {
+      if (data['node_groups']) {
         // data not null
-        _InstanceFlavorFields["default"].validateJSON(data['node_flavor']);
+        // ensure the json data is an array
+        if (!Array.isArray(data['node_groups'])) {
+          throw new Error("Expected the field `node_groups` to be an array in the JSON data but got " + data['node_groups']);
+        }
+        // validate the optional field `node_groups` (array)
+        var _iterator = _createForOfIteratorHelper(data['node_groups']),
+          _step;
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var item = _step.value;
+            _ClusterNodeGroupFields["default"].validateJSON(item);
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+        ;
+      }
+      if (data['nodes']) {
+        // data not null
+        // ensure the json data is an array
+        if (!Array.isArray(data['nodes'])) {
+          throw new Error("Expected the field `nodes` to be an array in the JSON data but got " + data['nodes']);
+        }
+        // validate the optional field `nodes` (array)
+        var _iterator2 = _createForOfIteratorHelper(data['nodes']),
+          _step2;
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var _item = _step2.value;
+            _ClusterNodeFields["default"].validateJSON(_item);
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
+        ;
       }
       // ensure the json data is a string
       if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
@@ -185,19 +235,24 @@ ClusterFields.prototype['kube_config'] = undefined;
 ClusterFields.prototype['kubernetes_version'] = undefined;
 
 /**
+ * @member {module:model/ClusterFlavorFields} master_flavor
+ */
+ClusterFields.prototype['master_flavor'] = undefined;
+
+/**
  * @member {String} name
  */
 ClusterFields.prototype['name'] = undefined;
 
 /**
- * @member {Number} node_count
+ * @member {Array.<module:model/ClusterNodeGroupFields>} node_groups
  */
-ClusterFields.prototype['node_count'] = undefined;
+ClusterFields.prototype['node_groups'] = undefined;
 
 /**
- * @member {module:model/InstanceFlavorFields} node_flavor
+ * @member {Array.<module:model/ClusterNodeFields>} nodes
  */
-ClusterFields.prototype['node_flavor'] = undefined;
+ClusterFields.prototype['nodes'] = undefined;
 
 /**
  * @member {String} status

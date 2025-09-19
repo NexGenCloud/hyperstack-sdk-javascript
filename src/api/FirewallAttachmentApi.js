@@ -20,7 +20,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * FirewallAttachment service.
 * @module api/FirewallAttachmentApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class FirewallAttachmentApi {
 
@@ -39,19 +39,20 @@ export default class FirewallAttachmentApi {
 
     /**
      * Attach Firewalls to VMs
+     * Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
      * @param {Number} firewallId 
      * @param {module:model/AttachFirewallWithVM} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    attachFirewallsToVmsWithHttpInfo(firewallId, payload) {
+    postAttachSecurityGroupsWithHttpInfo(firewallId, payload) {
       let postBody = payload;
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling attachFirewallsToVms");
+        throw new Error("Missing the required parameter 'firewallId' when calling postAttachSecurityGroups");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling attachFirewallsToVms");
+        throw new Error("Missing the required parameter 'payload' when calling postAttachSecurityGroups");
       }
 
       let pathParams = {
@@ -64,7 +65,7 @@ export default class FirewallAttachmentApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ResponseModel;
@@ -77,12 +78,13 @@ export default class FirewallAttachmentApi {
 
     /**
      * Attach Firewalls to VMs
+     * Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
      * @param {Number} firewallId 
      * @param {module:model/AttachFirewallWithVM} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    attachFirewallsToVms(firewallId, payload) {
-      return this.attachFirewallsToVmsWithHttpInfo(firewallId, payload)
+    postAttachSecurityGroups(firewallId, payload) {
+      return this.postAttachSecurityGroupsWithHttpInfo(firewallId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

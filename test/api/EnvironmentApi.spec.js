@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('fetchEnvironmentNameAvailability', function() {
+      it('should call fetchEnvironmentNameAvailability successfully', function(done) {
+        //uncomment below and update the code to test fetchEnvironmentNameAvailability
+        //instance.fetchEnvironmentNameAvailability(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listEnvironments', function() {
       it('should call listEnvironments successfully', function(done) {
         //uncomment below and update the code to test listEnvironments

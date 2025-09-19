@@ -16,13 +16,13 @@ import InstanceEnvironmentFields from './InstanceEnvironmentFields';
 import InstanceFlavorFields from './InstanceFlavorFields';
 import InstanceImageFields from './InstanceImageFields';
 import InstanceKeypairFields from './InstanceKeypairFields';
-import SecurityRulesFieldsforInstance from './SecurityRulesFieldsforInstance';
+import SecurityRulesFieldsForInstance from './SecurityRulesFieldsForInstance';
 import VolumeAttachmentFields from './VolumeAttachmentFields';
 
 /**
  * The InstanceFields model module.
  * @module model/InstanceFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class InstanceFields {
     /**
@@ -64,6 +64,9 @@ class InstanceFields {
             }
             if (data.hasOwnProperty('environment')) {
                 obj['environment'] = InstanceEnvironmentFields.constructFromObject(data['environment']);
+            }
+            if (data.hasOwnProperty('features')) {
+                obj['features'] = ApiClient.convertToType(data['features'], Object);
             }
             if (data.hasOwnProperty('fixed_ip')) {
                 obj['fixed_ip'] = ApiClient.convertToType(data['fixed_ip'], 'String');
@@ -107,8 +110,11 @@ class InstanceFields {
             if (data.hasOwnProperty('power_state')) {
                 obj['power_state'] = ApiClient.convertToType(data['power_state'], 'String');
             }
+            if (data.hasOwnProperty('requires_public_ip')) {
+                obj['requires_public_ip'] = ApiClient.convertToType(data['requires_public_ip'], 'Boolean');
+            }
             if (data.hasOwnProperty('security_rules')) {
-                obj['security_rules'] = ApiClient.convertToType(data['security_rules'], [SecurityRulesFieldsforInstance]);
+                obj['security_rules'] = ApiClient.convertToType(data['security_rules'], [SecurityRulesFieldsForInstance]);
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -188,7 +194,7 @@ class InstanceFields {
             }
             // validate the optional field `security_rules` (array)
             for (const item of data['security_rules']) {
-                SecurityRulesFieldsforInstance.validateJSON(item);
+                SecurityRulesFieldsForInstance.validateJSON(item);
             };
         }
         // ensure the json data is a string
@@ -237,6 +243,11 @@ InstanceFields.prototype['created_at'] = undefined;
  * @member {module:model/InstanceEnvironmentFields} environment
  */
 InstanceFields.prototype['environment'] = undefined;
+
+/**
+ * @member {Object} features
+ */
+InstanceFields.prototype['features'] = undefined;
 
 /**
  * @member {String} fixed_ip
@@ -309,7 +320,12 @@ InstanceFields.prototype['port_randomization_status'] = undefined;
 InstanceFields.prototype['power_state'] = undefined;
 
 /**
- * @member {Array.<module:model/SecurityRulesFieldsforInstance>} security_rules
+ * @member {Boolean} requires_public_ip
+ */
+InstanceFields.prototype['requires_public_ip'] = undefined;
+
+/**
+ * @member {Array.<module:model/SecurityRulesFieldsForInstance>} security_rules
  */
 InstanceFields.prototype['security_rules'] = undefined;
 

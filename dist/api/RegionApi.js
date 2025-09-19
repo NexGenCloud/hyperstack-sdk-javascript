@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Region service.
 * @module api/RegionApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var RegionApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -44,8 +44,8 @@ var RegionApi = exports["default"] = /*#__PURE__*/function () {
   }
 
   /**
-   * List regions
-   * Lists the currently available regions, each representing a distinct geographic location housing a data center. For additional information on regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+   * List Regions
+   * Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/regions).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Regions} and HTTP response
    */
   return _createClass(RegionApi, [{
@@ -56,7 +56,7 @@ var RegionApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Regions["default"];
@@ -64,8 +64,8 @@ var RegionApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
-     * List regions
-     * Lists the currently available regions, each representing a distinct geographic location housing a data center. For additional information on regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+     * List Regions
+     * Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/regions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Regions}
      */
   }, {

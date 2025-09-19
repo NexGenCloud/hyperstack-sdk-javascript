@@ -4,17 +4,19 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getFetchUserInfo**](UserApi.md#getFetchUserInfo) | **GET** /billing/user/info | GET: Fetch User Info
-[**postInsertUserInfo**](UserApi.md#postInsertUserInfo) | **POST** /billing/user/info | POST: Insert user info
-[**putUpdateUserInfo**](UserApi.md#putUpdateUserInfo) | **PUT** /billing/user/info | PUT: Update user info
+[**getUser**](UserApi.md#getUser) | **GET** /billing/user/info | GET: Retrieve billing info
+[**postUser**](UserApi.md#postUser) | **POST** /billing/user/info | POST: Insert billing info
+[**putUser**](UserApi.md#putUser) | **PUT** /billing/user/info | PUT: Update billing info
 
 
 
-## getFetchUserInfo
+## getUser
 
-> UsersInfoListResponse getFetchUserInfo()
+> UsersInfoListResponse getUser()
 
-GET: Fetch User Info
+GET: Retrieve billing info
+
+Retrieve the billing details associated with your organization.
 
 ### Example
 
@@ -26,14 +28,9 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.UserApi();
-apiInstance.getFetchUserInfo().then((data) => {
+apiInstance.getUser().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -51,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -59,11 +56,13 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## postInsertUserInfo
+## postUser
 
-> AddUserInfoSuccessResponseModel postInsertUserInfo(payload)
+> AddUserInfoSuccessResponseModel postUser(payload)
 
-POST: Insert user info
+POST: Insert billing info
+
+Add billing details associated with your organization in the request body.
 
 ### Example
 
@@ -75,15 +74,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.UserApi();
-let payload = new HyperstackApi.Userinfopostpayload(); // Userinfopostpayload | 
-apiInstance.postInsertUserInfo(payload).then((data) => {
+let payload = new HyperstackApi.UserInfoPostPayload(); // UserInfoPostPayload | 
+apiInstance.postUser(payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -96,7 +90,7 @@ apiInstance.postInsertUserInfo(payload).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**Userinfopostpayload**](Userinfopostpayload.md)|  | 
+ **payload** | [**UserInfoPostPayload**](UserInfoPostPayload.md)|  | 
 
 ### Return type
 
@@ -104,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -112,11 +106,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## putUpdateUserInfo
+## putUser
 
-> AddUserInfoSuccessResponseModel putUpdateUserInfo(payload)
+> AddUserInfoSuccessResponseModel putUser(payload)
 
-PUT: Update user info
+PUT: Update billing info
+
+Update the billing information for your organization in the request body.
 
 ### Example
 
@@ -128,15 +124,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.UserApi();
-let payload = new HyperstackApi.Userinfopostpayload(); // Userinfopostpayload | 
-apiInstance.putUpdateUserInfo(payload).then((data) => {
+let payload = new HyperstackApi.UserInfoPostPayload(); // UserInfoPostPayload | 
+apiInstance.putUser(payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -149,7 +140,7 @@ apiInstance.putUpdateUserInfo(payload).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**Userinfopostpayload**](Userinfopostpayload.md)|  | 
+ **payload** | [**UserInfoPostPayload**](UserInfoPostPayload.md)|  | 
 
 ### Return type
 
@@ -157,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

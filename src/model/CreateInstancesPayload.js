@@ -19,16 +19,16 @@ import ProfileObjectFields from './ProfileObjectFields';
 /**
  * The CreateInstancesPayload model module.
  * @module model/CreateInstancesPayload
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class CreateInstancesPayload {
     /**
      * Constructs a new <code>CreateInstancesPayload</code>.
      * @alias module:model/CreateInstancesPayload
      * @param count {Number} The number of virtual machines to be created.
-     * @param environmentName {String} The name of the [environment](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features) in which the virtual machine is to be created.
-     * @param flavorName {String} The name of the GPU hardware configuration ([flavor](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors)) for the virtual machines being created.
-     * @param keyName {String} The name of the existing SSH key pair to be used for secure access to the virtual machine. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair).
+     * @param environmentName {String} The name of the [environment](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/) in which the virtual machine is to be created.
+     * @param flavorName {String} The name of the GPU hardware configuration ([flavor](https://docs.hyperstack.cloud/docs/hardware/flavors)) for the virtual machines being created.
+     * @param keyName {String} The name of the existing SSH key pair to be used for secure access to the virtual machine. For additional information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
      * @param name {String} The name of the virtual machine being created.
      */
     constructor(count, environmentName, flavorName, keyName, name) { 
@@ -189,13 +189,13 @@ class CreateInstancesPayload {
 CreateInstancesPayload.RequiredProperties = ["count", "environment_name", "flavor_name", "key_name", "name"];
 
 /**
- * When this field is set to `true`, it attaches a [public IP address](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/public-ip)to the virtual machine, enabling internet accessibility.
+ * When this field is set to `true`, it attaches a [public IP address](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/) to the virtual machine, enabling internet accessibility.
  * @member {Boolean} assign_floating_ip
  */
 CreateInstancesPayload.prototype['assign_floating_ip'] = undefined;
 
 /**
- * An optional URL where actions performed on the virtual machine will be sent. For additional information on event callbacks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+ * An optional URL where actions performed on the virtual machine will be sent. For additional information on event callbacks, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/).
  * @member {String} callback_url
  */
 CreateInstancesPayload.prototype['callback_url'] = undefined;
@@ -220,7 +220,7 @@ CreateInstancesPayload.prototype['create_bootable_volume'] = undefined;
 CreateInstancesPayload.prototype['enable_port_randomization'] = true;
 
 /**
- * The name of the [environment](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features) in which the virtual machine is to be created.
+ * The name of the [environment](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/) in which the virtual machine is to be created.
  * @member {String} environment_name
  */
 CreateInstancesPayload.prototype['environment_name'] = undefined;
@@ -231,19 +231,19 @@ CreateInstancesPayload.prototype['environment_name'] = undefined;
 CreateInstancesPayload.prototype['flavor'] = undefined;
 
 /**
- * The name of the GPU hardware configuration ([flavor](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors)) for the virtual machines being created.
+ * The name of the GPU hardware configuration ([flavor](https://docs.hyperstack.cloud/docs/hardware/flavors)) for the virtual machines being created.
  * @member {String} flavor_name
  */
 CreateInstancesPayload.prototype['flavor_name'] = undefined;
 
 /**
- * The [operating system (OS) image](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images) name designated for installation on the virtual machine.It also accepts custom, private images, created from [existing snapshots](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/custom-images).
+ * The [operating system (OS) image](https://docs.hyperstack.cloud/docs/virtual-machines/images) name designated for installation on the virtual machine.It also accepts custom, private images, created from [existing snapshots](https://docs.hyperstack.cloud/docs/virtual-machines/custom-images).
  * @member {String} image_name
  */
 CreateInstancesPayload.prototype['image_name'] = undefined;
 
 /**
- * The name of the existing SSH key pair to be used for secure access to the virtual machine. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair).
+ * The name of the existing SSH key pair to be used for secure access to the virtual machine. For additional information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
  * @member {String} key_name
  */
 CreateInstancesPayload.prototype['key_name'] = undefined;
@@ -270,7 +270,7 @@ CreateInstancesPayload.prototype['profile'] = undefined;
 CreateInstancesPayload.prototype['security_rules'] = undefined;
 
 /**
- * Optional initialization configuration commands to manage the configuration of a virtual machine at launch using cloud-init scripts. For more information about custom VM configuration using cloud-init, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/initialization-configuration).
+ * Optional initialization configuration commands to manage the configuration of a virtual machine at launch using cloud-init scripts. For more information about custom VM configuration using cloud-init, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/initialization-configuration).
  * @member {String} user_data
  */
 CreateInstancesPayload.prototype['user_data'] = undefined;

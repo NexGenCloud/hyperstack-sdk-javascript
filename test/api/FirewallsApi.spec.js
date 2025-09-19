@@ -48,60 +48,60 @@
   }
 
   describe('FirewallsApi', function() {
-    describe('addFirewallRuleToFirewall', function() {
-      it('should call addFirewallRuleToFirewall successfully', function(done) {
-        //uncomment below and update the code to test addFirewallRuleToFirewall
-        //instance.addFirewallRuleToFirewall(function(error) {
+    describe('deleteSecurityGroupDetails', function() {
+      it('should call deleteSecurityGroupDetails successfully', function(done) {
+        //uncomment below and update the code to test deleteSecurityGroupDetails
+        //instance.deleteSecurityGroupDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createFirewall', function() {
-      it('should call createFirewall successfully', function(done) {
-        //uncomment below and update the code to test createFirewall
-        //instance.createFirewall(function(error) {
+    describe('deleteSecurityGroupRuleDelete', function() {
+      it('should call deleteSecurityGroupRuleDelete successfully', function(done) {
+        //uncomment below and update the code to test deleteSecurityGroupRuleDelete
+        //instance.deleteSecurityGroupRuleDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteFirewall', function() {
-      it('should call deleteFirewall successfully', function(done) {
-        //uncomment below and update the code to test deleteFirewall
-        //instance.deleteFirewall(function(error) {
+    describe('getSecurityGroup', function() {
+      it('should call getSecurityGroup successfully', function(done) {
+        //uncomment below and update the code to test getSecurityGroup
+        //instance.getSecurityGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteFirewallRulesFromFirewall', function() {
-      it('should call deleteFirewallRulesFromFirewall successfully', function(done) {
-        //uncomment below and update the code to test deleteFirewallRulesFromFirewall
-        //instance.deleteFirewallRulesFromFirewall(function(error) {
+    describe('getSecurityGroupDetails', function() {
+      it('should call getSecurityGroupDetails successfully', function(done) {
+        //uncomment below and update the code to test getSecurityGroupDetails
+        //instance.getSecurityGroupDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listFirewalls', function() {
-      it('should call listFirewalls successfully', function(done) {
-        //uncomment below and update the code to test listFirewalls
-        //instance.listFirewalls(function(error) {
+    describe('postSecurityGroup', function() {
+      it('should call postSecurityGroup successfully', function(done) {
+        //uncomment below and update the code to test postSecurityGroup
+        //instance.postSecurityGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveFirewallDetails', function() {
-      it('should call retrieveFirewallDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveFirewallDetails
-        //instance.retrieveFirewallDetails(function(error) {
+    describe('postSecurityGroupRules', function() {
+      it('should call postSecurityGroupRules successfully', function(done) {
+        //uncomment below and update the code to test postSecurityGroupRules
+        //instance.postSecurityGroupRules(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

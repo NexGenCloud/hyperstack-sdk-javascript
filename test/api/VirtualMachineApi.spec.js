@@ -48,70 +48,20 @@
   }
 
   describe('VirtualMachineApi', function() {
-    describe('addFirewallRuleToVirtualMachine', function() {
-      it('should call addFirewallRuleToVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test addFirewallRuleToVirtualMachine
-        //instance.addFirewallRuleToVirtualMachine(function(error) {
+    describe('deleteInstance', function() {
+      it('should call deleteInstance successfully', function(done) {
+        //uncomment below and update the code to test deleteInstance
+        //instance.deleteInstance(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('attachFirewallsToAVirtualMachine', function() {
-      it('should call attachFirewallsToAVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test attachFirewallsToAVirtualMachine
-        //instance.attachFirewallsToAVirtualMachine(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createSnapshotFromAVirtualMachine', function() {
-      it('should call createSnapshotFromAVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test createSnapshotFromAVirtualMachine
-        //instance.createSnapshotFromAVirtualMachine(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createVirtualMachines', function() {
-      it('should call createVirtualMachines successfully', function(done) {
-        //uncomment below and update the code to test createVirtualMachines
-        //instance.createVirtualMachines(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteFirewallRuleFromVirtualMachine', function() {
-      it('should call deleteFirewallRuleFromVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test deleteFirewallRuleFromVirtualMachine
-        //instance.deleteFirewallRuleFromVirtualMachine(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteVirtualMachine', function() {
-      it('should call deleteVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test deleteVirtualMachine
-        //instance.deleteVirtualMachine(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('editVirtualMachineLabels', function() {
-      it('should call editVirtualMachineLabels successfully', function(done) {
-        //uncomment below and update the code to test editVirtualMachineLabels
-        //instance.editVirtualMachineLabels(function(error) {
+    describe('deleteSecurityRule', function() {
+      it('should call deleteSecurityRule successfully', function(done) {
+        //uncomment below and update the code to test deleteSecurityRule
+        //instance.deleteSecurityRule(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -128,100 +78,170 @@
         done();
       });
     });
-    describe('hardRebootVirtualMachine', function() {
-      it('should call hardRebootVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test hardRebootVirtualMachine
-        //instance.hardRebootVirtualMachine(function(error) {
+    describe('getContractInstances', function() {
+      it('should call getContractInstances successfully', function(done) {
+        //uncomment below and update the code to test getContractInstances
+        //instance.getContractInstances(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('hibernateVirtualMachine', function() {
-      it('should call hibernateVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test hibernateVirtualMachine
-        //instance.hibernateVirtualMachine(function(error) {
+    describe('getInstance', function() {
+      it('should call getInstance successfully', function(done) {
+        //uncomment below and update the code to test getInstance
+        //instance.getInstance(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listVirtualMachines', function() {
-      it('should call listVirtualMachines successfully', function(done) {
-        //uncomment below and update the code to test listVirtualMachines
-        //instance.listVirtualMachines(function(error) {
+    describe('getInstance2', function() {
+      it('should call getInstance2 successfully', function(done) {
+        //uncomment below and update the code to test getInstance2
+        //instance.getInstance2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('resizeVirtualMachine', function() {
-      it('should call resizeVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test resizeVirtualMachine
-        //instance.resizeVirtualMachine(function(error) {
+    describe('getInstance3', function() {
+      it('should call getInstance3 successfully', function(done) {
+        //uncomment below and update the code to test getInstance3
+        //instance.getInstance3(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('restoreVirtualMachineFromHibernation', function() {
-      it('should call restoreVirtualMachineFromHibernation successfully', function(done) {
-        //uncomment below and update the code to test restoreVirtualMachineFromHibernation
-        //instance.restoreVirtualMachineFromHibernation(function(error) {
+    describe('getInstance4', function() {
+      it('should call getInstance4 successfully', function(done) {
+        //uncomment below and update the code to test getInstance4
+        //instance.getInstance4(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveVirtualMachineDetails', function() {
-      it('should call retrieveVirtualMachineDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveVirtualMachineDetails
-        //instance.retrieveVirtualMachineDetails(function(error) {
+    describe('getInstance5', function() {
+      it('should call getInstance5 successfully', function(done) {
+        //uncomment below and update the code to test getInstance5
+        //instance.getInstance5(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveVirtualMachinePerformanceMetrics', function() {
-      it('should call retrieveVirtualMachinePerformanceMetrics successfully', function(done) {
-        //uncomment below and update the code to test retrieveVirtualMachinePerformanceMetrics
-        //instance.retrieveVirtualMachinePerformanceMetrics(function(error) {
+    describe('getInstanceHibernate', function() {
+      it('should call getInstanceHibernate successfully', function(done) {
+        //uncomment below and update the code to test getInstanceHibernate
+        //instance.getInstanceHibernate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveVirtualMachinesAssociatedWithAContract', function() {
-      it('should call retrieveVirtualMachinesAssociatedWithAContract successfully', function(done) {
-        //uncomment below and update the code to test retrieveVirtualMachinesAssociatedWithAContract
-        //instance.retrieveVirtualMachinesAssociatedWithAContract(function(error) {
+    describe('getInstanceHibernateRestore', function() {
+      it('should call getInstanceHibernateRestore successfully', function(done) {
+        //uncomment below and update the code to test getInstanceHibernateRestore
+        //instance.getInstanceHibernateRestore(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('startVirtualMachine', function() {
-      it('should call startVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test startVirtualMachine
-        //instance.startVirtualMachine(function(error) {
+    describe('getInstanceLogs', function() {
+      it('should call getInstanceLogs successfully', function(done) {
+        //uncomment below and update the code to test getInstanceLogs
+        //instance.getInstanceLogs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('stopVirtualMachine', function() {
-      it('should call stopVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test stopVirtualMachine
-        //instance.stopVirtualMachine(function(error) {
+    describe('getInstanceMetrics', function() {
+      it('should call getInstanceMetrics successfully', function(done) {
+        //uncomment below and update the code to test getInstanceMetrics
+        //instance.getInstanceMetrics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postInstance', function() {
+      it('should call postInstance successfully', function(done) {
+        //uncomment below and update the code to test postInstance
+        //instance.postInstance(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postInstanceAttachFirewalls', function() {
+      it('should call postInstanceAttachFirewalls successfully', function(done) {
+        //uncomment below and update the code to test postInstanceAttachFirewalls
+        //instance.postInstanceAttachFirewalls(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postInstanceLogs', function() {
+      it('should call postInstanceLogs successfully', function(done) {
+        //uncomment below and update the code to test postInstanceLogs
+        //instance.postInstanceLogs(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postInstanceResize', function() {
+      it('should call postInstanceResize successfully', function(done) {
+        //uncomment below and update the code to test postInstanceResize
+        //instance.postInstanceResize(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postSecurityRule', function() {
+      it('should call postSecurityRule successfully', function(done) {
+        //uncomment below and update the code to test postSecurityRule
+        //instance.postSecurityRule(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postSnapshots', function() {
+      it('should call postSnapshots successfully', function(done) {
+        //uncomment below and update the code to test postSnapshots
+        //instance.postSnapshots(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('putLabels', function() {
+      it('should call putLabels successfully', function(done) {
+        //uncomment below and update the code to test putLabels
+        //instance.putLabels(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

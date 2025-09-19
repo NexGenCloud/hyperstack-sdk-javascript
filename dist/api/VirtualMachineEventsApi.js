@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VirtualMachineEvents service.
 * @module api/VirtualMachineEventsApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var VirtualMachineEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,41 +45,41 @@ var VirtualMachineEventsApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * List virtual machine events
-   * Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
-   * @param {String} virtualMachineId 
+   * Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+   * @param {Number} vmId 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InstanceEvents} and HTTP response
    */
   return _createClass(VirtualMachineEventsApi, [{
     key: "listVirtualMachineEventsWithHttpInfo",
-    value: function listVirtualMachineEventsWithHttpInfo(virtualMachineId) {
+    value: function listVirtualMachineEventsWithHttpInfo(vmId) {
       var postBody = null;
-      // verify the required parameter 'virtualMachineId' is set
-      if (virtualMachineId === undefined || virtualMachineId === null) {
-        throw new Error("Missing the required parameter 'virtualMachineId' when calling listVirtualMachineEvents");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling listVirtualMachineEvents");
       }
       var pathParams = {
-        'virtual_machine_id': virtualMachineId
+        'vm_id': vmId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _InstanceEvents["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{virtual_machine_id}/events', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/events', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * List virtual machine events
-     * Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
-     * @param {String} virtualMachineId 
+     * Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+     * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InstanceEvents}
      */
   }, {
     key: "listVirtualMachineEvents",
-    value: function listVirtualMachineEvents(virtualMachineId) {
-      return this.listVirtualMachineEventsWithHttpInfo(virtualMachineId).then(function (response_and_data) {
+    value: function listVirtualMachineEvents(vmId) {
+      return this.listVirtualMachineEventsWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

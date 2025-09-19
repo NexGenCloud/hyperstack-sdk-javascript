@@ -5,11 +5,19 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCluster**](ClustersApi.md#createCluster) | **POST** /core/clusters | Create Cluster
+[**createNode**](ClustersApi.md#createNode) | **POST** /core/clusters/{cluster_id}/nodes | Create Node
+[**createNodeGroup**](ClustersApi.md#createNodeGroup) | **POST** /core/clusters/{cluster_id}/node-groups | Create a node group in a cluster
 [**deleteACluster**](ClustersApi.md#deleteACluster) | **DELETE** /core/clusters/{id} | Delete a cluster
+[**deleteANodeGroup**](ClustersApi.md#deleteANodeGroup) | **DELETE** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Delete a node group
+[**deleteClusterNode**](ClustersApi.md#deleteClusterNode) | **DELETE** /core/clusters/{cluster_id}/nodes/{node_id} | Delete Cluster Node
 [**fetchClusterNameAvailability**](ClustersApi.md#fetchClusterNameAvailability) | **GET** /core/clusters/name-availability/{name} | Fetch cluster name availability
-[**getClusterVersions**](ClustersApi.md#getClusterVersions) | **GET** /core/clusters/versions | GET Cluster Versions
+[**getClusterMasterFlavors**](ClustersApi.md#getClusterMasterFlavors) | **GET** /core/clusters/master-flavors | Get Cluster Master Flavors
+[**getClusterNodes**](ClustersApi.md#getClusterNodes) | **GET** /core/clusters/{cluster_id}/nodes | Get Cluster Nodes
+[**getClusterVersions**](ClustersApi.md#getClusterVersions) | **GET** /core/clusters/versions | List Cluster Versions
 [**gettingClusterDetail**](ClustersApi.md#gettingClusterDetail) | **GET** /core/clusters/{id} | Getting Cluster Detail
 [**listClusters**](ClustersApi.md#listClusters) | **GET** /core/clusters | List Clusters
+[**listNodeGroups**](ClustersApi.md#listNodeGroups) | **GET** /core/clusters/{cluster_id}/node-groups | List node groups for a cluster
+[**retrieveANodeGroup**](ClustersApi.md#retrieveANodeGroup) | **GET** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Retrieve a node group in a cluster
 
 
 
@@ -29,11 +37,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ClustersApi();
 let payload = new HyperstackApi.CreateClusterPayload(); // CreateClusterPayload | 
@@ -58,7 +61,107 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createNode
+
+> ClusterNodesListResponse createNode(clusterId, payload)
+
+Create Node
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let payload = new HyperstackApi.CreateClusterNodeFields(); // CreateClusterNodeFields | 
+apiInstance.createNode(clusterId, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **payload** | [**CreateClusterNodeFields**](CreateClusterNodeFields.md)|  | 
+
+### Return type
+
+[**ClusterNodesListResponse**](ClusterNodesListResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createNodeGroup
+
+> ClusterNodeGroupsCreateResponse createNodeGroup(clusterId, payload)
+
+Create a node group in a cluster
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let payload = new HyperstackApi.CreateClusterNodeGroupPayload(); // CreateClusterNodeGroupPayload | 
+apiInstance.createNodeGroup(clusterId, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **payload** | [**CreateClusterNodeGroupPayload**](CreateClusterNodeGroupPayload.md)|  | 
+
+### Return type
+
+[**ClusterNodeGroupsCreateResponse**](ClusterNodeGroupsCreateResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -82,11 +185,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ClustersApi();
 let id = 56; // Number | 
@@ -111,7 +209,107 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deleteANodeGroup
+
+> ResponseModel deleteANodeGroup(clusterId, nodeGroupId)
+
+Delete a node group
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let nodeGroupId = 56; // Number | 
+apiInstance.deleteANodeGroup(clusterId, nodeGroupId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **nodeGroupId** | **Number**|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deleteClusterNode
+
+> ResponseModel deleteClusterNode(clusterId, nodeId)
+
+Delete Cluster Node
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let nodeId = 56; // Number | 
+apiInstance.deleteClusterNode(clusterId, nodeId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **nodeId** | **Number**|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -137,11 +335,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ClustersApi();
 let name = "name_example"; // String | 
@@ -166,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -174,11 +367,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getClusterVersions
+## getClusterMasterFlavors
 
-> ClusterVersions getClusterVersions()
+> MasterFlavorsResponse getClusterMasterFlavors()
 
-GET Cluster Versions
+Get Cluster Master Flavors
 
 ### Example
 
@@ -190,14 +383,9 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ClustersApi();
-apiInstance.getClusterVersions().then((data) => {
+apiInstance.getClusterMasterFlavors().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -211,11 +399,111 @@ This endpoint does not need any parameter.
 
 ### Return type
 
+[**MasterFlavorsResponse**](MasterFlavorsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getClusterNodes
+
+> ClusterNodesListResponse getClusterNodes(clusterId)
+
+Get Cluster Nodes
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+apiInstance.getClusterNodes(clusterId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+
+### Return type
+
+[**ClusterNodesListResponse**](ClusterNodesListResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getClusterVersions
+
+> ClusterVersions getClusterVersions(opts)
+
+List Cluster Versions
+
+Lists available Kubernetes versions, optionally filtered by region.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let opts = {
+  'region': "region_example" // String | Filter versions by region name (optional)
+};
+apiInstance.getClusterVersions(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **region** | **String**| Filter versions by region name (optional) | [optional] 
+
+### Return type
+
 [**ClusterVersions**](ClusterVersions.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -239,11 +527,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ClustersApi();
 let id = 56; // Number | 
@@ -268,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -278,7 +561,7 @@ Name | Type | Description  | Notes
 
 ## listClusters
 
-> ClusterListResponse listClusters()
+> ClusterListResponse listClusters(opts)
 
 List Clusters
 
@@ -292,14 +575,15 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ClustersApi();
-apiInstance.listClusters().then((data) => {
+let opts = {
+  'page': 56, // Number | Page number for pagination
+  'pageSize': 56, // Number | Number of items per page
+  'environment': "environment_example", // String | Environment Filter
+  'search': "search_example" // String | Search query to filter cluster by name
+};
+apiInstance.listClusters(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -309,7 +593,13 @@ apiInstance.listClusters().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for pagination | [optional] 
+ **pageSize** | **Number**| Number of items per page | [optional] 
+ **environment** | **String**| Environment Filter | [optional] 
+ **search** | **String**| Search query to filter cluster by name | [optional] 
 
 ### Return type
 
@@ -317,7 +607,105 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## listNodeGroups
+
+> ClusterNodeGroupsListResponse listNodeGroups(clusterId)
+
+List node groups for a cluster
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+apiInstance.listNodeGroups(clusterId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+
+### Return type
+
+[**ClusterNodeGroupsListResponse**](ClusterNodeGroupsListResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## retrieveANodeGroup
+
+> ClusterNodeGroupsGetResponse retrieveANodeGroup(clusterId, nodeGroupId)
+
+Retrieve a node group in a cluster
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let nodeGroupId = 56; // Number | 
+apiInstance.retrieveANodeGroup(clusterId, nodeGroupId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **nodeGroupId** | **Number**|  | 
+
+### Return type
+
+[**ClusterNodeGroupsGetResponse**](ClusterNodeGroupsGetResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

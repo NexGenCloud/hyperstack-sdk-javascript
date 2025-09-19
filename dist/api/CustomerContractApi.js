@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * CustomerContract service.
 * @module api/CustomerContractApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -47,15 +47,15 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * List Contracts
-   * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+   * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
    * @param {Object} opts Optional parameters
    * @param {Number} [page] 
    * @param {Number} [perPage] 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCustomerContractsListResponseModel} and HTTP response
    */
   return _createClass(CustomerContractApi, [{
-    key: "listContractsWithHttpInfo",
-    value: function listContractsWithHttpInfo(opts) {
+    key: "getCustomerContractWithHttpInfo",
+    value: function getCustomerContractWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
       var pathParams = {};
@@ -65,7 +65,7 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
       };
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _GetCustomerContractsListResponseModel["default"];
@@ -74,33 +74,33 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List Contracts
-     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page 
      * @param {Number} opts.perPage 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCustomerContractsListResponseModel}
      */
   }, {
-    key: "listContracts",
-    value: function listContracts(opts) {
-      return this.listContractsWithHttpInfo(opts).then(function (response_and_data) {
+    key: "getCustomerContract",
+    value: function getCustomerContract(opts) {
+      return this.getCustomerContractWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Retrieve Contract Details
-     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
      * @param {Number} contractId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerContractDetailResponseModel} and HTTP response
      */
   }, {
-    key: "retrieveContractDetailsWithHttpInfo",
-    value: function retrieveContractDetailsWithHttpInfo(contractId) {
+    key: "getCustomerContractDetailsWithHttpInfo",
+    value: function getCustomerContractDetailsWithHttpInfo(contractId) {
       var postBody = null;
       // verify the required parameter 'contractId' is set
       if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling retrieveContractDetails");
+        throw new Error("Missing the required parameter 'contractId' when calling getCustomerContractDetails");
       }
       var pathParams = {
         'contract_id': contractId
@@ -108,7 +108,7 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _CustomerContractDetailResponseModel["default"];
@@ -117,14 +117,14 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve Contract Details
-     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
      * @param {Number} contractId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerContractDetailResponseModel}
      */
   }, {
-    key: "retrieveContractDetails",
-    value: function retrieveContractDetails(contractId) {
-      return this.retrieveContractDetailsWithHttpInfo(contractId).then(function (response_and_data) {
+    key: "getCustomerContractDetails",
+    value: function getCustomerContractDetails(contractId) {
+      return this.getCustomerContractDetailsWithHttpInfo(contractId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -139,13 +139,13 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContractGPUAllocationGraphResponse} and HTTP response
      */
   }, {
-    key: "retrieveGpuAllocationGraphForContractWithHttpInfo",
-    value: function retrieveGpuAllocationGraphForContractWithHttpInfo(contractId, opts) {
+    key: "getCustomerContractGpuAllocationGraphWithHttpInfo",
+    value: function getCustomerContractGpuAllocationGraphWithHttpInfo(contractId, opts) {
       opts = opts || {};
       var postBody = null;
       // verify the required parameter 'contractId' is set
       if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling retrieveGpuAllocationGraphForContract");
+        throw new Error("Missing the required parameter 'contractId' when calling getCustomerContractGpuAllocationGraph");
       }
       var pathParams = {
         'contract_id': contractId
@@ -156,7 +156,7 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
       };
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ContractGPUAllocationGraphResponse["default"];
@@ -173,9 +173,9 @@ var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContractGPUAllocationGraphResponse}
      */
   }, {
-    key: "retrieveGpuAllocationGraphForContract",
-    value: function retrieveGpuAllocationGraphForContract(contractId, opts) {
-      return this.retrieveGpuAllocationGraphForContractWithHttpInfo(contractId, opts).then(function (response_and_data) {
+    key: "getCustomerContractGpuAllocationGraph",
+    value: function getCustomerContractGpuAllocationGraph(contractId, opts) {
+      return this.getCustomerContractGpuAllocationGraphWithHttpInfo(contractId, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property features (base name: "features")', function() {
+      // uncomment below and update the code to test the property features
+      //var instance = new HyperstackApi.InstanceFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fixedIp (base name: "fixed_ip")', function() {
       // uncomment below and update the code to test the property fixedIp
       //var instance = new HyperstackApi.InstanceFields();
@@ -158,6 +164,12 @@
 
     it('should have the property powerState (base name: "power_state")', function() {
       // uncomment below and update the code to test the property powerState
+      //var instance = new HyperstackApi.InstanceFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property requiresPublicIp (base name: "requires_public_ip")', function() {
+      // uncomment below and update the code to test the property requiresPublicIp
       //var instance = new HyperstackApi.InstanceFields();
       //expect(instance).to.be();
     });

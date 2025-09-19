@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * UserDetailChoice service.
 * @module api/UserDetailChoiceApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var UserDetailChoiceApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -56,7 +56,7 @@ var UserDetailChoiceApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _UserDefaultChoicesForUserResponse["default"];

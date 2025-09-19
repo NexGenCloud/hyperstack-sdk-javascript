@@ -9,6 +9,8 @@ var _CreateVolumePayload = _interopRequireDefault(require("../model/CreateVolume
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
 var _NameAvailableModel = _interopRequireDefault(require("../model/NameAvailableModel"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
+var _UpdateVolumePayload = _interopRequireDefault(require("../model/UpdateVolumePayload"));
+var _UpdateVolumeResponse = _interopRequireDefault(require("../model/UpdateVolumeResponse"));
 var _Volume = _interopRequireDefault(require("../model/Volume"));
 var _VolumeTypes = _interopRequireDefault(require("../model/VolumeTypes"));
 var _Volumes = _interopRequireDefault(require("../model/Volumes"));
@@ -33,7 +35,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Volume service.
 * @module api/VolumeApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var VolumeApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -50,7 +52,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Create volume
-   * Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+   * Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/create-volume).
    * @param {module:model/CreateVolumePayload} payload 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Volume} and HTTP response
    */
@@ -66,7 +68,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _Volume["default"];
@@ -75,7 +77,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Create volume
-     * Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+     * Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/create-volume).
      * @param {module:model/CreateVolumePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Volume}
      */
@@ -90,40 +92,40 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
     /**
      * Delete volume
      * Deletes a volume permanently. Provide the volume ID in the path to specify the volume to be deleted.
-     * @param {Number} id 
+     * @param {Number} volumeId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
     key: "deleteVolumeWithHttpInfo",
-    value: function deleteVolumeWithHttpInfo(id) {
+    value: function deleteVolumeWithHttpInfo(volumeId) {
       var postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteVolume");
+      // verify the required parameter 'volumeId' is set
+      if (volumeId === undefined || volumeId === null) {
+        throw new Error("Missing the required parameter 'volumeId' when calling deleteVolume");
       }
       var pathParams = {
-        'id': id
+        'volume_id': volumeId
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/volumes/{id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/volumes/{volume_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Delete volume
      * Deletes a volume permanently. Provide the volume ID in the path to specify the volume to be deleted.
-     * @param {Number} id 
+     * @param {Number} volumeId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
     key: "deleteVolume",
-    value: function deleteVolume(id) {
-      return this.deleteVolumeWithHttpInfo(id).then(function (response_and_data) {
+    value: function deleteVolume(volumeId) {
+      return this.deleteVolumeWithHttpInfo(volumeId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -132,7 +134,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
      * Fetch Volume Details
      * Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
      * @param {Number} volumeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Volumes} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Volume} and HTTP response
      */
   }, {
     key: "fetchVolumeDetailsWithHttpInfo",
@@ -148,18 +150,18 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Volumes["default"];
-      return this.apiClient.callApi('/core/volume/{volume_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _Volume["default"];
+      return this.apiClient.callApi('/core/volumes/{volume_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Fetch Volume Details
      * Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
      * @param {Number} volumeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Volumes}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Volume}
      */
   }, {
     key: "fetchVolumeDetails",
@@ -189,7 +191,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _NameAvailableModel["default"];
@@ -223,7 +225,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _VolumeTypes["default"];
@@ -245,7 +247,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List volumes
-     * Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+     * Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/).
      * @param {Object} opts Optional parameters
      * @param {String} [page] Page Number
      * @param {String} [pageSize] Data Per Page
@@ -267,7 +269,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
       };
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Volumes["default"];
@@ -276,7 +278,7 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List volumes
-     * Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+     * Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/).
      * @param {Object} opts Optional parameters
      * @param {String} opts.page Page Number
      * @param {String} opts.pageSize Data Per Page
@@ -288,6 +290,53 @@ var VolumeApi = exports["default"] = /*#__PURE__*/function () {
     key: "listVolumes",
     value: function listVolumes(opts) {
       return this.listVolumesWithHttpInfo(opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Update volume fields
+     * Update volume properties. Currently supports updating the environment by providing 'environment_name'. The volume must not be attached to any instance when changing environments, and the target environment must be in the same region.
+     * @param {Number} volumeId 
+     * @param {module:model/UpdateVolumePayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateVolumeResponse} and HTTP response
+     */
+  }, {
+    key: "updateVolumeWithHttpInfo",
+    value: function updateVolumeWithHttpInfo(volumeId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'volumeId' is set
+      if (volumeId === undefined || volumeId === null) {
+        throw new Error("Missing the required parameter 'volumeId' when calling updateVolume");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling updateVolume");
+      }
+      var pathParams = {
+        'volume_id': volumeId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _UpdateVolumeResponse["default"];
+      return this.apiClient.callApi('/core/volumes/{volume_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Update volume fields
+     * Update volume properties. Currently supports updating the environment by providing 'environment_name'. The volume must not be attached to any instance when changing environments, and the target environment must be in the same region.
+     * @param {Number} volumeId 
+     * @param {module:model/UpdateVolumePayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateVolumeResponse}
+     */
+  }, {
+    key: "updateVolume",
+    value: function updateVolume(volumeId, payload) {
+      return this.updateVolumeWithHttpInfo(volumeId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

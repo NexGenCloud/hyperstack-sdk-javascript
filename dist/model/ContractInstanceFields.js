@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+var _ClusterFields = _interopRequireDefault(require("./ClusterFields"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -26,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ContractInstanceFields model module.
  * @module model/ContractInstanceFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var ContractInstanceFields = /*#__PURE__*/function () {
   /**
@@ -59,6 +60,9 @@ var ContractInstanceFields = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new ContractInstanceFields();
+        if (data.hasOwnProperty('cluster')) {
+          obj['cluster'] = _ClusterFields["default"].constructFromObject(data['cluster']);
+        }
         if (data.hasOwnProperty('created_at')) {
           obj['created_at'] = _ApiClient["default"].convertToType(data['created_at'], 'Date');
         }
@@ -95,6 +99,11 @@ var ContractInstanceFields = /*#__PURE__*/function () {
   }, {
     key: "validateJSON",
     value: function validateJSON(data) {
+      // validate the optional field `cluster`
+      if (data['cluster']) {
+        // data not null
+        _ClusterFields["default"].validateJSON(data['cluster']);
+      }
       // ensure the json data is a string
       if (data['flavor_name'] && !(typeof data['flavor_name'] === 'string' || data['flavor_name'] instanceof String)) {
         throw new Error("Expected the field `flavor_name` to be a primitive type in the JSON string but got " + data['flavor_name']);
@@ -111,6 +120,11 @@ var ContractInstanceFields = /*#__PURE__*/function () {
     }
   }]);
 }();
+/**
+ * @member {module:model/ClusterFields} cluster
+ */
+ContractInstanceFields.prototype['cluster'] = undefined;
+
 /**
  * @member {Date} created_at
  */

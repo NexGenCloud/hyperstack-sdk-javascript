@@ -48,10 +48,10 @@
   }
 
   describe('FirewallAttachmentApi', function() {
-    describe('attachFirewallsToVms', function() {
-      it('should call attachFirewallsToVms successfully', function(done) {
-        //uncomment below and update the code to test attachFirewallsToVms
-        //instance.attachFirewallsToVms(function(error) {
+    describe('postAttachSecurityGroups', function() {
+      it('should call postAttachSecurityGroups successfully', function(done) {
+        //uncomment below and update the code to test postAttachSecurityGroups
+        //instance.postAttachSecurityGroups(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

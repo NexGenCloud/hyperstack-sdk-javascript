@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegionFields model module.
  * @module model/RegionFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class RegionFields {
     /**
@@ -47,8 +47,14 @@ class RegionFields {
         if (data) {
             obj = obj || new RegionFields();
 
+            if (data.hasOwnProperty('country')) {
+                obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('green_status')) {
+                obj['green_status'] = ApiClient.convertToType(data['green_status'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -67,8 +73,16 @@ class RegionFields {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['country'] && !(typeof data['country'] === 'string' || data['country'] instanceof String)) {
+            throw new Error("Expected the field `country` to be a primitive type in the JSON string but got " + data['country']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['green_status'] && !(typeof data['green_status'] === 'string' || data['green_status'] instanceof String)) {
+            throw new Error("Expected the field `green_status` to be a primitive type in the JSON string but got " + data['green_status']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -84,9 +98,20 @@ class RegionFields {
 
 
 /**
+ * @member {String} country
+ */
+RegionFields.prototype['country'] = undefined;
+
+/**
  * @member {String} description
  */
 RegionFields.prototype['description'] = undefined;
+
+/**
+ * Green status
+ * @member {module:model/RegionFields.GreenStatusEnum} green_status
+ */
+RegionFields.prototype['green_status'] = undefined;
 
 /**
  * @member {Number} id
@@ -100,6 +125,33 @@ RegionFields.prototype['name'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>green_status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+RegionFields['GreenStatusEnum'] = {
+
+    /**
+     * value: "GREEN"
+     * @const
+     */
+    "GREEN": "GREEN",
+
+    /**
+     * value: "PARTIALLY_GREEN"
+     * @const
+     */
+    "PARTIALLY_GREEN": "PARTIALLY_GREEN",
+
+    /**
+     * value: "NOT_GREEN"
+     * @const
+     */
+    "NOT_GREEN": "NOT_GREEN"
+};
 
 
 

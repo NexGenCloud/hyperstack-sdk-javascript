@@ -4,17 +4,17 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieveGpuStocks**](StockApi.md#retrieveGpuStocks) | **GET** /core/stocks | Retrieve GPU stocks
+[**retrieveGPUStocks**](StockApi.md#retrieveGPUStocks) | **GET** /core/stocks | Retrieve GPU stocks
 
 
 
-## retrieveGpuStocks
+## retrieveGPUStocks
 
-> NewStockRetriveResponse retrieveGpuStocks()
+> NewStockRetriveResponse retrieveGPUStocks()
 
 Retrieve GPU stocks
 
-Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs.hyperstack.cloud/docs/hardware/gpu-stock-information).
 
 ### Example
 
@@ -26,14 +26,9 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.StockApi();
-apiInstance.retrieveGpuStocks().then((data) => {
+apiInstance.retrieveGPUStocks().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -51,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

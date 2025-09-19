@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 List Policies
 
-Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/policies).
+Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/policies).
 
 ### Example
 
@@ -26,11 +26,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.PolicyApi();
 apiInstance.listPolicies().then((data) => {
@@ -51,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

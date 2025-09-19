@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentDetailsFields model module.
  * @module model/PaymentDetailsFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class PaymentDetailsFields {
     /**
@@ -62,6 +62,9 @@ class PaymentDetailsFields {
             if (data.hasOwnProperty('gateway_response')) {
                 obj['gateway_response'] = ApiClient.convertToType(data['gateway_response'], 'String');
             }
+            if (data.hasOwnProperty('invoice')) {
+                obj['invoice'] = ApiClient.convertToType(data['invoice'], 'String');
+            }
             if (data.hasOwnProperty('paid_from')) {
                 obj['paid_from'] = ApiClient.convertToType(data['paid_from'], 'String');
             }
@@ -70,6 +73,9 @@ class PaymentDetailsFields {
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('tax_amount')) {
+                obj['tax_amount'] = ApiClient.convertToType(data['tax_amount'], 'Number');
             }
             if (data.hasOwnProperty('transaction_id')) {
                 obj['transaction_id'] = ApiClient.convertToType(data['transaction_id'], 'String');
@@ -98,6 +104,10 @@ class PaymentDetailsFields {
         // ensure the json data is a string
         if (data['gateway_response'] && !(typeof data['gateway_response'] === 'string' || data['gateway_response'] instanceof String)) {
             throw new Error("Expected the field `gateway_response` to be a primitive type in the JSON string but got " + data['gateway_response']);
+        }
+        // ensure the json data is a string
+        if (data['invoice'] && !(typeof data['invoice'] === 'string' || data['invoice'] instanceof String)) {
+            throw new Error("Expected the field `invoice` to be a primitive type in the JSON string but got " + data['invoice']);
         }
         // ensure the json data is a string
         if (data['paid_from'] && !(typeof data['paid_from'] === 'string' || data['paid_from'] instanceof String)) {
@@ -150,6 +160,11 @@ PaymentDetailsFields.prototype['description'] = undefined;
 PaymentDetailsFields.prototype['gateway_response'] = undefined;
 
 /**
+ * @member {String} invoice
+ */
+PaymentDetailsFields.prototype['invoice'] = undefined;
+
+/**
  * @member {String} paid_from
  */
 PaymentDetailsFields.prototype['paid_from'] = undefined;
@@ -163,6 +178,11 @@ PaymentDetailsFields.prototype['payment_id'] = undefined;
  * @member {String} status
  */
 PaymentDetailsFields.prototype['status'] = undefined;
+
+/**
+ * @member {Number} tax_amount
+ */
+PaymentDetailsFields.prototype['tax_amount'] = undefined;
 
 /**
  * @member {String} transaction_id

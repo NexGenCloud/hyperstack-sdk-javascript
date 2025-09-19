@@ -13,27 +13,38 @@
 
 
 import ApiClient from "../ApiClient";
-import Billingmetricesresponse from '../model/Billingmetricesresponse';
+import BillingMetricesResponse from '../model/BillingMetricesResponse';
+import DataSynthesisBillingHistoryDetailsResponseSchema from '../model/DataSynthesisBillingHistoryDetailsResponseSchema';
 import ErrorResponseModel from '../model/ErrorResponseModel';
-import Lastdaycostresponse from '../model/Lastdaycostresponse';
+import LastDayCostResponse from '../model/LastDayCostResponse';
+import ModelEvaluationBillingHistoryDetailsResponseSchema from '../model/ModelEvaluationBillingHistoryDetailsResponseSchema';
 import OrganizationLevelBillingHistoryResponseModel from '../model/OrganizationLevelBillingHistoryResponseModel';
-import Organizationthresholdsresponse from '../model/Organizationthresholdsresponse';
-import Organizationthresholdupdateresponse from '../model/Organizationthresholdupdateresponse';
+import OrganizationThresholdUpdateResponse from '../model/OrganizationThresholdUpdateResponse';
+import OrganizationThresholdsResponse from '../model/OrganizationThresholdsResponse';
 import ResourceBillingEventsHistoryResponse from '../model/ResourceBillingEventsHistoryResponse';
+import ResourceLevelBucketBillingDetailsResponseModel from '../model/ResourceLevelBucketBillingDetailsResponseModel';
+import ResourceLevelBucketBillingHistoryResponseModel from '../model/ResourceLevelBucketBillingHistoryResponseModel';
+import ResourceLevelClusterBillingDetailsResponseModel from '../model/ResourceLevelClusterBillingDetailsResponseModel';
+import ResourceLevelClusterBillingHistoryResponseModel from '../model/ResourceLevelClusterBillingHistoryResponseModel';
+import ResourceLevelClusterGraphBillingDetailsResponseModel from '../model/ResourceLevelClusterGraphBillingDetailsResponseModel';
+import ResourceLevelGraphBillingDetailsBucket from '../model/ResourceLevelGraphBillingDetailsBucket';
 import ResourceLevelVMBillingDetailsResponseModel from '../model/ResourceLevelVMBillingDetailsResponseModel';
 import ResourceLevelVmBillingHistoryResponseModel from '../model/ResourceLevelVmBillingHistoryResponseModel';
 import ResourceLevelVmGraphBillingDetailsResponseModel from '../model/ResourceLevelVmGraphBillingDetailsResponseModel';
 import ResourceLevelVolumeBillingDetailsResponseModel from '../model/ResourceLevelVolumeBillingDetailsResponseModel';
 import ResourceLevelVolumeBillingHistoryResponseModel from '../model/ResourceLevelVolumeBillingHistoryResponseModel';
 import ResourceLevelVolumeGraphBillingDetailsResponseModel from '../model/ResourceLevelVolumeGraphBillingDetailsResponseModel';
+import ServerlessInferencedBillingHistoryDetailsResponseSchema from '../model/ServerlessInferencedBillingHistoryDetailsResponseSchema';
 import SubResourcesCostsResponseModel from '../model/SubResourcesCostsResponseModel';
 import SubResourcesGraphResponseModel from '../model/SubResourcesGraphResponseModel';
-import Subscribeorunsubscribeupdatepayload from '../model/Subscribeorunsubscribeupdatepayload';
+import SubscribeOrUnsubscribeUpdatePayload from '../model/SubscribeOrUnsubscribeUpdatePayload';
+import TokenBasedBillingHistoryResponse from '../model/TokenBasedBillingHistoryResponse';
+import WorkloadBillingHistoryResponse from '../model/WorkloadBillingHistoryResponse';
 
 /**
 * Billing service.
 * @module api/BillingApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class BillingApi {
 
@@ -51,11 +62,11 @@ export default class BillingApi {
 
 
     /**
-     * GET: All Thresholds for Organization
-     * Retrieve all the notification thresholds for an organization.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organizationthresholdsresponse} and HTTP response
+     * GET: Last Day Cost
+     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LastDayCostResponse} and HTTP response
      */
-    getAllThresholdsForOrganizationWithHttpInfo() {
+    getLastDayCostWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -67,10 +78,51 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Organizationthresholdsresponse;
+      let returnType = LastDayCostResponse;
+      return this.apiClient.callApi(
+        '/billing/billing/last-day-cost', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * GET: Last Day Cost
+     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LastDayCostResponse}
+     */
+    getLastDayCost() {
+      return this.getLastDayCostWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * GET: All Thresholds for Organization
+     * Retrieve all the notification thresholds for an organization.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrganizationThresholdsResponse} and HTTP response
+     */
+    getOrganizationThresholdWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = OrganizationThresholdsResponse;
       return this.apiClient.callApi(
         '/billing/billing/threshold', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -81,10 +133,10 @@ export default class BillingApi {
     /**
      * GET: All Thresholds for Organization
      * Retrieve all the notification thresholds for an organization.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organizationthresholdsresponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrganizationThresholdsResponse}
      */
-    getAllThresholdsForOrganization() {
-      return this.getAllThresholdsForOrganizationWithHttpInfo()
+    getOrganizationThreshold() {
+      return this.getOrganizationThresholdWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -93,13 +145,13 @@ export default class BillingApi {
 
     /**
      * GET: Billing usage
-     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/billing-features#view-usage-costs-for-all-resources)
+     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
      * @param {Object} opts Optional parameters
      * @param {String} [deleted] `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
      * @param {String} [environment] Filter resources by environment ID or Name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Billingmetricesresponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingMetricesResponse} and HTTP response
      */
-    getBillingUsageWithHttpInfo(opts) {
+    getUsage2WithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -114,10 +166,10 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Billingmetricesresponse;
+      let returnType = BillingMetricesResponse;
       return this.apiClient.callApi(
         '/billing/billing/usage', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -127,14 +179,14 @@ export default class BillingApi {
 
     /**
      * GET: Billing usage
-     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/billing-features#view-usage-costs-for-all-resources)
+     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
      * @param {Object} opts Optional parameters
      * @param {String} opts.deleted `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
      * @param {String} opts.environment Filter resources by environment ID or Name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Billingmetricesresponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingMetricesResponse}
      */
-    getBillingUsage(opts) {
-      return this.getBillingUsageWithHttpInfo(opts)
+    getUsage2(opts) {
+      return this.getUsage2WithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -142,40 +194,227 @@ export default class BillingApi {
 
 
     /**
-     * GET: Last Day Cost
-     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/billing-resources/last-day-usage/)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Lastdaycostresponse} and HTTP response
+     * Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} bucketId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelGraphBillingDetailsBucket} and HTTP response
      */
-    getLastDayCostWithHttpInfo() {
+    getUserBillingBucketDetailsGraphWithHttpInfo(bucketId, opts) {
+      opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'bucketId' is set
+      if (bucketId === undefined || bucketId === null) {
+        throw new Error("Missing the required parameter 'bucketId' when calling getUserBillingBucketDetailsGraph");
+      }
 
       let pathParams = {
+        'bucket_id': bucketId
       };
       let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Lastdaycostresponse;
+      let returnType = ResourceLevelGraphBillingDetailsBucket;
       return this.apiClient.callApi(
-        '/billing/billing/last-day-cost', 'GET',
+        '/billing/billing/history/bucket/{bucket_id}/graph', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * GET: Last Day Cost
-     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/billing-resources/last-day-usage/)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Lastdaycostresponse}
+     * Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} bucketId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelGraphBillingDetailsBucket}
      */
-    getLastDayCost() {
-      return this.getLastDayCostWithHttpInfo()
+    getUserBillingBucketDetailsGraph(bucketId, opts) {
+      return this.getUserBillingBucketDetailsGraphWithHttpInfo(bucketId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+     * User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} clusterId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelClusterGraphBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingClusterDetailsGraphWithHttpInfo(clusterId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling getUserBillingClusterDetailsGraph");
+      }
+
+      let pathParams = {
+        'cluster_id': clusterId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelClusterGraphBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/cluster/{cluster_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+     * User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} clusterId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelClusterGraphBillingDetailsResponseModel}
+     */
+    getUserBillingClusterDetailsGraph(clusterId, opts) {
+      return this.getUserBillingClusterDetailsGraphWithHttpInfo(clusterId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+     * User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DataSynthesisBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+    getUserBillingDataSynthesisDetailsGraphWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingDataSynthesisDetailsGraph");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = DataSynthesisBillingHistoryDetailsResponseSchema;
+      return this.apiClient.callApi(
+        '/billing/billing/history/data_synthesis/{resource_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+     * User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DataSynthesisBillingHistoryDetailsResponseSchema}
+     */
+    getUserBillingDataSynthesisDetailsGraph(resourceId, opts) {
+      return this.getUserBillingDataSynthesisDetailsGraphWithHttpInfo(resourceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingFineTuningDetailsGraphWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingFineTuningDetailsGraph");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVolumeGraphBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/fine_tuning/{resource_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel}
+     */
+    getUserBillingFineTuningDetailsGraph(resourceId, opts) {
+      return this.getUserBillingFineTuningDetailsGraphWithHttpInfo(resourceId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -191,7 +430,7 @@ export default class BillingApi {
      * @param {String} [graph] Set this value to \"true\" for getting graph value
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrganizationLevelBillingHistoryResponseModel} and HTTP response
      */
-    retrieveBillingHistoryForASpecificBillingCycleWithHttpInfo(opts) {
+    getUserBillingHistory2WithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -207,7 +446,7 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = OrganizationLevelBillingHistoryResponseModel;
@@ -227,8 +466,67 @@ export default class BillingApi {
      * @param {String} opts.graph Set this value to \"true\" for getting graph value
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrganizationLevelBillingHistoryResponseModel}
      */
-    retrieveBillingHistoryForASpecificBillingCycle(opts) {
-      return this.retrieveBillingHistoryForASpecificBillingCycleWithHttpInfo(opts)
+    getUserBillingHistory2(opts) {
+      return this.getUserBillingHistory2WithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of Volume for a specific Billing Cycle
+     * User will recieve billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelBucketBillingHistoryResponseModel} and HTTP response
+     */
+    getUserBillingHistoryBucket2WithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelBucketBillingHistoryResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/bucket', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of Volume for a specific Billing Cycle
+     * User will recieve billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelBucketBillingHistoryResponseModel}
+     */
+    getUserBillingHistoryBucket2(opts) {
+      return this.getUserBillingHistoryBucket2WithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -237,23 +535,23 @@ export default class BillingApi {
 
     /**
      * Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-     * Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-     * @param {Number} snapshotId 
+     * Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} bucketId 
      * @param {Object} opts Optional parameters
      * @param {String} [startDate] Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} [endDate] Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelBucketBillingDetailsResponseModel} and HTTP response
      */
-    retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycleWithHttpInfo(snapshotId, opts) {
+    getUserBillingHistoryBucketDetailsWithHttpInfo(bucketId, opts) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'snapshotId' is set
-      if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle");
+      // verify the required parameter 'bucketId' is set
+      if (bucketId === undefined || bucketId === null) {
+        throw new Error("Missing the required parameter 'bucketId' when calling getUserBillingHistoryBucketDetails");
       }
 
       let pathParams = {
-        'snapshot_id': snapshotId
+        'bucket_id': bucketId
       };
       let queryParams = {
         'start_date': opts['startDate'],
@@ -264,12 +562,12 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ResourceLevelVolumeBillingDetailsResponseModel;
+      let returnType = ResourceLevelBucketBillingDetailsResponseModel;
       return this.apiClient.callApi(
-        '/billing/billing/history/snapshot/{snapshot_id}', 'GET',
+        '/billing/billing/history/bucket/{bucket_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -277,15 +575,15 @@ export default class BillingApi {
 
     /**
      * Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-     * Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-     * @param {Number} snapshotId 
+     * Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} bucketId 
      * @param {Object} opts Optional parameters
      * @param {String} opts.startDate Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} opts.endDate Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelBucketBillingDetailsResponseModel}
      */
-    retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycle(snapshotId, opts) {
-      return this.retrieveBillingHistoryOfASpecificSnapshotForASpecificBillingCycleWithHttpInfo(snapshotId, opts)
+    getUserBillingHistoryBucketDetails(bucketId, opts) {
+      return this.getUserBillingHistoryBucketDetailsWithHttpInfo(bucketId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -293,24 +591,83 @@ export default class BillingApi {
 
 
     /**
-     * Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-     * User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
-     * @param {Number} vmId 
+     * Retrieve Billing History of Clusters for a specific Billing Cycle
+     * User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
      * @param {Object} opts Optional parameters
      * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVMBillingDetailsResponseModel} and HTTP response
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelClusterBillingHistoryResponseModel} and HTTP response
      */
-    retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycleWithHttpInfo(vmId, opts) {
+    getUserBillingHistoryClusterWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle");
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelClusterBillingHistoryResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/cluster', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of Clusters for a specific Billing Cycle
+     * User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelClusterBillingHistoryResponseModel}
+     */
+    getUserBillingHistoryCluster(opts) {
+      return this.getUserBillingHistoryClusterWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
+     * User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
+     * @param {Number} clusterId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelClusterBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingHistoryClusterDetailsWithHttpInfo(clusterId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling getUserBillingHistoryClusterDetails");
       }
 
       let pathParams = {
-        'vm_id': vmId
+        'cluster_id': clusterId
       };
       let queryParams = {
         'start_date': opts['startDate'],
@@ -321,85 +678,28 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ResourceLevelVMBillingDetailsResponseModel;
+      let returnType = ResourceLevelClusterBillingDetailsResponseModel;
       return this.apiClient.callApi(
-        '/billing/billing/history/virtual-machine/{vm_id}', 'GET',
+        '/billing/billing/history/cluster/{cluster_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-     * User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
-     * @param {Number} vmId 
+     * Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
+     * User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
+     * @param {Number} clusterId 
      * @param {Object} opts Optional parameters
      * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVMBillingDetailsResponseModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelClusterBillingDetailsResponseModel}
      */
-    retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycle(vmId, opts) {
-      return this.retrieveBillingHistoryOfASpecificVirtualMachineForASpecificBillingCycleWithHttpInfo(vmId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-     * Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-     * @param {Number} volumeId 
-     * @param {Object} opts Optional parameters
-     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel} and HTTP response
-     */
-    retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycleWithHttpInfo(volumeId, opts) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'volumeId' is set
-      if (volumeId === undefined || volumeId === null) {
-        throw new Error("Missing the required parameter 'volumeId' when calling retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle");
-      }
-
-      let pathParams = {
-        'volume_id': volumeId
-      };
-      let queryParams = {
-        'start_date': opts['startDate'],
-        'end_date': opts['endDate']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey', 'accessToken'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ResourceLevelVolumeBillingDetailsResponseModel;
-      return this.apiClient.callApi(
-        '/billing/billing/history/volume/{volume_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-     * Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-     * @param {Number} volumeId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel}
-     */
-    retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycle(volumeId, opts) {
-      return this.retrieveBillingHistoryOfASpecificVolumeForASpecificBillingCycleWithHttpInfo(volumeId, opts)
+    getUserBillingHistoryClusterDetails(clusterId, opts) {
+      return this.getUserBillingHistoryClusterDetailsWithHttpInfo(clusterId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -415,7 +715,7 @@ export default class BillingApi {
      * @param {String} [search] Search by Contract \"Description\" or \"ID\"
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    retrieveBillingHistoryOfContractForASpecificBillingCycleWithHttpInfo(opts) {
+    getUserBillingHistoryContractWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -431,7 +731,7 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -451,8 +751,466 @@ export default class BillingApi {
      * @param {String} opts.search Search by Contract \"Description\" or \"ID\"
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    retrieveBillingHistoryOfContractForASpecificBillingCycle(opts) {
-      return this.retrieveBillingHistoryOfContractForASpecificBillingCycleWithHttpInfo(opts)
+    getUserBillingHistoryContract(opts) {
+      return this.getUserBillingHistoryContractWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of data synthesis for a specific Billing Cycle
+     * User will recieve billing history of data_synthesis for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenBasedBillingHistoryResponse} and HTTP response
+     */
+    getUserBillingHistoryDataSynthesisWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = TokenBasedBillingHistoryResponse;
+      return this.apiClient.callApi(
+        '/billing/billing/history/data_synthesis', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of data synthesis for a specific Billing Cycle
+     * User will recieve billing history of data_synthesis for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenBasedBillingHistoryResponse}
+     */
+    getUserBillingHistoryDataSynthesis(opts) {
+      return this.getUserBillingHistoryDataSynthesisWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DataSynthesisBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+    getUserBillingHistoryDataSynthesisDetailsWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingHistoryDataSynthesisDetails");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = DataSynthesisBillingHistoryDetailsResponseSchema;
+      return this.apiClient.callApi(
+        '/billing/billing/history/data_synthesis/{resource_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DataSynthesisBillingHistoryDetailsResponseSchema}
+     */
+    getUserBillingHistoryDataSynthesisDetails(resourceId, opts) {
+      return this.getUserBillingHistoryDataSynthesisDetailsWithHttpInfo(resourceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of model evaluation for a specific Billing Cycle
+     * User will recieve billing history of fine_tuning for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WorkloadBillingHistoryResponse} and HTTP response
+     */
+    getUserBillingHistoryFineTuningWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = WorkloadBillingHistoryResponse;
+      return this.apiClient.callApi(
+        '/billing/billing/history/fine_tuning', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of model evaluation for a specific Billing Cycle
+     * User will recieve billing history of fine_tuning for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WorkloadBillingHistoryResponse}
+     */
+    getUserBillingHistoryFineTuning(opts) {
+      return this.getUserBillingHistoryFineTuningWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+     * Retrieve billing history of a specific Fine tunning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingHistoryFineTuningDetailsWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingHistoryFineTuningDetails");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVolumeBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/fine_tuning/{resource_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+     * Retrieve billing history of a specific Fine tunning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel}
+     */
+    getUserBillingHistoryFineTuningDetails(resourceId, opts) {
+      return this.getUserBillingHistoryFineTuningDetailsWithHttpInfo(resourceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of model evaluation for a specific Billing Cycle
+     * User will recieve billing history of model_evaluation for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenBasedBillingHistoryResponse} and HTTP response
+     */
+    getUserBillingHistoryModelEvaluationWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = TokenBasedBillingHistoryResponse;
+      return this.apiClient.callApi(
+        '/billing/billing/history/model_evaluation', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of model evaluation for a specific Billing Cycle
+     * User will recieve billing history of model_evaluation for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenBasedBillingHistoryResponse}
+     */
+    getUserBillingHistoryModelEvaluation(opts) {
+      return this.getUserBillingHistoryModelEvaluationWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve billing history for a specific Model Evaluation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelEvaluationBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+    getUserBillingHistoryModelEvaluationDetailsWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingHistoryModelEvaluationDetails");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ModelEvaluationBillingHistoryDetailsResponseSchema;
+      return this.apiClient.callApi(
+        '/billing/billing/history/model_evaluation/{resource_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve billing history for a specific Model Evaluation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelEvaluationBillingHistoryDetailsResponseSchema}
+     */
+    getUserBillingHistoryModelEvaluationDetails(resourceId, opts) {
+      return this.getUserBillingHistoryModelEvaluationDetailsWithHttpInfo(resourceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of serverless inference for a specific Billing Cycle
+     * User will recieve billing history of serverless_inference for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenBasedBillingHistoryResponse} and HTTP response
+     */
+    getUserBillingHistoryServerlessInferenceWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = TokenBasedBillingHistoryResponse;
+      return this.apiClient.callApi(
+        '/billing/billing/history/serverless_inference', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of serverless inference for a specific Billing Cycle
+     * User will recieve billing history of serverless_inference for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenBasedBillingHistoryResponse}
+     */
+    getUserBillingHistoryServerlessInference(opts) {
+      return this.getUserBillingHistoryServerlessInferenceWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve billing history for a specific Serverless Inference resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerlessInferencedBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+    getUserBillingHistoryServerlessInferenceDetailsWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingHistoryServerlessInferenceDetails");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ServerlessInferencedBillingHistoryDetailsResponseSchema;
+      return this.apiClient.callApi(
+        '/billing/billing/history/serverless_inference/{resource_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve billing history for a specific Serverless Inference resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerlessInferencedBillingHistoryDetailsResponseSchema}
+     */
+    getUserBillingHistoryServerlessInferenceDetails(resourceId, opts) {
+      return this.getUserBillingHistoryServerlessInferenceDetailsWithHttpInfo(resourceId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -465,12 +1223,12 @@ export default class BillingApi {
      * @param {Object} opts Optional parameters
      * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} [search] Search by Volume \"Name\" or \"ID\"
-     * @param {String} [page] Page number
-     * @param {String} [perPage] Number of items to return per page
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingHistoryResponseModel} and HTTP response
      */
-    retrieveBillingHistoryOfSnapshotForASpecificBillingCycleWithHttpInfo(opts) {
+    getUserBillingHistorySnapshotWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -480,15 +1238,15 @@ export default class BillingApi {
         'start_date': opts['startDate'],
         'end_date': opts['endDate'],
         'search': opts['search'],
-        'page': opts['page'],
-        'per_page': opts['perPage']
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResourceLevelVolumeBillingHistoryResponseModel;
@@ -505,13 +1263,70 @@ export default class BillingApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} opts.search Search by Volume \"Name\" or \"ID\"
-     * @param {String} opts.page Page number
-     * @param {String} opts.perPage Number of items to return per page
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingHistoryResponseModel}
      */
-    retrieveBillingHistoryOfSnapshotForASpecificBillingCycle(opts) {
-      return this.retrieveBillingHistoryOfSnapshotForASpecificBillingCycleWithHttpInfo(opts)
+    getUserBillingHistorySnapshot(opts) {
+      return this.getUserBillingHistorySnapshotWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+     * Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} snapshotId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingHistorySnapshotDetailsWithHttpInfo(snapshotId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling getUserBillingHistorySnapshotDetails");
+      }
+
+      let pathParams = {
+        'snapshot_id': snapshotId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVolumeBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/snapshot/{snapshot_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+     * Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} snapshotId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel}
+     */
+    getUserBillingHistorySnapshotDetails(snapshotId, opts) {
+      return this.getUserBillingHistorySnapshotDetailsWithHttpInfo(snapshotId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -524,12 +1339,12 @@ export default class BillingApi {
      * @param {Object} opts Optional parameters
      * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} [search] Search by Virtual Machine \"Name\" or \"ID\"
-     * @param {String} [perPage] Number of items to return per page
-     * @param {String} [page] Page number
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVmBillingHistoryResponseModel} and HTTP response
      */
-    retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycleWithHttpInfo(opts) {
+    getUserBillingHistoryVm2WithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -547,7 +1362,7 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResourceLevelVmBillingHistoryResponseModel;
@@ -564,13 +1379,13 @@ export default class BillingApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} opts.search Search by Virtual Machine \"Name\" or \"ID\"
-     * @param {String} opts.perPage Number of items to return per page
-     * @param {String} opts.page Page number
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVmBillingHistoryResponseModel}
      */
-    retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycle(opts) {
-      return this.retrieveBillingHistoryOfVirtualMachineForASpecificBillingCycleWithHttpInfo(opts)
+    getUserBillingHistoryVm2(opts) {
+      return this.getUserBillingHistoryVm2WithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -578,136 +1393,20 @@ export default class BillingApi {
 
 
     /**
-     * Retrieve Billing History of Volume for a specific Billing Cycle
-     * User will recieve billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-     * @param {Object} opts Optional parameters
-     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} [search] Search by Volume \"Name\" or \"ID\"
-     * @param {String} [perPage] Number of items to return per page
-     * @param {String} [page] Page number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingHistoryResponseModel} and HTTP response
-     */
-    retrieveBillingHistoryOfVolumeForASpecificBillingCycleWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'start_date': opts['startDate'],
-        'end_date': opts['endDate'],
-        'search': opts['search'],
-        'per_page': opts['perPage'],
-        'page': opts['page']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey', 'accessToken'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ResourceLevelVolumeBillingHistoryResponseModel;
-      return this.apiClient.callApi(
-        '/billing/billing/history/volume', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve Billing History of Volume for a specific Billing Cycle
-     * User will recieve billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} opts.search Search by Volume \"Name\" or \"ID\"
-     * @param {String} opts.perPage Number of items to return per page
-     * @param {String} opts.page Page number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingHistoryResponseModel}
-     */
-    retrieveBillingHistoryOfVolumeForASpecificBillingCycle(opts) {
-      return this.retrieveBillingHistoryOfVolumeForASpecificBillingCycleWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
-     * User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-     * @param {Number} snapshotId 
-     * @param {Object} opts Optional parameters
-     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel} and HTTP response
-     */
-    retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycleWithHttpInfo(snapshotId, opts) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'snapshotId' is set
-      if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle");
-      }
-
-      let pathParams = {
-        'snapshot_id': snapshotId
-      };
-      let queryParams = {
-        'start_date': opts['startDate'],
-        'end_date': opts['endDate']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey', 'accessToken'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ResourceLevelVolumeGraphBillingDetailsResponseModel;
-      return this.apiClient.callApi(
-        '/billing/billing/history/snapshot/{snapshot_id}/graph', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
-     * User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-     * @param {Number} snapshotId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel}
-     */
-    retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycle(snapshotId, opts) {
-      return this.retrieveHourlyCostDatapointsOfASpecificSnapshotForASpecificBillingCycleWithHttpInfo(snapshotId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
-     * User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+     * User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
      * @param {Number} vmId 
      * @param {Object} opts Optional parameters
      * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVmGraphBillingDetailsResponseModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVMBillingDetailsResponseModel} and HTTP response
      */
-    retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycleWithHttpInfo(vmId, opts) {
+    getUserBillingHistoryVmDetails2WithHttpInfo(vmId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle");
+        throw new Error("Missing the required parameter 'vmId' when calling getUserBillingHistoryVmDetails2");
       }
 
       let pathParams = {
@@ -722,85 +1421,28 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ResourceLevelVmGraphBillingDetailsResponseModel;
+      let returnType = ResourceLevelVMBillingDetailsResponseModel;
       return this.apiClient.callApi(
-        '/billing/billing/history/virtual-machine/{vm_id}/graph', 'GET',
+        '/billing/billing/history/virtual-machine/{vm_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
-     * User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+     * User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
      * @param {Number} vmId 
      * @param {Object} opts Optional parameters
      * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVmGraphBillingDetailsResponseModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVMBillingDetailsResponseModel}
      */
-    retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycle(vmId, opts) {
-      return this.retrieveHourlyCostDatapointsOfASpecificVirtualMachineForASpecificBillingCycleWithHttpInfo(vmId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
-     * User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-     * @param {Number} volumeId 
-     * @param {Object} opts Optional parameters
-     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel} and HTTP response
-     */
-    retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycleWithHttpInfo(volumeId, opts) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'volumeId' is set
-      if (volumeId === undefined || volumeId === null) {
-        throw new Error("Missing the required parameter 'volumeId' when calling retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle");
-      }
-
-      let pathParams = {
-        'volume_id': volumeId
-      };
-      let queryParams = {
-        'start_date': opts['startDate'],
-        'end_date': opts['endDate']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey', 'accessToken'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ResourceLevelVolumeGraphBillingDetailsResponseModel;
-      return this.apiClient.callApi(
-        '/billing/billing/history/volume/{volume_id}/graph', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
-     * User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-     * @param {Number} volumeId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel}
-     */
-    retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycle(volumeId, opts) {
-      return this.retrieveHourlyCostDatapointsOfASpecificVolumeForASpecificBillingCycleWithHttpInfo(volumeId, opts)
+    getUserBillingHistoryVmDetails2(vmId, opts) {
+      return this.getUserBillingHistoryVmDetails2WithHttpInfo(vmId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -816,12 +1458,12 @@ export default class BillingApi {
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubResourcesGraphResponseModel} and HTTP response
      */
-    retrieveSubResourcesHistoricalCostDatapointsOfAVirtualWithHttpInfo(vmId, opts) {
+    getUserBillingHistoryVmSubResourceGraph2WithHttpInfo(vmId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling retrieveSubResourcesHistoricalCostDatapointsOfAVirtual");
+        throw new Error("Missing the required parameter 'vmId' when calling getUserBillingHistoryVmSubResourceGraph2");
       }
 
       let pathParams = {
@@ -836,7 +1478,7 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SubResourcesGraphResponseModel;
@@ -856,8 +1498,8 @@ export default class BillingApi {
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubResourcesGraphResponseModel}
      */
-    retrieveSubResourcesHistoricalCostDatapointsOfAVirtual(vmId, opts) {
-      return this.retrieveSubResourcesHistoricalCostDatapointsOfAVirtualWithHttpInfo(vmId, opts)
+    getUserBillingHistoryVmSubResourceGraph2(vmId, opts) {
+      return this.getUserBillingHistoryVmSubResourceGraph2WithHttpInfo(vmId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -873,12 +1515,12 @@ export default class BillingApi {
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubResourcesCostsResponseModel} and HTTP response
      */
-    retrieveTotalCostsAndNonDiscountCostsForSubResourcesWithHttpInfo(vmId, opts) {
+    getUserBillingHistoryVmTotalCostsWithHttpInfo(vmId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling retrieveTotalCostsAndNonDiscountCostsForSubResources");
+        throw new Error("Missing the required parameter 'vmId' when calling getUserBillingHistoryVmTotalCosts");
       }
 
       let pathParams = {
@@ -893,7 +1535,7 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SubResourcesCostsResponseModel;
@@ -913,8 +1555,409 @@ export default class BillingApi {
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubResourcesCostsResponseModel}
      */
-    retrieveTotalCostsAndNonDiscountCostsForSubResources(vmId, opts) {
-      return this.retrieveTotalCostsAndNonDiscountCostsForSubResourcesWithHttpInfo(vmId, opts)
+    getUserBillingHistoryVmTotalCosts(vmId, opts) {
+      return this.getUserBillingHistoryVmTotalCostsWithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of Volume for a specific Billing Cycle
+     * User will recieve billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingHistoryResponseModel} and HTTP response
+     */
+    getUserBillingHistoryVolume2WithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVolumeBillingHistoryResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/volume', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of Volume for a specific Billing Cycle
+     * User will recieve billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingHistoryResponseModel}
+     */
+    getUserBillingHistoryVolume2(opts) {
+      return this.getUserBillingHistoryVolume2WithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+     * Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} volumeId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingHistoryVolumeDetails2WithHttpInfo(volumeId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'volumeId' is set
+      if (volumeId === undefined || volumeId === null) {
+        throw new Error("Missing the required parameter 'volumeId' when calling getUserBillingHistoryVolumeDetails2");
+      }
+
+      let pathParams = {
+        'volume_id': volumeId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVolumeBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/volume/{volume_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+     * Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+     * @param {Number} volumeId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeBillingDetailsResponseModel}
+     */
+    getUserBillingHistoryVolumeDetails2(volumeId, opts) {
+      return this.getUserBillingHistoryVolumeDetails2WithHttpInfo(volumeId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
+     * User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelEvaluationBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+    getUserBillingModelEvaluationDetailsGraphWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingModelEvaluationDetailsGraph");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ModelEvaluationBillingHistoryDetailsResponseSchema;
+      return this.apiClient.callApi(
+        '/billing/billing/history/model_evaluation/{resource_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
+     * User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelEvaluationBillingHistoryDetailsResponseSchema}
+     */
+    getUserBillingModelEvaluationDetailsGraph(resourceId, opts) {
+      return this.getUserBillingModelEvaluationDetailsGraphWithHttpInfo(resourceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
+     * User will recieve hourly cost datapoints for a serverles inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerlessInferencedBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+    getUserBillingServerlessInferenceDetailsGraphWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getUserBillingServerlessInferenceDetailsGraph");
+      }
+
+      let pathParams = {
+        'resource_id': resourceId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ServerlessInferencedBillingHistoryDetailsResponseSchema;
+      return this.apiClient.callApi(
+        '/billing/billing/history/serverless_inference/{resource_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
+     * User will recieve hourly cost datapoints for a serverles inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerlessInferencedBillingHistoryDetailsResponseSchema}
+     */
+    getUserBillingServerlessInferenceDetailsGraph(resourceId, opts) {
+      return this.getUserBillingServerlessInferenceDetailsGraphWithHttpInfo(resourceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} snapshotId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingSnapshotDetailsGraphWithHttpInfo(snapshotId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling getUserBillingSnapshotDetailsGraph");
+      }
+
+      let pathParams = {
+        'snapshot_id': snapshotId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVolumeGraphBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/snapshot/{snapshot_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} snapshotId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel}
+     */
+    getUserBillingSnapshotDetailsGraph(snapshotId, opts) {
+      return this.getUserBillingSnapshotDetailsGraphWithHttpInfo(snapshotId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+     * User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} vmId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVmGraphBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingVmDetailsGraph2WithHttpInfo(vmId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling getUserBillingVmDetailsGraph2");
+      }
+
+      let pathParams = {
+        'vm_id': vmId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVmGraphBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/virtual-machine/{vm_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+     * User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} vmId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVmGraphBillingDetailsResponseModel}
+     */
+    getUserBillingVmDetailsGraph2(vmId, opts) {
+      return this.getUserBillingVmDetailsGraph2WithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} volumeId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel} and HTTP response
+     */
+    getUserBillingVolumeDetailsGraphWithHttpInfo(volumeId, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'volumeId' is set
+      if (volumeId === undefined || volumeId === null) {
+        throw new Error("Missing the required parameter 'volumeId' when calling getUserBillingVolumeDetailsGraph");
+      }
+
+      let pathParams = {
+        'volume_id': volumeId
+      };
+      let queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResourceLevelVolumeGraphBillingDetailsResponseModel;
+      return this.apiClient.callApi(
+        '/billing/billing/history/volume/{volume_id}/graph', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
+     * User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+     * @param {Number} volumeId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceLevelVolumeGraphBillingDetailsResponseModel}
+     */
+    getUserBillingVolumeDetailsGraph(volumeId, opts) {
+      return this.getUserBillingVolumeDetailsGraphWithHttpInfo(volumeId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -930,12 +1973,12 @@ export default class BillingApi {
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceBillingEventsHistoryResponse} and HTTP response
      */
-    retrieveVmBillingEventsHistoryWithHttpInfo(vmId, opts) {
+    getUserVmBillingEventsWithHttpInfo(vmId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling retrieveVmBillingEventsHistory");
+        throw new Error("Missing the required parameter 'vmId' when calling getUserVmBillingEvents");
       }
 
       let pathParams = {
@@ -950,7 +1993,7 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResourceBillingEventsHistoryResponse;
@@ -970,8 +2013,8 @@ export default class BillingApi {
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceBillingEventsHistoryResponse}
      */
-    retrieveVmBillingEventsHistory(vmId, opts) {
-      return this.retrieveVmBillingEventsHistoryWithHttpInfo(vmId, opts)
+    getUserVmBillingEvents(vmId, opts) {
+      return this.getUserVmBillingEventsWithHttpInfo(vmId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -987,12 +2030,12 @@ export default class BillingApi {
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceBillingEventsHistoryResponse} and HTTP response
      */
-    retrieveVolumeBillingEventsHistoryWithHttpInfo(volumeId, opts) {
+    getUserVolumeBillingEventsWithHttpInfo(volumeId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
-        throw new Error("Missing the required parameter 'volumeId' when calling retrieveVolumeBillingEventsHistory");
+        throw new Error("Missing the required parameter 'volumeId' when calling getUserVolumeBillingEvents");
       }
 
       let pathParams = {
@@ -1007,7 +2050,7 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ResourceBillingEventsHistoryResponse;
@@ -1027,8 +2070,8 @@ export default class BillingApi {
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceBillingEventsHistoryResponse}
      */
-    retrieveVolumeBillingEventsHistory(volumeId, opts) {
-      return this.retrieveVolumeBillingEventsHistoryWithHttpInfo(volumeId, opts)
+    getUserVolumeBillingEvents(volumeId, opts) {
+      return this.getUserVolumeBillingEventsWithHttpInfo(volumeId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1039,18 +2082,18 @@ export default class BillingApi {
      * Update: Subscribe or Unsubscribe Notification Threshold
      * By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
      * @param {Number} thresholdId 
-     * @param {module:model/Subscribeorunsubscribeupdatepayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organizationthresholdupdateresponse} and HTTP response
+     * @param {module:model/SubscribeOrUnsubscribeUpdatePayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrganizationThresholdUpdateResponse} and HTTP response
      */
-    updateSubscribeOrUnsubscribeNotificationThresholdWithHttpInfo(thresholdId, payload) {
+    putOrganizationThresholdWithHttpInfo(thresholdId, payload) {
       let postBody = payload;
       // verify the required parameter 'thresholdId' is set
       if (thresholdId === undefined || thresholdId === null) {
-        throw new Error("Missing the required parameter 'thresholdId' when calling updateSubscribeOrUnsubscribeNotificationThreshold");
+        throw new Error("Missing the required parameter 'thresholdId' when calling putOrganizationThreshold");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateSubscribeOrUnsubscribeNotificationThreshold");
+        throw new Error("Missing the required parameter 'payload' when calling putOrganizationThreshold");
       }
 
       let pathParams = {
@@ -1063,10 +2106,10 @@ export default class BillingApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Organizationthresholdupdateresponse;
+      let returnType = OrganizationThresholdUpdateResponse;
       return this.apiClient.callApi(
         '/billing/billing/threshold/{threshold_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1078,11 +2121,11 @@ export default class BillingApi {
      * Update: Subscribe or Unsubscribe Notification Threshold
      * By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
      * @param {Number} thresholdId 
-     * @param {module:model/Subscribeorunsubscribeupdatepayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organizationthresholdupdateresponse}
+     * @param {module:model/SubscribeOrUnsubscribeUpdatePayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrganizationThresholdUpdateResponse}
      */
-    updateSubscribeOrUnsubscribeNotificationThreshold(thresholdId, payload) {
-      return this.updateSubscribeOrUnsubscribeNotificationThresholdWithHttpInfo(thresholdId, payload)
+    putOrganizationThreshold(thresholdId, payload) {
+      return this.putOrganizationThresholdWithHttpInfo(thresholdId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

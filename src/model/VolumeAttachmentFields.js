@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import VolumeFieldsforInstance from './VolumeFieldsforInstance';
+import VolumeFieldsForInstance from './VolumeFieldsForInstance';
 
 /**
  * The VolumeAttachmentFields model module.
  * @module model/VolumeAttachmentFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class VolumeAttachmentFields {
     /**
@@ -54,11 +54,17 @@ class VolumeAttachmentFields {
             if (data.hasOwnProperty('device')) {
                 obj['device'] = ApiClient.convertToType(data['device'], 'String');
             }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('protected')) {
+                obj['protected'] = ApiClient.convertToType(data['protected'], 'Boolean');
+            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('volume')) {
-                obj['volume'] = VolumeFieldsforInstance.constructFromObject(data['volume']);
+                obj['volume'] = VolumeFieldsForInstance.constructFromObject(data['volume']);
             }
         }
         return obj;
@@ -80,7 +86,7 @@ class VolumeAttachmentFields {
         }
         // validate the optional field `volume`
         if (data['volume']) { // data not null
-          VolumeFieldsforInstance.validateJSON(data['volume']);
+          VolumeFieldsForInstance.validateJSON(data['volume']);
         }
 
         return true;
@@ -102,12 +108,22 @@ VolumeAttachmentFields.prototype['created_at'] = undefined;
 VolumeAttachmentFields.prototype['device'] = undefined;
 
 /**
+ * @member {Number} id
+ */
+VolumeAttachmentFields.prototype['id'] = undefined;
+
+/**
+ * @member {Boolean} protected
+ */
+VolumeAttachmentFields.prototype['protected'] = undefined;
+
+/**
  * @member {String} status
  */
 VolumeAttachmentFields.prototype['status'] = undefined;
 
 /**
- * @member {module:model/VolumeFieldsforInstance} volume
+ * @member {module:model/VolumeFieldsForInstance} volume
  */
 VolumeAttachmentFields.prototype['volume'] = undefined;
 

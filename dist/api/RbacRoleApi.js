@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * RbacRole service.
 * @module api/RbacRoleApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -49,23 +49,23 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Create RBAC Role
-   * Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/create-rbac-role).
+   * Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/create-rbac-role).
    * @param {module:model/CreateUpdateRbacRolePayload} payload 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RbacRoleDetailResponseModel} and HTTP response
    */
   return _createClass(RbacRoleApi, [{
-    key: "createRbacRoleWithHttpInfo",
-    value: function createRbacRoleWithHttpInfo(payload) {
+    key: "createRBACRoleWithHttpInfo",
+    value: function createRBACRoleWithHttpInfo(payload) {
       var postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling createRbacRole");
+        throw new Error("Missing the required parameter 'payload' when calling createRBACRole");
       }
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _RbacRoleDetailResponseModel["default"];
@@ -74,31 +74,31 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Create RBAC Role
-     * Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/create-rbac-role).
+     * Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/create-rbac-role).
      * @param {module:model/CreateUpdateRbacRolePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RbacRoleDetailResponseModel}
      */
   }, {
-    key: "createRbacRole",
-    value: function createRbacRole(payload) {
-      return this.createRbacRoleWithHttpInfo(payload).then(function (response_and_data) {
+    key: "createRBACRole",
+    value: function createRBACRole(payload) {
+      return this.createRBACRoleWithHttpInfo(payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Delete RBAC Role
-     * Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/delete-rbac-role).
+     * Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/delete-rbac-role).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
      */
   }, {
-    key: "deleteRbacRoleWithHttpInfo",
-    value: function deleteRbacRoleWithHttpInfo(id) {
+    key: "deleteRBACRoleWithHttpInfo",
+    value: function deleteRBACRoleWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteRbacRole");
+        throw new Error("Missing the required parameter 'id' when calling deleteRBACRole");
       }
       var pathParams = {
         'id': id
@@ -106,7 +106,7 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _CommonResponseModel["default"];
@@ -115,32 +115,32 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Delete RBAC Role
-     * Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/delete-rbac-role).
+     * Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/delete-rbac-role).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
      */
   }, {
-    key: "deleteRbacRole",
-    value: function deleteRbacRole(id) {
-      return this.deleteRbacRoleWithHttpInfo(id).then(function (response_and_data) {
+    key: "deleteRBACRole",
+    value: function deleteRBACRole(id) {
+      return this.deleteRBACRoleWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * List RBAC Roles
-     * Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/list-rbac-roles).
+     * Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/list-rbac-roles).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetRbacRolesResponseModel} and HTTP response
      */
   }, {
-    key: "listRbacRolesWithHttpInfo",
-    value: function listRbacRolesWithHttpInfo() {
+    key: "listRBACRolesWithHttpInfo",
+    value: function listRBACRolesWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _GetRbacRolesResponseModel["default"];
@@ -149,30 +149,30 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * List RBAC Roles
-     * Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/list-rbac-roles).
+     * Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/list-rbac-roles).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetRbacRolesResponseModel}
      */
   }, {
-    key: "listRbacRoles",
-    value: function listRbacRoles() {
-      return this.listRbacRolesWithHttpInfo().then(function (response_and_data) {
+    key: "listRBACRoles",
+    value: function listRBACRoles() {
+      return this.listRBACRolesWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Retrieve RBAC Role Details
-     * Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
+     * Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RbacRoleDetailResponseModelFixed} and HTTP response
      */
   }, {
-    key: "retrieveRbacRoleDetailsWithHttpInfo",
-    value: function retrieveRbacRoleDetailsWithHttpInfo(id) {
+    key: "retrieveRBACRoleDetailsWithHttpInfo",
+    value: function retrieveRBACRoleDetailsWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling retrieveRbacRoleDetails");
+        throw new Error("Missing the required parameter 'id' when calling retrieveRBACRoleDetails");
       }
       var pathParams = {
         'id': id
@@ -180,7 +180,7 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _RbacRoleDetailResponseModelFixed["default"];
@@ -189,36 +189,36 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve RBAC Role Details
-     * Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
+     * Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RbacRoleDetailResponseModelFixed}
      */
   }, {
-    key: "retrieveRbacRoleDetails",
-    value: function retrieveRbacRoleDetails(id) {
-      return this.retrieveRbacRoleDetailsWithHttpInfo(id).then(function (response_and_data) {
+    key: "retrieveRBACRoleDetails",
+    value: function retrieveRBACRoleDetails(id) {
+      return this.retrieveRBACRoleDetailsWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
      * Update RBAC Role
-     * Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/update-rbac-role).
+     * Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/update-rbac-role).
      * @param {Number} id 
      * @param {module:model/CreateUpdateRbacRolePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RbacRoleDetailResponseModel} and HTTP response
      */
   }, {
-    key: "updateRbacRoleWithHttpInfo",
-    value: function updateRbacRoleWithHttpInfo(id, payload) {
+    key: "updateRBACRoleWithHttpInfo",
+    value: function updateRBACRoleWithHttpInfo(id, payload) {
       var postBody = payload;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateRbacRole");
+        throw new Error("Missing the required parameter 'id' when calling updateRBACRole");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateRbacRole");
+        throw new Error("Missing the required parameter 'payload' when calling updateRBACRole");
       }
       var pathParams = {
         'id': id
@@ -226,7 +226,7 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _RbacRoleDetailResponseModel["default"];
@@ -235,15 +235,15 @@ var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Update RBAC Role
-     * Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/update-rbac-role).
+     * Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/update-rbac-role).
      * @param {Number} id 
      * @param {module:model/CreateUpdateRbacRolePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RbacRoleDetailResponseModel}
      */
   }, {
-    key: "updateRbacRole",
-    value: function updateRbacRole(id, payload) {
-      return this.updateRbacRoleWithHttpInfo(id, payload).then(function (response_and_data) {
+    key: "updateRBACRole",
+    value: function updateRBACRole(id, payload) {
+      return this.updateRBACRoleWithHttpInfo(id, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

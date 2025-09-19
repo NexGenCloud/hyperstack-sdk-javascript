@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnvironmentFeatures model module.
  * @module model/EnvironmentFeatures
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class EnvironmentFeatures {
     /**
@@ -47,6 +47,9 @@ class EnvironmentFeatures {
         if (data) {
             obj = obj || new EnvironmentFeatures();
 
+            if (data.hasOwnProperty('green_status')) {
+                obj['green_status'] = ApiClient.convertToType(data['green_status'], 'String');
+            }
             if (data.hasOwnProperty('network_optimised')) {
                 obj['network_optimised'] = ApiClient.convertToType(data['network_optimised'], 'Boolean');
             }
@@ -60,6 +63,10 @@ class EnvironmentFeatures {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EnvironmentFeatures</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['green_status'] && !(typeof data['green_status'] === 'string' || data['green_status'] instanceof String)) {
+            throw new Error("Expected the field `green_status` to be a primitive type in the JSON string but got " + data['green_status']);
+        }
 
         return true;
     }
@@ -70,12 +77,44 @@ class EnvironmentFeatures {
 
 
 /**
+ * @member {module:model/EnvironmentFeatures.GreenStatusEnum} green_status
+ */
+EnvironmentFeatures.prototype['green_status'] = undefined;
+
+/**
  * @member {Boolean} network_optimised
  */
 EnvironmentFeatures.prototype['network_optimised'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>green_status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+EnvironmentFeatures['GreenStatusEnum'] = {
+
+    /**
+     * value: "GREEN"
+     * @const
+     */
+    "GREEN": "GREEN",
+
+    /**
+     * value: "PARTIALLY_GREEN"
+     * @const
+     */
+    "PARTIALLY_GREEN": "PARTIALLY_GREEN",
+
+    /**
+     * value: "NOT_GREEN"
+     * @const
+     */
+    "NOT_GREEN": "NOT_GREEN"
+};
 
 
 

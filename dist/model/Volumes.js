@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-var _VolumeFields = _interopRequireDefault(require("./VolumeFields"));
+var _VolumesFields = _interopRequireDefault(require("./VolumesFields"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Volumes model module.
  * @module model/Volumes
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var Volumes = /*#__PURE__*/function () {
   /**
@@ -63,14 +63,23 @@ var Volumes = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new Volumes();
+        if (data.hasOwnProperty('count')) {
+          obj['count'] = _ApiClient["default"].convertToType(data['count'], 'Number');
+        }
         if (data.hasOwnProperty('message')) {
           obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
+        }
+        if (data.hasOwnProperty('page')) {
+          obj['page'] = _ApiClient["default"].convertToType(data['page'], 'Number');
+        }
+        if (data.hasOwnProperty('page_size')) {
+          obj['page_size'] = _ApiClient["default"].convertToType(data['page_size'], 'Number');
         }
         if (data.hasOwnProperty('status')) {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Boolean');
         }
-        if (data.hasOwnProperty('volume')) {
-          obj['volume'] = _ApiClient["default"].convertToType(data['volume'], [_VolumeFields["default"]]);
+        if (data.hasOwnProperty('volumes')) {
+          obj['volumes'] = _ApiClient["default"].convertToType(data['volumes'], [_VolumesFields["default"]]);
         }
       }
       return obj;
@@ -88,19 +97,19 @@ var Volumes = /*#__PURE__*/function () {
       if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
         throw new Error("Expected the field `message` to be a primitive type in the JSON string but got " + data['message']);
       }
-      if (data['volume']) {
+      if (data['volumes']) {
         // data not null
         // ensure the json data is an array
-        if (!Array.isArray(data['volume'])) {
-          throw new Error("Expected the field `volume` to be an array in the JSON data but got " + data['volume']);
+        if (!Array.isArray(data['volumes'])) {
+          throw new Error("Expected the field `volumes` to be an array in the JSON data but got " + data['volumes']);
         }
-        // validate the optional field `volume` (array)
-        var _iterator = _createForOfIteratorHelper(data['volume']),
+        // validate the optional field `volumes` (array)
+        var _iterator = _createForOfIteratorHelper(data['volumes']),
           _step;
         try {
           for (_iterator.s(); !(_step = _iterator.n()).done;) {
             var item = _step.value;
-            _VolumeFields["default"].validateJSON(item);
+            _VolumesFields["default"].validateJSON(item);
           }
         } catch (err) {
           _iterator.e(err);
@@ -114,9 +123,24 @@ var Volumes = /*#__PURE__*/function () {
   }]);
 }();
 /**
+ * @member {Number} count
+ */
+Volumes.prototype['count'] = undefined;
+
+/**
  * @member {String} message
  */
 Volumes.prototype['message'] = undefined;
+
+/**
+ * @member {Number} page
+ */
+Volumes.prototype['page'] = undefined;
+
+/**
+ * @member {Number} page_size
+ */
+Volumes.prototype['page_size'] = undefined;
 
 /**
  * @member {Boolean} status
@@ -124,7 +148,7 @@ Volumes.prototype['message'] = undefined;
 Volumes.prototype['status'] = undefined;
 
 /**
- * @member {Array.<module:model/VolumeFields>} volume
+ * @member {Array.<module:model/VolumesFields>} volumes
  */
-Volumes.prototype['volume'] = undefined;
+Volumes.prototype['volumes'] = undefined;
 var _default = exports["default"] = Volumes;

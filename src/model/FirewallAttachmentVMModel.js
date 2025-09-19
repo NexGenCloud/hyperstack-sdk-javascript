@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FirewallAttachmentVMModel model module.
  * @module model/FirewallAttachmentVMModel
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class FirewallAttachmentVMModel {
     /**

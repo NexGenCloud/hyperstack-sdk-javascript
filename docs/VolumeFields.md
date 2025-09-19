@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**attachments** | [**[AttachmentsFieldsForVolume]**](AttachmentsFieldsForVolume.md) |  | [optional] 
 **bootable** | **Boolean** |  | [optional] 
 **callbackUrl** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
-**environment** | [**EnvironmentFieldsforVolume**](EnvironmentFieldsforVolume.md) |  | [optional] 
+**environment** | [**EnvironmentFieldsForVolume**](EnvironmentFieldsForVolume.md) |  | [optional] 
 **id** | **Number** |  | [optional] 
 **imageId** | **Number** |  | [optional] 
 **name** | **String** |  | [optional] 

@@ -48,30 +48,30 @@
   }
 
   describe('UserApi', function() {
-    describe('getFetchUserInfo', function() {
-      it('should call getFetchUserInfo successfully', function(done) {
-        //uncomment below and update the code to test getFetchUserInfo
-        //instance.getFetchUserInfo(function(error) {
+    describe('getUser', function() {
+      it('should call getUser successfully', function(done) {
+        //uncomment below and update the code to test getUser
+        //instance.getUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postInsertUserInfo', function() {
-      it('should call postInsertUserInfo successfully', function(done) {
-        //uncomment below and update the code to test postInsertUserInfo
-        //instance.postInsertUserInfo(function(error) {
+    describe('postUser', function() {
+      it('should call postUser successfully', function(done) {
+        //uncomment below and update the code to test postUser
+        //instance.postUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('putUpdateUserInfo', function() {
-      it('should call putUpdateUserInfo successfully', function(done) {
-        //uncomment below and update the code to test putUpdateUserInfo
-        //instance.putUpdateUserInfo(function(error) {
+    describe('putUser', function() {
+      it('should call putUser successfully', function(done) {
+        //uncomment below and update the code to test putUser
+        //instance.putUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

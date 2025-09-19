@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * Alive service.
 * @module api/AliveApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class AliveApi {
 
@@ -36,6 +36,7 @@ export default class AliveApi {
 
     /**
      * GET: Alive
+     * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](None/docs/api-reference/billing-resources/alive/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     getAliveWithHttpInfo() {
@@ -50,7 +51,7 @@ export default class AliveApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -63,10 +64,48 @@ export default class AliveApi {
 
     /**
      * GET: Alive
+     * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](None/docs/api-reference/billing-resources/alive/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     getAlive() {
       return this.getAliveWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    getDocWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/billing/alive/doc', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    getDoc() {
+      return this.getDocWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

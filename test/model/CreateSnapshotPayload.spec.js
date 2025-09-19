@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property isImage (base name: "is_image")', function() {
-      // uncomment below and update the code to test the property isImage
-      //var instance = new HyperstackApi.CreateSnapshotPayload();
-      //expect(instance).to.be();
-    });
-
     it('should have the property labels (base name: "labels")', function() {
       // uncomment below and update the code to test the property labels
       //var instance = new HyperstackApi.CreateSnapshotPayload();

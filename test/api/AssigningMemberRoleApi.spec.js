@@ -48,20 +48,20 @@
   }
 
   describe('AssigningMemberRoleApi', function() {
-    describe('assignRbacRole', function() {
-      it('should call assignRbacRole successfully', function(done) {
-        //uncomment below and update the code to test assignRbacRole
-        //instance.assignRbacRole(function(error) {
+    describe('assignRBACRoleToUser', function() {
+      it('should call assignRBACRoleToUser successfully', function(done) {
+        //uncomment below and update the code to test assignRBACRoleToUser
+        //instance.assignRBACRoleToUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeRbacRoleFromUser', function() {
-      it('should call removeRbacRoleFromUser successfully', function(done) {
-        //uncomment below and update the code to test removeRbacRoleFromUser
-        //instance.removeRbacRoleFromUser(function(error) {
+    describe('removeRBACRoleFromUser', function() {
+      it('should call removeRBACRoleFromUser successfully', function(done) {
+        //uncomment below and update the code to test removeRBACRoleFromUser
+        //instance.removeRBACRoleFromUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

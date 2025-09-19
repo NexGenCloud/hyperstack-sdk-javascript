@@ -19,7 +19,7 @@ import Regions from '../model/Regions';
 /**
 * Region service.
 * @module api/RegionApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class RegionApi {
 
@@ -37,8 +37,8 @@ export default class RegionApi {
 
 
     /**
-     * List regions
-     * Lists the currently available regions, each representing a distinct geographic location housing a data center. For additional information on regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+     * List Regions
+     * Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/regions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Regions} and HTTP response
      */
     listRegionsWithHttpInfo() {
@@ -53,7 +53,7 @@ export default class RegionApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Regions;
@@ -65,8 +65,8 @@ export default class RegionApi {
     }
 
     /**
-     * List regions
-     * Lists the currently available regions, each representing a distinct geographic location housing a data center. For additional information on regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+     * List Regions
+     * Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/regions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Regions}
      */
     listRegions() {

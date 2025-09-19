@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Delete key pair
 
-Permanently deletes a specified key pair. Include the key pair ID in the request path to remove the designated key pair.
+Permanently deletes a specified key pair. Provide the key pair ID in the path to remove the designated key pair.
 
 ### Example
 
@@ -29,11 +29,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.KeypairApi();
 let id = 56; // Number | 
@@ -58,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -72,7 +67,7 @@ Name | Type | Description  | Notes
 
 Import key pair
 
-Imports a new key pair for secure shell (SSH) access to your resources. To import a new key pair, include the key name, environment name, and public key in the request body. For additional information on importing SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair#importing-an-ssh-key).
+Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/import-keypair).
 
 ### Example
 
@@ -84,11 +79,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.KeypairApi();
 let payload = new HyperstackApi.ImportKeypairPayload(); // ImportKeypairPayload | 
@@ -113,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -127,7 +117,7 @@ Name | Type | Description  | Notes
 
 List key pairs
 
-Retrieves a list of your existing SSH key pairs, providing details for each. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/keypairs-available-features).
+Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
 
 ### Example
 
@@ -139,11 +129,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.KeypairApi();
 let opts = {
@@ -174,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -184,11 +169,11 @@ Name | Type | Description  | Notes
 
 ## updateKeyPairName
 
-> UpdateKeypairnameresponse updateKeyPairName(id, payload)
+> UpdateKeypairNameResponse updateKeyPairName(id, payload)
 
 Update key pair name
 
-Updates the name of a specified key pair. Include the key pair ID in the request path and the new &#x60;name&#x60; of the key pair in the request body.
+Updates the name of a specified key pair. Provide the key pair ID in the path, and include the new &#x60;name&#x60; in the request body.
 
 ### Example
 
@@ -200,11 +185,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.KeypairApi();
 let id = 56; // Number | 
@@ -227,11 +207,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateKeypairnameresponse**](UpdateKeypairnameresponse.md)
+[**UpdateKeypairNameResponse**](UpdateKeypairNameResponse.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

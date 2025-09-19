@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEnvironment model module.
  * @module model/CreateEnvironment
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class CreateEnvironment {
     /**
      * Constructs a new <code>CreateEnvironment</code>.
      * @alias module:model/CreateEnvironment
      * @param name {String} The name of the environment being created.
-     * @param region {String} The geographic location of the data center where the environment is being created. To learn more about regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+     * @param region {String} The geographic location of the data center where the environment is being created. To learn more about regions, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/features/regions).
      */
     constructor(name, region) { 
         
@@ -97,7 +97,7 @@ CreateEnvironment.RequiredProperties = ["name", "region"];
 CreateEnvironment.prototype['name'] = undefined;
 
 /**
- * The geographic location of the data center where the environment is being created. To learn more about regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+ * The geographic location of the data center where the environment is being created. To learn more about regions, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/features/regions).
  * @member {String} region
  */
 CreateEnvironment.prototype['region'] = undefined;

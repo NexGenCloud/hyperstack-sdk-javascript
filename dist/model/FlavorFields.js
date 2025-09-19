@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FlavorFields model module.
  * @module model/FlavorFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var FlavorFields = /*#__PURE__*/function () {
   /**
@@ -77,6 +77,9 @@ var FlavorFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('ephemeral')) {
           obj['ephemeral'] = _ApiClient["default"].convertToType(data['ephemeral'], 'Number');
+        }
+        if (data.hasOwnProperty('features')) {
+          obj['features'] = _ApiClient["default"].convertToType(data['features'], Object);
         }
         if (data.hasOwnProperty('gpu')) {
           obj['gpu'] = _ApiClient["default"].convertToType(data['gpu'], 'String');
@@ -179,6 +182,11 @@ FlavorFields.prototype['display_name'] = undefined;
  * @member {Number} ephemeral
  */
 FlavorFields.prototype['ephemeral'] = undefined;
+
+/**
+ * @member {Object} features
+ */
+FlavorFields.prototype['features'] = undefined;
 
 /**
  * @member {String} gpu

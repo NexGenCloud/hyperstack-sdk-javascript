@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Stock service.
 * @module api/StockApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var StockApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,18 +45,18 @@ var StockApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Retrieve GPU stocks
-   * Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+   * Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs.hyperstack.cloud/docs/hardware/gpu-stock-information).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewStockRetriveResponse} and HTTP response
    */
   return _createClass(StockApi, [{
-    key: "retrieveGpuStocksWithHttpInfo",
-    value: function retrieveGpuStocksWithHttpInfo() {
+    key: "retrieveGPUStocksWithHttpInfo",
+    value: function retrieveGPUStocksWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _NewStockRetriveResponse["default"];
@@ -65,13 +65,13 @@ var StockApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve GPU stocks
-     * Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+     * Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs.hyperstack.cloud/docs/hardware/gpu-stock-information).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewStockRetriveResponse}
      */
   }, {
-    key: "retrieveGpuStocks",
-    value: function retrieveGpuStocks() {
-      return this.retrieveGpuStocksWithHttpInfo().then(function (response_and_data) {
+    key: "retrieveGPUStocks",
+    value: function retrieveGPUStocks() {
+      return this.retrieveGPUStocksWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

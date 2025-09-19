@@ -16,12 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The SnapshotFields model module.
  * @module model/SnapshotFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class SnapshotFields {
     /**
      * Constructs a new <code>SnapshotFields</code>.
      * @alias module:model/SnapshotFields
+     * @param createdAt {Date} Creation timestamp
      * @param description {String} Description of the snapshot
      * @param id {Number} Snapshot ID
      * @param isImage {Boolean} Indicates if the snapshot is an image
@@ -29,11 +30,12 @@ class SnapshotFields {
      * @param regionId {Number} Region where the snapshot will be available
      * @param size {Number} Size in GB of the snapshot
      * @param status {String} Status of the snapshot
+     * @param updatedAt {Date} Last update timestamp
      * @param vmId {Number} ID of the VM from which the snapshot is created
      */
-    constructor(description, id, isImage, name, regionId, size, status, vmId) { 
+    constructor(createdAt, description, id, isImage, name, regionId, size, status, updatedAt, vmId) { 
         
-        SnapshotFields.initialize(this, description, id, isImage, name, regionId, size, status, vmId);
+        SnapshotFields.initialize(this, createdAt, description, id, isImage, name, regionId, size, status, updatedAt, vmId);
     }
 
     /**
@@ -41,7 +43,8 @@ class SnapshotFields {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, description, id, isImage, name, regionId, size, status, vmId) { 
+    static initialize(obj, createdAt, description, id, isImage, name, regionId, size, status, updatedAt, vmId) { 
+        obj['created_at'] = createdAt;
         obj['description'] = description;
         obj['id'] = id;
         obj['is_image'] = isImage;
@@ -49,6 +52,7 @@ class SnapshotFields {
         obj['region_id'] = regionId;
         obj['size'] = size;
         obj['status'] = status;
+        obj['updated_at'] = updatedAt;
         obj['vm_id'] = vmId;
     }
 
@@ -63,6 +67,9 @@ class SnapshotFields {
         if (data) {
             obj = obj || new SnapshotFields();
 
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -89,6 +96,9 @@ class SnapshotFields {
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('vm_id')) {
                 obj['vm_id'] = ApiClient.convertToType(data['vm_id'], 'Number');
@@ -132,7 +142,13 @@ class SnapshotFields {
 
 }
 
-SnapshotFields.RequiredProperties = ["description", "id", "is_image", "name", "region_id", "size", "status", "vm_id"];
+SnapshotFields.RequiredProperties = ["created_at", "description", "id", "is_image", "name", "region_id", "size", "status", "updated_at", "vm_id"];
+
+/**
+ * Creation timestamp
+ * @member {Date} created_at
+ */
+SnapshotFields.prototype['created_at'] = undefined;
 
 /**
  * Description of the snapshot
@@ -187,6 +203,12 @@ SnapshotFields.prototype['size'] = undefined;
  * @member {String} status
  */
 SnapshotFields.prototype['status'] = undefined;
+
+/**
+ * Last update timestamp
+ * @member {Date} updated_at
+ */
+SnapshotFields.prototype['updated_at'] = undefined;
 
 /**
  * ID of the VM from which the snapshot is created

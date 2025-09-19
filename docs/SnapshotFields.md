@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**createdAt** | **Date** | Creation timestamp | 
 **description** | **String** | Description of the snapshot | 
 **hasFloatingIp** | **Boolean** | Indicates if the VM had a floating IP assigned | [optional] 
 **id** | **Number** | Snapshot ID | 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **regionId** | **Number** | Region where the snapshot will be available | 
 **size** | **Number** | Size in GB of the snapshot | 
 **status** | **String** | Status of the snapshot | 
+**updatedAt** | **Date** | Last update timestamp | 
 **vmId** | **Number** | ID of the VM from which the snapshot is created | 
 
 

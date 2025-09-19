@@ -48,40 +48,40 @@
   }
 
   describe('ApiKeyApi', function() {
-    describe('deleteApiKey', function() {
-      it('should call deleteApiKey successfully', function(done) {
-        //uncomment below and update the code to test deleteApiKey
-        //instance.deleteApiKey(function(error) {
+    describe('deleteAPIKey', function() {
+      it('should call deleteAPIKey successfully', function(done) {
+        //uncomment below and update the code to test deleteAPIKey
+        //instance.deleteAPIKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('generateApiKey', function() {
-      it('should call generateApiKey successfully', function(done) {
-        //uncomment below and update the code to test generateApiKey
-        //instance.generateApiKey(function(error) {
+    describe('generateAPIKey', function() {
+      it('should call generateAPIKey successfully', function(done) {
+        //uncomment below and update the code to test generateAPIKey
+        //instance.generateAPIKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveApiKeys', function() {
-      it('should call retrieveApiKeys successfully', function(done) {
-        //uncomment below and update the code to test retrieveApiKeys
-        //instance.retrieveApiKeys(function(error) {
+    describe('retrieveAPIKey', function() {
+      it('should call retrieveAPIKey successfully', function(done) {
+        //uncomment below and update the code to test retrieveAPIKey
+        //instance.retrieveAPIKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateApiKey', function() {
-      it('should call updateApiKey successfully', function(done) {
-        //uncomment below and update the code to test updateApiKey
-        //instance.updateApiKey(function(error) {
+    describe('updateAPIKey', function() {
+      it('should call updateAPIKey successfully', function(done) {
+        //uncomment below and update the code to test updateAPIKey
+        //instance.updateAPIKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

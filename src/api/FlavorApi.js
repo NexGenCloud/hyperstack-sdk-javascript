@@ -19,7 +19,7 @@ import FlavorListResponse from '../model/FlavorListResponse';
 /**
 * Flavor service.
 * @module api/FlavorApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class FlavorApi {
 
@@ -38,7 +38,7 @@ export default class FlavorApi {
 
     /**
      * List Flavors
-     * Returns a list of available virtual machine hardware configurations, known as             **flavors**. You can specify a `region_name` in the query string of the request to             retrieve flavors available only in the specified region; by default, it returns flavors              available in all regions. For more details on flavors,              [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors).
+     * Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors).
      * @param {Object} opts Optional parameters
      * @param {String} [region] Region Name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FlavorListResponse} and HTTP response
@@ -57,7 +57,7 @@ export default class FlavorApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = FlavorListResponse;
@@ -70,7 +70,7 @@ export default class FlavorApi {
 
     /**
      * List Flavors
-     * Returns a list of available virtual machine hardware configurations, known as             **flavors**. You can specify a `region_name` in the query string of the request to             retrieve flavors available only in the specified region; by default, it returns flavors              available in all regions. For more details on flavors,              [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors).
+     * Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors).
      * @param {Object} opts Optional parameters
      * @param {String} opts.region Region Name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FlavorListResponse}

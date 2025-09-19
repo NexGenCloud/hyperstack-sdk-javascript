@@ -19,7 +19,7 @@ import GetPermissionsResponseModel from '../model/GetPermissionsResponseModel';
 /**
 * Permission service.
 * @module api/PermissionApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class PermissionApi {
 
@@ -38,7 +38,7 @@ export default class PermissionApi {
 
     /**
      * List Permissions
-     * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/permissions).
+     * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/permissions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetPermissionsResponseModel} and HTTP response
      */
     listPermissionsWithHttpInfo() {
@@ -53,7 +53,7 @@ export default class PermissionApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GetPermissionsResponseModel;
@@ -66,7 +66,7 @@ export default class PermissionApi {
 
     /**
      * List Permissions
-     * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/permissions).
+     * Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/permission/permissions).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetPermissionsResponseModel}
      */
     listPermissions() {

@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property device (base name: "device")', function() {
+      // uncomment below and update the code to test the property device
+      //var instance = new HyperstackApi.AttachVolumeFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instance = new HyperstackApi.AttachVolumeFields();
@@ -68,6 +74,12 @@
 
     it('should have the property instanceId (base name: "instance_id")', function() {
       // uncomment below and update the code to test the property instanceId
+      //var instance = new HyperstackApi.AttachVolumeFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property _protected (base name: "protected")', function() {
+      // uncomment below and update the code to test the property _protected
       //var instance = new HyperstackApi.AttachVolumeFields();
       //expect(instance).to.be();
     });

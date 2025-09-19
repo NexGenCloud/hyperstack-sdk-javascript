@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResourceLevelBillingHistoryResponseAttributes model module.
  * @module model/ResourceLevelBillingHistoryResponseAttributes
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 class ResourceLevelBillingHistoryResponseAttributes {
     /**
@@ -47,6 +47,9 @@ class ResourceLevelBillingHistoryResponseAttributes {
         if (data) {
             obj = obj || new ResourceLevelBillingHistoryResponseAttributes();
 
+            if (data.hasOwnProperty('contract_id')) {
+                obj['contract_id'] = ApiClient.convertToType(data['contract_id'], 'Number');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -89,6 +92,11 @@ class ResourceLevelBillingHistoryResponseAttributes {
 }
 
 
+
+/**
+ * @member {Number} contract_id
+ */
+ResourceLevelBillingHistoryResponseAttributes.prototype['contract_id'] = undefined;
 
 /**
  * @member {String} id

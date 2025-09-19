@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(HyperstackApi.CreateClusterPayload);
     });
 
-    it('should have the property environmentName (base name: "environment_name")', function() {
-      // uncomment below and update the code to test the property environmentName
+    it('should have the property deploymentMode (base name: "deployment_mode")', function() {
+      // uncomment below and update the code to test the property deploymentMode
       //var instance = new HyperstackApi.CreateClusterPayload();
       //expect(instance).to.be();
     });
 
-    it('should have the property imageName (base name: "image_name")', function() {
-      // uncomment below and update the code to test the property imageName
+    it('should have the property environmentName (base name: "environment_name")', function() {
+      // uncomment below and update the code to test the property environmentName
       //var instance = new HyperstackApi.CreateClusterPayload();
       //expect(instance).to.be();
     });
@@ -74,6 +74,12 @@
 
     it('should have the property kubernetesVersion (base name: "kubernetes_version")', function() {
       // uncomment below and update the code to test the property kubernetesVersion
+      //var instance = new HyperstackApi.CreateClusterPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property masterCount (base name: "master_count")', function() {
+      // uncomment below and update the code to test the property masterCount
       //var instance = new HyperstackApi.CreateClusterPayload();
       //expect(instance).to.be();
     });
@@ -98,6 +104,12 @@
 
     it('should have the property nodeFlavorName (base name: "node_flavor_name")', function() {
       // uncomment below and update the code to test the property nodeFlavorName
+      //var instance = new HyperstackApi.CreateClusterPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nodeGroups (base name: "node_groups")', function() {
+      // uncomment below and update the code to test the property nodeGroups
       //var instance = new HyperstackApi.CreateClusterPayload();
       //expect(instance).to.be();
     });

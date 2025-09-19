@@ -48,10 +48,10 @@
   }
 
   describe('SnapshotsApi', function() {
-    describe('createAnImageFromASnapshot', function() {
-      it('should call createAnImageFromASnapshot successfully', function(done) {
-        //uncomment below and update the code to test createAnImageFromASnapshot
-        //instance.createAnImageFromASnapshot(function(error) {
+    describe('createANewCustomImage', function() {
+      it('should call createANewCustomImage successfully', function(done) {
+        //uncomment below and update the code to test createANewCustomImage
+        //instance.createANewCustomImage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -78,30 +78,30 @@
         done();
       });
     });
-    describe('restoreASnapshot', function() {
-      it('should call restoreASnapshot successfully', function(done) {
-        //uncomment below and update the code to test restoreASnapshot
-        //instance.restoreASnapshot(function(error) {
+    describe('getSnapshot', function() {
+      it('should call getSnapshot successfully', function(done) {
+        //uncomment below and update the code to test getSnapshot
+        //instance.getSnapshot(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveASnapshot', function() {
-      it('should call retrieveASnapshot successfully', function(done) {
-        //uncomment below and update the code to test retrieveASnapshot
-        //instance.retrieveASnapshot(function(error) {
+    describe('getSnapshots', function() {
+      it('should call getSnapshots successfully', function(done) {
+        //uncomment below and update the code to test getSnapshots
+        //instance.getSnapshots(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveListOfSnapshotsWithPagination', function() {
-      it('should call retrieveListOfSnapshotsWithPagination successfully', function(done) {
-        //uncomment below and update the code to test retrieveListOfSnapshotsWithPagination
-        //instance.retrieveListOfSnapshotsWithPagination(function(error) {
+    describe('postSnapshotRestore', function() {
+      it('should call postSnapshotRestore successfully', function(done) {
+        //uncomment below and update the code to test postSnapshotRestore
+        //instance.postSnapshotRestore(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

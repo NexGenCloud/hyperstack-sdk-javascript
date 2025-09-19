@@ -108,6 +108,16 @@
         done();
       });
     });
+    describe('updateVolume', function() {
+      it('should call updateVolume successfully', function(done) {
+        //uncomment below and update the code to test updateVolume
+        //instance.updateVolume(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

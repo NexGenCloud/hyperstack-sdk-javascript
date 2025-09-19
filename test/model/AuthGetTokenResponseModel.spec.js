@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(HyperstackApi.AuthGetTokenResponseModel);
     });
 
-    it('should have the property firstLogin (base name: "first_login")', function() {
-      // uncomment below and update the code to test the property firstLogin
-      //var instance = new HyperstackApi.AuthGetTokenResponseModel();
-      //expect(instance).to.be();
-    });
-
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
       //var instance = new HyperstackApi.AuthGetTokenResponseModel();

@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('updateAVolumeAttachment', function() {
+      it('should call updateAVolumeAttachment successfully', function(done) {
+        //uncomment below and update the code to test updateAVolumeAttachment
+        //instance.updateAVolumeAttachment(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

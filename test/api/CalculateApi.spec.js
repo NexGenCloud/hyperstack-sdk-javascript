@@ -48,10 +48,10 @@
   }
 
   describe('CalculateApi', function() {
-    describe('retrieveBillingRateForResource', function() {
-      it('should call retrieveBillingRateForResource successfully', function(done) {
-        //uncomment below and update the code to test retrieveBillingRateForResource
-        //instance.retrieveBillingRateForResource(function(error) {
+    describe('getCalculate2', function() {
+      it('should call getCalculate2 successfully', function(done) {
+        //uncomment below and update the code to test getCalculate2
+        //instance.getCalculate2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

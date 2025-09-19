@@ -54,6 +54,18 @@
       //expect(instance).to.be.a(HyperstackApi.SnapshotRetrieveFields);
     });
 
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property customImage (base name: "custom_image")', function() {
+      // uncomment below and update the code to test the property customImage
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instance = new HyperstackApi.SnapshotRetrieveFields();
@@ -78,8 +90,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property labels (base name: "labels")', function() {
+      // uncomment below and update the code to test the property labels
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property region (base name: "region")', function() {
+      // uncomment below and update the code to test the property region
       //var instance = new HyperstackApi.SnapshotRetrieveFields();
       //expect(instance).to.be();
     });
@@ -102,8 +126,62 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property updatedAt (base name: "updated_at")', function() {
+      // uncomment below and update the code to test the property updatedAt
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vmEnvironment (base name: "vm_environment")', function() {
+      // uncomment below and update the code to test the property vmEnvironment
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vmFlavor (base name: "vm_flavor")', function() {
+      // uncomment below and update the code to test the property vmFlavor
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property vmId (base name: "vm_id")', function() {
       // uncomment below and update the code to test the property vmId
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vmImage (base name: "vm_image")', function() {
+      // uncomment below and update the code to test the property vmImage
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vmKeypair (base name: "vm_keypair")', function() {
+      // uncomment below and update the code to test the property vmKeypair
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vmName (base name: "vm_name")', function() {
+      // uncomment below and update the code to test the property vmName
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vmStatus (base name: "vm_status")', function() {
+      // uncomment below and update the code to test the property vmStatus
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property volumeId (base name: "volume_id")', function() {
+      // uncomment below and update the code to test the property volumeId
+      //var instance = new HyperstackApi.SnapshotRetrieveFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property volumeName (base name: "volume_name")', function() {
+      // uncomment below and update the code to test the property volumeName
       //var instance = new HyperstackApi.SnapshotRetrieveFields();
       //expect(instance).to.be();
     });

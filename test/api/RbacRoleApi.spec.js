@@ -48,50 +48,50 @@
   }
 
   describe('RbacRoleApi', function() {
-    describe('createRbacRole', function() {
-      it('should call createRbacRole successfully', function(done) {
-        //uncomment below and update the code to test createRbacRole
-        //instance.createRbacRole(function(error) {
+    describe('createRBACRole', function() {
+      it('should call createRBACRole successfully', function(done) {
+        //uncomment below and update the code to test createRBACRole
+        //instance.createRBACRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteRbacRole', function() {
-      it('should call deleteRbacRole successfully', function(done) {
-        //uncomment below and update the code to test deleteRbacRole
-        //instance.deleteRbacRole(function(error) {
+    describe('deleteRBACRole', function() {
+      it('should call deleteRBACRole successfully', function(done) {
+        //uncomment below and update the code to test deleteRBACRole
+        //instance.deleteRBACRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listRbacRoles', function() {
-      it('should call listRbacRoles successfully', function(done) {
-        //uncomment below and update the code to test listRbacRoles
-        //instance.listRbacRoles(function(error) {
+    describe('listRBACRoles', function() {
+      it('should call listRBACRoles successfully', function(done) {
+        //uncomment below and update the code to test listRBACRoles
+        //instance.listRBACRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveRbacRoleDetails', function() {
-      it('should call retrieveRbacRoleDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveRbacRoleDetails
-        //instance.retrieveRbacRoleDetails(function(error) {
+    describe('retrieveRBACRoleDetails', function() {
+      it('should call retrieveRBACRoleDetails successfully', function(done) {
+        //uncomment below and update the code to test retrieveRBACRoleDetails
+        //instance.retrieveRBACRoleDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateRbacRole', function() {
-      it('should call updateRbacRole successfully', function(done) {
-        //uncomment below and update the code to test updateRbacRole
-        //instance.updateRbacRole(function(error) {
+    describe('updateRBACRole', function() {
+      it('should call updateRBACRole successfully', function(done) {
+        //uncomment below and update the code to test updateRBACRole
+        //instance.updateRBACRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

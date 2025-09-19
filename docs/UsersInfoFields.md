@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **organizationId** | **Number** |  | [optional] 
 **phone** | **String** |  | [optional] 
 **state** | **String** |  | [optional] 
+**stripeUserId** | **String** |  | [optional] 
 **vatNumber** | **String** |  | [optional] 
 **zipCode** | **String** |  | [optional] 
 

@@ -21,7 +21,7 @@ import GetCustomerContractsListResponseModel from '../model/GetCustomerContracts
 /**
 * CustomerContract service.
 * @module api/CustomerContractApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class CustomerContractApi {
 
@@ -40,13 +40,13 @@ export default class CustomerContractApi {
 
     /**
      * List Contracts
-     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
      * @param {Object} opts Optional parameters
      * @param {Number} [page] 
      * @param {Number} [perPage] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCustomerContractsListResponseModel} and HTTP response
      */
-    listContractsWithHttpInfo(opts) {
+    getCustomerContractWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -61,7 +61,7 @@ export default class CustomerContractApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GetCustomerContractsListResponseModel;
@@ -74,14 +74,14 @@ export default class CustomerContractApi {
 
     /**
      * List Contracts
-     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page 
      * @param {Number} opts.perPage 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCustomerContractsListResponseModel}
      */
-    listContracts(opts) {
-      return this.listContractsWithHttpInfo(opts)
+    getCustomerContract(opts) {
+      return this.getCustomerContractWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -90,15 +90,15 @@ export default class CustomerContractApi {
 
     /**
      * Retrieve Contract Details
-     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
      * @param {Number} contractId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerContractDetailResponseModel} and HTTP response
      */
-    retrieveContractDetailsWithHttpInfo(contractId) {
+    getCustomerContractDetailsWithHttpInfo(contractId) {
       let postBody = null;
       // verify the required parameter 'contractId' is set
       if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling retrieveContractDetails");
+        throw new Error("Missing the required parameter 'contractId' when calling getCustomerContractDetails");
       }
 
       let pathParams = {
@@ -111,7 +111,7 @@ export default class CustomerContractApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CustomerContractDetailResponseModel;
@@ -124,12 +124,12 @@ export default class CustomerContractApi {
 
     /**
      * Retrieve Contract Details
-     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
      * @param {Number} contractId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerContractDetailResponseModel}
      */
-    retrieveContractDetails(contractId) {
-      return this.retrieveContractDetailsWithHttpInfo(contractId)
+    getCustomerContractDetails(contractId) {
+      return this.getCustomerContractDetailsWithHttpInfo(contractId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -145,12 +145,12 @@ export default class CustomerContractApi {
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContractGPUAllocationGraphResponse} and HTTP response
      */
-    retrieveGpuAllocationGraphForContractWithHttpInfo(contractId, opts) {
+    getCustomerContractGpuAllocationGraphWithHttpInfo(contractId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'contractId' is set
       if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling retrieveGpuAllocationGraphForContract");
+        throw new Error("Missing the required parameter 'contractId' when calling getCustomerContractGpuAllocationGraph");
       }
 
       let pathParams = {
@@ -165,7 +165,7 @@ export default class CustomerContractApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ContractGPUAllocationGraphResponse;
@@ -185,8 +185,8 @@ export default class CustomerContractApi {
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContractGPUAllocationGraphResponse}
      */
-    retrieveGpuAllocationGraphForContract(contractId, opts) {
-      return this.retrieveGpuAllocationGraphForContractWithHttpInfo(contractId, opts)
+    getCustomerContractGpuAllocationGraph(contractId, opts) {
+      return this.getCustomerContractGpuAllocationGraphWithHttpInfo(contractId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property features (base name: "features")', function() {
+      // uncomment below and update the code to test the property features
+      //var instance = new HyperstackApi.InstanceFlavorFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property gpu (base name: "gpu")', function() {
       // uncomment below and update the code to test the property gpu
       //var instance = new HyperstackApi.InstanceFlavorFields();
@@ -86,6 +92,12 @@
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
+      //var instance = new HyperstackApi.InstanceFlavorFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property labels (base name: "labels")', function() {
+      // uncomment below and update the code to test the property labels
       //var instance = new HyperstackApi.InstanceFlavorFields();
       //expect(instance).to.be();
     });

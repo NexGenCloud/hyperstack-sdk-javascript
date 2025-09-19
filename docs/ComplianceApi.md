@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCompliance**](ComplianceApi.md#createCompliance) | **POST** /core/compliance | Create compliance
 [**deleteACompliance**](ComplianceApi.md#deleteACompliance) | **DELETE** /core/compliance/{gpu_model} | Delete a compliance
-[**retrieveGpuCompliance**](ComplianceApi.md#retrieveGpuCompliance) | **GET** /core/compliance | Retrieve GPU compliance
+[**retrieveCompliance**](ComplianceApi.md#retrieveCompliance) | **GET** /core/compliance | Retrieve GPU compliance
 [**updateACompliance**](ComplianceApi.md#updateACompliance) | **PUT** /core/compliance | Update a compliance
 
 
@@ -27,11 +27,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ComplianceApi();
 let payload = new HyperstackApi.CompliancePayload(); // CompliancePayload | 
@@ -56,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -80,11 +75,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ComplianceApi();
 let gpuModel = "gpuModel_example"; // String | 
@@ -109,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -117,13 +107,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveGpuCompliance
+## retrieveCompliance
 
-> ComplianceResponse retrieveGpuCompliance(opts)
+> ComplianceResponse retrieveCompliance(opts)
 
 Retrieve GPU compliance
 
-Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional &#x60;gpu&#x60; model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional &#x60;gpu&#x60; model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
 ### Example
 
@@ -135,17 +125,12 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ComplianceApi();
 let opts = {
   'gpu': "gpu_example" // String | This is for gpu model
 };
-apiInstance.retrieveGpuCompliance(opts).then((data) => {
+apiInstance.retrieveCompliance(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -166,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -190,11 +175,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ComplianceApi();
 let payload = new HyperstackApi.CompliancePayload(); // CompliancePayload | 
@@ -219,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

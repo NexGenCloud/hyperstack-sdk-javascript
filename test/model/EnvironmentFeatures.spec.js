@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(HyperstackApi.EnvironmentFeatures);
     });
 
+    it('should have the property greenStatus (base name: "green_status")', function() {
+      // uncomment below and update the code to test the property greenStatus
+      //var instance = new HyperstackApi.EnvironmentFeatures();
+      //expect(instance).to.be();
+    });
+
     it('should have the property networkOptimised (base name: "network_optimised")', function() {
       // uncomment below and update the code to test the property networkOptimised
       //var instance = new HyperstackApi.EnvironmentFeatures();

@@ -5,11 +5,12 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createVolume**](VolumeApi.md#createVolume) | **POST** /core/volumes | Create volume
-[**deleteVolume**](VolumeApi.md#deleteVolume) | **DELETE** /core/volumes/{id} | Delete volume
-[**fetchVolumeDetails**](VolumeApi.md#fetchVolumeDetails) | **GET** /core/volume/{volume_id} | Fetch Volume Details
+[**deleteVolume**](VolumeApi.md#deleteVolume) | **DELETE** /core/volumes/{volume_id} | Delete volume
+[**fetchVolumeDetails**](VolumeApi.md#fetchVolumeDetails) | **GET** /core/volumes/{volume_id} | Fetch Volume Details
 [**fetchVolumeNameAvailability**](VolumeApi.md#fetchVolumeNameAvailability) | **GET** /core/volume/name-availability/{name} | Fetch volume name availability
 [**listVolumeTypes**](VolumeApi.md#listVolumeTypes) | **GET** /core/volume-types | List volume types
 [**listVolumes**](VolumeApi.md#listVolumes) | **GET** /core/volumes | List volumes
+[**updateVolume**](VolumeApi.md#updateVolume) | **PATCH** /core/volumes/{volume_id} | Update volume fields
 
 
 
@@ -19,7 +20,7 @@ Method | HTTP request | Description
 
 Create volume
 
-Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/create-volume).
 
 ### Example
 
@@ -31,11 +32,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VolumeApi();
 let payload = new HyperstackApi.CreateVolumePayload(); // CreateVolumePayload | 
@@ -60,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -70,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## deleteVolume
 
-> ResponseModel deleteVolume(id)
+> ResponseModel deleteVolume(volumeId)
 
 Delete volume
 
@@ -86,15 +82,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VolumeApi();
-let id = 56; // Number | 
-apiInstance.deleteVolume(id).then((data) => {
+let volumeId = 56; // Number | 
+apiInstance.deleteVolume(volumeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -107,7 +98,7 @@ apiInstance.deleteVolume(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
+ **volumeId** | **Number**|  | 
 
 ### Return type
 
@@ -115,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -125,7 +116,7 @@ Name | Type | Description  | Notes
 
 ## fetchVolumeDetails
 
-> Volumes fetchVolumeDetails(volumeId)
+> Volume fetchVolumeDetails(volumeId)
 
 Fetch Volume Details
 
@@ -141,11 +132,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VolumeApi();
 let volumeId = 56; // Number | 
@@ -166,11 +152,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Volumes**](Volumes.md)
+[**Volume**](Volume.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -196,11 +182,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VolumeApi();
 let name = "name_example"; // String | 
@@ -225,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -251,11 +232,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VolumeApi();
 apiInstance.listVolumeTypes().then((data) => {
@@ -276,7 +252,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -290,7 +266,7 @@ This endpoint does not need any parameter.
 
 List volumes
 
-Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/).
 
 ### Example
 
@@ -302,11 +278,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.VolumeApi();
 let opts = {
@@ -339,10 +310,62 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## updateVolume
+
+> UpdateVolumeResponse updateVolume(volumeId, payload)
+
+Update volume fields
+
+Update volume properties. Currently supports updating the environment by providing &#39;environment_name&#39;. The volume must not be attached to any instance when changing environments, and the target environment must be in the same region.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VolumeApi();
+let volumeId = 56; // Number | 
+let payload = new HyperstackApi.UpdateVolumePayload(); // UpdateVolumePayload | 
+apiInstance.updateVolume(volumeId, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **volumeId** | **Number**|  | 
+ **payload** | [**UpdateVolumePayload**](UpdateVolumePayload.md)|  | 
+
+### Return type
+
+[**UpdateVolumeResponse**](UpdateVolumeResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

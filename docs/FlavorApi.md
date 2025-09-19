@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 List Flavors
 
-Returns a list of available virtual machine hardware configurations, known as             **flavors**. You can specify a &#x60;region_name&#x60; in the query string of the request to             retrieve flavors available only in the specified region; by default, it returns flavors              available in all regions. For more details on flavors,              [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors).
+Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a &#x60;region_name&#x60; in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors).
 
 ### Example
 
@@ -26,11 +26,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.FlavorApi();
 let opts = {
@@ -57,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

@@ -48,10 +48,10 @@
   }
 
   describe('PricebookApi', function() {
-    describe('retrivePricebook', function() {
-      it('should call retrivePricebook successfully', function(done) {
-        //uncomment below and update the code to test retrivePricebook
-        //instance.retrivePricebook(function(error) {
+    describe('getPricebook', function() {
+      it('should call getPricebook successfully', function(done) {
+        //uncomment below and update the code to test getPricebook
+        //instance.getPricebook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

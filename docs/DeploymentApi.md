@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteDeployment**](DeploymentApi.md#deleteDeployment) | **DELETE** /core/marketplace/deployments/{id} | Delete Deployment
-[**detailsOfDeploymentById**](DeploymentApi.md#detailsOfDeploymentById) | **GET** /core/marketplace/deployments/{id} | Details of Deployment by ID
+[**detailsOfDeploymentByID**](DeploymentApi.md#detailsOfDeploymentByID) | **GET** /core/marketplace/deployments/{id} | Details of Deployment by ID
 [**listDeployments**](DeploymentApi.md#listDeployments) | **GET** /core/marketplace/deployments | List Deployments
 [**startDeployment**](DeploymentApi.md#startDeployment) | **POST** /core/marketplace/deployments | Start Deployment
 
@@ -27,11 +27,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.DeploymentApi();
 let id = 56; // Number | 
@@ -56,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -64,9 +59,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## detailsOfDeploymentById
+## detailsOfDeploymentByID
 
-> StartDeployment detailsOfDeploymentById(id)
+> StartDeployment detailsOfDeploymentByID(id)
 
 Details of Deployment by ID
 
@@ -80,15 +75,10 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.DeploymentApi();
 let id = 56; // Number | 
-apiInstance.detailsOfDeploymentById(id).then((data) => {
+apiInstance.detailsOfDeploymentByID(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -109,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -133,11 +123,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.DeploymentApi();
 apiInstance.listDeployments().then((data) => {
@@ -158,7 +143,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -182,11 +167,6 @@ let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.DeploymentApi();
 let payload = new HyperstackApi.StartDeploymentPayload(); // StartDeploymentPayload | 
@@ -211,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

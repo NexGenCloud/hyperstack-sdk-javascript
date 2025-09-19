@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ContractDiscountPlanFields model module.
  * @module model/ContractDiscountPlanFields
- * @version v1.25.0-alpha
+ * @version v1.41.0-alpha
  */
 var ContractDiscountPlanFields = /*#__PURE__*/function () {
   /**
@@ -76,6 +76,9 @@ var ContractDiscountPlanFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+        }
+        if (data.hasOwnProperty('remaining_count')) {
+          obj['remaining_count'] = _ApiClient["default"].convertToType(data['remaining_count'], 'Number');
         }
         if (data.hasOwnProperty('resource_count')) {
           obj['resource_count'] = _ApiClient["default"].convertToType(data['resource_count'], 'Number');
@@ -147,6 +150,11 @@ ContractDiscountPlanFields.prototype['discount_type'] = undefined;
  * @member {Number} id
  */
 ContractDiscountPlanFields.prototype['id'] = undefined;
+
+/**
+ * @member {Number} remaining_count
+ */
+ContractDiscountPlanFields.prototype['remaining_count'] = undefined;
 
 /**
  * @member {Number} resource_count

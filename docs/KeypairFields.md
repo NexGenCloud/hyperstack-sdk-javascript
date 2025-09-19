@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | **Date** |  | [optional] 
-**environment** | **String** |  | [optional] 
+**environment** | [**KeypairEnvironmentFields**](KeypairEnvironmentFields.md) |  | [optional] 
 **fingerprint** | **String** |  | [optional] 
 **id** | **Number** |  | [optional] 
 **name** | **String** |  | [optional] 

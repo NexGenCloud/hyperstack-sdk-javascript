@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Calculate service.
 * @module api/CalculateApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 var CalculateApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -51,16 +51,16 @@ var CalculateApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceBillingResponseForCustomer} and HTTP response
    */
   return _createClass(CalculateApi, [{
-    key: "retrieveBillingRateForResourceWithHttpInfo",
-    value: function retrieveBillingRateForResourceWithHttpInfo(resourceType, id) {
+    key: "getCalculate2WithHttpInfo",
+    value: function getCalculate2WithHttpInfo(resourceType, id) {
       var postBody = null;
       // verify the required parameter 'resourceType' is set
       if (resourceType === undefined || resourceType === null) {
-        throw new Error("Missing the required parameter 'resourceType' when calling retrieveBillingRateForResource");
+        throw new Error("Missing the required parameter 'resourceType' when calling getCalculate2");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling retrieveBillingRateForResource");
+        throw new Error("Missing the required parameter 'id' when calling getCalculate2");
       }
       var pathParams = {
         'resource_type': resourceType,
@@ -69,7 +69,7 @@ var CalculateApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = ['apiKey', 'accessToken'];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResourceBillingResponseForCustomer["default"];
@@ -84,9 +84,9 @@ var CalculateApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceBillingResponseForCustomer}
      */
   }, {
-    key: "retrieveBillingRateForResource",
-    value: function retrieveBillingRateForResource(resourceType, id) {
-      return this.retrieveBillingRateForResourceWithHttpInfo(resourceType, id).then(function (response_and_data) {
+    key: "getCalculate2",
+    value: function getCalculate2(resourceType, id) {
+      return this.getCalculate2WithHttpInfo(resourceType, id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -96,20 +96,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property masterFlavor (base name: "master_flavor")', function() {
+      // uncomment below and update the code to test the property masterFlavor
+      //var instance = new HyperstackApi.ClusterFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instance = new HyperstackApi.ClusterFields();
       //expect(instance).to.be();
     });
 
-    it('should have the property nodeCount (base name: "node_count")', function() {
-      // uncomment below and update the code to test the property nodeCount
+    it('should have the property nodeGroups (base name: "node_groups")', function() {
+      // uncomment below and update the code to test the property nodeGroups
       //var instance = new HyperstackApi.ClusterFields();
       //expect(instance).to.be();
     });
 
-    it('should have the property nodeFlavor (base name: "node_flavor")', function() {
-      // uncomment below and update the code to test the property nodeFlavor
+    it('should have the property nodes (base name: "nodes")', function() {
+      // uncomment below and update the code to test the property nodes
       //var instance = new HyperstackApi.ClusterFields();
       //expect(instance).to.be();
     });

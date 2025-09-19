@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * SnapshotEvents service.
 * @module api/SnapshotEventsApi
-* @version v1.25.0-alpha
+* @version v1.41.0-alpha
 */
 export default class SnapshotEventsApi {
 
@@ -57,7 +57,7 @@ export default class SnapshotEventsApi {
       let formParams = {
       };
 
-      let authNames = ['apiKey', 'accessToken'];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
