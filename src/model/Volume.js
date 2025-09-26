@@ -17,7 +17,7 @@ import VolumeFields from './VolumeFields';
 /**
  * The Volume model module.
  * @module model/Volume
- * @version v1.41.0-alpha
+ * @version v1.41.2-alpha
  */
 class Volume {
     /**

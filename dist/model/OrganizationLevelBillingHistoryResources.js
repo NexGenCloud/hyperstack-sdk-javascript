@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The OrganizationLevelBillingHistoryResources model module.
  * @module model/OrganizationLevelBillingHistoryResources
- * @version v1.41.0-alpha
+ * @version v1.41.2-alpha
  */
 var OrganizationLevelBillingHistoryResources = /*#__PURE__*/function () {
   /**

@@ -48,6 +48,16 @@
   }
 
   describe('ClustersApi', function() {
+    describe('attemptToManuallyReconcileACluster', function() {
+      it('should call attemptToManuallyReconcileACluster successfully', function(done) {
+        //uncomment below and update the code to test attemptToManuallyReconcileACluster
+        //instance.attemptToManuallyReconcileACluster(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCluster', function() {
       it('should call createCluster successfully', function(done) {
         //uncomment below and update the code to test createCluster

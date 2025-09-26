@@ -24,6 +24,7 @@ import CreateClusterNodeFields from '../model/CreateClusterNodeFields';
 import CreateClusterNodeGroupPayload from '../model/CreateClusterNodeGroupPayload';
 import CreateClusterPayload from '../model/CreateClusterPayload';
 import ErrorResponseModel from '../model/ErrorResponseModel';
+import ManualReconciliationModel from '../model/ManualReconciliationModel';
 import MasterFlavorsResponse from '../model/MasterFlavorsResponse';
 import NameAvailableModel from '../model/NameAvailableModel';
 import ResponseModel from '../model/ResponseModel';
@@ -31,7 +32,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.41.0-alpha
+* @version v1.41.2-alpha
 */
 export default class ClustersApi {
 
@@ -46,6 +47,52 @@ export default class ClustersApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Reconcile a cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ManualReconciliationModel} and HTTP response
+     */
+    attemptToManuallyReconcileAClusterWithHttpInfo(clusterId) {
+      let postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling attemptToManuallyReconcileACluster");
+      }
+
+      let pathParams = {
+        'cluster_id': clusterId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ManualReconciliationModel;
+      return this.apiClient.callApi(
+        '/core/clusters/{cluster_id}/reconcile', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Reconcile a cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ManualReconciliationModel}
+     */
+    attemptToManuallyReconcileACluster(clusterId) {
+      return this.attemptToManuallyReconcileAClusterWithHttpInfo(clusterId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**

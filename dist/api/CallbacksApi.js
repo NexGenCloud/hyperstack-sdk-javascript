@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Callbacks service.
 * @module api/CallbacksApi
-* @version v1.41.0-alpha
+* @version v1.41.2-alpha
 */
 var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
   /**

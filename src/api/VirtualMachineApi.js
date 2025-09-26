@@ -36,7 +36,7 @@ import SecurityGroupRule from '../model/SecurityGroupRule';
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.41.0-alpha
+* @version v1.41.2-alpha
 */
 export default class VirtualMachineApi {
 

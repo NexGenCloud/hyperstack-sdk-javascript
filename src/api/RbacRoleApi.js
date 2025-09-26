@@ -23,7 +23,7 @@ import RbacRoleDetailResponseModelFixed from '../model/RbacRoleDetailResponseMod
 /**
 * RbacRole service.
 * @module api/RbacRoleApi
-* @version v1.41.0-alpha
+* @version v1.41.2-alpha
 */
 export default class RbacRoleApi {
 

@@ -16,6 +16,7 @@ var _CreateClusterNodeFields = _interopRequireDefault(require("../model/CreateCl
 var _CreateClusterNodeGroupPayload = _interopRequireDefault(require("../model/CreateClusterNodeGroupPayload"));
 var _CreateClusterPayload = _interopRequireDefault(require("../model/CreateClusterPayload"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
+var _ManualReconciliationModel = _interopRequireDefault(require("../model/ManualReconciliationModel"));
 var _MasterFlavorsResponse = _interopRequireDefault(require("../model/MasterFlavorsResponse"));
 var _NameAvailableModel = _interopRequireDefault(require("../model/NameAvailableModel"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
@@ -40,7 +41,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.41.0-alpha
+* @version v1.41.2-alpha
 */
 var ClustersApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -56,11 +57,50 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
   }
 
   /**
-   * Create Cluster
-   * @param {module:model/CreateClusterPayload} payload 
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterResponse} and HTTP response
+   * Reconcile a cluster
+   * @param {Number} clusterId 
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ManualReconciliationModel} and HTTP response
    */
   return _createClass(ClustersApi, [{
+    key: "attemptToManuallyReconcileAClusterWithHttpInfo",
+    value: function attemptToManuallyReconcileAClusterWithHttpInfo(clusterId) {
+      var postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling attemptToManuallyReconcileACluster");
+      }
+      var pathParams = {
+        'cluster_id': clusterId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ManualReconciliationModel["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/reconcile', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Reconcile a cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ManualReconciliationModel}
+     */
+  }, {
+    key: "attemptToManuallyReconcileACluster",
+    value: function attemptToManuallyReconcileACluster(clusterId) {
+      return this.attemptToManuallyReconcileAClusterWithHttpInfo(clusterId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Create Cluster
+     * @param {module:model/CreateClusterPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterResponse} and HTTP response
+     */
+  }, {
     key: "createClusterWithHttpInfo",
     value: function createClusterWithHttpInfo(payload) {
       var postBody = payload;

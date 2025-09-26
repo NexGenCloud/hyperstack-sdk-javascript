@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComplianceModelFields model module.
  * @module model/ComplianceModelFields
- * @version v1.41.0-alpha
+ * @version v1.41.2-alpha
  */
 class ComplianceModelFields {
     /**

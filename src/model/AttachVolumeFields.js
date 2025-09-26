@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachVolumeFields model module.
  * @module model/AttachVolumeFields
- * @version v1.41.0-alpha
+ * @version v1.41.2-alpha
  */
 class AttachVolumeFields {
     /**

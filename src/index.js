@@ -166,6 +166,7 @@ import LastDayCostResponse from './model/LastDayCostResponse';
 import Logos from './model/Logos';
 import MFAStatusFields from './model/MFAStatusFields';
 import MFAStatusResponse from './model/MFAStatusResponse';
+import ManualReconciliationModel from './model/ManualReconciliationModel';
 import MasterFlavorsResponse from './model/MasterFlavorsResponse';
 import MetricItemFields from './model/MetricItemFields';
 import MetricsFields from './model/MetricsFields';
@@ -380,7 +381,7 @@ import VolumeAttachmentApi from './api/VolumeAttachmentApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.41.0-alpha
+* @version v1.41.2-alpha
 */
 export {
     /**
@@ -1306,6 +1307,12 @@ export {
      * @property {module:model/MFAStatusResponse}
      */
     MFAStatusResponse,
+
+    /**
+     * The ManualReconciliationModel model constructor.
+     * @property {module:model/ManualReconciliationModel}
+     */
+    ManualReconciliationModel,
 
     /**
      * The MasterFlavorsResponse model constructor.

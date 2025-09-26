@@ -19,7 +19,7 @@ import PartnerConfig from '../model/PartnerConfig';
 /**
 * PartnerConfig service.
 * @module api/PartnerConfigApi
-* @version v1.41.0-alpha
+* @version v1.41.2-alpha
 */
 export default class PartnerConfigApi {
 
