@@ -22,7 +22,7 @@ import GetApiKeysResponseModel from '../model/GetApiKeysResponseModel';
 /**
 * ApiKey service.
 * @module api/ApiKeyApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 export default class ApiKeyApi {
 

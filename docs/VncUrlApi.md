@@ -4,14 +4,14 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVncUrl**](VncUrlApi.md#getVncUrl) | **GET** /core/virtual-machines/{vm_id}/console/{job_id} | Get VNC Console Link
-[**getVncUrl2**](VncUrlApi.md#getVncUrl2) | **GET** /core/virtual-machines/{vm_id}/request-console | Request Instance Console
+[**getVNCURL**](VncUrlApi.md#getVNCURL) | **GET** /core/virtual-machines/{vm_id}/console/{job_id} | Get VNC Console Link
+[**getVncUrl**](VncUrlApi.md#getVncUrl) | **GET** /core/virtual-machines/{vm_id}/request-console | Request Instance Console
 
 
 
-## getVncUrl
+## getVNCURL
 
-> VNCURL getVncUrl(vmId, jobId)
+> VNCURL getVNCURL(vmId, jobId)
 
 Get VNC Console Link
 
@@ -31,7 +31,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.VncUrlApi();
 let vmId = 56; // Number | 
 let jobId = 56; // Number | 
-apiInstance.getVncUrl(vmId, jobId).then((data) => {
+apiInstance.getVNCURL(vmId, jobId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -61,9 +61,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getVncUrl2
+## getVncUrl
 
-> RequestConsole getVncUrl2(vmId)
+> RequestConsole getVncUrl(vmId)
 
 Request Instance Console
 
@@ -82,7 +82,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VncUrlApi();
 let vmId = 56; // Number | 
-apiInstance.getVncUrl2(vmId).then((data) => {
+apiInstance.getVncUrl(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

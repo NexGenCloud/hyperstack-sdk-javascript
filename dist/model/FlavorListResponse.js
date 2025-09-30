@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FlavorListResponse model module.
  * @module model/FlavorListResponse
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var FlavorListResponse = /*#__PURE__*/function () {
   /**

@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Organization service.
 * @module api/OrganizationApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 var OrganizationApi = exports["default"] = /*#__PURE__*/function () {
   /**

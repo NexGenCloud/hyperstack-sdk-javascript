@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentInitiatePayload model module.
  * @module model/PaymentInitiatePayload
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 class PaymentInitiatePayload {
     /**

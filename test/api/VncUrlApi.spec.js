@@ -48,20 +48,20 @@
   }
 
   describe('VncUrlApi', function() {
-    describe('getVncUrl', function() {
-      it('should call getVncUrl successfully', function(done) {
-        //uncomment below and update the code to test getVncUrl
-        //instance.getVncUrl(function(error) {
+    describe('getVNCURL', function() {
+      it('should call getVNCURL successfully', function(done) {
+        //uncomment below and update the code to test getVNCURL
+        //instance.getVNCURL(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getVncUrl2', function() {
-      it('should call getVncUrl2 successfully', function(done) {
-        //uncomment below and update the code to test getVncUrl2
-        //instance.getVncUrl2(function(error) {
+    describe('getVncUrl', function() {
+      it('should call getVncUrl successfully', function(done) {
+        //uncomment below and update the code to test getVncUrl
+        //instance.getVncUrl(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -17,7 +17,7 @@ import SnapshotRetrieveFields from './SnapshotRetrieveFields';
 /**
  * The SnapshotRetrieve model module.
  * @module model/SnapshotRetrieve
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 class SnapshotRetrieve {
     /**

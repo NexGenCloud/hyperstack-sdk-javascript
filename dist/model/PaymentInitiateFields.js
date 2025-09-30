@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The PaymentInitiateFields model module.
  * @module model/PaymentInitiateFields
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var PaymentInitiateFields = /*#__PURE__*/function () {
   /**

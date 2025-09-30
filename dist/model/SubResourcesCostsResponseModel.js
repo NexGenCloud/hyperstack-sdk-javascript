@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SubResourcesCostsResponseModel model module.
  * @module model/SubResourcesCostsResponseModel
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var SubResourcesCostsResponseModel = /*#__PURE__*/function () {
   /**

@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The RolePermissionFields model module.
  * @module model/RolePermissionFields
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var RolePermissionFields = /*#__PURE__*/function () {
   /**

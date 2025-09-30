@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InstanceEventsFields model module.
  * @module model/InstanceEventsFields
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var InstanceEventsFields = /*#__PURE__*/function () {
   /**

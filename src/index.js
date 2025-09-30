@@ -304,6 +304,7 @@ import VolumeTypes from './model/VolumeTypes';
 import Volumes from './model/Volumes';
 import VolumesFields from './model/VolumesFields';
 import WorkloadBillingHistoryResponse from './model/WorkloadBillingHistoryResponse';
+import AdminApi from './api/AdminApi';
 import AliveApi from './api/AliveApi';
 import ApiKeyApi from './api/ApiKeyApi';
 import AssigningMemberRoleApi from './api/AssigningMemberRoleApi';
@@ -381,7 +382,7 @@ import VolumeAttachmentApi from './api/VolumeAttachmentApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 export {
     /**
@@ -2135,6 +2136,12 @@ export {
      * @property {module:model/WorkloadBillingHistoryResponse}
      */
     WorkloadBillingHistoryResponse,
+
+    /**
+    * The AdminApi service constructor.
+    * @property {module:api/AdminApi}
+    */
+    AdminApi,
 
     /**
     * The AliveApi service constructor.

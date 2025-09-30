@@ -32,7 +32,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 export default class ClustersApi {
 

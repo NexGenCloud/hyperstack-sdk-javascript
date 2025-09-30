@@ -17,7 +17,7 @@ import ResourceLevelBillingBucketDetailsResources from './ResourceLevelBillingBu
 /**
  * The ResourceLevelBucketBillingDetailsResponseModel model module.
  * @module model/ResourceLevelBucketBillingDetailsResponseModel
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 class ResourceLevelBucketBillingDetailsResponseModel {
     /**

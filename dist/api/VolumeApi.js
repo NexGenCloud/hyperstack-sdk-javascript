@@ -35,7 +35,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Volume service.
 * @module api/VolumeApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 var VolumeApi = exports["default"] = /*#__PURE__*/function () {
   /**

@@ -20,7 +20,7 @@ import VNCURL from '../model/VNCURL';
 /**
 * VncUrl service.
 * @module api/VncUrlApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 export default class VncUrlApi {
 
@@ -44,15 +44,15 @@ export default class VncUrlApi {
      * @param {Number} jobId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VNCURL} and HTTP response
      */
-    getVncUrlWithHttpInfo(vmId, jobId) {
+    getVNCURLWithHttpInfo(vmId, jobId) {
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getVncUrl");
+        throw new Error("Missing the required parameter 'vmId' when calling getVNCURL");
       }
       // verify the required parameter 'jobId' is set
       if (jobId === undefined || jobId === null) {
-        throw new Error("Missing the required parameter 'jobId' when calling getVncUrl");
+        throw new Error("Missing the required parameter 'jobId' when calling getVNCURL");
       }
 
       let pathParams = {
@@ -84,8 +84,8 @@ export default class VncUrlApi {
      * @param {Number} jobId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VNCURL}
      */
-    getVncUrl(vmId, jobId) {
-      return this.getVncUrlWithHttpInfo(vmId, jobId)
+    getVNCURL(vmId, jobId) {
+      return this.getVNCURLWithHttpInfo(vmId, jobId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -98,11 +98,11 @@ export default class VncUrlApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestConsole} and HTTP response
      */
-    getVncUrl2WithHttpInfo(vmId) {
+    getVncUrlWithHttpInfo(vmId) {
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getVncUrl2");
+        throw new Error("Missing the required parameter 'vmId' when calling getVncUrl");
       }
 
       let pathParams = {
@@ -132,8 +132,8 @@ export default class VncUrlApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestConsole}
      */
-    getVncUrl2(vmId) {
-      return this.getVncUrl2WithHttpInfo(vmId)
+    getVncUrl(vmId) {
+      return this.getVncUrlWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

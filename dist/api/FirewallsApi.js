@@ -34,7 +34,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Firewalls service.
 * @module api/FirewallsApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -50,18 +50,104 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
   }
 
   /**
-   * Delete firewall
-   * Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
-   * @param {Number} id 
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+   * Add firewall rule to firewall
+   * Creates a [**firewall rule**](https://docs.hyperstack.cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+   * @param {Number} firewallId 
+   * @param {module:model/CreateFirewallRulePayload} payload 
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallRule} and HTTP response
    */
   return _createClass(FirewallsApi, [{
-    key: "deleteSecurityGroupDetailsWithHttpInfo",
-    value: function deleteSecurityGroupDetailsWithHttpInfo(id) {
+    key: "addFirewallRuleToAnExistingFirewallWithHttpInfo",
+    value: function addFirewallRuleToAnExistingFirewallWithHttpInfo(firewallId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling addFirewallRuleToAnExistingFirewall");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling addFirewallRuleToAnExistingFirewall");
+      }
+      var pathParams = {
+        'firewall_id': firewallId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _FirewallRule["default"];
+      return this.apiClient.callApi('/core/firewalls/{firewall_id}/firewall-rules', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Add firewall rule to firewall
+     * Creates a [**firewall rule**](https://docs.hyperstack.cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+     * @param {Number} firewallId 
+     * @param {module:model/CreateFirewallRulePayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallRule}
+     */
+  }, {
+    key: "addFirewallRuleToAnExistingFirewall",
+    value: function addFirewallRuleToAnExistingFirewall(firewallId, payload) {
+      return this.addFirewallRuleToAnExistingFirewallWithHttpInfo(firewallId, payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Create firewall
+     * Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+     * @param {module:model/CreateFirewallPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallResponse} and HTTP response
+     */
+  }, {
+    key: "createANewFirewallWithHttpInfo",
+    value: function createANewFirewallWithHttpInfo(payload) {
+      var postBody = payload;
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling createANewFirewall");
+      }
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _FirewallResponse["default"];
+      return this.apiClient.callApi('/core/firewalls', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Create firewall
+     * Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+     * @param {module:model/CreateFirewallPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallResponse}
+     */
+  }, {
+    key: "createANewFirewall",
+    value: function createANewFirewall(payload) {
+      return this.createANewFirewallWithHttpInfo(payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Delete firewall
+     * Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     */
+  }, {
+    key: "deleteExistingFirewallWithHttpInfo",
+    value: function deleteExistingFirewallWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteSecurityGroupDetails");
+        throw new Error("Missing the required parameter 'id' when calling deleteExistingFirewall");
       }
       var pathParams = {
         'id': id
@@ -83,9 +169,9 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteSecurityGroupDetails",
-    value: function deleteSecurityGroupDetails(id) {
-      return this.deleteSecurityGroupDetailsWithHttpInfo(id).then(function (response_and_data) {
+    key: "deleteExistingFirewall",
+    value: function deleteExistingFirewall(id) {
+      return this.deleteExistingFirewallWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -98,16 +184,16 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "deleteSecurityGroupRuleDeleteWithHttpInfo",
-    value: function deleteSecurityGroupRuleDeleteWithHttpInfo(firewallId, firewallRuleId) {
+    key: "deleteFirewallRulesFromFirewallWithHttpInfo",
+    value: function deleteFirewallRulesFromFirewallWithHttpInfo(firewallId, firewallRuleId) {
       var postBody = null;
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling deleteSecurityGroupRuleDelete");
+        throw new Error("Missing the required parameter 'firewallId' when calling deleteFirewallRulesFromFirewall");
       }
       // verify the required parameter 'firewallRuleId' is set
       if (firewallRuleId === undefined || firewallRuleId === null) {
-        throw new Error("Missing the required parameter 'firewallRuleId' when calling deleteSecurityGroupRuleDelete");
+        throw new Error("Missing the required parameter 'firewallRuleId' when calling deleteFirewallRulesFromFirewall");
       }
       var pathParams = {
         'firewall_id': firewallId,
@@ -131,9 +217,9 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteSecurityGroupRuleDelete",
-    value: function deleteSecurityGroupRuleDelete(firewallId, firewallRuleId) {
-      return this.deleteSecurityGroupRuleDeleteWithHttpInfo(firewallId, firewallRuleId).then(function (response_and_data) {
+    key: "deleteFirewallRulesFromFirewall",
+    value: function deleteFirewallRulesFromFirewall(firewallId, firewallRuleId) {
+      return this.deleteFirewallRulesFromFirewallWithHttpInfo(firewallId, firewallRuleId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -149,8 +235,8 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallsListResponse} and HTTP response
      */
   }, {
-    key: "getSecurityGroupWithHttpInfo",
-    value: function getSecurityGroupWithHttpInfo(opts) {
+    key: "listExistingFirewallsWithHttpInfo",
+    value: function listExistingFirewallsWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
       var pathParams = {};
@@ -180,9 +266,9 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallsListResponse}
      */
   }, {
-    key: "getSecurityGroup",
-    value: function getSecurityGroup(opts) {
-      return this.getSecurityGroupWithHttpInfo(opts).then(function (response_and_data) {
+    key: "listExistingFirewalls",
+    value: function listExistingFirewalls(opts) {
+      return this.listExistingFirewallsWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -194,12 +280,12 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallDetailResponse} and HTTP response
      */
   }, {
-    key: "getSecurityGroupDetailsWithHttpInfo",
-    value: function getSecurityGroupDetailsWithHttpInfo(id) {
+    key: "retrieveTheDetailsOfAnExistingFirewallWithHttpInfo",
+    value: function retrieveTheDetailsOfAnExistingFirewallWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getSecurityGroupDetails");
+        throw new Error("Missing the required parameter 'id' when calling retrieveTheDetailsOfAnExistingFirewall");
       }
       var pathParams = {
         'id': id
@@ -221,95 +307,9 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallDetailResponse}
      */
   }, {
-    key: "getSecurityGroupDetails",
-    value: function getSecurityGroupDetails(id) {
-      return this.getSecurityGroupDetailsWithHttpInfo(id).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Create firewall
-     * Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
-     * @param {module:model/CreateFirewallPayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallResponse} and HTTP response
-     */
-  }, {
-    key: "postSecurityGroupWithHttpInfo",
-    value: function postSecurityGroupWithHttpInfo(payload) {
-      var postBody = payload;
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postSecurityGroup");
-      }
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _FirewallResponse["default"];
-      return this.apiClient.callApi('/core/firewalls', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Create firewall
-     * Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
-     * @param {module:model/CreateFirewallPayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallResponse}
-     */
-  }, {
-    key: "postSecurityGroup",
-    value: function postSecurityGroup(payload) {
-      return this.postSecurityGroupWithHttpInfo(payload).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Add firewall rule to firewall
-     * Creates a [**firewall rule**](https://docs.hyperstack.cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
-     * @param {Number} firewallId 
-     * @param {module:model/CreateFirewallRulePayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallRule} and HTTP response
-     */
-  }, {
-    key: "postSecurityGroupRulesWithHttpInfo",
-    value: function postSecurityGroupRulesWithHttpInfo(firewallId, payload) {
-      var postBody = payload;
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling postSecurityGroupRules");
-      }
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postSecurityGroupRules");
-      }
-      var pathParams = {
-        'firewall_id': firewallId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _FirewallRule["default"];
-      return this.apiClient.callApi('/core/firewalls/{firewall_id}/firewall-rules', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Add firewall rule to firewall
-     * Creates a [**firewall rule**](https://docs.hyperstack.cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
-     * @param {Number} firewallId 
-     * @param {module:model/CreateFirewallRulePayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallRule}
-     */
-  }, {
-    key: "postSecurityGroupRules",
-    value: function postSecurityGroupRules(firewallId, payload) {
-      return this.postSecurityGroupRulesWithHttpInfo(firewallId, payload).then(function (response_and_data) {
+    key: "retrieveTheDetailsOfAnExistingFirewall",
+    value: function retrieveTheDetailsOfAnExistingFirewall(id) {
+      return this.retrieveTheDetailsOfAnExistingFirewallWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The VolumesFields model module.
  * @module model/VolumesFields
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var VolumesFields = /*#__PURE__*/function () {
   /**

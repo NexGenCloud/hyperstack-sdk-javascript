@@ -17,7 +17,7 @@ import EnvironmentFields from './EnvironmentFields';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 class Environment {
     /**

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The OrganizationThresholdsResponse model module.
  * @module model/OrganizationThresholdsResponse
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var OrganizationThresholdsResponse = /*#__PURE__*/function () {
   /**

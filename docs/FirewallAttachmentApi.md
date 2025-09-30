@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postAttachSecurityGroups**](FirewallAttachmentApi.md#postAttachSecurityGroups) | **POST** /core/firewalls/{firewall_id}/update-attachments | Attach Firewalls to VMs
+[**attachFirewallToVirtualMachines**](FirewallAttachmentApi.md#attachFirewallToVirtualMachines) | **POST** /core/firewalls/{firewall_id}/update-attachments | Attach Firewalls to VMs
 
 
 
-## postAttachSecurityGroups
+## attachFirewallToVirtualMachines
 
-> ResponseModel postAttachSecurityGroups(firewallId, payload)
+> ResponseModel attachFirewallToVirtualMachines(firewallId, payload)
 
 Attach Firewalls to VMs
 
@@ -30,7 +30,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.FirewallAttachmentApi();
 let firewallId = 56; // Number | 
 let payload = new HyperstackApi.AttachFirewallWithVM(); // AttachFirewallWithVM | 
-apiInstance.postAttachSecurityGroups(firewallId, payload).then((data) => {
+apiInstance.attachFirewallToVirtualMachines(firewallId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

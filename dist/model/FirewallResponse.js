@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FirewallResponse model module.
  * @module model/FirewallResponse
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var FirewallResponse = /*#__PURE__*/function () {
   /**

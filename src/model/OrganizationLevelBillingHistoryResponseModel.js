@@ -17,7 +17,7 @@ import OrganizationLevelBillingHistory from './OrganizationLevelBillingHistory';
 /**
  * The OrganizationLevelBillingHistoryResponseModel model module.
  * @module model/OrganizationLevelBillingHistoryResponseModel
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 class OrganizationLevelBillingHistoryResponseModel {
     /**

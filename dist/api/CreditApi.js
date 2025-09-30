@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Credit service.
 * @module api/CreditApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 var CreditApi = exports["default"] = /*#__PURE__*/function () {
   /**

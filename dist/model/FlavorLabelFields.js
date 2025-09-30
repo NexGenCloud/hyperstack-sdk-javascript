@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FlavorLabelFields model module.
  * @module model/FlavorLabelFields
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var FlavorLabelFields = /*#__PURE__*/function () {
   /**

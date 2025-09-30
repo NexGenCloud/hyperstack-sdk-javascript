@@ -5,11 +5,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createANewCustomImage**](SnapshotsApi.md#createANewCustomImage) | **POST** /core/snapshots/{snapshot_id}/image | Create an image from a snapshot
-[**deleteSnapshot**](SnapshotsApi.md#deleteSnapshot) | **DELETE** /core/snapshots/{id} | Delete snapshot
+[**deleteAnExistingSnapshot**](SnapshotsApi.md#deleteAnExistingSnapshot) | **DELETE** /core/snapshots/{id} | Delete snapshot
 [**fetchSnapshotNameAvailability**](SnapshotsApi.md#fetchSnapshotNameAvailability) | **GET** /core/snapshots/name-availability/{name} | Fetch snapshot name availability
-[**getSnapshot**](SnapshotsApi.md#getSnapshot) | **GET** /core/snapshots/{id} | Retrieve a snapshot
-[**getSnapshots**](SnapshotsApi.md#getSnapshots) | **GET** /core/snapshots | Retrieve list of snapshots with pagination
-[**postSnapshotRestore**](SnapshotsApi.md#postSnapshotRestore) | **POST** /core/snapshots/{id}/restore | Restore a snapshot
+[**restoreASnapshot**](SnapshotsApi.md#restoreASnapshot) | **POST** /core/snapshots/{id}/restore | Restore a snapshot
+[**retrieveAnExistingSnapshot**](SnapshotsApi.md#retrieveAnExistingSnapshot) | **GET** /core/snapshots/{id} | Retrieve a snapshot
+[**retrievesAListOfSnapshots**](SnapshotsApi.md#retrievesAListOfSnapshots) | **GET** /core/snapshots | Retrieve list of snapshots with pagination
 
 
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteSnapshot
+## deleteAnExistingSnapshot
 
-> ResponseModel deleteSnapshot(id)
+> ResponseModel deleteAnExistingSnapshot(id)
 
 Delete snapshot
 
@@ -86,7 +86,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.SnapshotsApi();
 let id = 56; // Number | 
-apiInstance.deleteSnapshot(id).then((data) => {
+apiInstance.deleteAnExistingSnapshot(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -165,9 +165,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getSnapshot
+## restoreASnapshot
 
-> SnapshotRetrieve getSnapshot(id)
+> Instance restoreASnapshot(id, payload)
+
+Restore a snapshot
+
+Restore a snapshot.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.SnapshotsApi();
+let id = 56; // Number | 
+let payload = new HyperstackApi.SnapshotRestoreRequest(); // SnapshotRestoreRequest | 
+apiInstance.restoreASnapshot(id, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+ **payload** | [**SnapshotRestoreRequest**](SnapshotRestoreRequest.md)|  | 
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## retrieveAnExistingSnapshot
+
+> SnapshotRetrieve retrieveAnExistingSnapshot(id)
 
 Retrieve a snapshot
 
@@ -186,7 +238,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.SnapshotsApi();
 let id = 56; // Number | 
-apiInstance.getSnapshot(id).then((data) => {
+apiInstance.retrieveAnExistingSnapshot(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -215,13 +267,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getSnapshots
+## retrievesAListOfSnapshots
 
-> Snapshots getSnapshots(opts)
+> Snapshots retrievesAListOfSnapshots(opts)
 
 Retrieve list of snapshots with pagination
 
-Retrieves a list of snapshot, providing details such as snapshot name, timestamp, VM ID, and other relevant information.
+Retrieves a list of snapshots, providing details such as snapshot name, timestamp, VM ID, and other relevant information.
 
 ### Example
 
@@ -240,7 +292,7 @@ let opts = {
   'pageSize': "pageSize_example", // String | Data Per Page
   'search': "search_example" // String | Search By Snapshot ID or Name
 };
-apiInstance.getSnapshots(opts).then((data) => {
+apiInstance.retrievesAListOfSnapshots(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -268,57 +320,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## postSnapshotRestore
-
-> Instance postSnapshotRestore(id, payload)
-
-Restore a snapshot
-
-Restore a snapshot.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.SnapshotsApi();
-let id = 56; // Number | 
-let payload = new HyperstackApi.SnapshotRestoreRequest(); // SnapshotRestoreRequest | 
-apiInstance.postSnapshotRestore(id, payload).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
- **payload** | [**SnapshotRestoreRequest**](SnapshotRestoreRequest.md)|  | 
-
-### Return type
-
-[**Instance**](Instance.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 

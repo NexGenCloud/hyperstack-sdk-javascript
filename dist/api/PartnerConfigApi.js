@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * PartnerConfig service.
 * @module api/PartnerConfigApi
-* @version v1.41.2-alpha
+* @version v1.42.0-alpha
 */
 var PartnerConfigApi = exports["default"] = /*#__PURE__*/function () {
   /**

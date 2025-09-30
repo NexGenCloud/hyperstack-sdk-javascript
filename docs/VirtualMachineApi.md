@@ -4,36 +4,36 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteInstance**](VirtualMachineApi.md#deleteInstance) | **DELETE** /core/virtual-machines/{vm_id} | Delete virtual machine
+[**attachFirewallsToAVirtualMachine**](VirtualMachineApi.md#attachFirewallsToAVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/attach-firewalls | Attach firewalls to a virtual machine
+[**createOneOrMoreVirtualMachines**](VirtualMachineApi.md#createOneOrMoreVirtualMachines) | **POST** /core/virtual-machines | Create virtual machines
 [**deleteSecurityRule**](VirtualMachineApi.md#deleteSecurityRule) | **DELETE** /core/virtual-machines/{vm_id}/sg-rules/{sg_rule_id} | Delete firewall rule from virtual machine
+[**deleteVirtualMachine**](VirtualMachineApi.md#deleteVirtualMachine) | **DELETE** /core/virtual-machines/{vm_id} | Delete virtual machine
 [**fetchVirtualMachineNameAvailability**](VirtualMachineApi.md#fetchVirtualMachineNameAvailability) | **GET** /core/virtual-machines/name-availability/{name} | Fetch virtual machine name availability
-[**getContractInstances**](VirtualMachineApi.md#getContractInstances) | **GET** /core/virtual-machines/contract/{contract_id}/virtual-machines | Retrieve virtual machines associated with a contract
-[**getInstance**](VirtualMachineApi.md#getInstance) | **GET** /core/virtual-machines | List virtual machines
-[**getInstance2**](VirtualMachineApi.md#getInstance2) | **GET** /core/virtual-machines/{vm_id} | Retrieve virtual machine details
-[**getInstance3**](VirtualMachineApi.md#getInstance3) | **GET** /core/virtual-machines/{vm_id}/hard-reboot | Hard reboot virtual machine
-[**getInstance4**](VirtualMachineApi.md#getInstance4) | **GET** /core/virtual-machines/{vm_id}/start | Start virtual machine
-[**getInstance5**](VirtualMachineApi.md#getInstance5) | **GET** /core/virtual-machines/{vm_id}/stop | Stop virtual machine
+[**getInstanceHardReboot**](VirtualMachineApi.md#getInstanceHardReboot) | **GET** /core/virtual-machines/{vm_id}/hard-reboot | Hard reboot virtual machine
 [**getInstanceHibernate**](VirtualMachineApi.md#getInstanceHibernate) | **GET** /core/virtual-machines/{vm_id}/hibernate | Hibernate virtual machine
 [**getInstanceHibernateRestore**](VirtualMachineApi.md#getInstanceHibernateRestore) | **GET** /core/virtual-machines/{vm_id}/hibernate-restore | Restore virtual machine from hibernation
 [**getInstanceLogs**](VirtualMachineApi.md#getInstanceLogs) | **GET** /core/virtual-machines/{vm_id}/logs | Get virtual machine logs
 [**getInstanceMetrics**](VirtualMachineApi.md#getInstanceMetrics) | **GET** /core/virtual-machines/{vm_id}/metrics | Retrieve virtual machine performance metrics
-[**postInstance**](VirtualMachineApi.md#postInstance) | **POST** /core/virtual-machines | Create virtual machines
-[**postInstanceAttachFirewalls**](VirtualMachineApi.md#postInstanceAttachFirewalls) | **POST** /core/virtual-machines/{vm_id}/attach-firewalls | Attach firewalls to a virtual machine
+[**getInstanceStart**](VirtualMachineApi.md#getInstanceStart) | **GET** /core/virtual-machines/{vm_id}/start | Start virtual machine
+[**getInstanceStop**](VirtualMachineApi.md#getInstanceStop) | **GET** /core/virtual-machines/{vm_id}/stop | Stop virtual machine
+[**listVirtualMachines**](VirtualMachineApi.md#listVirtualMachines) | **GET** /core/virtual-machines | List virtual machines
 [**postInstanceLogs**](VirtualMachineApi.md#postInstanceLogs) | **POST** /core/virtual-machines/{vm_id}/logs | Request virtual machine logs
 [**postInstanceResize**](VirtualMachineApi.md#postInstanceResize) | **POST** /core/virtual-machines/{vm_id}/resize | Resize virtual machine
 [**postSecurityRule**](VirtualMachineApi.md#postSecurityRule) | **POST** /core/virtual-machines/{vm_id}/sg-rules | Add firewall rule to virtual machine
 [**postSnapshots**](VirtualMachineApi.md#postSnapshots) | **POST** /core/virtual-machines/{vm_id}/snapshots | Create snapshot from a virtual machine
 [**putLabels**](VirtualMachineApi.md#putLabels) | **PUT** /core/virtual-machines/{vm_id}/label | Edit virtual machine labels
+[**retrieveVirtualMachineDetails**](VirtualMachineApi.md#retrieveVirtualMachineDetails) | **GET** /core/virtual-machines/{vm_id} | Retrieve virtual machine details
+[**retrieveVirtualMachinesAssociatedWithAContract**](VirtualMachineApi.md#retrieveVirtualMachinesAssociatedWithAContract) | **GET** /core/virtual-machines/contract/{contract_id}/virtual-machines | Retrieve virtual machines associated with a contract
 
 
 
-## deleteInstance
+## attachFirewallsToAVirtualMachine
 
-> ResponseModel deleteInstance(vmId)
+> ResponseModel attachFirewallsToAVirtualMachine(vmId, payload)
 
-Delete virtual machine
+Attach firewalls to a virtual machine
 
-Permanently deletes a virtual machine. Provide the virtual machine ID in the path to delete the specified virtual machine.
+Attach firewalls to a virtual machine by providing the virtual machine ID in the path and the IDs of the firewalls in the request body; any firewalls not included will be detached.
 
 ### Example
 
@@ -48,7 +48,8 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VirtualMachineApi();
 let vmId = 56; // Number | 
-apiInstance.deleteInstance(vmId).then((data) => {
+let payload = new HyperstackApi.AttachFirewallsToVMPayload(); // AttachFirewallsToVMPayload | 
+apiInstance.attachFirewallsToAVirtualMachine(vmId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -62,6 +63,7 @@ apiInstance.deleteInstance(vmId).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **Number**|  | 
+ **payload** | [**AttachFirewallsToVMPayload**](AttachFirewallsToVMPayload.md)|  | 
 
 ### Return type
 
@@ -73,7 +75,57 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createOneOrMoreVirtualMachines
+
+> CreateInstancesResponse createOneOrMoreVirtualMachines(payload)
+
+Create virtual machines
+
+Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VirtualMachineApi();
+let payload = new HyperstackApi.CreateInstancesPayload(); // CreateInstancesPayload | 
+apiInstance.createOneOrMoreVirtualMachines(payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CreateInstancesPayload**](CreateInstancesPayload.md)|  | 
+
+### Return type
+
+[**CreateInstancesResponse**](CreateInstancesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -114,6 +166,56 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **Number**|  | 
  **sgRuleId** | **Number**|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deleteVirtualMachine
+
+> ResponseModel deleteVirtualMachine(vmId)
+
+Delete virtual machine
+
+Permanently deletes a virtual machine. Provide the virtual machine ID in the path to delete the specified virtual machine.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VirtualMachineApi();
+let vmId = 56; // Number | 
+apiInstance.deleteVirtualMachine(vmId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **Number**|  | 
 
 ### Return type
 
@@ -179,177 +281,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getContractInstances
+## getInstanceHardReboot
 
-> ContractInstancesResponse getContractInstances(contractId, opts)
-
-Retrieve virtual machines associated with a contract
-
-Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.VirtualMachineApi();
-let contractId = 56; // Number | 
-let opts = {
-  'page': "page_example", // String | Page Number
-  'pageSize': "pageSize_example", // String | Data Per Page
-  'search': "search_example" // String | Search By Instance ID or Name
-};
-apiInstance.getContractInstances(contractId, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contractId** | **Number**|  | 
- **page** | **String**| Page Number | [optional] 
- **pageSize** | **String**| Data Per Page | [optional] 
- **search** | **String**| Search By Instance ID or Name | [optional] 
-
-### Return type
-
-[**ContractInstancesResponse**](ContractInstancesResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getInstance
-
-> Instances getInstance(opts)
-
-List virtual machines
-
-Returns a list of your existing virtual machines, providing configuration details for each. The list is sorted by creation date, with the oldest virtual machines displayed first.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.VirtualMachineApi();
-let opts = {
-  'page': 56, // Number | 
-  'pageSize': 56, // Number | 
-  'search': "search_example", // String | 
-  'environment': "environment_example", // String | 
-  'excludeFirewalls': [null] // [Number] | Comma-separated list of Security Group IDs to ignore instances attached
-};
-apiInstance.getInstance(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Number**|  | [optional] 
- **pageSize** | **Number**|  | [optional] 
- **search** | **String**|  | [optional] 
- **environment** | **String**|  | [optional] 
- **excludeFirewalls** | [**[Number]**](Number.md)| Comma-separated list of Security Group IDs to ignore instances attached | [optional] 
-
-### Return type
-
-[**Instances**](Instances.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getInstance2
-
-> Instance getInstance2(vmId)
-
-Retrieve virtual machine details
-
-Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.VirtualMachineApi();
-let vmId = 56; // Number | 
-apiInstance.getInstance2(vmId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vmId** | **Number**|  | 
-
-### Return type
-
-[**Instance**](Instance.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getInstance3
-
-> ResponseModel getInstance3(vmId)
+> ResponseModel getInstanceHardReboot(vmId)
 
 Hard reboot virtual machine
 
@@ -368,107 +302,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VirtualMachineApi();
 let vmId = 56; // Number | 
-apiInstance.getInstance3(vmId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vmId** | **Number**|  | 
-
-### Return type
-
-[**ResponseModel**](ResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getInstance4
-
-> ResponseModel getInstance4(vmId)
-
-Start virtual machine
-
-Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.VirtualMachineApi();
-let vmId = 56; // Number | 
-apiInstance.getInstance4(vmId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vmId** | **Number**|  | 
-
-### Return type
-
-[**ResponseModel**](ResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getInstance5
-
-> ResponseModel getInstance5(vmId)
-
-Stop virtual machine
-
-Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.VirtualMachineApi();
-let vmId = 56; // Number | 
-apiInstance.getInstance5(vmId).then((data) => {
+apiInstance.getInstanceHardReboot(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -553,7 +387,7 @@ Name | Type | Description  | Notes
 
 Restore virtual machine from hibernation
 
-Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID in the path to specify the virtual machine to be restored from hibernation.
+Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID that you want to restore from hibernation.
 
 ### Example
 
@@ -703,63 +537,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## postInstance
+## getInstanceStart
 
-> CreateInstancesResponse postInstance(payload)
+> ResponseModel getInstanceStart(vmId)
 
-Create virtual machines
+Start virtual machine
 
-Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.VirtualMachineApi();
-let payload = new HyperstackApi.CreateInstancesPayload(); // CreateInstancesPayload | 
-apiInstance.postInstance(payload).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**CreateInstancesPayload**](CreateInstancesPayload.md)|  | 
-
-### Return type
-
-[**CreateInstancesResponse**](CreateInstancesResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## postInstanceAttachFirewalls
-
-> ResponseModel postInstanceAttachFirewalls(vmId, payload)
-
-Attach firewalls to a virtual machine
-
-Attach firewalls to a virtual machine by providing the virtual machine ID in the path and the IDs of the firewalls in the request body; any firewalls not included will be detached.
+Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
 
 ### Example
 
@@ -774,8 +558,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VirtualMachineApi();
 let vmId = 56; // Number | 
-let payload = new HyperstackApi.AttachFirewallsToVMPayload(); // AttachFirewallsToVMPayload | 
-apiInstance.postInstanceAttachFirewalls(vmId, payload).then((data) => {
+apiInstance.getInstanceStart(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -789,7 +572,6 @@ apiInstance.postInstanceAttachFirewalls(vmId, payload).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **Number**|  | 
- **payload** | [**AttachFirewallsToVMPayload**](AttachFirewallsToVMPayload.md)|  | 
 
 ### Return type
 
@@ -801,7 +583,117 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getInstanceStop
+
+> ResponseModel getInstanceStop(vmId)
+
+Stop virtual machine
+
+Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VirtualMachineApi();
+let vmId = 56; // Number | 
+apiInstance.getInstanceStop(vmId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **Number**|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## listVirtualMachines
+
+> Instances listVirtualMachines(opts)
+
+List virtual machines
+
+Returns a list of your existing virtual machines, providing configuration details for each. The list is sorted by creation date, with the oldest virtual machines displayed first.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VirtualMachineApi();
+let opts = {
+  'page': 56, // Number | 
+  'pageSize': 56, // Number | 
+  'search': "search_example", // String | 
+  'environment': "environment_example", // String | 
+  'excludeFirewalls': [null] // [Number] | Comma-separated list of Security Group IDs to ignore instances attached
+};
+apiInstance.listVirtualMachines(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**|  | [optional] 
+ **pageSize** | **Number**|  | [optional] 
+ **search** | **String**|  | [optional] 
+ **environment** | **String**|  | [optional] 
+ **excludeFirewalls** | [**[Number]**](Number.md)| Comma-separated list of Security Group IDs to ignore instances attached | [optional] 
+
+### Return type
+
+[**Instances**](Instances.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -1062,5 +954,113 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## retrieveVirtualMachineDetails
+
+> Instance retrieveVirtualMachineDetails(vmId)
+
+Retrieve virtual machine details
+
+Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VirtualMachineApi();
+let vmId = 56; // Number | 
+apiInstance.retrieveVirtualMachineDetails(vmId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **Number**|  | 
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## retrieveVirtualMachinesAssociatedWithAContract
+
+> ContractInstancesResponse retrieveVirtualMachinesAssociatedWithAContract(contractId, opts)
+
+Retrieve virtual machines associated with a contract
+
+Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VirtualMachineApi();
+let contractId = 56; // Number | 
+let opts = {
+  'page': "page_example", // String | Page Number
+  'pageSize': "pageSize_example", // String | Data Per Page
+  'search': "search_example" // String | Search By Instance ID or Name
+};
+apiInstance.retrieveVirtualMachinesAssociatedWithAContract(contractId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contractId** | **Number**|  | 
+ **page** | **String**| Page Number | [optional] 
+ **pageSize** | **String**| Data Per Page | [optional] 
+ **search** | **String**| Search By Instance ID or Name | [optional] 
+
+### Return type
+
+[**ContractInstancesResponse**](ContractInstancesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

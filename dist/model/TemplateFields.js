@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The TemplateFields model module.
  * @module model/TemplateFields
- * @version v1.41.2-alpha
+ * @version v1.42.0-alpha
  */
 var TemplateFields = /*#__PURE__*/function () {
   /**

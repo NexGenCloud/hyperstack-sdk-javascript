@@ -15,6 +15,12 @@ Object.defineProperty(exports, "AddUserInfoSuccessResponseModel", {
     return _AddUserInfoSuccessResponseModel["default"];
   }
 });
+Object.defineProperty(exports, "AdminApi", {
+  enumerable: true,
+  get: function get() {
+    return _AdminApi["default"];
+  }
+});
 Object.defineProperty(exports, "AliveApi", {
   enumerable: true,
   get: function get() {
@@ -2323,6 +2329,7 @@ var _VolumeTypes = _interopRequireDefault(require("./model/VolumeTypes"));
 var _Volumes = _interopRequireDefault(require("./model/Volumes"));
 var _VolumesFields = _interopRequireDefault(require("./model/VolumesFields"));
 var _WorkloadBillingHistoryResponse = _interopRequireDefault(require("./model/WorkloadBillingHistoryResponse"));
+var _AdminApi = _interopRequireDefault(require("./api/AdminApi"));
 var _AliveApi = _interopRequireDefault(require("./api/AliveApi"));
 var _ApiKeyApi = _interopRequireDefault(require("./api/ApiKeyApi"));
 var _AssigningMemberRoleApi = _interopRequireDefault(require("./api/AssigningMemberRoleApi"));

@@ -48,10 +48,20 @@
   }
 
   describe('VirtualMachineApi', function() {
-    describe('deleteInstance', function() {
-      it('should call deleteInstance successfully', function(done) {
-        //uncomment below and update the code to test deleteInstance
-        //instance.deleteInstance(function(error) {
+    describe('attachFirewallsToAVirtualMachine', function() {
+      it('should call attachFirewallsToAVirtualMachine successfully', function(done) {
+        //uncomment below and update the code to test attachFirewallsToAVirtualMachine
+        //instance.attachFirewallsToAVirtualMachine(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createOneOrMoreVirtualMachines', function() {
+      it('should call createOneOrMoreVirtualMachines successfully', function(done) {
+        //uncomment below and update the code to test createOneOrMoreVirtualMachines
+        //instance.createOneOrMoreVirtualMachines(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -68,6 +78,16 @@
         done();
       });
     });
+    describe('deleteVirtualMachine', function() {
+      it('should call deleteVirtualMachine successfully', function(done) {
+        //uncomment below and update the code to test deleteVirtualMachine
+        //instance.deleteVirtualMachine(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fetchVirtualMachineNameAvailability', function() {
       it('should call fetchVirtualMachineNameAvailability successfully', function(done) {
         //uncomment below and update the code to test fetchVirtualMachineNameAvailability
@@ -78,60 +98,10 @@
         done();
       });
     });
-    describe('getContractInstances', function() {
-      it('should call getContractInstances successfully', function(done) {
-        //uncomment below and update the code to test getContractInstances
-        //instance.getContractInstances(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getInstance', function() {
-      it('should call getInstance successfully', function(done) {
-        //uncomment below and update the code to test getInstance
-        //instance.getInstance(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getInstance2', function() {
-      it('should call getInstance2 successfully', function(done) {
-        //uncomment below and update the code to test getInstance2
-        //instance.getInstance2(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getInstance3', function() {
-      it('should call getInstance3 successfully', function(done) {
-        //uncomment below and update the code to test getInstance3
-        //instance.getInstance3(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getInstance4', function() {
-      it('should call getInstance4 successfully', function(done) {
-        //uncomment below and update the code to test getInstance4
-        //instance.getInstance4(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getInstance5', function() {
-      it('should call getInstance5 successfully', function(done) {
-        //uncomment below and update the code to test getInstance5
-        //instance.getInstance5(function(error) {
+    describe('getInstanceHardReboot', function() {
+      it('should call getInstanceHardReboot successfully', function(done) {
+        //uncomment below and update the code to test getInstanceHardReboot
+        //instance.getInstanceHardReboot(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -178,20 +148,30 @@
         done();
       });
     });
-    describe('postInstance', function() {
-      it('should call postInstance successfully', function(done) {
-        //uncomment below and update the code to test postInstance
-        //instance.postInstance(function(error) {
+    describe('getInstanceStart', function() {
+      it('should call getInstanceStart successfully', function(done) {
+        //uncomment below and update the code to test getInstanceStart
+        //instance.getInstanceStart(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postInstanceAttachFirewalls', function() {
-      it('should call postInstanceAttachFirewalls successfully', function(done) {
-        //uncomment below and update the code to test postInstanceAttachFirewalls
-        //instance.postInstanceAttachFirewalls(function(error) {
+    describe('getInstanceStop', function() {
+      it('should call getInstanceStop successfully', function(done) {
+        //uncomment below and update the code to test getInstanceStop
+        //instance.getInstanceStop(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listVirtualMachines', function() {
+      it('should call listVirtualMachines successfully', function(done) {
+        //uncomment below and update the code to test listVirtualMachines
+        //instance.listVirtualMachines(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -242,6 +222,26 @@
       it('should call putLabels successfully', function(done) {
         //uncomment below and update the code to test putLabels
         //instance.putLabels(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('retrieveVirtualMachineDetails', function() {
+      it('should call retrieveVirtualMachineDetails successfully', function(done) {
+        //uncomment below and update the code to test retrieveVirtualMachineDetails
+        //instance.retrieveVirtualMachineDetails(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('retrieveVirtualMachinesAssociatedWithAContract', function() {
+      it('should call retrieveVirtualMachinesAssociatedWithAContract successfully', function(done) {
+        //uncomment below and update the code to test retrieveVirtualMachinesAssociatedWithAContract
+        //instance.retrieveVirtualMachinesAssociatedWithAContract(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

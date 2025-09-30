@@ -48,60 +48,60 @@
   }
 
   describe('FirewallsApi', function() {
-    describe('deleteSecurityGroupDetails', function() {
-      it('should call deleteSecurityGroupDetails successfully', function(done) {
-        //uncomment below and update the code to test deleteSecurityGroupDetails
-        //instance.deleteSecurityGroupDetails(function(error) {
+    describe('addFirewallRuleToAnExistingFirewall', function() {
+      it('should call addFirewallRuleToAnExistingFirewall successfully', function(done) {
+        //uncomment below and update the code to test addFirewallRuleToAnExistingFirewall
+        //instance.addFirewallRuleToAnExistingFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteSecurityGroupRuleDelete', function() {
-      it('should call deleteSecurityGroupRuleDelete successfully', function(done) {
-        //uncomment below and update the code to test deleteSecurityGroupRuleDelete
-        //instance.deleteSecurityGroupRuleDelete(function(error) {
+    describe('createANewFirewall', function() {
+      it('should call createANewFirewall successfully', function(done) {
+        //uncomment below and update the code to test createANewFirewall
+        //instance.createANewFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSecurityGroup', function() {
-      it('should call getSecurityGroup successfully', function(done) {
-        //uncomment below and update the code to test getSecurityGroup
-        //instance.getSecurityGroup(function(error) {
+    describe('deleteExistingFirewall', function() {
+      it('should call deleteExistingFirewall successfully', function(done) {
+        //uncomment below and update the code to test deleteExistingFirewall
+        //instance.deleteExistingFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSecurityGroupDetails', function() {
-      it('should call getSecurityGroupDetails successfully', function(done) {
-        //uncomment below and update the code to test getSecurityGroupDetails
-        //instance.getSecurityGroupDetails(function(error) {
+    describe('deleteFirewallRulesFromFirewall', function() {
+      it('should call deleteFirewallRulesFromFirewall successfully', function(done) {
+        //uncomment below and update the code to test deleteFirewallRulesFromFirewall
+        //instance.deleteFirewallRulesFromFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postSecurityGroup', function() {
-      it('should call postSecurityGroup successfully', function(done) {
-        //uncomment below and update the code to test postSecurityGroup
-        //instance.postSecurityGroup(function(error) {
+    describe('listExistingFirewalls', function() {
+      it('should call listExistingFirewalls successfully', function(done) {
+        //uncomment below and update the code to test listExistingFirewalls
+        //instance.listExistingFirewalls(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postSecurityGroupRules', function() {
-      it('should call postSecurityGroupRules successfully', function(done) {
-        //uncomment below and update the code to test postSecurityGroupRules
-        //instance.postSecurityGroupRules(function(error) {
+    describe('retrieveTheDetailsOfAnExistingFirewall', function() {
+      it('should call retrieveTheDetailsOfAnExistingFirewall successfully', function(done) {
+        //uncomment below and update the code to test retrieveTheDetailsOfAnExistingFirewall
+        //instance.retrieveTheDetailsOfAnExistingFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
