@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Template model module.
  * @module model/Template
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var Template = /*#__PURE__*/function () {
   /**

@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The PartnerConfig model module.
  * @module model/PartnerConfig
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var PartnerConfig = /*#__PURE__*/function () {
   /**

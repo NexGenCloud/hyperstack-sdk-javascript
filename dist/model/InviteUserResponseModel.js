@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InviteUserResponseModel model module.
  * @module model/InviteUserResponseModel
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var InviteUserResponseModel = /*#__PURE__*/function () {
   /**

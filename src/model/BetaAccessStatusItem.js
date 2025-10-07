@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BetaAccessStatusItem model module.
  * @module model/BetaAccessStatusItem
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class BetaAccessStatusItem {
     /**

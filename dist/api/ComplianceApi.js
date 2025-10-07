@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Compliance service.
 * @module api/ComplianceApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
   /**

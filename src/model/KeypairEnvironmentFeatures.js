@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KeypairEnvironmentFeatures model module.
  * @module model/KeypairEnvironmentFeatures
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class KeypairEnvironmentFeatures {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PricebookResourceObjectResponseForCustomer model module.
  * @module model/PricebookResourceObjectResponseForCustomer
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class PricebookResourceObjectResponseForCustomer {
     /**

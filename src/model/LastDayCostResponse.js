@@ -17,7 +17,7 @@ import LastDayCostFields from './LastDayCostFields';
 /**
  * The LastDayCostResponse model module.
  * @module model/LastDayCostResponse
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class LastDayCostResponse {
     /**

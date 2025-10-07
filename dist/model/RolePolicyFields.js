@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The RolePolicyFields model module.
  * @module model/RolePolicyFields
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var RolePolicyFields = /*#__PURE__*/function () {
   /**

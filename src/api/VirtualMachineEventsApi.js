@@ -19,7 +19,7 @@ import InstanceEvents from '../model/InstanceEvents';
 /**
 * VirtualMachineEvents service.
 * @module api/VirtualMachineEventsApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 export default class VirtualMachineEventsApi {
 

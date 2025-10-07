@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Templates model module.
  * @module model/Templates
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var Templates = /*#__PURE__*/function () {
   /**

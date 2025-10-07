@@ -382,7 +382,7 @@ import VolumeAttachmentApi from './api/VolumeAttachmentApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 export {
     /**

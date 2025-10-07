@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * Admin service.
 * @module api/AdminApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 export default class AdminApi {
 

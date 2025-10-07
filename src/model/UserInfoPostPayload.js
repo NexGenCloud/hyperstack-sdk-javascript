@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserInfoPostPayload model module.
  * @module model/UserInfoPostPayload
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class UserInfoPostPayload {
     /**

@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ResourceObjectResponseForCustomer model module.
  * @module model/ResourceObjectResponseForCustomer
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var ResourceObjectResponseForCustomer = /*#__PURE__*/function () {
   /**

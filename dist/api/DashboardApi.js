@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Dashboard service.
 * @module api/DashboardApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 var DashboardApi = exports["default"] = /*#__PURE__*/function () {
   /**

@@ -41,7 +41,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 var ClustersApi = exports["default"] = /*#__PURE__*/function () {
   /**

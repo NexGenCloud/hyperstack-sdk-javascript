@@ -19,7 +19,7 @@ import ResourceBillingResponseForCustomer from '../model/ResourceBillingResponse
 /**
 * Calculate service.
 * @module api/CalculateApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 export default class CalculateApi {
 

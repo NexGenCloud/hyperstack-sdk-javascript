@@ -17,7 +17,7 @@ import UsersInfoFields from './UsersInfoFields';
 /**
  * The UsersInfoListResponse model module.
  * @module model/UsersInfoListResponse
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class UsersInfoListResponse {
     /**

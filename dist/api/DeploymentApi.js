@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Deployment service.
 * @module api/DeploymentApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
   /**

@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The AuthGetTokenResponseModel model module.
  * @module model/AuthGetTokenResponseModel
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var AuthGetTokenResponseModel = /*#__PURE__*/function () {
   /**

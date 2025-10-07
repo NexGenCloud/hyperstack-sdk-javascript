@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InviteFields model module.
  * @module model/InviteFields
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class InviteFields {
     /**

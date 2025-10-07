@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateTemplate model module.
  * @module model/UpdateTemplate
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var UpdateTemplate = /*#__PURE__*/function () {
   /**

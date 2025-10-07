@@ -25,7 +25,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Firewalls service.
 * @module api/FirewallsApi
-* @version v1.42.0-alpha
+* @version v1.42.1-alpha
 */
 export default class FirewallsApi {
 

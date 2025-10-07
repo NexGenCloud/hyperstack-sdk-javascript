@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateUpdateRbacRolePayload model module.
  * @module model/CreateUpdateRbacRolePayload
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var CreateUpdateRbacRolePayload = /*#__PURE__*/function () {
   /**

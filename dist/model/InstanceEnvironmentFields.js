@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InstanceEnvironmentFields model module.
  * @module model/InstanceEnvironmentFields
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var InstanceEnvironmentFields = /*#__PURE__*/function () {
   /**

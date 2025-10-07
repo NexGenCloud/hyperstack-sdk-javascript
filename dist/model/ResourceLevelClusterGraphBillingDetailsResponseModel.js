@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ResourceLevelClusterGraphBillingDetailsResponseModel model module.
  * @module model/ResourceLevelClusterGraphBillingDetailsResponseModel
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var ResourceLevelClusterGraphBillingDetailsResponseModel = /*#__PURE__*/function () {
   /**

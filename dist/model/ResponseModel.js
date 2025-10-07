@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ResponseModel model module.
  * @module model/ResponseModel
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 var ResponseModel = /*#__PURE__*/function () {
   /**

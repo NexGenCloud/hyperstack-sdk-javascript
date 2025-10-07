@@ -17,7 +17,7 @@ import UsersInfoFields from './UsersInfoFields';
 /**
  * The AddUserInfoSuccessResponseModel model module.
  * @module model/AddUserInfoSuccessResponseModel
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class AddUserInfoSuccessResponseModel {
     /**

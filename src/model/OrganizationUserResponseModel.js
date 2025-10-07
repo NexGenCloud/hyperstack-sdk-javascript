@@ -17,7 +17,7 @@ import RbacRoleField from './RbacRoleField';
 /**
  * The OrganizationUserResponseModel model module.
  * @module model/OrganizationUserResponseModel
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class OrganizationUserResponseModel {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateOrganizationResponseModel model module.
  * @module model/UpdateOrganizationResponseModel
- * @version v1.42.0-alpha
+ * @version v1.42.1-alpha
  */
 class UpdateOrganizationResponseModel {
     /**
