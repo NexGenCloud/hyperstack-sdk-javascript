@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ImageGetResponse model module.
  * @module model/ImageGetResponse
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var ImageGetResponse = /*#__PURE__*/function () {
   /**

@@ -1827,6 +1827,12 @@ Object.defineProperty(exports, "URIs", {
     return _URIs["default"];
   }
 });
+Object.defineProperty(exports, "UpdateClusterNodeGroupPayload", {
+  enumerable: true,
+  get: function get() {
+    return _UpdateClusterNodeGroupPayload["default"];
+  }
+});
 Object.defineProperty(exports, "UpdateEnvironment", {
   enumerable: true,
   get: function get() {
@@ -2302,6 +2308,7 @@ var _TemplateFields = _interopRequireDefault(require("./model/TemplateFields"));
 var _Templates = _interopRequireDefault(require("./model/Templates"));
 var _TokenBasedBillingHistoryResponse = _interopRequireDefault(require("./model/TokenBasedBillingHistoryResponse"));
 var _URIs = _interopRequireDefault(require("./model/URIs"));
+var _UpdateClusterNodeGroupPayload = _interopRequireDefault(require("./model/UpdateClusterNodeGroupPayload"));
 var _UpdateEnvironment = _interopRequireDefault(require("./model/UpdateEnvironment"));
 var _UpdateKeypairName = _interopRequireDefault(require("./model/UpdateKeypairName"));
 var _UpdateKeypairNameResponse = _interopRequireDefault(require("./model/UpdateKeypairNameResponse"));

@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The MFAStatusFields model module.
  * @module model/MFAStatusFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var MFAStatusFields = /*#__PURE__*/function () {
   /**

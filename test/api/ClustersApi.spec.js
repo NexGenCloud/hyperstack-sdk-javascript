@@ -198,6 +198,16 @@
         done();
       });
     });
+    describe('updateANodeGroup', function() {
+      it('should call updateANodeGroup successfully', function(done) {
+        //uncomment below and update the code to test updateANodeGroup
+        //instance.updateANodeGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

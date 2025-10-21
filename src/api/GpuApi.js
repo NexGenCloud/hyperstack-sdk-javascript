@@ -19,7 +19,7 @@ import GPUList from '../model/GPUList';
 /**
 * Gpu service.
 * @module api/GpuApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 export default class GpuApi {
 

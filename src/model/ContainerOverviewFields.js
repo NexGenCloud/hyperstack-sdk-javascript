@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContainerOverviewFields model module.
  * @module model/ContainerOverviewFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 class ContainerOverviewFields {
     /**

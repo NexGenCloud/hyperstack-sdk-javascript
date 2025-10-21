@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SecurityRulesProtocolFields model module.
  * @module model/SecurityRulesProtocolFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var SecurityRulesProtocolFields = /*#__PURE__*/function () {
   /**

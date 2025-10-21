@@ -21,7 +21,7 @@ import RbacRoleDetailResponseModel from '../model/RbacRoleDetailResponseModel';
 /**
 * AssigningMemberRole service.
 * @module api/AssigningMemberRoleApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 export default class AssigningMemberRoleApi {
 

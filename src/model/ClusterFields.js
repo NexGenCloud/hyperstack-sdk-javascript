@@ -19,7 +19,7 @@ import ClusterNodeGroupFields from './ClusterNodeGroupFields';
 /**
  * The ClusterFields model module.
  * @module model/ClusterFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 class ClusterFields {
     /**
@@ -61,6 +61,9 @@ class ClusterFields {
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('is_reconciling')) {
+                obj['is_reconciling'] = ApiClient.convertToType(data['is_reconciling'], 'Boolean');
             }
             if (data.hasOwnProperty('keypair_name')) {
                 obj['keypair_name'] = ApiClient.convertToType(data['keypair_name'], 'String');
@@ -183,6 +186,11 @@ ClusterFields.prototype['environment_name'] = undefined;
  * @member {Number} id
  */
 ClusterFields.prototype['id'] = undefined;
+
+/**
+ * @member {Boolean} is_reconciling
+ */
+ClusterFields.prototype['is_reconciling'] = undefined;
 
 /**
  * @member {String} keypair_name

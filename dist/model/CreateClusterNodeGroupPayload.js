@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateClusterNodeGroupPayload model module.
  * @module model/CreateClusterNodeGroupPayload
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
   /**
@@ -37,10 +37,11 @@ var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
    * @alias module:model/CreateClusterNodeGroupPayload
    * @param flavorName {String} 
    * @param name {String} 
+   * @param role {module:model/CreateClusterNodeGroupPayload.RoleEnum} 
    */
-  function CreateClusterNodeGroupPayload(flavorName, name) {
+  function CreateClusterNodeGroupPayload(flavorName, name, role) {
     _classCallCheck(this, CreateClusterNodeGroupPayload);
-    CreateClusterNodeGroupPayload.initialize(this, flavorName, name);
+    CreateClusterNodeGroupPayload.initialize(this, flavorName, name, role);
   }
 
   /**
@@ -50,9 +51,10 @@ var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
    */
   return _createClass(CreateClusterNodeGroupPayload, null, [{
     key: "initialize",
-    value: function initialize(obj, flavorName, name) {
+    value: function initialize(obj, flavorName, name, role) {
       obj['flavor_name'] = flavorName;
       obj['name'] = name;
+      obj['role'] = role || 'worker';
     }
 
     /**
@@ -73,8 +75,17 @@ var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
         if (data.hasOwnProperty('flavor_name')) {
           obj['flavor_name'] = _ApiClient["default"].convertToType(data['flavor_name'], 'String');
         }
+        if (data.hasOwnProperty('max_count')) {
+          obj['max_count'] = _ApiClient["default"].convertToType(data['max_count'], 'Number');
+        }
+        if (data.hasOwnProperty('min_count')) {
+          obj['min_count'] = _ApiClient["default"].convertToType(data['min_count'], 'Number');
+        }
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+        if (data.hasOwnProperty('role')) {
+          obj['role'] = _ApiClient["default"].convertToType(data['role'], 'String');
         }
       }
       return obj;
@@ -111,11 +122,15 @@ var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
       if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
         throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
       }
+      // ensure the json data is a string
+      if (data['role'] && !(typeof data['role'] === 'string' || data['role'] instanceof String)) {
+        throw new Error("Expected the field `role` to be a primitive type in the JSON string but got " + data['role']);
+      }
       return true;
     }
   }]);
 }();
-CreateClusterNodeGroupPayload.RequiredProperties = ["flavor_name", "name"];
+CreateClusterNodeGroupPayload.RequiredProperties = ["flavor_name", "name", "role"];
 
 /**
  * @member {Number} count
@@ -128,7 +143,36 @@ CreateClusterNodeGroupPayload.prototype['count'] = undefined;
 CreateClusterNodeGroupPayload.prototype['flavor_name'] = undefined;
 
 /**
+ * @member {Number} max_count
+ */
+CreateClusterNodeGroupPayload.prototype['max_count'] = undefined;
+
+/**
+ * @member {Number} min_count
+ */
+CreateClusterNodeGroupPayload.prototype['min_count'] = undefined;
+
+/**
  * @member {String} name
  */
 CreateClusterNodeGroupPayload.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/CreateClusterNodeGroupPayload.RoleEnum} role
+ * @default 'worker'
+ */
+CreateClusterNodeGroupPayload.prototype['role'] = 'worker';
+
+/**
+ * Allowed values for the <code>role</code> property.
+ * @enum {String}
+ * @readonly
+ */
+CreateClusterNodeGroupPayload['RoleEnum'] = {
+  /**
+   * value: "worker"
+   * @const
+   */
+  "worker": "worker"
+};
 var _default = exports["default"] = CreateClusterNodeGroupPayload;

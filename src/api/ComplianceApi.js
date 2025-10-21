@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Compliance service.
 * @module api/ComplianceApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 export default class ComplianceApi {
 

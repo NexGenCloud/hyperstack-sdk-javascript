@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isReconciling (base name: "is_reconciling")', function() {
+      // uncomment below and update the code to test the property isReconciling
+      //var instance = new HyperstackApi.ClusterFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property keypairName (base name: "keypair_name")', function() {
       // uncomment below and update the code to test the property keypairName
       //var instance = new HyperstackApi.ClusterFields();

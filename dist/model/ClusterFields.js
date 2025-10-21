@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ClusterFields model module.
  * @module model/ClusterFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var ClusterFields = /*#__PURE__*/function () {
   /**
@@ -76,6 +76,9 @@ var ClusterFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+        }
+        if (data.hasOwnProperty('is_reconciling')) {
+          obj['is_reconciling'] = _ApiClient["default"].convertToType(data['is_reconciling'], 'Boolean');
         }
         if (data.hasOwnProperty('keypair_name')) {
           obj['keypair_name'] = _ApiClient["default"].convertToType(data['keypair_name'], 'String');
@@ -218,6 +221,11 @@ ClusterFields.prototype['environment_name'] = undefined;
  * @member {Number} id
  */
 ClusterFields.prototype['id'] = undefined;
+
+/**
+ * @member {Boolean} is_reconciling
+ */
+ClusterFields.prototype['is_reconciling'] = undefined;
 
 /**
  * @member {String} keypair_name

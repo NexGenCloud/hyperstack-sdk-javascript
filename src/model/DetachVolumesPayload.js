@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DetachVolumesPayload model module.
  * @module model/DetachVolumesPayload
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 class DetachVolumesPayload {
     /**

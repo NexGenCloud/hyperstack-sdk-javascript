@@ -20,6 +20,7 @@ var _ManualReconciliationModel = _interopRequireDefault(require("../model/Manual
 var _MasterFlavorsResponse = _interopRequireDefault(require("../model/MasterFlavorsResponse"));
 var _NameAvailableModel = _interopRequireDefault(require("../model/NameAvailableModel"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
+var _UpdateClusterNodeGroupPayload = _interopRequireDefault(require("../model/UpdateClusterNodeGroupPayload"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -41,7 +42,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 var ClustersApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -671,6 +672,58 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
     key: "retrieveANodeGroup",
     value: function retrieveANodeGroup(clusterId, nodeGroupId) {
       return this.retrieveANodeGroupWithHttpInfo(clusterId, nodeGroupId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Update a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @param {module:model/UpdateClusterNodeGroupPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsCreateResponse} and HTTP response
+     */
+  }, {
+    key: "updateANodeGroupWithHttpInfo",
+    value: function updateANodeGroupWithHttpInfo(clusterId, nodeGroupId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling updateANodeGroup");
+      }
+      // verify the required parameter 'nodeGroupId' is set
+      if (nodeGroupId === undefined || nodeGroupId === null) {
+        throw new Error("Missing the required parameter 'nodeGroupId' when calling updateANodeGroup");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling updateANodeGroup");
+      }
+      var pathParams = {
+        'cluster_id': clusterId,
+        'node_group_id': nodeGroupId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _ClusterNodeGroupsCreateResponse["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Update a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @param {module:model/UpdateClusterNodeGroupPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsCreateResponse}
+     */
+  }, {
+    key: "updateANodeGroup",
+    value: function updateANodeGroup(clusterId, nodeGroupId, payload) {
+      return this.updateANodeGroupWithHttpInfo(clusterId, nodeGroupId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

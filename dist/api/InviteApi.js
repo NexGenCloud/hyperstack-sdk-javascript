@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Invite service.
 * @module api/InviteApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 var InviteApi = exports["default"] = /*#__PURE__*/function () {
   /**

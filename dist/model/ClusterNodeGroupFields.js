@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ClusterNodeGroupFields model module.
  * @module model/ClusterNodeGroupFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var ClusterNodeGroupFields = /*#__PURE__*/function () {
   /**
@@ -71,6 +71,12 @@ var ClusterNodeGroupFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+        }
+        if (data.hasOwnProperty('max_count')) {
+          obj['max_count'] = _ApiClient["default"].convertToType(data['max_count'], 'Number');
+        }
+        if (data.hasOwnProperty('min_count')) {
+          obj['min_count'] = _ApiClient["default"].convertToType(data['min_count'], 'Number');
         }
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
@@ -129,6 +135,16 @@ ClusterNodeGroupFields.prototype['flavor'] = undefined;
  * @member {Number} id
  */
 ClusterNodeGroupFields.prototype['id'] = undefined;
+
+/**
+ * @member {Number} max_count
+ */
+ClusterNodeGroupFields.prototype['max_count'] = undefined;
+
+/**
+ * @member {Number} min_count
+ */
+ClusterNodeGroupFields.prototype['min_count'] = undefined;
 
 /**
  * @member {String} name

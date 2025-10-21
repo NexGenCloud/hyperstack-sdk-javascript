@@ -277,6 +277,7 @@ import TemplateFields from './model/TemplateFields';
 import Templates from './model/Templates';
 import TokenBasedBillingHistoryResponse from './model/TokenBasedBillingHistoryResponse';
 import URIs from './model/URIs';
+import UpdateClusterNodeGroupPayload from './model/UpdateClusterNodeGroupPayload';
 import UpdateEnvironment from './model/UpdateEnvironment';
 import UpdateKeypairName from './model/UpdateKeypairName';
 import UpdateKeypairNameResponse from './model/UpdateKeypairNameResponse';
@@ -382,7 +383,7 @@ import VolumeAttachmentApi from './api/VolumeAttachmentApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 export {
     /**
@@ -1974,6 +1975,12 @@ export {
      * @property {module:model/URIs}
      */
     URIs,
+
+    /**
+     * The UpdateClusterNodeGroupPayload model constructor.
+     * @property {module:model/UpdateClusterNodeGroupPayload}
+     */
+    UpdateClusterNodeGroupPayload,
 
     /**
      * The UpdateEnvironment model constructor.

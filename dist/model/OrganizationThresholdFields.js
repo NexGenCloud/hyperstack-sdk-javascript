@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The OrganizationThresholdFields model module.
  * @module model/OrganizationThresholdFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var OrganizationThresholdFields = /*#__PURE__*/function () {
   /**

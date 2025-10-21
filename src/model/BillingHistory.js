@@ -17,7 +17,7 @@ import Attributes from './Attributes';
 /**
  * The BillingHistory model module.
  * @module model/BillingHistory
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 class BillingHistory {
     /**

@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ClusterNodeGroupsGetResponse model module.
  * @module model/ClusterNodeGroupsGetResponse
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var ClusterNodeGroupsGetResponse = /*#__PURE__*/function () {
   /**

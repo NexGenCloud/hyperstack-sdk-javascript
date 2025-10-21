@@ -17,7 +17,7 @@ import ClusterFlavorFields from './ClusterFlavorFields';
 /**
  * The ClusterNodeGroupFields model module.
  * @module model/ClusterNodeGroupFields
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 class ClusterNodeGroupFields {
     /**
@@ -59,6 +59,12 @@ class ClusterNodeGroupFields {
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('max_count')) {
+                obj['max_count'] = ApiClient.convertToType(data['max_count'], 'Number');
+            }
+            if (data.hasOwnProperty('min_count')) {
+                obj['min_count'] = ApiClient.convertToType(data['min_count'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -119,6 +125,16 @@ ClusterNodeGroupFields.prototype['flavor'] = undefined;
  * @member {Number} id
  */
 ClusterNodeGroupFields.prototype['id'] = undefined;
+
+/**
+ * @member {Number} max_count
+ */
+ClusterNodeGroupFields.prototype['max_count'] = undefined;
+
+/**
+ * @member {Number} min_count
+ */
+ClusterNodeGroupFields.prototype['min_count'] = undefined;
 
 /**
  * @member {String} name

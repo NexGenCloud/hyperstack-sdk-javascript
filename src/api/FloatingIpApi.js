@@ -19,7 +19,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * FloatingIp service.
 * @module api/FloatingIpApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 export default class FloatingIpApi {
 

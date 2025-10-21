@@ -66,8 +66,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property maxCount (base name: "max_count")', function() {
+      // uncomment below and update the code to test the property maxCount
+      //var instance = new HyperstackApi.CreateClusterNodeGroupPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property minCount (base name: "min_count")', function() {
+      // uncomment below and update the code to test the property minCount
+      //var instance = new HyperstackApi.CreateClusterNodeGroupPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instance = new HyperstackApi.CreateClusterNodeGroupPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property role (base name: "role")', function() {
+      // uncomment below and update the code to test the property role
       //var instance = new HyperstackApi.CreateClusterNodeGroupPayload();
       //expect(instance).to.be();
     });

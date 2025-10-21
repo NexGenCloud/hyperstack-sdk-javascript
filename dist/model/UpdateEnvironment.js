@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateEnvironment model module.
  * @module model/UpdateEnvironment
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var UpdateEnvironment = /*#__PURE__*/function () {
   /**

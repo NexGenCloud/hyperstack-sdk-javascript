@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The GenerateUpdateApiKeyPayload model module.
  * @module model/GenerateUpdateApiKeyPayload
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var GenerateUpdateApiKeyPayload = /*#__PURE__*/function () {
   /**

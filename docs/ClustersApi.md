@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**listClusters**](ClustersApi.md#listClusters) | **GET** /core/clusters | List Clusters
 [**listNodeGroups**](ClustersApi.md#listNodeGroups) | **GET** /core/clusters/{cluster_id}/node-groups | List node groups for a cluster
 [**retrieveANodeGroup**](ClustersApi.md#retrieveANodeGroup) | **GET** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Retrieve a node group in a cluster
+[**updateANodeGroup**](ClustersApi.md#updateANodeGroup) | **PATCH** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Update a node group in a cluster
 
 
 
@@ -759,5 +760,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## updateANodeGroup
+
+> ClusterNodeGroupsCreateResponse updateANodeGroup(clusterId, nodeGroupId, payload)
+
+Update a node group in a cluster
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let nodeGroupId = 56; // Number | 
+let payload = new HyperstackApi.UpdateClusterNodeGroupPayload(); // UpdateClusterNodeGroupPayload | 
+apiInstance.updateANodeGroup(clusterId, nodeGroupId, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **nodeGroupId** | **Number**|  | 
+ **payload** | [**UpdateClusterNodeGroupPayload**](UpdateClusterNodeGroupPayload.md)|  | 
+
+### Return type
+
+[**ClusterNodeGroupsCreateResponse**](ClusterNodeGroupsCreateResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

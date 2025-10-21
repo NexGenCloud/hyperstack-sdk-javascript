@@ -19,7 +19,7 @@ import PricebookModel from '../model/PricebookModel';
 /**
 * Pricebook service.
 * @module api/PricebookApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 export default class PricebookApi {
 

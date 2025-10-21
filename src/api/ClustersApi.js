@@ -28,11 +28,12 @@ import ManualReconciliationModel from '../model/ManualReconciliationModel';
 import MasterFlavorsResponse from '../model/MasterFlavorsResponse';
 import NameAvailableModel from '../model/NameAvailableModel';
 import ResponseModel from '../model/ResponseModel';
+import UpdateClusterNodeGroupPayload from '../model/UpdateClusterNodeGroupPayload';
 
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.42.1-alpha
+* @version v1.43.0-alpha
 */
 export default class ClustersApi {
 
@@ -769,6 +770,65 @@ export default class ClustersApi {
      */
     retrieveANodeGroup(clusterId, nodeGroupId) {
       return this.retrieveANodeGroupWithHttpInfo(clusterId, nodeGroupId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @param {module:model/UpdateClusterNodeGroupPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsCreateResponse} and HTTP response
+     */
+    updateANodeGroupWithHttpInfo(clusterId, nodeGroupId, payload) {
+      let postBody = payload;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling updateANodeGroup");
+      }
+      // verify the required parameter 'nodeGroupId' is set
+      if (nodeGroupId === undefined || nodeGroupId === null) {
+        throw new Error("Missing the required parameter 'nodeGroupId' when calling updateANodeGroup");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling updateANodeGroup");
+      }
+
+      let pathParams = {
+        'cluster_id': clusterId,
+        'node_group_id': nodeGroupId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ClusterNodeGroupsCreateResponse;
+      return this.apiClient.callApi(
+        '/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @param {module:model/UpdateClusterNodeGroupPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsCreateResponse}
+     */
+    updateANodeGroup(clusterId, nodeGroupId, payload) {
+      return this.updateANodeGroupWithHttpInfo(clusterId, nodeGroupId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

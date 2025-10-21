@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CustomerContractDetailResponseModel model module.
  * @module model/CustomerContractDetailResponseModel
- * @version v1.42.1-alpha
+ * @version v1.43.0-alpha
  */
 var CustomerContractDetailResponseModel = /*#__PURE__*/function () {
   /**

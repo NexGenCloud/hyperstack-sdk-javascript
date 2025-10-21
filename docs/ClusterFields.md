@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | [optional] 
 **environmentName** | **String** |  | [optional] 
 **id** | **Number** |  | [optional] 
+**isReconciling** | **Boolean** |  | [optional] 
 **keypairName** | **String** |  | [optional] 
 **kubeConfig** | **String** |  | [optional] 
 **kubernetesVersion** | **String** |  | [optional] 
