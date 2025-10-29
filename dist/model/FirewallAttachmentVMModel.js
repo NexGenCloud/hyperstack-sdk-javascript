@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FirewallAttachmentVMModel model module.
  * @module model/FirewallAttachmentVMModel
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 var FirewallAttachmentVMModel = /*#__PURE__*/function () {
   /**

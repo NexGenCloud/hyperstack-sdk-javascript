@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEnvironment model module.
  * @module model/CreateEnvironment
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 class CreateEnvironment {
     /**

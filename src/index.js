@@ -92,6 +92,7 @@ import CustomerContractDetailResponseModel from './model/CustomerContractDetailR
 import CustomerContractFields from './model/CustomerContractFields';
 import DashboardInfoResponse from './model/DashboardInfoResponse';
 import DataSynthesisBillingHistoryDetailsResponseSchema from './model/DataSynthesisBillingHistoryDetailsResponseSchema';
+import DeleteClusterNodesFields from './model/DeleteClusterNodesFields';
 import DeploymentFields from './model/DeploymentFields';
 import DeploymentFieldsForStartDeployments from './model/DeploymentFieldsForStartDeployments';
 import Deployments from './model/Deployments';
@@ -208,6 +209,7 @@ import RbacRoleDetailResponseModel from './model/RbacRoleDetailResponseModel';
 import RbacRoleDetailResponseModelFixed from './model/RbacRoleDetailResponseModelFixed';
 import RbacRoleField from './model/RbacRoleField';
 import RbacRoleFields from './model/RbacRoleFields';
+import RedeemVoucherPayload from './model/RedeemVoucherPayload';
 import RegionFields from './model/RegionFields';
 import Regions from './model/Regions';
 import RemoveMemberFromOrganizationResponseModel from './model/RemoveMemberFromOrganizationResponseModel';
@@ -304,8 +306,9 @@ import VolumeOverviewFields from './model/VolumeOverviewFields';
 import VolumeTypes from './model/VolumeTypes';
 import Volumes from './model/Volumes';
 import VolumesFields from './model/VolumesFields';
+import Voucher from './model/Voucher';
+import VoucherRedeemResponseSchema from './model/VoucherRedeemResponseSchema';
 import WorkloadBillingHistoryResponse from './model/WorkloadBillingHistoryResponse';
-import AdminApi from './api/AdminApi';
 import AliveApi from './api/AliveApi';
 import ApiKeyApi from './api/ApiKeyApi';
 import AssigningMemberRoleApi from './api/AssigningMemberRoleApi';
@@ -352,6 +355,7 @@ import VirtualMachineEventsApi from './api/VirtualMachineEventsApi';
 import VncUrlApi from './api/VncUrlApi';
 import VolumeApi from './api/VolumeApi';
 import VolumeAttachmentApi from './api/VolumeAttachmentApi';
+import VouchersApi from './api/VouchersApi';
 
 
 /**
@@ -383,7 +387,7 @@ import VolumeAttachmentApi from './api/VolumeAttachmentApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.43.0-alpha
+* @version v1.45.2-alpha
 */
 export {
     /**
@@ -865,6 +869,12 @@ export {
      * @property {module:model/DataSynthesisBillingHistoryDetailsResponseSchema}
      */
     DataSynthesisBillingHistoryDetailsResponseSchema,
+
+    /**
+     * The DeleteClusterNodesFields model constructor.
+     * @property {module:model/DeleteClusterNodesFields}
+     */
+    DeleteClusterNodesFields,
 
     /**
      * The DeploymentFields model constructor.
@@ -1563,6 +1573,12 @@ export {
     RbacRoleFields,
 
     /**
+     * The RedeemVoucherPayload model constructor.
+     * @property {module:model/RedeemVoucherPayload}
+     */
+    RedeemVoucherPayload,
+
+    /**
      * The RegionFields model constructor.
      * @property {module:model/RegionFields}
      */
@@ -2139,16 +2155,22 @@ export {
     VolumesFields,
 
     /**
+     * The Voucher model constructor.
+     * @property {module:model/Voucher}
+     */
+    Voucher,
+
+    /**
+     * The VoucherRedeemResponseSchema model constructor.
+     * @property {module:model/VoucherRedeemResponseSchema}
+     */
+    VoucherRedeemResponseSchema,
+
+    /**
      * The WorkloadBillingHistoryResponse model constructor.
      * @property {module:model/WorkloadBillingHistoryResponse}
      */
     WorkloadBillingHistoryResponse,
-
-    /**
-    * The AdminApi service constructor.
-    * @property {module:api/AdminApi}
-    */
-    AdminApi,
 
     /**
     * The AliveApi service constructor.
@@ -2424,5 +2446,11 @@ export {
     * The VolumeAttachmentApi service constructor.
     * @property {module:api/VolumeAttachmentApi}
     */
-    VolumeAttachmentApi
+    VolumeAttachmentApi,
+
+    /**
+    * The VouchersApi service constructor.
+    * @property {module:api/VouchersApi}
+    */
+    VouchersApi
 };

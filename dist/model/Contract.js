@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Contract model module.
  * @module model/Contract
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 var Contract = /*#__PURE__*/function () {
   /**

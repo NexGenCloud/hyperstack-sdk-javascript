@@ -1,20 +1,20 @@
-# HyperstackApi.AdminApi
+# HyperstackApi.VouchersApi
 
 All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**sendPasswordChangeNotificationEmail**](AdminApi.md#sendPasswordChangeNotificationEmail) | **POST** /auth/admin/password-change-mail | Send Password Change Notification Email
+[**redeemAVoucher**](VouchersApi.md#redeemAVoucher) | **POST** /billing/billing/vouchers/redeem | Redeem a voucher with a voucher_code
 
 
 
-## sendPasswordChangeNotificationEmail
+## redeemAVoucher
 
-> CommonResponseModel sendPasswordChangeNotificationEmail()
+> VoucherRedeemResponseSchema redeemAVoucher(payload)
 
-Send Password Change Notification Email
+Redeem a voucher with a voucher_code
 
-Send a password change notification email to a user
+Request to redeem a voucher with a voucher code.
 
 ### Example
 
@@ -27,8 +27,9 @@ apiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperstackApi.AdminApi();
-apiInstance.sendPasswordChangeNotificationEmail().then((data) => {
+let apiInstance = new HyperstackApi.VouchersApi();
+let payload = new HyperstackApi.RedeemVoucherPayload(); // RedeemVoucherPayload | 
+apiInstance.redeemAVoucher(payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -38,11 +39,14 @@ apiInstance.sendPasswordChangeNotificationEmail().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**RedeemVoucherPayload**](RedeemVoucherPayload.md)|  | 
 
 ### Return type
 
-[**CommonResponseModel**](CommonResponseModel.md)
+[**VoucherRedeemResponseSchema**](VoucherRedeemResponseSchema.md)
 
 ### Authorization
 
@@ -50,6 +54,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 

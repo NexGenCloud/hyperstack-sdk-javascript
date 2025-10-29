@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateSnapshotResponse model module.
  * @module model/CreateSnapshotResponse
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 var CreateSnapshotResponse = /*#__PURE__*/function () {
   /**

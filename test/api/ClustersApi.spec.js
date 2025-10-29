@@ -118,6 +118,16 @@
         done();
       });
     });
+    describe('deleteClusterNodes', function() {
+      it('should call deleteClusterNodes successfully', function(done) {
+        //uncomment below and update the code to test deleteClusterNodes
+        //instance.deleteClusterNodes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fetchClusterNameAvailability', function() {
       it('should call fetchClusterNameAvailability successfully', function(done) {
         //uncomment below and update the code to test fetchClusterNameAvailability

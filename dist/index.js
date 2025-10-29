@@ -15,12 +15,6 @@ Object.defineProperty(exports, "AddUserInfoSuccessResponseModel", {
     return _AddUserInfoSuccessResponseModel["default"];
   }
 });
-Object.defineProperty(exports, "AdminApi", {
-  enumerable: true,
-  get: function get() {
-    return _AdminApi["default"];
-  }
-});
 Object.defineProperty(exports, "AliveApi", {
   enumerable: true,
   get: function get() {
@@ -571,6 +565,12 @@ Object.defineProperty(exports, "DataSynthesisBillingHistoryDetailsResponseSchema
   enumerable: true,
   get: function get() {
     return _DataSynthesisBillingHistoryDetailsResponseSchema["default"];
+  }
+});
+Object.defineProperty(exports, "DeleteClusterNodesFields", {
+  enumerable: true,
+  get: function get() {
+    return _DeleteClusterNodesFields["default"];
   }
 });
 Object.defineProperty(exports, "DeploymentApi", {
@@ -1377,6 +1377,12 @@ Object.defineProperty(exports, "RbacRoleFields", {
     return _RbacRoleFields["default"];
   }
 });
+Object.defineProperty(exports, "RedeemVoucherPayload", {
+  enumerable: true,
+  get: function get() {
+    return _RedeemVoucherPayload["default"];
+  }
+});
 Object.defineProperty(exports, "RegionApi", {
   enumerable: true,
   get: function get() {
@@ -2037,6 +2043,24 @@ Object.defineProperty(exports, "VolumesFields", {
     return _VolumesFields["default"];
   }
 });
+Object.defineProperty(exports, "Voucher", {
+  enumerable: true,
+  get: function get() {
+    return _Voucher["default"];
+  }
+});
+Object.defineProperty(exports, "VoucherRedeemResponseSchema", {
+  enumerable: true,
+  get: function get() {
+    return _VoucherRedeemResponseSchema["default"];
+  }
+});
+Object.defineProperty(exports, "VouchersApi", {
+  enumerable: true,
+  get: function get() {
+    return _VouchersApi["default"];
+  }
+});
 Object.defineProperty(exports, "WorkloadBillingHistoryResponse", {
   enumerable: true,
   get: function get() {
@@ -2123,6 +2147,7 @@ var _CustomerContractDetailResponseModel = _interopRequireDefault(require("./mod
 var _CustomerContractFields = _interopRequireDefault(require("./model/CustomerContractFields"));
 var _DashboardInfoResponse = _interopRequireDefault(require("./model/DashboardInfoResponse"));
 var _DataSynthesisBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("./model/DataSynthesisBillingHistoryDetailsResponseSchema"));
+var _DeleteClusterNodesFields = _interopRequireDefault(require("./model/DeleteClusterNodesFields"));
 var _DeploymentFields = _interopRequireDefault(require("./model/DeploymentFields"));
 var _DeploymentFieldsForStartDeployments = _interopRequireDefault(require("./model/DeploymentFieldsForStartDeployments"));
 var _Deployments = _interopRequireDefault(require("./model/Deployments"));
@@ -2239,6 +2264,7 @@ var _RbacRoleDetailResponseModel = _interopRequireDefault(require("./model/RbacR
 var _RbacRoleDetailResponseModelFixed = _interopRequireDefault(require("./model/RbacRoleDetailResponseModelFixed"));
 var _RbacRoleField = _interopRequireDefault(require("./model/RbacRoleField"));
 var _RbacRoleFields = _interopRequireDefault(require("./model/RbacRoleFields"));
+var _RedeemVoucherPayload = _interopRequireDefault(require("./model/RedeemVoucherPayload"));
 var _RegionFields = _interopRequireDefault(require("./model/RegionFields"));
 var _Regions = _interopRequireDefault(require("./model/Regions"));
 var _RemoveMemberFromOrganizationResponseModel = _interopRequireDefault(require("./model/RemoveMemberFromOrganizationResponseModel"));
@@ -2335,8 +2361,9 @@ var _VolumeOverviewFields = _interopRequireDefault(require("./model/VolumeOvervi
 var _VolumeTypes = _interopRequireDefault(require("./model/VolumeTypes"));
 var _Volumes = _interopRequireDefault(require("./model/Volumes"));
 var _VolumesFields = _interopRequireDefault(require("./model/VolumesFields"));
+var _Voucher = _interopRequireDefault(require("./model/Voucher"));
+var _VoucherRedeemResponseSchema = _interopRequireDefault(require("./model/VoucherRedeemResponseSchema"));
 var _WorkloadBillingHistoryResponse = _interopRequireDefault(require("./model/WorkloadBillingHistoryResponse"));
-var _AdminApi = _interopRequireDefault(require("./api/AdminApi"));
 var _AliveApi = _interopRequireDefault(require("./api/AliveApi"));
 var _ApiKeyApi = _interopRequireDefault(require("./api/ApiKeyApi"));
 var _AssigningMemberRoleApi = _interopRequireDefault(require("./api/AssigningMemberRoleApi"));
@@ -2383,4 +2410,5 @@ var _VirtualMachineEventsApi = _interopRequireDefault(require("./api/VirtualMach
 var _VncUrlApi = _interopRequireDefault(require("./api/VncUrlApi"));
 var _VolumeApi = _interopRequireDefault(require("./api/VolumeApi"));
 var _VolumeAttachmentApi = _interopRequireDefault(require("./api/VolumeAttachmentApi"));
+var _VouchersApi = _interopRequireDefault(require("./api/VouchersApi"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }

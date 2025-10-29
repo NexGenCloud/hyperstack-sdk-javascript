@@ -15,6 +15,7 @@ var _ClusterVersions = _interopRequireDefault(require("../model/ClusterVersions"
 var _CreateClusterNodeFields = _interopRequireDefault(require("../model/CreateClusterNodeFields"));
 var _CreateClusterNodeGroupPayload = _interopRequireDefault(require("../model/CreateClusterNodeGroupPayload"));
 var _CreateClusterPayload = _interopRequireDefault(require("../model/CreateClusterPayload"));
+var _DeleteClusterNodesFields = _interopRequireDefault(require("../model/DeleteClusterNodesFields"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
 var _ManualReconciliationModel = _interopRequireDefault(require("../model/ManualReconciliationModel"));
 var _MasterFlavorsResponse = _interopRequireDefault(require("../model/MasterFlavorsResponse"));
@@ -42,7 +43,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.43.0-alpha
+* @version v1.45.2-alpha
 */
 var ClustersApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -350,6 +351,51 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
     key: "deleteClusterNode",
     value: function deleteClusterNode(clusterId, nodeId) {
       return this.deleteClusterNodeWithHttpInfo(clusterId, nodeId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Delete Multiple Cluster Nodes
+     * @param {Number} clusterId 
+     * @param {module:model/DeleteClusterNodesFields} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     */
+  }, {
+    key: "deleteClusterNodesWithHttpInfo",
+    value: function deleteClusterNodesWithHttpInfo(clusterId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling deleteClusterNodes");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling deleteClusterNodes");
+      }
+      var pathParams = {
+        'cluster_id': clusterId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _ResponseModel["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/nodes/delete', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Delete Multiple Cluster Nodes
+     * @param {Number} clusterId 
+     * @param {module:model/DeleteClusterNodesFields} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
+     */
+  }, {
+    key: "deleteClusterNodes",
+    value: function deleteClusterNodes(clusterId, payload) {
+      return this.deleteClusterNodesWithHttpInfo(clusterId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

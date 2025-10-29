@@ -24,7 +24,7 @@ import UpdateEnvironment from '../model/UpdateEnvironment';
 /**
 * Environment service.
 * @module api/EnvironmentApi
-* @version v1.43.0-alpha
+* @version v1.45.2-alpha
 */
 export default class EnvironmentApi {
 

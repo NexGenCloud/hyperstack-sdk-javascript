@@ -17,7 +17,7 @@ import ClusterFields from './ClusterFields';
 /**
  * The ClusterResponse model module.
  * @module model/ClusterResponse
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 class ClusterResponse {
     /**

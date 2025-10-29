@@ -33,7 +33,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Environment service.
 * @module api/EnvironmentApi
-* @version v1.43.0-alpha
+* @version v1.45.2-alpha
 */
 var EnvironmentApi = exports["default"] = /*#__PURE__*/function () {
   /**

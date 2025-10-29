@@ -23,6 +23,7 @@ import ClusterVersions from '../model/ClusterVersions';
 import CreateClusterNodeFields from '../model/CreateClusterNodeFields';
 import CreateClusterNodeGroupPayload from '../model/CreateClusterNodeGroupPayload';
 import CreateClusterPayload from '../model/CreateClusterPayload';
+import DeleteClusterNodesFields from '../model/DeleteClusterNodesFields';
 import ErrorResponseModel from '../model/ErrorResponseModel';
 import ManualReconciliationModel from '../model/ManualReconciliationModel';
 import MasterFlavorsResponse from '../model/MasterFlavorsResponse';
@@ -33,7 +34,7 @@ import UpdateClusterNodeGroupPayload from '../model/UpdateClusterNodeGroupPayloa
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.43.0-alpha
+* @version v1.45.2-alpha
 */
 export default class ClustersApi {
 
@@ -391,6 +392,58 @@ export default class ClustersApi {
      */
     deleteClusterNode(clusterId, nodeId) {
       return this.deleteClusterNodeWithHttpInfo(clusterId, nodeId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete Multiple Cluster Nodes
+     * @param {Number} clusterId 
+     * @param {module:model/DeleteClusterNodesFields} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     */
+    deleteClusterNodesWithHttpInfo(clusterId, payload) {
+      let postBody = payload;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling deleteClusterNodes");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling deleteClusterNodes");
+      }
+
+      let pathParams = {
+        'cluster_id': clusterId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ResponseModel;
+      return this.apiClient.callApi(
+        '/core/clusters/{cluster_id}/nodes/delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete Multiple Cluster Nodes
+     * @param {Number} clusterId 
+     * @param {module:model/DeleteClusterNodesFields} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
+     */
+    deleteClusterNodes(clusterId, payload) {
+      return this.deleteClusterNodesWithHttpInfo(clusterId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -5,8 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-var _CommonResponseModel = _interopRequireDefault(require("../model/CommonResponseModel"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
+var _RedeemVoucherPayload = _interopRequireDefault(require("../model/RedeemVoucherPayload"));
+var _VoucherRedeemResponseSchema = _interopRequireDefault(require("../model/VoucherRedeemResponseSchema"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -26,52 +27,58 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
  *
  */
 /**
-* Admin service.
-* @module api/AdminApi
-* @version v1.43.0-alpha
+* Vouchers service.
+* @module api/VouchersApi
+* @version v1.45.2-alpha
 */
-var AdminApi = exports["default"] = /*#__PURE__*/function () {
+var VouchersApi = exports["default"] = /*#__PURE__*/function () {
   /**
-  * Constructs a new AdminApi. 
-  * @alias module:api/AdminApi
+  * Constructs a new VouchersApi. 
+  * @alias module:api/VouchersApi
   * @class
   * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
   * default to {@link module:ApiClient#instance} if unspecified.
   */
-  function AdminApi(apiClient) {
-    _classCallCheck(this, AdminApi);
+  function VouchersApi(apiClient) {
+    _classCallCheck(this, VouchersApi);
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
 
   /**
-   * Send Password Change Notification Email
-   * Send a password change notification email to a user
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
+   * Redeem a voucher with a voucher_code
+   * Request to redeem a voucher with a voucher code.
+   * @param {module:model/RedeemVoucherPayload} payload 
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VoucherRedeemResponseSchema} and HTTP response
    */
-  return _createClass(AdminApi, [{
-    key: "sendPasswordChangeNotificationEmailWithHttpInfo",
-    value: function sendPasswordChangeNotificationEmailWithHttpInfo() {
-      var postBody = null;
+  return _createClass(VouchersApi, [{
+    key: "redeemAVoucherWithHttpInfo",
+    value: function redeemAVoucherWithHttpInfo(payload) {
+      var postBody = payload;
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling redeemAVoucher");
+      }
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
       var authNames = ['apiKey'];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _CommonResponseModel["default"];
-      return this.apiClient.callApi('/auth/admin/password-change-mail', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _VoucherRedeemResponseSchema["default"];
+      return this.apiClient.callApi('/billing/billing/vouchers/redeem', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Send Password Change Notification Email
-     * Send a password change notification email to a user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
+     * Redeem a voucher with a voucher_code
+     * Request to redeem a voucher with a voucher code.
+     * @param {module:model/RedeemVoucherPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VoucherRedeemResponseSchema}
      */
   }, {
-    key: "sendPasswordChangeNotificationEmail",
-    value: function sendPasswordChangeNotificationEmail() {
-      return this.sendPasswordChangeNotificationEmailWithHttpInfo().then(function (response_and_data) {
+    key: "redeemAVoucher",
+    value: function redeemAVoucher(payload) {
+      return this.redeemAVoucherWithHttpInfo(payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegionFields model module.
  * @module model/RegionFields
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 class RegionFields {
     /**

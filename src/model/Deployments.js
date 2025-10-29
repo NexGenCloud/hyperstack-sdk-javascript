@@ -17,7 +17,7 @@ import DeploymentFields from './DeploymentFields';
 /**
  * The Deployments model module.
  * @module model/Deployments
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 class Deployments {
     /**

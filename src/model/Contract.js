@@ -17,7 +17,7 @@ import AllocatedGPUCountGraph from './AllocatedGPUCountGraph';
 /**
  * The Contract model module.
  * @module model/Contract
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 class Contract {
     /**

@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The DashboardInfoResponse model module.
  * @module model/DashboardInfoResponse
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 var DashboardInfoResponse = /*#__PURE__*/function () {
   /**

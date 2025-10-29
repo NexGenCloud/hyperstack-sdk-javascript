@@ -13,19 +13,20 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonResponseModel from '../model/CommonResponseModel';
 import ErrorResponseModel from '../model/ErrorResponseModel';
+import RedeemVoucherPayload from '../model/RedeemVoucherPayload';
+import VoucherRedeemResponseSchema from '../model/VoucherRedeemResponseSchema';
 
 /**
-* Admin service.
-* @module api/AdminApi
-* @version v1.43.0-alpha
+* Vouchers service.
+* @module api/VouchersApi
+* @version v1.45.2-alpha
 */
-export default class AdminApi {
+export default class VouchersApi {
 
     /**
-    * Constructs a new AdminApi. 
-    * @alias module:api/AdminApi
+    * Constructs a new VouchersApi. 
+    * @alias module:api/VouchersApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -37,12 +38,17 @@ export default class AdminApi {
 
 
     /**
-     * Send Password Change Notification Email
-     * Send a password change notification email to a user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
+     * Redeem a voucher with a voucher_code
+     * Request to redeem a voucher with a voucher code.
+     * @param {module:model/RedeemVoucherPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VoucherRedeemResponseSchema} and HTTP response
      */
-    sendPasswordChangeNotificationEmailWithHttpInfo() {
-      let postBody = null;
+    redeemAVoucherWithHttpInfo(payload) {
+      let postBody = payload;
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling redeemAVoucher");
+      }
 
       let pathParams = {
       };
@@ -54,23 +60,24 @@ export default class AdminApi {
       };
 
       let authNames = ['apiKey'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CommonResponseModel;
+      let returnType = VoucherRedeemResponseSchema;
       return this.apiClient.callApi(
-        '/auth/admin/password-change-mail', 'POST',
+        '/billing/billing/vouchers/redeem', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Send Password Change Notification Email
-     * Send a password change notification email to a user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
+     * Redeem a voucher with a voucher_code
+     * Request to redeem a voucher with a voucher code.
+     * @param {module:model/RedeemVoucherPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VoucherRedeemResponseSchema}
      */
-    sendPasswordChangeNotificationEmail() {
-      return this.sendPasswordChangeNotificationEmailWithHttpInfo()
+    redeemAVoucher(payload) {
+      return this.redeemAVoucherWithHttpInfo(payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

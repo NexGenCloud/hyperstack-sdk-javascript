@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new HyperstackApi.AdminApi();
+    instance = new HyperstackApi.DeleteClusterNodesFields();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,17 +47,19 @@
       object[property] = value;
   }
 
-  describe('AdminApi', function() {
-    describe('sendPasswordChangeNotificationEmail', function() {
-      it('should call sendPasswordChangeNotificationEmail successfully', function(done) {
-        //uncomment below and update the code to test sendPasswordChangeNotificationEmail
-        //instance.sendPasswordChangeNotificationEmail(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('DeleteClusterNodesFields', function() {
+    it('should create an instance of DeleteClusterNodesFields', function() {
+      // uncomment below and update the code to test DeleteClusterNodesFields
+      //var instance = new HyperstackApi.DeleteClusterNodesFields();
+      //expect(instance).to.be.a(HyperstackApi.DeleteClusterNodesFields);
     });
+
+    it('should have the property ids (base name: "ids")', function() {
+      // uncomment below and update the code to test the property ids
+      //var instance = new HyperstackApi.DeleteClusterNodesFields();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

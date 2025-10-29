@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**deleteACluster**](ClustersApi.md#deleteACluster) | **DELETE** /core/clusters/{id} | Delete a cluster
 [**deleteANodeGroup**](ClustersApi.md#deleteANodeGroup) | **DELETE** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Delete a node group
 [**deleteClusterNode**](ClustersApi.md#deleteClusterNode) | **DELETE** /core/clusters/{cluster_id}/nodes/{node_id} | Delete Cluster Node
+[**deleteClusterNodes**](ClustersApi.md#deleteClusterNodes) | **POST** /core/clusters/{cluster_id}/nodes/delete | Delete Multiple Cluster Nodes
 [**fetchClusterNameAvailability**](ClustersApi.md#fetchClusterNameAvailability) | **GET** /core/clusters/name-availability/{name} | Fetch cluster name availability
 [**getClusterMasterFlavors**](ClustersApi.md#getClusterMasterFlavors) | **GET** /core/clusters/master-flavors | Get Cluster Master Flavors
 [**getClusterNodes**](ClustersApi.md#getClusterNodes) | **GET** /core/clusters/{cluster_id}/nodes | Get Cluster Nodes
@@ -364,6 +365,56 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deleteClusterNodes
+
+> ResponseModel deleteClusterNodes(clusterId, payload)
+
+Delete Multiple Cluster Nodes
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let payload = new HyperstackApi.DeleteClusterNodesFields(); // DeleteClusterNodesFields | 
+apiInstance.deleteClusterNodes(clusterId, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **payload** | [**DeleteClusterNodesFields**](DeleteClusterNodesFields.md)|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

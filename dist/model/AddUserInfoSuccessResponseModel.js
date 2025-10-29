@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The AddUserInfoSuccessResponseModel model module.
  * @module model/AddUserInfoSuccessResponseModel
- * @version v1.43.0-alpha
+ * @version v1.45.2-alpha
  */
 var AddUserInfoSuccessResponseModel = /*#__PURE__*/function () {
   /**
