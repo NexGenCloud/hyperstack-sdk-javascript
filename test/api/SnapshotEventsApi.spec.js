@@ -48,10 +48,10 @@
   }
 
   describe('SnapshotEventsApi', function() {
-    describe('fetchAllEventsForASnapshot', function() {
-      it('should call fetchAllEventsForASnapshot successfully', function(done) {
-        //uncomment below and update the code to test fetchAllEventsForASnapshot
-        //instance.fetchAllEventsForASnapshot(function(error) {
+    describe('listSnapshotEvents', function() {
+      it('should call listSnapshotEvents successfully', function(done) {
+        //uncomment below and update the code to test listSnapshotEvents
+        //instance.listSnapshotEvents(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

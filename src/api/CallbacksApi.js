@@ -21,7 +21,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Callbacks service.
 * @module api/CallbacksApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class CallbacksApi {
 
@@ -45,15 +45,15 @@ export default class CallbacksApi {
      * @param {module:model/AttachCallbackPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachCallbackResponse} and HTTP response
      */
-    attachCallbackToVirtualMachineWithHttpInfo(vmId, payload) {
+    attachCallbackToVMWithHttpInfo(vmId, payload) {
       let postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling attachCallbackToVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling attachCallbackToVM");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling attachCallbackToVirtualMachine");
+        throw new Error("Missing the required parameter 'payload' when calling attachCallbackToVM");
       }
 
       let pathParams = {
@@ -84,8 +84,8 @@ export default class CallbacksApi {
      * @param {module:model/AttachCallbackPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachCallbackResponse}
      */
-    attachCallbackToVirtualMachine(vmId, payload) {
-      return this.attachCallbackToVirtualMachineWithHttpInfo(vmId, payload)
+    attachCallbackToVM(vmId, payload) {
+      return this.attachCallbackToVMWithHttpInfo(vmId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -152,11 +152,11 @@ export default class CallbacksApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    deleteVirtualMachineCallbackWithHttpInfo(vmId) {
+    deleteVMCallbackWithHttpInfo(vmId) {
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling deleteVirtualMachineCallback");
+        throw new Error("Missing the required parameter 'vmId' when calling deleteVMCallback");
       }
 
       let pathParams = {
@@ -186,8 +186,8 @@ export default class CallbacksApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    deleteVirtualMachineCallback(vmId) {
-      return this.deleteVirtualMachineCallbackWithHttpInfo(vmId)
+    deleteVMCallback(vmId) {
+      return this.deleteVMCallbackWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -249,15 +249,15 @@ export default class CallbacksApi {
      * @param {module:model/AttachCallbackPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachCallbackResponse} and HTTP response
      */
-    updateVirtualMachineCallbackWithHttpInfo(vmId, payload) {
+    updateVMCallbackWithHttpInfo(vmId, payload) {
       let postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling updateVirtualMachineCallback");
+        throw new Error("Missing the required parameter 'vmId' when calling updateVMCallback");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateVirtualMachineCallback");
+        throw new Error("Missing the required parameter 'payload' when calling updateVMCallback");
       }
 
       let pathParams = {
@@ -288,8 +288,8 @@ export default class CallbacksApi {
      * @param {module:model/AttachCallbackPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachCallbackResponse}
      */
-    updateVirtualMachineCallback(vmId, payload) {
-      return this.updateVirtualMachineCallbackWithHttpInfo(vmId, payload)
+    updateVMCallback(vmId, payload) {
+      return this.updateVMCallbackWithHttpInfo(vmId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

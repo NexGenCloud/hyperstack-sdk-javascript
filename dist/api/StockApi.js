@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Stock service.
 * @module api/StockApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var StockApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -49,8 +49,8 @@ var StockApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewStockRetriveResponse} and HTTP response
    */
   return _createClass(StockApi, [{
-    key: "retrieveGPUStocksWithHttpInfo",
-    value: function retrieveGPUStocksWithHttpInfo() {
+    key: "getGPUStockWithHttpInfo",
+    value: function getGPUStockWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
@@ -69,9 +69,9 @@ var StockApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewStockRetriveResponse}
      */
   }, {
-    key: "retrieveGPUStocks",
-    value: function retrieveGPUStocks() {
-      return this.retrieveGPUStocksWithHttpInfo().then(function (response_and_data) {
+    key: "getGPUStock",
+    value: function getGPUStock() {
+      return this.getGPUStockWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

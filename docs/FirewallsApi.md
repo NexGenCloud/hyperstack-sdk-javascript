@@ -4,18 +4,18 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addFirewallRuleToAnExistingFirewall**](FirewallsApi.md#addFirewallRuleToAnExistingFirewall) | **POST** /core/firewalls/{firewall_id}/firewall-rules | Add firewall rule to firewall
-[**createANewFirewall**](FirewallsApi.md#createANewFirewall) | **POST** /core/firewalls | Create firewall
+[**addRuleToFirewall**](FirewallsApi.md#addRuleToFirewall) | **POST** /core/firewalls/{firewall_id}/firewall-rules | Add firewall rule to firewall
+[**createFirewall**](FirewallsApi.md#createFirewall) | **POST** /core/firewalls | Create firewall
 [**deleteExistingFirewall**](FirewallsApi.md#deleteExistingFirewall) | **DELETE** /core/firewalls/{id} | Delete firewall
-[**deleteFirewallRulesFromFirewall**](FirewallsApi.md#deleteFirewallRulesFromFirewall) | **DELETE** /core/firewalls/{firewall_id}/firewall-rules/{firewall_rule_id} | Delete firewall rules from firewall
+[**deleteRuleFromFirewall**](FirewallsApi.md#deleteRuleFromFirewall) | **DELETE** /core/firewalls/{firewall_id}/firewall-rules/{firewall_rule_id} | Delete firewall rules from firewall
+[**getFirewall**](FirewallsApi.md#getFirewall) | **GET** /core/firewalls/{id} | Retrieve firewall details
 [**listExistingFirewalls**](FirewallsApi.md#listExistingFirewalls) | **GET** /core/firewalls | List firewalls
-[**retrieveTheDetailsOfAnExistingFirewall**](FirewallsApi.md#retrieveTheDetailsOfAnExistingFirewall) | **GET** /core/firewalls/{id} | Retrieve firewall details
 
 
 
-## addFirewallRuleToAnExistingFirewall
+## addRuleToFirewall
 
-> FirewallRule addFirewallRuleToAnExistingFirewall(firewallId, payload)
+> FirewallRule addRuleToFirewall(firewallId, payload)
 
 Add firewall rule to firewall
 
@@ -35,7 +35,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.FirewallsApi();
 let firewallId = 56; // Number | 
 let payload = new HyperstackApi.CreateFirewallRulePayload(); // CreateFirewallRulePayload | 
-apiInstance.addFirewallRuleToAnExistingFirewall(firewallId, payload).then((data) => {
+apiInstance.addRuleToFirewall(firewallId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## createANewFirewall
+## createFirewall
 
-> FirewallResponse createANewFirewall(payload)
+> FirewallResponse createFirewall(payload)
 
 Create firewall
 
@@ -86,7 +86,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.FirewallsApi();
 let payload = new HyperstackApi.CreateFirewallPayload(); // CreateFirewallPayload | 
-apiInstance.createANewFirewall(payload).then((data) => {
+apiInstance.createFirewall(payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -165,9 +165,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteFirewallRulesFromFirewall
+## deleteRuleFromFirewall
 
-> ResponseModel deleteFirewallRulesFromFirewall(firewallId, firewallRuleId)
+> ResponseModel deleteRuleFromFirewall(firewallId, firewallRuleId)
 
 Delete firewall rules from firewall
 
@@ -187,7 +187,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.FirewallsApi();
 let firewallId = 56; // Number | 
 let firewallRuleId = 56; // Number | 
-apiInstance.deleteFirewallRulesFromFirewall(firewallId, firewallRuleId).then((data) => {
+apiInstance.deleteRuleFromFirewall(firewallId, firewallRuleId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -206,6 +206,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getFirewall
+
+> FirewallDetailResponse getFirewall(id)
+
+Retrieve firewall details
+
+Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.FirewallsApi();
+let id = 56; // Number | 
+apiInstance.getFirewall(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+
+### Return type
+
+[**FirewallDetailResponse**](FirewallDetailResponse.md)
 
 ### Authorization
 
@@ -264,56 +314,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FirewallsListResponse**](FirewallsListResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## retrieveTheDetailsOfAnExistingFirewall
-
-> FirewallDetailResponse retrieveTheDetailsOfAnExistingFirewall(id)
-
-Retrieve firewall details
-
-Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.FirewallsApi();
-let id = 56; // Number | 
-apiInstance.retrieveTheDetailsOfAnExistingFirewall(id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
-
-### Return type
-
-[**FirewallDetailResponse**](FirewallDetailResponse.md)
 
 ### Authorization
 

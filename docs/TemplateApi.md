@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createTemplate**](TemplateApi.md#createTemplate) | **POST** /core/marketplace/templates | Create template
 [**deleteTemplate**](TemplateApi.md#deleteTemplate) | **DELETE** /core/marketplace/templates/{id} | Delete template
+[**getTemplate**](TemplateApi.md#getTemplate) | **GET** /core/marketplace/templates/{id} | Retrieve template details
 [**listTemplates**](TemplateApi.md#listTemplates) | **GET** /core/marketplace/templates | List templates
-[**retrieveTemplateDetails**](TemplateApi.md#retrieveTemplateDetails) | **GET** /core/marketplace/templates/{id} | Retrieve template details
 [**updateTemplate**](TemplateApi.md#updateTemplate) | **PUT** /core/marketplace/templates/{id} | Update template
 
 
@@ -118,6 +118,56 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getTemplate
+
+> Template getTemplate(id)
+
+Retrieve template details
+
+Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.TemplateApi();
+let id = 56; // Number | 
+apiInstance.getTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+
+### Return type
+
+[**Template**](Template.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## listTemplates
 
 > Templates listTemplates(opts)
@@ -159,56 +209,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Templates**](Templates.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## retrieveTemplateDetails
-
-> Template retrieveTemplateDetails(id)
-
-Retrieve template details
-
-Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.TemplateApi();
-let id = 56; // Number | 
-apiInstance.retrieveTemplateDetails(id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
-
-### Return type
-
-[**Template**](Template.md)
 
 ### Authorization
 

@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The BillingHistoryServerlessInferenceDetails model module.
  * @module model/BillingHistoryServerlessInferenceDetails
- * @version v1.45.2-alpha
+ * @version v1.46.1-alpha
  */
 var BillingHistoryServerlessInferenceDetails = /*#__PURE__*/function () {
   /**

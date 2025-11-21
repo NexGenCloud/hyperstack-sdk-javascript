@@ -58,10 +58,10 @@
         done();
       });
     });
-    describe('getVncUrl', function() {
-      it('should call getVncUrl successfully', function(done) {
-        //uncomment below and update the code to test getVncUrl
-        //instance.getVncUrl(function(error) {
+    describe('requestVMConsole', function() {
+      it('should call requestVMConsole successfully', function(done) {
+        //uncomment below and update the code to test requestVMConsole
+        //instance.requestVMConsole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

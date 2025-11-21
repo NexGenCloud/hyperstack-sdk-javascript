@@ -22,7 +22,7 @@ import GetApiKeysResponseModel from '../model/GetApiKeysResponseModel';
 /**
 * ApiKey service.
 * @module api/ApiKeyApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class ApiKeyApi {
 
@@ -139,7 +139,7 @@ export default class ApiKeyApi {
      * Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetApiKeysResponseModel} and HTTP response
      */
-    retrieveAPIKeyWithHttpInfo() {
+    getAPIKeyWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -167,8 +167,8 @@ export default class ApiKeyApi {
      * Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetApiKeysResponseModel}
      */
-    retrieveAPIKey() {
-      return this.retrieveAPIKeyWithHttpInfo()
+    getAPIKey() {
+      return this.getAPIKeyWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

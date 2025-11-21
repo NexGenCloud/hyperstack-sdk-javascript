@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listVirtualMachineEvents**](VirtualMachineEventsApi.md#listVirtualMachineEvents) | **GET** /core/virtual-machines/{vm_id}/events | List virtual machine events
+[**listVMEvents**](VirtualMachineEventsApi.md#listVMEvents) | **GET** /core/virtual-machines/{vm_id}/events | List virtual machine events
 
 
 
-## listVirtualMachineEvents
+## listVMEvents
 
-> InstanceEvents listVirtualMachineEvents(vmId)
+> InstanceEvents listVMEvents(vmId)
 
 List virtual machine events
 
@@ -29,7 +29,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VirtualMachineEventsApi();
 let vmId = 56; // Number | 
-apiInstance.listVirtualMachineEvents(vmId).then((data) => {
+apiInstance.listVMEvents(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

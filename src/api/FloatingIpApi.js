@@ -19,7 +19,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * FloatingIp service.
 * @module api/FloatingIpApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class FloatingIpApi {
 
@@ -42,11 +42,11 @@ export default class FloatingIpApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    attachPublicIPToVirtualMachineWithHttpInfo(vmId) {
+    attachPublicIPToVMWithHttpInfo(vmId) {
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling attachPublicIPToVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling attachPublicIPToVM");
       }
 
       let pathParams = {
@@ -76,8 +76,8 @@ export default class FloatingIpApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    attachPublicIPToVirtualMachine(vmId) {
-      return this.attachPublicIPToVirtualMachineWithHttpInfo(vmId)
+    attachPublicIPToVM(vmId) {
+      return this.attachPublicIPToVMWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -90,11 +90,11 @@ export default class FloatingIpApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    detachPublicIPFromVirtualMachineWithHttpInfo(vmId) {
+    detachPublicIPFromVMWithHttpInfo(vmId) {
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling detachPublicIPFromVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling detachPublicIPFromVM");
       }
 
       let pathParams = {
@@ -124,8 +124,8 @@ export default class FloatingIpApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    detachPublicIPFromVirtualMachine(vmId) {
-      return this.detachPublicIPFromVirtualMachineWithHttpInfo(vmId)
+    detachPublicIPFromVM(vmId) {
+      return this.detachPublicIPFromVMWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

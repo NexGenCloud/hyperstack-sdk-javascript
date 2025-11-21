@@ -48,30 +48,30 @@
   }
 
   describe('VolumeAttachmentApi', function() {
-    describe('attachVolumesToVirtualMachine', function() {
-      it('should call attachVolumesToVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test attachVolumesToVirtualMachine
-        //instance.attachVolumesToVirtualMachine(function(error) {
+    describe('attachVolumesToVM', function() {
+      it('should call attachVolumesToVM successfully', function(done) {
+        //uncomment below and update the code to test attachVolumesToVM
+        //instance.attachVolumesToVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('detachVolumesFromVirtualMachine', function() {
-      it('should call detachVolumesFromVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test detachVolumesFromVirtualMachine
-        //instance.detachVolumesFromVirtualMachine(function(error) {
+    describe('detachVolumesFromVM', function() {
+      it('should call detachVolumesFromVM successfully', function(done) {
+        //uncomment below and update the code to test detachVolumesFromVM
+        //instance.detachVolumesFromVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateAVolumeAttachment', function() {
-      it('should call updateAVolumeAttachment successfully', function(done) {
-        //uncomment below and update the code to test updateAVolumeAttachment
-        //instance.updateAVolumeAttachment(function(error) {
+    describe('updateVolumeAttachment', function() {
+      it('should call updateVolumeAttachment successfully', function(done) {
+        //uncomment below and update the code to test updateVolumeAttachment
+        //instance.updateVolumeAttachment(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

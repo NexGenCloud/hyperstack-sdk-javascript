@@ -19,7 +19,7 @@ import GetCreditAndThresholdInfoInResponse from '../model/GetCreditAndThresholdI
 /**
 * Credit service.
 * @module api/CreditApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class CreditApi {
 
@@ -41,7 +41,7 @@ export default class CreditApi {
      * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCreditAndThresholdInfoInResponse} and HTTP response
      */
-    getCredit2WithHttpInfo() {
+    getUserCreditWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -69,8 +69,8 @@ export default class CreditApi {
      * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCreditAndThresholdInfoInResponse}
      */
-    getCredit2() {
-      return this.getCredit2WithHttpInfo()
+    getUserCredit() {
+      return this.getUserCreditWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

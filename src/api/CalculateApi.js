@@ -19,7 +19,7 @@ import ResourceBillingResponseForCustomer from '../model/ResourceBillingResponse
 /**
 * Calculate service.
 * @module api/CalculateApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class CalculateApi {
 
@@ -43,15 +43,15 @@ export default class CalculateApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceBillingResponseForCustomer} and HTTP response
      */
-    getCalculate2WithHttpInfo(resourceType, id) {
+    calculateResourceBillingRateWithHttpInfo(resourceType, id) {
       let postBody = null;
       // verify the required parameter 'resourceType' is set
       if (resourceType === undefined || resourceType === null) {
-        throw new Error("Missing the required parameter 'resourceType' when calling getCalculate2");
+        throw new Error("Missing the required parameter 'resourceType' when calling calculateResourceBillingRate");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getCalculate2");
+        throw new Error("Missing the required parameter 'id' when calling calculateResourceBillingRate");
       }
 
       let pathParams = {
@@ -83,8 +83,8 @@ export default class CalculateApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceBillingResponseForCustomer}
      */
-    getCalculate2(resourceType, id) {
-      return this.getCalculate2WithHttpInfo(resourceType, id)
+    calculateResourceBillingRate(resourceType, id) {
+      return this.calculateResourceBillingRateWithHttpInfo(resourceType, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

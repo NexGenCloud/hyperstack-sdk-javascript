@@ -17,7 +17,7 @@ import ProfileFields from './ProfileFields';
 /**
  * The CreateProfileResponse model module.
  * @module model/CreateProfileResponse
- * @version v1.45.2-alpha
+ * @version v1.46.1-alpha
  */
 class CreateProfileResponse {
     /**

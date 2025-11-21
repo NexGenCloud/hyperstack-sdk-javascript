@@ -4,15 +4,15 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachVolumesToVirtualMachine**](VolumeAttachmentApi.md#attachVolumesToVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/attach-volumes | Attach volumes to virtual machine
-[**detachVolumesFromVirtualMachine**](VolumeAttachmentApi.md#detachVolumesFromVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/detach-volumes | Detach volumes from virtual machine
-[**updateAVolumeAttachment**](VolumeAttachmentApi.md#updateAVolumeAttachment) | **PATCH** /core/volume-attachments/{volume_attachment_id} | Update a volume attachment
+[**attachVolumesToVM**](VolumeAttachmentApi.md#attachVolumesToVM) | **POST** /core/virtual-machines/{vm_id}/attach-volumes | Attach volumes to virtual machine
+[**detachVolumesFromVM**](VolumeAttachmentApi.md#detachVolumesFromVM) | **POST** /core/virtual-machines/{vm_id}/detach-volumes | Detach volumes from virtual machine
+[**updateVolumeAttachment**](VolumeAttachmentApi.md#updateVolumeAttachment) | **PATCH** /core/volume-attachments/{volume_attachment_id} | Update a volume attachment
 
 
 
-## attachVolumesToVirtualMachine
+## attachVolumesToVM
 
-> AttachVolumes attachVolumesToVirtualMachine(vmId, payload)
+> AttachVolumes attachVolumesToVM(vmId, payload)
 
 Attach volumes to virtual machine
 
@@ -32,7 +32,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.VolumeAttachmentApi();
 let vmId = 56; // Number | 
 let payload = new HyperstackApi.AttachVolumesPayload(); // AttachVolumesPayload | 
-apiInstance.attachVolumesToVirtualMachine(vmId, payload).then((data) => {
+apiInstance.attachVolumesToVM(vmId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -62,9 +62,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## detachVolumesFromVirtualMachine
+## detachVolumesFromVM
 
-> DetachVolumes detachVolumesFromVirtualMachine(vmId, payload)
+> DetachVolumes detachVolumesFromVM(vmId, payload)
 
 Detach volumes from virtual machine
 
@@ -84,7 +84,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.VolumeAttachmentApi();
 let vmId = 56; // Number | 
 let payload = new HyperstackApi.DetachVolumesPayload(); // DetachVolumesPayload | 
-apiInstance.detachVolumesFromVirtualMachine(vmId, payload).then((data) => {
+apiInstance.detachVolumesFromVM(vmId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -114,9 +114,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateAVolumeAttachment
+## updateVolumeAttachment
 
-> AttachVolumes updateAVolumeAttachment(volumeAttachmentId, payload)
+> AttachVolumes updateVolumeAttachment(volumeAttachmentId, payload)
 
 Update a volume attachment
 
@@ -134,7 +134,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.VolumeAttachmentApi();
 let volumeAttachmentId = 56; // Number | 
 let payload = new HyperstackApi.UpdateVolumeAttachmentPayload(); // UpdateVolumeAttachmentPayload | 
-apiInstance.updateAVolumeAttachment(volumeAttachmentId, payload).then((data) => {
+apiInstance.updateVolumeAttachment(volumeAttachmentId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

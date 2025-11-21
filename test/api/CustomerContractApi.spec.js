@@ -48,30 +48,30 @@
   }
 
   describe('CustomerContractApi', function() {
-    describe('getCustomerContract', function() {
-      it('should call getCustomerContract successfully', function(done) {
-        //uncomment below and update the code to test getCustomerContract
-        //instance.getCustomerContract(function(error) {
+    describe('getContractGPUAllocationGraph', function() {
+      it('should call getContractGPUAllocationGraph successfully', function(done) {
+        //uncomment below and update the code to test getContractGPUAllocationGraph
+        //instance.getContractGPUAllocationGraph(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getCustomerContractDetails', function() {
-      it('should call getCustomerContractDetails successfully', function(done) {
-        //uncomment below and update the code to test getCustomerContractDetails
-        //instance.getCustomerContractDetails(function(error) {
+    describe('listCustomerContracts', function() {
+      it('should call listCustomerContracts successfully', function(done) {
+        //uncomment below and update the code to test listCustomerContracts
+        //instance.listCustomerContracts(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getCustomerContractGpuAllocationGraph', function() {
-      it('should call getCustomerContractGpuAllocationGraph successfully', function(done) {
-        //uncomment below and update the code to test getCustomerContractGpuAllocationGraph
-        //instance.getCustomerContractGpuAllocationGraph(function(error) {
+    describe('retrieveContract', function() {
+      it('should call retrieveContract successfully', function(done) {
+        //uncomment below and update the code to test retrieveContract
+        //instance.retrieveContract(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

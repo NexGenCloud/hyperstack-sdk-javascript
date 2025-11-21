@@ -68,20 +68,20 @@
         done();
       });
     });
-    describe('listTemplates', function() {
-      it('should call listTemplates successfully', function(done) {
-        //uncomment below and update the code to test listTemplates
-        //instance.listTemplates(function(error) {
+    describe('getTemplate', function() {
+      it('should call getTemplate successfully', function(done) {
+        //uncomment below and update the code to test getTemplate
+        //instance.getTemplate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveTemplateDetails', function() {
-      it('should call retrieveTemplateDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveTemplateDetails
-        //instance.retrieveTemplateDetails(function(error) {
+    describe('listTemplates', function() {
+      it('should call listTemplates successfully', function(done) {
+        //uncomment below and update the code to test listTemplates
+        //instance.listTemplates(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

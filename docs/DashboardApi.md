@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieveDashboard**](DashboardApi.md#retrieveDashboard) | **GET** /core/dashboard | Retrieve Dashboard
+[**getDashboard**](DashboardApi.md#getDashboard) | **GET** /core/dashboard | Retrieve Dashboard
 
 
 
-## retrieveDashboard
+## getDashboard
 
-> DashboardInfoResponse retrieveDashboard()
+> DashboardInfoResponse getDashboard()
 
 Retrieve Dashboard
 
@@ -28,7 +28,7 @@ apiKey.apiKey = 'YOUR API KEY';
 //apiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.DashboardApi();
-apiInstance.retrieveDashboard().then((data) => {
+apiInstance.getDashboard().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

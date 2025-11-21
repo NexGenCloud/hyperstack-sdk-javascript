@@ -45,7 +45,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -61,23 +61,70 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
   }
 
   /**
-   * Attach firewalls to a virtual machine
-   * Attach firewalls to a virtual machine by providing the virtual machine ID in the path and the IDs of the firewalls in the request body; any firewalls not included will be detached.
+   * Edit virtual machine labels
+   * Adds one or more labels to an existing virtual machine. Provide the virtual machine ID in the path to add labels to the specified VM. For multiple labels, add a space between each label in the request body.
    * @param {Number} vmId 
-   * @param {module:model/AttachFirewallsToVMPayload} payload 
+   * @param {module:model/EditLabelOfAnExistingVMPayload} payload 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
    */
   return _createClass(VirtualMachineApi, [{
-    key: "attachFirewallsToAVirtualMachineWithHttpInfo",
-    value: function attachFirewallsToAVirtualMachineWithHttpInfo(vmId, payload) {
+    key: "addVMLabelWithHttpInfo",
+    value: function addVMLabelWithHttpInfo(vmId, payload) {
       var postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling attachFirewallsToAVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling addVMLabel");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling attachFirewallsToAVirtualMachine");
+        throw new Error("Missing the required parameter 'payload' when calling addVMLabel");
+      }
+      var pathParams = {
+        'vm_id': vmId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _ResponseModel["default"];
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/label', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Edit virtual machine labels
+     * Adds one or more labels to an existing virtual machine. Provide the virtual machine ID in the path to add labels to the specified VM. For multiple labels, add a space between each label in the request body.
+     * @param {Number} vmId 
+     * @param {module:model/EditLabelOfAnExistingVMPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
+     */
+  }, {
+    key: "addVMLabel",
+    value: function addVMLabel(vmId, payload) {
+      return this.addVMLabelWithHttpInfo(vmId, payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Attach firewalls to a virtual machine
+     * Attach firewalls to a virtual machine by providing the virtual machine ID in the path and the IDs of the firewalls in the request body; any firewalls not included will be detached.
+     * @param {Number} vmId 
+     * @param {module:model/AttachFirewallsToVMPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     */
+  }, {
+    key: "attachFirewallsToVMWithHttpInfo",
+    value: function attachFirewallsToVMWithHttpInfo(vmId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling attachFirewallsToVM");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling attachFirewallsToVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -100,9 +147,144 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "attachFirewallsToAVirtualMachine",
-    value: function attachFirewallsToAVirtualMachine(vmId, payload) {
-      return this.attachFirewallsToAVirtualMachineWithHttpInfo(vmId, payload).then(function (response_and_data) {
+    key: "attachFirewallsToVM",
+    value: function attachFirewallsToVM(vmId, payload) {
+      return this.attachFirewallsToVMWithHttpInfo(vmId, payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Fetch virtual machine name availability
+     * Check if a Virtual Machine name is available
+     * @param {String} name 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NameAvailableModel} and HTTP response
+     */
+  }, {
+    key: "checkVMNameAvailabilityWithHttpInfo",
+    value: function checkVMNameAvailabilityWithHttpInfo(name) {
+      var postBody = null;
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling checkVMNameAvailability");
+      }
+      var pathParams = {
+        'name': name
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _NameAvailableModel["default"];
+      return this.apiClient.callApi('/core/virtual-machines/name-availability/{name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Fetch virtual machine name availability
+     * Check if a Virtual Machine name is available
+     * @param {String} name 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NameAvailableModel}
+     */
+  }, {
+    key: "checkVMNameAvailability",
+    value: function checkVMNameAvailability(name) {
+      return this.checkVMNameAvailabilityWithHttpInfo(name).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Add firewall rule to virtual machine
+     * Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
+     * @param {Number} vmId 
+     * @param {module:model/CreateSecurityRulePayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SecurityGroupRule} and HTTP response
+     */
+  }, {
+    key: "createFirewallRuleForVMWithHttpInfo",
+    value: function createFirewallRuleForVMWithHttpInfo(vmId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling createFirewallRuleForVM");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling createFirewallRuleForVM");
+      }
+      var pathParams = {
+        'vm_id': vmId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _SecurityGroupRule["default"];
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/sg-rules', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Add firewall rule to virtual machine
+     * Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
+     * @param {Number} vmId 
+     * @param {module:model/CreateSecurityRulePayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SecurityGroupRule}
+     */
+  }, {
+    key: "createFirewallRuleForVM",
+    value: function createFirewallRuleForVM(vmId, payload) {
+      return this.createFirewallRuleForVMWithHttpInfo(vmId, payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Create snapshot from a virtual machine
+     * Create snapshots of a virtual machine by providing the virtual machine ID in the path
+     * @param {Number} vmId 
+     * @param {module:model/CreateSnapshotPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSnapshotResponse} and HTTP response
+     */
+  }, {
+    key: "createSnapshotForVMWithHttpInfo",
+    value: function createSnapshotForVMWithHttpInfo(vmId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling createSnapshotForVM");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling createSnapshotForVM");
+      }
+      var pathParams = {
+        'vm_id': vmId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _CreateSnapshotResponse["default"];
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/snapshots', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Create snapshot from a virtual machine
+     * Create snapshots of a virtual machine by providing the virtual machine ID in the path
+     * @param {Number} vmId 
+     * @param {module:model/CreateSnapshotPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSnapshotResponse}
+     */
+  }, {
+    key: "createSnapshotForVM",
+    value: function createSnapshotForVM(vmId, payload) {
+      return this.createSnapshotForVMWithHttpInfo(vmId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -114,12 +296,12 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateInstancesResponse} and HTTP response
      */
   }, {
-    key: "createOneOrMoreVirtualMachinesWithHttpInfo",
-    value: function createOneOrMoreVirtualMachinesWithHttpInfo(payload) {
+    key: "createVMsWithHttpInfo",
+    value: function createVMsWithHttpInfo(payload) {
       var postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling createOneOrMoreVirtualMachines");
+        throw new Error("Missing the required parameter 'payload' when calling createVMs");
       }
       var pathParams = {};
       var queryParams = {};
@@ -139,9 +321,9 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateInstancesResponse}
      */
   }, {
-    key: "createOneOrMoreVirtualMachines",
-    value: function createOneOrMoreVirtualMachines(payload) {
-      return this.createOneOrMoreVirtualMachinesWithHttpInfo(payload).then(function (response_and_data) {
+    key: "createVMs",
+    value: function createVMs(payload) {
+      return this.createVMsWithHttpInfo(payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -154,16 +336,16 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "deleteSecurityRuleWithHttpInfo",
-    value: function deleteSecurityRuleWithHttpInfo(vmId, sgRuleId) {
+    key: "deleteFirewallRuleForVMWithHttpInfo",
+    value: function deleteFirewallRuleForVMWithHttpInfo(vmId, sgRuleId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling deleteSecurityRule");
+        throw new Error("Missing the required parameter 'vmId' when calling deleteFirewallRuleForVM");
       }
       // verify the required parameter 'sgRuleId' is set
       if (sgRuleId === undefined || sgRuleId === null) {
-        throw new Error("Missing the required parameter 'sgRuleId' when calling deleteSecurityRule");
+        throw new Error("Missing the required parameter 'sgRuleId' when calling deleteFirewallRuleForVM");
       }
       var pathParams = {
         'vm_id': vmId,
@@ -187,9 +369,9 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteSecurityRule",
-    value: function deleteSecurityRule(vmId, sgRuleId) {
-      return this.deleteSecurityRuleWithHttpInfo(vmId, sgRuleId).then(function (response_and_data) {
+    key: "deleteFirewallRuleForVM",
+    value: function deleteFirewallRuleForVM(vmId, sgRuleId) {
+      return this.deleteFirewallRuleForVMWithHttpInfo(vmId, sgRuleId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -201,12 +383,12 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "deleteVirtualMachineWithHttpInfo",
-    value: function deleteVirtualMachineWithHttpInfo(vmId) {
+    key: "deleteVMWithHttpInfo",
+    value: function deleteVMWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling deleteVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling deleteVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -228,67 +410,80 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteVirtualMachine",
-    value: function deleteVirtualMachine(vmId) {
-      return this.deleteVirtualMachineWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "deleteVM",
+    value: function deleteVM(vmId) {
+      return this.deleteVMWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Fetch virtual machine name availability
-     * Check if a Virtual Machine name is available
-     * @param {String} name 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NameAvailableModel} and HTTP response
+     * Retrieve virtual machines associated with a contract
+     * Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
+     * @param {Number} contractId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [page] Page Number
+     * @param {String} [pageSize] Data Per Page
+     * @param {String} [search] Search By Instance ID or Name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContractInstancesResponse} and HTTP response
      */
   }, {
-    key: "fetchVirtualMachineNameAvailabilityWithHttpInfo",
-    value: function fetchVirtualMachineNameAvailabilityWithHttpInfo(name) {
+    key: "getContractVMsWithHttpInfo",
+    value: function getContractVMsWithHttpInfo(contractId, opts) {
+      opts = opts || {};
       var postBody = null;
-      // verify the required parameter 'name' is set
-      if (name === undefined || name === null) {
-        throw new Error("Missing the required parameter 'name' when calling fetchVirtualMachineNameAvailability");
+      // verify the required parameter 'contractId' is set
+      if (contractId === undefined || contractId === null) {
+        throw new Error("Missing the required parameter 'contractId' when calling getContractVMs");
       }
       var pathParams = {
-        'name': name
+        'contract_id': contractId
       };
-      var queryParams = {};
+      var queryParams = {
+        'page': opts['page'],
+        'pageSize': opts['pageSize'],
+        'search': opts['search']
+      };
       var headerParams = {};
       var formParams = {};
       var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _NameAvailableModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/name-availability/{name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _ContractInstancesResponse["default"];
+      return this.apiClient.callApi('/core/virtual-machines/contract/{contract_id}/virtual-machines', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Fetch virtual machine name availability
-     * Check if a Virtual Machine name is available
-     * @param {String} name 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NameAvailableModel}
+     * Retrieve virtual machines associated with a contract
+     * Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
+     * @param {Number} contractId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.page Page Number
+     * @param {String} opts.pageSize Data Per Page
+     * @param {String} opts.search Search By Instance ID or Name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContractInstancesResponse}
      */
   }, {
-    key: "fetchVirtualMachineNameAvailability",
-    value: function fetchVirtualMachineNameAvailability(name) {
-      return this.fetchVirtualMachineNameAvailabilityWithHttpInfo(name).then(function (response_and_data) {
+    key: "getContractVMs",
+    value: function getContractVMs(contractId, opts) {
+      return this.getContractVMsWithHttpInfo(contractId, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Hard reboot virtual machine
-     * Initiates a hard reboot for a virtual machine, simulating the process of unplugging and rebooting a physical machine. Provide the virtual machine ID in the path to execute a hard reboot for the specified virtual machine.
+     * Retrieve virtual machine details
+     * Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
      * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Instance} and HTTP response
      */
   }, {
-    key: "getInstanceHardRebootWithHttpInfo",
-    value: function getInstanceHardRebootWithHttpInfo(vmId) {
+    key: "getVMWithHttpInfo",
+    value: function getVMWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getInstanceHardReboot");
+        throw new Error("Missing the required parameter 'vmId' when calling getVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -299,102 +494,20 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
       var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/hard-reboot', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _Instance["default"];
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Hard reboot virtual machine
-     * Initiates a hard reboot for a virtual machine, simulating the process of unplugging and rebooting a physical machine. Provide the virtual machine ID in the path to execute a hard reboot for the specified virtual machine.
+     * Retrieve virtual machine details
+     * Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
      * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Instance}
      */
   }, {
-    key: "getInstanceHardReboot",
-    value: function getInstanceHardReboot(vmId) {
-      return this.getInstanceHardRebootWithHttpInfo(vmId).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Hibernate virtual machine
-     * Initiates the hibernation of a virtual machine, saving its current state to disk before powering off. Provide the virtual machine ID in the path to specify the virtual machine to be hibernated.
-     * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
-     */
-  }, {
-    key: "getInstanceHibernateWithHttpInfo",
-    value: function getInstanceHibernateWithHttpInfo(vmId) {
-      var postBody = null;
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getInstanceHibernate");
-      }
-      var pathParams = {
-        'vm_id': vmId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/hibernate', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Hibernate virtual machine
-     * Initiates the hibernation of a virtual machine, saving its current state to disk before powering off. Provide the virtual machine ID in the path to specify the virtual machine to be hibernated.
-     * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
-     */
-  }, {
-    key: "getInstanceHibernate",
-    value: function getInstanceHibernate(vmId) {
-      return this.getInstanceHibernateWithHttpInfo(vmId).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Restore virtual machine from hibernation
-     * Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID that you want to restore from hibernation.
-     * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
-     */
-  }, {
-    key: "getInstanceHibernateRestoreWithHttpInfo",
-    value: function getInstanceHibernateRestoreWithHttpInfo(vmId) {
-      var postBody = null;
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getInstanceHibernateRestore");
-      }
-      var pathParams = {
-        'vm_id': vmId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/hibernate-restore', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Restore virtual machine from hibernation
-     * Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID that you want to restore from hibernation.
-     * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
-     */
-  }, {
-    key: "getInstanceHibernateRestore",
-    value: function getInstanceHibernateRestore(vmId) {
-      return this.getInstanceHibernateRestoreWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "getVM",
+    value: function getVM(vmId) {
+      return this.getVMWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -407,16 +520,16 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetInstanceLogsResponse} and HTTP response
      */
   }, {
-    key: "getInstanceLogsWithHttpInfo",
-    value: function getInstanceLogsWithHttpInfo(vmId, requestId) {
+    key: "getVMLogsWithHttpInfo",
+    value: function getVMLogsWithHttpInfo(vmId, requestId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getInstanceLogs");
+        throw new Error("Missing the required parameter 'vmId' when calling getVMLogs");
       }
       // verify the required parameter 'requestId' is set
       if (requestId === undefined || requestId === null) {
-        throw new Error("Missing the required parameter 'requestId' when calling getInstanceLogs");
+        throw new Error("Missing the required parameter 'requestId' when calling getVMLogs");
       }
       var pathParams = {
         'vm_id': vmId
@@ -441,9 +554,9 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetInstanceLogsResponse}
      */
   }, {
-    key: "getInstanceLogs",
-    value: function getInstanceLogs(vmId, requestId) {
-      return this.getInstanceLogsWithHttpInfo(vmId, requestId).then(function (response_and_data) {
+    key: "getVMLogs",
+    value: function getVMLogs(vmId, requestId) {
+      return this.getVMLogsWithHttpInfo(vmId, requestId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -457,13 +570,13 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MetricsFields} and HTTP response
      */
   }, {
-    key: "getInstanceMetricsWithHttpInfo",
-    value: function getInstanceMetricsWithHttpInfo(vmId, opts) {
+    key: "getVMMetricsWithHttpInfo",
+    value: function getVMMetricsWithHttpInfo(vmId, opts) {
       opts = opts || {};
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getInstanceMetrics");
+        throw new Error("Missing the required parameter 'vmId' when calling getVMMetrics");
       }
       var pathParams = {
         'vm_id': vmId
@@ -489,26 +602,26 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MetricsFields}
      */
   }, {
-    key: "getInstanceMetrics",
-    value: function getInstanceMetrics(vmId, opts) {
-      return this.getInstanceMetricsWithHttpInfo(vmId, opts).then(function (response_and_data) {
+    key: "getVMMetrics",
+    value: function getVMMetrics(vmId, opts) {
+      return this.getVMMetricsWithHttpInfo(vmId, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Start virtual machine
-     * Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
+     * Hard reboot virtual machine
+     * Initiates a hard reboot for a virtual machine, simulating the process of unplugging and rebooting a physical machine. Provide the virtual machine ID in the path to execute a hard reboot for the specified virtual machine.
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "getInstanceStartWithHttpInfo",
-    value: function getInstanceStartWithHttpInfo(vmId) {
+    key: "hardRebootVMWithHttpInfo",
+    value: function hardRebootVMWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getInstanceStart");
+        throw new Error("Missing the required parameter 'vmId' when calling hardRebootVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -520,60 +633,67 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/start', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/hard-reboot', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Start virtual machine
-     * Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
+     * Hard reboot virtual machine
+     * Initiates a hard reboot for a virtual machine, simulating the process of unplugging and rebooting a physical machine. Provide the virtual machine ID in the path to execute a hard reboot for the specified virtual machine.
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "getInstanceStart",
-    value: function getInstanceStart(vmId) {
-      return this.getInstanceStartWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "hardRebootVM",
+    value: function hardRebootVM(vmId) {
+      return this.hardRebootVMWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Stop virtual machine
-     * Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
+     * Hibernate virtual machine
+     * Initiates the hibernation of a virtual machine, saving its current state to disk before powering off. Provide the virtual machine ID in the path to specify the virtual machine to be hibernated.
      * @param {Number} vmId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [retainIp] false
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "getInstanceStopWithHttpInfo",
-    value: function getInstanceStopWithHttpInfo(vmId) {
+    key: "hibernateVMWithHttpInfo",
+    value: function hibernateVMWithHttpInfo(vmId, opts) {
+      opts = opts || {};
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getInstanceStop");
+        throw new Error("Missing the required parameter 'vmId' when calling hibernateVM");
       }
       var pathParams = {
         'vm_id': vmId
       };
-      var queryParams = {};
+      var queryParams = {
+        'retain_ip': opts['retainIp']
+      };
       var headerParams = {};
       var formParams = {};
       var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/stop', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/hibernate', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Stop virtual machine
-     * Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
+     * Hibernate virtual machine
+     * Initiates the hibernation of a virtual machine, saving its current state to disk before powering off. Provide the virtual machine ID in the path to specify the virtual machine to be hibernated.
      * @param {Number} vmId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.retainIp false
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "getInstanceStop",
-    value: function getInstanceStop(vmId) {
-      return this.getInstanceStopWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "hibernateVM",
+    value: function hibernateVM(vmId, opts) {
+      return this.hibernateVMWithHttpInfo(vmId, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -590,8 +710,8 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Instances} and HTTP response
      */
   }, {
-    key: "listVirtualMachinesWithHttpInfo",
-    value: function listVirtualMachinesWithHttpInfo(opts) {
+    key: "listVMsWithHttpInfo",
+    value: function listVMsWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
       var pathParams = {};
@@ -623,9 +743,9 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Instances}
      */
   }, {
-    key: "listVirtualMachines",
-    value: function listVirtualMachines(opts) {
-      return this.listVirtualMachinesWithHttpInfo(opts).then(function (response_and_data) {
+    key: "listVMs",
+    value: function listVMs(opts) {
+      return this.listVMsWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -638,16 +758,16 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestInstanceLogsResponse} and HTTP response
      */
   }, {
-    key: "postInstanceLogsWithHttpInfo",
-    value: function postInstanceLogsWithHttpInfo(vmId, payload) {
+    key: "requestVMLogsWithHttpInfo",
+    value: function requestVMLogsWithHttpInfo(vmId, payload) {
       var postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling postInstanceLogs");
+        throw new Error("Missing the required parameter 'vmId' when calling requestVMLogs");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postInstanceLogs");
+        throw new Error("Missing the required parameter 'payload' when calling requestVMLogs");
       }
       var pathParams = {
         'vm_id': vmId
@@ -670,9 +790,9 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestInstanceLogsResponse}
      */
   }, {
-    key: "postInstanceLogs",
-    value: function postInstanceLogs(vmId, payload) {
-      return this.postInstanceLogsWithHttpInfo(vmId, payload).then(function (response_and_data) {
+    key: "requestVMLogs",
+    value: function requestVMLogs(vmId, payload) {
+      return this.requestVMLogsWithHttpInfo(vmId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -685,16 +805,16 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "postInstanceResizeWithHttpInfo",
-    value: function postInstanceResizeWithHttpInfo(vmId, payload) {
+    key: "resizeVMWithHttpInfo",
+    value: function resizeVMWithHttpInfo(vmId, payload) {
       var postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling postInstanceResize");
+        throw new Error("Missing the required parameter 'vmId' when calling resizeVM");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postInstanceResize");
+        throw new Error("Missing the required parameter 'payload' when calling resizeVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -717,125 +837,26 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "postInstanceResize",
-    value: function postInstanceResize(vmId, payload) {
-      return this.postInstanceResizeWithHttpInfo(vmId, payload).then(function (response_and_data) {
+    key: "resizeVM",
+    value: function resizeVM(vmId, payload) {
+      return this.resizeVMWithHttpInfo(vmId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Add firewall rule to virtual machine
-     * Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
+     * Restore virtual machine from hibernation
+     * Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID that you want to restore from hibernation.
      * @param {Number} vmId 
-     * @param {module:model/CreateSecurityRulePayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SecurityGroupRule} and HTTP response
-     */
-  }, {
-    key: "postSecurityRuleWithHttpInfo",
-    value: function postSecurityRuleWithHttpInfo(vmId, payload) {
-      var postBody = payload;
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling postSecurityRule");
-      }
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postSecurityRule");
-      }
-      var pathParams = {
-        'vm_id': vmId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _SecurityGroupRule["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/sg-rules', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Add firewall rule to virtual machine
-     * Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
-     * @param {Number} vmId 
-     * @param {module:model/CreateSecurityRulePayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SecurityGroupRule}
-     */
-  }, {
-    key: "postSecurityRule",
-    value: function postSecurityRule(vmId, payload) {
-      return this.postSecurityRuleWithHttpInfo(vmId, payload).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Create snapshot from a virtual machine
-     * Create snapshots of a virtual machine by providing the virtual machine ID in the path
-     * @param {Number} vmId 
-     * @param {module:model/CreateSnapshotPayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSnapshotResponse} and HTTP response
-     */
-  }, {
-    key: "postSnapshotsWithHttpInfo",
-    value: function postSnapshotsWithHttpInfo(vmId, payload) {
-      var postBody = payload;
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling postSnapshots");
-      }
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postSnapshots");
-      }
-      var pathParams = {
-        'vm_id': vmId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _CreateSnapshotResponse["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/snapshots', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Create snapshot from a virtual machine
-     * Create snapshots of a virtual machine by providing the virtual machine ID in the path
-     * @param {Number} vmId 
-     * @param {module:model/CreateSnapshotPayload} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSnapshotResponse}
-     */
-  }, {
-    key: "postSnapshots",
-    value: function postSnapshots(vmId, payload) {
-      return this.postSnapshotsWithHttpInfo(vmId, payload).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Edit virtual machine labels
-     * Adds one or more labels to an existing virtual machine. Provide the virtual machine ID in the path to add labels to the specified VM. For multiple labels, add a space between each label in the request body.
-     * @param {Number} vmId 
-     * @param {module:model/EditLabelOfAnExistingVMPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "putLabelsWithHttpInfo",
-    value: function putLabelsWithHttpInfo(vmId, payload) {
-      var postBody = payload;
+    key: "restoreVMFromHibernationWithHttpInfo",
+    value: function restoreVMFromHibernationWithHttpInfo(vmId) {
+      var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling putLabels");
-      }
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling putLabels");
+        throw new Error("Missing the required parameter 'vmId' when calling restoreVMFromHibernation");
       }
       var pathParams = {
         'vm_id': vmId
@@ -844,40 +865,39 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
       var headerParams = {};
       var formParams = {};
       var authNames = ['apiKey'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _ResponseModel["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/label', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/hibernate-restore', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Edit virtual machine labels
-     * Adds one or more labels to an existing virtual machine. Provide the virtual machine ID in the path to add labels to the specified VM. For multiple labels, add a space between each label in the request body.
+     * Restore virtual machine from hibernation
+     * Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID that you want to restore from hibernation.
      * @param {Number} vmId 
-     * @param {module:model/EditLabelOfAnExistingVMPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "putLabels",
-    value: function putLabels(vmId, payload) {
-      return this.putLabelsWithHttpInfo(vmId, payload).then(function (response_and_data) {
+    key: "restoreVMFromHibernation",
+    value: function restoreVMFromHibernation(vmId) {
+      return this.restoreVMFromHibernationWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Retrieve virtual machine details
-     * Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
+     * Start virtual machine
+     * Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
      * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Instance} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "retrieveVirtualMachineDetailsWithHttpInfo",
-    value: function retrieveVirtualMachineDetailsWithHttpInfo(vmId) {
+    key: "startVMWithHttpInfo",
+    value: function startVMWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling retrieveVirtualMachineDetails");
+        throw new Error("Missing the required parameter 'vmId' when calling startVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -888,74 +908,61 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
       var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Instance["default"];
-      return this.apiClient.callApi('/core/virtual-machines/{vm_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _ResponseModel["default"];
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/start', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Retrieve virtual machine details
-     * Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
+     * Start virtual machine
+     * Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
      * @param {Number} vmId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Instance}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "retrieveVirtualMachineDetails",
-    value: function retrieveVirtualMachineDetails(vmId) {
-      return this.retrieveVirtualMachineDetailsWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "startVM",
+    value: function startVM(vmId) {
+      return this.startVMWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
 
     /**
-     * Retrieve virtual machines associated with a contract
-     * Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
-     * @param {Number} contractId 
-     * @param {Object} opts Optional parameters
-     * @param {String} [page] Page Number
-     * @param {String} [pageSize] Data Per Page
-     * @param {String} [search] Search By Instance ID or Name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContractInstancesResponse} and HTTP response
+     * Stop virtual machine
+     * Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
+     * @param {Number} vmId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "retrieveVirtualMachinesAssociatedWithAContractWithHttpInfo",
-    value: function retrieveVirtualMachinesAssociatedWithAContractWithHttpInfo(contractId, opts) {
-      opts = opts || {};
+    key: "stopVMWithHttpInfo",
+    value: function stopVMWithHttpInfo(vmId) {
       var postBody = null;
-      // verify the required parameter 'contractId' is set
-      if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling retrieveVirtualMachinesAssociatedWithAContract");
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling stopVM");
       }
       var pathParams = {
-        'contract_id': contractId
+        'vm_id': vmId
       };
-      var queryParams = {
-        'page': opts['page'],
-        'pageSize': opts['pageSize'],
-        'search': opts['search']
-      };
+      var queryParams = {};
       var headerParams = {};
       var formParams = {};
       var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ContractInstancesResponse["default"];
-      return this.apiClient.callApi('/core/virtual-machines/contract/{contract_id}/virtual-machines', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _ResponseModel["default"];
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/stop', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
-     * Retrieve virtual machines associated with a contract
-     * Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
-     * @param {Number} contractId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.page Page Number
-     * @param {String} opts.pageSize Data Per Page
-     * @param {String} opts.search Search By Instance ID or Name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContractInstancesResponse}
+     * Stop virtual machine
+     * Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
+     * @param {Number} vmId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "retrieveVirtualMachinesAssociatedWithAContract",
-    value: function retrieveVirtualMachinesAssociatedWithAContract(contractId, opts) {
-      return this.retrieveVirtualMachinesAssociatedWithAContractWithHttpInfo(contractId, opts).then(function (response_and_data) {
+    key: "stopVM",
+    value: function stopVM(vmId) {
+      return this.stopVMWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

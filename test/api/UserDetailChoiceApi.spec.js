@@ -48,10 +48,10 @@
   }
 
   describe('UserDetailChoiceApi', function() {
-    describe('retrieveDefaultFlavorsAndImages', function() {
-      it('should call retrieveDefaultFlavorsAndImages successfully', function(done) {
-        //uncomment below and update the code to test retrieveDefaultFlavorsAndImages
-        //instance.retrieveDefaultFlavorsAndImages(function(error) {
+    describe('listDefaultFlavorsAndImages', function() {
+      it('should call listDefaultFlavorsAndImages successfully', function(done) {
+        //uncomment below and update the code to test listDefaultFlavorsAndImages
+        //instance.listDefaultFlavorsAndImages(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

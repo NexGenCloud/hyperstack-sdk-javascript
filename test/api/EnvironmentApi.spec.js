@@ -78,20 +78,20 @@
         done();
       });
     });
-    describe('listEnvironments', function() {
-      it('should call listEnvironments successfully', function(done) {
-        //uncomment below and update the code to test listEnvironments
-        //instance.listEnvironments(function(error) {
+    describe('getEnvironment', function() {
+      it('should call getEnvironment successfully', function(done) {
+        //uncomment below and update the code to test getEnvironment
+        //instance.getEnvironment(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveEnvironment', function() {
-      it('should call retrieveEnvironment successfully', function(done) {
-        //uncomment below and update the code to test retrieveEnvironment
-        //instance.retrieveEnvironment(function(error) {
+    describe('listEnvironments', function() {
+      it('should call listEnvironments successfully', function(done) {
+        //uncomment below and update the code to test listEnvironments
+        //instance.listEnvironments(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

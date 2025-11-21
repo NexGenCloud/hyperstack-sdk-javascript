@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetchAllOfAClusterEvents**](ClusterEventsApi.md#fetchAllOfAClusterEvents) | **GET** /core/clusters/{cluster_id}/events | Fetch all of a cluster events
+[**listClusterEvents**](ClusterEventsApi.md#listClusterEvents) | **GET** /core/clusters/{cluster_id}/events | Fetch all of a cluster events
 
 
 
-## fetchAllOfAClusterEvents
+## listClusterEvents
 
-> ClusterEvents fetchAllOfAClusterEvents(clusterId)
+> ClusterEvents listClusterEvents(clusterId)
 
 Fetch all of a cluster events
 
@@ -27,7 +27,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.ClusterEventsApi();
 let clusterId = "clusterId_example"; // String | 
-apiInstance.fetchAllOfAClusterEvents(clusterId).then((data) => {
+apiInstance.listClusterEvents(clusterId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

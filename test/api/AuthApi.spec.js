@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('getAuthenticatedUser', function() {
+      it('should call getAuthenticatedUser successfully', function(done) {
+        //uncomment below and update the code to test getAuthenticatedUser
+        //instance.getAuthenticatedUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getUserMFAStatus', function() {
       it('should call getUserMFAStatus successfully', function(done) {
         //uncomment below and update the code to test getUserMFAStatus
@@ -82,16 +92,6 @@
       it('should call getUserOrganizations successfully', function(done) {
         //uncomment below and update the code to test getUserOrganizations
         //instance.getUserOrganizations(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('retrieveAuthenticatedUserDetails', function() {
-      it('should call retrieveAuthenticatedUserDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveAuthenticatedUserDetails
-        //instance.retrieveAuthenticatedUserDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

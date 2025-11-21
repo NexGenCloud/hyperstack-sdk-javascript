@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * Dashboard service.
 * @module api/DashboardApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class DashboardApi {
 
@@ -41,7 +41,7 @@ export default class DashboardApi {
      * Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DashboardInfoResponse} and HTTP response
      */
-    retrieveDashboardWithHttpInfo() {
+    getDashboardWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -69,8 +69,8 @@ export default class DashboardApi {
      * Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DashboardInfoResponse}
      */
-    retrieveDashboard() {
-      return this.retrieveDashboardWithHttpInfo()
+    getDashboard() {
+      return this.getDashboardWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

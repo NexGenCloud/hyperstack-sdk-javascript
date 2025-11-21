@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCalculate2**](CalculateApi.md#getCalculate2) | **GET** /pricebook/calculate/resource/{resource_type}/{id} | Retrieve Billing Rate for Resource
+[**calculateResourceBillingRate**](CalculateApi.md#calculateResourceBillingRate) | **GET** /pricebook/calculate/resource/{resource_type}/{id} | Retrieve Billing Rate for Resource
 
 
 
-## getCalculate2
+## calculateResourceBillingRate
 
-> ResourceBillingResponseForCustomer getCalculate2(resourceType, id)
+> ResourceBillingResponseForCustomer calculateResourceBillingRate(resourceType, id)
 
 Retrieve Billing Rate for Resource
 
@@ -30,7 +30,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.CalculateApi();
 let resourceType = "resourceType_example"; // String | 
 let id = 56; // Number | 
-apiInstance.getCalculate2(resourceType, id).then((data) => {
+apiInstance.calculateResourceBillingRate(resourceType, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

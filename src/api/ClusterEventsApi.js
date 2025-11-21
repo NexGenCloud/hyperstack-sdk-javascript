@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * ClusterEvents service.
 * @module api/ClusterEventsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class ClusterEventsApi {
 
@@ -41,11 +41,11 @@ export default class ClusterEventsApi {
      * @param {String} clusterId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterEvents} and HTTP response
      */
-    fetchAllOfAClusterEventsWithHttpInfo(clusterId) {
+    listClusterEventsWithHttpInfo(clusterId) {
       let postBody = null;
       // verify the required parameter 'clusterId' is set
       if (clusterId === undefined || clusterId === null) {
-        throw new Error("Missing the required parameter 'clusterId' when calling fetchAllOfAClusterEvents");
+        throw new Error("Missing the required parameter 'clusterId' when calling listClusterEvents");
       }
 
       let pathParams = {
@@ -74,8 +74,8 @@ export default class ClusterEventsApi {
      * @param {String} clusterId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterEvents}
      */
-    fetchAllOfAClusterEvents(clusterId) {
-      return this.fetchAllOfAClusterEventsWithHttpInfo(clusterId)
+    listClusterEvents(clusterId) {
+      return this.listClusterEventsWithHttpInfo(clusterId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

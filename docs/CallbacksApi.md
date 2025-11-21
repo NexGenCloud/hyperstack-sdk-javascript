@@ -4,18 +4,18 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachCallbackToVirtualMachine**](CallbacksApi.md#attachCallbackToVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/attach-callback | Attach callback to virtual machine
+[**attachCallbackToVM**](CallbacksApi.md#attachCallbackToVM) | **POST** /core/virtual-machines/{vm_id}/attach-callback | Attach callback to virtual machine
 [**attachCallbackToVolume**](CallbacksApi.md#attachCallbackToVolume) | **POST** /core/volumes/{volume_id}/attach-callback | Attach callback to volume
-[**deleteVirtualMachineCallback**](CallbacksApi.md#deleteVirtualMachineCallback) | **DELETE** /core/virtual-machines/{vm_id}/delete-callback | Delete virtual machine callback
+[**deleteVMCallback**](CallbacksApi.md#deleteVMCallback) | **DELETE** /core/virtual-machines/{vm_id}/delete-callback | Delete virtual machine callback
 [**deleteVolumeCallback**](CallbacksApi.md#deleteVolumeCallback) | **DELETE** /core/volumes/{volume_id}/delete-callback | Delete volume callback
-[**updateVirtualMachineCallback**](CallbacksApi.md#updateVirtualMachineCallback) | **PUT** /core/virtual-machines/{vm_id}/update-callback | Update virtual machine callback
+[**updateVMCallback**](CallbacksApi.md#updateVMCallback) | **PUT** /core/virtual-machines/{vm_id}/update-callback | Update virtual machine callback
 [**updateVolumeCallback**](CallbacksApi.md#updateVolumeCallback) | **PUT** /core/volumes/{volume_id}/update-callback | Update volume callback
 
 
 
-## attachCallbackToVirtualMachine
+## attachCallbackToVM
 
-> AttachCallbackResponse attachCallbackToVirtualMachine(vmId, payload)
+> AttachCallbackResponse attachCallbackToVM(vmId, payload)
 
 Attach callback to virtual machine
 
@@ -35,7 +35,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.CallbacksApi();
 let vmId = 56; // Number | 
 let payload = new HyperstackApi.AttachCallbackPayload(); // AttachCallbackPayload | 
-apiInstance.attachCallbackToVirtualMachine(vmId, payload).then((data) => {
+apiInstance.attachCallbackToVM(vmId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -117,9 +117,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteVirtualMachineCallback
+## deleteVMCallback
 
-> ResponseModel deleteVirtualMachineCallback(vmId)
+> ResponseModel deleteVMCallback(vmId)
 
 Delete virtual machine callback
 
@@ -138,7 +138,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.CallbacksApi();
 let vmId = 56; // Number | 
-apiInstance.deleteVirtualMachineCallback(vmId).then((data) => {
+apiInstance.deleteVMCallback(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateVirtualMachineCallback
+## updateVMCallback
 
-> AttachCallbackResponse updateVirtualMachineCallback(vmId, payload)
+> AttachCallbackResponse updateVMCallback(vmId, payload)
 
 Update virtual machine callback
 
@@ -239,7 +239,7 @@ apiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new HyperstackApi.CallbacksApi();
 let vmId = 56; // Number | 
 let payload = new HyperstackApi.AttachCallbackPayload(); // AttachCallbackPayload | 
-apiInstance.updateVirtualMachineCallback(vmId, payload).then((data) => {
+apiInstance.updateVMCallback(vmId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

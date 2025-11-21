@@ -5,9 +5,9 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCompliance**](ComplianceApi.md#createCompliance) | **POST** /core/compliance | Create compliance
-[**deleteACompliance**](ComplianceApi.md#deleteACompliance) | **DELETE** /core/compliance/{gpu_model} | Delete a compliance
-[**retrieveCompliance**](ComplianceApi.md#retrieveCompliance) | **GET** /core/compliance | Retrieve GPU compliance
-[**updateACompliance**](ComplianceApi.md#updateACompliance) | **PUT** /core/compliance | Update a compliance
+[**deleteCompliance**](ComplianceApi.md#deleteCompliance) | **DELETE** /core/compliance/{gpu_model} | Delete a compliance
+[**getCompliance**](ComplianceApi.md#getCompliance) | **GET** /core/compliance | Retrieve GPU compliance
+[**updateCompliance**](ComplianceApi.md#updateCompliance) | **PUT** /core/compliance | Update a compliance
 
 
 
@@ -59,9 +59,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteACompliance
+## deleteCompliance
 
-> ResponseModel deleteACompliance(gpuModel)
+> ResponseModel deleteCompliance(gpuModel)
 
 Delete a compliance
 
@@ -78,7 +78,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.ComplianceApi();
 let gpuModel = "gpuModel_example"; // String | 
-apiInstance.deleteACompliance(gpuModel).then((data) => {
+apiInstance.deleteCompliance(gpuModel).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -107,9 +107,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveCompliance
+## getCompliance
 
-> ComplianceResponse retrieveCompliance(opts)
+> ComplianceResponse getCompliance(opts)
 
 Retrieve GPU compliance
 
@@ -130,7 +130,7 @@ let apiInstance = new HyperstackApi.ComplianceApi();
 let opts = {
   'gpu': "gpu_example" // String | This is for gpu model
 };
-apiInstance.retrieveCompliance(opts).then((data) => {
+apiInstance.getCompliance(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -159,9 +159,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateACompliance
+## updateCompliance
 
-> CreateUpdateComplianceResponse updateACompliance(payload)
+> CreateUpdateComplianceResponse updateCompliance(payload)
 
 Update a compliance
 
@@ -178,7 +178,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.ComplianceApi();
 let payload = new HyperstackApi.CompliancePayload(); // CompliancePayload | 
-apiInstance.updateACompliance(payload).then((data) => {
+apiInstance.updateCompliance(payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

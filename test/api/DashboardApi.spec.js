@@ -48,10 +48,10 @@
   }
 
   describe('DashboardApi', function() {
-    describe('retrieveDashboard', function() {
-      it('should call retrieveDashboard successfully', function(done) {
-        //uncomment below and update the code to test retrieveDashboard
-        //instance.retrieveDashboard(function(error) {
+    describe('getDashboard', function() {
+      it('should call getDashboard successfully', function(done) {
+        //uncomment below and update the code to test getDashboard
+        //instance.getDashboard(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

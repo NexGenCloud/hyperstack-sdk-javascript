@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Dashboard service.
 * @module api/DashboardApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var DashboardApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -49,8 +49,8 @@ var DashboardApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DashboardInfoResponse} and HTTP response
    */
   return _createClass(DashboardApi, [{
-    key: "retrieveDashboardWithHttpInfo",
-    value: function retrieveDashboardWithHttpInfo() {
+    key: "getDashboardWithHttpInfo",
+    value: function getDashboardWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
@@ -69,9 +69,9 @@ var DashboardApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DashboardInfoResponse}
      */
   }, {
-    key: "retrieveDashboard",
-    value: function retrieveDashboard() {
-      return this.retrieveDashboardWithHttpInfo().then(function (response_and_data) {
+    key: "getDashboard",
+    value: function getDashboard() {
+      return this.getDashboardWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

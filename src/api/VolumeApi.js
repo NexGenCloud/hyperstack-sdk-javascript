@@ -26,7 +26,7 @@ import Volumes from '../model/Volumes';
 /**
 * Volume service.
 * @module api/VolumeApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class VolumeApi {
 
@@ -139,54 +139,6 @@ export default class VolumeApi {
 
 
     /**
-     * Fetch Volume Details
-     * Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
-     * @param {Number} volumeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Volume} and HTTP response
-     */
-    fetchVolumeDetailsWithHttpInfo(volumeId) {
-      let postBody = null;
-      // verify the required parameter 'volumeId' is set
-      if (volumeId === undefined || volumeId === null) {
-        throw new Error("Missing the required parameter 'volumeId' when calling fetchVolumeDetails");
-      }
-
-      let pathParams = {
-        'volume_id': volumeId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Volume;
-      return this.apiClient.callApi(
-        '/core/volumes/{volume_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Fetch Volume Details
-     * Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
-     * @param {Number} volumeId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Volume}
-     */
-    fetchVolumeDetails(volumeId) {
-      return this.fetchVolumeDetailsWithHttpInfo(volumeId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Fetch volume name availability
      * Check if a Volume name is available
      * @param {String} name 
@@ -228,6 +180,54 @@ export default class VolumeApi {
      */
     fetchVolumeNameAvailability(name) {
       return this.fetchVolumeNameAvailabilityWithHttpInfo(name)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Fetch Volume Details
+     * Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
+     * @param {Number} volumeId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Volume} and HTTP response
+     */
+    getVolumeWithHttpInfo(volumeId) {
+      let postBody = null;
+      // verify the required parameter 'volumeId' is set
+      if (volumeId === undefined || volumeId === null) {
+        throw new Error("Missing the required parameter 'volumeId' when calling getVolume");
+      }
+
+      let pathParams = {
+        'volume_id': volumeId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Volume;
+      return this.apiClient.callApi(
+        '/core/volumes/{volume_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Fetch Volume Details
+     * Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
+     * @param {Number} volumeId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Volume}
+     */
+    getVolume(volumeId) {
+      return this.getVolumeWithHttpInfo(volumeId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -48,10 +48,10 @@
   }
 
   describe('VirtualMachineEventsApi', function() {
-    describe('listVirtualMachineEvents', function() {
-      it('should call listVirtualMachineEvents successfully', function(done) {
-        //uncomment below and update the code to test listVirtualMachineEvents
-        //instance.listVirtualMachineEvents(function(error) {
+    describe('listVMEvents', function() {
+      it('should call listVMEvents successfully', function(done) {
+        //uncomment below and update the code to test listVMEvents
+        //instance.listVMEvents(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

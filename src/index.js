@@ -325,6 +325,7 @@ import CustomerContractApi from './api/CustomerContractApi';
 import DashboardApi from './api/DashboardApi';
 import DeploymentApi from './api/DeploymentApi';
 import EnvironmentApi from './api/EnvironmentApi';
+import FIPExclusionsApi from './api/FIPExclusionsApi';
 import FirewallAttachmentApi from './api/FirewallAttachmentApi';
 import FirewallsApi from './api/FirewallsApi';
 import FlavorApi from './api/FlavorApi';
@@ -387,7 +388,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export {
     /**
@@ -2267,6 +2268,12 @@ export {
     * @property {module:api/EnvironmentApi}
     */
     EnvironmentApi,
+
+    /**
+    * The FIPExclusionsApi service constructor.
+    * @property {module:api/FIPExclusionsApi}
+    */
+    FIPExclusionsApi,
 
     /**
     * The FirewallAttachmentApi service constructor.

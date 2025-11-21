@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Credit service.
 * @module api/CreditApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var CreditApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -49,8 +49,8 @@ var CreditApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCreditAndThresholdInfoInResponse} and HTTP response
    */
   return _createClass(CreditApi, [{
-    key: "getCredit2WithHttpInfo",
-    value: function getCredit2WithHttpInfo() {
+    key: "getUserCreditWithHttpInfo",
+    value: function getUserCreditWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
@@ -69,9 +69,9 @@ var CreditApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCreditAndThresholdInfoInResponse}
      */
   }, {
-    key: "getCredit2",
-    value: function getCredit2() {
-      return this.getCredit2WithHttpInfo().then(function (response_and_data) {
+    key: "getUserCredit",
+    value: function getUserCredit() {
+      return this.getUserCreditWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

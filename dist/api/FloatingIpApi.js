@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * FloatingIp service.
 * @module api/FloatingIpApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -50,12 +50,12 @@ var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
    */
   return _createClass(FloatingIpApi, [{
-    key: "attachPublicIPToVirtualMachineWithHttpInfo",
-    value: function attachPublicIPToVirtualMachineWithHttpInfo(vmId) {
+    key: "attachPublicIPToVMWithHttpInfo",
+    value: function attachPublicIPToVMWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling attachPublicIPToVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling attachPublicIPToVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -77,9 +77,9 @@ var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "attachPublicIPToVirtualMachine",
-    value: function attachPublicIPToVirtualMachine(vmId) {
-      return this.attachPublicIPToVirtualMachineWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "attachPublicIPToVM",
+    value: function attachPublicIPToVM(vmId) {
+      return this.attachPublicIPToVMWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -91,12 +91,12 @@ var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "detachPublicIPFromVirtualMachineWithHttpInfo",
-    value: function detachPublicIPFromVirtualMachineWithHttpInfo(vmId) {
+    key: "detachPublicIPFromVMWithHttpInfo",
+    value: function detachPublicIPFromVMWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling detachPublicIPFromVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling detachPublicIPFromVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -118,9 +118,9 @@ var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "detachPublicIPFromVirtualMachine",
-    value: function detachPublicIPFromVirtualMachine(vmId) {
-      return this.detachPublicIPFromVirtualMachineWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "detachPublicIPFromVM",
+    value: function detachPublicIPFromVM(vmId) {
+      return this.detachPublicIPFromVMWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

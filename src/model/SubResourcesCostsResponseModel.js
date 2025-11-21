@@ -17,7 +17,7 @@ import SubResourcesGraphBillingHistoryFields from './SubResourcesGraphBillingHis
 /**
  * The SubResourcesCostsResponseModel model module.
  * @module model/SubResourcesCostsResponseModel
- * @version v1.45.2-alpha
+ * @version v1.46.1-alpha
  */
 class SubResourcesCostsResponseModel {
     /**

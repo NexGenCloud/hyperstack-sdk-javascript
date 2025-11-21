@@ -21,7 +21,7 @@ import GetCustomerContractsListResponseModel from '../model/GetCustomerContracts
 /**
 * CustomerContract service.
 * @module api/CustomerContractApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class CustomerContractApi {
 
@@ -39,104 +39,6 @@ export default class CustomerContractApi {
 
 
     /**
-     * List Contracts
-     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
-     * @param {Object} opts Optional parameters
-     * @param {Number} [page] 
-     * @param {Number} [perPage] 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCustomerContractsListResponseModel} and HTTP response
-     */
-    getCustomerContractWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'page': opts['page'],
-        'per_page': opts['perPage']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = GetCustomerContractsListResponseModel;
-      return this.apiClient.callApi(
-        '/pricebook/contracts', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * List Contracts
-     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.page 
-     * @param {Number} opts.perPage 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCustomerContractsListResponseModel}
-     */
-    getCustomerContract(opts) {
-      return this.getCustomerContractWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve Contract Details
-     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
-     * @param {Number} contractId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerContractDetailResponseModel} and HTTP response
-     */
-    getCustomerContractDetailsWithHttpInfo(contractId) {
-      let postBody = null;
-      // verify the required parameter 'contractId' is set
-      if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling getCustomerContractDetails");
-      }
-
-      let pathParams = {
-        'contract_id': contractId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CustomerContractDetailResponseModel;
-      return this.apiClient.callApi(
-        '/pricebook/contracts/{contract_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve Contract Details
-     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
-     * @param {Number} contractId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerContractDetailResponseModel}
-     */
-    getCustomerContractDetails(contractId) {
-      return this.getCustomerContractDetailsWithHttpInfo(contractId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Retrieve GPU Allocation Graph for Contract
      * Retrieve GPU allocation count graph for a specific contract by providing the contract ID in the path. The endpoint returns the GPU allocation count graph for the contract within the specified date range.
      * @param {Number} contractId 
@@ -145,12 +47,12 @@ export default class CustomerContractApi {
      * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContractGPUAllocationGraphResponse} and HTTP response
      */
-    getCustomerContractGpuAllocationGraphWithHttpInfo(contractId, opts) {
+    getContractGPUAllocationGraphWithHttpInfo(contractId, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'contractId' is set
       if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling getCustomerContractGpuAllocationGraph");
+        throw new Error("Missing the required parameter 'contractId' when calling getContractGPUAllocationGraph");
       }
 
       let pathParams = {
@@ -185,8 +87,106 @@ export default class CustomerContractApi {
      * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContractGPUAllocationGraphResponse}
      */
-    getCustomerContractGpuAllocationGraph(contractId, opts) {
-      return this.getCustomerContractGpuAllocationGraphWithHttpInfo(contractId, opts)
+    getContractGPUAllocationGraph(contractId, opts) {
+      return this.getContractGPUAllocationGraphWithHttpInfo(contractId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List Contracts
+     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
+     * @param {Object} opts Optional parameters
+     * @param {Number} [page] 
+     * @param {Number} [perPage] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCustomerContractsListResponseModel} and HTTP response
+     */
+    listCustomerContractsWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'page': opts['page'],
+        'per_page': opts['perPage']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = GetCustomerContractsListResponseModel;
+      return this.apiClient.callApi(
+        '/pricebook/contracts', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List Contracts
+     * Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page 
+     * @param {Number} opts.perPage 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCustomerContractsListResponseModel}
+     */
+    listCustomerContracts(opts) {
+      return this.listCustomerContractsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Contract Details
+     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
+     * @param {Number} contractId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerContractDetailResponseModel} and HTTP response
+     */
+    retrieveContractWithHttpInfo(contractId) {
+      let postBody = null;
+      // verify the required parameter 'contractId' is set
+      if (contractId === undefined || contractId === null) {
+        throw new Error("Missing the required parameter 'contractId' when calling retrieveContract");
+      }
+
+      let pathParams = {
+        'contract_id': contractId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CustomerContractDetailResponseModel;
+      return this.apiClient.callApi(
+        '/pricebook/contracts/{contract_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Contract Details
+     * Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
+     * @param {Number} contractId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerContractDetailResponseModel}
+     */
+    retrieveContract(contractId) {
+      return this.retrieveContractWithHttpInfo(contractId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

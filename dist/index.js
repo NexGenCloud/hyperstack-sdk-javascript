@@ -657,6 +657,12 @@ Object.defineProperty(exports, "ErrorResponseModel", {
     return _ErrorResponseModel["default"];
   }
 });
+Object.defineProperty(exports, "FIPExclusionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _FIPExclusionsApi["default"];
+  }
+});
 Object.defineProperty(exports, "FirewallAttachmentApi", {
   enumerable: true,
   get: function get() {
@@ -2380,6 +2386,7 @@ var _CustomerContractApi = _interopRequireDefault(require("./api/CustomerContrac
 var _DashboardApi = _interopRequireDefault(require("./api/DashboardApi"));
 var _DeploymentApi = _interopRequireDefault(require("./api/DeploymentApi"));
 var _EnvironmentApi = _interopRequireDefault(require("./api/EnvironmentApi"));
+var _FIPExclusionsApi = _interopRequireDefault(require("./api/FIPExclusionsApi"));
 var _FirewallAttachmentApi = _interopRequireDefault(require("./api/FirewallAttachmentApi"));
 var _FirewallsApi = _interopRequireDefault(require("./api/FirewallsApi"));
 var _FlavorApi = _interopRequireDefault(require("./api/FlavorApi"));

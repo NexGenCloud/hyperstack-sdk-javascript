@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**createEnvironment**](EnvironmentApi.md#createEnvironment) | **POST** /core/environments | Create environment
 [**deleteEnvironment**](EnvironmentApi.md#deleteEnvironment) | **DELETE** /core/environments/{id} | Delete environment
 [**fetchEnvironmentNameAvailability**](EnvironmentApi.md#fetchEnvironmentNameAvailability) | **GET** /core/environments/name-availability/{name} | Fetch environment name availability
+[**getEnvironment**](EnvironmentApi.md#getEnvironment) | **GET** /core/environments/{id} | Retrieve environment
 [**listEnvironments**](EnvironmentApi.md#listEnvironments) | **GET** /core/environments | List environments
-[**retrieveEnvironment**](EnvironmentApi.md#retrieveEnvironment) | **GET** /core/environments/{id} | Retrieve environment
 [**updateEnvironment**](EnvironmentApi.md#updateEnvironment) | **PUT** /core/environments/{id} | Update environment
 
 
@@ -163,6 +163,56 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getEnvironment
+
+> Environment getEnvironment(id)
+
+Retrieve environment
+
+Retrieves details about a specific environment. Provide the environment ID in the path and the new environment &#x60;name&#x60; in the request body to modify the specified environment.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.EnvironmentApi();
+let id = 56; // Number | 
+apiInstance.getEnvironment(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+
+### Return type
+
+[**Environment**](Environment.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## listEnvironments
 
 > Environments listEnvironments(opts)
@@ -208,56 +258,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Environments**](Environments.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## retrieveEnvironment
-
-> Environment retrieveEnvironment(id)
-
-Retrieve environment
-
-Retrieves details about a specific environment. Provide the environment ID in the path and the new environment &#x60;name&#x60; in the request body to modify the specified environment.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.EnvironmentApi();
-let id = 56; // Number | 
-apiInstance.retrieveEnvironment(id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
-
-### Return type
-
-[**Environment**](Environment.md)
 
 ### Authorization
 

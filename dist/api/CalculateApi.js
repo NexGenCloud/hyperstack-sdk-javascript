@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Calculate service.
 * @module api/CalculateApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var CalculateApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -51,16 +51,16 @@ var CalculateApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceBillingResponseForCustomer} and HTTP response
    */
   return _createClass(CalculateApi, [{
-    key: "getCalculate2WithHttpInfo",
-    value: function getCalculate2WithHttpInfo(resourceType, id) {
+    key: "calculateResourceBillingRateWithHttpInfo",
+    value: function calculateResourceBillingRateWithHttpInfo(resourceType, id) {
       var postBody = null;
       // verify the required parameter 'resourceType' is set
       if (resourceType === undefined || resourceType === null) {
-        throw new Error("Missing the required parameter 'resourceType' when calling getCalculate2");
+        throw new Error("Missing the required parameter 'resourceType' when calling calculateResourceBillingRate");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getCalculate2");
+        throw new Error("Missing the required parameter 'id' when calling calculateResourceBillingRate");
       }
       var pathParams = {
         'resource_type': resourceType,
@@ -84,9 +84,9 @@ var CalculateApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceBillingResponseForCustomer}
      */
   }, {
-    key: "getCalculate2",
-    value: function getCalculate2(resourceType, id) {
-      return this.getCalculate2WithHttpInfo(resourceType, id).then(function (response_and_data) {
+    key: "calculateResourceBillingRate",
+    value: function calculateResourceBillingRate(resourceType, id) {
+      return this.calculateResourceBillingRateWithHttpInfo(resourceType, id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

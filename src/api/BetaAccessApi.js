@@ -21,7 +21,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * BetaAccess service.
 * @module api/BetaAccessApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class BetaAccessApi {
 
@@ -44,11 +44,11 @@ export default class BetaAccessApi {
      * @param {module:model/BetaAccessRequestPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BetaAccessRequestResponseModel} and HTTP response
      */
-    createABetaAccessRequestWithHttpInfo(payload) {
+    createBetaAccessRequestWithHttpInfo(payload) {
       let postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling createABetaAccessRequest");
+        throw new Error("Missing the required parameter 'payload' when calling createBetaAccessRequest");
       }
 
       let pathParams = {
@@ -77,8 +77,56 @@ export default class BetaAccessApi {
      * @param {module:model/BetaAccessRequestPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BetaAccessRequestResponseModel}
      */
-    createABetaAccessRequest(payload) {
-      return this.createABetaAccessRequestWithHttpInfo(payload)
+    createBetaAccessRequest(payload) {
+      return this.createBetaAccessRequestWithHttpInfo(payload)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Check the status of beta access requests
+     * Check the status of a particular beta access requests.
+     * @param {String} program 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BetaAccessStatusResponseModel} and HTTP response
+     */
+    getBetaAccessRequestsWithHttpInfo(program) {
+      let postBody = null;
+      // verify the required parameter 'program' is set
+      if (program === undefined || program === null) {
+        throw new Error("Missing the required parameter 'program' when calling getBetaAccessRequests");
+      }
+
+      let pathParams = {
+        'program': program
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = BetaAccessStatusResponseModel;
+      return this.apiClient.callApi(
+        '/auth/beta-access/requests/{program}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Check the status of beta access requests
+     * Check the status of a particular beta access requests.
+     * @param {String} program 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BetaAccessStatusResponseModel}
+     */
+    getBetaAccessRequests(program) {
+      return this.getBetaAccessRequestsWithHttpInfo(program)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -120,54 +168,6 @@ export default class BetaAccessApi {
      */
     getBetaAccessStatus() {
       return this.getBetaAccessStatusWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Check the status of beta access requests
-     * Check the status of a particular beta access requests.
-     * @param {String} program 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BetaAccessStatusResponseModel} and HTTP response
-     */
-    getBetaAccessStatus2WithHttpInfo(program) {
-      let postBody = null;
-      // verify the required parameter 'program' is set
-      if (program === undefined || program === null) {
-        throw new Error("Missing the required parameter 'program' when calling getBetaAccessStatus2");
-      }
-
-      let pathParams = {
-        'program': program
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = BetaAccessStatusResponseModel;
-      return this.apiClient.callApi(
-        '/auth/beta-access/requests/{program}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Check the status of beta access requests
-     * Check the status of a particular beta access requests.
-     * @param {String} program 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BetaAccessStatusResponseModel}
-     */
-    getBetaAccessStatus2(program) {
-      return this.getBetaAccessStatus2WithHttpInfo(program)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

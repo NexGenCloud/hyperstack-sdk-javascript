@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Compliance service.
 * @module api/ComplianceApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class ComplianceApi {
 
@@ -89,11 +89,11 @@ export default class ComplianceApi {
      * @param {String} gpuModel 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    deleteAComplianceWithHttpInfo(gpuModel) {
+    deleteComplianceWithHttpInfo(gpuModel) {
       let postBody = null;
       // verify the required parameter 'gpuModel' is set
       if (gpuModel === undefined || gpuModel === null) {
-        throw new Error("Missing the required parameter 'gpuModel' when calling deleteACompliance");
+        throw new Error("Missing the required parameter 'gpuModel' when calling deleteCompliance");
       }
 
       let pathParams = {
@@ -122,8 +122,8 @@ export default class ComplianceApi {
      * @param {String} gpuModel 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    deleteACompliance(gpuModel) {
-      return this.deleteAComplianceWithHttpInfo(gpuModel)
+    deleteCompliance(gpuModel) {
+      return this.deleteComplianceWithHttpInfo(gpuModel)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -137,7 +137,7 @@ export default class ComplianceApi {
      * @param {String} [gpu] This is for gpu model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ComplianceResponse} and HTTP response
      */
-    retrieveComplianceWithHttpInfo(opts) {
+    getComplianceWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -169,8 +169,8 @@ export default class ComplianceApi {
      * @param {String} opts.gpu This is for gpu model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ComplianceResponse}
      */
-    retrieveCompliance(opts) {
-      return this.retrieveComplianceWithHttpInfo(opts)
+    getCompliance(opts) {
+      return this.getComplianceWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -182,11 +182,11 @@ export default class ComplianceApi {
      * @param {module:model/CompliancePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateUpdateComplianceResponse} and HTTP response
      */
-    updateAComplianceWithHttpInfo(payload) {
+    updateComplianceWithHttpInfo(payload) {
       let postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateACompliance");
+        throw new Error("Missing the required parameter 'payload' when calling updateCompliance");
       }
 
       let pathParams = {
@@ -214,8 +214,8 @@ export default class ComplianceApi {
      * @param {module:model/CompliancePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateUpdateComplianceResponse}
      */
-    updateACompliance(payload) {
-      return this.updateAComplianceWithHttpInfo(payload)
+    updateCompliance(payload) {
+      return this.updateComplianceWithHttpInfo(payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

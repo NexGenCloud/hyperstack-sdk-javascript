@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * SnapshotEvents service.
 * @module api/SnapshotEventsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class SnapshotEventsApi {
 
@@ -40,11 +40,11 @@ export default class SnapshotEventsApi {
      * @param {Number} snapshotId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    fetchAllEventsForASnapshotWithHttpInfo(snapshotId) {
+    listSnapshotEventsWithHttpInfo(snapshotId) {
       let postBody = null;
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling fetchAllEventsForASnapshot");
+        throw new Error("Missing the required parameter 'snapshotId' when calling listSnapshotEvents");
       }
 
       let pathParams = {
@@ -74,8 +74,8 @@ export default class SnapshotEventsApi {
      * @param {Number} snapshotId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    fetchAllEventsForASnapshot(snapshotId) {
-      return this.fetchAllEventsForASnapshotWithHttpInfo(snapshotId)
+    listSnapshotEvents(snapshotId) {
+      return this.listSnapshotEventsWithHttpInfo(snapshotId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetchAllEventsForASnapshot**](SnapshotEventsApi.md#fetchAllEventsForASnapshot) | **GET** /core/snapshots/{snapshot_id}/events | Fetch all events for a snapshot
+[**listSnapshotEvents**](SnapshotEventsApi.md#listSnapshotEvents) | **GET** /core/snapshots/{snapshot_id}/events | Fetch all events for a snapshot
 
 
 
-## fetchAllEventsForASnapshot
+## listSnapshotEvents
 
-> fetchAllEventsForASnapshot(snapshotId)
+> listSnapshotEvents(snapshotId)
 
 Fetch all events for a snapshot
 
@@ -29,7 +29,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.SnapshotEventsApi();
 let snapshotId = 56; // Number | 
-apiInstance.fetchAllEventsForASnapshot(snapshotId).then(() => {
+apiInstance.listSnapshotEvents(snapshotId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);

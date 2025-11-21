@@ -48,10 +48,10 @@
   }
 
   describe('CreditApi', function() {
-    describe('getCredit2', function() {
-      it('should call getCredit2 successfully', function(done) {
-        //uncomment below and update the code to test getCredit2
-        //instance.getCredit2(function(error) {
+    describe('getUserCredit', function() {
+      it('should call getUserCredit successfully', function(done) {
+        //uncomment below and update the code to test getUserCredit
+        //instance.getUserCredit(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

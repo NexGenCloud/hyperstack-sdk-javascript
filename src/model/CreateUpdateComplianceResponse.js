@@ -17,7 +17,7 @@ import ComplianceModelFields from './ComplianceModelFields';
 /**
  * The CreateUpdateComplianceResponse model module.
  * @module model/CreateUpdateComplianceResponse
- * @version v1.45.2-alpha
+ * @version v1.46.1-alpha
  */
 class CreateUpdateComplianceResponse {
     /**

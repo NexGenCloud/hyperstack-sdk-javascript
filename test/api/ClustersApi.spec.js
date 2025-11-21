@@ -48,16 +48,6 @@
   }
 
   describe('ClustersApi', function() {
-    describe('attemptToManuallyReconcileACluster', function() {
-      it('should call attemptToManuallyReconcileACluster successfully', function(done) {
-        //uncomment below and update the code to test attemptToManuallyReconcileACluster
-        //instance.attemptToManuallyReconcileACluster(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createCluster', function() {
       it('should call createCluster successfully', function(done) {
         //uncomment below and update the code to test createCluster
@@ -88,20 +78,10 @@
         done();
       });
     });
-    describe('deleteACluster', function() {
-      it('should call deleteACluster successfully', function(done) {
-        //uncomment below and update the code to test deleteACluster
-        //instance.deleteACluster(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteANodeGroup', function() {
-      it('should call deleteANodeGroup successfully', function(done) {
-        //uncomment below and update the code to test deleteANodeGroup
-        //instance.deleteANodeGroup(function(error) {
+    describe('deleteCluster', function() {
+      it('should call deleteCluster successfully', function(done) {
+        //uncomment below and update the code to test deleteCluster
+        //instance.deleteCluster(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -122,6 +102,16 @@
       it('should call deleteClusterNodes successfully', function(done) {
         //uncomment below and update the code to test deleteClusterNodes
         //instance.deleteClusterNodes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteNodeGroup', function() {
+      it('should call deleteNodeGroup successfully', function(done) {
+        //uncomment below and update the code to test deleteNodeGroup
+        //instance.deleteNodeGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -168,6 +158,16 @@
         done();
       });
     });
+    describe('getNodeGroup', function() {
+      it('should call getNodeGroup successfully', function(done) {
+        //uncomment below and update the code to test getNodeGroup
+        //instance.getNodeGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('gettingClusterDetail', function() {
       it('should call gettingClusterDetail successfully', function(done) {
         //uncomment below and update the code to test gettingClusterDetail
@@ -198,20 +198,20 @@
         done();
       });
     });
-    describe('retrieveANodeGroup', function() {
-      it('should call retrieveANodeGroup successfully', function(done) {
-        //uncomment below and update the code to test retrieveANodeGroup
-        //instance.retrieveANodeGroup(function(error) {
+    describe('reconcileCluster', function() {
+      it('should call reconcileCluster successfully', function(done) {
+        //uncomment below and update the code to test reconcileCluster
+        //instance.reconcileCluster(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateANodeGroup', function() {
-      it('should call updateANodeGroup successfully', function(done) {
-        //uncomment below and update the code to test updateANodeGroup
-        //instance.updateANodeGroup(function(error) {
+    describe('updateNodeGroup', function() {
+      it('should call updateNodeGroup successfully', function(done) {
+        //uncomment below and update the code to test updateNodeGroup
+        //instance.updateNodeGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

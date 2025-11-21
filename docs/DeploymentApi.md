@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteDeployment**](DeploymentApi.md#deleteDeployment) | **DELETE** /core/marketplace/deployments/{id} | Delete Deployment
-[**detailsOfDeploymentByID**](DeploymentApi.md#detailsOfDeploymentByID) | **GET** /core/marketplace/deployments/{id} | Details of Deployment by ID
+[**getDeployment**](DeploymentApi.md#getDeployment) | **GET** /core/marketplace/deployments/{id} | Details of Deployment by ID
 [**listDeployments**](DeploymentApi.md#listDeployments) | **GET** /core/marketplace/deployments | List Deployments
 [**startDeployment**](DeploymentApi.md#startDeployment) | **POST** /core/marketplace/deployments | Start Deployment
 
@@ -59,9 +59,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## detailsOfDeploymentByID
+## getDeployment
 
-> StartDeployment detailsOfDeploymentByID(id)
+> StartDeployment getDeployment(id)
 
 Details of Deployment by ID
 
@@ -78,7 +78,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.DeploymentApi();
 let id = 56; // Number | 
-apiInstance.detailsOfDeploymentByID(id).then((data) => {
+apiInstance.getDeployment(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

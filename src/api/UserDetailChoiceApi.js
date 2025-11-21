@@ -19,7 +19,7 @@ import UserDefaultChoicesForUserResponse from '../model/UserDefaultChoicesForUse
 /**
 * UserDetailChoice service.
 * @module api/UserDetailChoiceApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class UserDetailChoiceApi {
 
@@ -38,10 +38,10 @@ export default class UserDetailChoiceApi {
 
     /**
      * Retrieve Default Flavors and Images
-     * Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+     * Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserDefaultChoicesForUserResponse} and HTTP response
      */
-    retrieveDefaultFlavorsAndImagesWithHttpInfo() {
+    listDefaultFlavorsAndImagesWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -66,11 +66,11 @@ export default class UserDetailChoiceApi {
 
     /**
      * Retrieve Default Flavors and Images
-     * Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+     * Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserDefaultChoicesForUserResponse}
      */
-    retrieveDefaultFlavorsAndImages() {
-      return this.retrieveDefaultFlavorsAndImagesWithHttpInfo()
+    listDefaultFlavorsAndImages() {
+      return this.listDefaultFlavorsAndImagesWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

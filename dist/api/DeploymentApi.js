@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Deployment service.
 * @module api/DeploymentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -91,12 +91,12 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StartDeployment} and HTTP response
      */
   }, {
-    key: "detailsOfDeploymentByIDWithHttpInfo",
-    value: function detailsOfDeploymentByIDWithHttpInfo(id) {
+    key: "getDeploymentWithHttpInfo",
+    value: function getDeploymentWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling detailsOfDeploymentByID");
+        throw new Error("Missing the required parameter 'id' when calling getDeployment");
       }
       var pathParams = {
         'id': id
@@ -117,9 +117,9 @@ var DeploymentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StartDeployment}
      */
   }, {
-    key: "detailsOfDeploymentByID",
-    value: function detailsOfDeploymentByID(id) {
-      return this.detailsOfDeploymentByIDWithHttpInfo(id).then(function (response_and_data) {
+    key: "getDeployment",
+    value: function getDeployment(id) {
+      return this.getDeploymentWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

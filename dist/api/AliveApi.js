@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Alive service.
 * @module api/AliveApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var AliveApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -78,8 +78,8 @@ var AliveApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
   }, {
-    key: "getDocWithHttpInfo",
-    value: function getDocWithHttpInfo() {
+    key: "getAliveDocWithHttpInfo",
+    value: function getAliveDocWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
@@ -96,9 +96,9 @@ var AliveApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {
-    key: "getDoc",
-    value: function getDoc() {
-      return this.getDocWithHttpInfo().then(function (response_and_data) {
+    key: "getAliveDoc",
+    value: function getAliveDoc() {
+      return this.getAliveDocWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

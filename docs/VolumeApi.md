@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createVolume**](VolumeApi.md#createVolume) | **POST** /core/volumes | Create volume
 [**deleteVolume**](VolumeApi.md#deleteVolume) | **DELETE** /core/volumes/{volume_id} | Delete volume
-[**fetchVolumeDetails**](VolumeApi.md#fetchVolumeDetails) | **GET** /core/volumes/{volume_id} | Fetch Volume Details
 [**fetchVolumeNameAvailability**](VolumeApi.md#fetchVolumeNameAvailability) | **GET** /core/volume/name-availability/{name} | Fetch volume name availability
+[**getVolume**](VolumeApi.md#getVolume) | **GET** /core/volumes/{volume_id} | Fetch Volume Details
 [**listVolumeTypes**](VolumeApi.md#listVolumeTypes) | **GET** /core/volume-types | List volume types
 [**listVolumes**](VolumeApi.md#listVolumes) | **GET** /core/volumes | List volumes
 [**updateVolume**](VolumeApi.md#updateVolume) | **PATCH** /core/volumes/{volume_id} | Update volume fields
@@ -114,56 +114,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## fetchVolumeDetails
-
-> Volume fetchVolumeDetails(volumeId)
-
-Fetch Volume Details
-
-Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.VolumeApi();
-let volumeId = 56; // Number | 
-apiInstance.fetchVolumeDetails(volumeId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **volumeId** | **Number**|  | 
-
-### Return type
-
-[**Volume**](Volume.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## fetchVolumeNameAvailability
 
 > NameAvailableModel fetchVolumeNameAvailability(name)
@@ -203,6 +153,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NameAvailableModel**](NameAvailableModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getVolume
+
+> Volume getVolume(volumeId)
+
+Fetch Volume Details
+
+Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VolumeApi();
+let volumeId = 56; // Number | 
+apiInstance.getVolume(volumeId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **volumeId** | **Number**|  | 
+
+### Return type
+
+[**Volume**](Volume.md)
 
 ### Authorization
 

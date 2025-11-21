@@ -48,200 +48,200 @@
   }
 
   describe('VirtualMachineApi', function() {
-    describe('attachFirewallsToAVirtualMachine', function() {
-      it('should call attachFirewallsToAVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test attachFirewallsToAVirtualMachine
-        //instance.attachFirewallsToAVirtualMachine(function(error) {
+    describe('addVMLabel', function() {
+      it('should call addVMLabel successfully', function(done) {
+        //uncomment below and update the code to test addVMLabel
+        //instance.addVMLabel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createOneOrMoreVirtualMachines', function() {
-      it('should call createOneOrMoreVirtualMachines successfully', function(done) {
-        //uncomment below and update the code to test createOneOrMoreVirtualMachines
-        //instance.createOneOrMoreVirtualMachines(function(error) {
+    describe('attachFirewallsToVM', function() {
+      it('should call attachFirewallsToVM successfully', function(done) {
+        //uncomment below and update the code to test attachFirewallsToVM
+        //instance.attachFirewallsToVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteSecurityRule', function() {
-      it('should call deleteSecurityRule successfully', function(done) {
-        //uncomment below and update the code to test deleteSecurityRule
-        //instance.deleteSecurityRule(function(error) {
+    describe('checkVMNameAvailability', function() {
+      it('should call checkVMNameAvailability successfully', function(done) {
+        //uncomment below and update the code to test checkVMNameAvailability
+        //instance.checkVMNameAvailability(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteVirtualMachine', function() {
-      it('should call deleteVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test deleteVirtualMachine
-        //instance.deleteVirtualMachine(function(error) {
+    describe('createFirewallRuleForVM', function() {
+      it('should call createFirewallRuleForVM successfully', function(done) {
+        //uncomment below and update the code to test createFirewallRuleForVM
+        //instance.createFirewallRuleForVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fetchVirtualMachineNameAvailability', function() {
-      it('should call fetchVirtualMachineNameAvailability successfully', function(done) {
-        //uncomment below and update the code to test fetchVirtualMachineNameAvailability
-        //instance.fetchVirtualMachineNameAvailability(function(error) {
+    describe('createSnapshotForVM', function() {
+      it('should call createSnapshotForVM successfully', function(done) {
+        //uncomment below and update the code to test createSnapshotForVM
+        //instance.createSnapshotForVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInstanceHardReboot', function() {
-      it('should call getInstanceHardReboot successfully', function(done) {
-        //uncomment below and update the code to test getInstanceHardReboot
-        //instance.getInstanceHardReboot(function(error) {
+    describe('createVMs', function() {
+      it('should call createVMs successfully', function(done) {
+        //uncomment below and update the code to test createVMs
+        //instance.createVMs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInstanceHibernate', function() {
-      it('should call getInstanceHibernate successfully', function(done) {
-        //uncomment below and update the code to test getInstanceHibernate
-        //instance.getInstanceHibernate(function(error) {
+    describe('deleteFirewallRuleForVM', function() {
+      it('should call deleteFirewallRuleForVM successfully', function(done) {
+        //uncomment below and update the code to test deleteFirewallRuleForVM
+        //instance.deleteFirewallRuleForVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInstanceHibernateRestore', function() {
-      it('should call getInstanceHibernateRestore successfully', function(done) {
-        //uncomment below and update the code to test getInstanceHibernateRestore
-        //instance.getInstanceHibernateRestore(function(error) {
+    describe('deleteVM', function() {
+      it('should call deleteVM successfully', function(done) {
+        //uncomment below and update the code to test deleteVM
+        //instance.deleteVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInstanceLogs', function() {
-      it('should call getInstanceLogs successfully', function(done) {
-        //uncomment below and update the code to test getInstanceLogs
-        //instance.getInstanceLogs(function(error) {
+    describe('getContractVMs', function() {
+      it('should call getContractVMs successfully', function(done) {
+        //uncomment below and update the code to test getContractVMs
+        //instance.getContractVMs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInstanceMetrics', function() {
-      it('should call getInstanceMetrics successfully', function(done) {
-        //uncomment below and update the code to test getInstanceMetrics
-        //instance.getInstanceMetrics(function(error) {
+    describe('getVM', function() {
+      it('should call getVM successfully', function(done) {
+        //uncomment below and update the code to test getVM
+        //instance.getVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInstanceStart', function() {
-      it('should call getInstanceStart successfully', function(done) {
-        //uncomment below and update the code to test getInstanceStart
-        //instance.getInstanceStart(function(error) {
+    describe('getVMLogs', function() {
+      it('should call getVMLogs successfully', function(done) {
+        //uncomment below and update the code to test getVMLogs
+        //instance.getVMLogs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInstanceStop', function() {
-      it('should call getInstanceStop successfully', function(done) {
-        //uncomment below and update the code to test getInstanceStop
-        //instance.getInstanceStop(function(error) {
+    describe('getVMMetrics', function() {
+      it('should call getVMMetrics successfully', function(done) {
+        //uncomment below and update the code to test getVMMetrics
+        //instance.getVMMetrics(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listVirtualMachines', function() {
-      it('should call listVirtualMachines successfully', function(done) {
-        //uncomment below and update the code to test listVirtualMachines
-        //instance.listVirtualMachines(function(error) {
+    describe('hardRebootVM', function() {
+      it('should call hardRebootVM successfully', function(done) {
+        //uncomment below and update the code to test hardRebootVM
+        //instance.hardRebootVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postInstanceLogs', function() {
-      it('should call postInstanceLogs successfully', function(done) {
-        //uncomment below and update the code to test postInstanceLogs
-        //instance.postInstanceLogs(function(error) {
+    describe('hibernateVM', function() {
+      it('should call hibernateVM successfully', function(done) {
+        //uncomment below and update the code to test hibernateVM
+        //instance.hibernateVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postInstanceResize', function() {
-      it('should call postInstanceResize successfully', function(done) {
-        //uncomment below and update the code to test postInstanceResize
-        //instance.postInstanceResize(function(error) {
+    describe('listVMs', function() {
+      it('should call listVMs successfully', function(done) {
+        //uncomment below and update the code to test listVMs
+        //instance.listVMs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postSecurityRule', function() {
-      it('should call postSecurityRule successfully', function(done) {
-        //uncomment below and update the code to test postSecurityRule
-        //instance.postSecurityRule(function(error) {
+    describe('requestVMLogs', function() {
+      it('should call requestVMLogs successfully', function(done) {
+        //uncomment below and update the code to test requestVMLogs
+        //instance.requestVMLogs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postSnapshots', function() {
-      it('should call postSnapshots successfully', function(done) {
-        //uncomment below and update the code to test postSnapshots
-        //instance.postSnapshots(function(error) {
+    describe('resizeVM', function() {
+      it('should call resizeVM successfully', function(done) {
+        //uncomment below and update the code to test resizeVM
+        //instance.resizeVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('putLabels', function() {
-      it('should call putLabels successfully', function(done) {
-        //uncomment below and update the code to test putLabels
-        //instance.putLabels(function(error) {
+    describe('restoreVMFromHibernation', function() {
+      it('should call restoreVMFromHibernation successfully', function(done) {
+        //uncomment below and update the code to test restoreVMFromHibernation
+        //instance.restoreVMFromHibernation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveVirtualMachineDetails', function() {
-      it('should call retrieveVirtualMachineDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveVirtualMachineDetails
-        //instance.retrieveVirtualMachineDetails(function(error) {
+    describe('startVM', function() {
+      it('should call startVM successfully', function(done) {
+        //uncomment below and update the code to test startVM
+        //instance.startVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveVirtualMachinesAssociatedWithAContract', function() {
-      it('should call retrieveVirtualMachinesAssociatedWithAContract successfully', function(done) {
-        //uncomment below and update the code to test retrieveVirtualMachinesAssociatedWithAContract
-        //instance.retrieveVirtualMachinesAssociatedWithAContract(function(error) {
+    describe('stopVM', function() {
+      it('should call stopVM successfully', function(done) {
+        //uncomment below and update the code to test stopVM
+        //instance.stopVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

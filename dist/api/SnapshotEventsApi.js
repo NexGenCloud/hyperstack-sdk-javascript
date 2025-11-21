@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * SnapshotEvents service.
 * @module api/SnapshotEventsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var SnapshotEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -48,12 +48,12 @@ var SnapshotEventsApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   return _createClass(SnapshotEventsApi, [{
-    key: "fetchAllEventsForASnapshotWithHttpInfo",
-    value: function fetchAllEventsForASnapshotWithHttpInfo(snapshotId) {
+    key: "listSnapshotEventsWithHttpInfo",
+    value: function listSnapshotEventsWithHttpInfo(snapshotId) {
       var postBody = null;
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling fetchAllEventsForASnapshot");
+        throw new Error("Missing the required parameter 'snapshotId' when calling listSnapshotEvents");
       }
       var pathParams = {
         'snapshot_id': snapshotId
@@ -75,9 +75,9 @@ var SnapshotEventsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {
-    key: "fetchAllEventsForASnapshot",
-    value: function fetchAllEventsForASnapshot(snapshotId) {
-      return this.fetchAllEventsForASnapshotWithHttpInfo(snapshotId).then(function (response_and_data) {
+    key: "listSnapshotEvents",
+    value: function listSnapshotEvents(snapshotId) {
+      return this.listSnapshotEventsWithHttpInfo(snapshotId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

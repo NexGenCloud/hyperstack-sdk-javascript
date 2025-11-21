@@ -68,10 +68,10 @@
         done();
       });
     });
-    describe('retrieveAPIKey', function() {
-      it('should call retrieveAPIKey successfully', function(done) {
-        //uncomment below and update the code to test retrieveAPIKey
-        //instance.retrieveAPIKey(function(error) {
+    describe('getAPIKey', function() {
+      it('should call getAPIKey successfully', function(done) {
+        //uncomment below and update the code to test getAPIKey
+        //instance.getAPIKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

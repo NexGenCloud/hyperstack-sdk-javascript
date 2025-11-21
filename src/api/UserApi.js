@@ -21,7 +21,7 @@ import UsersInfoListResponse from '../model/UsersInfoListResponse';
 /**
 * User service.
 * @module api/UserApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class UserApi {
 
@@ -39,57 +39,16 @@ export default class UserApi {
 
 
     /**
-     * GET: Retrieve billing info
-     * Retrieve the billing details associated with your organization.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UsersInfoListResponse} and HTTP response
-     */
-    getUserWithHttpInfo() {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = UsersInfoListResponse;
-      return this.apiClient.callApi(
-        '/billing/user/info', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * GET: Retrieve billing info
-     * Retrieve the billing details associated with your organization.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UsersInfoListResponse}
-     */
-    getUser() {
-      return this.getUserWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * POST: Insert billing info
-     * Add billing details associated with your organization in the request body.
+     * Add billing details associated with your user in the request body.
      * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AddUserInfoSuccessResponseModel} and HTTP response
      */
-    postUserWithHttpInfo(payload) {
+    addUserBillingInfoWithHttpInfo(payload) {
       let postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postUser");
+        throw new Error("Missing the required parameter 'payload' when calling addUserBillingInfo");
       }
 
       let pathParams = {
@@ -114,12 +73,53 @@ export default class UserApi {
 
     /**
      * POST: Insert billing info
-     * Add billing details associated with your organization in the request body.
+     * Add billing details associated with your user in the request body.
      * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AddUserInfoSuccessResponseModel}
      */
-    postUser(payload) {
-      return this.postUserWithHttpInfo(payload)
+    addUserBillingInfo(payload) {
+      return this.addUserBillingInfoWithHttpInfo(payload)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * GET: Retrieve billing info
+     * Retrieve the billing details associated with your user.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UsersInfoListResponse} and HTTP response
+     */
+    getUserBillingInfoWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UsersInfoListResponse;
+      return this.apiClient.callApi(
+        '/billing/user/info', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * GET: Retrieve billing info
+     * Retrieve the billing details associated with your user.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UsersInfoListResponse}
+     */
+    getUserBillingInfo() {
+      return this.getUserBillingInfoWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -128,15 +128,15 @@ export default class UserApi {
 
     /**
      * PUT: Update billing info
-     * Update the billing information for your organization in the request body.
+     * Update the billing information for your user in the request body.
      * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AddUserInfoSuccessResponseModel} and HTTP response
      */
-    putUserWithHttpInfo(payload) {
+    updateUserBillingInfoWithHttpInfo(payload) {
       let postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling putUser");
+        throw new Error("Missing the required parameter 'payload' when calling updateUserBillingInfo");
       }
 
       let pathParams = {
@@ -161,12 +161,12 @@ export default class UserApi {
 
     /**
      * PUT: Update billing info
-     * Update the billing information for your organization in the request body.
+     * Update the billing information for your user in the request body.
      * @param {module:model/UserInfoPostPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AddUserInfoSuccessResponseModel}
      */
-    putUser(payload) {
-      return this.putUserWithHttpInfo(payload)
+    updateUserBillingInfo(payload) {
+      return this.updateUserBillingInfoWithHttpInfo(payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

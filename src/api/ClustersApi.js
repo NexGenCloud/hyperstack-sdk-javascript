@@ -34,7 +34,7 @@ import UpdateClusterNodeGroupPayload from '../model/UpdateClusterNodeGroupPayloa
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class ClustersApi {
 
@@ -49,52 +49,6 @@ export default class ClustersApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-
-
-    /**
-     * Reconcile a cluster
-     * @param {Number} clusterId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ManualReconciliationModel} and HTTP response
-     */
-    attemptToManuallyReconcileAClusterWithHttpInfo(clusterId) {
-      let postBody = null;
-      // verify the required parameter 'clusterId' is set
-      if (clusterId === undefined || clusterId === null) {
-        throw new Error("Missing the required parameter 'clusterId' when calling attemptToManuallyReconcileACluster");
-      }
-
-      let pathParams = {
-        'cluster_id': clusterId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ManualReconciliationModel;
-      return this.apiClient.callApi(
-        '/core/clusters/{cluster_id}/reconcile', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Reconcile a cluster
-     * @param {Number} clusterId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ManualReconciliationModel}
-     */
-    attemptToManuallyReconcileACluster(clusterId) {
-      return this.attemptToManuallyReconcileAClusterWithHttpInfo(clusterId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
 
 
     /**
@@ -251,11 +205,11 @@ export default class ClustersApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    deleteAClusterWithHttpInfo(id) {
+    deleteClusterWithHttpInfo(id) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteACluster");
+        throw new Error("Missing the required parameter 'id' when calling deleteCluster");
       }
 
       let pathParams = {
@@ -284,61 +238,8 @@ export default class ClustersApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    deleteACluster(id) {
-      return this.deleteAClusterWithHttpInfo(id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a node group
-     * @param {Number} clusterId 
-     * @param {Number} nodeGroupId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
-     */
-    deleteANodeGroupWithHttpInfo(clusterId, nodeGroupId) {
-      let postBody = null;
-      // verify the required parameter 'clusterId' is set
-      if (clusterId === undefined || clusterId === null) {
-        throw new Error("Missing the required parameter 'clusterId' when calling deleteANodeGroup");
-      }
-      // verify the required parameter 'nodeGroupId' is set
-      if (nodeGroupId === undefined || nodeGroupId === null) {
-        throw new Error("Missing the required parameter 'nodeGroupId' when calling deleteANodeGroup");
-      }
-
-      let pathParams = {
-        'cluster_id': clusterId,
-        'node_group_id': nodeGroupId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ResponseModel;
-      return this.apiClient.callApi(
-        '/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a node group
-     * @param {Number} clusterId 
-     * @param {Number} nodeGroupId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
-     */
-    deleteANodeGroup(clusterId, nodeGroupId) {
-      return this.deleteANodeGroupWithHttpInfo(clusterId, nodeGroupId)
+    deleteCluster(id) {
+      return this.deleteClusterWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -444,6 +345,59 @@ export default class ClustersApi {
      */
     deleteClusterNodes(clusterId, payload) {
       return this.deleteClusterNodesWithHttpInfo(clusterId, payload)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a node group
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
+     */
+    deleteNodeGroupWithHttpInfo(clusterId, nodeGroupId) {
+      let postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling deleteNodeGroup");
+      }
+      // verify the required parameter 'nodeGroupId' is set
+      if (nodeGroupId === undefined || nodeGroupId === null) {
+        throw new Error("Missing the required parameter 'nodeGroupId' when calling deleteNodeGroup");
+      }
+
+      let pathParams = {
+        'cluster_id': clusterId,
+        'node_group_id': nodeGroupId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ResponseModel;
+      return this.apiClient.callApi(
+        '/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a node group
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
+     */
+    deleteNodeGroup(clusterId, nodeGroupId) {
+      return this.deleteNodeGroupWithHttpInfo(clusterId, nodeGroupId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -631,6 +585,59 @@ export default class ClustersApi {
 
 
     /**
+     * Retrieve a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsGetResponse} and HTTP response
+     */
+    getNodeGroupWithHttpInfo(clusterId, nodeGroupId) {
+      let postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling getNodeGroup");
+      }
+      // verify the required parameter 'nodeGroupId' is set
+      if (nodeGroupId === undefined || nodeGroupId === null) {
+        throw new Error("Missing the required parameter 'nodeGroupId' when calling getNodeGroup");
+      }
+
+      let pathParams = {
+        'cluster_id': clusterId,
+        'node_group_id': nodeGroupId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ClusterNodeGroupsGetResponse;
+      return this.apiClient.callApi(
+        '/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a node group in a cluster
+     * @param {Number} clusterId 
+     * @param {Number} nodeGroupId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsGetResponse}
+     */
+    getNodeGroup(clusterId, nodeGroupId) {
+      return this.getNodeGroupWithHttpInfo(clusterId, nodeGroupId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Getting Cluster Detail
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterResponse} and HTTP response
@@ -777,25 +784,19 @@ export default class ClustersApi {
 
 
     /**
-     * Retrieve a node group in a cluster
+     * Reconcile a cluster
      * @param {Number} clusterId 
-     * @param {Number} nodeGroupId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsGetResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ManualReconciliationModel} and HTTP response
      */
-    retrieveANodeGroupWithHttpInfo(clusterId, nodeGroupId) {
+    reconcileClusterWithHttpInfo(clusterId) {
       let postBody = null;
       // verify the required parameter 'clusterId' is set
       if (clusterId === undefined || clusterId === null) {
-        throw new Error("Missing the required parameter 'clusterId' when calling retrieveANodeGroup");
-      }
-      // verify the required parameter 'nodeGroupId' is set
-      if (nodeGroupId === undefined || nodeGroupId === null) {
-        throw new Error("Missing the required parameter 'nodeGroupId' when calling retrieveANodeGroup");
+        throw new Error("Missing the required parameter 'clusterId' when calling reconcileCluster");
       }
 
       let pathParams = {
-        'cluster_id': clusterId,
-        'node_group_id': nodeGroupId
+        'cluster_id': clusterId
       };
       let queryParams = {
       };
@@ -807,22 +808,21 @@ export default class ClustersApi {
       let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ClusterNodeGroupsGetResponse;
+      let returnType = ManualReconciliationModel;
       return this.apiClient.callApi(
-        '/core/clusters/{cluster_id}/node-groups/{node_group_id}', 'GET',
+        '/core/clusters/{cluster_id}/reconcile', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Retrieve a node group in a cluster
+     * Reconcile a cluster
      * @param {Number} clusterId 
-     * @param {Number} nodeGroupId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsGetResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ManualReconciliationModel}
      */
-    retrieveANodeGroup(clusterId, nodeGroupId) {
-      return this.retrieveANodeGroupWithHttpInfo(clusterId, nodeGroupId)
+    reconcileCluster(clusterId) {
+      return this.reconcileClusterWithHttpInfo(clusterId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -836,19 +836,19 @@ export default class ClustersApi {
      * @param {module:model/UpdateClusterNodeGroupPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterNodeGroupsCreateResponse} and HTTP response
      */
-    updateANodeGroupWithHttpInfo(clusterId, nodeGroupId, payload) {
+    updateNodeGroupWithHttpInfo(clusterId, nodeGroupId, payload) {
       let postBody = payload;
       // verify the required parameter 'clusterId' is set
       if (clusterId === undefined || clusterId === null) {
-        throw new Error("Missing the required parameter 'clusterId' when calling updateANodeGroup");
+        throw new Error("Missing the required parameter 'clusterId' when calling updateNodeGroup");
       }
       // verify the required parameter 'nodeGroupId' is set
       if (nodeGroupId === undefined || nodeGroupId === null) {
-        throw new Error("Missing the required parameter 'nodeGroupId' when calling updateANodeGroup");
+        throw new Error("Missing the required parameter 'nodeGroupId' when calling updateNodeGroup");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateANodeGroup");
+        throw new Error("Missing the required parameter 'payload' when calling updateNodeGroup");
       }
 
       let pathParams = {
@@ -880,8 +880,8 @@ export default class ClustersApi {
      * @param {module:model/UpdateClusterNodeGroupPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterNodeGroupsCreateResponse}
      */
-    updateANodeGroup(clusterId, nodeGroupId, payload) {
-      return this.updateANodeGroupWithHttpInfo(clusterId, nodeGroupId, payload)
+    updateNodeGroup(clusterId, nodeGroupId, payload) {
+      return this.updateNodeGroupWithHttpInfo(clusterId, nodeGroupId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * UserDetailChoice service.
 * @module api/UserDetailChoiceApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var UserDetailChoiceApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,12 +45,12 @@ var UserDetailChoiceApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Retrieve Default Flavors and Images
-   * Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+   * Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserDefaultChoicesForUserResponse} and HTTP response
    */
   return _createClass(UserDetailChoiceApi, [{
-    key: "retrieveDefaultFlavorsAndImagesWithHttpInfo",
-    value: function retrieveDefaultFlavorsAndImagesWithHttpInfo() {
+    key: "listDefaultFlavorsAndImagesWithHttpInfo",
+    value: function listDefaultFlavorsAndImagesWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
@@ -65,13 +65,13 @@ var UserDetailChoiceApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve Default Flavors and Images
-     * Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+     * Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserDefaultChoicesForUserResponse}
      */
   }, {
-    key: "retrieveDefaultFlavorsAndImages",
-    value: function retrieveDefaultFlavorsAndImages() {
-      return this.retrieveDefaultFlavorsAndImagesWithHttpInfo().then(function (response_and_data) {
+    key: "listDefaultFlavorsAndImages",
+    value: function listDefaultFlavorsAndImages() {
+      return this.listDefaultFlavorsAndImagesWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

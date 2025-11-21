@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteImage**](ImageApi.md#deleteImage) | **DELETE** /core/images/{id} | Delete an image
 [**fetchImageNameAvailability**](ImageApi.md#fetchImageNameAvailability) | **GET** /core/image/name-availability/{name} | Fetch name availability for Images
-[**getImageDetails**](ImageApi.md#getImageDetails) | **GET** /core/images/{id} | Get Private Image Details
-[**listImages2**](ImageApi.md#listImages2) | **GET** /core/images | List Images
+[**getImage**](ImageApi.md#getImage) | **GET** /core/images/{id} | Get Private Image Details
+[**listImages**](ImageApi.md#listImages) | **GET** /core/images | List Images
 
 
 
@@ -111,9 +111,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getImageDetails
+## getImage
 
-> Image getImageDetails(id, opts)
+> Image getImage(id, opts)
 
 Get Private Image Details
 
@@ -135,7 +135,7 @@ let id = 56; // Number |
 let opts = {
   'includeRelatedVms': true // Boolean | 
 };
-apiInstance.getImageDetails(id, opts).then((data) => {
+apiInstance.getImage(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -165,9 +165,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## listImages2
+## listImages
 
-> Images listImages2(opts)
+> Images listImages(opts)
 
 List Images
 
@@ -192,7 +192,7 @@ let opts = {
   'page': 56, // Number | Page number for pagination
   'perPage': 56 // Number | Number of Images per page
 };
-apiInstance.listImages2(opts).then((data) => {
+apiInstance.listImages(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

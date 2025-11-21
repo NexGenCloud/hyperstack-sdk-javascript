@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Image service.
 * @module api/ImageApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class ImageApi {
 
@@ -143,12 +143,12 @@ export default class ImageApi {
      * @param {Boolean} [includeRelatedVms] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-    getImageDetailsWithHttpInfo(id, opts) {
+    getImageWithHttpInfo(id, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getImageDetails");
+        throw new Error("Missing the required parameter 'id' when calling getImage");
       }
 
       let pathParams = {
@@ -181,8 +181,8 @@ export default class ImageApi {
      * @param {Boolean} opts.includeRelatedVms 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
-    getImageDetails(id, opts) {
-      return this.getImageDetailsWithHttpInfo(id, opts)
+    getImage(id, opts) {
+      return this.getImageWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -200,7 +200,7 @@ export default class ImageApi {
      * @param {Number} [perPage] Number of Images per page
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Images} and HTTP response
      */
-    listImages2WithHttpInfo(opts) {
+    listImagesWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -240,8 +240,8 @@ export default class ImageApi {
      * @param {Number} opts.perPage Number of Images per page
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Images}
      */
-    listImages2(opts) {
-      return this.listImages2WithHttpInfo(opts)
+    listImages(opts) {
+      return this.listImagesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

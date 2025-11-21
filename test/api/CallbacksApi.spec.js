@@ -48,10 +48,10 @@
   }
 
   describe('CallbacksApi', function() {
-    describe('attachCallbackToVirtualMachine', function() {
-      it('should call attachCallbackToVirtualMachine successfully', function(done) {
-        //uncomment below and update the code to test attachCallbackToVirtualMachine
-        //instance.attachCallbackToVirtualMachine(function(error) {
+    describe('attachCallbackToVM', function() {
+      it('should call attachCallbackToVM successfully', function(done) {
+        //uncomment below and update the code to test attachCallbackToVM
+        //instance.attachCallbackToVM(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -68,10 +68,10 @@
         done();
       });
     });
-    describe('deleteVirtualMachineCallback', function() {
-      it('should call deleteVirtualMachineCallback successfully', function(done) {
-        //uncomment below and update the code to test deleteVirtualMachineCallback
-        //instance.deleteVirtualMachineCallback(function(error) {
+    describe('deleteVMCallback', function() {
+      it('should call deleteVMCallback successfully', function(done) {
+        //uncomment below and update the code to test deleteVMCallback
+        //instance.deleteVMCallback(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -88,10 +88,10 @@
         done();
       });
     });
-    describe('updateVirtualMachineCallback', function() {
-      it('should call updateVirtualMachineCallback successfully', function(done) {
-        //uncomment below and update the code to test updateVirtualMachineCallback
-        //instance.updateVirtualMachineCallback(function(error) {
+    describe('updateVMCallback', function() {
+      it('should call updateVMCallback successfully', function(done) {
+        //uncomment below and update the code to test updateVMCallback
+        //instance.updateVMCallback(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

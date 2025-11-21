@@ -48,30 +48,30 @@
   }
 
   describe('UserApi', function() {
-    describe('getUser', function() {
-      it('should call getUser successfully', function(done) {
-        //uncomment below and update the code to test getUser
-        //instance.getUser(function(error) {
+    describe('addUserBillingInfo', function() {
+      it('should call addUserBillingInfo successfully', function(done) {
+        //uncomment below and update the code to test addUserBillingInfo
+        //instance.addUserBillingInfo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postUser', function() {
-      it('should call postUser successfully', function(done) {
-        //uncomment below and update the code to test postUser
-        //instance.postUser(function(error) {
+    describe('getUserBillingInfo', function() {
+      it('should call getUserBillingInfo successfully', function(done) {
+        //uncomment below and update the code to test getUserBillingInfo
+        //instance.getUserBillingInfo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('putUser', function() {
-      it('should call putUser successfully', function(done) {
-        //uncomment below and update the code to test putUser
-        //instance.putUser(function(error) {
+    describe('updateUserBillingInfo', function() {
+      it('should call updateUserBillingInfo successfully', function(done) {
+        //uncomment below and update the code to test updateUserBillingInfo
+        //instance.updateUserBillingInfo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

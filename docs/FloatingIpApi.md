@@ -4,14 +4,14 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachPublicIPToVirtualMachine**](FloatingIpApi.md#attachPublicIPToVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/attach-floatingip | Attach public IP to virtual machine
-[**detachPublicIPFromVirtualMachine**](FloatingIpApi.md#detachPublicIPFromVirtualMachine) | **POST** /core/virtual-machines/{vm_id}/detach-floatingip | Detach public IP from virtual machine
+[**attachPublicIPToVM**](FloatingIpApi.md#attachPublicIPToVM) | **POST** /core/virtual-machines/{vm_id}/attach-floatingip | Attach public IP to virtual machine
+[**detachPublicIPFromVM**](FloatingIpApi.md#detachPublicIPFromVM) | **POST** /core/virtual-machines/{vm_id}/detach-floatingip | Detach public IP from virtual machine
 
 
 
-## attachPublicIPToVirtualMachine
+## attachPublicIPToVM
 
-> ResponseModel attachPublicIPToVirtualMachine(vmId)
+> ResponseModel attachPublicIPToVM(vmId)
 
 Attach public IP to virtual machine
 
@@ -30,7 +30,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.FloatingIpApi();
 let vmId = 56; // Number | 
-apiInstance.attachPublicIPToVirtualMachine(vmId).then((data) => {
+apiInstance.attachPublicIPToVM(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -59,9 +59,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## detachPublicIPFromVirtualMachine
+## detachPublicIPFromVM
 
-> ResponseModel detachPublicIPFromVirtualMachine(vmId)
+> ResponseModel detachPublicIPFromVM(vmId)
 
 Detach public IP from virtual machine
 
@@ -80,7 +80,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.FloatingIpApi();
 let vmId = 56; // Number | 
-apiInstance.detachPublicIPFromVirtualMachine(vmId).then((data) => {
+apiInstance.detachPublicIPFromVM(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

@@ -68,20 +68,20 @@
         done();
       });
     });
-    describe('listProfiles', function() {
-      it('should call listProfiles successfully', function(done) {
-        //uncomment below and update the code to test listProfiles
-        //instance.listProfiles(function(error) {
+    describe('getProfile', function() {
+      it('should call getProfile successfully', function(done) {
+        //uncomment below and update the code to test getProfile
+        //instance.getProfile(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveProfileDetails', function() {
-      it('should call retrieveProfileDetails successfully', function(done) {
-        //uncomment below and update the code to test retrieveProfileDetails
-        //instance.retrieveProfileDetails(function(error) {
+    describe('listProfiles', function() {
+      it('should call listProfiles successfully', function(done) {
+        //uncomment below and update the code to test listProfiles
+        //instance.listProfiles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

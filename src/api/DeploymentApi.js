@@ -22,7 +22,7 @@ import StartDeploymentPayload from '../model/StartDeploymentPayload';
 /**
 * Deployment service.
 * @module api/DeploymentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class DeploymentApi {
 
@@ -90,11 +90,11 @@ export default class DeploymentApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StartDeployment} and HTTP response
      */
-    detailsOfDeploymentByIDWithHttpInfo(id) {
+    getDeploymentWithHttpInfo(id) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling detailsOfDeploymentByID");
+        throw new Error("Missing the required parameter 'id' when calling getDeployment");
       }
 
       let pathParams = {
@@ -123,8 +123,8 @@ export default class DeploymentApi {
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StartDeployment}
      */
-    detailsOfDeploymentByID(id) {
-      return this.detailsOfDeploymentByIDWithHttpInfo(id)
+    getDeployment(id) {
+      return this.getDeploymentWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -4,17 +4,17 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieveDefaultFlavorsAndImages**](UserDetailChoiceApi.md#retrieveDefaultFlavorsAndImages) | **GET** /core/user/resources/defaults | Retrieve Default Flavors and Images
+[**listDefaultFlavorsAndImages**](UserDetailChoiceApi.md#listDefaultFlavorsAndImages) | **GET** /core/user/resources/defaults | Retrieve Default Flavors and Images
 
 
 
-## retrieveDefaultFlavorsAndImages
+## listDefaultFlavorsAndImages
 
-> UserDefaultChoicesForUserResponse retrieveDefaultFlavorsAndImages()
+> UserDefaultChoicesForUserResponse listDefaultFlavorsAndImages()
 
 Retrieve Default Flavors and Images
 
-Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
 
 ### Example
 
@@ -28,7 +28,7 @@ apiKey.apiKey = 'YOUR API KEY';
 //apiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.UserDetailChoiceApi();
-apiInstance.retrieveDefaultFlavorsAndImages().then((data) => {
+apiInstance.listDefaultFlavorsAndImages().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

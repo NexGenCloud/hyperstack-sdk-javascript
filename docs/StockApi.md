@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieveGPUStocks**](StockApi.md#retrieveGPUStocks) | **GET** /core/stocks | Retrieve GPU stocks
+[**getGPUStock**](StockApi.md#getGPUStock) | **GET** /core/stocks | Retrieve GPU stocks
 
 
 
-## retrieveGPUStocks
+## getGPUStock
 
-> NewStockRetriveResponse retrieveGPUStocks()
+> NewStockRetriveResponse getGPUStock()
 
 Retrieve GPU stocks
 
@@ -28,7 +28,7 @@ apiKey.apiKey = 'YOUR API KEY';
 //apiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.StockApi();
-apiInstance.retrieveGPUStocks().then((data) => {
+apiInstance.getGPUStock().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

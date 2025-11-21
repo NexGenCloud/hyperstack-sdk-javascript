@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LableResonse model module.
  * @module model/LableResonse
- * @version v1.45.2-alpha
+ * @version v1.46.1-alpha
  */
 class LableResonse {
     /**

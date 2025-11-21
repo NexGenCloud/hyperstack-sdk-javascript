@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Callbacks service.
 * @module api/CallbacksApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -53,16 +53,16 @@ var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachCallbackResponse} and HTTP response
    */
   return _createClass(CallbacksApi, [{
-    key: "attachCallbackToVirtualMachineWithHttpInfo",
-    value: function attachCallbackToVirtualMachineWithHttpInfo(vmId, payload) {
+    key: "attachCallbackToVMWithHttpInfo",
+    value: function attachCallbackToVMWithHttpInfo(vmId, payload) {
       var postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling attachCallbackToVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling attachCallbackToVM");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling attachCallbackToVirtualMachine");
+        throw new Error("Missing the required parameter 'payload' when calling attachCallbackToVM");
       }
       var pathParams = {
         'vm_id': vmId
@@ -85,9 +85,9 @@ var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachCallbackResponse}
      */
   }, {
-    key: "attachCallbackToVirtualMachine",
-    value: function attachCallbackToVirtualMachine(vmId, payload) {
-      return this.attachCallbackToVirtualMachineWithHttpInfo(vmId, payload).then(function (response_and_data) {
+    key: "attachCallbackToVM",
+    value: function attachCallbackToVM(vmId, payload) {
+      return this.attachCallbackToVMWithHttpInfo(vmId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -146,12 +146,12 @@ var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "deleteVirtualMachineCallbackWithHttpInfo",
-    value: function deleteVirtualMachineCallbackWithHttpInfo(vmId) {
+    key: "deleteVMCallbackWithHttpInfo",
+    value: function deleteVMCallbackWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling deleteVirtualMachineCallback");
+        throw new Error("Missing the required parameter 'vmId' when calling deleteVMCallback");
       }
       var pathParams = {
         'vm_id': vmId
@@ -173,9 +173,9 @@ var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteVirtualMachineCallback",
-    value: function deleteVirtualMachineCallback(vmId) {
-      return this.deleteVirtualMachineCallbackWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "deleteVMCallback",
+    value: function deleteVMCallback(vmId) {
+      return this.deleteVMCallbackWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -229,16 +229,16 @@ var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachCallbackResponse} and HTTP response
      */
   }, {
-    key: "updateVirtualMachineCallbackWithHttpInfo",
-    value: function updateVirtualMachineCallbackWithHttpInfo(vmId, payload) {
+    key: "updateVMCallbackWithHttpInfo",
+    value: function updateVMCallbackWithHttpInfo(vmId, payload) {
       var postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling updateVirtualMachineCallback");
+        throw new Error("Missing the required parameter 'vmId' when calling updateVMCallback");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateVirtualMachineCallback");
+        throw new Error("Missing the required parameter 'payload' when calling updateVMCallback");
       }
       var pathParams = {
         'vm_id': vmId
@@ -261,9 +261,9 @@ var CallbacksApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachCallbackResponse}
      */
   }, {
-    key: "updateVirtualMachineCallback",
-    value: function updateVirtualMachineCallback(vmId, payload) {
-      return this.updateVirtualMachineCallbackWithHttpInfo(vmId, payload).then(function (response_and_data) {
+    key: "updateVMCallback",
+    value: function updateVMCallback(vmId, payload) {
+      return this.updateVMCallbackWithHttpInfo(vmId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Payment service.
 * @module api/PaymentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var PaymentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -46,51 +46,18 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
   }
 
   /**
-   * GET: View payment details
-   * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentDetailsResponse} and HTTP response
+   * Retrieve Payment Receipt
+   * Retrieve the payment receipt from Stripe for a specific payment
+   * @param {String} paymentId 
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   return _createClass(PaymentApi, [{
-    key: "getDetailsWithHttpInfo",
-    value: function getDetailsWithHttpInfo() {
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PaymentDetailsResponse["default"];
-      return this.apiClient.callApi('/billing/payment/payment-details', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * GET: View payment details
-     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentDetailsResponse}
-     */
-  }, {
-    key: "getDetails",
-    value: function getDetails() {
-      return this.getDetailsWithHttpInfo().then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Retrieve Payment Receipt
-     * Retrieve the payment receipt from Stripe for a specific payment
-     * @param {String} paymentId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-  }, {
-    key: "getPaymentReceipt2WithHttpInfo",
-    value: function getPaymentReceipt2WithHttpInfo(paymentId) {
+    key: "getPaymentReceiptWithHttpInfo",
+    value: function getPaymentReceiptWithHttpInfo(paymentId) {
       var postBody = null;
       // verify the required parameter 'paymentId' is set
       if (paymentId === undefined || paymentId === null) {
-        throw new Error("Missing the required parameter 'paymentId' when calling getPaymentReceipt2");
+        throw new Error("Missing the required parameter 'paymentId' when calling getPaymentReceipt");
       }
       var pathParams = {
         'payment_id': paymentId
@@ -112,9 +79,9 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {
-    key: "getPaymentReceipt2",
-    value: function getPaymentReceipt2(paymentId) {
-      return this.getPaymentReceipt2WithHttpInfo(paymentId).then(function (response_and_data) {
+    key: "getPaymentReceipt",
+    value: function getPaymentReceipt(paymentId) {
+      return this.getPaymentReceiptWithHttpInfo(paymentId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -126,12 +93,12 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentInitiateResponse} and HTTP response
      */
   }, {
-    key: "postPaymentWithHttpInfo",
-    value: function postPaymentWithHttpInfo(payload) {
+    key: "initiatePaymentWithHttpInfo",
+    value: function initiatePaymentWithHttpInfo(payload) {
       var postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postPayment");
+        throw new Error("Missing the required parameter 'payload' when calling initiatePayment");
       }
       var pathParams = {};
       var queryParams = {};
@@ -151,9 +118,42 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentInitiateResponse}
      */
   }, {
-    key: "postPayment",
-    value: function postPayment(payload) {
-      return this.postPaymentWithHttpInfo(payload).then(function (response_and_data) {
+    key: "initiatePayment",
+    value: function initiatePayment(payload) {
+      return this.initiatePaymentWithHttpInfo(payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * GET: View payment details
+     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentDetailsResponse} and HTTP response
+     */
+  }, {
+    key: "listPaymentDetailsWithHttpInfo",
+    value: function listPaymentDetailsWithHttpInfo() {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _PaymentDetailsResponse["default"];
+      return this.apiClient.callApi('/billing/payment/payment-details', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * GET: View payment details
+     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentDetailsResponse}
+     */
+  }, {
+    key: "listPaymentDetails",
+    value: function listPaymentDetails() {
+      return this.listPaymentDetailsWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

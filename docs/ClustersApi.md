@@ -4,72 +4,24 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attemptToManuallyReconcileACluster**](ClustersApi.md#attemptToManuallyReconcileACluster) | **POST** /core/clusters/{cluster_id}/reconcile | Reconcile a cluster
 [**createCluster**](ClustersApi.md#createCluster) | **POST** /core/clusters | Create Cluster
 [**createNode**](ClustersApi.md#createNode) | **POST** /core/clusters/{cluster_id}/nodes | Create Node
 [**createNodeGroup**](ClustersApi.md#createNodeGroup) | **POST** /core/clusters/{cluster_id}/node-groups | Create a node group in a cluster
-[**deleteACluster**](ClustersApi.md#deleteACluster) | **DELETE** /core/clusters/{id} | Delete a cluster
-[**deleteANodeGroup**](ClustersApi.md#deleteANodeGroup) | **DELETE** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Delete a node group
+[**deleteCluster**](ClustersApi.md#deleteCluster) | **DELETE** /core/clusters/{id} | Delete a cluster
 [**deleteClusterNode**](ClustersApi.md#deleteClusterNode) | **DELETE** /core/clusters/{cluster_id}/nodes/{node_id} | Delete Cluster Node
 [**deleteClusterNodes**](ClustersApi.md#deleteClusterNodes) | **POST** /core/clusters/{cluster_id}/nodes/delete | Delete Multiple Cluster Nodes
+[**deleteNodeGroup**](ClustersApi.md#deleteNodeGroup) | **DELETE** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Delete a node group
 [**fetchClusterNameAvailability**](ClustersApi.md#fetchClusterNameAvailability) | **GET** /core/clusters/name-availability/{name} | Fetch cluster name availability
 [**getClusterMasterFlavors**](ClustersApi.md#getClusterMasterFlavors) | **GET** /core/clusters/master-flavors | Get Cluster Master Flavors
 [**getClusterNodes**](ClustersApi.md#getClusterNodes) | **GET** /core/clusters/{cluster_id}/nodes | Get Cluster Nodes
 [**getClusterVersions**](ClustersApi.md#getClusterVersions) | **GET** /core/clusters/versions | List Cluster Versions
+[**getNodeGroup**](ClustersApi.md#getNodeGroup) | **GET** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Retrieve a node group in a cluster
 [**gettingClusterDetail**](ClustersApi.md#gettingClusterDetail) | **GET** /core/clusters/{id} | Getting Cluster Detail
 [**listClusters**](ClustersApi.md#listClusters) | **GET** /core/clusters | List Clusters
 [**listNodeGroups**](ClustersApi.md#listNodeGroups) | **GET** /core/clusters/{cluster_id}/node-groups | List node groups for a cluster
-[**retrieveANodeGroup**](ClustersApi.md#retrieveANodeGroup) | **GET** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Retrieve a node group in a cluster
-[**updateANodeGroup**](ClustersApi.md#updateANodeGroup) | **PATCH** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Update a node group in a cluster
+[**reconcileCluster**](ClustersApi.md#reconcileCluster) | **POST** /core/clusters/{cluster_id}/reconcile | Reconcile a cluster
+[**updateNodeGroup**](ClustersApi.md#updateNodeGroup) | **PATCH** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Update a node group in a cluster
 
-
-
-## attemptToManuallyReconcileACluster
-
-> ManualReconciliationModel attemptToManuallyReconcileACluster(clusterId)
-
-Reconcile a cluster
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.ClustersApi();
-let clusterId = 56; // Number | 
-apiInstance.attemptToManuallyReconcileACluster(clusterId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clusterId** | **Number**|  | 
-
-### Return type
-
-[**ManualReconciliationModel**](ManualReconciliationModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
 
 
 ## createCluster
@@ -220,9 +172,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteACluster
+## deleteCluster
 
-> ResponseModel deleteACluster(id)
+> ResponseModel deleteCluster(id)
 
 Delete a cluster
 
@@ -239,7 +191,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.ClustersApi();
 let id = 56; // Number | 
-apiInstance.deleteACluster(id).then((data) => {
+apiInstance.deleteCluster(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -253,56 +205,6 @@ apiInstance.deleteACluster(id).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**|  | 
-
-### Return type
-
-[**ResponseModel**](ResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## deleteANodeGroup
-
-> ResponseModel deleteANodeGroup(clusterId, nodeGroupId)
-
-Delete a node group
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.ClustersApi();
-let clusterId = 56; // Number | 
-let nodeGroupId = 56; // Number | 
-apiInstance.deleteANodeGroup(clusterId, nodeGroupId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clusterId** | **Number**|  | 
- **nodeGroupId** | **Number**|  | 
 
 ### Return type
 
@@ -415,6 +317,56 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## deleteNodeGroup
+
+> ResponseModel deleteNodeGroup(clusterId, nodeGroupId)
+
+Delete a node group
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let nodeGroupId = 56; // Number | 
+apiInstance.deleteNodeGroup(clusterId, nodeGroupId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **nodeGroupId** | **Number**|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -612,6 +564,56 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getNodeGroup
+
+> ClusterNodeGroupsGetResponse getNodeGroup(clusterId, nodeGroupId)
+
+Retrieve a node group in a cluster
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+let nodeGroupId = 56; // Number | 
+apiInstance.getNodeGroup(clusterId, nodeGroupId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+ **nodeGroupId** | **Number**|  | 
+
+### Return type
+
+[**ClusterNodeGroupsGetResponse**](ClusterNodeGroupsGetResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## gettingClusterDetail
 
 > ClusterResponse gettingClusterDetail(id)
@@ -764,11 +766,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveANodeGroup
+## reconcileCluster
 
-> ClusterNodeGroupsGetResponse retrieveANodeGroup(clusterId, nodeGroupId)
+> ManualReconciliationModel reconcileCluster(clusterId)
 
-Retrieve a node group in a cluster
+Reconcile a cluster
 
 ### Example
 
@@ -783,8 +785,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.ClustersApi();
 let clusterId = 56; // Number | 
-let nodeGroupId = 56; // Number | 
-apiInstance.retrieveANodeGroup(clusterId, nodeGroupId).then((data) => {
+apiInstance.reconcileCluster(clusterId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -798,11 +799,10 @@ apiInstance.retrieveANodeGroup(clusterId, nodeGroupId).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clusterId** | **Number**|  | 
- **nodeGroupId** | **Number**|  | 
 
 ### Return type
 
-[**ClusterNodeGroupsGetResponse**](ClusterNodeGroupsGetResponse.md)
+[**ManualReconciliationModel**](ManualReconciliationModel.md)
 
 ### Authorization
 
@@ -814,9 +814,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateANodeGroup
+## updateNodeGroup
 
-> ClusterNodeGroupsCreateResponse updateANodeGroup(clusterId, nodeGroupId, payload)
+> ClusterNodeGroupsCreateResponse updateNodeGroup(clusterId, nodeGroupId, payload)
 
 Update a node group in a cluster
 
@@ -835,7 +835,7 @@ let apiInstance = new HyperstackApi.ClustersApi();
 let clusterId = 56; // Number | 
 let nodeGroupId = 56; // Number | 
 let payload = new HyperstackApi.UpdateClusterNodeGroupPayload(); // UpdateClusterNodeGroupPayload | 
-apiInstance.updateANodeGroup(clusterId, nodeGroupId, payload).then((data) => {
+apiInstance.updateNodeGroup(clusterId, nodeGroupId, payload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

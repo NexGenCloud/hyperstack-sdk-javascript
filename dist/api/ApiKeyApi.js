@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * ApiKey service.
 * @module api/ApiKeyApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -132,8 +132,8 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetApiKeysResponseModel} and HTTP response
      */
   }, {
-    key: "retrieveAPIKeyWithHttpInfo",
-    value: function retrieveAPIKeyWithHttpInfo() {
+    key: "getAPIKeyWithHttpInfo",
+    value: function getAPIKeyWithHttpInfo() {
       var postBody = null;
       var pathParams = {};
       var queryParams = {};
@@ -152,9 +152,9 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetApiKeysResponseModel}
      */
   }, {
-    key: "retrieveAPIKey",
-    value: function retrieveAPIKey() {
-      return this.retrieveAPIKeyWithHttpInfo().then(function (response_and_data) {
+    key: "getAPIKey",
+    value: function getAPIKey() {
+      return this.getAPIKeyWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

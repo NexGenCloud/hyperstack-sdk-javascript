@@ -68,20 +68,20 @@
         done();
       });
     });
-    describe('getImageDetails', function() {
-      it('should call getImageDetails successfully', function(done) {
-        //uncomment below and update the code to test getImageDetails
-        //instance.getImageDetails(function(error) {
+    describe('getImage', function() {
+      it('should call getImage successfully', function(done) {
+        //uncomment below and update the code to test getImage
+        //instance.getImage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listImages2', function() {
-      it('should call listImages2 successfully', function(done) {
-        //uncomment below and update the code to test listImages2
-        //instance.listImages2(function(error) {
+    describe('listImages', function() {
+      it('should call listImages successfully', function(done) {
+        //uncomment below and update the code to test listImages
+        //instance.listImages(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

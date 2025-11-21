@@ -48,20 +48,20 @@
   }
 
   describe('FirewallsApi', function() {
-    describe('addFirewallRuleToAnExistingFirewall', function() {
-      it('should call addFirewallRuleToAnExistingFirewall successfully', function(done) {
-        //uncomment below and update the code to test addFirewallRuleToAnExistingFirewall
-        //instance.addFirewallRuleToAnExistingFirewall(function(error) {
+    describe('addRuleToFirewall', function() {
+      it('should call addRuleToFirewall successfully', function(done) {
+        //uncomment below and update the code to test addRuleToFirewall
+        //instance.addRuleToFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createANewFirewall', function() {
-      it('should call createANewFirewall successfully', function(done) {
-        //uncomment below and update the code to test createANewFirewall
-        //instance.createANewFirewall(function(error) {
+    describe('createFirewall', function() {
+      it('should call createFirewall successfully', function(done) {
+        //uncomment below and update the code to test createFirewall
+        //instance.createFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -78,10 +78,20 @@
         done();
       });
     });
-    describe('deleteFirewallRulesFromFirewall', function() {
-      it('should call deleteFirewallRulesFromFirewall successfully', function(done) {
-        //uncomment below and update the code to test deleteFirewallRulesFromFirewall
-        //instance.deleteFirewallRulesFromFirewall(function(error) {
+    describe('deleteRuleFromFirewall', function() {
+      it('should call deleteRuleFromFirewall successfully', function(done) {
+        //uncomment below and update the code to test deleteRuleFromFirewall
+        //instance.deleteRuleFromFirewall(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getFirewall', function() {
+      it('should call getFirewall successfully', function(done) {
+        //uncomment below and update the code to test getFirewall
+        //instance.getFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -92,16 +102,6 @@
       it('should call listExistingFirewalls successfully', function(done) {
         //uncomment below and update the code to test listExistingFirewalls
         //instance.listExistingFirewalls(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('retrieveTheDetailsOfAnExistingFirewall', function() {
-      it('should call retrieveTheDetailsOfAnExistingFirewall successfully', function(done) {
-        //uncomment below and update the code to test retrieveTheDetailsOfAnExistingFirewall
-        //instance.retrieveTheDetailsOfAnExistingFirewall(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

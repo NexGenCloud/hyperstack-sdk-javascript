@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * FirewallAttachment service.
 * @module api/FirewallAttachmentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var FirewallAttachmentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -52,16 +52,16 @@ var FirewallAttachmentApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
    */
   return _createClass(FirewallAttachmentApi, [{
-    key: "attachFirewallToVirtualMachinesWithHttpInfo",
-    value: function attachFirewallToVirtualMachinesWithHttpInfo(firewallId, payload) {
+    key: "attachFirewallToVMsWithHttpInfo",
+    value: function attachFirewallToVMsWithHttpInfo(firewallId, payload) {
       var postBody = payload;
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling attachFirewallToVirtualMachines");
+        throw new Error("Missing the required parameter 'firewallId' when calling attachFirewallToVMs");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling attachFirewallToVirtualMachines");
+        throw new Error("Missing the required parameter 'payload' when calling attachFirewallToVMs");
       }
       var pathParams = {
         'firewall_id': firewallId
@@ -84,9 +84,9 @@ var FirewallAttachmentApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "attachFirewallToVirtualMachines",
-    value: function attachFirewallToVirtualMachines(firewallId, payload) {
-      return this.attachFirewallToVirtualMachinesWithHttpInfo(firewallId, payload).then(function (response_and_data) {
+    key: "attachFirewallToVMs",
+    value: function attachFirewallToVMs(firewallId, payload) {
+      return this.attachFirewallToVMsWithHttpInfo(firewallId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

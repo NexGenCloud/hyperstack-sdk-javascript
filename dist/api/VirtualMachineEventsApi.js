@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VirtualMachineEvents service.
 * @module api/VirtualMachineEventsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var VirtualMachineEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -50,12 +50,12 @@ var VirtualMachineEventsApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InstanceEvents} and HTTP response
    */
   return _createClass(VirtualMachineEventsApi, [{
-    key: "listVirtualMachineEventsWithHttpInfo",
-    value: function listVirtualMachineEventsWithHttpInfo(vmId) {
+    key: "listVMEventsWithHttpInfo",
+    value: function listVMEventsWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling listVirtualMachineEvents");
+        throw new Error("Missing the required parameter 'vmId' when calling listVMEvents");
       }
       var pathParams = {
         'vm_id': vmId
@@ -77,9 +77,9 @@ var VirtualMachineEventsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InstanceEvents}
      */
   }, {
-    key: "listVirtualMachineEvents",
-    value: function listVirtualMachineEvents(vmId) {
-      return this.listVirtualMachineEventsWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "listVMEvents",
+    value: function listVMEvents(vmId) {
+      return this.listVMEventsWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

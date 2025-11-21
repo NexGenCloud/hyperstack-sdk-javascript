@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Compliance service.
 * @module api/ComplianceApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -89,12 +89,12 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "deleteAComplianceWithHttpInfo",
-    value: function deleteAComplianceWithHttpInfo(gpuModel) {
+    key: "deleteComplianceWithHttpInfo",
+    value: function deleteComplianceWithHttpInfo(gpuModel) {
       var postBody = null;
       // verify the required parameter 'gpuModel' is set
       if (gpuModel === undefined || gpuModel === null) {
-        throw new Error("Missing the required parameter 'gpuModel' when calling deleteACompliance");
+        throw new Error("Missing the required parameter 'gpuModel' when calling deleteCompliance");
       }
       var pathParams = {
         'gpu_model': gpuModel
@@ -115,9 +115,9 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteACompliance",
-    value: function deleteACompliance(gpuModel) {
-      return this.deleteAComplianceWithHttpInfo(gpuModel).then(function (response_and_data) {
+    key: "deleteCompliance",
+    value: function deleteCompliance(gpuModel) {
+      return this.deleteComplianceWithHttpInfo(gpuModel).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -130,8 +130,8 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ComplianceResponse} and HTTP response
      */
   }, {
-    key: "retrieveComplianceWithHttpInfo",
-    value: function retrieveComplianceWithHttpInfo(opts) {
+    key: "getComplianceWithHttpInfo",
+    value: function getComplianceWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
       var pathParams = {};
@@ -155,9 +155,9 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ComplianceResponse}
      */
   }, {
-    key: "retrieveCompliance",
-    value: function retrieveCompliance(opts) {
-      return this.retrieveComplianceWithHttpInfo(opts).then(function (response_and_data) {
+    key: "getCompliance",
+    value: function getCompliance(opts) {
+      return this.getComplianceWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -168,12 +168,12 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateUpdateComplianceResponse} and HTTP response
      */
   }, {
-    key: "updateAComplianceWithHttpInfo",
-    value: function updateAComplianceWithHttpInfo(payload) {
+    key: "updateComplianceWithHttpInfo",
+    value: function updateComplianceWithHttpInfo(payload) {
       var postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateACompliance");
+        throw new Error("Missing the required parameter 'payload' when calling updateCompliance");
       }
       var pathParams = {};
       var queryParams = {};
@@ -192,9 +192,9 @@ var ComplianceApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateUpdateComplianceResponse}
      */
   }, {
-    key: "updateACompliance",
-    value: function updateACompliance(payload) {
-      return this.updateAComplianceWithHttpInfo(payload).then(function (response_and_data) {
+    key: "updateCompliance",
+    value: function updateCompliance(payload) {
+      return this.updateComplianceWithHttpInfo(payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

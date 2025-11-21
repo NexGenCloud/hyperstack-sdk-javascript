@@ -19,7 +19,7 @@ import NewStockRetriveResponse from '../model/NewStockRetriveResponse';
 /**
 * Stock service.
 * @module api/StockApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class StockApi {
 
@@ -41,7 +41,7 @@ export default class StockApi {
      * Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs.hyperstack.cloud/docs/hardware/gpu-stock-information).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewStockRetriveResponse} and HTTP response
      */
-    retrieveGPUStocksWithHttpInfo() {
+    getGPUStockWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -69,8 +69,8 @@ export default class StockApi {
      * Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs.hyperstack.cloud/docs/hardware/gpu-stock-information).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewStockRetriveResponse}
      */
-    retrieveGPUStocks() {
-      return this.retrieveGPUStocksWithHttpInfo()
+    getGPUStock() {
+      return this.getGPUStockWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

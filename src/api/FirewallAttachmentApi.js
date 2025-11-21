@@ -20,7 +20,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * FirewallAttachment service.
 * @module api/FirewallAttachmentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class FirewallAttachmentApi {
 
@@ -44,15 +44,15 @@ export default class FirewallAttachmentApi {
      * @param {module:model/AttachFirewallWithVM} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
-    attachFirewallToVirtualMachinesWithHttpInfo(firewallId, payload) {
+    attachFirewallToVMsWithHttpInfo(firewallId, payload) {
       let postBody = payload;
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling attachFirewallToVirtualMachines");
+        throw new Error("Missing the required parameter 'firewallId' when calling attachFirewallToVMs");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling attachFirewallToVirtualMachines");
+        throw new Error("Missing the required parameter 'payload' when calling attachFirewallToVMs");
       }
 
       let pathParams = {
@@ -83,8 +83,8 @@ export default class FirewallAttachmentApi {
      * @param {module:model/AttachFirewallWithVM} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
-    attachFirewallToVirtualMachines(firewallId, payload) {
-      return this.attachFirewallToVirtualMachinesWithHttpInfo(firewallId, payload)
+    attachFirewallToVMs(firewallId, payload) {
+      return this.attachFirewallToVMsWithHttpInfo(firewallId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

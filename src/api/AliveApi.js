@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * Alive service.
 * @module api/AliveApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class AliveApi {
 
@@ -78,7 +78,7 @@ export default class AliveApi {
     /**
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    getDocWithHttpInfo() {
+    getAliveDocWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -104,8 +104,8 @@ export default class AliveApi {
     /**
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    getDoc() {
-      return this.getDocWithHttpInfo()
+    getAliveDoc() {
+      return this.getAliveDocWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -68,20 +68,20 @@
         done();
       });
     });
-    describe('fetchVolumeDetails', function() {
-      it('should call fetchVolumeDetails successfully', function(done) {
-        //uncomment below and update the code to test fetchVolumeDetails
-        //instance.fetchVolumeDetails(function(error) {
+    describe('fetchVolumeNameAvailability', function() {
+      it('should call fetchVolumeNameAvailability successfully', function(done) {
+        //uncomment below and update the code to test fetchVolumeNameAvailability
+        //instance.fetchVolumeNameAvailability(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fetchVolumeNameAvailability', function() {
-      it('should call fetchVolumeNameAvailability successfully', function(done) {
-        //uncomment below and update the code to test fetchVolumeNameAvailability
-        //instance.fetchVolumeNameAvailability(function(error) {
+    describe('getVolume', function() {
+      it('should call getVolume successfully', function(done) {
+        //uncomment below and update the code to test getVolume
+        //instance.getVolume(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

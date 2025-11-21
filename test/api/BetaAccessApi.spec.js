@@ -48,10 +48,20 @@
   }
 
   describe('BetaAccessApi', function() {
-    describe('createABetaAccessRequest', function() {
-      it('should call createABetaAccessRequest successfully', function(done) {
-        //uncomment below and update the code to test createABetaAccessRequest
-        //instance.createABetaAccessRequest(function(error) {
+    describe('createBetaAccessRequest', function() {
+      it('should call createBetaAccessRequest successfully', function(done) {
+        //uncomment below and update the code to test createBetaAccessRequest
+        //instance.createBetaAccessRequest(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getBetaAccessRequests', function() {
+      it('should call getBetaAccessRequests successfully', function(done) {
+        //uncomment below and update the code to test getBetaAccessRequests
+        //instance.getBetaAccessRequests(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -62,16 +72,6 @@
       it('should call getBetaAccessStatus successfully', function(done) {
         //uncomment below and update the code to test getBetaAccessStatus
         //instance.getBetaAccessStatus(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getBetaAccessStatus2', function() {
-      it('should call getBetaAccessStatus2 successfully', function(done) {
-        //uncomment below and update the code to test getBetaAccessStatus2
-        //instance.getBetaAccessStatus2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

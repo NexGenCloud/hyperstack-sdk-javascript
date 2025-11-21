@@ -48,30 +48,30 @@
   }
 
   describe('PaymentApi', function() {
-    describe('getDetails', function() {
-      it('should call getDetails successfully', function(done) {
-        //uncomment below and update the code to test getDetails
-        //instance.getDetails(function(error) {
+    describe('getPaymentReceipt', function() {
+      it('should call getPaymentReceipt successfully', function(done) {
+        //uncomment below and update the code to test getPaymentReceipt
+        //instance.getPaymentReceipt(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getPaymentReceipt2', function() {
-      it('should call getPaymentReceipt2 successfully', function(done) {
-        //uncomment below and update the code to test getPaymentReceipt2
-        //instance.getPaymentReceipt2(function(error) {
+    describe('initiatePayment', function() {
+      it('should call initiatePayment successfully', function(done) {
+        //uncomment below and update the code to test initiatePayment
+        //instance.initiatePayment(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postPayment', function() {
-      it('should call postPayment successfully', function(done) {
-        //uncomment below and update the code to test postPayment
-        //instance.postPayment(function(error) {
+    describe('listPaymentDetails', function() {
+      it('should call listPaymentDetails successfully', function(done) {
+        //uncomment below and update the code to test listPaymentDetails
+        //instance.listPaymentDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

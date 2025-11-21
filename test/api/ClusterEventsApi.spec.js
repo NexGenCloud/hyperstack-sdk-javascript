@@ -48,10 +48,10 @@
   }
 
   describe('ClusterEventsApi', function() {
-    describe('fetchAllOfAClusterEvents', function() {
-      it('should call fetchAllOfAClusterEvents successfully', function(done) {
-        //uncomment below and update the code to test fetchAllOfAClusterEvents
-        //instance.fetchAllOfAClusterEvents(function(error) {
+    describe('listClusterEvents', function() {
+      it('should call listClusterEvents successfully', function(done) {
+        //uncomment below and update the code to test listClusterEvents
+        //instance.listClusterEvents(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

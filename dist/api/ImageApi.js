@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Image service.
 * @module api/ImageApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var ImageApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -137,13 +137,13 @@ var ImageApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
   }, {
-    key: "getImageDetailsWithHttpInfo",
-    value: function getImageDetailsWithHttpInfo(id, opts) {
+    key: "getImageWithHttpInfo",
+    value: function getImageWithHttpInfo(id, opts) {
       opts = opts || {};
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getImageDetails");
+        throw new Error("Missing the required parameter 'id' when calling getImage");
       }
       var pathParams = {
         'id': id
@@ -169,9 +169,9 @@ var ImageApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
   }, {
-    key: "getImageDetails",
-    value: function getImageDetails(id, opts) {
-      return this.getImageDetailsWithHttpInfo(id, opts).then(function (response_and_data) {
+    key: "getImage",
+    value: function getImage(id, opts) {
+      return this.getImageWithHttpInfo(id, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -188,8 +188,8 @@ var ImageApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Images} and HTTP response
      */
   }, {
-    key: "listImages2WithHttpInfo",
-    value: function listImages2WithHttpInfo(opts) {
+    key: "listImagesWithHttpInfo",
+    value: function listImagesWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
       var pathParams = {};
@@ -221,9 +221,9 @@ var ImageApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Images}
      */
   }, {
-    key: "listImages2",
-    value: function listImages2(opts) {
-      return this.listImages2WithHttpInfo(opts).then(function (response_and_data) {
+    key: "listImages",
+    value: function listImages(opts) {
+      return this.listImagesWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VncUrl service.
 * @module api/VncUrlApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var VncUrlApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -99,12 +99,12 @@ var VncUrlApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestConsole} and HTTP response
      */
   }, {
-    key: "getVncUrlWithHttpInfo",
-    value: function getVncUrlWithHttpInfo(vmId) {
+    key: "requestVMConsoleWithHttpInfo",
+    value: function requestVMConsoleWithHttpInfo(vmId) {
       var postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getVncUrl");
+        throw new Error("Missing the required parameter 'vmId' when calling requestVMConsole");
       }
       var pathParams = {
         'vm_id': vmId
@@ -126,9 +126,9 @@ var VncUrlApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestConsole}
      */
   }, {
-    key: "getVncUrl",
-    value: function getVncUrl(vmId) {
-      return this.getVncUrlWithHttpInfo(vmId).then(function (response_and_data) {
+    key: "requestVMConsole",
+    value: function requestVMConsole(vmId) {
+      return this.requestVMConsoleWithHttpInfo(vmId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

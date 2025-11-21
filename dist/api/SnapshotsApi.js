@@ -35,7 +35,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Snapshots service.
 * @module api/SnapshotsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -58,16 +58,16 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateImage} and HTTP response
    */
   return _createClass(SnapshotsApi, [{
-    key: "createANewCustomImageWithHttpInfo",
-    value: function createANewCustomImageWithHttpInfo(snapshotId, payload) {
+    key: "createCustomImageWithHttpInfo",
+    value: function createCustomImageWithHttpInfo(snapshotId, payload) {
       var postBody = payload;
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling createANewCustomImage");
+        throw new Error("Missing the required parameter 'snapshotId' when calling createCustomImage");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling createANewCustomImage");
+        throw new Error("Missing the required parameter 'payload' when calling createCustomImage");
       }
       var pathParams = {
         'snapshot_id': snapshotId
@@ -90,9 +90,9 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateImage}
      */
   }, {
-    key: "createANewCustomImage",
-    value: function createANewCustomImage(snapshotId, payload) {
-      return this.createANewCustomImageWithHttpInfo(snapshotId, payload).then(function (response_and_data) {
+    key: "createCustomImage",
+    value: function createCustomImage(snapshotId, payload) {
+      return this.createCustomImageWithHttpInfo(snapshotId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -104,12 +104,12 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "deleteAnExistingSnapshotWithHttpInfo",
-    value: function deleteAnExistingSnapshotWithHttpInfo(id) {
+    key: "deleteSnapshotWithHttpInfo",
+    value: function deleteSnapshotWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteAnExistingSnapshot");
+        throw new Error("Missing the required parameter 'id' when calling deleteSnapshot");
       }
       var pathParams = {
         'id': id
@@ -131,9 +131,9 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteAnExistingSnapshot",
-    value: function deleteAnExistingSnapshot(id) {
-      return this.deleteAnExistingSnapshotWithHttpInfo(id).then(function (response_and_data) {
+    key: "deleteSnapshot",
+    value: function deleteSnapshot(id) {
+      return this.deleteSnapshotWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -180,65 +180,18 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
-     * Restore a snapshot
-     * Restore a snapshot.
-     * @param {Number} id 
-     * @param {module:model/SnapshotRestoreRequest} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Instance} and HTTP response
-     */
-  }, {
-    key: "restoreASnapshotWithHttpInfo",
-    value: function restoreASnapshotWithHttpInfo(id, payload) {
-      var postBody = payload;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling restoreASnapshot");
-      }
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling restoreASnapshot");
-      }
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _Instance["default"];
-      return this.apiClient.callApi('/core/snapshots/{id}/restore', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Restore a snapshot
-     * Restore a snapshot.
-     * @param {Number} id 
-     * @param {module:model/SnapshotRestoreRequest} payload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Instance}
-     */
-  }, {
-    key: "restoreASnapshot",
-    value: function restoreASnapshot(id, payload) {
-      return this.restoreASnapshotWithHttpInfo(id, payload).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
      * Retrieve a snapshot
      * Retrieve a snapshot.
      * @param {Number} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnapshotRetrieve} and HTTP response
      */
   }, {
-    key: "retrieveAnExistingSnapshotWithHttpInfo",
-    value: function retrieveAnExistingSnapshotWithHttpInfo(id) {
+    key: "getSnapshotWithHttpInfo",
+    value: function getSnapshotWithHttpInfo(id) {
       var postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling retrieveAnExistingSnapshot");
+        throw new Error("Missing the required parameter 'id' when calling getSnapshot");
       }
       var pathParams = {
         'id': id
@@ -260,9 +213,9 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnapshotRetrieve}
      */
   }, {
-    key: "retrieveAnExistingSnapshot",
-    value: function retrieveAnExistingSnapshot(id) {
-      return this.retrieveAnExistingSnapshotWithHttpInfo(id).then(function (response_and_data) {
+    key: "getSnapshot",
+    value: function getSnapshot(id) {
+      return this.getSnapshotWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -277,8 +230,8 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshots} and HTTP response
      */
   }, {
-    key: "retrievesAListOfSnapshotsWithHttpInfo",
-    value: function retrievesAListOfSnapshotsWithHttpInfo(opts) {
+    key: "listSnapshotsWithHttpInfo",
+    value: function listSnapshotsWithHttpInfo(opts) {
       opts = opts || {};
       var postBody = null;
       var pathParams = {};
@@ -306,9 +259,56 @@ var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshots}
      */
   }, {
-    key: "retrievesAListOfSnapshots",
-    value: function retrievesAListOfSnapshots(opts) {
-      return this.retrievesAListOfSnapshotsWithHttpInfo(opts).then(function (response_and_data) {
+    key: "listSnapshots",
+    value: function listSnapshots(opts) {
+      return this.listSnapshotsWithHttpInfo(opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Restore a snapshot
+     * Restore a snapshot.
+     * @param {Number} id 
+     * @param {module:model/SnapshotRestoreRequest} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Instance} and HTTP response
+     */
+  }, {
+    key: "restoreSnapshotWithHttpInfo",
+    value: function restoreSnapshotWithHttpInfo(id, payload) {
+      var postBody = payload;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling restoreSnapshot");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling restoreSnapshot");
+      }
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _Instance["default"];
+      return this.apiClient.callApi('/core/snapshots/{id}/restore', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Restore a snapshot
+     * Restore a snapshot.
+     * @param {Number} id 
+     * @param {module:model/SnapshotRestoreRequest} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Instance}
+     */
+  }, {
+    key: "restoreSnapshot",
+    value: function restoreSnapshot(id, payload) {
+      return this.restoreSnapshotWithHttpInfo(id, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

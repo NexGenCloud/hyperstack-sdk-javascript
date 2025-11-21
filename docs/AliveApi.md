@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAlive**](AliveApi.md#getAlive) | **GET** /billing/alive | GET: Alive
-[**getDoc**](AliveApi.md#getDoc) | **GET** /billing/alive/doc | 
+[**getAliveDoc**](AliveApi.md#getAliveDoc) | **GET** /billing/alive/doc | 
 
 
 
@@ -55,9 +55,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## getDoc
+## getAliveDoc
 
-> getDoc()
+> getAliveDoc()
 
 
 
@@ -73,7 +73,7 @@ apiKey.apiKey = 'YOUR API KEY';
 //apiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.AliveApi();
-apiInstance.getDoc().then(() => {
+apiInstance.getAliveDoc().then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);

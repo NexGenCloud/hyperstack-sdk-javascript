@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteAPIKey**](ApiKeyApi.md#deleteAPIKey) | **DELETE** /api-key/{api_key_id} | Delete API Key
 [**generateAPIKey**](ApiKeyApi.md#generateAPIKey) | **POST** /api-key/generate | Generate API Key
-[**retrieveAPIKey**](ApiKeyApi.md#retrieveAPIKey) | **GET** /api-key | Retrieve API Keys
+[**getAPIKey**](ApiKeyApi.md#getAPIKey) | **GET** /api-key | Retrieve API Keys
 [**updateAPIKey**](ApiKeyApi.md#updateAPIKey) | **PUT** /api-key/{api_key_id} | Update API Key
 
 
@@ -105,9 +105,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## retrieveAPIKey
+## getAPIKey
 
-> GetApiKeysResponseModel retrieveAPIKey()
+> GetApiKeysResponseModel getAPIKey()
 
 Retrieve API Keys
 
@@ -125,7 +125,7 @@ apiKey.apiKey = 'YOUR API KEY';
 //apiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.ApiKeyApi();
-apiInstance.retrieveAPIKey().then((data) => {
+apiInstance.getAPIKey().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

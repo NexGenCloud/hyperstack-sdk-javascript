@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCredit2**](CreditApi.md#getCredit2) | **GET** /billing/user-credit/credit | GET: View credit and threshold
+[**getUserCredit**](CreditApi.md#getUserCredit) | **GET** /billing/user-credit/credit | GET: View credit and threshold
 
 
 
-## getCredit2
+## getUserCredit
 
-> GetCreditAndThresholdInfoInResponse getCredit2()
+> GetCreditAndThresholdInfoInResponse getUserCredit()
 
 GET: View credit and threshold
 
@@ -28,7 +28,7 @@ apiKey.apiKey = 'YOUR API KEY';
 //apiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new HyperstackApi.CreditApi();
-apiInstance.getCredit2().then((data) => {
+apiInstance.getUserCredit().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

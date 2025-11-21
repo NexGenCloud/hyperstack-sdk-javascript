@@ -19,7 +19,7 @@ import InstanceEvents from '../model/InstanceEvents';
 /**
 * VirtualMachineEvents service.
 * @module api/VirtualMachineEventsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class VirtualMachineEventsApi {
 
@@ -42,11 +42,11 @@ export default class VirtualMachineEventsApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InstanceEvents} and HTTP response
      */
-    listVirtualMachineEventsWithHttpInfo(vmId) {
+    listVMEventsWithHttpInfo(vmId) {
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling listVirtualMachineEvents");
+        throw new Error("Missing the required parameter 'vmId' when calling listVMEvents");
       }
 
       let pathParams = {
@@ -76,8 +76,8 @@ export default class VirtualMachineEventsApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InstanceEvents}
      */
-    listVirtualMachineEvents(vmId) {
-      return this.listVirtualMachineEventsWithHttpInfo(vmId)
+    listVMEvents(vmId) {
+      return this.listVMEventsWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

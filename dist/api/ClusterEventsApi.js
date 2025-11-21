@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * ClusterEvents service.
 * @module api/ClusterEventsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var ClusterEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -49,12 +49,12 @@ var ClusterEventsApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterEvents} and HTTP response
    */
   return _createClass(ClusterEventsApi, [{
-    key: "fetchAllOfAClusterEventsWithHttpInfo",
-    value: function fetchAllOfAClusterEventsWithHttpInfo(clusterId) {
+    key: "listClusterEventsWithHttpInfo",
+    value: function listClusterEventsWithHttpInfo(clusterId) {
       var postBody = null;
       // verify the required parameter 'clusterId' is set
       if (clusterId === undefined || clusterId === null) {
-        throw new Error("Missing the required parameter 'clusterId' when calling fetchAllOfAClusterEvents");
+        throw new Error("Missing the required parameter 'clusterId' when calling listClusterEvents");
       }
       var pathParams = {
         'cluster_id': clusterId
@@ -75,9 +75,9 @@ var ClusterEventsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterEvents}
      */
   }, {
-    key: "fetchAllOfAClusterEvents",
-    value: function fetchAllOfAClusterEvents(clusterId) {
-      return this.fetchAllOfAClusterEventsWithHttpInfo(clusterId).then(function (response_and_data) {
+    key: "listClusterEvents",
+    value: function listClusterEvents(clusterId) {
+      return this.listClusterEventsWithHttpInfo(clusterId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

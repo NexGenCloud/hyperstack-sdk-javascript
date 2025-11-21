@@ -33,7 +33,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Environment service.
 * @module api/EnvironmentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var EnvironmentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -170,6 +170,47 @@ var EnvironmentApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
+     * Retrieve environment
+     * Retrieves details about a specific environment. Provide the environment ID in the path and the new environment `name` in the request body to modify the specified environment.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Environment} and HTTP response
+     */
+  }, {
+    key: "getEnvironmentWithHttpInfo",
+    value: function getEnvironmentWithHttpInfo(id) {
+      var postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getEnvironment");
+      }
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _Environment["default"];
+      return this.apiClient.callApi('/core/environments/{id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve environment
+     * Retrieves details about a specific environment. Provide the environment ID in the path and the new environment `name` in the request body to modify the specified environment.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Environment}
+     */
+  }, {
+    key: "getEnvironment",
+    value: function getEnvironment(id) {
+      return this.getEnvironmentWithHttpInfo(id).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
      * List environments
      * Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
      * @param {Object} opts Optional parameters
@@ -211,47 +252,6 @@ var EnvironmentApi = exports["default"] = /*#__PURE__*/function () {
     key: "listEnvironments",
     value: function listEnvironments(opts) {
       return this.listEnvironmentsWithHttpInfo(opts).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Retrieve environment
-     * Retrieves details about a specific environment. Provide the environment ID in the path and the new environment `name` in the request body to modify the specified environment.
-     * @param {Number} id 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Environment} and HTTP response
-     */
-  }, {
-    key: "retrieveEnvironmentWithHttpInfo",
-    value: function retrieveEnvironmentWithHttpInfo(id) {
-      var postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling retrieveEnvironment");
-      }
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _Environment["default"];
-      return this.apiClient.callApi('/core/environments/{id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Retrieve environment
-     * Retrieves details about a specific environment. Provide the environment ID in the path and the new environment `name` in the request body to modify the specified environment.
-     * @param {Number} id 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Environment}
-     */
-  }, {
-    key: "retrieveEnvironment",
-    value: function retrieveEnvironment(id) {
-      return this.retrieveEnvironmentWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

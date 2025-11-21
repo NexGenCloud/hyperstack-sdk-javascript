@@ -48,20 +48,20 @@
   }
 
   describe('SnapshotsApi', function() {
-    describe('createANewCustomImage', function() {
-      it('should call createANewCustomImage successfully', function(done) {
-        //uncomment below and update the code to test createANewCustomImage
-        //instance.createANewCustomImage(function(error) {
+    describe('createCustomImage', function() {
+      it('should call createCustomImage successfully', function(done) {
+        //uncomment below and update the code to test createCustomImage
+        //instance.createCustomImage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteAnExistingSnapshot', function() {
-      it('should call deleteAnExistingSnapshot successfully', function(done) {
-        //uncomment below and update the code to test deleteAnExistingSnapshot
-        //instance.deleteAnExistingSnapshot(function(error) {
+    describe('deleteSnapshot', function() {
+      it('should call deleteSnapshot successfully', function(done) {
+        //uncomment below and update the code to test deleteSnapshot
+        //instance.deleteSnapshot(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -78,30 +78,30 @@
         done();
       });
     });
-    describe('restoreASnapshot', function() {
-      it('should call restoreASnapshot successfully', function(done) {
-        //uncomment below and update the code to test restoreASnapshot
-        //instance.restoreASnapshot(function(error) {
+    describe('getSnapshot', function() {
+      it('should call getSnapshot successfully', function(done) {
+        //uncomment below and update the code to test getSnapshot
+        //instance.getSnapshot(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveAnExistingSnapshot', function() {
-      it('should call retrieveAnExistingSnapshot successfully', function(done) {
-        //uncomment below and update the code to test retrieveAnExistingSnapshot
-        //instance.retrieveAnExistingSnapshot(function(error) {
+    describe('listSnapshots', function() {
+      it('should call listSnapshots successfully', function(done) {
+        //uncomment below and update the code to test listSnapshots
+        //instance.listSnapshots(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrievesAListOfSnapshots', function() {
-      it('should call retrievesAListOfSnapshots successfully', function(done) {
-        //uncomment below and update the code to test retrievesAListOfSnapshots
-        //instance.retrievesAListOfSnapshots(function(error) {
+    describe('restoreSnapshot', function() {
+      it('should call restoreSnapshot successfully', function(done) {
+        //uncomment below and update the code to test restoreSnapshot
+        //instance.restoreSnapshot(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

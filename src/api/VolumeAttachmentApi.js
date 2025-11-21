@@ -23,7 +23,7 @@ import UpdateVolumeAttachmentPayload from '../model/UpdateVolumeAttachmentPayloa
 /**
 * VolumeAttachment service.
 * @module api/VolumeAttachmentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class VolumeAttachmentApi {
 
@@ -47,15 +47,15 @@ export default class VolumeAttachmentApi {
      * @param {module:model/AttachVolumesPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachVolumes} and HTTP response
      */
-    attachVolumesToVirtualMachineWithHttpInfo(vmId, payload) {
+    attachVolumesToVMWithHttpInfo(vmId, payload) {
       let postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling attachVolumesToVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling attachVolumesToVM");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling attachVolumesToVirtualMachine");
+        throw new Error("Missing the required parameter 'payload' when calling attachVolumesToVM");
       }
 
       let pathParams = {
@@ -86,8 +86,8 @@ export default class VolumeAttachmentApi {
      * @param {module:model/AttachVolumesPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachVolumes}
      */
-    attachVolumesToVirtualMachine(vmId, payload) {
-      return this.attachVolumesToVirtualMachineWithHttpInfo(vmId, payload)
+    attachVolumesToVM(vmId, payload) {
+      return this.attachVolumesToVMWithHttpInfo(vmId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -101,15 +101,15 @@ export default class VolumeAttachmentApi {
      * @param {module:model/DetachVolumesPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DetachVolumes} and HTTP response
      */
-    detachVolumesFromVirtualMachineWithHttpInfo(vmId, payload) {
+    detachVolumesFromVMWithHttpInfo(vmId, payload) {
       let postBody = payload;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling detachVolumesFromVirtualMachine");
+        throw new Error("Missing the required parameter 'vmId' when calling detachVolumesFromVM");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling detachVolumesFromVirtualMachine");
+        throw new Error("Missing the required parameter 'payload' when calling detachVolumesFromVM");
       }
 
       let pathParams = {
@@ -140,8 +140,8 @@ export default class VolumeAttachmentApi {
      * @param {module:model/DetachVolumesPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DetachVolumes}
      */
-    detachVolumesFromVirtualMachine(vmId, payload) {
-      return this.detachVolumesFromVirtualMachineWithHttpInfo(vmId, payload)
+    detachVolumesFromVM(vmId, payload) {
+      return this.detachVolumesFromVMWithHttpInfo(vmId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -154,15 +154,15 @@ export default class VolumeAttachmentApi {
      * @param {module:model/UpdateVolumeAttachmentPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AttachVolumes} and HTTP response
      */
-    updateAVolumeAttachmentWithHttpInfo(volumeAttachmentId, payload) {
+    updateVolumeAttachmentWithHttpInfo(volumeAttachmentId, payload) {
       let postBody = payload;
       // verify the required parameter 'volumeAttachmentId' is set
       if (volumeAttachmentId === undefined || volumeAttachmentId === null) {
-        throw new Error("Missing the required parameter 'volumeAttachmentId' when calling updateAVolumeAttachment");
+        throw new Error("Missing the required parameter 'volumeAttachmentId' when calling updateVolumeAttachment");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateAVolumeAttachment");
+        throw new Error("Missing the required parameter 'payload' when calling updateVolumeAttachment");
       }
 
       let pathParams = {
@@ -192,8 +192,8 @@ export default class VolumeAttachmentApi {
      * @param {module:model/UpdateVolumeAttachmentPayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AttachVolumes}
      */
-    updateAVolumeAttachment(volumeAttachmentId, payload) {
-      return this.updateAVolumeAttachmentWithHttpInfo(volumeAttachmentId, payload)
+    updateVolumeAttachment(volumeAttachmentId, payload) {
+      return this.updateVolumeAttachmentWithHttpInfo(volumeAttachmentId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getVNCURL**](VncUrlApi.md#getVNCURL) | **GET** /core/virtual-machines/{vm_id}/console/{job_id} | Get VNC Console Link
-[**getVncUrl**](VncUrlApi.md#getVncUrl) | **GET** /core/virtual-machines/{vm_id}/request-console | Request Instance Console
+[**requestVMConsole**](VncUrlApi.md#requestVMConsole) | **GET** /core/virtual-machines/{vm_id}/request-console | Request Instance Console
 
 
 
@@ -61,9 +61,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getVncUrl
+## requestVMConsole
 
-> RequestConsole getVncUrl(vmId)
+> RequestConsole requestVMConsole(vmId)
 
 Request Instance Console
 
@@ -82,7 +82,7 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VncUrlApi();
 let vmId = 56; // Number | 
-apiInstance.getVncUrl(vmId).then((data) => {
+apiInstance.requestVMConsole(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

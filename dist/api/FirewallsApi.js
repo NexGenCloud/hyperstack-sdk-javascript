@@ -34,7 +34,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Firewalls service.
 * @module api/FirewallsApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -57,16 +57,16 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallRule} and HTTP response
    */
   return _createClass(FirewallsApi, [{
-    key: "addFirewallRuleToAnExistingFirewallWithHttpInfo",
-    value: function addFirewallRuleToAnExistingFirewallWithHttpInfo(firewallId, payload) {
+    key: "addRuleToFirewallWithHttpInfo",
+    value: function addRuleToFirewallWithHttpInfo(firewallId, payload) {
       var postBody = payload;
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling addFirewallRuleToAnExistingFirewall");
+        throw new Error("Missing the required parameter 'firewallId' when calling addRuleToFirewall");
       }
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling addFirewallRuleToAnExistingFirewall");
+        throw new Error("Missing the required parameter 'payload' when calling addRuleToFirewall");
       }
       var pathParams = {
         'firewall_id': firewallId
@@ -89,9 +89,9 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallRule}
      */
   }, {
-    key: "addFirewallRuleToAnExistingFirewall",
-    value: function addFirewallRuleToAnExistingFirewall(firewallId, payload) {
-      return this.addFirewallRuleToAnExistingFirewallWithHttpInfo(firewallId, payload).then(function (response_and_data) {
+    key: "addRuleToFirewall",
+    value: function addRuleToFirewall(firewallId, payload) {
+      return this.addRuleToFirewallWithHttpInfo(firewallId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -103,12 +103,12 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallResponse} and HTTP response
      */
   }, {
-    key: "createANewFirewallWithHttpInfo",
-    value: function createANewFirewallWithHttpInfo(payload) {
+    key: "createFirewallWithHttpInfo",
+    value: function createFirewallWithHttpInfo(payload) {
       var postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling createANewFirewall");
+        throw new Error("Missing the required parameter 'payload' when calling createFirewall");
       }
       var pathParams = {};
       var queryParams = {};
@@ -128,9 +128,9 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallResponse}
      */
   }, {
-    key: "createANewFirewall",
-    value: function createANewFirewall(payload) {
-      return this.createANewFirewallWithHttpInfo(payload).then(function (response_and_data) {
+    key: "createFirewall",
+    value: function createFirewall(payload) {
+      return this.createFirewallWithHttpInfo(payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -184,16 +184,16 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseModel} and HTTP response
      */
   }, {
-    key: "deleteFirewallRulesFromFirewallWithHttpInfo",
-    value: function deleteFirewallRulesFromFirewallWithHttpInfo(firewallId, firewallRuleId) {
+    key: "deleteRuleFromFirewallWithHttpInfo",
+    value: function deleteRuleFromFirewallWithHttpInfo(firewallId, firewallRuleId) {
       var postBody = null;
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling deleteFirewallRulesFromFirewall");
+        throw new Error("Missing the required parameter 'firewallId' when calling deleteRuleFromFirewall");
       }
       // verify the required parameter 'firewallRuleId' is set
       if (firewallRuleId === undefined || firewallRuleId === null) {
-        throw new Error("Missing the required parameter 'firewallRuleId' when calling deleteFirewallRulesFromFirewall");
+        throw new Error("Missing the required parameter 'firewallRuleId' when calling deleteRuleFromFirewall");
       }
       var pathParams = {
         'firewall_id': firewallId,
@@ -217,9 +217,50 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseModel}
      */
   }, {
-    key: "deleteFirewallRulesFromFirewall",
-    value: function deleteFirewallRulesFromFirewall(firewallId, firewallRuleId) {
-      return this.deleteFirewallRulesFromFirewallWithHttpInfo(firewallId, firewallRuleId).then(function (response_and_data) {
+    key: "deleteRuleFromFirewall",
+    value: function deleteRuleFromFirewall(firewallId, firewallRuleId) {
+      return this.deleteRuleFromFirewallWithHttpInfo(firewallId, firewallRuleId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Retrieve firewall details
+     * Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallDetailResponse} and HTTP response
+     */
+  }, {
+    key: "getFirewallWithHttpInfo",
+    value: function getFirewallWithHttpInfo(id) {
+      var postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getFirewall");
+      }
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _FirewallDetailResponse["default"];
+      return this.apiClient.callApi('/core/firewalls/{id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve firewall details
+     * Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallDetailResponse}
+     */
+  }, {
+    key: "getFirewall",
+    value: function getFirewall(id) {
+      return this.getFirewallWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
@@ -269,47 +310,6 @@ var FirewallsApi = exports["default"] = /*#__PURE__*/function () {
     key: "listExistingFirewalls",
     value: function listExistingFirewalls(opts) {
       return this.listExistingFirewallsWithHttpInfo(opts).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Retrieve firewall details
-     * Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
-     * @param {Number} id 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallDetailResponse} and HTTP response
-     */
-  }, {
-    key: "retrieveTheDetailsOfAnExistingFirewallWithHttpInfo",
-    value: function retrieveTheDetailsOfAnExistingFirewallWithHttpInfo(id) {
-      var postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling retrieveTheDetailsOfAnExistingFirewall");
-      }
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _FirewallDetailResponse["default"];
-      return this.apiClient.callApi('/core/firewalls/{id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Retrieve firewall details
-     * Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
-     * @param {Number} id 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallDetailResponse}
-     */
-  }, {
-    key: "retrieveTheDetailsOfAnExistingFirewall",
-    value: function retrieveTheDetailsOfAnExistingFirewall(id) {
-      return this.retrieveTheDetailsOfAnExistingFirewallWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProfile**](ProfileApi.md#createProfile) | **POST** /core/profiles | Create profile
 [**deleteProfile**](ProfileApi.md#deleteProfile) | **DELETE** /core/profiles/{id} | Delete profile
+[**getProfile**](ProfileApi.md#getProfile) | **GET** /core/profiles/{id} | Retrieve profile details
 [**listProfiles**](ProfileApi.md#listProfiles) | **GET** /core/profiles | List profiles
-[**retrieveProfileDetails**](ProfileApi.md#retrieveProfileDetails) | **GET** /core/profiles/{id} | Retrieve profile details
 
 
 
@@ -111,6 +111,56 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getProfile
+
+> CreateProfileResponse getProfile(id)
+
+Retrieve profile details
+
+Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ProfileApi();
+let id = 56; // Number | 
+apiInstance.getProfile(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+
+### Return type
+
+[**CreateProfileResponse**](CreateProfileResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## listProfiles
 
 > ProfileListResponse listProfiles()
@@ -146,56 +196,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**ProfileListResponse**](ProfileListResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## retrieveProfileDetails
-
-> CreateProfileResponse retrieveProfileDetails(id)
-
-Retrieve profile details
-
-Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.ProfileApi();
-let id = 56; // Number | 
-apiInstance.retrieveProfileDetails(id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**|  | 
-
-### Return type
-
-[**CreateProfileResponse**](CreateProfileResponse.md)
 
 ### Authorization
 

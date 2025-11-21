@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Profile service.
 * @module api/ProfileApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 var ProfileApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -127,6 +127,47 @@ var ProfileApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
+     * Retrieve profile details
+     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateProfileResponse} and HTTP response
+     */
+  }, {
+    key: "getProfileWithHttpInfo",
+    value: function getProfileWithHttpInfo(id) {
+      var postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProfile");
+      }
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _CreateProfileResponse["default"];
+      return this.apiClient.callApi('/core/profiles/{id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve profile details
+     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateProfileResponse}
+     */
+  }, {
+    key: "getProfile",
+    value: function getProfile(id) {
+      return this.getProfileWithHttpInfo(id).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
      * List profiles
      * Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProfileListResponse} and HTTP response
@@ -155,47 +196,6 @@ var ProfileApi = exports["default"] = /*#__PURE__*/function () {
     key: "listProfiles",
     value: function listProfiles() {
       return this.listProfilesWithHttpInfo().then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Retrieve profile details
-     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
-     * @param {Number} id 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateProfileResponse} and HTTP response
-     */
-  }, {
-    key: "retrieveProfileDetailsWithHttpInfo",
-    value: function retrieveProfileDetailsWithHttpInfo(id) {
-      var postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling retrieveProfileDetails");
-      }
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _CreateProfileResponse["default"];
-      return this.apiClient.callApi('/core/profiles/{id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Retrieve profile details
-     * Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
-     * @param {Number} id 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateProfileResponse}
-     */
-  }, {
-    key: "retrieveProfileDetails",
-    value: function retrieveProfileDetails(id) {
-      return this.retrieveProfileDetailsWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

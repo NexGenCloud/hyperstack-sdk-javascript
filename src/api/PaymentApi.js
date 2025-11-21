@@ -21,7 +21,7 @@ import PaymentInitiateResponse from '../model/PaymentInitiateResponse';
 /**
 * Payment service.
 * @module api/PaymentApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class PaymentApi {
 
@@ -39,57 +39,16 @@ export default class PaymentApi {
 
 
     /**
-     * GET: View payment details
-     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentDetailsResponse} and HTTP response
-     */
-    getDetailsWithHttpInfo() {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = PaymentDetailsResponse;
-      return this.apiClient.callApi(
-        '/billing/payment/payment-details', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * GET: View payment details
-     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentDetailsResponse}
-     */
-    getDetails() {
-      return this.getDetailsWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Retrieve Payment Receipt
      * Retrieve the payment receipt from Stripe for a specific payment
      * @param {String} paymentId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    getPaymentReceipt2WithHttpInfo(paymentId) {
+    getPaymentReceiptWithHttpInfo(paymentId) {
       let postBody = null;
       // verify the required parameter 'paymentId' is set
       if (paymentId === undefined || paymentId === null) {
-        throw new Error("Missing the required parameter 'paymentId' when calling getPaymentReceipt2");
+        throw new Error("Missing the required parameter 'paymentId' when calling getPaymentReceipt");
       }
 
       let pathParams = {
@@ -119,8 +78,8 @@ export default class PaymentApi {
      * @param {String} paymentId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    getPaymentReceipt2(paymentId) {
-      return this.getPaymentReceipt2WithHttpInfo(paymentId)
+    getPaymentReceipt(paymentId) {
+      return this.getPaymentReceiptWithHttpInfo(paymentId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -133,11 +92,11 @@ export default class PaymentApi {
      * @param {module:model/PaymentInitiatePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentInitiateResponse} and HTTP response
      */
-    postPaymentWithHttpInfo(payload) {
+    initiatePaymentWithHttpInfo(payload) {
       let postBody = payload;
       // verify the required parameter 'payload' is set
       if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postPayment");
+        throw new Error("Missing the required parameter 'payload' when calling initiatePayment");
       }
 
       let pathParams = {
@@ -166,8 +125,49 @@ export default class PaymentApi {
      * @param {module:model/PaymentInitiatePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentInitiateResponse}
      */
-    postPayment(payload) {
-      return this.postPaymentWithHttpInfo(payload)
+    initiatePayment(payload) {
+      return this.initiatePaymentWithHttpInfo(payload)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * GET: View payment details
+     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentDetailsResponse} and HTTP response
+     */
+    listPaymentDetailsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaymentDetailsResponse;
+      return this.apiClient.callApi(
+        '/billing/payment/payment-details', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * GET: View payment details
+     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentDetailsResponse}
+     */
+    listPaymentDetails() {
+      return this.listPaymentDetailsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

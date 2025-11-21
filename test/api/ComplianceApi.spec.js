@@ -58,30 +58,30 @@
         done();
       });
     });
-    describe('deleteACompliance', function() {
-      it('should call deleteACompliance successfully', function(done) {
-        //uncomment below and update the code to test deleteACompliance
-        //instance.deleteACompliance(function(error) {
+    describe('deleteCompliance', function() {
+      it('should call deleteCompliance successfully', function(done) {
+        //uncomment below and update the code to test deleteCompliance
+        //instance.deleteCompliance(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('retrieveCompliance', function() {
-      it('should call retrieveCompliance successfully', function(done) {
-        //uncomment below and update the code to test retrieveCompliance
-        //instance.retrieveCompliance(function(error) {
+    describe('getCompliance', function() {
+      it('should call getCompliance successfully', function(done) {
+        //uncomment below and update the code to test getCompliance
+        //instance.getCompliance(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateACompliance', function() {
-      it('should call updateACompliance successfully', function(done) {
-        //uncomment below and update the code to test updateACompliance
-        //instance.updateACompliance(function(error) {
+    describe('updateCompliance', function() {
+      it('should call updateCompliance successfully', function(done) {
+        //uncomment below and update the code to test updateCompliance
+        //instance.updateCompliance(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

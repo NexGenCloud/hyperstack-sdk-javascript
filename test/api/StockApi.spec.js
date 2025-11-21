@@ -48,10 +48,10 @@
   }
 
   describe('StockApi', function() {
-    describe('retrieveGPUStocks', function() {
-      it('should call retrieveGPUStocks successfully', function(done) {
-        //uncomment below and update the code to test retrieveGPUStocks
-        //instance.retrieveGPUStocks(function(error) {
+    describe('getGPUStock', function() {
+      it('should call getGPUStock successfully', function(done) {
+        //uncomment below and update the code to test getGPUStock
+        //instance.getGPUStock(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

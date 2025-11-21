@@ -20,7 +20,7 @@ import VNCURL from '../model/VNCURL';
 /**
 * VncUrl service.
 * @module api/VncUrlApi
-* @version v1.45.2-alpha
+* @version v1.46.1-alpha
 */
 export default class VncUrlApi {
 
@@ -98,11 +98,11 @@ export default class VncUrlApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestConsole} and HTTP response
      */
-    getVncUrlWithHttpInfo(vmId) {
+    requestVMConsoleWithHttpInfo(vmId) {
       let postBody = null;
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling getVncUrl");
+        throw new Error("Missing the required parameter 'vmId' when calling requestVMConsole");
       }
 
       let pathParams = {
@@ -132,8 +132,8 @@ export default class VncUrlApi {
      * @param {Number} vmId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestConsole}
      */
-    getVncUrl(vmId) {
-      return this.getVncUrlWithHttpInfo(vmId)
+    requestVMConsole(vmId) {
+      return this.requestVMConsoleWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -48,10 +48,10 @@
   }
 
   describe('FirewallAttachmentApi', function() {
-    describe('attachFirewallToVirtualMachines', function() {
-      it('should call attachFirewallToVirtualMachines successfully', function(done) {
-        //uncomment below and update the code to test attachFirewallToVirtualMachines
-        //instance.attachFirewallToVirtualMachines(function(error) {
+    describe('attachFirewallToVMs', function() {
+      it('should call attachFirewallToVMs successfully', function(done) {
+        //uncomment below and update the code to test attachFirewallToVMs
+        //instance.attachFirewallToVMs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
