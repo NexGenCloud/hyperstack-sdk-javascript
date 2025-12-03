@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CustomerContractFields model module.
  * @module model/CustomerContractFields
- * @version v1.46.1-alpha
+ * @version v1.46.2-alpha
  */
 var CustomerContractFields = /*#__PURE__*/function () {
   /**

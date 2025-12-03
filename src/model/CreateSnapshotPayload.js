@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSnapshotPayload model module.
  * @module model/CreateSnapshotPayload
- * @version v1.46.1-alpha
+ * @version v1.46.2-alpha
  */
 class CreateSnapshotPayload {
     /**

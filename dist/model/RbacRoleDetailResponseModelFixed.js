@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The RbacRoleDetailResponseModelFixed model module.
  * @module model/RbacRoleDetailResponseModelFixed
- * @version v1.46.1-alpha
+ * @version v1.46.2-alpha
  */
 var RbacRoleDetailResponseModelFixed = /*#__PURE__*/function () {
   /**

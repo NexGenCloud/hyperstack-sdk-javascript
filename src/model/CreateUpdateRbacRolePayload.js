@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUpdateRbacRolePayload model module.
  * @module model/CreateUpdateRbacRolePayload
- * @version v1.46.1-alpha
+ * @version v1.46.2-alpha
  */
 class CreateUpdateRbacRolePayload {
     /**

@@ -6,9 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**changeOrganizationForToken**](AuthApi.md#changeOrganizationForToken) | **GET** /auth/token/change-org/{org_id} | 
 [**disableMFA**](AuthApi.md#disableMFA) | **GET** /auth/me/mfa/disable | 
-[**getAuthenticatedUser**](AuthApi.md#getAuthenticatedUser) | **GET** /auth/me | Retrieve Authenticated User Details
 [**getUserMFAStatus**](AuthApi.md#getUserMFAStatus) | **GET** /auth/me/mfa | Get MFA status for authenticated user
 [**getUserOrganizations**](AuthApi.md#getUserOrganizations) | **GET** /auth/me/organizations | Get User Organizations
+[**retrieveAuthenticatedUserDetails**](AuthApi.md#retrieveAuthenticatedUserDetails) | **GET** /auth/me | Retrieve Authenticated User Details
 
 
 
@@ -108,52 +108,6 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## getAuthenticatedUser
-
-> AuthUserInfoResponseModel getAuthenticatedUser()
-
-Retrieve Authenticated User Details
-
-Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.AuthApi();
-apiInstance.getAuthenticatedUser().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**AuthUserInfoResponseModel**](AuthUserInfoResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## getUserMFAStatus
 
 > MFAStatusResponse getUserMFAStatus()
@@ -235,6 +189,52 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**UserOrganizationsResponse**](UserOrganizationsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## retrieveAuthenticatedUserDetails
+
+> AuthUserInfoResponseModel retrieveAuthenticatedUserDetails()
+
+Retrieve Authenticated User Details
+
+Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.AuthApi();
+apiInstance.retrieveAuthenticatedUserDetails().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AuthUserInfoResponseModel**](AuthUserInfoResponseModel.md)
 
 ### Authorization
 

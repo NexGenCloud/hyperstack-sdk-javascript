@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Profile service.
 * @module api/ProfileApi
-* @version v1.46.1-alpha
+* @version v1.46.2-alpha
 */
 export default class ProfileApi {
 

@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.46.1-alpha
+* @version v1.46.2-alpha
 */
 var AuthApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -118,39 +118,6 @@ var AuthApi = exports["default"] = /*#__PURE__*/function () {
     }
 
     /**
-     * Retrieve Authenticated User Details
-     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthUserInfoResponseModel} and HTTP response
-     */
-  }, {
-    key: "getAuthenticatedUserWithHttpInfo",
-    value: function getAuthenticatedUserWithHttpInfo() {
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _AuthUserInfoResponseModel["default"];
-      return this.apiClient.callApi('/auth/me', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Retrieve Authenticated User Details
-     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthUserInfoResponseModel}
-     */
-  }, {
-    key: "getAuthenticatedUser",
-    value: function getAuthenticatedUser() {
-      return this.getAuthenticatedUserWithHttpInfo().then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
      * Get MFA status for authenticated user
      * Retrieve the Multi-Factor Authentication (MFA) status for the currentlyauthenticated user. Includes whether MFA is enabled.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MFAStatusResponse} and HTTP response
@@ -212,6 +179,39 @@ var AuthApi = exports["default"] = /*#__PURE__*/function () {
     key: "getUserOrganizations",
     value: function getUserOrganizations() {
       return this.getUserOrganizationsWithHttpInfo().then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Retrieve Authenticated User Details
+     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthUserInfoResponseModel} and HTTP response
+     */
+  }, {
+    key: "retrieveAuthenticatedUserDetailsWithHttpInfo",
+    value: function retrieveAuthenticatedUserDetailsWithHttpInfo() {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _AuthUserInfoResponseModel["default"];
+      return this.apiClient.callApi('/auth/me', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve Authenticated User Details
+     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthUserInfoResponseModel}
+     */
+  }, {
+    key: "retrieveAuthenticatedUserDetails",
+    value: function retrieveAuthenticatedUserDetails() {
+      return this.retrieveAuthenticatedUserDetailsWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

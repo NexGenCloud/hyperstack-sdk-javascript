@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateFields model module.
  * @module model/TemplateFields
- * @version v1.46.1-alpha
+ * @version v1.46.2-alpha
  */
 class TemplateFields {
     /**

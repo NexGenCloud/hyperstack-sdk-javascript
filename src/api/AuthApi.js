@@ -23,7 +23,7 @@ import UserOrganizationsResponse from '../model/UserOrganizationsResponse';
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.46.1-alpha
+* @version v1.46.2-alpha
 */
 export default class AuthApi {
 
@@ -126,47 +126,6 @@ export default class AuthApi {
 
 
     /**
-     * Retrieve Authenticated User Details
-     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthUserInfoResponseModel} and HTTP response
-     */
-    getAuthenticatedUserWithHttpInfo() {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = AuthUserInfoResponseModel;
-      return this.apiClient.callApi(
-        '/auth/me', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve Authenticated User Details
-     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthUserInfoResponseModel}
-     */
-    getAuthenticatedUser() {
-      return this.getAuthenticatedUserWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Get MFA status for authenticated user
      * Retrieve the Multi-Factor Authentication (MFA) status for the currentlyauthenticated user. Includes whether MFA is enabled.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MFAStatusResponse} and HTTP response
@@ -242,6 +201,47 @@ export default class AuthApi {
      */
     getUserOrganizations() {
       return this.getUserOrganizationsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve Authenticated User Details
+     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthUserInfoResponseModel} and HTTP response
+     */
+    retrieveAuthenticatedUserDetailsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = AuthUserInfoResponseModel;
+      return this.apiClient.callApi(
+        '/auth/me', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Authenticated User Details
+     * Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthUserInfoResponseModel}
+     */
+    retrieveAuthenticatedUserDetails() {
+      return this.retrieveAuthenticatedUserDetailsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
