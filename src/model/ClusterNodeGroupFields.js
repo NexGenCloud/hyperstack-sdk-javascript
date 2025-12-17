@@ -17,7 +17,7 @@ import ClusterFlavorFields from './ClusterFlavorFields';
 /**
  * The ClusterNodeGroupFields model module.
  * @module model/ClusterNodeGroupFields
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 class ClusterNodeGroupFields {
     /**

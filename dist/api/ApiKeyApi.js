@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * ApiKey service.
 * @module api/ApiKeyApi
-* @version v1.46.2-alpha
+* @version v1.46.4-alpha
 */
 var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -105,7 +105,7 @@ var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = [];
+      var authNames = ['apiKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _GenerateUpdateApiKeyResponseModel["default"];

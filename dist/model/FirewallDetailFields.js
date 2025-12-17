@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FirewallDetailFields model module.
  * @module model/FirewallDetailFields
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 var FirewallDetailFields = /*#__PURE__*/function () {
   /**

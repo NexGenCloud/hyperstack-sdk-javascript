@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VNCURLFields model module.
  * @module model/VNCURLFields
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 class VNCURLFields {
     /**

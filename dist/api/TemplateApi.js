@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Template service.
 * @module api/TemplateApi
-* @version v1.46.2-alpha
+* @version v1.46.4-alpha
 */
 var TemplateApi = exports["default"] = /*#__PURE__*/function () {
   /**

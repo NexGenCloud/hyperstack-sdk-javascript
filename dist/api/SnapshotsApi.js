@@ -35,7 +35,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Snapshots service.
 * @module api/SnapshotsApi
-* @version v1.46.2-alpha
+* @version v1.46.4-alpha
 */
 var SnapshotsApi = exports["default"] = /*#__PURE__*/function () {
   /**

@@ -19,7 +19,7 @@ import PartnerConfig from '../model/PartnerConfig';
 /**
 * PartnerConfig service.
 * @module api/PartnerConfigApi
-* @version v1.46.2-alpha
+* @version v1.46.4-alpha
 */
 export default class PartnerConfigApi {
 
@@ -53,7 +53,7 @@ export default class PartnerConfigApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PartnerConfig;
@@ -97,7 +97,7 @@ export default class PartnerConfigApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['apiKey'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PartnerConfig;

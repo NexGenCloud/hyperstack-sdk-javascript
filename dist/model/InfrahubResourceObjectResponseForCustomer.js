@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InfrahubResourceObjectResponseForCustomer model module.
  * @module model/InfrahubResourceObjectResponseForCustomer
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 var InfrahubResourceObjectResponseForCustomer = /*#__PURE__*/function () {
   /**

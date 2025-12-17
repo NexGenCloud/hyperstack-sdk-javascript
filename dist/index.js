@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "AccessKeysApi", {
+  enumerable: true,
+  get: function get() {
+    return _AccessKeysApi["default"];
+  }
+});
 Object.defineProperty(exports, "AccessTokenField", {
   enumerable: true,
   get: function get() {
@@ -223,6 +229,12 @@ Object.defineProperty(exports, "BillingMetricesResponse", {
   enumerable: true,
   get: function get() {
     return _BillingMetricesResponse["default"];
+  }
+});
+Object.defineProperty(exports, "BucketsApi", {
+  enumerable: true,
+  get: function get() {
+    return _BucketsApi["default"];
   }
 });
 Object.defineProperty(exports, "CalculateApi", {
@@ -879,6 +891,12 @@ Object.defineProperty(exports, "GraphDatetimeValueModel", {
     return _GraphDatetimeValueModel["default"];
   }
 });
+Object.defineProperty(exports, "HealthApi", {
+  enumerable: true,
+  get: function get() {
+    return _HealthApi["default"];
+  }
+});
 Object.defineProperty(exports, "Image", {
   enumerable: true,
   get: function get() {
@@ -1143,6 +1161,84 @@ Object.defineProperty(exports, "NewStockRetriveResponse", {
     return _NewStockRetriveResponse["default"];
   }
 });
+Object.defineProperty(exports, "ObjectStorageAccessKeyCreateRequest", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageAccessKeyCreateRequest["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageAccessKeyCreateResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageAccessKeyCreateResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageAccessKeyListResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageAccessKeyListResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageAccessKeyResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageAccessKeyResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageBucketListResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageBucketListResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageBucketResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageBucketResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageDeleteResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageDeleteResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageErrorResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageErrorResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageHealthResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageHealthResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStoragePaginationMeta", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStoragePaginationMeta["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageRegionListResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageRegionListResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageRegionResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageRegionResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageRegionsEnum", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageRegionsEnum["default"];
+  }
+});
 Object.defineProperty(exports, "OrganizationApi", {
   enumerable: true,
   get: function get() {
@@ -1405,6 +1501,12 @@ Object.defineProperty(exports, "Regions", {
   enumerable: true,
   get: function get() {
     return _Regions["default"];
+  }
+});
+Object.defineProperty(exports, "RegionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _RegionsApi["default"];
   }
 });
 Object.defineProperty(exports, "RemoveMemberFromOrganizationResponseModel", {
@@ -2238,6 +2340,19 @@ var _NewConfigurationsResponse = _interopRequireDefault(require("./model/NewConf
 var _NewModelResponse = _interopRequireDefault(require("./model/NewModelResponse"));
 var _NewStockResponse = _interopRequireDefault(require("./model/NewStockResponse"));
 var _NewStockRetriveResponse = _interopRequireDefault(require("./model/NewStockRetriveResponse"));
+var _ObjectStorageAccessKeyCreateRequest = _interopRequireDefault(require("./model/ObjectStorageAccessKeyCreateRequest"));
+var _ObjectStorageAccessKeyCreateResponse = _interopRequireDefault(require("./model/ObjectStorageAccessKeyCreateResponse"));
+var _ObjectStorageAccessKeyListResponse = _interopRequireDefault(require("./model/ObjectStorageAccessKeyListResponse"));
+var _ObjectStorageAccessKeyResponse = _interopRequireDefault(require("./model/ObjectStorageAccessKeyResponse"));
+var _ObjectStorageBucketListResponse = _interopRequireDefault(require("./model/ObjectStorageBucketListResponse"));
+var _ObjectStorageBucketResponse = _interopRequireDefault(require("./model/ObjectStorageBucketResponse"));
+var _ObjectStorageDeleteResponse = _interopRequireDefault(require("./model/ObjectStorageDeleteResponse"));
+var _ObjectStorageErrorResponse = _interopRequireDefault(require("./model/ObjectStorageErrorResponse"));
+var _ObjectStorageHealthResponse = _interopRequireDefault(require("./model/ObjectStorageHealthResponse"));
+var _ObjectStoragePaginationMeta = _interopRequireDefault(require("./model/ObjectStoragePaginationMeta"));
+var _ObjectStorageRegionListResponse = _interopRequireDefault(require("./model/ObjectStorageRegionListResponse"));
+var _ObjectStorageRegionResponse = _interopRequireDefault(require("./model/ObjectStorageRegionResponse"));
+var _ObjectStorageRegionsEnum = _interopRequireDefault(require("./model/ObjectStorageRegionsEnum"));
 var _OrganizationFields = _interopRequireDefault(require("./model/OrganizationFields"));
 var _OrganizationLevelBillingHistory = _interopRequireDefault(require("./model/OrganizationLevelBillingHistory"));
 var _OrganizationLevelBillingHistoryResources = _interopRequireDefault(require("./model/OrganizationLevelBillingHistoryResources"));
@@ -2370,12 +2485,14 @@ var _VolumesFields = _interopRequireDefault(require("./model/VolumesFields"));
 var _Voucher = _interopRequireDefault(require("./model/Voucher"));
 var _VoucherRedeemResponseSchema = _interopRequireDefault(require("./model/VoucherRedeemResponseSchema"));
 var _WorkloadBillingHistoryResponse = _interopRequireDefault(require("./model/WorkloadBillingHistoryResponse"));
+var _AccessKeysApi = _interopRequireDefault(require("./api/AccessKeysApi"));
 var _AliveApi = _interopRequireDefault(require("./api/AliveApi"));
 var _ApiKeyApi = _interopRequireDefault(require("./api/ApiKeyApi"));
 var _AssigningMemberRoleApi = _interopRequireDefault(require("./api/AssigningMemberRoleApi"));
 var _AuthApi = _interopRequireDefault(require("./api/AuthApi"));
 var _BetaAccessApi = _interopRequireDefault(require("./api/BetaAccessApi"));
 var _BillingApi = _interopRequireDefault(require("./api/BillingApi"));
+var _BucketsApi = _interopRequireDefault(require("./api/BucketsApi"));
 var _CalculateApi = _interopRequireDefault(require("./api/CalculateApi"));
 var _CallbacksApi = _interopRequireDefault(require("./api/CallbacksApi"));
 var _ClusterEventsApi = _interopRequireDefault(require("./api/ClusterEventsApi"));
@@ -2392,6 +2509,7 @@ var _FirewallsApi = _interopRequireDefault(require("./api/FirewallsApi"));
 var _FlavorApi = _interopRequireDefault(require("./api/FlavorApi"));
 var _FloatingIpApi = _interopRequireDefault(require("./api/FloatingIpApi"));
 var _GpuApi = _interopRequireDefault(require("./api/GpuApi"));
+var _HealthApi = _interopRequireDefault(require("./api/HealthApi"));
 var _ImageApi = _interopRequireDefault(require("./api/ImageApi"));
 var _InviteApi = _interopRequireDefault(require("./api/InviteApi"));
 var _KeypairApi = _interopRequireDefault(require("./api/KeypairApi"));
@@ -2404,6 +2522,7 @@ var _PricebookApi = _interopRequireDefault(require("./api/PricebookApi"));
 var _ProfileApi = _interopRequireDefault(require("./api/ProfileApi"));
 var _RbacRoleApi = _interopRequireDefault(require("./api/RbacRoleApi"));
 var _RegionApi = _interopRequireDefault(require("./api/RegionApi"));
+var _RegionsApi = _interopRequireDefault(require("./api/RegionsApi"));
 var _SecurityRulesApi = _interopRequireDefault(require("./api/SecurityRulesApi"));
 var _SnapshotEventsApi = _interopRequireDefault(require("./api/SnapshotEventsApi"));
 var _SnapshotsApi = _interopRequireDefault(require("./api/SnapshotsApi"));

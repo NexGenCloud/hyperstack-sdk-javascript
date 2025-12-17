@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UserInfoPostPayload model module.
  * @module model/UserInfoPostPayload
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 var UserInfoPostPayload = /*#__PURE__*/function () {
   /**

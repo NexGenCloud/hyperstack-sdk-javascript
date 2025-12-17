@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProfileFields model module.
  * @module model/ProfileFields
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 class ProfileFields {
     /**

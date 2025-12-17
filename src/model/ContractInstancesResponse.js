@@ -17,7 +17,7 @@ import ContractInstanceFields from './ContractInstanceFields';
 /**
  * The ContractInstancesResponse model module.
  * @module model/ContractInstancesResponse
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 class ContractInstancesResponse {
     /**

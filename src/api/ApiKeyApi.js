@@ -22,7 +22,7 @@ import GetApiKeysResponseModel from '../model/GetApiKeysResponseModel';
 /**
 * ApiKey service.
 * @module api/ApiKeyApi
-* @version v1.46.2-alpha
+* @version v1.46.4-alpha
 */
 export default class ApiKeyApi {
 
@@ -109,7 +109,7 @@ export default class ApiKeyApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['apiKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = GenerateUpdateApiKeyResponseModel;

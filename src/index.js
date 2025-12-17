@@ -177,6 +177,19 @@ import NewConfigurationsResponse from './model/NewConfigurationsResponse';
 import NewModelResponse from './model/NewModelResponse';
 import NewStockResponse from './model/NewStockResponse';
 import NewStockRetriveResponse from './model/NewStockRetriveResponse';
+import ObjectStorageAccessKeyCreateRequest from './model/ObjectStorageAccessKeyCreateRequest';
+import ObjectStorageAccessKeyCreateResponse from './model/ObjectStorageAccessKeyCreateResponse';
+import ObjectStorageAccessKeyListResponse from './model/ObjectStorageAccessKeyListResponse';
+import ObjectStorageAccessKeyResponse from './model/ObjectStorageAccessKeyResponse';
+import ObjectStorageBucketListResponse from './model/ObjectStorageBucketListResponse';
+import ObjectStorageBucketResponse from './model/ObjectStorageBucketResponse';
+import ObjectStorageDeleteResponse from './model/ObjectStorageDeleteResponse';
+import ObjectStorageErrorResponse from './model/ObjectStorageErrorResponse';
+import ObjectStorageHealthResponse from './model/ObjectStorageHealthResponse';
+import ObjectStoragePaginationMeta from './model/ObjectStoragePaginationMeta';
+import ObjectStorageRegionListResponse from './model/ObjectStorageRegionListResponse';
+import ObjectStorageRegionResponse from './model/ObjectStorageRegionResponse';
+import ObjectStorageRegionsEnum from './model/ObjectStorageRegionsEnum';
 import OrganizationFields from './model/OrganizationFields';
 import OrganizationLevelBillingHistory from './model/OrganizationLevelBillingHistory';
 import OrganizationLevelBillingHistoryResources from './model/OrganizationLevelBillingHistoryResources';
@@ -309,12 +322,14 @@ import VolumesFields from './model/VolumesFields';
 import Voucher from './model/Voucher';
 import VoucherRedeemResponseSchema from './model/VoucherRedeemResponseSchema';
 import WorkloadBillingHistoryResponse from './model/WorkloadBillingHistoryResponse';
+import AccessKeysApi from './api/AccessKeysApi';
 import AliveApi from './api/AliveApi';
 import ApiKeyApi from './api/ApiKeyApi';
 import AssigningMemberRoleApi from './api/AssigningMemberRoleApi';
 import AuthApi from './api/AuthApi';
 import BetaAccessApi from './api/BetaAccessApi';
 import BillingApi from './api/BillingApi';
+import BucketsApi from './api/BucketsApi';
 import CalculateApi from './api/CalculateApi';
 import CallbacksApi from './api/CallbacksApi';
 import ClusterEventsApi from './api/ClusterEventsApi';
@@ -331,6 +346,7 @@ import FirewallsApi from './api/FirewallsApi';
 import FlavorApi from './api/FlavorApi';
 import FloatingIpApi from './api/FloatingIpApi';
 import GpuApi from './api/GpuApi';
+import HealthApi from './api/HealthApi';
 import ImageApi from './api/ImageApi';
 import InviteApi from './api/InviteApi';
 import KeypairApi from './api/KeypairApi';
@@ -343,6 +359,7 @@ import PricebookApi from './api/PricebookApi';
 import ProfileApi from './api/ProfileApi';
 import RbacRoleApi from './api/RbacRoleApi';
 import RegionApi from './api/RegionApi';
+import RegionsApi from './api/RegionsApi';
 import SecurityRulesApi from './api/SecurityRulesApi';
 import SnapshotEventsApi from './api/SnapshotEventsApi';
 import SnapshotsApi from './api/SnapshotsApi';
@@ -388,7 +405,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.46.2-alpha
+* @version v1.46.4-alpha
 */
 export {
     /**
@@ -1382,6 +1399,84 @@ export {
     NewStockRetriveResponse,
 
     /**
+     * The ObjectStorageAccessKeyCreateRequest model constructor.
+     * @property {module:model/ObjectStorageAccessKeyCreateRequest}
+     */
+    ObjectStorageAccessKeyCreateRequest,
+
+    /**
+     * The ObjectStorageAccessKeyCreateResponse model constructor.
+     * @property {module:model/ObjectStorageAccessKeyCreateResponse}
+     */
+    ObjectStorageAccessKeyCreateResponse,
+
+    /**
+     * The ObjectStorageAccessKeyListResponse model constructor.
+     * @property {module:model/ObjectStorageAccessKeyListResponse}
+     */
+    ObjectStorageAccessKeyListResponse,
+
+    /**
+     * The ObjectStorageAccessKeyResponse model constructor.
+     * @property {module:model/ObjectStorageAccessKeyResponse}
+     */
+    ObjectStorageAccessKeyResponse,
+
+    /**
+     * The ObjectStorageBucketListResponse model constructor.
+     * @property {module:model/ObjectStorageBucketListResponse}
+     */
+    ObjectStorageBucketListResponse,
+
+    /**
+     * The ObjectStorageBucketResponse model constructor.
+     * @property {module:model/ObjectStorageBucketResponse}
+     */
+    ObjectStorageBucketResponse,
+
+    /**
+     * The ObjectStorageDeleteResponse model constructor.
+     * @property {module:model/ObjectStorageDeleteResponse}
+     */
+    ObjectStorageDeleteResponse,
+
+    /**
+     * The ObjectStorageErrorResponse model constructor.
+     * @property {module:model/ObjectStorageErrorResponse}
+     */
+    ObjectStorageErrorResponse,
+
+    /**
+     * The ObjectStorageHealthResponse model constructor.
+     * @property {module:model/ObjectStorageHealthResponse}
+     */
+    ObjectStorageHealthResponse,
+
+    /**
+     * The ObjectStoragePaginationMeta model constructor.
+     * @property {module:model/ObjectStoragePaginationMeta}
+     */
+    ObjectStoragePaginationMeta,
+
+    /**
+     * The ObjectStorageRegionListResponse model constructor.
+     * @property {module:model/ObjectStorageRegionListResponse}
+     */
+    ObjectStorageRegionListResponse,
+
+    /**
+     * The ObjectStorageRegionResponse model constructor.
+     * @property {module:model/ObjectStorageRegionResponse}
+     */
+    ObjectStorageRegionResponse,
+
+    /**
+     * The ObjectStorageRegionsEnum model constructor.
+     * @property {module:model/ObjectStorageRegionsEnum}
+     */
+    ObjectStorageRegionsEnum,
+
+    /**
      * The OrganizationFields model constructor.
      * @property {module:model/OrganizationFields}
      */
@@ -2174,6 +2269,12 @@ export {
     WorkloadBillingHistoryResponse,
 
     /**
+    * The AccessKeysApi service constructor.
+    * @property {module:api/AccessKeysApi}
+    */
+    AccessKeysApi,
+
+    /**
     * The AliveApi service constructor.
     * @property {module:api/AliveApi}
     */
@@ -2208,6 +2309,12 @@ export {
     * @property {module:api/BillingApi}
     */
     BillingApi,
+
+    /**
+    * The BucketsApi service constructor.
+    * @property {module:api/BucketsApi}
+    */
+    BucketsApi,
 
     /**
     * The CalculateApi service constructor.
@@ -2306,6 +2413,12 @@ export {
     GpuApi,
 
     /**
+    * The HealthApi service constructor.
+    * @property {module:api/HealthApi}
+    */
+    HealthApi,
+
+    /**
     * The ImageApi service constructor.
     * @property {module:api/ImageApi}
     */
@@ -2376,6 +2489,12 @@ export {
     * @property {module:api/RegionApi}
     */
     RegionApi,
+
+    /**
+    * The RegionsApi service constructor.
+    * @property {module:api/RegionsApi}
+    */
+    RegionsApi,
 
     /**
     * The SecurityRulesApi service constructor.

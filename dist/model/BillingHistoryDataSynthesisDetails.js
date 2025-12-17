@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The BillingHistoryDataSynthesisDetails model module.
  * @module model/BillingHistoryDataSynthesisDetails
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 var BillingHistoryDataSynthesisDetails = /*#__PURE__*/function () {
   /**

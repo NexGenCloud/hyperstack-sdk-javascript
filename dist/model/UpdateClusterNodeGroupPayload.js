@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateClusterNodeGroupPayload model module.
  * @module model/UpdateClusterNodeGroupPayload
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 var UpdateClusterNodeGroupPayload = /*#__PURE__*/function () {
   /**

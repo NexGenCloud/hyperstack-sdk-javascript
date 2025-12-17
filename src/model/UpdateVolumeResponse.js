@@ -17,7 +17,7 @@ import VolumeFields from './VolumeFields';
 /**
  * The UpdateVolumeResponse model module.
  * @module model/UpdateVolumeResponse
- * @version v1.46.2-alpha
+ * @version v1.46.4-alpha
  */
 class UpdateVolumeResponse {
     /**

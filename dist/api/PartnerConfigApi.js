@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * PartnerConfig service.
 * @module api/PartnerConfigApi
-* @version v1.46.2-alpha
+* @version v1.46.4-alpha
 */
 var PartnerConfigApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -56,7 +56,7 @@ var PartnerConfigApi = exports["default"] = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
-      var authNames = [];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PartnerConfig["default"];
@@ -93,7 +93,7 @@ var PartnerConfigApi = exports["default"] = /*#__PURE__*/function () {
       };
       var headerParams = {};
       var formParams = {};
-      var authNames = [];
+      var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PartnerConfig["default"];
