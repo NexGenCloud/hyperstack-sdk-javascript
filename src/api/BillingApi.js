@@ -44,7 +44,7 @@ import WorkloadBillingHistoryResponse from '../model/WorkloadBillingHistoryRespo
 /**
 * Billing service.
 * @module api/BillingApi
-* @version v1.46.4-alpha
+* @version v1.47.0-alpha
 */
 export default class BillingApi {
 

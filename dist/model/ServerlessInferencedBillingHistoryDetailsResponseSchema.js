@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ServerlessInferencedBillingHistoryDetailsResponseSchema model module.
  * @module model/ServerlessInferencedBillingHistoryDetailsResponseSchema
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var ServerlessInferencedBillingHistoryDetailsResponseSchema = /*#__PURE__*/function () {
   /**

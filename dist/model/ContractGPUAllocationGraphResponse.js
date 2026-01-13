@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ContractGPUAllocationGraphResponse model module.
  * @module model/ContractGPUAllocationGraphResponse
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var ContractGPUAllocationGraphResponse = /*#__PURE__*/function () {
   /**

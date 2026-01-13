@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The KeypairEnvironmentFeatures model module.
  * @module model/KeypairEnvironmentFeatures
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var KeypairEnvironmentFeatures = /*#__PURE__*/function () {
   /**

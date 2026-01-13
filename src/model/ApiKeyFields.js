@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApiKeyFields model module.
  * @module model/ApiKeyFields
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 class ApiKeyFields {
     /**

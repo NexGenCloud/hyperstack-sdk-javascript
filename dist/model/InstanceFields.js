@@ -35,7 +35,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InstanceFields model module.
  * @module model/InstanceFields
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var InstanceFields = /*#__PURE__*/function () {
   /**

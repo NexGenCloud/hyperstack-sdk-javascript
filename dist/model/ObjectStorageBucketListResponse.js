@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ObjectStorageBucketListResponse model module.
  * @module model/ObjectStorageBucketListResponse
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var ObjectStorageBucketListResponse = /*#__PURE__*/function () {
   /**
@@ -68,6 +68,9 @@ var ObjectStorageBucketListResponse = /*#__PURE__*/function () {
         obj = obj || new ObjectStorageBucketListResponse();
         if (data.hasOwnProperty('buckets')) {
           obj['buckets'] = _ApiClient["default"].convertToType(data['buckets'], [_ObjectStorageBucketResponse["default"]]);
+        }
+        if (data.hasOwnProperty('failed_regions')) {
+          obj['failed_regions'] = _ApiClient["default"].convertToType(data['failed_regions'], ['String']);
         }
       }
       return obj;
@@ -117,6 +120,10 @@ var ObjectStorageBucketListResponse = /*#__PURE__*/function () {
         }
         ;
       }
+      // ensure the json data is an array
+      if (!Array.isArray(data['failed_regions'])) {
+        throw new Error("Expected the field `failed_regions` to be an array in the JSON data but got " + data['failed_regions']);
+      }
       return true;
     }
   }]);
@@ -127,4 +134,9 @@ ObjectStorageBucketListResponse.RequiredProperties = ["buckets"];
  * @member {Array.<module:model/ObjectStorageBucketResponse>} buckets
  */
 ObjectStorageBucketListResponse.prototype['buckets'] = undefined;
+
+/**
+ * @member {Array.<String>} failed_regions
+ */
+ObjectStorageBucketListResponse.prototype['failed_regions'] = undefined;
 var _default = exports["default"] = ObjectStorageBucketListResponse;

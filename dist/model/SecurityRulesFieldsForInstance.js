@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SecurityRulesFieldsForInstance model module.
  * @module model/SecurityRulesFieldsForInstance
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var SecurityRulesFieldsForInstance = /*#__PURE__*/function () {
   /**

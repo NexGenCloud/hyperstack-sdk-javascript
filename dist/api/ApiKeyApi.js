@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * ApiKey service.
 * @module api/ApiKeyApi
-* @version v1.46.4-alpha
+* @version v1.47.0-alpha
 */
 var ApiKeyApi = exports["default"] = /*#__PURE__*/function () {
   /**

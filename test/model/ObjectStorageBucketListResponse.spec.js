@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property failedRegions (base name: "failed_regions")', function() {
+      // uncomment below and update the code to test the property failedRegions
+      //var instance = new HyperstackApi.ObjectStorageBucketListResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

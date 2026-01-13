@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.46.4-alpha
+* @version v1.47.0-alpha
 */
 var AuthApi = exports["default"] = /*#__PURE__*/function () {
   /**

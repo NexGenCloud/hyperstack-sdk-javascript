@@ -17,7 +17,7 @@ import InstanceEventsFields from './InstanceEventsFields';
 /**
  * The InstanceEvents model module.
  * @module model/InstanceEvents
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 class InstanceEvents {
     /**

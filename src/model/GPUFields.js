@@ -17,7 +17,7 @@ import GPURegionFields from './GPURegionFields';
 /**
  * The GPUFields model module.
  * @module model/GPUFields
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 class GPUFields {
     /**

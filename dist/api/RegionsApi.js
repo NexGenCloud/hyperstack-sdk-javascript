@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Regions service.
 * @module api/RegionsApi
-* @version v1.46.4-alpha
+* @version v1.47.0-alpha
 */
 var RegionsApi = exports["default"] = /*#__PURE__*/function () {
   /**

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * AssigningMemberRole service.
 * @module api/AssigningMemberRoleApi
-* @version v1.46.4-alpha
+* @version v1.47.0-alpha
 */
 var AssigningMemberRoleApi = exports["default"] = /*#__PURE__*/function () {
   /**

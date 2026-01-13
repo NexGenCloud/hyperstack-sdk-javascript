@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The GetPoliciesResponseModel model module.
  * @module model/GetPoliciesResponseModel
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var GetPoliciesResponseModel = /*#__PURE__*/function () {
   /**

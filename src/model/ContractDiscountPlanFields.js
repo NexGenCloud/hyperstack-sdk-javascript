@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContractDiscountPlanFields model module.
  * @module model/ContractDiscountPlanFields
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 class ContractDiscountPlanFields {
     /**

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * BetaAccess service.
 * @module api/BetaAccessApi
-* @version v1.46.4-alpha
+* @version v1.47.0-alpha
 */
 var BetaAccessApi = exports["default"] = /*#__PURE__*/function () {
   /**

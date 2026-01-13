@@ -17,7 +17,7 @@ import ObjectStorageBucketResponse from './ObjectStorageBucketResponse';
 /**
  * The ObjectStorageBucketListResponse model module.
  * @module model/ObjectStorageBucketListResponse
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 class ObjectStorageBucketListResponse {
     /**
@@ -53,6 +53,9 @@ class ObjectStorageBucketListResponse {
             if (data.hasOwnProperty('buckets')) {
                 obj['buckets'] = ApiClient.convertToType(data['buckets'], [ObjectStorageBucketResponse]);
             }
+            if (data.hasOwnProperty('failed_regions')) {
+                obj['failed_regions'] = ApiClient.convertToType(data['failed_regions'], ['String']);
+            }
         }
         return obj;
     }
@@ -79,6 +82,10 @@ class ObjectStorageBucketListResponse {
                 ObjectStorageBucketResponse.validateJSON(item);
             };
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['failed_regions'])) {
+            throw new Error("Expected the field `failed_regions` to be an array in the JSON data but got " + data['failed_regions']);
+        }
 
         return true;
     }
@@ -92,6 +99,11 @@ ObjectStorageBucketListResponse.RequiredProperties = ["buckets"];
  * @member {Array.<module:model/ObjectStorageBucketResponse>} buckets
  */
 ObjectStorageBucketListResponse.prototype['buckets'] = undefined;
+
+/**
+ * @member {Array.<String>} failed_regions
+ */
+ObjectStorageBucketListResponse.prototype['failed_regions'] = undefined;
 
 
 

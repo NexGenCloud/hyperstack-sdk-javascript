@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The BetaAccessStatusResponseModel model module.
  * @module model/BetaAccessStatusResponseModel
- * @version v1.46.4-alpha
+ * @version v1.47.0-alpha
  */
 var BetaAccessStatusResponseModel = /*#__PURE__*/function () {
   /**
