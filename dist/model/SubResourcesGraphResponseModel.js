@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SubResourcesGraphResponseModel model module.
  * @module model/SubResourcesGraphResponseModel
- * @version v1.47.0-alpha
+ * @version v1.48.0-alpha
  */
 var SubResourcesGraphResponseModel = /*#__PURE__*/function () {
   /**

@@ -20,7 +20,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * FirewallAttachment service.
 * @module api/FirewallAttachmentApi
-* @version v1.47.0-alpha
+* @version v1.48.0-alpha
 */
 export default class FirewallAttachmentApi {
 

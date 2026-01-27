@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateVolumeAttachmentPayload model module.
  * @module model/UpdateVolumeAttachmentPayload
- * @version v1.47.0-alpha
+ * @version v1.48.0-alpha
  */
 class UpdateVolumeAttachmentPayload {
     /**

@@ -23,7 +23,7 @@ import UpdateOrganizationResponseModel from '../model/UpdateOrganizationResponse
 /**
 * Organization service.
 * @module api/OrganizationApi
-* @version v1.47.0-alpha
+* @version v1.48.0-alpha
 */
 export default class OrganizationApi {
 

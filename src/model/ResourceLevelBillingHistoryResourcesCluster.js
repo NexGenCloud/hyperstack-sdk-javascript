@@ -19,7 +19,7 @@ import ResourceLevelBillingHistoryResponseMetrics from './ResourceLevelBillingHi
 /**
  * The ResourceLevelBillingHistoryResourcesCluster model module.
  * @module model/ResourceLevelBillingHistoryResourcesCluster
- * @version v1.47.0-alpha
+ * @version v1.48.0-alpha
  */
 class ResourceLevelBillingHistoryResourcesCluster {
     /**
