@@ -17,7 +17,7 @@ import ProfileFields from './ProfileFields';
 /**
  * The ProfileListResponse model module.
  * @module model/ProfileListResponse
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 class ProfileListResponse {
     /**

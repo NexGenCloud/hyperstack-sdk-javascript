@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+var _FlavorRestrictions = _interopRequireDefault(require("./FlavorRestrictions"));
 var _LableResonse = _interopRequireDefault(require("./LableResonse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -30,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ImageFields model module.
  * @module model/ImageFields
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 var ImageFields = /*#__PURE__*/function () {
   /**
@@ -68,6 +69,9 @@ var ImageFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('display_size')) {
           obj['display_size'] = _ApiClient["default"].convertToType(data['display_size'], 'String');
+        }
+        if (data.hasOwnProperty('flavor_restrictions')) {
+          obj['flavor_restrictions'] = _ApiClient["default"].convertToType(data['flavor_restrictions'], _FlavorRestrictions["default"]);
         }
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
@@ -112,6 +116,11 @@ var ImageFields = /*#__PURE__*/function () {
       // ensure the json data is a string
       if (data['display_size'] && !(typeof data['display_size'] === 'string' || data['display_size'] instanceof String)) {
         throw new Error("Expected the field `display_size` to be a primitive type in the JSON string but got " + data['display_size']);
+      }
+      // validate the optional field `flavor_restrictions`
+      if (data['flavor_restrictions']) {
+        // data not null
+        _FlavorRestrictions["default"].validateJSON(data['flavor_restrictions']);
       }
       if (data['labels']) {
         // data not null
@@ -163,6 +172,12 @@ ImageFields.prototype['description'] = undefined;
  * @member {String} display_size
  */
 ImageFields.prototype['display_size'] = undefined;
+
+/**
+ * Flavor compatibility restrictions for this image
+ * @member {module:model/FlavorRestrictions} flavor_restrictions
+ */
+ImageFields.prototype['flavor_restrictions'] = undefined;
 
 /**
  * @member {Number} id

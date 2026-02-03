@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NewConfigurationsResponse model module.
  * @module model/NewConfigurationsResponse
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 class NewConfigurationsResponse {
     /**

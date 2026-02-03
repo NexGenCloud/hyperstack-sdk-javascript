@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Attributes model module.
  * @module model/Attributes
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 var Attributes = /*#__PURE__*/function () {
   /**

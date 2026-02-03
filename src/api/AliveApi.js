@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * Alive service.
 * @module api/AliveApi
-* @version v1.48.0-alpha
+* @version v1.49.0-alpha
 */
 export default class AliveApi {
 

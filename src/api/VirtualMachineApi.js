@@ -36,7 +36,7 @@ import SecurityGroupRule from '../model/SecurityGroupRule';
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.48.0-alpha
+* @version v1.49.0-alpha
 */
 export default class VirtualMachineApi {
 
@@ -795,6 +795,7 @@ export default class VirtualMachineApi {
      * @param {String} [search] 
      * @param {String} [environment] 
      * @param {Array.<Number>} [excludeFirewalls] Comma-separated list of Security Group IDs to ignore instances attached
+     * @param {Boolean} [exactEnvironmentMatch = false)] Flag to filter environment by exact match instead of partial match
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Instances} and HTTP response
      */
     listVMsWithHttpInfo(opts) {
@@ -808,7 +809,8 @@ export default class VirtualMachineApi {
         'pageSize': opts['pageSize'],
         'search': opts['search'],
         'environment': opts['environment'],
-        'exclude_firewalls': this.apiClient.buildCollectionParam(opts['excludeFirewalls'], 'multi')
+        'exclude_firewalls': this.apiClient.buildCollectionParam(opts['excludeFirewalls'], 'multi'),
+        'exact_environment_match': opts['exactEnvironmentMatch']
       };
       let headerParams = {
       };
@@ -835,6 +837,7 @@ export default class VirtualMachineApi {
      * @param {String} opts.search 
      * @param {String} opts.environment 
      * @param {Array.<Number>} opts.excludeFirewalls Comma-separated list of Security Group IDs to ignore instances attached
+     * @param {Boolean} opts.exactEnvironmentMatch Flag to filter environment by exact match instead of partial match (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Instances}
      */
     listVMs(opts) {

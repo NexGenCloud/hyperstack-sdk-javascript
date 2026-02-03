@@ -45,7 +45,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.48.0-alpha
+* @version v1.49.0-alpha
 */
 var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -707,6 +707,7 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @param {String} [search] 
      * @param {String} [environment] 
      * @param {Array.<Number>} [excludeFirewalls] Comma-separated list of Security Group IDs to ignore instances attached
+     * @param {Boolean} [exactEnvironmentMatch = false)] Flag to filter environment by exact match instead of partial match
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Instances} and HTTP response
      */
   }, {
@@ -720,7 +721,8 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
         'pageSize': opts['pageSize'],
         'search': opts['search'],
         'environment': opts['environment'],
-        'exclude_firewalls': this.apiClient.buildCollectionParam(opts['excludeFirewalls'], 'multi')
+        'exclude_firewalls': this.apiClient.buildCollectionParam(opts['excludeFirewalls'], 'multi'),
+        'exact_environment_match': opts['exactEnvironmentMatch']
       };
       var headerParams = {};
       var formParams = {};
@@ -740,6 +742,7 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * @param {String} opts.search 
      * @param {String} opts.environment 
      * @param {Array.<Number>} opts.excludeFirewalls Comma-separated list of Security Group IDs to ignore instances attached
+     * @param {Boolean} opts.exactEnvironmentMatch Flag to filter environment by exact match instead of partial match (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Instances}
      */
   }, {

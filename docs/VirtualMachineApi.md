@@ -780,7 +780,8 @@ let opts = {
   'pageSize': 56, // Number | 
   'search': "search_example", // String | 
   'environment': "environment_example", // String | 
-  'excludeFirewalls': [null] // [Number] | Comma-separated list of Security Group IDs to ignore instances attached
+  'excludeFirewalls': [null], // [Number] | Comma-separated list of Security Group IDs to ignore instances attached
+  'exactEnvironmentMatch': false // Boolean | Flag to filter environment by exact match instead of partial match
 };
 apiInstance.listVMs(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -800,6 +801,7 @@ Name | Type | Description  | Notes
  **search** | **String**|  | [optional] 
  **environment** | **String**|  | [optional] 
  **excludeFirewalls** | [**[Number]**](Number.md)| Comma-separated list of Security Group IDs to ignore instances attached | [optional] 
+ **exactEnvironmentMatch** | **Boolean**| Flag to filter environment by exact match instead of partial match | [optional] [default to false]
 
 ### Return type
 

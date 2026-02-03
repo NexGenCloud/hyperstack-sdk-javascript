@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The LastDayCostResponse model module.
  * @module model/LastDayCostResponse
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 var LastDayCostResponse = /*#__PURE__*/function () {
   /**

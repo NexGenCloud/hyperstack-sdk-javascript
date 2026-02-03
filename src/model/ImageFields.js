@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import FlavorRestrictions from './FlavorRestrictions';
 import LableResonse from './LableResonse';
 
 /**
  * The ImageFields model module.
  * @module model/ImageFields
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 class ImageFields {
     /**
@@ -53,6 +54,9 @@ class ImageFields {
             }
             if (data.hasOwnProperty('display_size')) {
                 obj['display_size'] = ApiClient.convertToType(data['display_size'], 'String');
+            }
+            if (data.hasOwnProperty('flavor_restrictions')) {
+                obj['flavor_restrictions'] = ApiClient.convertToType(data['flavor_restrictions'], FlavorRestrictions);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -95,6 +99,10 @@ class ImageFields {
         // ensure the json data is a string
         if (data['display_size'] && !(typeof data['display_size'] === 'string' || data['display_size'] instanceof String)) {
             throw new Error("Expected the field `display_size` to be a primitive type in the JSON string but got " + data['display_size']);
+        }
+        // validate the optional field `flavor_restrictions`
+        if (data['flavor_restrictions']) { // data not null
+          FlavorRestrictions.validateJSON(data['flavor_restrictions']);
         }
         if (data['labels']) { // data not null
             // ensure the json data is an array
@@ -140,6 +148,12 @@ ImageFields.prototype['description'] = undefined;
  * @member {String} display_size
  */
 ImageFields.prototype['display_size'] = undefined;
+
+/**
+ * Flavor compatibility restrictions for this image
+ * @member {module:model/FlavorRestrictions} flavor_restrictions
+ */
+ImageFields.prototype['flavor_restrictions'] = undefined;
 
 /**
  * @member {Number} id

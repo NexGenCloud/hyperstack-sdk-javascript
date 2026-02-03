@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property flavorRestrictions (base name: "flavor_restrictions")', function() {
+      // uncomment below and update the code to test the property flavorRestrictions
+      //var instance = new HyperstackApi.ImageFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instance = new HyperstackApi.ImageFields();

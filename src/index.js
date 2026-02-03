@@ -60,6 +60,7 @@ import ClusterVersion from './model/ClusterVersion';
 import ClusterVersions from './model/ClusterVersions';
 import Colors from './model/Colors';
 import CommonResponseModel from './model/CommonResponseModel';
+import CompatibleFlavor from './model/CompatibleFlavor';
 import ComplianceFields from './model/ComplianceFields';
 import ComplianceModelFields from './model/ComplianceModelFields';
 import CompliancePayload from './model/CompliancePayload';
@@ -119,6 +120,7 @@ import FlavorItemGetResponse from './model/FlavorItemGetResponse';
 import FlavorLabelFields from './model/FlavorLabelFields';
 import FlavorListResponse from './model/FlavorListResponse';
 import FlavorObjectFields from './model/FlavorObjectFields';
+import FlavorRestrictions from './model/FlavorRestrictions';
 import GPUFields from './model/GPUFields';
 import GPUList from './model/GPUList';
 import GPURegionFields from './model/GPURegionFields';
@@ -405,7 +407,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.48.0-alpha
+* @version v1.49.0-alpha
 */
 export {
     /**
@@ -695,6 +697,12 @@ export {
      * @property {module:model/CommonResponseModel}
      */
     CommonResponseModel,
+
+    /**
+     * The CompatibleFlavor model constructor.
+     * @property {module:model/CompatibleFlavor}
+     */
+    CompatibleFlavor,
 
     /**
      * The ComplianceFields model constructor.
@@ -1049,6 +1057,12 @@ export {
      * @property {module:model/FlavorObjectFields}
      */
     FlavorObjectFields,
+
+    /**
+     * The FlavorRestrictions model constructor.
+     * @property {module:model/FlavorRestrictions}
+     */
+    FlavorRestrictions,
 
     /**
      * The GPUFields model constructor.

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** |  | [optional] 
 **displaySize** | **String** |  | [optional] 
+**flavorRestrictions** | [**FlavorRestrictions**](FlavorRestrictions.md) | Flavor compatibility restrictions for this image | [optional] 
 **id** | **Number** |  | [optional] 
 **isPublic** | **Boolean** |  | [optional] 
 **labels** | [**[LableResonse]**](LableResonse.md) |  | [optional] 

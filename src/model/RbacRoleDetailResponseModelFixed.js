@@ -17,7 +17,7 @@ import RbacRoleFields from './RbacRoleFields';
 /**
  * The RbacRoleDetailResponseModelFixed model module.
  * @module model/RbacRoleDetailResponseModelFixed
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 class RbacRoleDetailResponseModelFixed {
     /**

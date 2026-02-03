@@ -18,7 +18,7 @@ import EnvironmentFieldsForVolume from './EnvironmentFieldsForVolume';
 /**
  * The VolumeFields model module.
  * @module model/VolumeFields
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 class VolumeFields {
     /**

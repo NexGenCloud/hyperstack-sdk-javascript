@@ -23,7 +23,7 @@ import UpdateVolumeAttachmentPayload from '../model/UpdateVolumeAttachmentPayloa
 /**
 * VolumeAttachment service.
 * @module api/VolumeAttachmentApi
-* @version v1.48.0-alpha
+* @version v1.49.0-alpha
 */
 export default class VolumeAttachmentApi {
 

@@ -363,6 +363,12 @@ Object.defineProperty(exports, "CommonResponseModel", {
     return _CommonResponseModel["default"];
   }
 });
+Object.defineProperty(exports, "CompatibleFlavor", {
+  enumerable: true,
+  get: function get() {
+    return _CompatibleFlavor["default"];
+  }
+});
 Object.defineProperty(exports, "ComplianceApi", {
   enumerable: true,
   get: function get() {
@@ -775,6 +781,12 @@ Object.defineProperty(exports, "FlavorObjectFields", {
   enumerable: true,
   get: function get() {
     return _FlavorObjectFields["default"];
+  }
+});
+Object.defineProperty(exports, "FlavorRestrictions", {
+  enumerable: true,
+  get: function get() {
+    return _FlavorRestrictions["default"];
   }
 });
 Object.defineProperty(exports, "FloatingIpApi", {
@@ -2223,6 +2235,7 @@ var _ClusterVersion = _interopRequireDefault(require("./model/ClusterVersion"));
 var _ClusterVersions = _interopRequireDefault(require("./model/ClusterVersions"));
 var _Colors = _interopRequireDefault(require("./model/Colors"));
 var _CommonResponseModel = _interopRequireDefault(require("./model/CommonResponseModel"));
+var _CompatibleFlavor = _interopRequireDefault(require("./model/CompatibleFlavor"));
 var _ComplianceFields = _interopRequireDefault(require("./model/ComplianceFields"));
 var _ComplianceModelFields = _interopRequireDefault(require("./model/ComplianceModelFields"));
 var _CompliancePayload = _interopRequireDefault(require("./model/CompliancePayload"));
@@ -2282,6 +2295,7 @@ var _FlavorItemGetResponse = _interopRequireDefault(require("./model/FlavorItemG
 var _FlavorLabelFields = _interopRequireDefault(require("./model/FlavorLabelFields"));
 var _FlavorListResponse = _interopRequireDefault(require("./model/FlavorListResponse"));
 var _FlavorObjectFields = _interopRequireDefault(require("./model/FlavorObjectFields"));
+var _FlavorRestrictions = _interopRequireDefault(require("./model/FlavorRestrictions"));
 var _GPUFields = _interopRequireDefault(require("./model/GPUFields"));
 var _GPUList = _interopRequireDefault(require("./model/GPUList"));
 var _GPURegionFields = _interopRequireDefault(require("./model/GPURegionFields"));

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ObjectStorageBucketListResponse model module.
  * @module model/ObjectStorageBucketListResponse
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 var ObjectStorageBucketListResponse = /*#__PURE__*/function () {
   /**

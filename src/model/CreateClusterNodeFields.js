@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClusterNodeFields model module.
  * @module model/CreateClusterNodeFields
- * @version v1.48.0-alpha
+ * @version v1.49.0-alpha
  */
 class CreateClusterNodeFields {
     /**
