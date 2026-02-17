@@ -17,7 +17,7 @@ import ResourceObjectResponseForCustomer from './ResourceObjectResponseForCustom
 /**
  * The ResourceBillingResponseForCustomer model module.
  * @module model/ResourceBillingResponseForCustomer
- * @version v1.49.0-alpha
+ * @version v1.50.0-alpha
  */
 class ResourceBillingResponseForCustomer {
     /**

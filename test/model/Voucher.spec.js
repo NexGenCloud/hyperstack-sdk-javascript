@@ -66,6 +66,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property maxRedemptionCount (base name: "max_redemption_count")', function() {
+      // uncomment below and update the code to test the property maxRedemptionCount
+      //var instance = new HyperstackApi.Voucher();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property redemptionCount (base name: "redemption_count")', function() {
+      // uncomment below and update the code to test the property redemptionCount
+      //var instance = new HyperstackApi.Voucher();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remainingRedemptions (base name: "remaining_redemptions")', function() {
+      // uncomment below and update the code to test the property remainingRedemptions
+      //var instance = new HyperstackApi.Voucher();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instance = new HyperstackApi.Voucher();

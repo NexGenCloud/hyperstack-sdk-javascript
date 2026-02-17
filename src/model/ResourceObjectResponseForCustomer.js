@@ -17,7 +17,7 @@ import InfrahubResourceObjectResponseForCustomer from './InfrahubResourceObjectR
 /**
  * The ResourceObjectResponseForCustomer model module.
  * @module model/ResourceObjectResponseForCustomer
- * @version v1.49.0-alpha
+ * @version v1.50.0-alpha
  */
 class ResourceObjectResponseForCustomer {
     /**

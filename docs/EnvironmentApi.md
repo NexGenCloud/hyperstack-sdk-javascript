@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteEnvironment**](EnvironmentApi.md#deleteEnvironment) | **DELETE** /core/environments/{id} | Delete environment
 [**fetchEnvironmentNameAvailability**](EnvironmentApi.md#fetchEnvironmentNameAvailability) | **GET** /core/environments/name-availability/{name} | Fetch environment name availability
 [**getEnvironment**](EnvironmentApi.md#getEnvironment) | **GET** /core/environments/{id} | Retrieve environment
+[**getEnvironmentVMQuota**](EnvironmentApi.md#getEnvironmentVMQuota) | **GET** /core/environments/{id}/vm-quota | Get environment VM quota
 [**listEnvironments**](EnvironmentApi.md#listEnvironments) | **GET** /core/environments | List environments
 [**updateEnvironment**](EnvironmentApi.md#updateEnvironment) | **PUT** /core/environments/{id} | Update environment
 
@@ -202,6 +203,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Environment**](Environment.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getEnvironmentVMQuota
+
+> VMQuota getEnvironmentVMQuota(id)
+
+Get environment VM quota
+
+Retrieves VM quota information for a specific environment, including current VM count, maximum VMs allowed, available VMs, and percentage used in an environment before reaching the subnet IP limit.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.EnvironmentApi();
+let id = 56; // Number | 
+apiInstance.getEnvironmentVMQuota(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**|  | 
+
+### Return type
+
+[**VMQuota**](VMQuota.md)
 
 ### Authorization
 

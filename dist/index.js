@@ -2073,6 +2073,12 @@ Object.defineProperty(exports, "UsersInfoListResponse", {
     return _UsersInfoListResponse["default"];
   }
 });
+Object.defineProperty(exports, "VMQuota", {
+  enumerable: true,
+  get: function get() {
+    return _VMQuota["default"];
+  }
+});
 Object.defineProperty(exports, "VNCURL", {
   enumerable: true,
   get: function get() {
@@ -2486,6 +2492,7 @@ var _UserOrganizationsResponse = _interopRequireDefault(require("./model/UserOrg
 var _UserPermissionFields = _interopRequireDefault(require("./model/UserPermissionFields"));
 var _UsersInfoFields = _interopRequireDefault(require("./model/UsersInfoFields"));
 var _UsersInfoListResponse = _interopRequireDefault(require("./model/UsersInfoListResponse"));
+var _VMQuota = _interopRequireDefault(require("./model/VMQuota"));
 var _VNCURL = _interopRequireDefault(require("./model/VNCURL"));
 var _VNCURLFields = _interopRequireDefault(require("./model/VNCURLFields"));
 var _Volume = _interopRequireDefault(require("./model/Volume"));

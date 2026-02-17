@@ -17,7 +17,7 @@ import SnapshotFields from './SnapshotFields';
 /**
  * The CreateSnapshotResponse model module.
  * @module model/CreateSnapshotResponse
- * @version v1.49.0-alpha
+ * @version v1.50.0-alpha
  */
 class CreateSnapshotResponse {
     /**

@@ -36,7 +36,7 @@ import SecurityGroupRule from '../model/SecurityGroupRule';
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.49.0-alpha
+* @version v1.50.0-alpha
 */
 export default class VirtualMachineApi {
 
@@ -165,9 +165,12 @@ export default class VirtualMachineApi {
      * Fetch virtual machine name availability
      * Check if a Virtual Machine name is available
      * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {String} [count] Nr of instances to handle (optional, default: 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NameAvailableModel} and HTTP response
      */
-    checkVMNameAvailabilityWithHttpInfo(name) {
+    checkVMNameAvailabilityWithHttpInfo(name, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
@@ -178,6 +181,7 @@ export default class VirtualMachineApi {
         'name': name
       };
       let queryParams = {
+        'count': opts['count']
       };
       let headerParams = {
       };
@@ -199,10 +203,12 @@ export default class VirtualMachineApi {
      * Fetch virtual machine name availability
      * Check if a Virtual Machine name is available
      * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.count Nr of instances to handle (optional, default: 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NameAvailableModel}
      */
-    checkVMNameAvailability(name) {
-      return this.checkVMNameAvailabilityWithHttpInfo(name)
+    checkVMNameAvailability(name, opts) {
+      return this.checkVMNameAvailabilityWithHttpInfo(name, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

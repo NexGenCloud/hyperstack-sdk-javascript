@@ -20,11 +20,12 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 import NameAvailableModel from '../model/NameAvailableModel';
 import ResponseModel from '../model/ResponseModel';
 import UpdateEnvironment from '../model/UpdateEnvironment';
+import VMQuota from '../model/VMQuota';
 
 /**
 * Environment service.
 * @module api/EnvironmentApi
-* @version v1.49.0-alpha
+* @version v1.50.0-alpha
 */
 export default class EnvironmentApi {
 
@@ -226,6 +227,54 @@ export default class EnvironmentApi {
      */
     getEnvironment(id) {
       return this.getEnvironmentWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get environment VM quota
+     * Retrieves VM quota information for a specific environment, including current VM count, maximum VMs allowed, available VMs, and percentage used in an environment before reaching the subnet IP limit.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VMQuota} and HTTP response
+     */
+    getEnvironmentVMQuotaWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getEnvironmentVMQuota");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = VMQuota;
+      return this.apiClient.callApi(
+        '/core/environments/{id}/vm-quota', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get environment VM quota
+     * Retrieves VM quota information for a specific environment, including current VM count, maximum VMs allowed, available VMs, and percentage used in an environment before reaching the subnet IP limit.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VMQuota}
+     */
+    getEnvironmentVMQuota(id) {
+      return this.getEnvironmentVMQuotaWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

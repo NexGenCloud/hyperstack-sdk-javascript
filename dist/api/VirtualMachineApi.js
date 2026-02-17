@@ -45,7 +45,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.49.0-alpha
+* @version v1.50.0-alpha
 */
 var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -158,11 +158,14 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * Fetch virtual machine name availability
      * Check if a Virtual Machine name is available
      * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {String} [count] Nr of instances to handle (optional, default: 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NameAvailableModel} and HTTP response
      */
   }, {
     key: "checkVMNameAvailabilityWithHttpInfo",
-    value: function checkVMNameAvailabilityWithHttpInfo(name) {
+    value: function checkVMNameAvailabilityWithHttpInfo(name, opts) {
+      opts = opts || {};
       var postBody = null;
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
@@ -171,7 +174,9 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
       var pathParams = {
         'name': name
       };
-      var queryParams = {};
+      var queryParams = {
+        'count': opts['count']
+      };
       var headerParams = {};
       var formParams = {};
       var authNames = ['apiKey'];
@@ -185,12 +190,14 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * Fetch virtual machine name availability
      * Check if a Virtual Machine name is available
      * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.count Nr of instances to handle (optional, default: 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NameAvailableModel}
      */
   }, {
     key: "checkVMNameAvailability",
-    value: function checkVMNameAvailability(name) {
-      return this.checkVMNameAvailabilityWithHttpInfo(name).then(function (response_and_data) {
+    value: function checkVMNameAvailability(name, opts) {
+      return this.checkVMNameAvailabilityWithHttpInfo(name, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Voucher model module.
  * @module model/Voucher
- * @version v1.49.0-alpha
+ * @version v1.50.0-alpha
  */
 class Voucher {
     /**
@@ -58,6 +58,15 @@ class Voucher {
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('max_redemption_count')) {
+                obj['max_redemption_count'] = ApiClient.convertToType(data['max_redemption_count'], 'Number');
+            }
+            if (data.hasOwnProperty('redemption_count')) {
+                obj['redemption_count'] = ApiClient.convertToType(data['redemption_count'], 'Number');
+            }
+            if (data.hasOwnProperty('remaining_redemptions')) {
+                obj['remaining_redemptions'] = ApiClient.convertToType(data['remaining_redemptions'], 'Number');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -106,6 +115,24 @@ Voucher.prototype['code'] = undefined;
  * @member {Number} id
  */
 Voucher.prototype['id'] = undefined;
+
+/**
+ * Max redemption count for a General Voucher
+ * @member {Number} max_redemption_count
+ */
+Voucher.prototype['max_redemption_count'] = undefined;
+
+/**
+ * Current redemption count for a General Voucher
+ * @member {Number} redemption_count
+ */
+Voucher.prototype['redemption_count'] = undefined;
+
+/**
+ * Remaining redemptions
+ * @member {Number} remaining_redemptions
+ */
+Voucher.prototype['remaining_redemptions'] = undefined;
 
 /**
  * Voucher status

@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UsersInfoFields model module.
  * @module model/UsersInfoFields
- * @version v1.49.0-alpha
+ * @version v1.50.0-alpha
  */
 var UsersInfoFields = /*#__PURE__*/function () {
   /**

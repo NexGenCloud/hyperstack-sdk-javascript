@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ## checkVMNameAvailability
 
-> NameAvailableModel checkVMNameAvailability(name)
+> NameAvailableModel checkVMNameAvailability(name, opts)
 
 Fetch virtual machine name availability
 
@@ -152,7 +152,10 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VirtualMachineApi();
 let name = "name_example"; // String | 
-apiInstance.checkVMNameAvailability(name).then((data) => {
+let opts = {
+  'count': "count_example" // String | Nr of instances to handle (optional, default: 1)
+};
+apiInstance.checkVMNameAvailability(name, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -166,6 +169,7 @@ apiInstance.checkVMNameAvailability(name).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**|  | 
+ **count** | **String**| Nr of instances to handle (optional, default: 1) | [optional] 
 
 ### Return type
 

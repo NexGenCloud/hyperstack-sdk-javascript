@@ -17,7 +17,7 @@ import ObjectStorageRegionResponse from './ObjectStorageRegionResponse';
 /**
  * The ObjectStorageRegionListResponse model module.
  * @module model/ObjectStorageRegionListResponse
- * @version v1.49.0-alpha
+ * @version v1.50.0-alpha
  */
 class ObjectStorageRegionListResponse {
     /**

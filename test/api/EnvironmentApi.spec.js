@@ -88,6 +88,16 @@
         done();
       });
     });
+    describe('getEnvironmentVMQuota', function() {
+      it('should call getEnvironmentVMQuota successfully', function(done) {
+        //uncomment below and update the code to test getEnvironmentVMQuota
+        //instance.getEnvironmentVMQuota(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listEnvironments', function() {
       it('should call listEnvironments successfully', function(done) {
         //uncomment below and update the code to test listEnvironments

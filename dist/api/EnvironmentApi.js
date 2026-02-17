@@ -12,6 +12,7 @@ var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponse
 var _NameAvailableModel = _interopRequireDefault(require("../model/NameAvailableModel"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
 var _UpdateEnvironment = _interopRequireDefault(require("../model/UpdateEnvironment"));
+var _VMQuota = _interopRequireDefault(require("../model/VMQuota"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -33,7 +34,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Environment service.
 * @module api/EnvironmentApi
-* @version v1.49.0-alpha
+* @version v1.50.0-alpha
 */
 var EnvironmentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -206,6 +207,47 @@ var EnvironmentApi = exports["default"] = /*#__PURE__*/function () {
     key: "getEnvironment",
     value: function getEnvironment(id) {
       return this.getEnvironmentWithHttpInfo(id).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Get environment VM quota
+     * Retrieves VM quota information for a specific environment, including current VM count, maximum VMs allowed, available VMs, and percentage used in an environment before reaching the subnet IP limit.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VMQuota} and HTTP response
+     */
+  }, {
+    key: "getEnvironmentVMQuotaWithHttpInfo",
+    value: function getEnvironmentVMQuotaWithHttpInfo(id) {
+      var postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getEnvironmentVMQuota");
+      }
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _VMQuota["default"];
+      return this.apiClient.callApi('/core/environments/{id}/vm-quota', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Get environment VM quota
+     * Retrieves VM quota information for a specific environment, including current VM count, maximum VMs allowed, available VMs, and percentage used in an environment before reaching the subnet IP limit.
+     * @param {Number} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VMQuota}
+     */
+  }, {
+    key: "getEnvironmentVMQuota",
+    value: function getEnvironmentVMQuota(id) {
+      return this.getEnvironmentVMQuotaWithHttpInfo(id).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -311,6 +311,7 @@ import UserOrganizationsResponse from './model/UserOrganizationsResponse';
 import UserPermissionFields from './model/UserPermissionFields';
 import UsersInfoFields from './model/UsersInfoFields';
 import UsersInfoListResponse from './model/UsersInfoListResponse';
+import VMQuota from './model/VMQuota';
 import VNCURL from './model/VNCURL';
 import VNCURLFields from './model/VNCURLFields';
 import Volume from './model/Volume';
@@ -407,7 +408,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.49.0-alpha
+* @version v1.50.0-alpha
 */
 export {
     /**
@@ -2203,6 +2204,12 @@ export {
      * @property {module:model/UsersInfoListResponse}
      */
     UsersInfoListResponse,
+
+    /**
+     * The VMQuota model constructor.
+     * @property {module:model/VMQuota}
+     */
+    VMQuota,
 
     /**
      * The VNCURL model constructor.
