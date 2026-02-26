@@ -17,7 +17,7 @@ import MFAStatusFields from './MFAStatusFields';
 /**
  * The MFAStatusResponse model module.
  * @module model/MFAStatusResponse
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class MFAStatusResponse {
     /**

@@ -17,7 +17,7 @@ import NewStockResponse from './NewStockResponse';
 /**
  * The NewStockRetriveResponse model module.
  * @module model/NewStockRetriveResponse
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class NewStockRetriveResponse {
     /**

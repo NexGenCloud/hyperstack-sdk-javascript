@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ObjectStorageDeleteResponse model module.
  * @module model/ObjectStorageDeleteResponse
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 var ObjectStorageDeleteResponse = /*#__PURE__*/function () {
   /**

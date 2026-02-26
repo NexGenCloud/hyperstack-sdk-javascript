@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrganizationLevelBillingHistoryResponseMetrics model module.
  * @module model/OrganizationLevelBillingHistoryResponseMetrics
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class OrganizationLevelBillingHistoryResponseMetrics {
     /**

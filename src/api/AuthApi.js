@@ -23,7 +23,7 @@ import UserOrganizationsResponse from '../model/UserOrganizationsResponse';
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.50.0-alpha
+* @version v1.50.2-alpha
 */
 export default class AuthApi {
 

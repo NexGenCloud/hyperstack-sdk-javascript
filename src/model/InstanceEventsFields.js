@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceEventsFields model module.
  * @module model/InstanceEventsFields
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class InstanceEventsFields {
     /**

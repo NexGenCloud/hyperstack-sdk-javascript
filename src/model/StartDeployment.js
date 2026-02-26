@@ -17,7 +17,7 @@ import DeploymentFieldsForStartDeployments from './DeploymentFieldsForStartDeplo
 /**
  * The StartDeployment model module.
  * @module model/StartDeployment
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class StartDeployment {
     /**

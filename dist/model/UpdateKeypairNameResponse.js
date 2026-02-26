@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateKeypairNameResponse model module.
  * @module model/UpdateKeypairNameResponse
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 var UpdateKeypairNameResponse = /*#__PURE__*/function () {
   /**

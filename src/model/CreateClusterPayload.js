@@ -17,7 +17,7 @@ import CreateClusterNodeGroupPayload from './CreateClusterNodeGroupPayload';
 /**
  * The CreateClusterPayload model module.
  * @module model/CreateClusterPayload
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class CreateClusterPayload {
     /**

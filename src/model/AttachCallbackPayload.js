@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachCallbackPayload model module.
  * @module model/AttachCallbackPayload
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class AttachCallbackPayload {
     /**

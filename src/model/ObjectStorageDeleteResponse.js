@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStorageDeleteResponse model module.
  * @module model/ObjectStorageDeleteResponse
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 class ObjectStorageDeleteResponse {
     /**

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The VoucherRedeemResponseSchema model module.
  * @module model/VoucherRedeemResponseSchema
- * @version v1.50.0-alpha
+ * @version v1.50.2-alpha
  */
 var VoucherRedeemResponseSchema = /*#__PURE__*/function () {
   /**
