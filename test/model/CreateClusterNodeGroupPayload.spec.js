@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property firewallIds (base name: "firewall_ids")', function() {
+      // uncomment below and update the code to test the property firewallIds
+      //var instance = new HyperstackApi.CreateClusterNodeGroupPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property flavorName (base name: "flavor_name")', function() {
       // uncomment below and update the code to test the property flavorName
       //var instance = new HyperstackApi.CreateClusterNodeGroupPayload();

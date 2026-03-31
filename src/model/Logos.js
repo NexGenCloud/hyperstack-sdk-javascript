@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Logos model module.
  * @module model/Logos
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 class Logos {
     /**

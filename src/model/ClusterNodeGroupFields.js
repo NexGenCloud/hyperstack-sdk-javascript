@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import ClusterFlavorFields from './ClusterFlavorFields';
+import ClusterNodeGroupFirewallFields from './ClusterNodeGroupFirewallFields';
 
 /**
  * The ClusterNodeGroupFields model module.
  * @module model/ClusterNodeGroupFields
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 class ClusterNodeGroupFields {
     /**
@@ -54,6 +55,12 @@ class ClusterNodeGroupFields {
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
+            if (data.hasOwnProperty('firewall_ids')) {
+                obj['firewall_ids'] = ApiClient.convertToType(data['firewall_ids'], ['Number']);
+            }
+            if (data.hasOwnProperty('firewalls')) {
+                obj['firewalls'] = ApiClient.convertToType(data['firewalls'], [ClusterNodeGroupFirewallFields]);
+            }
             if (data.hasOwnProperty('flavor')) {
                 obj['flavor'] = ClusterFlavorFields.constructFromObject(data['flavor']);
             }
@@ -85,6 +92,20 @@ class ClusterNodeGroupFields {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ClusterNodeGroupFields</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is an array
+        if (!Array.isArray(data['firewall_ids'])) {
+            throw new Error("Expected the field `firewall_ids` to be an array in the JSON data but got " + data['firewall_ids']);
+        }
+        if (data['firewalls']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['firewalls'])) {
+                throw new Error("Expected the field `firewalls` to be an array in the JSON data but got " + data['firewalls']);
+            }
+            // validate the optional field `firewalls` (array)
+            for (const item of data['firewalls']) {
+                ClusterNodeGroupFirewallFields.validateJSON(item);
+            };
+        }
         // validate the optional field `flavor`
         if (data['flavor']) { // data not null
           ClusterFlavorFields.validateJSON(data['flavor']);
@@ -115,6 +136,16 @@ ClusterNodeGroupFields.prototype['count'] = undefined;
  * @member {Date} created_at
  */
 ClusterNodeGroupFields.prototype['created_at'] = undefined;
+
+/**
+ * @member {Array.<Number>} firewall_ids
+ */
+ClusterNodeGroupFields.prototype['firewall_ids'] = undefined;
+
+/**
+ * @member {Array.<module:model/ClusterNodeGroupFirewallFields>} firewalls
+ */
+ClusterNodeGroupFields.prototype['firewalls'] = undefined;
 
 /**
  * @member {module:model/ClusterFlavorFields} flavor

@@ -21,7 +21,7 @@ import ObjectStorageErrorResponse from '../model/ObjectStorageErrorResponse';
 /**
 * Buckets service.
 * @module api/BucketsApi
-* @version v1.50.2-alpha
+* @version v1.51.0-alpha
 */
 export default class BucketsApi {
 

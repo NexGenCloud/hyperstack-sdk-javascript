@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**changeOrganizationForToken**](AuthApi.md#changeOrganizationForToken) | **GET** /auth/token/change-org/{org_id} | 
-[**disableMFA**](AuthApi.md#disableMFA) | **GET** /auth/me/mfa/disable | 
+[**disableMFA**](AuthApi.md#disableMFA) | **POST** /auth/me/mfa/disable | 
 [**getUserMFAStatus**](AuthApi.md#getUserMFAStatus) | **GET** /auth/me/mfa | Get MFA status for authenticated user
 [**getUserOrganizations**](AuthApi.md#getUserOrganizations) | **GET** /auth/me/organizations | Get User Organizations
 [**retrieveAuthenticatedUserDetails**](AuthApi.md#retrieveAuthenticatedUserDetails) | **GET** /auth/me | Retrieve Authenticated User Details

@@ -50,6 +50,7 @@ import ClusterFlavorFields from './model/ClusterFlavorFields';
 import ClusterListResponse from './model/ClusterListResponse';
 import ClusterNodeFields from './model/ClusterNodeFields';
 import ClusterNodeGroupFields from './model/ClusterNodeGroupFields';
+import ClusterNodeGroupFirewallFields from './model/ClusterNodeGroupFirewallFields';
 import ClusterNodeGroupsCreateResponse from './model/ClusterNodeGroupsCreateResponse';
 import ClusterNodeGroupsGetResponse from './model/ClusterNodeGroupsGetResponse';
 import ClusterNodeGroupsListResponse from './model/ClusterNodeGroupsListResponse';
@@ -408,7 +409,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.50.2-alpha
+* @version v1.51.0-alpha
 */
 export {
     /**
@@ -638,6 +639,12 @@ export {
      * @property {module:model/ClusterNodeGroupFields}
      */
     ClusterNodeGroupFields,
+
+    /**
+     * The ClusterNodeGroupFirewallFields model constructor.
+     * @property {module:model/ClusterNodeGroupFirewallFields}
+     */
+    ClusterNodeGroupFirewallFields,
 
     /**
      * The ClusterNodeGroupsCreateResponse model constructor.

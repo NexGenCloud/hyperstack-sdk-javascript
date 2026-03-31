@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(HyperstackApi.UpdateClusterNodeGroupPayload);
     });
 
+    it('should have the property firewallIds (base name: "firewall_ids")', function() {
+      // uncomment below and update the code to test the property firewallIds
+      //var instance = new HyperstackApi.UpdateClusterNodeGroupPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property maxCount (base name: "max_count")', function() {
       // uncomment below and update the code to test the property maxCount
       //var instance = new HyperstackApi.UpdateClusterNodeGroupPayload();

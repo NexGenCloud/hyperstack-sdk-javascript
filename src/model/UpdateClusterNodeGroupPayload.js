@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateClusterNodeGroupPayload model module.
  * @module model/UpdateClusterNodeGroupPayload
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 class UpdateClusterNodeGroupPayload {
     /**
@@ -47,6 +47,9 @@ class UpdateClusterNodeGroupPayload {
         if (data) {
             obj = obj || new UpdateClusterNodeGroupPayload();
 
+            if (data.hasOwnProperty('firewall_ids')) {
+                obj['firewall_ids'] = ApiClient.convertToType(data['firewall_ids'], ['Number']);
+            }
             if (data.hasOwnProperty('max_count')) {
                 obj['max_count'] = ApiClient.convertToType(data['max_count'], 'Number');
             }
@@ -63,6 +66,10 @@ class UpdateClusterNodeGroupPayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>UpdateClusterNodeGroupPayload</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is an array
+        if (!Array.isArray(data['firewall_ids'])) {
+            throw new Error("Expected the field `firewall_ids` to be an array in the JSON data but got " + data['firewall_ids']);
+        }
 
         return true;
     }
@@ -71,6 +78,12 @@ class UpdateClusterNodeGroupPayload {
 }
 
 
+
+/**
+ * IDs of the firewalls to apply to all nodes in this node group
+ * @member {Array.<Number>} firewall_ids
+ */
+UpdateClusterNodeGroupPayload.prototype['firewall_ids'] = undefined;
 
 /**
  * @member {Number} max_count

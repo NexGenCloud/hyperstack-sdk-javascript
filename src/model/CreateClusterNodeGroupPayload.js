@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClusterNodeGroupPayload model module.
  * @module model/CreateClusterNodeGroupPayload
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 class CreateClusterNodeGroupPayload {
     /**
@@ -56,6 +56,9 @@ class CreateClusterNodeGroupPayload {
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
+            if (data.hasOwnProperty('firewall_ids')) {
+                obj['firewall_ids'] = ApiClient.convertToType(data['firewall_ids'], ['Number']);
+            }
             if (data.hasOwnProperty('flavor_name')) {
                 obj['flavor_name'] = ApiClient.convertToType(data['flavor_name'], 'String');
             }
@@ -87,6 +90,10 @@ class CreateClusterNodeGroupPayload {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['firewall_ids'])) {
+            throw new Error("Expected the field `firewall_ids` to be an array in the JSON data but got " + data['firewall_ids']);
+        }
         // ensure the json data is a string
         if (data['flavor_name'] && !(typeof data['flavor_name'] === 'string' || data['flavor_name'] instanceof String)) {
             throw new Error("Expected the field `flavor_name` to be a primitive type in the JSON string but got " + data['flavor_name']);
@@ -112,6 +119,12 @@ CreateClusterNodeGroupPayload.RequiredProperties = ["flavor_name", "name", "role
  * @member {Number} count
  */
 CreateClusterNodeGroupPayload.prototype['count'] = undefined;
+
+/**
+ * IDs of the firewalls to apply to all nodes in this node group
+ * @member {Array.<Number>} firewall_ids
+ */
+CreateClusterNodeGroupPayload.prototype['firewall_ids'] = undefined;
 
 /**
  * @member {String} flavor_name

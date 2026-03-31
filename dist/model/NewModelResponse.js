@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The NewModelResponse model module.
  * @module model/NewModelResponse
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 var NewModelResponse = /*#__PURE__*/function () {
   /**

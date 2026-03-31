@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateImagePayload model module.
  * @module model/CreateImagePayload
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 class CreateImagePayload {
     /**

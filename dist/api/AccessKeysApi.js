@@ -31,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * AccessKeys service.
 * @module api/AccessKeysApi
-* @version v1.50.2-alpha
+* @version v1.51.0-alpha
 */
 var AccessKeysApi = exports["default"] = /*#__PURE__*/function () {
   /**

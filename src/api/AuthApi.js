@@ -23,7 +23,7 @@ import UserOrganizationsResponse from '../model/UserOrganizationsResponse';
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.50.2-alpha
+* @version v1.51.0-alpha
 */
 export default class AuthApi {
 
@@ -107,7 +107,7 @@ export default class AuthApi {
       let accepts = ['application/json'];
       let returnType = CommonResponseModel;
       return this.apiClient.callApi(
-        '/auth/me/mfa/disable', 'GET',
+        '/auth/me/mfa/disable', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );

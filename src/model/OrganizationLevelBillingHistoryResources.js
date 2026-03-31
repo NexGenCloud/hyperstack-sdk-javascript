@@ -18,7 +18,7 @@ import OrganizationLevelBillingHistoryResponseMetrics from './OrganizationLevelB
 /**
  * The OrganizationLevelBillingHistoryResources model module.
  * @module model/OrganizationLevelBillingHistoryResources
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 class OrganizationLevelBillingHistoryResources {
     /**

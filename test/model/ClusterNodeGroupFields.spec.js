@@ -66,6 +66,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property firewallIds (base name: "firewall_ids")', function() {
+      // uncomment below and update the code to test the property firewallIds
+      //var instance = new HyperstackApi.ClusterNodeGroupFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firewalls (base name: "firewalls")', function() {
+      // uncomment below and update the code to test the property firewalls
+      //var instance = new HyperstackApi.ClusterNodeGroupFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property flavor (base name: "flavor")', function() {
       // uncomment below and update the code to test the property flavor
       //var instance = new HyperstackApi.ClusterNodeGroupFields();

@@ -297,6 +297,12 @@ Object.defineProperty(exports, "ClusterNodeGroupFields", {
     return _ClusterNodeGroupFields["default"];
   }
 });
+Object.defineProperty(exports, "ClusterNodeGroupFirewallFields", {
+  enumerable: true,
+  get: function get() {
+    return _ClusterNodeGroupFirewallFields["default"];
+  }
+});
 Object.defineProperty(exports, "ClusterNodeGroupsCreateResponse", {
   enumerable: true,
   get: function get() {
@@ -2231,6 +2237,7 @@ var _ClusterFlavorFields = _interopRequireDefault(require("./model/ClusterFlavor
 var _ClusterListResponse = _interopRequireDefault(require("./model/ClusterListResponse"));
 var _ClusterNodeFields = _interopRequireDefault(require("./model/ClusterNodeFields"));
 var _ClusterNodeGroupFields = _interopRequireDefault(require("./model/ClusterNodeGroupFields"));
+var _ClusterNodeGroupFirewallFields = _interopRequireDefault(require("./model/ClusterNodeGroupFirewallFields"));
 var _ClusterNodeGroupsCreateResponse = _interopRequireDefault(require("./model/ClusterNodeGroupsCreateResponse"));
 var _ClusterNodeGroupsGetResponse = _interopRequireDefault(require("./model/ClusterNodeGroupsGetResponse"));
 var _ClusterNodeGroupsListResponse = _interopRequireDefault(require("./model/ClusterNodeGroupsListResponse"));

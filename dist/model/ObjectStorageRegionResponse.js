@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ObjectStorageRegionResponse model module.
  * @module model/ObjectStorageRegionResponse
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 var ObjectStorageRegionResponse = /*#__PURE__*/function () {
   /**

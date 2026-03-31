@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ResourceBillingEventsHistoryResponse model module.
  * @module model/ResourceBillingEventsHistoryResponse
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 var ResourceBillingEventsHistoryResponse = /*#__PURE__*/function () {
   /**

@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UserDefaultChoiceForUserFields model module.
  * @module model/UserDefaultChoiceForUserFields
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 var UserDefaultChoiceForUserFields = /*#__PURE__*/function () {
   /**

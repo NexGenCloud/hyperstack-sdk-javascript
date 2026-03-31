@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateClusterNodeGroupPayload model module.
  * @module model/CreateClusterNodeGroupPayload
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
   /**
@@ -72,6 +72,9 @@ var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
         if (data.hasOwnProperty('count')) {
           obj['count'] = _ApiClient["default"].convertToType(data['count'], 'Number');
         }
+        if (data.hasOwnProperty('firewall_ids')) {
+          obj['firewall_ids'] = _ApiClient["default"].convertToType(data['firewall_ids'], ['Number']);
+        }
         if (data.hasOwnProperty('flavor_name')) {
           obj['flavor_name'] = _ApiClient["default"].convertToType(data['flavor_name'], 'String');
         }
@@ -109,12 +112,16 @@ var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
             throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
           }
         }
-        // ensure the json data is a string
+        // ensure the json data is an array
       } catch (err) {
         _iterator.e(err);
       } finally {
         _iterator.f();
       }
+      if (!Array.isArray(data['firewall_ids'])) {
+        throw new Error("Expected the field `firewall_ids` to be an array in the JSON data but got " + data['firewall_ids']);
+      }
+      // ensure the json data is a string
       if (data['flavor_name'] && !(typeof data['flavor_name'] === 'string' || data['flavor_name'] instanceof String)) {
         throw new Error("Expected the field `flavor_name` to be a primitive type in the JSON string but got " + data['flavor_name']);
       }
@@ -136,6 +143,12 @@ CreateClusterNodeGroupPayload.RequiredProperties = ["flavor_name", "name", "role
  * @member {Number} count
  */
 CreateClusterNodeGroupPayload.prototype['count'] = undefined;
+
+/**
+ * IDs of the firewalls to apply to all nodes in this node group
+ * @member {Array.<Number>} firewall_ids
+ */
+CreateClusterNodeGroupPayload.prototype['firewall_ids'] = undefined;
 
 /**
  * @member {String} flavor_name

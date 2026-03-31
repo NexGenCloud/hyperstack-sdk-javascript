@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BetaAccessRequestFields model module.
  * @module model/BetaAccessRequestFields
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 class BetaAccessRequestFields {
     /**

@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * UserPermission service.
 * @module api/UserPermissionApi
-* @version v1.50.2-alpha
+* @version v1.51.0-alpha
 */
 var UserPermissionApi = exports["default"] = /*#__PURE__*/function () {
   /**

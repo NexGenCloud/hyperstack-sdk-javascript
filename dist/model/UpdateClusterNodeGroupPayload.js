@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateClusterNodeGroupPayload model module.
  * @module model/UpdateClusterNodeGroupPayload
- * @version v1.50.2-alpha
+ * @version v1.51.0-alpha
  */
 var UpdateClusterNodeGroupPayload = /*#__PURE__*/function () {
   /**
@@ -59,6 +59,9 @@ var UpdateClusterNodeGroupPayload = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new UpdateClusterNodeGroupPayload();
+        if (data.hasOwnProperty('firewall_ids')) {
+          obj['firewall_ids'] = _ApiClient["default"].convertToType(data['firewall_ids'], ['Number']);
+        }
         if (data.hasOwnProperty('max_count')) {
           obj['max_count'] = _ApiClient["default"].convertToType(data['max_count'], 'Number');
         }
@@ -77,10 +80,20 @@ var UpdateClusterNodeGroupPayload = /*#__PURE__*/function () {
   }, {
     key: "validateJSON",
     value: function validateJSON(data) {
+      // ensure the json data is an array
+      if (!Array.isArray(data['firewall_ids'])) {
+        throw new Error("Expected the field `firewall_ids` to be an array in the JSON data but got " + data['firewall_ids']);
+      }
       return true;
     }
   }]);
 }();
+/**
+ * IDs of the firewalls to apply to all nodes in this node group
+ * @member {Array.<Number>} firewall_ids
+ */
+UpdateClusterNodeGroupPayload.prototype['firewall_ids'] = undefined;
+
 /**
  * @member {Number} max_count
  */

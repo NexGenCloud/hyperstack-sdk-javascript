@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.50.2-alpha
+* @version v1.51.0-alpha
 */
 var AuthApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -102,7 +102,7 @@ var AuthApi = exports["default"] = /*#__PURE__*/function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _CommonResponseModel["default"];
-      return this.apiClient.callApi('/auth/me/mfa/disable', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/auth/me/mfa/disable', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
