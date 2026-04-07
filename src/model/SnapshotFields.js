@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnapshotFields model module.
  * @module model/SnapshotFields
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class SnapshotFields {
     /**

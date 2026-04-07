@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The RegionFields model module.
  * @module model/RegionFields
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 var RegionFields = /*#__PURE__*/function () {
   /**
@@ -64,6 +64,9 @@ var RegionFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('description')) {
           obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
+        }
+        if (data.hasOwnProperty('features')) {
+          obj['features'] = _ApiClient["default"].convertToType(data['features'], Object);
         }
         if (data.hasOwnProperty('green_status')) {
           obj['green_status'] = _ApiClient["default"].convertToType(data['green_status'], 'String');
@@ -115,6 +118,11 @@ RegionFields.prototype['country'] = undefined;
  * @member {String} description
  */
 RegionFields.prototype['description'] = undefined;
+
+/**
+ * @member {Object} features
+ */
+RegionFields.prototype['features'] = undefined;
 
 /**
  * Green status

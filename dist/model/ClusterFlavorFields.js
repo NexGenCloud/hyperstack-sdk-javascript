@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ClusterFlavorFields model module.
  * @module model/ClusterFlavorFields
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 var ClusterFlavorFields = /*#__PURE__*/function () {
   /**

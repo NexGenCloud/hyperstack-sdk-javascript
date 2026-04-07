@@ -17,7 +17,7 @@ import PolicyPermissionFields from './PolicyPermissionFields';
 /**
  * The PolicyFields model module.
  * @module model/PolicyFields
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class PolicyFields {
     /**

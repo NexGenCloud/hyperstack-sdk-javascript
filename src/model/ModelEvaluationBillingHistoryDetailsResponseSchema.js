@@ -17,7 +17,7 @@ import BillingHistoryModelEvalutationDetails from './BillingHistoryModelEvalutat
 /**
  * The ModelEvaluationBillingHistoryDetailsResponseSchema model module.
  * @module model/ModelEvaluationBillingHistoryDetailsResponseSchema
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class ModelEvaluationBillingHistoryDetailsResponseSchema {
     /**

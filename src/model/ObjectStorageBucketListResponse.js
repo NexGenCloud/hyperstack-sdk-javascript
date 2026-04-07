@@ -17,7 +17,7 @@ import ObjectStorageBucketResponse from './ObjectStorageBucketResponse';
 /**
  * The ObjectStorageBucketListResponse model module.
  * @module model/ObjectStorageBucketListResponse
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class ObjectStorageBucketListResponse {
     /**

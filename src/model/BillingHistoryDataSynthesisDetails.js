@@ -18,7 +18,7 @@ import Pagination from './Pagination';
 /**
  * The BillingHistoryDataSynthesisDetails model module.
  * @module model/BillingHistoryDataSynthesisDetails
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class BillingHistoryDataSynthesisDetails {
     /**

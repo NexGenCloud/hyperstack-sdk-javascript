@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The BetaAccessStatusItem model module.
  * @module model/BetaAccessStatusItem
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 var BetaAccessStatusItem = /*#__PURE__*/function () {
   /**

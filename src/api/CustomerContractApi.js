@@ -21,7 +21,7 @@ import GetCustomerContractsListResponseModel from '../model/GetCustomerContracts
 /**
 * CustomerContract service.
 * @module api/CustomerContractApi
-* @version v1.51.0-alpha
+* @version v1.51.1-alpha
 */
 export default class CustomerContractApi {
 

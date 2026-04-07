@@ -17,7 +17,7 @@ import AuthUserFields from './AuthUserFields';
 /**
  * The AuthUserInfoResponseModel model module.
  * @module model/AuthUserInfoResponseModel
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class AuthUserInfoResponseModel {
     /**

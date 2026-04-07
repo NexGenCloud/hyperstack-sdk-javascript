@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The GraphDatetimeValueModel model module.
  * @module model/GraphDatetimeValueModel
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 var GraphDatetimeValueModel = /*#__PURE__*/function () {
   /**

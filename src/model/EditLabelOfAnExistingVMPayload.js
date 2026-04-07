@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EditLabelOfAnExistingVMPayload model module.
  * @module model/EditLabelOfAnExistingVMPayload
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class EditLabelOfAnExistingVMPayload {
     /**

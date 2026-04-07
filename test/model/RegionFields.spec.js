@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property features (base name: "features")', function() {
+      // uncomment below and update the code to test the property features
+      //var instance = new HyperstackApi.RegionFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property greenStatus (base name: "green_status")', function() {
       // uncomment below and update the code to test the property greenStatus
       //var instance = new HyperstackApi.RegionFields();

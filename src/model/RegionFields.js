@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegionFields model module.
  * @module model/RegionFields
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class RegionFields {
     /**
@@ -52,6 +52,9 @@ class RegionFields {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('features')) {
+                obj['features'] = ApiClient.convertToType(data['features'], Object);
             }
             if (data.hasOwnProperty('green_status')) {
                 obj['green_status'] = ApiClient.convertToType(data['green_status'], 'String');
@@ -106,6 +109,11 @@ RegionFields.prototype['country'] = undefined;
  * @member {String} description
  */
 RegionFields.prototype['description'] = undefined;
+
+/**
+ * @member {Object} features
+ */
+RegionFields.prototype['features'] = undefined;
 
 /**
  * Green status

@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Keypairs model module.
  * @module model/Keypairs
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 var Keypairs = /*#__PURE__*/function () {
   /**

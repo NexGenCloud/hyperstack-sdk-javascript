@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **country** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
+**features** | **Object** |  | [optional] 
 **greenStatus** | **String** | Green status | [optional] 
 **id** | **Number** |  | [optional] 
 **name** | **String** |  | [optional] 

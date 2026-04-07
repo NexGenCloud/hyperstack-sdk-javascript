@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportKeypairPayload model module.
  * @module model/ImportKeypairPayload
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class ImportKeypairPayload {
     /**

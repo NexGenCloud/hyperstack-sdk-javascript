@@ -409,7 +409,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.51.0-alpha
+* @version v1.51.1-alpha
 */
 export {
     /**

@@ -17,7 +17,7 @@ import SubResourcesCostsResponseModel from './SubResourcesCostsResponseModel';
 /**
  * The SubResourcesGraphResponseModel model module.
  * @module model/SubResourcesGraphResponseModel
- * @version v1.51.0-alpha
+ * @version v1.51.1-alpha
  */
 class SubResourcesGraphResponseModel {
     /**
