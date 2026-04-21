@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The RemoveMemberFromOrganizationResponseModel model module.
  * @module model/RemoveMemberFromOrganizationResponseModel
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 var RemoveMemberFromOrganizationResponseModel = /*#__PURE__*/function () {
   /**

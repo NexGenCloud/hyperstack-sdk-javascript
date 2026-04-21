@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecurityGroupRuleFields model module.
  * @module model/SecurityGroupRuleFields
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class SecurityGroupRuleFields {
     /**

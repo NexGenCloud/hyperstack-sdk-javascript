@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompliancePayload model module.
  * @module model/CompliancePayload
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class CompliancePayload {
     /**

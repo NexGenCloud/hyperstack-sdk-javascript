@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Health service.
 * @module api/HealthApi
-* @version v1.51.1-alpha
+* @version v1.51.2-alpha
 */
 var HealthApi = exports["default"] = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResourceLevelBillingDetailsAttributes model module.
  * @module model/ResourceLevelBillingDetailsAttributes
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class ResourceLevelBillingDetailsAttributes {
     /**

@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The PaymentInitiateResponse model module.
  * @module model/PaymentInitiateResponse
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 var PaymentInitiateResponse = /*#__PURE__*/function () {
   /**

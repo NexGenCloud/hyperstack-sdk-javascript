@@ -17,7 +17,7 @@ import RbacRoleFields from './RbacRoleFields';
 /**
  * The GetRbacRolesResponseModel model module.
  * @module model/GetRbacRolesResponseModel
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class GetRbacRolesResponseModel {
     /**

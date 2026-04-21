@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ContractDiscountPlanFields model module.
  * @module model/ContractDiscountPlanFields
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 var ContractDiscountPlanFields = /*#__PURE__*/function () {
   /**

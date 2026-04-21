@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecondaryColor model module.
  * @module model/SecondaryColor
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class SecondaryColor {
     /**

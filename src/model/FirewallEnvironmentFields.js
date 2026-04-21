@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FirewallEnvironmentFields model module.
  * @module model/FirewallEnvironmentFields
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class FirewallEnvironmentFields {
     /**

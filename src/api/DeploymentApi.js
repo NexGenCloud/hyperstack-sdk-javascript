@@ -22,7 +22,7 @@ import StartDeploymentPayload from '../model/StartDeploymentPayload';
 /**
 * Deployment service.
 * @module api/DeploymentApi
-* @version v1.51.1-alpha
+* @version v1.51.2-alpha
 */
 export default class DeploymentApi {
 

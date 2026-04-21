@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GraphDatetimeValueModel model module.
  * @module model/GraphDatetimeValueModel
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class GraphDatetimeValueModel {
     /**

@@ -21,7 +21,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * BetaAccess service.
 * @module api/BetaAccessApi
-* @version v1.51.1-alpha
+* @version v1.51.2-alpha
 */
 export default class BetaAccessApi {
 

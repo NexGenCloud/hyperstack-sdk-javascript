@@ -20,7 +20,7 @@ import VoucherRedeemResponseSchema from '../model/VoucherRedeemResponseSchema';
 /**
 * Vouchers service.
 * @module api/VouchersApi
-* @version v1.51.1-alpha
+* @version v1.51.2-alpha
 */
 export default class VouchersApi {
 

@@ -19,7 +19,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * FIPExclusions service.
 * @module api/FIPExclusionsApi
-* @version v1.51.1-alpha
+* @version v1.51.2-alpha
 */
 export default class FIPExclusionsApi {
 

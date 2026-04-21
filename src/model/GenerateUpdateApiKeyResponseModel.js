@@ -17,7 +17,7 @@ import ApiKeyFields from './ApiKeyFields';
 /**
  * The GenerateUpdateApiKeyResponseModel model module.
  * @module model/GenerateUpdateApiKeyResponseModel
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class GenerateUpdateApiKeyResponseModel {
     /**

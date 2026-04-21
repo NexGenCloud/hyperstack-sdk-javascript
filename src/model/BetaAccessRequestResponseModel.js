@@ -17,7 +17,7 @@ import BetaAccessRequestFields from './BetaAccessRequestFields';
 /**
  * The BetaAccessRequestResponseModel model module.
  * @module model/BetaAccessRequestResponseModel
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class BetaAccessRequestResponseModel {
     /**

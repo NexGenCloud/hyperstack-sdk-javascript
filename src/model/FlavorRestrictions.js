@@ -17,7 +17,7 @@ import CompatibleFlavor from './CompatibleFlavor';
 /**
  * The FlavorRestrictions model module.
  * @module model/FlavorRestrictions
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class FlavorRestrictions {
     /**

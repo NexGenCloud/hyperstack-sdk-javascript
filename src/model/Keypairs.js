@@ -17,7 +17,7 @@ import KeypairFields from './KeypairFields';
 /**
  * The Keypairs model module.
  * @module model/Keypairs
- * @version v1.51.1-alpha
+ * @version v1.51.2-alpha
  */
 class Keypairs {
     /**
