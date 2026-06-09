@@ -17,7 +17,7 @@ import FirewallDetailFields from './FirewallDetailFields';
 /**
  * The FirewallDetailResponse model module.
  * @module model/FirewallDetailResponse
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class FirewallDetailResponse {
     /**

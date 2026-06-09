@@ -66,6 +66,11 @@ import ComplianceFields from './model/ComplianceFields';
 import ComplianceModelFields from './model/ComplianceModelFields';
 import CompliancePayload from './model/CompliancePayload';
 import ComplianceResponse from './model/ComplianceResponse';
+import ConsentActionResponse from './model/ConsentActionResponse';
+import ConsentBlock from './model/ConsentBlock';
+import ConsentEventsResponse from './model/ConsentEventsResponse';
+import ConsentTemplate from './model/ConsentTemplate';
+import ConsentTemplatesResponse from './model/ConsentTemplatesResponse';
 import ContainerOverviewFields from './model/ContainerOverviewFields';
 import Contract from './model/Contract';
 import ContractDiscountPlanFields from './model/ContractDiscountPlanFields';
@@ -225,6 +230,7 @@ import RbacRoleDetailResponseModel from './model/RbacRoleDetailResponseModel';
 import RbacRoleDetailResponseModelFixed from './model/RbacRoleDetailResponseModelFixed';
 import RbacRoleField from './model/RbacRoleField';
 import RbacRoleFields from './model/RbacRoleFields';
+import RecordConsentRequest from './model/RecordConsentRequest';
 import RedeemVoucherPayload from './model/RedeemVoucherPayload';
 import RegionFields from './model/RegionFields';
 import Regions from './model/Regions';
@@ -296,6 +302,7 @@ import Templates from './model/Templates';
 import TokenBasedBillingHistoryResponse from './model/TokenBasedBillingHistoryResponse';
 import URIs from './model/URIs';
 import UpdateClusterNodeGroupPayload from './model/UpdateClusterNodeGroupPayload';
+import UpdateConsentRequest from './model/UpdateConsentRequest';
 import UpdateEnvironment from './model/UpdateEnvironment';
 import UpdateKeypairName from './model/UpdateKeypairName';
 import UpdateKeypairNameResponse from './model/UpdateKeypairNameResponse';
@@ -305,6 +312,9 @@ import UpdateTemplate from './model/UpdateTemplate';
 import UpdateVolumeAttachmentPayload from './model/UpdateVolumeAttachmentPayload';
 import UpdateVolumePayload from './model/UpdateVolumePayload';
 import UpdateVolumeResponse from './model/UpdateVolumeResponse';
+import UserConsent from './model/UserConsent';
+import UserConsentEvent from './model/UserConsentEvent';
+import UserConsentsResponse from './model/UserConsentsResponse';
 import UserDefaultChoiceForUserFields from './model/UserDefaultChoiceForUserFields';
 import UserDefaultChoicesForUserResponse from './model/UserDefaultChoicesForUserResponse';
 import UserInfoPostPayload from './model/UserInfoPostPayload';
@@ -370,6 +380,8 @@ import SnapshotsApi from './api/SnapshotsApi';
 import StockApi from './api/StockApi';
 import TemplateApi from './api/TemplateApi';
 import UserApi from './api/UserApi';
+import UserConsentApi from './api/UserConsentApi';
+import UserConsentEventsApi from './api/UserConsentEventsApi';
 import UserDetailChoiceApi from './api/UserDetailChoiceApi';
 import UserPermissionApi from './api/UserPermissionApi';
 import VirtualMachineApi from './api/VirtualMachineApi';
@@ -409,7 +421,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.51.2-alpha
+* @version v1.52.0-alpha
 */
 export {
     /**
@@ -735,6 +747,36 @@ export {
      * @property {module:model/ComplianceResponse}
      */
     ComplianceResponse,
+
+    /**
+     * The ConsentActionResponse model constructor.
+     * @property {module:model/ConsentActionResponse}
+     */
+    ConsentActionResponse,
+
+    /**
+     * The ConsentBlock model constructor.
+     * @property {module:model/ConsentBlock}
+     */
+    ConsentBlock,
+
+    /**
+     * The ConsentEventsResponse model constructor.
+     * @property {module:model/ConsentEventsResponse}
+     */
+    ConsentEventsResponse,
+
+    /**
+     * The ConsentTemplate model constructor.
+     * @property {module:model/ConsentTemplate}
+     */
+    ConsentTemplate,
+
+    /**
+     * The ConsentTemplatesResponse model constructor.
+     * @property {module:model/ConsentTemplatesResponse}
+     */
+    ConsentTemplatesResponse,
 
     /**
      * The ContainerOverviewFields model constructor.
@@ -1691,6 +1733,12 @@ export {
     RbacRoleFields,
 
     /**
+     * The RecordConsentRequest model constructor.
+     * @property {module:model/RecordConsentRequest}
+     */
+    RecordConsentRequest,
+
+    /**
      * The RedeemVoucherPayload model constructor.
      * @property {module:model/RedeemVoucherPayload}
      */
@@ -2117,6 +2165,12 @@ export {
     UpdateClusterNodeGroupPayload,
 
     /**
+     * The UpdateConsentRequest model constructor.
+     * @property {module:model/UpdateConsentRequest}
+     */
+    UpdateConsentRequest,
+
+    /**
      * The UpdateEnvironment model constructor.
      * @property {module:model/UpdateEnvironment}
      */
@@ -2169,6 +2223,24 @@ export {
      * @property {module:model/UpdateVolumeResponse}
      */
     UpdateVolumeResponse,
+
+    /**
+     * The UserConsent model constructor.
+     * @property {module:model/UserConsent}
+     */
+    UserConsent,
+
+    /**
+     * The UserConsentEvent model constructor.
+     * @property {module:model/UserConsentEvent}
+     */
+    UserConsentEvent,
+
+    /**
+     * The UserConsentsResponse model constructor.
+     * @property {module:model/UserConsentsResponse}
+     */
+    UserConsentsResponse,
 
     /**
      * The UserDefaultChoiceForUserFields model constructor.
@@ -2559,6 +2631,18 @@ export {
     * @property {module:api/UserApi}
     */
     UserApi,
+
+    /**
+    * The UserConsentApi service constructor.
+    * @property {module:api/UserConsentApi}
+    */
+    UserConsentApi,
+
+    /**
+    * The UserConsentEventsApi service constructor.
+    * @property {module:api/UserConsentEventsApi}
+    */
+    UserConsentEventsApi,
 
     /**
     * The UserDetailChoiceApi service constructor.

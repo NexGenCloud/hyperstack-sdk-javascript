@@ -19,7 +19,7 @@ import SecurityRulesProtocolFields from '../model/SecurityRulesProtocolFields';
 /**
 * SecurityRules service.
 * @module api/SecurityRulesApi
-* @version v1.51.2-alpha
+* @version v1.52.0-alpha
 */
 export default class SecurityRulesApi {
 

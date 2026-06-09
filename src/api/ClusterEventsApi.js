@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * ClusterEvents service.
 * @module api/ClusterEventsApi
-* @version v1.51.2-alpha
+* @version v1.52.0-alpha
 */
 export default class ClusterEventsApi {
 

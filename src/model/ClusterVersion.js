@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClusterVersion model module.
  * @module model/ClusterVersion
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class ClusterVersion {
     /**

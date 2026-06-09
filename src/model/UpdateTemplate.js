@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTemplate model module.
  * @module model/UpdateTemplate
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class UpdateTemplate {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrganizationThresholdFields model module.
  * @module model/OrganizationThresholdFields
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class OrganizationThresholdFields {
     /**

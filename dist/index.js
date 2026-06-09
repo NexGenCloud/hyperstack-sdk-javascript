@@ -405,6 +405,36 @@ Object.defineProperty(exports, "ComplianceResponse", {
     return _ComplianceResponse["default"];
   }
 });
+Object.defineProperty(exports, "ConsentActionResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ConsentActionResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ConsentBlock", {
+  enumerable: true,
+  get: function get() {
+    return _ConsentBlock["default"];
+  }
+});
+Object.defineProperty(exports, "ConsentEventsResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ConsentEventsResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ConsentTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ConsentTemplate["default"];
+  }
+});
+Object.defineProperty(exports, "ConsentTemplatesResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ConsentTemplatesResponse["default"];
+  }
+});
 Object.defineProperty(exports, "ContainerOverviewFields", {
   enumerable: true,
   get: function get() {
@@ -1497,6 +1527,12 @@ Object.defineProperty(exports, "RbacRoleFields", {
     return _RbacRoleFields["default"];
   }
 });
+Object.defineProperty(exports, "RecordConsentRequest", {
+  enumerable: true,
+  get: function get() {
+    return _RecordConsentRequest["default"];
+  }
+});
 Object.defineProperty(exports, "RedeemVoucherPayload", {
   enumerable: true,
   get: function get() {
@@ -1965,6 +2001,12 @@ Object.defineProperty(exports, "UpdateClusterNodeGroupPayload", {
     return _UpdateClusterNodeGroupPayload["default"];
   }
 });
+Object.defineProperty(exports, "UpdateConsentRequest", {
+  enumerable: true,
+  get: function get() {
+    return _UpdateConsentRequest["default"];
+  }
+});
 Object.defineProperty(exports, "UpdateEnvironment", {
   enumerable: true,
   get: function get() {
@@ -2023,6 +2065,36 @@ Object.defineProperty(exports, "UserApi", {
   enumerable: true,
   get: function get() {
     return _UserApi["default"];
+  }
+});
+Object.defineProperty(exports, "UserConsent", {
+  enumerable: true,
+  get: function get() {
+    return _UserConsent["default"];
+  }
+});
+Object.defineProperty(exports, "UserConsentApi", {
+  enumerable: true,
+  get: function get() {
+    return _UserConsentApi["default"];
+  }
+});
+Object.defineProperty(exports, "UserConsentEvent", {
+  enumerable: true,
+  get: function get() {
+    return _UserConsentEvent["default"];
+  }
+});
+Object.defineProperty(exports, "UserConsentEventsApi", {
+  enumerable: true,
+  get: function get() {
+    return _UserConsentEventsApi["default"];
+  }
+});
+Object.defineProperty(exports, "UserConsentsResponse", {
+  enumerable: true,
+  get: function get() {
+    return _UserConsentsResponse["default"];
   }
 });
 Object.defineProperty(exports, "UserDefaultChoiceForUserFields", {
@@ -2253,6 +2325,11 @@ var _ComplianceFields = _interopRequireDefault(require("./model/ComplianceFields
 var _ComplianceModelFields = _interopRequireDefault(require("./model/ComplianceModelFields"));
 var _CompliancePayload = _interopRequireDefault(require("./model/CompliancePayload"));
 var _ComplianceResponse = _interopRequireDefault(require("./model/ComplianceResponse"));
+var _ConsentActionResponse = _interopRequireDefault(require("./model/ConsentActionResponse"));
+var _ConsentBlock = _interopRequireDefault(require("./model/ConsentBlock"));
+var _ConsentEventsResponse = _interopRequireDefault(require("./model/ConsentEventsResponse"));
+var _ConsentTemplate = _interopRequireDefault(require("./model/ConsentTemplate"));
+var _ConsentTemplatesResponse = _interopRequireDefault(require("./model/ConsentTemplatesResponse"));
 var _ContainerOverviewFields = _interopRequireDefault(require("./model/ContainerOverviewFields"));
 var _Contract = _interopRequireDefault(require("./model/Contract"));
 var _ContractDiscountPlanFields = _interopRequireDefault(require("./model/ContractDiscountPlanFields"));
@@ -2412,6 +2489,7 @@ var _RbacRoleDetailResponseModel = _interopRequireDefault(require("./model/RbacR
 var _RbacRoleDetailResponseModelFixed = _interopRequireDefault(require("./model/RbacRoleDetailResponseModelFixed"));
 var _RbacRoleField = _interopRequireDefault(require("./model/RbacRoleField"));
 var _RbacRoleFields = _interopRequireDefault(require("./model/RbacRoleFields"));
+var _RecordConsentRequest = _interopRequireDefault(require("./model/RecordConsentRequest"));
 var _RedeemVoucherPayload = _interopRequireDefault(require("./model/RedeemVoucherPayload"));
 var _RegionFields = _interopRequireDefault(require("./model/RegionFields"));
 var _Regions = _interopRequireDefault(require("./model/Regions"));
@@ -2483,6 +2561,7 @@ var _Templates = _interopRequireDefault(require("./model/Templates"));
 var _TokenBasedBillingHistoryResponse = _interopRequireDefault(require("./model/TokenBasedBillingHistoryResponse"));
 var _URIs = _interopRequireDefault(require("./model/URIs"));
 var _UpdateClusterNodeGroupPayload = _interopRequireDefault(require("./model/UpdateClusterNodeGroupPayload"));
+var _UpdateConsentRequest = _interopRequireDefault(require("./model/UpdateConsentRequest"));
 var _UpdateEnvironment = _interopRequireDefault(require("./model/UpdateEnvironment"));
 var _UpdateKeypairName = _interopRequireDefault(require("./model/UpdateKeypairName"));
 var _UpdateKeypairNameResponse = _interopRequireDefault(require("./model/UpdateKeypairNameResponse"));
@@ -2492,6 +2571,9 @@ var _UpdateTemplate = _interopRequireDefault(require("./model/UpdateTemplate"));
 var _UpdateVolumeAttachmentPayload = _interopRequireDefault(require("./model/UpdateVolumeAttachmentPayload"));
 var _UpdateVolumePayload = _interopRequireDefault(require("./model/UpdateVolumePayload"));
 var _UpdateVolumeResponse = _interopRequireDefault(require("./model/UpdateVolumeResponse"));
+var _UserConsent = _interopRequireDefault(require("./model/UserConsent"));
+var _UserConsentEvent = _interopRequireDefault(require("./model/UserConsentEvent"));
+var _UserConsentsResponse = _interopRequireDefault(require("./model/UserConsentsResponse"));
 var _UserDefaultChoiceForUserFields = _interopRequireDefault(require("./model/UserDefaultChoiceForUserFields"));
 var _UserDefaultChoicesForUserResponse = _interopRequireDefault(require("./model/UserDefaultChoicesForUserResponse"));
 var _UserInfoPostPayload = _interopRequireDefault(require("./model/UserInfoPostPayload"));
@@ -2557,6 +2639,8 @@ var _SnapshotsApi = _interopRequireDefault(require("./api/SnapshotsApi"));
 var _StockApi = _interopRequireDefault(require("./api/StockApi"));
 var _TemplateApi = _interopRequireDefault(require("./api/TemplateApi"));
 var _UserApi = _interopRequireDefault(require("./api/UserApi"));
+var _UserConsentApi = _interopRequireDefault(require("./api/UserConsentApi"));
+var _UserConsentEventsApi = _interopRequireDefault(require("./api/UserConsentEventsApi"));
 var _UserDetailChoiceApi = _interopRequireDefault(require("./api/UserDetailChoiceApi"));
 var _UserPermissionApi = _interopRequireDefault(require("./api/UserPermissionApi"));
 var _VirtualMachineApi = _interopRequireDefault(require("./api/VirtualMachineApi"));

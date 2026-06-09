@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Colors model module.
  * @module model/Colors
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 var Colors = /*#__PURE__*/function () {
   /**

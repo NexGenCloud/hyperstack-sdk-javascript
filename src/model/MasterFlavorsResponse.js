@@ -17,7 +17,7 @@ import ClusterFlavorFields from './ClusterFlavorFields';
 /**
  * The MasterFlavorsResponse model module.
  * @module model/MasterFlavorsResponse
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class MasterFlavorsResponse {
     /**

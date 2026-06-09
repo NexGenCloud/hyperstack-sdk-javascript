@@ -17,7 +17,7 @@ import NewConfigurationsResponse from './NewConfigurationsResponse';
 /**
  * The NewModelResponse model module.
  * @module model/NewModelResponse
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class NewModelResponse {
     /**

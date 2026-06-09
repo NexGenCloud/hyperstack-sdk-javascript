@@ -17,7 +17,7 @@ import ClusterFields from './ClusterFields';
 /**
  * The ManualReconciliationModel model module.
  * @module model/ManualReconciliationModel
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class ManualReconciliationModel {
     /**

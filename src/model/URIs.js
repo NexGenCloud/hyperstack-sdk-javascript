@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The URIs model module.
  * @module model/URIs
- * @version v1.51.2-alpha
+ * @version v1.52.0-alpha
  */
 class URIs {
     /**
