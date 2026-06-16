@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SubscribeOrUnsubscribeUpdatePayload model module.
  * @module model/SubscribeOrUnsubscribeUpdatePayload
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var SubscribeOrUnsubscribeUpdatePayload = /*#__PURE__*/function () {
   /**

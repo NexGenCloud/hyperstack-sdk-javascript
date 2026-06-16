@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 var _Attributes = _interopRequireDefault(require("./Attributes"));
+var _Metrics = _interopRequireDefault(require("./Metrics"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -27,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The BillingHistory model module.
  * @module model/BillingHistory
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var BillingHistory = /*#__PURE__*/function () {
   /**
@@ -64,7 +65,7 @@ var BillingHistory = /*#__PURE__*/function () {
           obj['attributes'] = _Attributes["default"].constructFromObject(data['attributes']);
         }
         if (data.hasOwnProperty('metrics')) {
-          obj['metrics'] = _ApiClient["default"].convertToType(data['metrics'], Object);
+          obj['metrics'] = _Metrics["default"].constructFromObject(data['metrics']);
         }
       }
       return obj;
@@ -83,6 +84,11 @@ var BillingHistory = /*#__PURE__*/function () {
         // data not null
         _Attributes["default"].validateJSON(data['attributes']);
       }
+      // validate the optional field `metrics`
+      if (data['metrics']) {
+        // data not null
+        _Metrics["default"].validateJSON(data['metrics']);
+      }
       return true;
     }
   }]);
@@ -93,7 +99,7 @@ var BillingHistory = /*#__PURE__*/function () {
 BillingHistory.prototype['attributes'] = undefined;
 
 /**
- * @member {Object} metrics
+ * @member {module:model/Metrics} metrics
  */
 BillingHistory.prototype['metrics'] = undefined;
 var _default = exports["default"] = BillingHistory;

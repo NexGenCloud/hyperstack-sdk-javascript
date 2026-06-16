@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The RecordConsentRequest model module.
  * @module model/RecordConsentRequest
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var RecordConsentRequest = /*#__PURE__*/function () {
   /**

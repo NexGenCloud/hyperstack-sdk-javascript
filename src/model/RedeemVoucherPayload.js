@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedeemVoucherPayload model module.
  * @module model/RedeemVoucherPayload
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class RedeemVoucherPayload {
     /**

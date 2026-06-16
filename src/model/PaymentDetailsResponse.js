@@ -17,7 +17,7 @@ import PaymentDetailsFields from './PaymentDetailsFields';
 /**
  * The PaymentDetailsResponse model module.
  * @module model/PaymentDetailsResponse
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class PaymentDetailsResponse {
     /**
@@ -49,7 +49,7 @@ class PaymentDetailsResponse {
             obj = obj || new PaymentDetailsResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = PaymentDetailsFields.constructFromObject(data['data']);
+                obj['data'] = ApiClient.convertToType(data['data'], [PaymentDetailsFields]);
             }
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -67,9 +67,15 @@ class PaymentDetailsResponse {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PaymentDetailsResponse</code>.
      */
     static validateJSON(data) {
-        // validate the optional field `data`
         if (data['data']) { // data not null
-          PaymentDetailsFields.validateJSON(data['data']);
+            // ensure the json data is an array
+            if (!Array.isArray(data['data'])) {
+                throw new Error("Expected the field `data` to be an array in the JSON data but got " + data['data']);
+            }
+            // validate the optional field `data` (array)
+            for (const item of data['data']) {
+                PaymentDetailsFields.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
@@ -85,7 +91,7 @@ class PaymentDetailsResponse {
 
 
 /**
- * @member {module:model/PaymentDetailsFields} data
+ * @member {Array.<module:model/PaymentDetailsFields>} data
  */
 PaymentDetailsResponse.prototype['data'] = undefined;
 

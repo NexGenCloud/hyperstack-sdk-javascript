@@ -30,6 +30,9 @@ import Attributes from './model/Attributes';
 import AuthGetTokenResponseModel from './model/AuthGetTokenResponseModel';
 import AuthUserFields from './model/AuthUserFields';
 import AuthUserInfoResponseModel from './model/AuthUserInfoResponseModel';
+import AutoTopup from './model/AutoTopup';
+import AutoTopupErrorResponse from './model/AutoTopupErrorResponse';
+import AutoTopupStatusSchema from './model/AutoTopupStatusSchema';
 import BetaAccessRequestFields from './model/BetaAccessRequestFields';
 import BetaAccessRequestPayload from './model/BetaAccessRequestPayload';
 import BetaAccessRequestResponseModel from './model/BetaAccessRequestResponseModel';
@@ -38,6 +41,7 @@ import BetaAccessStatusResponseModel from './model/BetaAccessStatusResponseModel
 import BillingHistory from './model/BillingHistory';
 import BillingHistoryDataSynthesisDetails from './model/BillingHistoryDataSynthesisDetails';
 import BillingHistoryFineTuning from './model/BillingHistoryFineTuning';
+import BillingHistoryImageGenerationDetails from './model/BillingHistoryImageGenerationDetails';
 import BillingHistoryModelEvalutationDetails from './model/BillingHistoryModelEvalutationDetails';
 import BillingHistoryServerlessInference from './model/BillingHistoryServerlessInference';
 import BillingHistoryServerlessInferenceDetails from './model/BillingHistoryServerlessInferenceDetails';
@@ -77,6 +81,8 @@ import ContractDiscountPlanFields from './model/ContractDiscountPlanFields';
 import ContractGPUAllocationGraphResponse from './model/ContractGPUAllocationGraphResponse';
 import ContractInstanceFields from './model/ContractInstanceFields';
 import ContractInstancesResponse from './model/ContractInstancesResponse';
+import CreateAutoTopupPayload from './model/CreateAutoTopupPayload';
+import CreateAutoTopupResponse from './model/CreateAutoTopupResponse';
 import CreateClusterNodeFields from './model/CreateClusterNodeFields';
 import CreateClusterNodeGroupPayload from './model/CreateClusterNodeGroupPayload';
 import CreateClusterPayload from './model/CreateClusterPayload';
@@ -105,6 +111,7 @@ import DeploymentFieldsForStartDeployments from './model/DeploymentFieldsForStar
 import Deployments from './model/Deployments';
 import DetachVolumes from './model/DetachVolumes';
 import DetachVolumesPayload from './model/DetachVolumesPayload';
+import DisableAutoTopupResponse from './model/DisableAutoTopupResponse';
 import EditLabelOfAnExistingVMPayload from './model/EditLabelOfAnExistingVMPayload';
 import Environment from './model/Environment';
 import EnvironmentFeatures from './model/EnvironmentFeatures';
@@ -133,6 +140,7 @@ import GPURegionFields from './model/GPURegionFields';
 import GenerateUpdateApiKeyPayload from './model/GenerateUpdateApiKeyPayload';
 import GenerateUpdateApiKeyResponseModel from './model/GenerateUpdateApiKeyResponseModel';
 import GetApiKeysResponseModel from './model/GetApiKeysResponseModel';
+import GetAutoTopupResponse from './model/GetAutoTopupResponse';
 import GetCreditAndThresholdInfo from './model/GetCreditAndThresholdInfo';
 import GetCreditAndThresholdInfoInResponse from './model/GetCreditAndThresholdInfoInResponse';
 import GetCustomerContractsListResponseModel from './model/GetCustomerContractsListResponseModel';
@@ -146,6 +154,7 @@ import GetUserPermissionsResponseModel from './model/GetUserPermissionsResponseM
 import GraphDatetimeValueModel from './model/GraphDatetimeValueModel';
 import Image from './model/Image';
 import ImageFields from './model/ImageFields';
+import ImageGenerationBillingHistoryDetailsResponseSchema from './model/ImageGenerationBillingHistoryDetailsResponseSchema';
 import ImageGetResponse from './model/ImageGetResponse';
 import Images from './model/Images';
 import ImportKeypairPayload from './model/ImportKeypairPayload';
@@ -178,6 +187,7 @@ import MFAStatusResponse from './model/MFAStatusResponse';
 import ManualReconciliationModel from './model/ManualReconciliationModel';
 import MasterFlavorsResponse from './model/MasterFlavorsResponse';
 import MetricItemFields from './model/MetricItemFields';
+import Metrics from './model/Metrics';
 import MetricsFields from './model/MetricsFields';
 import ModelEvaluationBillingHistoryDetailsResponseSchema from './model/ModelEvaluationBillingHistoryDetailsResponseSchema';
 import NameAvailableModel from './model/NameAvailableModel';
@@ -301,6 +311,8 @@ import TemplateFields from './model/TemplateFields';
 import Templates from './model/Templates';
 import TokenBasedBillingHistoryResponse from './model/TokenBasedBillingHistoryResponse';
 import URIs from './model/URIs';
+import UpdateAutoTopupPayload from './model/UpdateAutoTopupPayload';
+import UpdateAutoTopupResponse from './model/UpdateAutoTopupResponse';
 import UpdateClusterNodeGroupPayload from './model/UpdateClusterNodeGroupPayload';
 import UpdateConsentRequest from './model/UpdateConsentRequest';
 import UpdateEnvironment from './model/UpdateEnvironment';
@@ -341,6 +353,7 @@ import AliveApi from './api/AliveApi';
 import ApiKeyApi from './api/ApiKeyApi';
 import AssigningMemberRoleApi from './api/AssigningMemberRoleApi';
 import AuthApi from './api/AuthApi';
+import AutoTopupApi from './api/AutoTopupApi';
 import BetaAccessApi from './api/BetaAccessApi';
 import BillingApi from './api/BillingApi';
 import BucketsApi from './api/BucketsApi';
@@ -421,7 +434,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.52.0-alpha
+* @version v1.52.3-alpha
 */
 export {
     /**
@@ -533,6 +546,24 @@ export {
     AuthUserInfoResponseModel,
 
     /**
+     * The AutoTopup model constructor.
+     * @property {module:model/AutoTopup}
+     */
+    AutoTopup,
+
+    /**
+     * The AutoTopupErrorResponse model constructor.
+     * @property {module:model/AutoTopupErrorResponse}
+     */
+    AutoTopupErrorResponse,
+
+    /**
+     * The AutoTopupStatusSchema model constructor.
+     * @property {module:model/AutoTopupStatusSchema}
+     */
+    AutoTopupStatusSchema,
+
+    /**
      * The BetaAccessRequestFields model constructor.
      * @property {module:model/BetaAccessRequestFields}
      */
@@ -579,6 +610,12 @@ export {
      * @property {module:model/BillingHistoryFineTuning}
      */
     BillingHistoryFineTuning,
+
+    /**
+     * The BillingHistoryImageGenerationDetails model constructor.
+     * @property {module:model/BillingHistoryImageGenerationDetails}
+     */
+    BillingHistoryImageGenerationDetails,
 
     /**
      * The BillingHistoryModelEvalutationDetails model constructor.
@@ -815,6 +852,18 @@ export {
     ContractInstancesResponse,
 
     /**
+     * The CreateAutoTopupPayload model constructor.
+     * @property {module:model/CreateAutoTopupPayload}
+     */
+    CreateAutoTopupPayload,
+
+    /**
+     * The CreateAutoTopupResponse model constructor.
+     * @property {module:model/CreateAutoTopupResponse}
+     */
+    CreateAutoTopupResponse,
+
+    /**
      * The CreateClusterNodeFields model constructor.
      * @property {module:model/CreateClusterNodeFields}
      */
@@ -981,6 +1030,12 @@ export {
      * @property {module:model/DetachVolumesPayload}
      */
     DetachVolumesPayload,
+
+    /**
+     * The DisableAutoTopupResponse model constructor.
+     * @property {module:model/DisableAutoTopupResponse}
+     */
+    DisableAutoTopupResponse,
 
     /**
      * The EditLabelOfAnExistingVMPayload model constructor.
@@ -1151,6 +1206,12 @@ export {
     GetApiKeysResponseModel,
 
     /**
+     * The GetAutoTopupResponse model constructor.
+     * @property {module:model/GetAutoTopupResponse}
+     */
+    GetAutoTopupResponse,
+
+    /**
      * The GetCreditAndThresholdInfo model constructor.
      * @property {module:model/GetCreditAndThresholdInfo}
      */
@@ -1227,6 +1288,12 @@ export {
      * @property {module:model/ImageFields}
      */
     ImageFields,
+
+    /**
+     * The ImageGenerationBillingHistoryDetailsResponseSchema model constructor.
+     * @property {module:model/ImageGenerationBillingHistoryDetailsResponseSchema}
+     */
+    ImageGenerationBillingHistoryDetailsResponseSchema,
 
     /**
      * The ImageGetResponse model constructor.
@@ -1419,6 +1486,12 @@ export {
      * @property {module:model/MetricItemFields}
      */
     MetricItemFields,
+
+    /**
+     * The Metrics model constructor.
+     * @property {module:model/Metrics}
+     */
+    Metrics,
 
     /**
      * The MetricsFields model constructor.
@@ -2159,6 +2232,18 @@ export {
     URIs,
 
     /**
+     * The UpdateAutoTopupPayload model constructor.
+     * @property {module:model/UpdateAutoTopupPayload}
+     */
+    UpdateAutoTopupPayload,
+
+    /**
+     * The UpdateAutoTopupResponse model constructor.
+     * @property {module:model/UpdateAutoTopupResponse}
+     */
+    UpdateAutoTopupResponse,
+
+    /**
      * The UpdateClusterNodeGroupPayload model constructor.
      * @property {module:model/UpdateClusterNodeGroupPayload}
      */
@@ -2397,6 +2482,12 @@ export {
     * @property {module:api/AuthApi}
     */
     AuthApi,
+
+    /**
+    * The AutoTopupApi service constructor.
+    * @property {module:api/AutoTopupApi}
+    */
+    AutoTopupApi,
 
     /**
     * The BetaAccessApi service constructor.

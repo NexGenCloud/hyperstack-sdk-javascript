@@ -33,7 +33,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * UserConsent service.
 * @module api/UserConsentApi
-* @version v1.52.0-alpha
+* @version v1.52.3-alpha
 */
 var UserConsentApi = exports["default"] = /*#__PURE__*/function () {
   /**

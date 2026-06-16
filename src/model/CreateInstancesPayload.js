@@ -19,7 +19,7 @@ import ProfileObjectFields from './ProfileObjectFields';
 /**
  * The CreateInstancesPayload model module.
  * @module model/CreateInstancesPayload
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class CreateInstancesPayload {
     /**

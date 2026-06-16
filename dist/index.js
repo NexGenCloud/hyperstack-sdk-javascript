@@ -141,6 +141,30 @@ Object.defineProperty(exports, "AuthUserInfoResponseModel", {
     return _AuthUserInfoResponseModel["default"];
   }
 });
+Object.defineProperty(exports, "AutoTopup", {
+  enumerable: true,
+  get: function get() {
+    return _AutoTopup["default"];
+  }
+});
+Object.defineProperty(exports, "AutoTopupApi", {
+  enumerable: true,
+  get: function get() {
+    return _AutoTopupApi["default"];
+  }
+});
+Object.defineProperty(exports, "AutoTopupErrorResponse", {
+  enumerable: true,
+  get: function get() {
+    return _AutoTopupErrorResponse["default"];
+  }
+});
+Object.defineProperty(exports, "AutoTopupStatusSchema", {
+  enumerable: true,
+  get: function get() {
+    return _AutoTopupStatusSchema["default"];
+  }
+});
 Object.defineProperty(exports, "BetaAccessApi", {
   enumerable: true,
   get: function get() {
@@ -199,6 +223,12 @@ Object.defineProperty(exports, "BillingHistoryFineTuning", {
   enumerable: true,
   get: function get() {
     return _BillingHistoryFineTuning["default"];
+  }
+});
+Object.defineProperty(exports, "BillingHistoryImageGenerationDetails", {
+  enumerable: true,
+  get: function get() {
+    return _BillingHistoryImageGenerationDetails["default"];
   }
 });
 Object.defineProperty(exports, "BillingHistoryModelEvalutationDetails", {
@@ -471,6 +501,18 @@ Object.defineProperty(exports, "ContractInstancesResponse", {
     return _ContractInstancesResponse["default"];
   }
 });
+Object.defineProperty(exports, "CreateAutoTopupPayload", {
+  enumerable: true,
+  get: function get() {
+    return _CreateAutoTopupPayload["default"];
+  }
+});
+Object.defineProperty(exports, "CreateAutoTopupResponse", {
+  enumerable: true,
+  get: function get() {
+    return _CreateAutoTopupResponse["default"];
+  }
+});
 Object.defineProperty(exports, "CreateClusterNodeFields", {
   enumerable: true,
   get: function get() {
@@ -661,6 +703,12 @@ Object.defineProperty(exports, "DetachVolumesPayload", {
   enumerable: true,
   get: function get() {
     return _DetachVolumesPayload["default"];
+  }
+});
+Object.defineProperty(exports, "DisableAutoTopupResponse", {
+  enumerable: true,
+  get: function get() {
+    return _DisableAutoTopupResponse["default"];
   }
 });
 Object.defineProperty(exports, "EditLabelOfAnExistingVMPayload", {
@@ -867,6 +915,12 @@ Object.defineProperty(exports, "GetApiKeysResponseModel", {
     return _GetApiKeysResponseModel["default"];
   }
 });
+Object.defineProperty(exports, "GetAutoTopupResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GetAutoTopupResponse["default"];
+  }
+});
 Object.defineProperty(exports, "GetCreditAndThresholdInfo", {
   enumerable: true,
   get: function get() {
@@ -961,6 +1015,12 @@ Object.defineProperty(exports, "ImageFields", {
   enumerable: true,
   get: function get() {
     return _ImageFields["default"];
+  }
+});
+Object.defineProperty(exports, "ImageGenerationBillingHistoryDetailsResponseSchema", {
+  enumerable: true,
+  get: function get() {
+    return _ImageGenerationBillingHistoryDetailsResponseSchema["default"];
   }
 });
 Object.defineProperty(exports, "ImageGetResponse", {
@@ -1165,6 +1225,12 @@ Object.defineProperty(exports, "MetricItemFields", {
   enumerable: true,
   get: function get() {
     return _MetricItemFields["default"];
+  }
+});
+Object.defineProperty(exports, "Metrics", {
+  enumerable: true,
+  get: function get() {
+    return _Metrics["default"];
   }
 });
 Object.defineProperty(exports, "MetricsFields", {
@@ -1995,6 +2061,18 @@ Object.defineProperty(exports, "URIs", {
     return _URIs["default"];
   }
 });
+Object.defineProperty(exports, "UpdateAutoTopupPayload", {
+  enumerable: true,
+  get: function get() {
+    return _UpdateAutoTopupPayload["default"];
+  }
+});
+Object.defineProperty(exports, "UpdateAutoTopupResponse", {
+  enumerable: true,
+  get: function get() {
+    return _UpdateAutoTopupResponse["default"];
+  }
+});
 Object.defineProperty(exports, "UpdateClusterNodeGroupPayload", {
   enumerable: true,
   get: function get() {
@@ -2289,6 +2367,9 @@ var _Attributes = _interopRequireDefault(require("./model/Attributes"));
 var _AuthGetTokenResponseModel = _interopRequireDefault(require("./model/AuthGetTokenResponseModel"));
 var _AuthUserFields = _interopRequireDefault(require("./model/AuthUserFields"));
 var _AuthUserInfoResponseModel = _interopRequireDefault(require("./model/AuthUserInfoResponseModel"));
+var _AutoTopup = _interopRequireDefault(require("./model/AutoTopup"));
+var _AutoTopupErrorResponse = _interopRequireDefault(require("./model/AutoTopupErrorResponse"));
+var _AutoTopupStatusSchema = _interopRequireDefault(require("./model/AutoTopupStatusSchema"));
 var _BetaAccessRequestFields = _interopRequireDefault(require("./model/BetaAccessRequestFields"));
 var _BetaAccessRequestPayload = _interopRequireDefault(require("./model/BetaAccessRequestPayload"));
 var _BetaAccessRequestResponseModel = _interopRequireDefault(require("./model/BetaAccessRequestResponseModel"));
@@ -2297,6 +2378,7 @@ var _BetaAccessStatusResponseModel = _interopRequireDefault(require("./model/Bet
 var _BillingHistory = _interopRequireDefault(require("./model/BillingHistory"));
 var _BillingHistoryDataSynthesisDetails = _interopRequireDefault(require("./model/BillingHistoryDataSynthesisDetails"));
 var _BillingHistoryFineTuning = _interopRequireDefault(require("./model/BillingHistoryFineTuning"));
+var _BillingHistoryImageGenerationDetails = _interopRequireDefault(require("./model/BillingHistoryImageGenerationDetails"));
 var _BillingHistoryModelEvalutationDetails = _interopRequireDefault(require("./model/BillingHistoryModelEvalutationDetails"));
 var _BillingHistoryServerlessInference = _interopRequireDefault(require("./model/BillingHistoryServerlessInference"));
 var _BillingHistoryServerlessInferenceDetails = _interopRequireDefault(require("./model/BillingHistoryServerlessInferenceDetails"));
@@ -2336,6 +2418,8 @@ var _ContractDiscountPlanFields = _interopRequireDefault(require("./model/Contra
 var _ContractGPUAllocationGraphResponse = _interopRequireDefault(require("./model/ContractGPUAllocationGraphResponse"));
 var _ContractInstanceFields = _interopRequireDefault(require("./model/ContractInstanceFields"));
 var _ContractInstancesResponse = _interopRequireDefault(require("./model/ContractInstancesResponse"));
+var _CreateAutoTopupPayload = _interopRequireDefault(require("./model/CreateAutoTopupPayload"));
+var _CreateAutoTopupResponse = _interopRequireDefault(require("./model/CreateAutoTopupResponse"));
 var _CreateClusterNodeFields = _interopRequireDefault(require("./model/CreateClusterNodeFields"));
 var _CreateClusterNodeGroupPayload = _interopRequireDefault(require("./model/CreateClusterNodeGroupPayload"));
 var _CreateClusterPayload = _interopRequireDefault(require("./model/CreateClusterPayload"));
@@ -2364,6 +2448,7 @@ var _DeploymentFieldsForStartDeployments = _interopRequireDefault(require("./mod
 var _Deployments = _interopRequireDefault(require("./model/Deployments"));
 var _DetachVolumes = _interopRequireDefault(require("./model/DetachVolumes"));
 var _DetachVolumesPayload = _interopRequireDefault(require("./model/DetachVolumesPayload"));
+var _DisableAutoTopupResponse = _interopRequireDefault(require("./model/DisableAutoTopupResponse"));
 var _EditLabelOfAnExistingVMPayload = _interopRequireDefault(require("./model/EditLabelOfAnExistingVMPayload"));
 var _Environment = _interopRequireDefault(require("./model/Environment"));
 var _EnvironmentFeatures = _interopRequireDefault(require("./model/EnvironmentFeatures"));
@@ -2392,6 +2477,7 @@ var _GPURegionFields = _interopRequireDefault(require("./model/GPURegionFields")
 var _GenerateUpdateApiKeyPayload = _interopRequireDefault(require("./model/GenerateUpdateApiKeyPayload"));
 var _GenerateUpdateApiKeyResponseModel = _interopRequireDefault(require("./model/GenerateUpdateApiKeyResponseModel"));
 var _GetApiKeysResponseModel = _interopRequireDefault(require("./model/GetApiKeysResponseModel"));
+var _GetAutoTopupResponse = _interopRequireDefault(require("./model/GetAutoTopupResponse"));
 var _GetCreditAndThresholdInfo = _interopRequireDefault(require("./model/GetCreditAndThresholdInfo"));
 var _GetCreditAndThresholdInfoInResponse = _interopRequireDefault(require("./model/GetCreditAndThresholdInfoInResponse"));
 var _GetCustomerContractsListResponseModel = _interopRequireDefault(require("./model/GetCustomerContractsListResponseModel"));
@@ -2405,6 +2491,7 @@ var _GetUserPermissionsResponseModel = _interopRequireDefault(require("./model/G
 var _GraphDatetimeValueModel = _interopRequireDefault(require("./model/GraphDatetimeValueModel"));
 var _Image = _interopRequireDefault(require("./model/Image"));
 var _ImageFields = _interopRequireDefault(require("./model/ImageFields"));
+var _ImageGenerationBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("./model/ImageGenerationBillingHistoryDetailsResponseSchema"));
 var _ImageGetResponse = _interopRequireDefault(require("./model/ImageGetResponse"));
 var _Images = _interopRequireDefault(require("./model/Images"));
 var _ImportKeypairPayload = _interopRequireDefault(require("./model/ImportKeypairPayload"));
@@ -2437,6 +2524,7 @@ var _MFAStatusResponse = _interopRequireDefault(require("./model/MFAStatusRespon
 var _ManualReconciliationModel = _interopRequireDefault(require("./model/ManualReconciliationModel"));
 var _MasterFlavorsResponse = _interopRequireDefault(require("./model/MasterFlavorsResponse"));
 var _MetricItemFields = _interopRequireDefault(require("./model/MetricItemFields"));
+var _Metrics = _interopRequireDefault(require("./model/Metrics"));
 var _MetricsFields = _interopRequireDefault(require("./model/MetricsFields"));
 var _ModelEvaluationBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("./model/ModelEvaluationBillingHistoryDetailsResponseSchema"));
 var _NameAvailableModel = _interopRequireDefault(require("./model/NameAvailableModel"));
@@ -2560,6 +2648,8 @@ var _TemplateFields = _interopRequireDefault(require("./model/TemplateFields"));
 var _Templates = _interopRequireDefault(require("./model/Templates"));
 var _TokenBasedBillingHistoryResponse = _interopRequireDefault(require("./model/TokenBasedBillingHistoryResponse"));
 var _URIs = _interopRequireDefault(require("./model/URIs"));
+var _UpdateAutoTopupPayload = _interopRequireDefault(require("./model/UpdateAutoTopupPayload"));
+var _UpdateAutoTopupResponse = _interopRequireDefault(require("./model/UpdateAutoTopupResponse"));
 var _UpdateClusterNodeGroupPayload = _interopRequireDefault(require("./model/UpdateClusterNodeGroupPayload"));
 var _UpdateConsentRequest = _interopRequireDefault(require("./model/UpdateConsentRequest"));
 var _UpdateEnvironment = _interopRequireDefault(require("./model/UpdateEnvironment"));
@@ -2600,6 +2690,7 @@ var _AliveApi = _interopRequireDefault(require("./api/AliveApi"));
 var _ApiKeyApi = _interopRequireDefault(require("./api/ApiKeyApi"));
 var _AssigningMemberRoleApi = _interopRequireDefault(require("./api/AssigningMemberRoleApi"));
 var _AuthApi = _interopRequireDefault(require("./api/AuthApi"));
+var _AutoTopupApi = _interopRequireDefault(require("./api/AutoTopupApi"));
 var _BetaAccessApi = _interopRequireDefault(require("./api/BetaAccessApi"));
 var _BillingApi = _interopRequireDefault(require("./api/BillingApi"));
 var _BucketsApi = _interopRequireDefault(require("./api/BucketsApi"));

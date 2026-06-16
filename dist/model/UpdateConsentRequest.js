@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateConsentRequest model module.
  * @module model/UpdateConsentRequest
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var UpdateConsentRequest = /*#__PURE__*/function () {
   /**

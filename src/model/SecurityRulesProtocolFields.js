@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecurityRulesProtocolFields model module.
  * @module model/SecurityRulesProtocolFields
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class SecurityRulesProtocolFields {
     /**

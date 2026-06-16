@@ -17,7 +17,7 @@ import GPUFields from './GPUFields';
 /**
  * The GPUList model module.
  * @module model/GPUList
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class GPUList {
     /**

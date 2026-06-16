@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ConsentBlock model module.
  * @module model/ConsentBlock
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var ConsentBlock = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecurityRulePayload model module.
  * @module model/CreateSecurityRulePayload
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class CreateSecurityRulePayload {
     /**

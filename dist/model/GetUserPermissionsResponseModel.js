@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The GetUserPermissionsResponseModel model module.
  * @module model/GetUserPermissionsResponseModel
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var GetUserPermissionsResponseModel = /*#__PURE__*/function () {
   /**

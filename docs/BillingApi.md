@@ -13,6 +13,9 @@ Method | HTTP request | Description
 [**getDataSynthesisHistoryForResource**](BillingApi.md#getDataSynthesisHistoryForResource) | **GET** /billing/billing/history/data_synthesis/{resource_id} | 
 [**getFineTuningBillingHistory**](BillingApi.md#getFineTuningBillingHistory) | **GET** /billing/billing/history/fine_tuning | Retrieve Billing History of model evaluation for a specific Billing Cycle
 [**getFineTuningBillingHistoryGraph**](BillingApi.md#getFineTuningBillingHistoryGraph) | **GET** /billing/billing/history/fine_tuning/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+[**getImageGenerationBillingHistory**](BillingApi.md#getImageGenerationBillingHistory) | **GET** /billing/billing/history/image_generation | Retrieve Billing History of image generation for a specific Billing Cycle
+[**getImageGenerationBillingHistoryGraph**](BillingApi.md#getImageGenerationBillingHistoryGraph) | **GET** /billing/billing/history/image_generation/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+[**getImageGenerationHistoryForResource**](BillingApi.md#getImageGenerationHistoryForResource) | **GET** /billing/billing/history/image_generation/{resource_id} | 
 [**getLastDayCost**](BillingApi.md#getLastDayCost) | **GET** /billing/billing/last-day-cost | GET: Last Day Cost
 [**getModelEvaluationBillingHistory**](BillingApi.md#getModelEvaluationBillingHistory) | **GET** /billing/billing/history/model_evaluation | Retrieve Billing History of model evaluation for a specific Billing Cycle
 [**getModelEvaluationBillingHistoryGraph**](BillingApi.md#getModelEvaluationBillingHistoryGraph) | **GET** /billing/billing/history/model_evaluation/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
@@ -545,6 +548,178 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResourceLevelVolumeGraphBillingDetailsResponseModel**](ResourceLevelVolumeGraphBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getImageGenerationBillingHistory
+
+> TokenBasedBillingHistoryResponse getImageGenerationBillingHistory(opts)
+
+Retrieve Billing History of image generation for a specific Billing Cycle
+
+User will receive billing history of image_generation for the specified billing cycle.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'search': "search_example", // String | Search by resource \"Name\" or \"ID\"
+  'perPage': 56, // Number | Number of items to return per page
+  'page': 56 // Number | Page number
+};
+apiInstance.getImageGenerationBillingHistory(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **String**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **perPage** | **Number**| Number of items to return per page | [optional] 
+ **page** | **Number**| Page number | [optional] 
+
+### Return type
+
+[**TokenBasedBillingHistoryResponse**](TokenBasedBillingHistoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getImageGenerationBillingHistoryGraph
+
+> ImageGenerationBillingHistoryDetailsResponseSchema getImageGenerationBillingHistoryGraph(resourceId, opts)
+
+Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+
+User will receive hourly cost datapoints for an image generation job for a specified billing cycle. This data will include &#39;incurred_bill&#39; graph datapoints. billing cycle
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | Date should be formatted in YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getImageGenerationBillingHistoryGraph(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ImageGenerationBillingHistoryDetailsResponseSchema**](ImageGenerationBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getImageGenerationHistoryForResource
+
+> ImageGenerationBillingHistoryDetailsResponseSchema getImageGenerationHistoryForResource(resourceId, opts)
+
+
+
+Retrieve billing history for a specific Image Generation resource. Includes: &#39;resource_name&#39;, &#39;infrahub_id&#39;, &#39;base_model&#39;, &#39;base_model_display_name&#39;, &#39;lora_adapter&#39;, &#39;incurred_bill&#39;, &#39;non_discounted_bill&#39;, &#39;usage_time&#39;, &#39;input_tokens&#39;, &#39;output_tokens&#39;, &#39;input_tokens_incurred_bill&#39;, &#39;input_tokens_non_discounted_bill&#39;, &#39;output_tokens_incurred_bill&#39;, &#39;output_tokens_non_discounted_bill&#39;
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.BillingApi();
+let resourceId = 56; // Number | 
+let opts = {
+  'startDate': "startDate_example", // String | YYYY-MM-DDTHH:MM:SS
+  'endDate': "endDate_example" // String | YYYY-MM-DDTHH:MM:SS
+};
+apiInstance.getImageGenerationHistoryForResource(resourceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resourceId** | **Number**|  | 
+ **startDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+ **endDate** | **String**| YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ImageGenerationBillingHistoryDetailsResponseSchema**](ImageGenerationBillingHistoryDetailsResponseSchema.md)
 
 ### Authorization
 

@@ -138,6 +138,36 @@
         done();
       });
     });
+    describe('getImageGenerationBillingHistory', function() {
+      it('should call getImageGenerationBillingHistory successfully', function(done) {
+        //uncomment below and update the code to test getImageGenerationBillingHistory
+        //instance.getImageGenerationBillingHistory(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getImageGenerationBillingHistoryGraph', function() {
+      it('should call getImageGenerationBillingHistoryGraph successfully', function(done) {
+        //uncomment below and update the code to test getImageGenerationBillingHistoryGraph
+        //instance.getImageGenerationBillingHistoryGraph(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getImageGenerationHistoryForResource', function() {
+      it('should call getImageGenerationHistoryForResource successfully', function(done) {
+        //uncomment below and update the code to test getImageGenerationHistoryForResource
+        //instance.getImageGenerationHistoryForResource(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getLastDayCost', function() {
       it('should call getLastDayCost successfully', function(done) {
         //uncomment below and update the code to test getLastDayCost

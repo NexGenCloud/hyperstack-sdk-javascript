@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The LastDayCostFields model module.
  * @module model/LastDayCostFields
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var LastDayCostFields = /*#__PURE__*/function () {
   /**

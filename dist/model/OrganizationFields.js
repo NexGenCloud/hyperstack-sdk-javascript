@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The OrganizationFields model module.
  * @module model/OrganizationFields
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var OrganizationFields = /*#__PURE__*/function () {
   /**

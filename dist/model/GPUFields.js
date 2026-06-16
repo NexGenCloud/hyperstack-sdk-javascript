@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The GPUFields model module.
  * @module model/GPUFields
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var GPUFields = /*#__PURE__*/function () {
   /**

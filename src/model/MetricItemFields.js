@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MetricItemFields model module.
  * @module model/MetricItemFields
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class MetricItemFields {
     /**

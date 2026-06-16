@@ -17,7 +17,7 @@ import VNCURLFields from './VNCURLFields';
 /**
  * The VNCURL model module.
  * @module model/VNCURL
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class VNCURL {
     /**

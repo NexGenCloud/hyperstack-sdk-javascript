@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The PaymentDetailsFields model module.
  * @module model/PaymentDetailsFields
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var PaymentDetailsFields = /*#__PURE__*/function () {
   /**
@@ -62,6 +62,12 @@ var PaymentDetailsFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('amount')) {
           obj['amount'] = _ApiClient["default"].convertToType(data['amount'], 'Number');
         }
+        if (data.hasOwnProperty('attempt_number')) {
+          obj['attempt_number'] = _ApiClient["default"].convertToType(data['attempt_number'], 'Number');
+        }
+        if (data.hasOwnProperty('auto_topup_id')) {
+          obj['auto_topup_id'] = _ApiClient["default"].convertToType(data['auto_topup_id'], 'Number');
+        }
         if (data.hasOwnProperty('created_at')) {
           obj['created_at'] = _ApiClient["default"].convertToType(data['created_at'], 'Date');
         }
@@ -77,11 +83,17 @@ var PaymentDetailsFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('invoice')) {
           obj['invoice'] = _ApiClient["default"].convertToType(data['invoice'], 'String');
         }
+        if (data.hasOwnProperty('max_attempts')) {
+          obj['max_attempts'] = _ApiClient["default"].convertToType(data['max_attempts'], 'Number');
+        }
         if (data.hasOwnProperty('paid_from')) {
           obj['paid_from'] = _ApiClient["default"].convertToType(data['paid_from'], 'String');
         }
         if (data.hasOwnProperty('payment_id')) {
           obj['payment_id'] = _ApiClient["default"].convertToType(data['payment_id'], 'String');
+        }
+        if (data.hasOwnProperty('payment_type')) {
+          obj['payment_type'] = _ApiClient["default"].convertToType(data['payment_type'], 'String');
         }
         if (data.hasOwnProperty('status')) {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
@@ -132,6 +144,10 @@ var PaymentDetailsFields = /*#__PURE__*/function () {
         throw new Error("Expected the field `payment_id` to be a primitive type in the JSON string but got " + data['payment_id']);
       }
       // ensure the json data is a string
+      if (data['payment_type'] && !(typeof data['payment_type'] === 'string' || data['payment_type'] instanceof String)) {
+        throw new Error("Expected the field `payment_type` to be a primitive type in the JSON string but got " + data['payment_type']);
+      }
+      // ensure the json data is a string
       if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
         throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
       }
@@ -147,6 +163,16 @@ var PaymentDetailsFields = /*#__PURE__*/function () {
  * @member {Number} amount
  */
 PaymentDetailsFields.prototype['amount'] = undefined;
+
+/**
+ * @member {Number} attempt_number
+ */
+PaymentDetailsFields.prototype['attempt_number'] = undefined;
+
+/**
+ * @member {Number} auto_topup_id
+ */
+PaymentDetailsFields.prototype['auto_topup_id'] = undefined;
 
 /**
  * @member {Date} created_at
@@ -174,6 +200,11 @@ PaymentDetailsFields.prototype['gateway_response'] = undefined;
 PaymentDetailsFields.prototype['invoice'] = undefined;
 
 /**
+ * @member {Number} max_attempts
+ */
+PaymentDetailsFields.prototype['max_attempts'] = undefined;
+
+/**
  * @member {String} paid_from
  */
 PaymentDetailsFields.prototype['paid_from'] = undefined;
@@ -182,6 +213,11 @@ PaymentDetailsFields.prototype['paid_from'] = undefined;
  * @member {String} payment_id
  */
 PaymentDetailsFields.prototype['payment_id'] = undefined;
+
+/**
+ * @member {String} payment_type
+ */
+PaymentDetailsFields.prototype['payment_type'] = undefined;
 
 /**
  * @member {String} status

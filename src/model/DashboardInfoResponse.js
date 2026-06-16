@@ -17,7 +17,7 @@ import OverviewInfo from './OverviewInfo';
 /**
  * The DashboardInfoResponse model module.
  * @module model/DashboardInfoResponse
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class DashboardInfoResponse {
     /**

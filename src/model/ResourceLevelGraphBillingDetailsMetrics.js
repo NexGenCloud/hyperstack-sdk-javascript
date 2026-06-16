@@ -17,7 +17,7 @@ import GraphDatetimeValueModel from './GraphDatetimeValueModel';
 /**
  * The ResourceLevelGraphBillingDetailsMetrics model module.
  * @module model/ResourceLevelGraphBillingDetailsMetrics
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class ResourceLevelGraphBillingDetailsMetrics {
     /**

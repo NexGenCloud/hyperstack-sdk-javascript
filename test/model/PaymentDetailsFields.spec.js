@@ -60,6 +60,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property attemptNumber (base name: "attempt_number")', function() {
+      // uncomment below and update the code to test the property attemptNumber
+      //var instance = new HyperstackApi.PaymentDetailsFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property autoTopupId (base name: "auto_topup_id")', function() {
+      // uncomment below and update the code to test the property autoTopupId
+      //var instance = new HyperstackApi.PaymentDetailsFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instance = new HyperstackApi.PaymentDetailsFields();
@@ -90,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property maxAttempts (base name: "max_attempts")', function() {
+      // uncomment below and update the code to test the property maxAttempts
+      //var instance = new HyperstackApi.PaymentDetailsFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paidFrom (base name: "paid_from")', function() {
       // uncomment below and update the code to test the property paidFrom
       //var instance = new HyperstackApi.PaymentDetailsFields();
@@ -98,6 +116,12 @@
 
     it('should have the property paymentId (base name: "payment_id")', function() {
       // uncomment below and update the code to test the property paymentId
+      //var instance = new HyperstackApi.PaymentDetailsFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentType (base name: "payment_type")', function() {
+      // uncomment below and update the code to test the property paymentType
       //var instance = new HyperstackApi.PaymentDetailsFields();
       //expect(instance).to.be();
     });

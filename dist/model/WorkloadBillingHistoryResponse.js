@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The WorkloadBillingHistoryResponse model module.
  * @module model/WorkloadBillingHistoryResponse
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var WorkloadBillingHistoryResponse = /*#__PURE__*/function () {
   /**

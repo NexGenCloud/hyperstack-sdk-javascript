@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UserConsentsResponse model module.
  * @module model/UserConsentsResponse
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var UserConsentsResponse = /*#__PURE__*/function () {
   /**

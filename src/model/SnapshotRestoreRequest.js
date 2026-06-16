@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnapshotRestoreRequest model module.
  * @module model/SnapshotRestoreRequest
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class SnapshotRestoreRequest {
     /**

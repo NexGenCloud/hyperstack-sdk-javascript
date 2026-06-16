@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The GetRbacRolesResponseModel model module.
  * @module model/GetRbacRolesResponseModel
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 var GetRbacRolesResponseModel = /*#__PURE__*/function () {
   /**

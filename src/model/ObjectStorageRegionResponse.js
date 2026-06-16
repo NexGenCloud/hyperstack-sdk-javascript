@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStorageRegionResponse model module.
  * @module model/ObjectStorageRegionResponse
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class ObjectStorageRegionResponse {
     /**

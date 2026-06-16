@@ -17,7 +17,7 @@ import TemplateFields from './TemplateFields';
 /**
  * The Templates model module.
  * @module model/Templates
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class Templates {
     /**

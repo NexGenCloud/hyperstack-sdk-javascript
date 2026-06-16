@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**Attributes**](Attributes.md) |  | [optional] 
-**metrics** | **Object** |  | [optional] 
+**metrics** | [**Metrics**](Metrics.md) |  | [optional] 
 
 

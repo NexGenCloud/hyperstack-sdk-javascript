@@ -8,6 +8,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 var _BillingMetricesResponse = _interopRequireDefault(require("../model/BillingMetricesResponse"));
 var _DataSynthesisBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("../model/DataSynthesisBillingHistoryDetailsResponseSchema"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
+var _ImageGenerationBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("../model/ImageGenerationBillingHistoryDetailsResponseSchema"));
 var _LastDayCostResponse = _interopRequireDefault(require("../model/LastDayCostResponse"));
 var _ModelEvaluationBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("../model/ModelEvaluationBillingHistoryDetailsResponseSchema"));
 var _OrganizationLevelBillingHistoryResponseModel = _interopRequireDefault(require("../model/OrganizationLevelBillingHistoryResponseModel"));
@@ -53,7 +54,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Billing service.
 * @module api/BillingApi
-* @version v1.52.0-alpha
+* @version v1.52.3-alpha
 */
 var BillingApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -523,6 +524,158 @@ var BillingApi = exports["default"] = /*#__PURE__*/function () {
     key: "getFineTuningBillingHistoryGraph",
     value: function getFineTuningBillingHistoryGraph(resourceId, opts) {
       return this.getFineTuningBillingHistoryGraphWithHttpInfo(resourceId, opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Retrieve Billing History of image generation for a specific Billing Cycle
+     * User will receive billing history of image_generation for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [search] Search by resource \"Name\" or \"ID\"
+     * @param {Number} [perPage] Number of items to return per page
+     * @param {Number} [page] Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenBasedBillingHistoryResponse} and HTTP response
+     */
+  }, {
+    key: "getImageGenerationBillingHistoryWithHttpInfo",
+    value: function getImageGenerationBillingHistoryWithHttpInfo(opts) {
+      opts = opts || {};
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate'],
+        'search': opts['search'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _TokenBasedBillingHistoryResponse["default"];
+      return this.apiClient.callApi('/billing/billing/history/image_generation', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve Billing History of image generation for a specific Billing Cycle
+     * User will receive billing history of image_generation for the specified billing cycle.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.search Search by resource \"Name\" or \"ID\"
+     * @param {Number} opts.perPage Number of items to return per page
+     * @param {Number} opts.page Page number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenBasedBillingHistoryResponse}
+     */
+  }, {
+    key: "getImageGenerationBillingHistory",
+    value: function getImageGenerationBillingHistory(opts) {
+      return this.getImageGenerationBillingHistoryWithHttpInfo(opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+     * User will receive hourly cost datapoints for an image generation job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImageGenerationBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+  }, {
+    key: "getImageGenerationBillingHistoryGraphWithHttpInfo",
+    value: function getImageGenerationBillingHistoryGraphWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      var postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getImageGenerationBillingHistoryGraph");
+      }
+      var pathParams = {
+        'resource_id': resourceId
+      };
+      var queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ImageGenerationBillingHistoryDetailsResponseSchema["default"];
+      return this.apiClient.callApi('/billing/billing/history/image_generation/{resource_id}/graph', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+     * User will receive hourly cost datapoints for an image generation job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate Date should be formatted in YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImageGenerationBillingHistoryDetailsResponseSchema}
+     */
+  }, {
+    key: "getImageGenerationBillingHistoryGraph",
+    value: function getImageGenerationBillingHistoryGraph(resourceId, opts) {
+      return this.getImageGenerationBillingHistoryGraphWithHttpInfo(resourceId, opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Retrieve billing history for a specific Image Generation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} [startDate] YYYY-MM-DDTHH:MM:SS
+     * @param {String} [endDate] YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImageGenerationBillingHistoryDetailsResponseSchema} and HTTP response
+     */
+  }, {
+    key: "getImageGenerationHistoryForResourceWithHttpInfo",
+    value: function getImageGenerationHistoryForResourceWithHttpInfo(resourceId, opts) {
+      opts = opts || {};
+      var postBody = null;
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling getImageGenerationHistoryForResource");
+      }
+      var pathParams = {
+        'resource_id': resourceId
+      };
+      var queryParams = {
+        'start_date': opts['startDate'],
+        'end_date': opts['endDate']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ImageGenerationBillingHistoryDetailsResponseSchema["default"];
+      return this.apiClient.callApi('/billing/billing/history/image_generation/{resource_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Retrieve billing history for a specific Image Generation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+     * @param {Number} resourceId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.startDate YYYY-MM-DDTHH:MM:SS
+     * @param {String} opts.endDate YYYY-MM-DDTHH:MM:SS
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImageGenerationBillingHistoryDetailsResponseSchema}
+     */
+  }, {
+    key: "getImageGenerationHistoryForResource",
+    value: function getImageGenerationHistoryForResource(resourceId, opts) {
+      return this.getImageGenerationHistoryForResourceWithHttpInfo(resourceId, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

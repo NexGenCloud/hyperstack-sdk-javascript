@@ -17,7 +17,7 @@ import SecurityGroupRuleFields from './SecurityGroupRuleFields';
 /**
  * The SecurityGroupRule model module.
  * @module model/SecurityGroupRule
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class SecurityGroupRule {
     /**

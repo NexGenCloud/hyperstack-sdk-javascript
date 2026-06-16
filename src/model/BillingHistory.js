@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import Attributes from './Attributes';
+import Metrics from './Metrics';
 
 /**
  * The BillingHistory model module.
  * @module model/BillingHistory
- * @version v1.52.0-alpha
+ * @version v1.52.3-alpha
  */
 class BillingHistory {
     /**
@@ -52,7 +53,7 @@ class BillingHistory {
                 obj['attributes'] = Attributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('metrics')) {
-                obj['metrics'] = ApiClient.convertToType(data['metrics'], Object);
+                obj['metrics'] = Metrics.constructFromObject(data['metrics']);
             }
         }
         return obj;
@@ -67,6 +68,10 @@ class BillingHistory {
         // validate the optional field `attributes`
         if (data['attributes']) { // data not null
           Attributes.validateJSON(data['attributes']);
+        }
+        // validate the optional field `metrics`
+        if (data['metrics']) { // data not null
+          Metrics.validateJSON(data['metrics']);
         }
 
         return true;
@@ -83,7 +88,7 @@ class BillingHistory {
 BillingHistory.prototype['attributes'] = undefined;
 
 /**
- * @member {Object} metrics
+ * @member {module:model/Metrics} metrics
  */
 BillingHistory.prototype['metrics'] = undefined;
 
