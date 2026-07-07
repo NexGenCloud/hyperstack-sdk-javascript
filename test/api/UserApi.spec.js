@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('getAllowedCountryCodes', function() {
+      it('should call getAllowedCountryCodes successfully', function(done) {
+        //uncomment below and update the code to test getAllowedCountryCodes
+        //instance.getAllowedCountryCodes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getUserBillingInfo', function() {
       it('should call getUserBillingInfo successfully', function(done) {
         //uncomment below and update the code to test getUserBillingInfo

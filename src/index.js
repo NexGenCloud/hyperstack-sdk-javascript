@@ -16,6 +16,7 @@ import ApiClient from './ApiClient';
 import AccessTokenField from './model/AccessTokenField';
 import AddUserInfoSuccessResponseModel from './model/AddUserInfoSuccessResponseModel';
 import AllocatedGPUCountGraph from './model/AllocatedGPUCountGraph';
+import AllowedCountriesResponse from './model/AllowedCountriesResponse';
 import ApiKeyFields from './model/ApiKeyFields';
 import AssignRbacRolePayload from './model/AssignRbacRolePayload';
 import AttachCallbackPayload from './model/AttachCallbackPayload';
@@ -434,7 +435,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.52.3-alpha
+* @version v1.53.4-alpha
 */
 export {
     /**
@@ -460,6 +461,12 @@ export {
      * @property {module:model/AllocatedGPUCountGraph}
      */
     AllocatedGPUCountGraph,
+
+    /**
+     * The AllowedCountriesResponse model constructor.
+     * @property {module:model/AllowedCountriesResponse}
+     */
+    AllowedCountriesResponse,
 
     /**
      * The ApiKeyFields model constructor.

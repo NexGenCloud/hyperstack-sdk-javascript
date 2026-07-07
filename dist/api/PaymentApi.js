@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Payment service.
 * @module api/PaymentApi
-* @version v1.52.3-alpha
+* @version v1.53.4-alpha
 */
 var PaymentApi = exports["default"] = /*#__PURE__*/function () {
   /**

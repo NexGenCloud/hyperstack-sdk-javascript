@@ -17,7 +17,7 @@ import FlavorFields from './FlavorFields';
 /**
  * The FlavorItemGetResponse model module.
  * @module model/FlavorItemGetResponse
- * @version v1.52.3-alpha
+ * @version v1.53.4-alpha
  */
 class FlavorItemGetResponse {
     /**

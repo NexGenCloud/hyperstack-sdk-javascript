@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * FloatingIp service.
 * @module api/FloatingIpApi
-* @version v1.52.3-alpha
+* @version v1.53.4-alpha
 */
 var FloatingIpApi = exports["default"] = /*#__PURE__*/function () {
   /**

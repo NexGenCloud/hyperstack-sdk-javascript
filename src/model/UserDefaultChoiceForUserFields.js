@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserDefaultChoiceForUserFields model module.
  * @module model/UserDefaultChoiceForUserFields
- * @version v1.52.3-alpha
+ * @version v1.53.4-alpha
  */
 class UserDefaultChoiceForUserFields {
     /**

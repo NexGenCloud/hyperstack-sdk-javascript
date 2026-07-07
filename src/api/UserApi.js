@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import AddUserInfoSuccessResponseModel from '../model/AddUserInfoSuccessResponseModel';
+import AllowedCountriesResponse from '../model/AllowedCountriesResponse';
 import ErrorResponseModel from '../model/ErrorResponseModel';
 import UserInfoPostPayload from '../model/UserInfoPostPayload';
 import UsersInfoListResponse from '../model/UsersInfoListResponse';
@@ -21,7 +22,7 @@ import UsersInfoListResponse from '../model/UsersInfoListResponse';
 /**
 * User service.
 * @module api/UserApi
-* @version v1.52.3-alpha
+* @version v1.53.4-alpha
 */
 export default class UserApi {
 
@@ -79,6 +80,47 @@ export default class UserApi {
      */
     addUserBillingInfo(payload) {
       return this.addUserBillingInfoWithHttpInfo(payload)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * GET: Retrieve allowed country codes
+     * Retrieve the list of allowed ISO 3166-1 alpha-2 country codes that can be used for billing information.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedCountriesResponse} and HTTP response
+     */
+    getAllowedCountryCodesWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = AllowedCountriesResponse;
+      return this.apiClient.callApi(
+        '/billing/user/countries', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * GET: Retrieve allowed country codes
+     * Retrieve the list of allowed ISO 3166-1 alpha-2 country codes that can be used for billing information.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedCountriesResponse}
+     */
+    getAllowedCountryCodes() {
+      return this.getAllowedCountryCodesWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

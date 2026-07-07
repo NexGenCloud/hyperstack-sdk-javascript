@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ModelEvaluationBillingHistoryDetailsResponseSchema model module.
  * @module model/ModelEvaluationBillingHistoryDetailsResponseSchema
- * @version v1.52.3-alpha
+ * @version v1.53.4-alpha
  */
 var ModelEvaluationBillingHistoryDetailsResponseSchema = /*#__PURE__*/function () {
   /**

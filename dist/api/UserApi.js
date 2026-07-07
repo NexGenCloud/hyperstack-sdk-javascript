@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 var _AddUserInfoSuccessResponseModel = _interopRequireDefault(require("../model/AddUserInfoSuccessResponseModel"));
+var _AllowedCountriesResponse = _interopRequireDefault(require("../model/AllowedCountriesResponse"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
 var _UserInfoPostPayload = _interopRequireDefault(require("../model/UserInfoPostPayload"));
 var _UsersInfoListResponse = _interopRequireDefault(require("../model/UsersInfoListResponse"));
@@ -30,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * User service.
 * @module api/UserApi
-* @version v1.52.3-alpha
+* @version v1.53.4-alpha
 */
 var UserApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -80,6 +81,39 @@ var UserApi = exports["default"] = /*#__PURE__*/function () {
     key: "addUserBillingInfo",
     value: function addUserBillingInfo(payload) {
       return this.addUserBillingInfoWithHttpInfo(payload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * GET: Retrieve allowed country codes
+     * Retrieve the list of allowed ISO 3166-1 alpha-2 country codes that can be used for billing information.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedCountriesResponse} and HTTP response
+     */
+  }, {
+    key: "getAllowedCountryCodesWithHttpInfo",
+    value: function getAllowedCountryCodesWithHttpInfo() {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _AllowedCountriesResponse["default"];
+      return this.apiClient.callApi('/billing/user/countries', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * GET: Retrieve allowed country codes
+     * Retrieve the list of allowed ISO 3166-1 alpha-2 country codes that can be used for billing information.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedCountriesResponse}
+     */
+  }, {
+    key: "getAllowedCountryCodes",
+    value: function getAllowedCountryCodes() {
+      return this.getAllowedCountryCodesWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

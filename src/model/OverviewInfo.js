@@ -19,7 +19,7 @@ import VolumeOverviewFields from './VolumeOverviewFields';
 /**
  * The OverviewInfo model module.
  * @module model/OverviewInfo
- * @version v1.52.3-alpha
+ * @version v1.53.4-alpha
  */
 class OverviewInfo {
     /**

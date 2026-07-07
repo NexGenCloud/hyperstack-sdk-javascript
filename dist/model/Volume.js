@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Volume model module.
  * @module model/Volume
- * @version v1.52.3-alpha
+ * @version v1.53.4-alpha
  */
 var Volume = /*#__PURE__*/function () {
   /**
