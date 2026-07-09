@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UserDefaultChoicesForUserResponse model module.
  * @module model/UserDefaultChoicesForUserResponse
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 var UserDefaultChoicesForUserResponse = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import ResourceBillingEventsHistoryMetrics from './ResourceBillingEventsHistoryM
 /**
  * The ResourceBillingEventsHistoryResponse model module.
  * @module model/ResourceBillingEventsHistoryResponse
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class ResourceBillingEventsHistoryResponse {
     /**

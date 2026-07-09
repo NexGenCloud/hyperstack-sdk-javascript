@@ -17,7 +17,7 @@ import ObjectStorageRegionsEnum from './ObjectStorageRegionsEnum';
 /**
  * The ObjectStorageAccessKeyCreateResponse model module.
  * @module model/ObjectStorageAccessKeyCreateResponse
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class ObjectStorageAccessKeyCreateResponse {
     /**

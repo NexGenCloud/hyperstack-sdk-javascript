@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MFAStatusFields model module.
  * @module model/MFAStatusFields
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class MFAStatusFields {
     /**

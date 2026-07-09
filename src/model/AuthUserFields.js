@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthUserFields model module.
  * @module model/AuthUserFields
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class AuthUserFields {
     /**

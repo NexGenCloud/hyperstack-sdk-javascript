@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PolicyPermissionFields model module.
  * @module model/PolicyPermissionFields
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class PolicyPermissionFields {
     /**

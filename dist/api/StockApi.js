@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Stock service.
 * @module api/StockApi
-* @version v1.53.4-alpha
+* @version v1.53.6-alpha
 */
 var StockApi = exports["default"] = /*#__PURE__*/function () {
   /**

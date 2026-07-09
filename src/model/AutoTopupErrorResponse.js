@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutoTopupErrorResponse model module.
  * @module model/AutoTopupErrorResponse
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class AutoTopupErrorResponse {
     /**

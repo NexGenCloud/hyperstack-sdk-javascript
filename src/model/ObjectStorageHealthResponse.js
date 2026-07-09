@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStorageHealthResponse model module.
  * @module model/ObjectStorageHealthResponse
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class ObjectStorageHealthResponse {
     /**

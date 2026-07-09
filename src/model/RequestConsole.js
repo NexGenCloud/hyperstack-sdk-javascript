@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestConsole model module.
  * @module model/RequestConsole
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class RequestConsole {
     /**

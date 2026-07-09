@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FlavorRestrictions model module.
  * @module model/FlavorRestrictions
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 var FlavorRestrictions = /*#__PURE__*/function () {
   /**

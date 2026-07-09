@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The PricebookResourceObjectResponseForCustomer model module.
  * @module model/PricebookResourceObjectResponseForCustomer
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 var PricebookResourceObjectResponseForCustomer = /*#__PURE__*/function () {
   /**

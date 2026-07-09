@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VncUrl service.
 * @module api/VncUrlApi
-* @version v1.53.4-alpha
+* @version v1.53.6-alpha
 */
 var VncUrlApi = exports["default"] = /*#__PURE__*/function () {
   /**

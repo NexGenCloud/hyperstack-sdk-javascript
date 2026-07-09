@@ -17,7 +17,7 @@ import BillingMetricesFields from './BillingMetricesFields';
 /**
  * The BillingMetricesResponse model module.
  * @module model/BillingMetricesResponse
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class BillingMetricesResponse {
     /**

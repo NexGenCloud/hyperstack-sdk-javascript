@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VolumeOverviewFields model module.
  * @module model/VolumeOverviewFields
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class VolumeOverviewFields {
     /**

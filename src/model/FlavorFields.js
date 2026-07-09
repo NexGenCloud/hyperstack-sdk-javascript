@@ -17,7 +17,7 @@ import LableResonse from './LableResonse';
 /**
  * The FlavorFields model module.
  * @module model/FlavorFields
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class FlavorFields {
     /**

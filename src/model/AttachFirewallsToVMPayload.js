@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachFirewallsToVMPayload model module.
  * @module model/AttachFirewallsToVMPayload
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class AttachFirewallsToVMPayload {
     /**

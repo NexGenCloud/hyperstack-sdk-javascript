@@ -17,7 +17,7 @@ import InviteFields from './InviteFields';
 /**
  * The GetInvitesResponseModel model module.
  * @module model/GetInvitesResponseModel
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class GetInvitesResponseModel {
     /**

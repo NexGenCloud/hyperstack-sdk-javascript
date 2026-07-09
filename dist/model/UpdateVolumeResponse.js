@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateVolumeResponse model module.
  * @module model/UpdateVolumeResponse
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 var UpdateVolumeResponse = /*#__PURE__*/function () {
   /**

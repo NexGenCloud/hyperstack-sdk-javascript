@@ -17,7 +17,7 @@ import UserPermissionFields from './UserPermissionFields';
 /**
  * The GetUserPermissionsResponseModel model module.
  * @module model/GetUserPermissionsResponseModel
- * @version v1.53.4-alpha
+ * @version v1.53.6-alpha
  */
 class GetUserPermissionsResponseModel {
     /**
