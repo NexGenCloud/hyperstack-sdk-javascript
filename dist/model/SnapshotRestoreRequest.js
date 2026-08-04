@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SnapshotRestoreRequest model module.
  * @module model/SnapshotRestoreRequest
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 var SnapshotRestoreRequest = /*#__PURE__*/function () {
   /**

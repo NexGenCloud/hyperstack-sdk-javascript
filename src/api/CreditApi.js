@@ -19,7 +19,7 @@ import GetCreditAndThresholdInfoInResponse from '../model/GetCreditAndThresholdI
 /**
 * Credit service.
 * @module api/CreditApi
-* @version v1.53.6-alpha
+* @version v1.54.7-alpha
 */
 export default class CreditApi {
 

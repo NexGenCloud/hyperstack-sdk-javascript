@@ -114,6 +114,9 @@ import DetachVolumes from './model/DetachVolumes';
 import DetachVolumesPayload from './model/DetachVolumesPayload';
 import DisableAutoTopupResponse from './model/DisableAutoTopupResponse';
 import EditLabelOfAnExistingVMPayload from './model/EditLabelOfAnExistingVMPayload';
+import EmailCategory from './model/EmailCategory';
+import EmailCategoryChild from './model/EmailCategoryChild';
+import EmailPreferencesResponse from './model/EmailPreferencesResponse';
 import Environment from './model/Environment';
 import EnvironmentFeatures from './model/EnvironmentFeatures';
 import EnvironmentFields from './model/EnvironmentFields';
@@ -307,6 +310,7 @@ import SubResourcesCostsResponseModel from './model/SubResourcesCostsResponseMod
 import SubResourcesGraphBillingHistoryFields from './model/SubResourcesGraphBillingHistoryFields';
 import SubResourcesGraphResponseModel from './model/SubResourcesGraphResponseModel';
 import SubscribeOrUnsubscribeUpdatePayload from './model/SubscribeOrUnsubscribeUpdatePayload';
+import SupportedKeypairPublicKeyTypesResponse from './model/SupportedKeypairPublicKeyTypesResponse';
 import Template from './model/Template';
 import TemplateFields from './model/TemplateFields';
 import Templates from './model/Templates';
@@ -316,6 +320,8 @@ import UpdateAutoTopupPayload from './model/UpdateAutoTopupPayload';
 import UpdateAutoTopupResponse from './model/UpdateAutoTopupResponse';
 import UpdateClusterNodeGroupPayload from './model/UpdateClusterNodeGroupPayload';
 import UpdateConsentRequest from './model/UpdateConsentRequest';
+import UpdateEmailPreferenceInput from './model/UpdateEmailPreferenceInput';
+import UpdateEmailPreferenceResponse from './model/UpdateEmailPreferenceResponse';
 import UpdateEnvironment from './model/UpdateEnvironment';
 import UpdateKeypairName from './model/UpdateKeypairName';
 import UpdateKeypairNameResponse from './model/UpdateKeypairNameResponse';
@@ -367,6 +373,7 @@ import CreditApi from './api/CreditApi';
 import CustomerContractApi from './api/CustomerContractApi';
 import DashboardApi from './api/DashboardApi';
 import DeploymentApi from './api/DeploymentApi';
+import EmailOptInOutApi from './api/EmailOptInOutApi';
 import EnvironmentApi from './api/EnvironmentApi';
 import FIPExclusionsApi from './api/FIPExclusionsApi';
 import FirewallAttachmentApi from './api/FirewallAttachmentApi';
@@ -435,7 +442,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.53.6-alpha
+* @version v1.54.7-alpha
 */
 export {
     /**
@@ -1049,6 +1056,24 @@ export {
      * @property {module:model/EditLabelOfAnExistingVMPayload}
      */
     EditLabelOfAnExistingVMPayload,
+
+    /**
+     * The EmailCategory model constructor.
+     * @property {module:model/EmailCategory}
+     */
+    EmailCategory,
+
+    /**
+     * The EmailCategoryChild model constructor.
+     * @property {module:model/EmailCategoryChild}
+     */
+    EmailCategoryChild,
+
+    /**
+     * The EmailPreferencesResponse model constructor.
+     * @property {module:model/EmailPreferencesResponse}
+     */
+    EmailPreferencesResponse,
 
     /**
      * The Environment model constructor.
@@ -2209,6 +2234,12 @@ export {
     SubscribeOrUnsubscribeUpdatePayload,
 
     /**
+     * The SupportedKeypairPublicKeyTypesResponse model constructor.
+     * @property {module:model/SupportedKeypairPublicKeyTypesResponse}
+     */
+    SupportedKeypairPublicKeyTypesResponse,
+
+    /**
      * The Template model constructor.
      * @property {module:model/Template}
      */
@@ -2261,6 +2292,18 @@ export {
      * @property {module:model/UpdateConsentRequest}
      */
     UpdateConsentRequest,
+
+    /**
+     * The UpdateEmailPreferenceInput model constructor.
+     * @property {module:model/UpdateEmailPreferenceInput}
+     */
+    UpdateEmailPreferenceInput,
+
+    /**
+     * The UpdateEmailPreferenceResponse model constructor.
+     * @property {module:model/UpdateEmailPreferenceResponse}
+     */
+    UpdateEmailPreferenceResponse,
 
     /**
      * The UpdateEnvironment model constructor.
@@ -2567,6 +2610,12 @@ export {
     * @property {module:api/DeploymentApi}
     */
     DeploymentApi,
+
+    /**
+    * The EmailOptInOutApi service constructor.
+    * @property {module:api/EmailOptInOutApi}
+    */
+    EmailOptInOutApi,
 
     /**
     * The EnvironmentApi service constructor.

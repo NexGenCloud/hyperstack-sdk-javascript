@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ResourceLevelVmBillingHistoryResponseModel model module.
  * @module model/ResourceLevelVmBillingHistoryResponseModel
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 var ResourceLevelVmBillingHistoryResponseModel = /*#__PURE__*/function () {
   /**

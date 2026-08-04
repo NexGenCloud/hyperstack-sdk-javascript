@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnvironmentFieldsForVolume model module.
  * @module model/EnvironmentFieldsForVolume
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 class EnvironmentFieldsForVolume {
     /**

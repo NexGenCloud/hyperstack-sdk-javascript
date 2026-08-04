@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The AttachFirewallsToVMPayload model module.
  * @module model/AttachFirewallsToVMPayload
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 var AttachFirewallsToVMPayload = /*#__PURE__*/function () {
   /**

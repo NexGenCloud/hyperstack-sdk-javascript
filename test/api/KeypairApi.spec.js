@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('listSupportedKeyPairTypes', function() {
+      it('should call listSupportedKeyPairTypes successfully', function(done) {
+        //uncomment below and update the code to test listSupportedKeyPairTypes
+        //instance.listSupportedKeyPairTypes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateKeyPairName', function() {
       it('should call updateKeyPairName successfully', function(done) {
         //uncomment below and update the code to test updateKeyPairName

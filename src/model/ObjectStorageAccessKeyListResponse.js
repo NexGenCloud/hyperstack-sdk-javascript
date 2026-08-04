@@ -18,7 +18,7 @@ import ObjectStoragePaginationMeta from './ObjectStoragePaginationMeta';
 /**
  * The ObjectStorageAccessKeyListResponse model module.
  * @module model/ObjectStorageAccessKeyListResponse
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 class ObjectStorageAccessKeyListResponse {
     /**

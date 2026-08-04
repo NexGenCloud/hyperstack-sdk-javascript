@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClusterEventsFields model module.
  * @module model/ClusterEventsFields
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 class ClusterEventsFields {
     /**

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**deleteKeyPair**](KeypairApi.md#deleteKeyPair) | **DELETE** /core/keypair/{id} | Delete key pair
 [**importKeyPair**](KeypairApi.md#importKeyPair) | **POST** /core/keypairs | Import key pair
 [**listKeyPairs**](KeypairApi.md#listKeyPairs) | **GET** /core/keypairs | List key pairs
+[**listSupportedKeyPairTypes**](KeypairApi.md#listSupportedKeyPairTypes) | **GET** /core/supported-keypairs | List supported key pair types
 [**updateKeyPairName**](KeypairApi.md#updateKeyPairName) | **PUT** /core/keypair/{id} | Update key pair name
 
 
@@ -156,6 +157,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Keypairs**](Keypairs.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## listSupportedKeyPairTypes
+
+> SupportedKeypairPublicKeyTypesResponse listSupportedKeyPairTypes()
+
+List supported key pair types
+
+Retrieves the SSH public key types supported for import.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.KeypairApi();
+apiInstance.listSupportedKeyPairTypes().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SupportedKeypairPublicKeyTypesResponse**](SupportedKeypairPublicKeyTypesResponse.md)
 
 ### Authorization
 

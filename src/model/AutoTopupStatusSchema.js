@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutoTopupStatusSchema model module.
  * @module model/AutoTopupStatusSchema
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 class AutoTopupStatusSchema {
     /**

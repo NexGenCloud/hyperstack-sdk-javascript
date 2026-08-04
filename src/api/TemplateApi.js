@@ -22,7 +22,7 @@ import UpdateTemplate from '../model/UpdateTemplate';
 /**
 * Template service.
 * @module api/TemplateApi
-* @version v1.53.6-alpha
+* @version v1.54.7-alpha
 */
 export default class TemplateApi {
 

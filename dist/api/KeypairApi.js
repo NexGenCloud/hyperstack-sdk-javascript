@@ -10,6 +10,7 @@ var _ImportKeypairPayload = _interopRequireDefault(require("../model/ImportKeypa
 var _ImportKeypairResponse = _interopRequireDefault(require("../model/ImportKeypairResponse"));
 var _Keypairs = _interopRequireDefault(require("../model/Keypairs"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
+var _SupportedKeypairPublicKeyTypesResponse = _interopRequireDefault(require("../model/SupportedKeypairPublicKeyTypesResponse"));
 var _UpdateKeypairName = _interopRequireDefault(require("../model/UpdateKeypairName"));
 var _UpdateKeypairNameResponse = _interopRequireDefault(require("../model/UpdateKeypairNameResponse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -33,7 +34,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Keypair service.
 * @module api/KeypairApi
-* @version v1.53.6-alpha
+* @version v1.54.7-alpha
 */
 var KeypairApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -170,6 +171,39 @@ var KeypairApi = exports["default"] = /*#__PURE__*/function () {
     key: "listKeyPairs",
     value: function listKeyPairs(opts) {
       return this.listKeyPairsWithHttpInfo(opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * List supported key pair types
+     * Retrieves the SSH public key types supported for import.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SupportedKeypairPublicKeyTypesResponse} and HTTP response
+     */
+  }, {
+    key: "listSupportedKeyPairTypesWithHttpInfo",
+    value: function listSupportedKeyPairTypesWithHttpInfo() {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _SupportedKeypairPublicKeyTypesResponse["default"];
+      return this.apiClient.callApi('/core/supported-keypairs', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * List supported key pair types
+     * Retrieves the SSH public key types supported for import.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SupportedKeypairPublicKeyTypesResponse}
+     */
+  }, {
+    key: "listSupportedKeyPairTypes",
+    value: function listSupportedKeyPairTypes() {
+      return this.listSupportedKeyPairTypesWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

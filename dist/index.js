@@ -723,6 +723,30 @@ Object.defineProperty(exports, "EditLabelOfAnExistingVMPayload", {
     return _EditLabelOfAnExistingVMPayload["default"];
   }
 });
+Object.defineProperty(exports, "EmailCategory", {
+  enumerable: true,
+  get: function get() {
+    return _EmailCategory["default"];
+  }
+});
+Object.defineProperty(exports, "EmailCategoryChild", {
+  enumerable: true,
+  get: function get() {
+    return _EmailCategoryChild["default"];
+  }
+});
+Object.defineProperty(exports, "EmailOptInOutApi", {
+  enumerable: true,
+  get: function get() {
+    return _EmailOptInOutApi["default"];
+  }
+});
+Object.defineProperty(exports, "EmailPreferencesResponse", {
+  enumerable: true,
+  get: function get() {
+    return _EmailPreferencesResponse["default"];
+  }
+});
 Object.defineProperty(exports, "Environment", {
   enumerable: true,
   get: function get() {
@@ -2031,6 +2055,12 @@ Object.defineProperty(exports, "SubscribeOrUnsubscribeUpdatePayload", {
     return _SubscribeOrUnsubscribeUpdatePayload["default"];
   }
 });
+Object.defineProperty(exports, "SupportedKeypairPublicKeyTypesResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SupportedKeypairPublicKeyTypesResponse["default"];
+  }
+});
 Object.defineProperty(exports, "Template", {
   enumerable: true,
   get: function get() {
@@ -2089,6 +2119,18 @@ Object.defineProperty(exports, "UpdateConsentRequest", {
   enumerable: true,
   get: function get() {
     return _UpdateConsentRequest["default"];
+  }
+});
+Object.defineProperty(exports, "UpdateEmailPreferenceInput", {
+  enumerable: true,
+  get: function get() {
+    return _UpdateEmailPreferenceInput["default"];
+  }
+});
+Object.defineProperty(exports, "UpdateEmailPreferenceResponse", {
+  enumerable: true,
+  get: function get() {
+    return _UpdateEmailPreferenceResponse["default"];
   }
 });
 Object.defineProperty(exports, "UpdateEnvironment", {
@@ -2457,6 +2499,9 @@ var _DetachVolumes = _interopRequireDefault(require("./model/DetachVolumes"));
 var _DetachVolumesPayload = _interopRequireDefault(require("./model/DetachVolumesPayload"));
 var _DisableAutoTopupResponse = _interopRequireDefault(require("./model/DisableAutoTopupResponse"));
 var _EditLabelOfAnExistingVMPayload = _interopRequireDefault(require("./model/EditLabelOfAnExistingVMPayload"));
+var _EmailCategory = _interopRequireDefault(require("./model/EmailCategory"));
+var _EmailCategoryChild = _interopRequireDefault(require("./model/EmailCategoryChild"));
+var _EmailPreferencesResponse = _interopRequireDefault(require("./model/EmailPreferencesResponse"));
 var _Environment = _interopRequireDefault(require("./model/Environment"));
 var _EnvironmentFeatures = _interopRequireDefault(require("./model/EnvironmentFeatures"));
 var _EnvironmentFields = _interopRequireDefault(require("./model/EnvironmentFields"));
@@ -2650,6 +2695,7 @@ var _SubResourcesCostsResponseModel = _interopRequireDefault(require("./model/Su
 var _SubResourcesGraphBillingHistoryFields = _interopRequireDefault(require("./model/SubResourcesGraphBillingHistoryFields"));
 var _SubResourcesGraphResponseModel = _interopRequireDefault(require("./model/SubResourcesGraphResponseModel"));
 var _SubscribeOrUnsubscribeUpdatePayload = _interopRequireDefault(require("./model/SubscribeOrUnsubscribeUpdatePayload"));
+var _SupportedKeypairPublicKeyTypesResponse = _interopRequireDefault(require("./model/SupportedKeypairPublicKeyTypesResponse"));
 var _Template = _interopRequireDefault(require("./model/Template"));
 var _TemplateFields = _interopRequireDefault(require("./model/TemplateFields"));
 var _Templates = _interopRequireDefault(require("./model/Templates"));
@@ -2659,6 +2705,8 @@ var _UpdateAutoTopupPayload = _interopRequireDefault(require("./model/UpdateAuto
 var _UpdateAutoTopupResponse = _interopRequireDefault(require("./model/UpdateAutoTopupResponse"));
 var _UpdateClusterNodeGroupPayload = _interopRequireDefault(require("./model/UpdateClusterNodeGroupPayload"));
 var _UpdateConsentRequest = _interopRequireDefault(require("./model/UpdateConsentRequest"));
+var _UpdateEmailPreferenceInput = _interopRequireDefault(require("./model/UpdateEmailPreferenceInput"));
+var _UpdateEmailPreferenceResponse = _interopRequireDefault(require("./model/UpdateEmailPreferenceResponse"));
 var _UpdateEnvironment = _interopRequireDefault(require("./model/UpdateEnvironment"));
 var _UpdateKeypairName = _interopRequireDefault(require("./model/UpdateKeypairName"));
 var _UpdateKeypairNameResponse = _interopRequireDefault(require("./model/UpdateKeypairNameResponse"));
@@ -2710,6 +2758,7 @@ var _CreditApi = _interopRequireDefault(require("./api/CreditApi"));
 var _CustomerContractApi = _interopRequireDefault(require("./api/CustomerContractApi"));
 var _DashboardApi = _interopRequireDefault(require("./api/DashboardApi"));
 var _DeploymentApi = _interopRequireDefault(require("./api/DeploymentApi"));
+var _EmailOptInOutApi = _interopRequireDefault(require("./api/EmailOptInOutApi"));
 var _EnvironmentApi = _interopRequireDefault(require("./api/EnvironmentApi"));
 var _FIPExclusionsApi = _interopRequireDefault(require("./api/FIPExclusionsApi"));
 var _FirewallAttachmentApi = _interopRequireDefault(require("./api/FirewallAttachmentApi"));

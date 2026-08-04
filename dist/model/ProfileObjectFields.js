@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ProfileObjectFields model module.
  * @module model/ProfileObjectFields
- * @version v1.53.6-alpha
+ * @version v1.54.7-alpha
  */
 var ProfileObjectFields = /*#__PURE__*/function () {
   /**

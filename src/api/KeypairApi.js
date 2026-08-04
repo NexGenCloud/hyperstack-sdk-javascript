@@ -18,13 +18,14 @@ import ImportKeypairPayload from '../model/ImportKeypairPayload';
 import ImportKeypairResponse from '../model/ImportKeypairResponse';
 import Keypairs from '../model/Keypairs';
 import ResponseModel from '../model/ResponseModel';
+import SupportedKeypairPublicKeyTypesResponse from '../model/SupportedKeypairPublicKeyTypesResponse';
 import UpdateKeypairName from '../model/UpdateKeypairName';
 import UpdateKeypairNameResponse from '../model/UpdateKeypairNameResponse';
 
 /**
 * Keypair service.
 * @module api/KeypairApi
-* @version v1.53.6-alpha
+* @version v1.54.7-alpha
 */
 export default class KeypairApi {
 
@@ -183,6 +184,47 @@ export default class KeypairApi {
      */
     listKeyPairs(opts) {
       return this.listKeyPairsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List supported key pair types
+     * Retrieves the SSH public key types supported for import.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SupportedKeypairPublicKeyTypesResponse} and HTTP response
+     */
+    listSupportedKeyPairTypesWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = SupportedKeypairPublicKeyTypesResponse;
+      return this.apiClient.callApi(
+        '/core/supported-keypairs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List supported key pair types
+     * Retrieves the SSH public key types supported for import.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SupportedKeypairPublicKeyTypesResponse}
+     */
+    listSupportedKeyPairTypes() {
+      return this.listSupportedKeyPairTypesWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
