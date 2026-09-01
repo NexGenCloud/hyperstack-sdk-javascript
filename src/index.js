@@ -165,6 +165,7 @@ import ImportKeypairPayload from './model/ImportKeypairPayload';
 import ImportKeypairResponse from './model/ImportKeypairResponse';
 import InfrahubResourceObjectResponseForCustomer from './model/InfrahubResourceObjectResponseForCustomer';
 import Instance from './model/Instance';
+import InstanceEnhancedMetricsFields from './model/InstanceEnhancedMetricsFields';
 import InstanceEnvironmentFields from './model/InstanceEnvironmentFields';
 import InstanceEvents from './model/InstanceEvents';
 import InstanceEventsFields from './model/InstanceEventsFields';
@@ -336,6 +337,9 @@ import UserConsentEvent from './model/UserConsentEvent';
 import UserConsentsResponse from './model/UserConsentsResponse';
 import UserDefaultChoiceForUserFields from './model/UserDefaultChoiceForUserFields';
 import UserDefaultChoicesForUserResponse from './model/UserDefaultChoicesForUserResponse';
+import UserEnhancedMetricsPayload from './model/UserEnhancedMetricsPayload';
+import UserEnhancedMetricsResponse from './model/UserEnhancedMetricsResponse';
+import UserEnhancedMetricsResponseFields from './model/UserEnhancedMetricsResponseFields';
 import UserInfoPostPayload from './model/UserInfoPostPayload';
 import UserOrganizationsResponse from './model/UserOrganizationsResponse';
 import UserPermissionFields from './model/UserPermissionFields';
@@ -442,7 +446,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.54.7-alpha
+* @version v1.55.1-alpha
 */
 export {
     /**
@@ -1362,6 +1366,12 @@ export {
      * @property {module:model/Instance}
      */
     Instance,
+
+    /**
+     * The InstanceEnhancedMetricsFields model constructor.
+     * @property {module:model/InstanceEnhancedMetricsFields}
+     */
+    InstanceEnhancedMetricsFields,
 
     /**
      * The InstanceEnvironmentFields model constructor.
@@ -2388,6 +2398,24 @@ export {
      * @property {module:model/UserDefaultChoicesForUserResponse}
      */
     UserDefaultChoicesForUserResponse,
+
+    /**
+     * The UserEnhancedMetricsPayload model constructor.
+     * @property {module:model/UserEnhancedMetricsPayload}
+     */
+    UserEnhancedMetricsPayload,
+
+    /**
+     * The UserEnhancedMetricsResponse model constructor.
+     * @property {module:model/UserEnhancedMetricsResponse}
+     */
+    UserEnhancedMetricsResponse,
+
+    /**
+     * The UserEnhancedMetricsResponseFields model constructor.
+     * @property {module:model/UserEnhancedMetricsResponseFields}
+     */
+    UserEnhancedMetricsResponseFields,
 
     /**
      * The UserInfoPostPayload model constructor.

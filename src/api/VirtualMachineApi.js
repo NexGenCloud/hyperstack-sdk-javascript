@@ -32,11 +32,13 @@ import RequestInstanceLogsPayload from '../model/RequestInstanceLogsPayload';
 import RequestInstanceLogsResponse from '../model/RequestInstanceLogsResponse';
 import ResponseModel from '../model/ResponseModel';
 import SecurityGroupRule from '../model/SecurityGroupRule';
+import UserEnhancedMetricsPayload from '../model/UserEnhancedMetricsPayload';
+import UserEnhancedMetricsResponse from '../model/UserEnhancedMetricsResponse';
 
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.54.7-alpha
+* @version v1.55.1-alpha
 */
 export default class VirtualMachineApi {
 
@@ -796,8 +798,8 @@ export default class VirtualMachineApi {
      * List virtual machines
      * Returns a list of your existing virtual machines, providing configuration details for each. The list is sorted by creation date, with the oldest virtual machines displayed first.
      * @param {Object} opts Optional parameters
-     * @param {Number} [page] 
-     * @param {Number} [pageSize] 
+     * @param {Number} [page = 1)] 
+     * @param {Number} [pageSize = 10)] 
      * @param {String} [search] 
      * @param {String} [environment] 
      * @param {Array.<Number>} [excludeFirewalls] Comma-separated list of Security Group IDs to ignore instances attached
@@ -838,8 +840,8 @@ export default class VirtualMachineApi {
      * List virtual machines
      * Returns a list of your existing virtual machines, providing configuration details for each. The list is sorted by creation date, with the oldest virtual machines displayed first.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page 
-     * @param {Number} opts.pageSize 
+     * @param {Number} opts.page  (default to 1)
+     * @param {Number} opts.pageSize  (default to 10)
      * @param {String} opts.search 
      * @param {String} opts.environment 
      * @param {Array.<Number>} opts.excludeFirewalls Comma-separated list of Security Group IDs to ignore instances attached
@@ -1100,6 +1102,60 @@ export default class VirtualMachineApi {
      */
     stopVM(vmId) {
       return this.stopVMWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Enable or disable Enhanced Metrics for a virtual machine
+     * Enable or disable the Hyperstack VM Agent (Enhanced Metrics) for an existing virtual machine. The agent itself must be installed/removed manually inside the VM — the response includes the install command when enabling.
+     * @param {Number} vmId 
+     * @param {module:model/UserEnhancedMetricsPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserEnhancedMetricsResponse} and HTTP response
+     */
+    toggleEnhancedMetricsForAVMWithHttpInfo(vmId, payload) {
+      let postBody = payload;
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling toggleEnhancedMetricsForAVM");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling toggleEnhancedMetricsForAVM");
+      }
+
+      let pathParams = {
+        'vm_id': vmId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UserEnhancedMetricsResponse;
+      return this.apiClient.callApi(
+        '/core/virtual-machines/{vm_id}/enhanced-metrics', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Enable or disable Enhanced Metrics for a virtual machine
+     * Enable or disable the Hyperstack VM Agent (Enhanced Metrics) for an existing virtual machine. The agent itself must be installed/removed manually inside the VM — the response includes the install command when enabling.
+     * @param {Number} vmId 
+     * @param {module:model/UserEnhancedMetricsPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserEnhancedMetricsResponse}
+     */
+    toggleEnhancedMetricsForAVM(vmId, payload) {
+      return this.toggleEnhancedMetricsForAVMWithHttpInfo(vmId, payload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

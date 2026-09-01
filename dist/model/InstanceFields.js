@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+var _InstanceEnhancedMetricsFields = _interopRequireDefault(require("./InstanceEnhancedMetricsFields"));
 var _InstanceEnvironmentFields = _interopRequireDefault(require("./InstanceEnvironmentFields"));
 var _InstanceFlavorFields = _interopRequireDefault(require("./InstanceFlavorFields"));
 var _InstanceImageFields = _interopRequireDefault(require("./InstanceImageFields"));
@@ -35,7 +36,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InstanceFields model module.
  * @module model/InstanceFields
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 var InstanceFields = /*#__PURE__*/function () {
   /**
@@ -76,6 +77,9 @@ var InstanceFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('created_at')) {
           obj['created_at'] = _ApiClient["default"].convertToType(data['created_at'], 'Date');
+        }
+        if (data.hasOwnProperty('enhanced_metrics')) {
+          obj['enhanced_metrics'] = _InstanceEnhancedMetricsFields["default"].constructFromObject(data['enhanced_metrics']);
         }
         if (data.hasOwnProperty('environment')) {
           obj['environment'] = _InstanceEnvironmentFields["default"].constructFromObject(data['environment']);
@@ -155,6 +159,11 @@ var InstanceFields = /*#__PURE__*/function () {
       // ensure the json data is a string
       if (data['callback_url'] && !(typeof data['callback_url'] === 'string' || data['callback_url'] instanceof String)) {
         throw new Error("Expected the field `callback_url` to be a primitive type in the JSON string but got " + data['callback_url']);
+      }
+      // validate the optional field `enhanced_metrics`
+      if (data['enhanced_metrics']) {
+        // data not null
+        _InstanceEnhancedMetricsFields["default"].validateJSON(data['enhanced_metrics']);
       }
       // validate the optional field `environment`
       if (data['environment']) {
@@ -276,6 +285,11 @@ InstanceFields.prototype['contract_id'] = undefined;
  * @member {Date} created_at
  */
 InstanceFields.prototype['created_at'] = undefined;
+
+/**
+ * @member {module:model/InstanceEnhancedMetricsFields} enhanced_metrics
+ */
+InstanceFields.prototype['enhanced_metrics'] = undefined;
 
 /**
  * @member {module:model/InstanceEnvironmentFields} environment

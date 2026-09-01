@@ -32,7 +32,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VolumeAttachment service.
 * @module api/VolumeAttachmentApi
-* @version v1.54.7-alpha
+* @version v1.55.1-alpha
 */
 var VolumeAttachmentApi = exports["default"] = /*#__PURE__*/function () {
   /**

@@ -19,7 +19,7 @@ import URIs from './URIs';
 /**
  * The PartnerConfig model module.
  * @module model/PartnerConfig
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 class PartnerConfig {
     /**

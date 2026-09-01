@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CompatibleFlavor model module.
  * @module model/CompatibleFlavor
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 var CompatibleFlavor = /*#__PURE__*/function () {
   /**

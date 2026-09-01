@@ -24,6 +24,8 @@ var _RequestInstanceLogsPayload = _interopRequireDefault(require("../model/Reque
 var _RequestInstanceLogsResponse = _interopRequireDefault(require("../model/RequestInstanceLogsResponse"));
 var _ResponseModel = _interopRequireDefault(require("../model/ResponseModel"));
 var _SecurityGroupRule = _interopRequireDefault(require("../model/SecurityGroupRule"));
+var _UserEnhancedMetricsPayload = _interopRequireDefault(require("../model/UserEnhancedMetricsPayload"));
+var _UserEnhancedMetricsResponse = _interopRequireDefault(require("../model/UserEnhancedMetricsResponse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -45,7 +47,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.54.7-alpha
+* @version v1.55.1-alpha
 */
 var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -709,8 +711,8 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * List virtual machines
      * Returns a list of your existing virtual machines, providing configuration details for each. The list is sorted by creation date, with the oldest virtual machines displayed first.
      * @param {Object} opts Optional parameters
-     * @param {Number} [page] 
-     * @param {Number} [pageSize] 
+     * @param {Number} [page = 1)] 
+     * @param {Number} [pageSize = 10)] 
      * @param {String} [search] 
      * @param {String} [environment] 
      * @param {Array.<Number>} [excludeFirewalls] Comma-separated list of Security Group IDs to ignore instances attached
@@ -744,8 +746,8 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
      * List virtual machines
      * Returns a list of your existing virtual machines, providing configuration details for each. The list is sorted by creation date, with the oldest virtual machines displayed first.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page 
-     * @param {Number} opts.pageSize 
+     * @param {Number} opts.page  (default to 1)
+     * @param {Number} opts.pageSize  (default to 10)
      * @param {String} opts.search 
      * @param {String} opts.environment 
      * @param {Array.<Number>} opts.excludeFirewalls Comma-separated list of Security Group IDs to ignore instances attached
@@ -973,6 +975,53 @@ var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
     key: "stopVM",
     value: function stopVM(vmId) {
       return this.stopVMWithHttpInfo(vmId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Enable or disable Enhanced Metrics for a virtual machine
+     * Enable or disable the Hyperstack VM Agent (Enhanced Metrics) for an existing virtual machine. The agent itself must be installed/removed manually inside the VM — the response includes the install command when enabling.
+     * @param {Number} vmId 
+     * @param {module:model/UserEnhancedMetricsPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserEnhancedMetricsResponse} and HTTP response
+     */
+  }, {
+    key: "toggleEnhancedMetricsForAVMWithHttpInfo",
+    value: function toggleEnhancedMetricsForAVMWithHttpInfo(vmId, payload) {
+      var postBody = payload;
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling toggleEnhancedMetricsForAVM");
+      }
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling toggleEnhancedMetricsForAVM");
+      }
+      var pathParams = {
+        'vm_id': vmId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _UserEnhancedMetricsResponse["default"];
+      return this.apiClient.callApi('/core/virtual-machines/{vm_id}/enhanced-metrics', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Enable or disable Enhanced Metrics for a virtual machine
+     * Enable or disable the Hyperstack VM Agent (Enhanced Metrics) for an existing virtual machine. The agent itself must be installed/removed manually inside the VM — the response includes the install command when enabling.
+     * @param {Number} vmId 
+     * @param {module:model/UserEnhancedMetricsPayload} payload 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserEnhancedMetricsResponse}
+     */
+  }, {
+    key: "toggleEnhancedMetricsForAVM",
+    value: function toggleEnhancedMetricsForAVM(vmId, payload) {
+      return this.toggleEnhancedMetricsForAVMWithHttpInfo(vmId, payload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

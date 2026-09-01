@@ -1089,6 +1089,12 @@ Object.defineProperty(exports, "Instance", {
     return _Instance["default"];
   }
 });
+Object.defineProperty(exports, "InstanceEnhancedMetricsFields", {
+  enumerable: true,
+  get: function get() {
+    return _InstanceEnhancedMetricsFields["default"];
+  }
+});
 Object.defineProperty(exports, "InstanceEnvironmentFields", {
   enumerable: true,
   get: function get() {
@@ -2241,6 +2247,24 @@ Object.defineProperty(exports, "UserDetailChoiceApi", {
     return _UserDetailChoiceApi["default"];
   }
 });
+Object.defineProperty(exports, "UserEnhancedMetricsPayload", {
+  enumerable: true,
+  get: function get() {
+    return _UserEnhancedMetricsPayload["default"];
+  }
+});
+Object.defineProperty(exports, "UserEnhancedMetricsResponse", {
+  enumerable: true,
+  get: function get() {
+    return _UserEnhancedMetricsResponse["default"];
+  }
+});
+Object.defineProperty(exports, "UserEnhancedMetricsResponseFields", {
+  enumerable: true,
+  get: function get() {
+    return _UserEnhancedMetricsResponseFields["default"];
+  }
+});
 Object.defineProperty(exports, "UserInfoPostPayload", {
   enumerable: true,
   get: function get() {
@@ -2550,6 +2574,7 @@ var _ImportKeypairPayload = _interopRequireDefault(require("./model/ImportKeypai
 var _ImportKeypairResponse = _interopRequireDefault(require("./model/ImportKeypairResponse"));
 var _InfrahubResourceObjectResponseForCustomer = _interopRequireDefault(require("./model/InfrahubResourceObjectResponseForCustomer"));
 var _Instance = _interopRequireDefault(require("./model/Instance"));
+var _InstanceEnhancedMetricsFields = _interopRequireDefault(require("./model/InstanceEnhancedMetricsFields"));
 var _InstanceEnvironmentFields = _interopRequireDefault(require("./model/InstanceEnvironmentFields"));
 var _InstanceEvents = _interopRequireDefault(require("./model/InstanceEvents"));
 var _InstanceEventsFields = _interopRequireDefault(require("./model/InstanceEventsFields"));
@@ -2721,6 +2746,9 @@ var _UserConsentEvent = _interopRequireDefault(require("./model/UserConsentEvent
 var _UserConsentsResponse = _interopRequireDefault(require("./model/UserConsentsResponse"));
 var _UserDefaultChoiceForUserFields = _interopRequireDefault(require("./model/UserDefaultChoiceForUserFields"));
 var _UserDefaultChoicesForUserResponse = _interopRequireDefault(require("./model/UserDefaultChoicesForUserResponse"));
+var _UserEnhancedMetricsPayload = _interopRequireDefault(require("./model/UserEnhancedMetricsPayload"));
+var _UserEnhancedMetricsResponse = _interopRequireDefault(require("./model/UserEnhancedMetricsResponse"));
+var _UserEnhancedMetricsResponseFields = _interopRequireDefault(require("./model/UserEnhancedMetricsResponseFields"));
 var _UserInfoPostPayload = _interopRequireDefault(require("./model/UserInfoPostPayload"));
 var _UserOrganizationsResponse = _interopRequireDefault(require("./model/UserOrganizationsResponse"));
 var _UserPermissionFields = _interopRequireDefault(require("./model/UserPermissionFields"));

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enhancedMonitoringEnabled (base name: "enhanced_monitoring_enabled")', function() {
+      // uncomment below and update the code to test the property enhancedMonitoringEnabled
+      //var instance = new HyperstackApi.CreateInstancesPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property environmentName (base name: "environment_name")', function() {
       // uncomment below and update the code to test the property environmentName
       //var instance = new HyperstackApi.CreateInstancesPayload();

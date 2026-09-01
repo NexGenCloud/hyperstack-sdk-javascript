@@ -19,7 +19,7 @@ import ProfileObjectFields from './ProfileObjectFields';
 /**
  * The CreateInstancesPayload model module.
  * @module model/CreateInstancesPayload
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 class CreateInstancesPayload {
     /**
@@ -44,6 +44,7 @@ class CreateInstancesPayload {
     static initialize(obj, count, environmentName, flavorName, keyName, name) { 
         obj['count'] = count;
         obj['enable_port_randomization'] = true;
+        obj['enhanced_monitoring_enabled'] = false;
         obj['environment_name'] = environmentName;
         obj['flavor_name'] = flavorName;
         obj['key_name'] = keyName;
@@ -75,6 +76,9 @@ class CreateInstancesPayload {
             }
             if (data.hasOwnProperty('enable_port_randomization')) {
                 obj['enable_port_randomization'] = ApiClient.convertToType(data['enable_port_randomization'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enhanced_monitoring_enabled')) {
+                obj['enhanced_monitoring_enabled'] = ApiClient.convertToType(data['enhanced_monitoring_enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('environment_name')) {
                 obj['environment_name'] = ApiClient.convertToType(data['environment_name'], 'String');
@@ -218,6 +222,13 @@ CreateInstancesPayload.prototype['create_bootable_volume'] = undefined;
  * @default true
  */
 CreateInstancesPayload.prototype['enable_port_randomization'] = true;
+
+/**
+ * When true, the Hyperstack VM Agent is opted in for this VM and metrics ingestion is allowed by the prom-gateway. The agent must still be installed on the VM (typically via user_data cloud-init).
+ * @member {Boolean} enhanced_monitoring_enabled
+ * @default false
+ */
+CreateInstancesPayload.prototype['enhanced_monitoring_enabled'] = false;
 
 /**
  * The name of the [environment](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/) in which the virtual machine is to be created.

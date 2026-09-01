@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enhancedMetrics (base name: "enhanced_metrics")', function() {
+      // uncomment below and update the code to test the property enhancedMetrics
+      //var instance = new HyperstackApi.InstanceFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property environment (base name: "environment")', function() {
       // uncomment below and update the code to test the property environment
       //var instance = new HyperstackApi.InstanceFields();

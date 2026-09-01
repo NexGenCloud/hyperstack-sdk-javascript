@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SupportedKeypairPublicKeyTypesResponse model module.
  * @module model/SupportedKeypairPublicKeyTypesResponse
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 class SupportedKeypairPublicKeyTypesResponse {
     /**

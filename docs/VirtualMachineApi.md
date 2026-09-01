@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**restoreVMFromHibernation**](VirtualMachineApi.md#restoreVMFromHibernation) | **GET** /core/virtual-machines/{vm_id}/hibernate-restore | Restore virtual machine from hibernation
 [**startVM**](VirtualMachineApi.md#startVM) | **GET** /core/virtual-machines/{vm_id}/start | Start virtual machine
 [**stopVM**](VirtualMachineApi.md#stopVM) | **GET** /core/virtual-machines/{vm_id}/stop | Stop virtual machine
+[**toggleEnhancedMetricsForAVM**](VirtualMachineApi.md#toggleEnhancedMetricsForAVM) | **PATCH** /core/virtual-machines/{vm_id}/enhanced-metrics | Enable or disable Enhanced Metrics for a virtual machine
 
 
 
@@ -780,8 +781,8 @@ apiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new HyperstackApi.VirtualMachineApi();
 let opts = {
-  'page': 56, // Number | 
-  'pageSize': 56, // Number | 
+  'page': 1, // Number | 
+  'pageSize': 10, // Number | 
   'search': "search_example", // String | 
   'environment': "environment_example", // String | 
   'excludeFirewalls': [null], // [Number] | Comma-separated list of Security Group IDs to ignore instances attached
@@ -800,8 +801,8 @@ apiInstance.listVMs(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Number**|  | [optional] 
- **pageSize** | **Number**|  | [optional] 
+ **page** | **Number**|  | [optional] [default to 1]
+ **pageSize** | **Number**|  | [optional] [default to 10]
  **search** | **String**|  | [optional] 
  **environment** | **String**|  | [optional] 
  **excludeFirewalls** | [**[Number]**](Number.md)| Comma-separated list of Security Group IDs to ignore instances attached | [optional] 
@@ -1072,5 +1073,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## toggleEnhancedMetricsForAVM
+
+> UserEnhancedMetricsResponse toggleEnhancedMetricsForAVM(vmId, payload)
+
+Enable or disable Enhanced Metrics for a virtual machine
+
+Enable or disable the Hyperstack VM Agent (Enhanced Metrics) for an existing virtual machine. The agent itself must be installed/removed manually inside the VM — the response includes the install command when enabling.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.VirtualMachineApi();
+let vmId = 56; // Number | 
+let payload = new HyperstackApi.UserEnhancedMetricsPayload(); // UserEnhancedMetricsPayload | 
+apiInstance.toggleEnhancedMetricsForAVM(vmId, payload).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **Number**|  | 
+ **payload** | [**UserEnhancedMetricsPayload**](UserEnhancedMetricsPayload.md)|  | 
+
+### Return type
+
+[**UserEnhancedMetricsResponse**](UserEnhancedMetricsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

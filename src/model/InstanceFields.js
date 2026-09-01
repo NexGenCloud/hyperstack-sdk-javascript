@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import InstanceEnhancedMetricsFields from './InstanceEnhancedMetricsFields';
 import InstanceEnvironmentFields from './InstanceEnvironmentFields';
 import InstanceFlavorFields from './InstanceFlavorFields';
 import InstanceImageFields from './InstanceImageFields';
@@ -22,7 +23,7 @@ import VolumeAttachmentFields from './VolumeAttachmentFields';
 /**
  * The InstanceFields model module.
  * @module model/InstanceFields
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 class InstanceFields {
     /**
@@ -61,6 +62,9 @@ class InstanceFields {
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('enhanced_metrics')) {
+                obj['enhanced_metrics'] = InstanceEnhancedMetricsFields.constructFromObject(data['enhanced_metrics']);
             }
             if (data.hasOwnProperty('environment')) {
                 obj['environment'] = InstanceEnvironmentFields.constructFromObject(data['environment']);
@@ -138,6 +142,10 @@ class InstanceFields {
         // ensure the json data is a string
         if (data['callback_url'] && !(typeof data['callback_url'] === 'string' || data['callback_url'] instanceof String)) {
             throw new Error("Expected the field `callback_url` to be a primitive type in the JSON string but got " + data['callback_url']);
+        }
+        // validate the optional field `enhanced_metrics`
+        if (data['enhanced_metrics']) { // data not null
+          InstanceEnhancedMetricsFields.validateJSON(data['enhanced_metrics']);
         }
         // validate the optional field `environment`
         if (data['environment']) { // data not null
@@ -238,6 +246,11 @@ InstanceFields.prototype['contract_id'] = undefined;
  * @member {Date} created_at
  */
 InstanceFields.prototype['created_at'] = undefined;
+
+/**
+ * @member {module:model/InstanceEnhancedMetricsFields} enhanced_metrics
+ */
+InstanceFields.prototype['enhanced_metrics'] = undefined;
 
 /**
  * @member {module:model/InstanceEnvironmentFields} environment

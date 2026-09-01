@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VolumeFieldsForInstance model module.
  * @module model/VolumeFieldsForInstance
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 class VolumeFieldsForInstance {
     /**

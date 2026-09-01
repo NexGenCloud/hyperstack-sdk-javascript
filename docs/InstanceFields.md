@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **callbackUrl** | **String** |  | [optional] 
 **contractId** | **Number** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
+**enhancedMetrics** | [**InstanceEnhancedMetricsFields**](InstanceEnhancedMetricsFields.md) |  | [optional] 
 **environment** | [**InstanceEnvironmentFields**](InstanceEnvironmentFields.md) |  | [optional] 
 **features** | **Object** |  | [optional] 
 **fixedIp** | **String** |  | [optional] 

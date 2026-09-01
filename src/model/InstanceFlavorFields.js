@@ -17,7 +17,7 @@ import FlavorLabelFields from './FlavorLabelFields';
 /**
  * The InstanceFlavorFields model module.
  * @module model/InstanceFlavorFields
- * @version v1.54.7-alpha
+ * @version v1.55.1-alpha
  */
 class InstanceFlavorFields {
     /**
