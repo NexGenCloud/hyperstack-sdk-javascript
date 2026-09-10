@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The CreateUpdateComplianceResponse model module.
  * @module model/CreateUpdateComplianceResponse
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 var CreateUpdateComplianceResponse = /*#__PURE__*/function () {
   /**

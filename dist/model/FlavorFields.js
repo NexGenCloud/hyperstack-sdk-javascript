@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+var _ImageRestrictions = _interopRequireDefault(require("./ImageRestrictions"));
 var _LableResonse = _interopRequireDefault(require("./LableResonse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -30,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The FlavorFields model module.
  * @module model/FlavorFields
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 var FlavorFields = /*#__PURE__*/function () {
   /**
@@ -90,6 +91,9 @@ var FlavorFields = /*#__PURE__*/function () {
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
         }
+        if (data.hasOwnProperty('image_restrictions')) {
+          obj['image_restrictions'] = _ApiClient["default"].convertToType(data['image_restrictions'], _ImageRestrictions["default"]);
+        }
         if (data.hasOwnProperty('labels')) {
           obj['labels'] = _ApiClient["default"].convertToType(data['labels'], [_LableResonse["default"]]);
         }
@@ -124,6 +128,11 @@ var FlavorFields = /*#__PURE__*/function () {
       // ensure the json data is a string
       if (data['gpu'] && !(typeof data['gpu'] === 'string' || data['gpu'] instanceof String)) {
         throw new Error("Expected the field `gpu` to be a primitive type in the JSON string but got " + data['gpu']);
+      }
+      // validate the optional field `image_restrictions`
+      if (data['image_restrictions']) {
+        // data not null
+        _ImageRestrictions["default"].validateJSON(data['image_restrictions']);
       }
       if (data['labels']) {
         // data not null
@@ -202,6 +211,12 @@ FlavorFields.prototype['gpu_count'] = undefined;
  * @member {Number} id
  */
 FlavorFields.prototype['id'] = undefined;
+
+/**
+ * Image compatibility restrictions for this flavor (flavor → image links)
+ * @member {module:model/ImageRestrictions} image_restrictions
+ */
+FlavorFields.prototype['image_restrictions'] = undefined;
 
 /**
  * @member {Array.<module:model/LableResonse>} labels

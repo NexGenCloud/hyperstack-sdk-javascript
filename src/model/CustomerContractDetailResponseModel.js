@@ -17,7 +17,7 @@ import CustomerContractFields from './CustomerContractFields';
 /**
  * The CustomerContractDetailResponseModel model module.
  * @module model/CustomerContractDetailResponseModel
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class CustomerContractDetailResponseModel {
     /**

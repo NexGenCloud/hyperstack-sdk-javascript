@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The InviteFields model module.
  * @module model/InviteFields
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 var InviteFields = /*#__PURE__*/function () {
   /**

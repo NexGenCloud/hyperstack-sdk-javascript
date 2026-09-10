@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateUpdateApiKeyPayload model module.
  * @module model/GenerateUpdateApiKeyPayload
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class GenerateUpdateApiKeyPayload {
     /**

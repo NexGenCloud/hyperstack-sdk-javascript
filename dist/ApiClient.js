@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _superagent = _interopRequireDefault(require("superagent"));
+var _HyperstackHeaders = _interopRequireDefault(require("./HyperstackHeaders"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -25,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
  */
 /**
 * @module ApiClient
-* @version v1.55.1-alpha
+* @version v1.55.4-alpha
 */
 /**
 * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
@@ -68,7 +69,7 @@ var ApiClient = /*#__PURE__*/function () {
      * @default {}
      */
     this.defaultHeaders = {
-      'User-Agent': 'OpenAPI-Generator/v1.55.1-alpha/Javascript'
+      'User-Agent': 'hyperstack-javascript-sdk/v1.55.4-alpha'
     };
 
     /**
@@ -420,6 +421,7 @@ var ApiClient = /*#__PURE__*/function () {
 
       // set header parameters
       request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
+      (0, _HyperstackHeaders["default"])(request);
 
       // set requestAgent if it is set by user
       if (this.requestAgent) {

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VMQuota model module.
  * @module model/VMQuota
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class VMQuota {
     /**

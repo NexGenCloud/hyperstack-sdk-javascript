@@ -17,7 +17,7 @@ import UserConsent from './UserConsent';
 /**
  * The UserConsentsResponse model module.
  * @module model/UserConsentsResponse
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class UserConsentsResponse {
     /**

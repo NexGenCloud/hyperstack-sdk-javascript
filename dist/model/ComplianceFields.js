@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ComplianceFields model module.
  * @module model/ComplianceFields
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 var ComplianceFields = /*#__PURE__*/function () {
   /**

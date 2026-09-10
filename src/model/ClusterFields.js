@@ -19,7 +19,7 @@ import ClusterNodeGroupFields from './ClusterNodeGroupFields';
 /**
  * The ClusterFields model module.
  * @module model/ClusterFields
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class ClusterFields {
     /**

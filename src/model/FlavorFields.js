@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import ImageRestrictions from './ImageRestrictions';
 import LableResonse from './LableResonse';
 
 /**
  * The FlavorFields model module.
  * @module model/FlavorFields
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class FlavorFields {
     /**
@@ -75,6 +76,9 @@ class FlavorFields {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
+            if (data.hasOwnProperty('image_restrictions')) {
+                obj['image_restrictions'] = ApiClient.convertToType(data['image_restrictions'], ImageRestrictions);
+            }
             if (data.hasOwnProperty('labels')) {
                 obj['labels'] = ApiClient.convertToType(data['labels'], [LableResonse]);
             }
@@ -107,6 +111,10 @@ class FlavorFields {
         // ensure the json data is a string
         if (data['gpu'] && !(typeof data['gpu'] === 'string' || data['gpu'] instanceof String)) {
             throw new Error("Expected the field `gpu` to be a primitive type in the JSON string but got " + data['gpu']);
+        }
+        // validate the optional field `image_restrictions`
+        if (data['image_restrictions']) { // data not null
+          ImageRestrictions.validateJSON(data['image_restrictions']);
         }
         if (data['labels']) { // data not null
             // ensure the json data is an array
@@ -179,6 +187,12 @@ FlavorFields.prototype['gpu_count'] = undefined;
  * @member {Number} id
  */
 FlavorFields.prototype['id'] = undefined;
+
+/**
+ * Image compatibility restrictions for this flavor (flavor → image links)
+ * @member {module:model/ImageRestrictions} image_restrictions
+ */
+FlavorFields.prototype['image_restrictions'] = undefined;
 
 /**
  * @member {Array.<module:model/LableResonse>} labels

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResourceLevelBillingDetailsMetrics model module.
  * @module model/ResourceLevelBillingDetailsMetrics
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class ResourceLevelBillingDetailsMetrics {
     /**

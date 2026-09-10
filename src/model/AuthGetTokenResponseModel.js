@@ -17,7 +17,7 @@ import AccessTokenField from './AccessTokenField';
 /**
  * The AuthGetTokenResponseModel model module.
  * @module model/AuthGetTokenResponseModel
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class AuthGetTokenResponseModel {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailCategoryChild model module.
  * @module model/EmailCategoryChild
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class EmailCategoryChild {
     /**

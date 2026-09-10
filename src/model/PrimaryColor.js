@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PrimaryColor model module.
  * @module model/PrimaryColor
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class PrimaryColor {
     /**

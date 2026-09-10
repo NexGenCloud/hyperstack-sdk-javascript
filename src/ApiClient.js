@@ -12,11 +12,11 @@
  */
 
 
-import superagent from "superagent";
+import superagent from "superagent"; import applyHyperstackHeaders from "./HyperstackHeaders";
 
 /**
 * @module ApiClient
-* @version v1.55.1-alpha
+* @version v1.55.4-alpha
 */
 
 /**
@@ -54,7 +54,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'OpenAPI-Generator/v1.55.1-alpha/Javascript'
+            'User-Agent': 'hyperstack-javascript-sdk/v1.55.4-alpha'
         };
 
         /**
@@ -411,7 +411,7 @@ class ApiClient {
         request.query(this.normalizeParams(queryParams));
 
         // set header parameters
-        request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
+        request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); applyHyperstackHeaders(request);
 
         // set requestAgent if it is set by user
         if (this.requestAgent) {

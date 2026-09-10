@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceOverviewFields model module.
  * @module model/InstanceOverviewFields
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class InstanceOverviewFields {
     /**

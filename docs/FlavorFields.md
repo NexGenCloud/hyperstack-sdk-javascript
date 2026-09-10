@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **gpu** | **String** |  | [optional] 
 **gpuCount** | **Number** |  | [optional] 
 **id** | **Number** |  | [optional] 
+**imageRestrictions** | [**ImageRestrictions**](ImageRestrictions.md) | Image compatibility restrictions for this flavor (flavor → image links) | [optional] 
 **labels** | [**[LableResonse]**](LableResonse.md) |  | [optional] 
 **name** | **String** |  | [optional] 
 **ram** | **Number** |  | [optional] 

@@ -17,7 +17,7 @@ import AutoTopup from './AutoTopup';
 /**
  * The UpdateAutoTopupResponse model module.
  * @module model/UpdateAutoTopupResponse
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class UpdateAutoTopupResponse {
     /**

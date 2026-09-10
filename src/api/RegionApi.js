@@ -19,7 +19,7 @@ import Regions from '../model/Regions';
 /**
 * Region service.
 * @module api/RegionApi
-* @version v1.55.1-alpha
+* @version v1.55.4-alpha
 */
 export default class RegionApi {
 

@@ -67,6 +67,7 @@ import ClusterVersions from './model/ClusterVersions';
 import Colors from './model/Colors';
 import CommonResponseModel from './model/CommonResponseModel';
 import CompatibleFlavor from './model/CompatibleFlavor';
+import CompatibleImage from './model/CompatibleImage';
 import ComplianceFields from './model/ComplianceFields';
 import ComplianceModelFields from './model/ComplianceModelFields';
 import CompliancePayload from './model/CompliancePayload';
@@ -160,6 +161,7 @@ import Image from './model/Image';
 import ImageFields from './model/ImageFields';
 import ImageGenerationBillingHistoryDetailsResponseSchema from './model/ImageGenerationBillingHistoryDetailsResponseSchema';
 import ImageGetResponse from './model/ImageGetResponse';
+import ImageRestrictions from './model/ImageRestrictions';
 import Images from './model/Images';
 import ImportKeypairPayload from './model/ImportKeypairPayload';
 import ImportKeypairResponse from './model/ImportKeypairResponse';
@@ -446,7 +448,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.55.1-alpha
+* @version v1.55.4-alpha
 */
 export {
     /**
@@ -778,6 +780,12 @@ export {
      * @property {module:model/CompatibleFlavor}
      */
     CompatibleFlavor,
+
+    /**
+     * The CompatibleImage model constructor.
+     * @property {module:model/CompatibleImage}
+     */
+    CompatibleImage,
 
     /**
      * The ComplianceFields model constructor.
@@ -1336,6 +1344,12 @@ export {
      * @property {module:model/ImageGetResponse}
      */
     ImageGetResponse,
+
+    /**
+     * The ImageRestrictions model constructor.
+     * @property {module:model/ImageRestrictions}
+     */
+    ImageRestrictions,
 
     /**
      * The Images model constructor.

@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The VMQuota model module.
  * @module model/VMQuota
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 var VMQuota = /*#__PURE__*/function () {
   /**

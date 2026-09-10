@@ -411,6 +411,12 @@ Object.defineProperty(exports, "CompatibleFlavor", {
     return _CompatibleFlavor["default"];
   }
 });
+Object.defineProperty(exports, "CompatibleImage", {
+  enumerable: true,
+  get: function get() {
+    return _CompatibleImage["default"];
+  }
+});
 Object.defineProperty(exports, "ComplianceApi", {
   enumerable: true,
   get: function get() {
@@ -1057,6 +1063,12 @@ Object.defineProperty(exports, "ImageGetResponse", {
   enumerable: true,
   get: function get() {
     return _ImageGetResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ImageRestrictions", {
+  enumerable: true,
+  get: function get() {
+    return _ImageRestrictions["default"];
   }
 });
 Object.defineProperty(exports, "Images", {
@@ -2476,6 +2488,7 @@ var _ClusterVersions = _interopRequireDefault(require("./model/ClusterVersions")
 var _Colors = _interopRequireDefault(require("./model/Colors"));
 var _CommonResponseModel = _interopRequireDefault(require("./model/CommonResponseModel"));
 var _CompatibleFlavor = _interopRequireDefault(require("./model/CompatibleFlavor"));
+var _CompatibleImage = _interopRequireDefault(require("./model/CompatibleImage"));
 var _ComplianceFields = _interopRequireDefault(require("./model/ComplianceFields"));
 var _ComplianceModelFields = _interopRequireDefault(require("./model/ComplianceModelFields"));
 var _CompliancePayload = _interopRequireDefault(require("./model/CompliancePayload"));
@@ -2569,6 +2582,7 @@ var _Image = _interopRequireDefault(require("./model/Image"));
 var _ImageFields = _interopRequireDefault(require("./model/ImageFields"));
 var _ImageGenerationBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("./model/ImageGenerationBillingHistoryDetailsResponseSchema"));
 var _ImageGetResponse = _interopRequireDefault(require("./model/ImageGetResponse"));
+var _ImageRestrictions = _interopRequireDefault(require("./model/ImageRestrictions"));
 var _Images = _interopRequireDefault(require("./model/Images"));
 var _ImportKeypairPayload = _interopRequireDefault(require("./model/ImportKeypairPayload"));
 var _ImportKeypairResponse = _interopRequireDefault(require("./model/ImportKeypairResponse"));

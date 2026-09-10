@@ -17,7 +17,7 @@ import FirewallFields from './FirewallFields';
 /**
  * The FirewallResponse model module.
  * @module model/FirewallResponse
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class FirewallResponse {
     /**

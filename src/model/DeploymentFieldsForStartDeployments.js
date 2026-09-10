@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeploymentFieldsForStartDeployments model module.
  * @module model/DeploymentFieldsForStartDeployments
- * @version v1.55.1-alpha
+ * @version v1.55.4-alpha
  */
 class DeploymentFieldsForStartDeployments {
     /**
