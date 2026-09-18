@@ -14,7 +14,7 @@ exports["default"] = applyHyperstackHeaders;
  */
 
 var SDK_NAME = 'hyperstack-javascript-sdk';
-var SDK_VERSION = 'v1.55.4-alpha';
+var SDK_VERSION = 'v1.55.6-alpha';
 var CLIENT_HEADER = exports.CLIENT_HEADER = 'Hyperstack-Client';
 var USER_AGENT_HEADER = exports.USER_AGENT_HEADER = 'User-Agent';
 

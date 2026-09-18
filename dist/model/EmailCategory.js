@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The EmailCategory model module.
  * @module model/EmailCategory
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 var EmailCategory = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClusterNodeGroupPayload model module.
  * @module model/CreateClusterNodeGroupPayload
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 class CreateClusterNodeGroupPayload {
     /**

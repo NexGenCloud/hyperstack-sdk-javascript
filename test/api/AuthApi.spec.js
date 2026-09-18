@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('disableMFA', function() {
-      it('should call disableMFA successfully', function(done) {
-        //uncomment below and update the code to test disableMFA
-        //instance.disableMFA(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getUserMFAStatus', function() {
       it('should call getUserMFAStatus successfully', function(done) {
         //uncomment below and update the code to test getUserMFAStatus

@@ -18,7 +18,7 @@ import Metrics from './Metrics';
 /**
  * The BillingHistory model module.
  * @module model/BillingHistory
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 class BillingHistory {
     /**

@@ -16,16 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentInitiatePayload model module.
  * @module model/PaymentInitiatePayload
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 class PaymentInitiatePayload {
     /**
      * Constructs a new <code>PaymentInitiatePayload</code>.
      * @alias module:model/PaymentInitiatePayload
+     * @param amount {Number} The amount to pay, in dollars. Must be at least $5.00.
      */
-    constructor() { 
+    constructor(amount) { 
         
-        PaymentInitiatePayload.initialize(this);
+        PaymentInitiatePayload.initialize(this, amount);
     }
 
     /**
@@ -33,7 +34,8 @@ class PaymentInitiatePayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, amount) { 
+        obj['amount'] = amount;
     }
 
     /**
@@ -60,6 +62,12 @@ class PaymentInitiatePayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PaymentInitiatePayload</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of PaymentInitiatePayload.RequiredProperties) {
+            if (!data.hasOwnProperty(property)) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
 
         return true;
     }
@@ -67,9 +75,10 @@ class PaymentInitiatePayload {
 
 }
 
-
+PaymentInitiatePayload.RequiredProperties = ["amount"];
 
 /**
+ * The amount to pay, in dollars. Must be at least $5.00.
  * @member {Number} amount
  */
 PaymentInitiatePayload.prototype['amount'] = undefined;

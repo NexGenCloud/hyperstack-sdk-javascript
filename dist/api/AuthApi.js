@@ -7,7 +7,6 @@ exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 var _AuthGetTokenResponseModel = _interopRequireDefault(require("../model/AuthGetTokenResponseModel"));
 var _AuthUserInfoResponseModel = _interopRequireDefault(require("../model/AuthUserInfoResponseModel"));
-var _CommonResponseModel = _interopRequireDefault(require("../model/CommonResponseModel"));
 var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponseModel"));
 var _MFAStatusResponse = _interopRequireDefault(require("../model/MFAStatusResponse"));
 var _UserOrganizationsResponse = _interopRequireDefault(require("../model/UserOrganizationsResponse"));
@@ -32,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.55.4-alpha
+* @version v1.55.6-alpha
 */
 var AuthApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -82,37 +81,6 @@ var AuthApi = exports["default"] = /*#__PURE__*/function () {
     key: "changeOrganizationForToken",
     value: function changeOrganizationForToken(orgId) {
       return this.changeOrganizationForTokenWithHttpInfo(orgId).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * Disable Multi-Factor Authentication (MFA) for the currently authenticated user. This endpoint is used to turn off MFA.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
-     */
-  }, {
-    key: "disableMFAWithHttpInfo",
-    value: function disableMFAWithHttpInfo() {
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['apiKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _CommonResponseModel["default"];
-      return this.apiClient.callApi('/auth/me/mfa/disable', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-
-    /**
-     * Disable Multi-Factor Authentication (MFA) for the currently authenticated user. This endpoint is used to turn off MFA.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
-     */
-  }, {
-    key: "disableMFA",
-    value: function disableMFA() {
-      return this.disableMFAWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

@@ -21,7 +21,7 @@ import PaymentInitiateResponse from '../model/PaymentInitiateResponse';
 /**
 * Payment service.
 * @module api/PaymentApi
-* @version v1.55.4-alpha
+* @version v1.55.6-alpha
 */
 export default class PaymentApi {
 

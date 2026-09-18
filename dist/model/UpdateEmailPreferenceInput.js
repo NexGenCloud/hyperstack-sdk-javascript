@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UpdateEmailPreferenceInput model module.
  * @module model/UpdateEmailPreferenceInput
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 var UpdateEmailPreferenceInput = /*#__PURE__*/function () {
   /**

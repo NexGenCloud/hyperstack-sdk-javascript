@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ConsentActionResponse model module.
  * @module model/ConsentActionResponse
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 var ConsentActionResponse = /*#__PURE__*/function () {
   /**

@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-var _ContainerOverviewFields = _interopRequireDefault(require("./ContainerOverviewFields"));
 var _InstanceOverviewFields = _interopRequireDefault(require("./InstanceOverviewFields"));
 var _VolumeOverviewFields = _interopRequireDefault(require("./VolumeOverviewFields"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -29,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The OverviewInfo model module.
  * @module model/OverviewInfo
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 var OverviewInfo = /*#__PURE__*/function () {
   /**
@@ -62,9 +61,6 @@ var OverviewInfo = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new OverviewInfo();
-        if (data.hasOwnProperty('container')) {
-          obj['container'] = _ContainerOverviewFields["default"].constructFromObject(data['container']);
-        }
         if (data.hasOwnProperty('instance')) {
           obj['instance'] = _InstanceOverviewFields["default"].constructFromObject(data['instance']);
         }
@@ -83,11 +79,6 @@ var OverviewInfo = /*#__PURE__*/function () {
   }, {
     key: "validateJSON",
     value: function validateJSON(data) {
-      // validate the optional field `container`
-      if (data['container']) {
-        // data not null
-        _ContainerOverviewFields["default"].validateJSON(data['container']);
-      }
       // validate the optional field `instance`
       if (data['instance']) {
         // data not null
@@ -102,11 +93,6 @@ var OverviewInfo = /*#__PURE__*/function () {
     }
   }]);
 }();
-/**
- * @member {module:model/ContainerOverviewFields} container
- */
-OverviewInfo.prototype['container'] = undefined;
-
 /**
  * @member {module:model/InstanceOverviewFields} instance
  */

@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clusterId (base name: "cluster_id")', function() {
+      // uncomment below and update the code to test the property clusterId
+      //var instance = new HyperstackApi.InstanceFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property contractId (base name: "contract_id")', function() {
       // uncomment below and update the code to test the property contractId
       //var instance = new HyperstackApi.InstanceFields();
@@ -68,6 +74,12 @@
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
+      //var instance = new HyperstackApi.InstanceFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dedicatedInferenceId (base name: "dedicated_inference_id")', function() {
+      // uncomment below and update the code to test the property dedicatedInferenceId
       //var instance = new HyperstackApi.InstanceFields();
       //expect(instance).to.be();
     });

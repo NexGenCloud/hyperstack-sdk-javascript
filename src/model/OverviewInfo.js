@@ -12,14 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import ContainerOverviewFields from './ContainerOverviewFields';
 import InstanceOverviewFields from './InstanceOverviewFields';
 import VolumeOverviewFields from './VolumeOverviewFields';
 
 /**
  * The OverviewInfo model module.
  * @module model/OverviewInfo
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 class OverviewInfo {
     /**
@@ -50,9 +49,6 @@ class OverviewInfo {
         if (data) {
             obj = obj || new OverviewInfo();
 
-            if (data.hasOwnProperty('container')) {
-                obj['container'] = ContainerOverviewFields.constructFromObject(data['container']);
-            }
             if (data.hasOwnProperty('instance')) {
                 obj['instance'] = InstanceOverviewFields.constructFromObject(data['instance']);
             }
@@ -69,10 +65,6 @@ class OverviewInfo {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>OverviewInfo</code>.
      */
     static validateJSON(data) {
-        // validate the optional field `container`
-        if (data['container']) { // data not null
-          ContainerOverviewFields.validateJSON(data['container']);
-        }
         // validate the optional field `instance`
         if (data['instance']) { // data not null
           InstanceOverviewFields.validateJSON(data['instance']);
@@ -89,11 +81,6 @@ class OverviewInfo {
 }
 
 
-
-/**
- * @member {module:model/ContainerOverviewFields} container
- */
-OverviewInfo.prototype['container'] = undefined;
 
 /**
  * @member {module:model/InstanceOverviewFields} instance

@@ -5,7 +5,6 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**changeOrganizationForToken**](AuthApi.md#changeOrganizationForToken) | **GET** /auth/token/change-org/{org_id} | 
-[**disableMFA**](AuthApi.md#disableMFA) | **POST** /auth/me/mfa/disable | 
 [**getUserMFAStatus**](AuthApi.md#getUserMFAStatus) | **GET** /auth/me/mfa | Get MFA status for authenticated user
 [**getUserOrganizations**](AuthApi.md#getUserOrganizations) | **GET** /auth/me/organizations | Get User Organizations
 [**retrieveAuthenticatedUserDetails**](AuthApi.md#retrieveAuthenticatedUserDetails) | **GET** /auth/me | Retrieve Authenticated User Details
@@ -51,52 +50,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuthGetTokenResponseModel**](AuthGetTokenResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## disableMFA
-
-> CommonResponseModel disableMFA()
-
-
-
-Disable Multi-Factor Authentication (MFA) for the currently authenticated user. This endpoint is used to turn off MFA.
-
-### Example
-
-```javascript
-import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
-let defaultClient = HyperstackApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new HyperstackApi.AuthApi();
-apiInstance.disableMFA().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CommonResponseModel**](CommonResponseModel.md)
 
 ### Authorization
 

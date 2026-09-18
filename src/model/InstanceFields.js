@@ -23,7 +23,7 @@ import VolumeAttachmentFields from './VolumeAttachmentFields';
 /**
  * The InstanceFields model module.
  * @module model/InstanceFields
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 class InstanceFields {
     /**
@@ -57,11 +57,17 @@ class InstanceFields {
             if (data.hasOwnProperty('callback_url')) {
                 obj['callback_url'] = ApiClient.convertToType(data['callback_url'], 'String');
             }
+            if (data.hasOwnProperty('cluster_id')) {
+                obj['cluster_id'] = ApiClient.convertToType(data['cluster_id'], 'Number');
+            }
             if (data.hasOwnProperty('contract_id')) {
                 obj['contract_id'] = ApiClient.convertToType(data['contract_id'], 'Number');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('dedicated_inference_id')) {
+                obj['dedicated_inference_id'] = ApiClient.convertToType(data['dedicated_inference_id'], 'Number');
             }
             if (data.hasOwnProperty('enhanced_metrics')) {
                 obj['enhanced_metrics'] = InstanceEnhancedMetricsFields.constructFromObject(data['enhanced_metrics']);
@@ -238,6 +244,12 @@ class InstanceFields {
 InstanceFields.prototype['callback_url'] = undefined;
 
 /**
+ * The COE cluster this VM is a node of, or null.
+ * @member {Number} cluster_id
+ */
+InstanceFields.prototype['cluster_id'] = undefined;
+
+/**
  * @member {Number} contract_id
  */
 InstanceFields.prototype['contract_id'] = undefined;
@@ -246,6 +258,12 @@ InstanceFields.prototype['contract_id'] = undefined;
  * @member {Date} created_at
  */
 InstanceFields.prototype['created_at'] = undefined;
+
+/**
+ * The dedicated inference endpoint this VM serves, or null.
+ * @member {Number} dedicated_inference_id
+ */
+InstanceFields.prototype['dedicated_inference_id'] = undefined;
 
 /**
  * @member {module:model/InstanceEnhancedMetricsFields} enhanced_metrics

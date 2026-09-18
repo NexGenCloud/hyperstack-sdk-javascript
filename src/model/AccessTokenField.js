@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessTokenField model module.
  * @module model/AccessTokenField
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 class AccessTokenField {
     /**

@@ -68,16 +68,11 @@ import Colors from './model/Colors';
 import CommonResponseModel from './model/CommonResponseModel';
 import CompatibleFlavor from './model/CompatibleFlavor';
 import CompatibleImage from './model/CompatibleImage';
-import ComplianceFields from './model/ComplianceFields';
-import ComplianceModelFields from './model/ComplianceModelFields';
-import CompliancePayload from './model/CompliancePayload';
-import ComplianceResponse from './model/ComplianceResponse';
 import ConsentActionResponse from './model/ConsentActionResponse';
 import ConsentBlock from './model/ConsentBlock';
 import ConsentEventsResponse from './model/ConsentEventsResponse';
 import ConsentTemplate from './model/ConsentTemplate';
 import ConsentTemplatesResponse from './model/ConsentTemplatesResponse';
-import ContainerOverviewFields from './model/ContainerOverviewFields';
 import Contract from './model/Contract';
 import ContractDiscountPlanFields from './model/ContractDiscountPlanFields';
 import ContractGPUAllocationGraphResponse from './model/ContractGPUAllocationGraphResponse';
@@ -100,7 +95,6 @@ import CreateProfileResponse from './model/CreateProfileResponse';
 import CreateSecurityRulePayload from './model/CreateSecurityRulePayload';
 import CreateSnapshotPayload from './model/CreateSnapshotPayload';
 import CreateSnapshotResponse from './model/CreateSnapshotResponse';
-import CreateUpdateComplianceResponse from './model/CreateUpdateComplianceResponse';
 import CreateUpdateRbacRolePayload from './model/CreateUpdateRbacRolePayload';
 import CreateVolumePayload from './model/CreateVolumePayload';
 import CustomerContractDetailResponseModel from './model/CustomerContractDetailResponseModel';
@@ -108,9 +102,6 @@ import CustomerContractFields from './model/CustomerContractFields';
 import DashboardInfoResponse from './model/DashboardInfoResponse';
 import DataSynthesisBillingHistoryDetailsResponseSchema from './model/DataSynthesisBillingHistoryDetailsResponseSchema';
 import DeleteClusterNodesFields from './model/DeleteClusterNodesFields';
-import DeploymentFields from './model/DeploymentFields';
-import DeploymentFieldsForStartDeployments from './model/DeploymentFieldsForStartDeployments';
-import Deployments from './model/Deployments';
 import DetachVolumes from './model/DetachVolumes';
 import DetachVolumesPayload from './model/DetachVolumesPayload';
 import DisableAutoTopupResponse from './model/DisableAutoTopupResponse';
@@ -306,17 +297,12 @@ import SnapshotRestoreRequest from './model/SnapshotRestoreRequest';
 import SnapshotRetrieve from './model/SnapshotRetrieve';
 import SnapshotRetrieveFields from './model/SnapshotRetrieveFields';
 import Snapshots from './model/Snapshots';
-import StartDeployment from './model/StartDeployment';
-import StartDeploymentPayload from './model/StartDeploymentPayload';
 import SubResourceGraphBillingDetailsMetrics from './model/SubResourceGraphBillingDetailsMetrics';
 import SubResourcesCostsResponseModel from './model/SubResourcesCostsResponseModel';
 import SubResourcesGraphBillingHistoryFields from './model/SubResourcesGraphBillingHistoryFields';
 import SubResourcesGraphResponseModel from './model/SubResourcesGraphResponseModel';
 import SubscribeOrUnsubscribeUpdatePayload from './model/SubscribeOrUnsubscribeUpdatePayload';
 import SupportedKeypairPublicKeyTypesResponse from './model/SupportedKeypairPublicKeyTypesResponse';
-import Template from './model/Template';
-import TemplateFields from './model/TemplateFields';
-import Templates from './model/Templates';
 import TokenBasedBillingHistoryResponse from './model/TokenBasedBillingHistoryResponse';
 import URIs from './model/URIs';
 import UpdateAutoTopupPayload from './model/UpdateAutoTopupPayload';
@@ -330,7 +316,6 @@ import UpdateKeypairName from './model/UpdateKeypairName';
 import UpdateKeypairNameResponse from './model/UpdateKeypairNameResponse';
 import UpdateOrganizationPayload from './model/UpdateOrganizationPayload';
 import UpdateOrganizationResponseModel from './model/UpdateOrganizationResponseModel';
-import UpdateTemplate from './model/UpdateTemplate';
 import UpdateVolumeAttachmentPayload from './model/UpdateVolumeAttachmentPayload';
 import UpdateVolumePayload from './model/UpdateVolumePayload';
 import UpdateVolumeResponse from './model/UpdateVolumeResponse';
@@ -374,11 +359,9 @@ import CalculateApi from './api/CalculateApi';
 import CallbacksApi from './api/CallbacksApi';
 import ClusterEventsApi from './api/ClusterEventsApi';
 import ClustersApi from './api/ClustersApi';
-import ComplianceApi from './api/ComplianceApi';
 import CreditApi from './api/CreditApi';
 import CustomerContractApi from './api/CustomerContractApi';
 import DashboardApi from './api/DashboardApi';
-import DeploymentApi from './api/DeploymentApi';
 import EmailOptInOutApi from './api/EmailOptInOutApi';
 import EnvironmentApi from './api/EnvironmentApi';
 import FIPExclusionsApi from './api/FIPExclusionsApi';
@@ -405,7 +388,6 @@ import SecurityRulesApi from './api/SecurityRulesApi';
 import SnapshotEventsApi from './api/SnapshotEventsApi';
 import SnapshotsApi from './api/SnapshotsApi';
 import StockApi from './api/StockApi';
-import TemplateApi from './api/TemplateApi';
 import UserApi from './api/UserApi';
 import UserConsentApi from './api/UserConsentApi';
 import UserConsentEventsApi from './api/UserConsentEventsApi';
@@ -448,7 +430,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.55.4-alpha
+* @version v1.55.6-alpha
 */
 export {
     /**
@@ -788,30 +770,6 @@ export {
     CompatibleImage,
 
     /**
-     * The ComplianceFields model constructor.
-     * @property {module:model/ComplianceFields}
-     */
-    ComplianceFields,
-
-    /**
-     * The ComplianceModelFields model constructor.
-     * @property {module:model/ComplianceModelFields}
-     */
-    ComplianceModelFields,
-
-    /**
-     * The CompliancePayload model constructor.
-     * @property {module:model/CompliancePayload}
-     */
-    CompliancePayload,
-
-    /**
-     * The ComplianceResponse model constructor.
-     * @property {module:model/ComplianceResponse}
-     */
-    ComplianceResponse,
-
-    /**
      * The ConsentActionResponse model constructor.
      * @property {module:model/ConsentActionResponse}
      */
@@ -840,12 +798,6 @@ export {
      * @property {module:model/ConsentTemplatesResponse}
      */
     ConsentTemplatesResponse,
-
-    /**
-     * The ContainerOverviewFields model constructor.
-     * @property {module:model/ContainerOverviewFields}
-     */
-    ContainerOverviewFields,
 
     /**
      * The Contract model constructor.
@@ -980,12 +932,6 @@ export {
     CreateSnapshotResponse,
 
     /**
-     * The CreateUpdateComplianceResponse model constructor.
-     * @property {module:model/CreateUpdateComplianceResponse}
-     */
-    CreateUpdateComplianceResponse,
-
-    /**
      * The CreateUpdateRbacRolePayload model constructor.
      * @property {module:model/CreateUpdateRbacRolePayload}
      */
@@ -1026,24 +972,6 @@ export {
      * @property {module:model/DeleteClusterNodesFields}
      */
     DeleteClusterNodesFields,
-
-    /**
-     * The DeploymentFields model constructor.
-     * @property {module:model/DeploymentFields}
-     */
-    DeploymentFields,
-
-    /**
-     * The DeploymentFieldsForStartDeployments model constructor.
-     * @property {module:model/DeploymentFieldsForStartDeployments}
-     */
-    DeploymentFieldsForStartDeployments,
-
-    /**
-     * The Deployments model constructor.
-     * @property {module:model/Deployments}
-     */
-    Deployments,
 
     /**
      * The DetachVolumes model constructor.
@@ -2216,18 +2144,6 @@ export {
     Snapshots,
 
     /**
-     * The StartDeployment model constructor.
-     * @property {module:model/StartDeployment}
-     */
-    StartDeployment,
-
-    /**
-     * The StartDeploymentPayload model constructor.
-     * @property {module:model/StartDeploymentPayload}
-     */
-    StartDeploymentPayload,
-
-    /**
      * The SubResourceGraphBillingDetailsMetrics model constructor.
      * @property {module:model/SubResourceGraphBillingDetailsMetrics}
      */
@@ -2262,24 +2178,6 @@ export {
      * @property {module:model/SupportedKeypairPublicKeyTypesResponse}
      */
     SupportedKeypairPublicKeyTypesResponse,
-
-    /**
-     * The Template model constructor.
-     * @property {module:model/Template}
-     */
-    Template,
-
-    /**
-     * The TemplateFields model constructor.
-     * @property {module:model/TemplateFields}
-     */
-    TemplateFields,
-
-    /**
-     * The Templates model constructor.
-     * @property {module:model/Templates}
-     */
-    Templates,
 
     /**
      * The TokenBasedBillingHistoryResponse model constructor.
@@ -2358,12 +2256,6 @@ export {
      * @property {module:model/UpdateOrganizationResponseModel}
      */
     UpdateOrganizationResponseModel,
-
-    /**
-     * The UpdateTemplate model constructor.
-     * @property {module:model/UpdateTemplate}
-     */
-    UpdateTemplate,
 
     /**
      * The UpdateVolumeAttachmentPayload model constructor.
@@ -2624,12 +2516,6 @@ export {
     ClustersApi,
 
     /**
-    * The ComplianceApi service constructor.
-    * @property {module:api/ComplianceApi}
-    */
-    ComplianceApi,
-
-    /**
     * The CreditApi service constructor.
     * @property {module:api/CreditApi}
     */
@@ -2646,12 +2532,6 @@ export {
     * @property {module:api/DashboardApi}
     */
     DashboardApi,
-
-    /**
-    * The DeploymentApi service constructor.
-    * @property {module:api/DeploymentApi}
-    */
-    DeploymentApi,
 
     /**
     * The EmailOptInOutApi service constructor.
@@ -2808,12 +2688,6 @@ export {
     * @property {module:api/StockApi}
     */
     StockApi,
-
-    /**
-    * The TemplateApi service constructor.
-    * @property {module:api/TemplateApi}
-    */
-    TemplateApi,
 
     /**
     * The UserApi service constructor.

@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UserConsentEvent model module.
  * @module model/UserConsentEvent
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 var UserConsentEvent = /*#__PURE__*/function () {
   /**

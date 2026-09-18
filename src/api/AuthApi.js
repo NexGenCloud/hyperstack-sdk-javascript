@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import AuthGetTokenResponseModel from '../model/AuthGetTokenResponseModel';
 import AuthUserInfoResponseModel from '../model/AuthUserInfoResponseModel';
-import CommonResponseModel from '../model/CommonResponseModel';
 import ErrorResponseModel from '../model/ErrorResponseModel';
 import MFAStatusResponse from '../model/MFAStatusResponse';
 import UserOrganizationsResponse from '../model/UserOrganizationsResponse';
@@ -23,7 +22,7 @@ import UserOrganizationsResponse from '../model/UserOrganizationsResponse';
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.55.4-alpha
+* @version v1.55.6-alpha
 */
 export default class AuthApi {
 
@@ -80,45 +79,6 @@ export default class AuthApi {
      */
     changeOrganizationForToken(orgId) {
       return this.changeOrganizationForTokenWithHttpInfo(orgId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Disable Multi-Factor Authentication (MFA) for the currently authenticated user. This endpoint is used to turn off MFA.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommonResponseModel} and HTTP response
-     */
-    disableMFAWithHttpInfo() {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apiKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CommonResponseModel;
-      return this.apiClient.callApi(
-        '/auth/me/mfa/disable', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Disable Multi-Factor Authentication (MFA) for the currently authenticated user. This endpoint is used to turn off MFA.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommonResponseModel}
-     */
-    disableMFA() {
-      return this.disableMFAWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

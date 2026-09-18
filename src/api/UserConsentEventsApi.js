@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * UserConsentEvents service.
 * @module api/UserConsentEventsApi
-* @version v1.55.4-alpha
+* @version v1.55.6-alpha
 */
 export default class UserConsentEventsApi {
 

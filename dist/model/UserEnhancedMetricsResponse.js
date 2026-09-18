@@ -27,7 +27,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The UserEnhancedMetricsResponse model module.
  * @module model/UserEnhancedMetricsResponse
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 var UserEnhancedMetricsResponse = /*#__PURE__*/function () {
   /**

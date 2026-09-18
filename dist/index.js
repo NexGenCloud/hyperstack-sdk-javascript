@@ -417,36 +417,6 @@ Object.defineProperty(exports, "CompatibleImage", {
     return _CompatibleImage["default"];
   }
 });
-Object.defineProperty(exports, "ComplianceApi", {
-  enumerable: true,
-  get: function get() {
-    return _ComplianceApi["default"];
-  }
-});
-Object.defineProperty(exports, "ComplianceFields", {
-  enumerable: true,
-  get: function get() {
-    return _ComplianceFields["default"];
-  }
-});
-Object.defineProperty(exports, "ComplianceModelFields", {
-  enumerable: true,
-  get: function get() {
-    return _ComplianceModelFields["default"];
-  }
-});
-Object.defineProperty(exports, "CompliancePayload", {
-  enumerable: true,
-  get: function get() {
-    return _CompliancePayload["default"];
-  }
-});
-Object.defineProperty(exports, "ComplianceResponse", {
-  enumerable: true,
-  get: function get() {
-    return _ComplianceResponse["default"];
-  }
-});
 Object.defineProperty(exports, "ConsentActionResponse", {
   enumerable: true,
   get: function get() {
@@ -475,12 +445,6 @@ Object.defineProperty(exports, "ConsentTemplatesResponse", {
   enumerable: true,
   get: function get() {
     return _ConsentTemplatesResponse["default"];
-  }
-});
-Object.defineProperty(exports, "ContainerOverviewFields", {
-  enumerable: true,
-  get: function get() {
-    return _ContainerOverviewFields["default"];
   }
 });
 Object.defineProperty(exports, "Contract", {
@@ -615,12 +579,6 @@ Object.defineProperty(exports, "CreateSnapshotResponse", {
     return _CreateSnapshotResponse["default"];
   }
 });
-Object.defineProperty(exports, "CreateUpdateComplianceResponse", {
-  enumerable: true,
-  get: function get() {
-    return _CreateUpdateComplianceResponse["default"];
-  }
-});
 Object.defineProperty(exports, "CreateUpdateRbacRolePayload", {
   enumerable: true,
   get: function get() {
@@ -679,30 +637,6 @@ Object.defineProperty(exports, "DeleteClusterNodesFields", {
   enumerable: true,
   get: function get() {
     return _DeleteClusterNodesFields["default"];
-  }
-});
-Object.defineProperty(exports, "DeploymentApi", {
-  enumerable: true,
-  get: function get() {
-    return _DeploymentApi["default"];
-  }
-});
-Object.defineProperty(exports, "DeploymentFields", {
-  enumerable: true,
-  get: function get() {
-    return _DeploymentFields["default"];
-  }
-});
-Object.defineProperty(exports, "DeploymentFieldsForStartDeployments", {
-  enumerable: true,
-  get: function get() {
-    return _DeploymentFieldsForStartDeployments["default"];
-  }
-});
-Object.defineProperty(exports, "Deployments", {
-  enumerable: true,
-  get: function get() {
-    return _Deployments["default"];
   }
 });
 Object.defineProperty(exports, "DetachVolumes", {
@@ -2025,18 +1959,6 @@ Object.defineProperty(exports, "SnapshotsApi", {
     return _SnapshotsApi["default"];
   }
 });
-Object.defineProperty(exports, "StartDeployment", {
-  enumerable: true,
-  get: function get() {
-    return _StartDeployment["default"];
-  }
-});
-Object.defineProperty(exports, "StartDeploymentPayload", {
-  enumerable: true,
-  get: function get() {
-    return _StartDeploymentPayload["default"];
-  }
-});
 Object.defineProperty(exports, "StockApi", {
   enumerable: true,
   get: function get() {
@@ -2077,30 +1999,6 @@ Object.defineProperty(exports, "SupportedKeypairPublicKeyTypesResponse", {
   enumerable: true,
   get: function get() {
     return _SupportedKeypairPublicKeyTypesResponse["default"];
-  }
-});
-Object.defineProperty(exports, "Template", {
-  enumerable: true,
-  get: function get() {
-    return _Template["default"];
-  }
-});
-Object.defineProperty(exports, "TemplateApi", {
-  enumerable: true,
-  get: function get() {
-    return _TemplateApi["default"];
-  }
-});
-Object.defineProperty(exports, "TemplateFields", {
-  enumerable: true,
-  get: function get() {
-    return _TemplateFields["default"];
-  }
-});
-Object.defineProperty(exports, "Templates", {
-  enumerable: true,
-  get: function get() {
-    return _Templates["default"];
   }
 });
 Object.defineProperty(exports, "TokenBasedBillingHistoryResponse", {
@@ -2179,12 +2077,6 @@ Object.defineProperty(exports, "UpdateOrganizationResponseModel", {
   enumerable: true,
   get: function get() {
     return _UpdateOrganizationResponseModel["default"];
-  }
-});
-Object.defineProperty(exports, "UpdateTemplate", {
-  enumerable: true,
-  get: function get() {
-    return _UpdateTemplate["default"];
   }
 });
 Object.defineProperty(exports, "UpdateVolumeAttachmentPayload", {
@@ -2489,16 +2381,11 @@ var _Colors = _interopRequireDefault(require("./model/Colors"));
 var _CommonResponseModel = _interopRequireDefault(require("./model/CommonResponseModel"));
 var _CompatibleFlavor = _interopRequireDefault(require("./model/CompatibleFlavor"));
 var _CompatibleImage = _interopRequireDefault(require("./model/CompatibleImage"));
-var _ComplianceFields = _interopRequireDefault(require("./model/ComplianceFields"));
-var _ComplianceModelFields = _interopRequireDefault(require("./model/ComplianceModelFields"));
-var _CompliancePayload = _interopRequireDefault(require("./model/CompliancePayload"));
-var _ComplianceResponse = _interopRequireDefault(require("./model/ComplianceResponse"));
 var _ConsentActionResponse = _interopRequireDefault(require("./model/ConsentActionResponse"));
 var _ConsentBlock = _interopRequireDefault(require("./model/ConsentBlock"));
 var _ConsentEventsResponse = _interopRequireDefault(require("./model/ConsentEventsResponse"));
 var _ConsentTemplate = _interopRequireDefault(require("./model/ConsentTemplate"));
 var _ConsentTemplatesResponse = _interopRequireDefault(require("./model/ConsentTemplatesResponse"));
-var _ContainerOverviewFields = _interopRequireDefault(require("./model/ContainerOverviewFields"));
 var _Contract = _interopRequireDefault(require("./model/Contract"));
 var _ContractDiscountPlanFields = _interopRequireDefault(require("./model/ContractDiscountPlanFields"));
 var _ContractGPUAllocationGraphResponse = _interopRequireDefault(require("./model/ContractGPUAllocationGraphResponse"));
@@ -2521,7 +2408,6 @@ var _CreateProfileResponse = _interopRequireDefault(require("./model/CreateProfi
 var _CreateSecurityRulePayload = _interopRequireDefault(require("./model/CreateSecurityRulePayload"));
 var _CreateSnapshotPayload = _interopRequireDefault(require("./model/CreateSnapshotPayload"));
 var _CreateSnapshotResponse = _interopRequireDefault(require("./model/CreateSnapshotResponse"));
-var _CreateUpdateComplianceResponse = _interopRequireDefault(require("./model/CreateUpdateComplianceResponse"));
 var _CreateUpdateRbacRolePayload = _interopRequireDefault(require("./model/CreateUpdateRbacRolePayload"));
 var _CreateVolumePayload = _interopRequireDefault(require("./model/CreateVolumePayload"));
 var _CustomerContractDetailResponseModel = _interopRequireDefault(require("./model/CustomerContractDetailResponseModel"));
@@ -2529,9 +2415,6 @@ var _CustomerContractFields = _interopRequireDefault(require("./model/CustomerCo
 var _DashboardInfoResponse = _interopRequireDefault(require("./model/DashboardInfoResponse"));
 var _DataSynthesisBillingHistoryDetailsResponseSchema = _interopRequireDefault(require("./model/DataSynthesisBillingHistoryDetailsResponseSchema"));
 var _DeleteClusterNodesFields = _interopRequireDefault(require("./model/DeleteClusterNodesFields"));
-var _DeploymentFields = _interopRequireDefault(require("./model/DeploymentFields"));
-var _DeploymentFieldsForStartDeployments = _interopRequireDefault(require("./model/DeploymentFieldsForStartDeployments"));
-var _Deployments = _interopRequireDefault(require("./model/Deployments"));
 var _DetachVolumes = _interopRequireDefault(require("./model/DetachVolumes"));
 var _DetachVolumesPayload = _interopRequireDefault(require("./model/DetachVolumesPayload"));
 var _DisableAutoTopupResponse = _interopRequireDefault(require("./model/DisableAutoTopupResponse"));
@@ -2727,17 +2610,12 @@ var _SnapshotRestoreRequest = _interopRequireDefault(require("./model/SnapshotRe
 var _SnapshotRetrieve = _interopRequireDefault(require("./model/SnapshotRetrieve"));
 var _SnapshotRetrieveFields = _interopRequireDefault(require("./model/SnapshotRetrieveFields"));
 var _Snapshots = _interopRequireDefault(require("./model/Snapshots"));
-var _StartDeployment = _interopRequireDefault(require("./model/StartDeployment"));
-var _StartDeploymentPayload = _interopRequireDefault(require("./model/StartDeploymentPayload"));
 var _SubResourceGraphBillingDetailsMetrics = _interopRequireDefault(require("./model/SubResourceGraphBillingDetailsMetrics"));
 var _SubResourcesCostsResponseModel = _interopRequireDefault(require("./model/SubResourcesCostsResponseModel"));
 var _SubResourcesGraphBillingHistoryFields = _interopRequireDefault(require("./model/SubResourcesGraphBillingHistoryFields"));
 var _SubResourcesGraphResponseModel = _interopRequireDefault(require("./model/SubResourcesGraphResponseModel"));
 var _SubscribeOrUnsubscribeUpdatePayload = _interopRequireDefault(require("./model/SubscribeOrUnsubscribeUpdatePayload"));
 var _SupportedKeypairPublicKeyTypesResponse = _interopRequireDefault(require("./model/SupportedKeypairPublicKeyTypesResponse"));
-var _Template = _interopRequireDefault(require("./model/Template"));
-var _TemplateFields = _interopRequireDefault(require("./model/TemplateFields"));
-var _Templates = _interopRequireDefault(require("./model/Templates"));
 var _TokenBasedBillingHistoryResponse = _interopRequireDefault(require("./model/TokenBasedBillingHistoryResponse"));
 var _URIs = _interopRequireDefault(require("./model/URIs"));
 var _UpdateAutoTopupPayload = _interopRequireDefault(require("./model/UpdateAutoTopupPayload"));
@@ -2751,7 +2629,6 @@ var _UpdateKeypairName = _interopRequireDefault(require("./model/UpdateKeypairNa
 var _UpdateKeypairNameResponse = _interopRequireDefault(require("./model/UpdateKeypairNameResponse"));
 var _UpdateOrganizationPayload = _interopRequireDefault(require("./model/UpdateOrganizationPayload"));
 var _UpdateOrganizationResponseModel = _interopRequireDefault(require("./model/UpdateOrganizationResponseModel"));
-var _UpdateTemplate = _interopRequireDefault(require("./model/UpdateTemplate"));
 var _UpdateVolumeAttachmentPayload = _interopRequireDefault(require("./model/UpdateVolumeAttachmentPayload"));
 var _UpdateVolumePayload = _interopRequireDefault(require("./model/UpdateVolumePayload"));
 var _UpdateVolumeResponse = _interopRequireDefault(require("./model/UpdateVolumeResponse"));
@@ -2795,11 +2672,9 @@ var _CalculateApi = _interopRequireDefault(require("./api/CalculateApi"));
 var _CallbacksApi = _interopRequireDefault(require("./api/CallbacksApi"));
 var _ClusterEventsApi = _interopRequireDefault(require("./api/ClusterEventsApi"));
 var _ClustersApi = _interopRequireDefault(require("./api/ClustersApi"));
-var _ComplianceApi = _interopRequireDefault(require("./api/ComplianceApi"));
 var _CreditApi = _interopRequireDefault(require("./api/CreditApi"));
 var _CustomerContractApi = _interopRequireDefault(require("./api/CustomerContractApi"));
 var _DashboardApi = _interopRequireDefault(require("./api/DashboardApi"));
-var _DeploymentApi = _interopRequireDefault(require("./api/DeploymentApi"));
 var _EmailOptInOutApi = _interopRequireDefault(require("./api/EmailOptInOutApi"));
 var _EnvironmentApi = _interopRequireDefault(require("./api/EnvironmentApi"));
 var _FIPExclusionsApi = _interopRequireDefault(require("./api/FIPExclusionsApi"));
@@ -2826,7 +2701,6 @@ var _SecurityRulesApi = _interopRequireDefault(require("./api/SecurityRulesApi")
 var _SnapshotEventsApi = _interopRequireDefault(require("./api/SnapshotEventsApi"));
 var _SnapshotsApi = _interopRequireDefault(require("./api/SnapshotsApi"));
 var _StockApi = _interopRequireDefault(require("./api/StockApi"));
-var _TemplateApi = _interopRequireDefault(require("./api/TemplateApi"));
 var _UserApi = _interopRequireDefault(require("./api/UserApi"));
 var _UserConsentApi = _interopRequireDefault(require("./api/UserConsentApi"));
 var _UserConsentEventsApi = _interopRequireDefault(require("./api/UserConsentEventsApi"));

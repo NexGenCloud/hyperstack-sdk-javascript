@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(HyperstackApi.OverviewInfo);
     });
 
-    it('should have the property container (base name: "container")', function() {
-      // uncomment below and update the code to test the property container
-      //var instance = new HyperstackApi.OverviewInfo();
-      //expect(instance).to.be();
-    });
-
     it('should have the property instance (base name: "instance")', function() {
       // uncomment below and update the code to test the property instance
       //var instance = new HyperstackApi.OverviewInfo();

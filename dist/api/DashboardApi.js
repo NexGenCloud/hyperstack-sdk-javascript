@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Dashboard service.
 * @module api/DashboardApi
-* @version v1.55.4-alpha
+* @version v1.55.6-alpha
 */
 var DashboardApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,7 +45,7 @@ var DashboardApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Retrieve Dashboard
-   * Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
+   * Returns hardware and pricing overview for your active resources, includingvirtual machines and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DashboardInfoResponse} and HTTP response
    */
   return _createClass(DashboardApi, [{
@@ -65,7 +65,7 @@ var DashboardApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * Retrieve Dashboard
-     * Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
+     * Returns hardware and pricing overview for your active resources, includingvirtual machines and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DashboardInfoResponse}
      */
   }, {

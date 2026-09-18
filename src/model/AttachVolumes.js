@@ -17,7 +17,7 @@ import AttachVolumeFields from './AttachVolumeFields';
 /**
  * The AttachVolumes model module.
  * @module model/AttachVolumes
- * @version v1.55.4-alpha
+ * @version v1.55.6-alpha
  */
 class AttachVolumes {
     /**
