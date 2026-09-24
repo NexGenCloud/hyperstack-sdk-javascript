@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _superagent = _interopRequireDefault(require("superagent"));
 var _HyperstackHeaders = _interopRequireDefault(require("./HyperstackHeaders"));
+var _RedactCredentials = _interopRequireWildcard(require("./RedactCredentials"));
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -26,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
  */
 /**
 * @module ApiClient
-* @version v1.55.6-alpha
+* @version v1.55.7-alpha
 */
 /**
 * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
@@ -69,7 +71,7 @@ var ApiClient = /*#__PURE__*/function () {
      * @default {}
      */
     this.defaultHeaders = {
-      'User-Agent': 'hyperstack-javascript-sdk/v1.55.6-alpha'
+      'User-Agent': 'hyperstack-javascript-sdk/v1.55.7-alpha'
     };
 
     /**
@@ -422,6 +424,7 @@ var ApiClient = /*#__PURE__*/function () {
       // set header parameters
       request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
       (0, _HyperstackHeaders["default"])(request);
+      (0, _RedactCredentials["default"])(request);
 
       // set requestAgent if it is set by user
       if (this.requestAgent) {
@@ -486,6 +489,7 @@ var ApiClient = /*#__PURE__*/function () {
       }
       return new Promise(function (resolve, reject) {
         request.end(function (error, response) {
+          (0, _RedactCredentials.redactCredentials)(response);
           if (error) {
             var err = {};
             if (response) {

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClusterNodeInstanceFields model module.
  * @module model/ClusterNodeInstanceFields
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class ClusterNodeInstanceFields {
     /**

@@ -17,7 +17,7 @@ import BillingHistoryServerlessInference from './BillingHistoryServerlessInferen
 /**
  * The TokenBasedBillingHistoryResponse model module.
  * @module model/TokenBasedBillingHistoryResponse
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class TokenBasedBillingHistoryResponse {
     /**

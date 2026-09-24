@@ -19,7 +19,7 @@ import ErrorResponseModel from '../model/ErrorResponseModel';
 /**
 * Dashboard service.
 * @module api/DashboardApi
-* @version v1.55.6-alpha
+* @version v1.55.7-alpha
 */
 export default class DashboardApi {
 

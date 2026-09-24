@@ -30,7 +30,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ImageRestrictions model module.
  * @module model/ImageRestrictions
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 var ImageRestrictions = /*#__PURE__*/function () {
   /**

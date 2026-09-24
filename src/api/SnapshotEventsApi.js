@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * SnapshotEvents service.
 * @module api/SnapshotEventsApi
-* @version v1.55.6-alpha
+* @version v1.55.7-alpha
 */
 export default class SnapshotEventsApi {
 

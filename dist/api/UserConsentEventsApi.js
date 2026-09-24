@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * UserConsentEvents service.
 * @module api/UserConsentEventsApi
-* @version v1.55.6-alpha
+* @version v1.55.7-alpha
 */
 var UserConsentEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**

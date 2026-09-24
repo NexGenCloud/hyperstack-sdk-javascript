@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SubResourcesGraphBillingHistoryFields model module.
  * @module model/SubResourcesGraphBillingHistoryFields
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 var SubResourcesGraphBillingHistoryFields = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateFirewallPayload model module.
  * @module model/CreateFirewallPayload
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class CreateFirewallPayload {
     /**

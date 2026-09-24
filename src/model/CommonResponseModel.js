@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CommonResponseModel model module.
  * @module model/CommonResponseModel
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class CommonResponseModel {
     /**

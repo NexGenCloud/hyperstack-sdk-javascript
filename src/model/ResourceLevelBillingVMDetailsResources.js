@@ -18,7 +18,7 @@ import ResourceLevelBillingDetailsMetrics from './ResourceLevelBillingDetailsMet
 /**
  * The ResourceLevelBillingVMDetailsResources model module.
  * @module model/ResourceLevelBillingVMDetailsResources
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class ResourceLevelBillingVMDetailsResources {
     /**

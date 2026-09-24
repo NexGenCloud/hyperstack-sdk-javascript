@@ -17,7 +17,7 @@ import LableResonse from './LableResonse';
 /**
  * The ClusterFlavorFields model module.
  * @module model/ClusterFlavorFields
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class ClusterFlavorFields {
     /**

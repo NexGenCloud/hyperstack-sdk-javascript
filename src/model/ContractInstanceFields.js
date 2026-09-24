@@ -17,7 +17,7 @@ import ClusterFields from './ClusterFields';
 /**
  * The ContractInstanceFields model module.
  * @module model/ContractInstanceFields
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class ContractInstanceFields {
     /**

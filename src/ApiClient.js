@@ -12,11 +12,11 @@
  */
 
 
-import superagent from "superagent"; import applyHyperstackHeaders from "./HyperstackHeaders";
+import superagent from "superagent"; import applyHyperstackHeaders from "./HyperstackHeaders"; import stripAuthOnCrossHostRedirect, { redactCredentials } from "./RedactCredentials";
 
 /**
 * @module ApiClient
-* @version v1.55.6-alpha
+* @version v1.55.7-alpha
 */
 
 /**
@@ -54,7 +54,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'hyperstack-javascript-sdk/v1.55.6-alpha'
+            'User-Agent': 'hyperstack-javascript-sdk/v1.55.7-alpha'
         };
 
         /**
@@ -411,7 +411,7 @@ class ApiClient {
         request.query(this.normalizeParams(queryParams));
 
         // set header parameters
-        request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); applyHyperstackHeaders(request);
+        request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); applyHyperstackHeaders(request); stripAuthOnCrossHostRedirect(request);
 
         // set requestAgent if it is set by user
         if (this.requestAgent) {
@@ -480,7 +480,7 @@ class ApiClient {
         }
 
         return new Promise((resolve, reject) => {
-            request.end((error, response) => {
+            request.end((error, response) => { redactCredentials(response);
                 if (error) {
                     var err = {};
                     if (response) {

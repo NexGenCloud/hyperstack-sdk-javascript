@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The PaymentInitiatePayload model module.
  * @module model/PaymentInitiatePayload
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 var PaymentInitiatePayload = /*#__PURE__*/function () {
   /**

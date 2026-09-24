@@ -17,7 +17,7 @@ import ClusterNodeGroupFields from './ClusterNodeGroupFields';
 /**
  * The ClusterNodeGroupsListResponse model module.
  * @module model/ClusterNodeGroupsListResponse
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 class ClusterNodeGroupsListResponse {
     /**

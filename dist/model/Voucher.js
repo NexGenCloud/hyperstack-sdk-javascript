@@ -29,7 +29,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The Voucher model module.
  * @module model/Voucher
- * @version v1.55.6-alpha
+ * @version v1.55.7-alpha
  */
 var Voucher = /*#__PURE__*/function () {
   /**
