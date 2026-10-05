@@ -17,7 +17,7 @@ import ResourceLevelBillingHistory from './ResourceLevelBillingHistory';
 /**
  * The ResourceLevelClusterBillingHistoryResponseModel model module.
  * @module model/ResourceLevelClusterBillingHistoryResponseModel
- * @version v1.55.7-alpha
+ * @version v1.55.10-alpha
  */
 class ResourceLevelClusterBillingHistoryResponseModel {
     /**

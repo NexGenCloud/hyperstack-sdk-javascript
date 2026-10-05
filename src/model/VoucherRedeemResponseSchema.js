@@ -17,7 +17,7 @@ import Voucher from './Voucher';
 /**
  * The VoucherRedeemResponseSchema model module.
  * @module model/VoucherRedeemResponseSchema
- * @version v1.55.7-alpha
+ * @version v1.55.10-alpha
  */
 class VoucherRedeemResponseSchema {
     /**

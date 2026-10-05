@@ -17,7 +17,7 @@ import EmailCategoryChild from './EmailCategoryChild';
 /**
  * The EmailCategory model module.
  * @module model/EmailCategory
- * @version v1.55.7-alpha
+ * @version v1.55.10-alpha
  */
 class EmailCategory {
     /**

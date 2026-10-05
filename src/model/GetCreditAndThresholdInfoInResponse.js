@@ -17,7 +17,7 @@ import GetCreditAndThresholdInfo from './GetCreditAndThresholdInfo';
 /**
  * The GetCreditAndThresholdInfoInResponse model module.
  * @module model/GetCreditAndThresholdInfoInResponse
- * @version v1.55.7-alpha
+ * @version v1.55.10-alpha
  */
 class GetCreditAndThresholdInfoInResponse {
     /**

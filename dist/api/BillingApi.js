@@ -54,7 +54,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Billing service.
 * @module api/BillingApi
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 var BillingApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -682,7 +682,7 @@ var BillingApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: Last Day Cost
-     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/last-day-usage/)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LastDayCostResponse} and HTTP response
      */
   }, {
@@ -702,7 +702,7 @@ var BillingApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: Last Day Cost
-     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+     * Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/last-day-usage/)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LastDayCostResponse}
      */
   }, {
@@ -1167,7 +1167,7 @@ var BillingApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: Billing usage
-     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://docs.hyperstack.cloud/docs/billing/pricebook/)
      * @param {Object} opts Optional parameters
      * @param {String} [deleted] `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
      * @param {String} [environment] Filter resources by environment ID or Name
@@ -1194,7 +1194,7 @@ var BillingApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: Billing usage
-     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+     * Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://docs.hyperstack.cloud/docs/billing/pricebook/)
      * @param {Object} opts Optional parameters
      * @param {String} opts.deleted `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
      * @param {String} opts.environment Filter resources by environment ID or Name

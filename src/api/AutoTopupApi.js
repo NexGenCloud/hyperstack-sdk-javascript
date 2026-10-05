@@ -25,7 +25,7 @@ import UpdateAutoTopupResponse from '../model/UpdateAutoTopupResponse';
 /**
 * AutoTopup service.
 * @module api/AutoTopupApi
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 export default class AutoTopupApi {
 
@@ -167,7 +167,7 @@ export default class AutoTopupApi {
 
     /**
      * Get auto top-up status and configuration
-     * Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](None/docs/api-reference/billing-resources/).
+     * Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AutoTopupStatusSchema} and HTTP response
      */
     getAutoTopUpStatusWithHttpInfo() {
@@ -195,7 +195,7 @@ export default class AutoTopupApi {
 
     /**
      * Get auto top-up status and configuration
-     * Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](None/docs/api-reference/billing-resources/).
+     * Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AutoTopupStatusSchema}
      */
     getAutoTopUpStatus() {

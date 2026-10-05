@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
  */
 /**
 * @module ApiClient
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 /**
 * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
@@ -71,7 +71,7 @@ var ApiClient = /*#__PURE__*/function () {
      * @default {}
      */
     this.defaultHeaders = {
-      'User-Agent': 'hyperstack-javascript-sdk/v1.55.7-alpha'
+      'User-Agent': 'hyperstack-javascript-sdk/v1.55.10-alpha'
     };
 
     /**

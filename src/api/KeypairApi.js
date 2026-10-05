@@ -25,7 +25,7 @@ import UpdateKeypairNameResponse from '../model/UpdateKeypairNameResponse';
 /**
 * Keypair service.
 * @module api/KeypairApi
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 export default class KeypairApi {
 

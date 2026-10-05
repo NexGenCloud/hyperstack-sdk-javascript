@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The SecondaryColor model module.
  * @module model/SecondaryColor
- * @version v1.55.7-alpha
+ * @version v1.55.10-alpha
  */
 var SecondaryColor = /*#__PURE__*/function () {
   /**

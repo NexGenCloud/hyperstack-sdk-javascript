@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Alive service.
 * @module api/AliveApi
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 var AliveApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -43,7 +43,7 @@ var AliveApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * GET: Alive
-   * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](None/docs/api-reference/billing-resources/alive/).
+   * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/alive/).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   return _createClass(AliveApi, [{
@@ -63,7 +63,7 @@ var AliveApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: Alive
-     * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](None/docs/api-reference/billing-resources/alive/).
+     * Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/alive/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
   }, {

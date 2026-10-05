@@ -28,7 +28,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Credit service.
 * @module api/CreditApi
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 var CreditApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -45,7 +45,7 @@ var CreditApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * GET: View credit and threshold
-   * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
+   * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-credit-balance/).
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCreditAndThresholdInfoInResponse} and HTTP response
    */
   return _createClass(CreditApi, [{
@@ -65,7 +65,7 @@ var CreditApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: View credit and threshold
-     * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
+     * Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-credit-balance/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCreditAndThresholdInfoInResponse}
      */
   }, {

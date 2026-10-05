@@ -225,6 +225,7 @@ import PaymentDetailsResponse from './model/PaymentDetailsResponse';
 import PaymentInitiateFields from './model/PaymentInitiateFields';
 import PaymentInitiatePayload from './model/PaymentInitiatePayload';
 import PaymentInitiateResponse from './model/PaymentInitiateResponse';
+import PaymentReceiptResponse from './model/PaymentReceiptResponse';
 import PermissionFields from './model/PermissionFields';
 import PolicyFields from './model/PolicyFields';
 import PolicyPermissionFields from './model/PolicyPermissionFields';
@@ -430,7 +431,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 export {
     /**
@@ -1710,6 +1711,12 @@ export {
      * @property {module:model/PaymentInitiateResponse}
      */
     PaymentInitiateResponse,
+
+    /**
+     * The PaymentReceiptResponse model constructor.
+     * @property {module:model/PaymentReceiptResponse}
+     */
+    PaymentReceiptResponse,
 
     /**
      * The PermissionFields model constructor.

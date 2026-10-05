@@ -1467,6 +1467,12 @@ Object.defineProperty(exports, "PaymentInitiateResponse", {
     return _PaymentInitiateResponse["default"];
   }
 });
+Object.defineProperty(exports, "PaymentReceiptResponse", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentReceiptResponse["default"];
+  }
+});
 Object.defineProperty(exports, "PermissionApi", {
   enumerable: true,
   get: function get() {
@@ -2538,6 +2544,7 @@ var _PaymentDetailsResponse = _interopRequireDefault(require("./model/PaymentDet
 var _PaymentInitiateFields = _interopRequireDefault(require("./model/PaymentInitiateFields"));
 var _PaymentInitiatePayload = _interopRequireDefault(require("./model/PaymentInitiatePayload"));
 var _PaymentInitiateResponse = _interopRequireDefault(require("./model/PaymentInitiateResponse"));
+var _PaymentReceiptResponse = _interopRequireDefault(require("./model/PaymentReceiptResponse"));
 var _PermissionFields = _interopRequireDefault(require("./model/PermissionFields"));
 var _PolicyFields = _interopRequireDefault(require("./model/PolicyFields"));
 var _PolicyPermissionFields = _interopRequireDefault(require("./model/PolicyPermissionFields"));

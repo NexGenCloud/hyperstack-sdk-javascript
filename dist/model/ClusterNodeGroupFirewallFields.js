@@ -26,7 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * The ClusterNodeGroupFirewallFields model module.
  * @module model/ClusterNodeGroupFirewallFields
- * @version v1.55.7-alpha
+ * @version v1.55.10-alpha
  */
 var ClusterNodeGroupFirewallFields = /*#__PURE__*/function () {
   /**

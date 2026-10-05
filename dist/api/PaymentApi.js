@@ -9,6 +9,7 @@ var _ErrorResponseModel = _interopRequireDefault(require("../model/ErrorResponse
 var _PaymentDetailsResponse = _interopRequireDefault(require("../model/PaymentDetailsResponse"));
 var _PaymentInitiatePayload = _interopRequireDefault(require("../model/PaymentInitiatePayload"));
 var _PaymentInitiateResponse = _interopRequireDefault(require("../model/PaymentInitiateResponse"));
+var _PaymentReceiptResponse = _interopRequireDefault(require("../model/PaymentReceiptResponse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -30,7 +31,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Payment service.
 * @module api/PaymentApi
-* @version v1.55.7-alpha
+* @version v1.55.10-alpha
 */
 var PaymentApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -47,9 +48,9 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
 
   /**
    * Retrieve Payment Receipt
-   * Retrieve the payment receipt from Stripe for a specific payment
+   * Retrieve the URL of the Stripe-hosted invoice page for a specific payment. The hosted URL is refreshed by Stripe on every retrieval, so it never expires.
    * @param {String} paymentId 
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentReceiptResponse} and HTTP response
    */
   return _createClass(PaymentApi, [{
     key: "getPaymentReceiptWithHttpInfo",
@@ -68,15 +69,15 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
       var authNames = ['apiKey'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = _PaymentReceiptResponse["default"];
       return this.apiClient.callApi('/billing/payment/receipt/{payment_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
 
     /**
      * Retrieve Payment Receipt
-     * Retrieve the payment receipt from Stripe for a specific payment
+     * Retrieve the URL of the Stripe-hosted invoice page for a specific payment. The hosted URL is refreshed by Stripe on every retrieval, so it never expires.
      * @param {String} paymentId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentReceiptResponse}
      */
   }, {
     key: "getPaymentReceipt",
@@ -88,7 +89,7 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * POST: Initiate payment
-     * Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](None/docs/api-reference/billing-resources/create-payment).
+     * Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/create-payment).
      * @param {module:model/PaymentInitiatePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentInitiateResponse} and HTTP response
      */
@@ -113,7 +114,7 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * POST: Initiate payment
-     * Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](None/docs/api-reference/billing-resources/create-payment).
+     * Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/create-payment).
      * @param {module:model/PaymentInitiatePayload} payload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentInitiateResponse}
      */
@@ -127,7 +128,7 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: View payment details
-     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-payment-history/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentDetailsResponse} and HTTP response
      */
   }, {
@@ -147,7 +148,7 @@ var PaymentApi = exports["default"] = /*#__PURE__*/function () {
 
     /**
      * GET: View payment details
-     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+     * Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-payment-history/).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentDetailsResponse}
      */
   }, {
