@@ -62,6 +62,8 @@ import ClusterNodeGroupsListResponse from './model/ClusterNodeGroupsListResponse
 import ClusterNodeInstanceFields from './model/ClusterNodeInstanceFields';
 import ClusterNodesListResponse from './model/ClusterNodesListResponse';
 import ClusterResponse from './model/ClusterResponse';
+import ClusterRestoreFailedNode from './model/ClusterRestoreFailedNode';
+import ClusterRestoreResponse from './model/ClusterRestoreResponse';
 import ClusterVersion from './model/ClusterVersion';
 import ClusterVersions from './model/ClusterVersions';
 import Colors from './model/Colors';
@@ -197,6 +199,7 @@ import ObjectStorageAccessKeyCreateRequest from './model/ObjectStorageAccessKeyC
 import ObjectStorageAccessKeyCreateResponse from './model/ObjectStorageAccessKeyCreateResponse';
 import ObjectStorageAccessKeyListResponse from './model/ObjectStorageAccessKeyListResponse';
 import ObjectStorageAccessKeyResponse from './model/ObjectStorageAccessKeyResponse';
+import ObjectStorageAccessKeyUpdateRequest from './model/ObjectStorageAccessKeyUpdateRequest';
 import ObjectStorageBucketListResponse from './model/ObjectStorageBucketListResponse';
 import ObjectStorageBucketResponse from './model/ObjectStorageBucketResponse';
 import ObjectStorageDeleteResponse from './model/ObjectStorageDeleteResponse';
@@ -347,6 +350,7 @@ import VolumesFields from './model/VolumesFields';
 import Voucher from './model/Voucher';
 import VoucherRedeemResponseSchema from './model/VoucherRedeemResponseSchema';
 import WorkloadBillingHistoryResponse from './model/WorkloadBillingHistoryResponse';
+import ZendeskMessagingToken from './model/ZendeskMessagingToken';
 import AccessKeysApi from './api/AccessKeysApi';
 import AliveApi from './api/AliveApi';
 import ApiKeyApi from './api/ApiKeyApi';
@@ -400,6 +404,7 @@ import VncUrlApi from './api/VncUrlApi';
 import VolumeApi from './api/VolumeApi';
 import VolumeAttachmentApi from './api/VolumeAttachmentApi';
 import VouchersApi from './api/VouchersApi';
+import ZendeskApi from './api/ZendeskApi';
 
 
 /**
@@ -431,7 +436,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.55.10-alpha
+* @version v1.56.0-alpha
 */
 export {
     /**
@@ -733,6 +738,18 @@ export {
      * @property {module:model/ClusterResponse}
      */
     ClusterResponse,
+
+    /**
+     * The ClusterRestoreFailedNode model constructor.
+     * @property {module:model/ClusterRestoreFailedNode}
+     */
+    ClusterRestoreFailedNode,
+
+    /**
+     * The ClusterRestoreResponse model constructor.
+     * @property {module:model/ClusterRestoreResponse}
+     */
+    ClusterRestoreResponse,
 
     /**
      * The ClusterVersion model constructor.
@@ -1543,6 +1560,12 @@ export {
      * @property {module:model/ObjectStorageAccessKeyResponse}
      */
     ObjectStorageAccessKeyResponse,
+
+    /**
+     * The ObjectStorageAccessKeyUpdateRequest model constructor.
+     * @property {module:model/ObjectStorageAccessKeyUpdateRequest}
+     */
+    ObjectStorageAccessKeyUpdateRequest,
 
     /**
      * The ObjectStorageBucketListResponse model constructor.
@@ -2445,6 +2468,12 @@ export {
     WorkloadBillingHistoryResponse,
 
     /**
+     * The ZendeskMessagingToken model constructor.
+     * @property {module:model/ZendeskMessagingToken}
+     */
+    ZendeskMessagingToken,
+
+    /**
     * The AccessKeysApi service constructor.
     * @property {module:api/AccessKeysApi}
     */
@@ -2760,5 +2789,11 @@ export {
     * The VouchersApi service constructor.
     * @property {module:api/VouchersApi}
     */
-    VouchersApi
+    VouchersApi,
+
+    /**
+    * The ZendeskApi service constructor.
+    * @property {module:api/ZendeskApi}
+    */
+    ZendeskApi
 };

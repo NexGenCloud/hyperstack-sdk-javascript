@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Metrics model module.
  * @module model/Metrics
- * @version v1.55.10-alpha
+ * @version v1.56.0-alpha
  */
 class Metrics {
     /**

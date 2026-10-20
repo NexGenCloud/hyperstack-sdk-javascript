@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('updateAccessKeyEndpoint', function() {
+      it('should call updateAccessKeyEndpoint successfully', function(done) {
+        //uncomment below and update the code to test updateAccessKeyEndpoint
+        //instance.updateAccessKeyEndpoint(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

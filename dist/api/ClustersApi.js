@@ -11,6 +11,7 @@ var _ClusterNodeGroupsGetResponse = _interopRequireDefault(require("../model/Clu
 var _ClusterNodeGroupsListResponse = _interopRequireDefault(require("../model/ClusterNodeGroupsListResponse"));
 var _ClusterNodesListResponse = _interopRequireDefault(require("../model/ClusterNodesListResponse"));
 var _ClusterResponse = _interopRequireDefault(require("../model/ClusterResponse"));
+var _ClusterRestoreResponse = _interopRequireDefault(require("../model/ClusterRestoreResponse"));
 var _ClusterVersions = _interopRequireDefault(require("../model/ClusterVersions"));
 var _CreateClusterNodeFields = _interopRequireDefault(require("../model/CreateClusterNodeFields"));
 var _CreateClusterNodeGroupPayload = _interopRequireDefault(require("../model/CreateClusterNodeGroupPayload"));
@@ -28,7 +29,7 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); } /**
+function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); } /**
  * Infrahub-API
  * Leverage the Infrahub API and Hyperstack platform to easily create, manage, and scale powerful GPU virtual machines and their associated resources.   Access this SDK to automate the deployment of your workloads and streamline your infrastructure management.  To contribute, please raise an issue with a bug report, feature request, feedback, or general inquiry.
  *
@@ -43,7 +44,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.55.10-alpha
+* @version v1.56.0-alpha
 */
 var ClustersApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -718,6 +719,45 @@ var ClustersApi = exports["default"] = /*#__PURE__*/function () {
     key: "reconcileCluster",
     value: function reconcileCluster(clusterId) {
       return this.reconcileClusterWithHttpInfo(clusterId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Restore a hibernated cluster's nodes and reconcile the cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterRestoreResponse} and HTTP response
+     */
+  }, {
+    key: "restoreAHibernatedClusterWithHttpInfo",
+    value: function restoreAHibernatedClusterWithHttpInfo(clusterId) {
+      var postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling restoreAHibernatedCluster");
+      }
+      var pathParams = {
+        'cluster_id': clusterId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _ClusterRestoreResponse["default"];
+      return this.apiClient.callApi('/core/clusters/{cluster_id}/restore', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Restore a hibernated cluster's nodes and reconcile the cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterRestoreResponse}
+     */
+  }, {
+    key: "restoreAHibernatedCluster",
+    value: function restoreAHibernatedCluster(clusterId) {
+      return this.restoreAHibernatedClusterWithHttpInfo(clusterId).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

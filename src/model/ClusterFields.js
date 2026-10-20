@@ -19,7 +19,7 @@ import ClusterNodeGroupFields from './ClusterNodeGroupFields';
 /**
  * The ClusterFields model module.
  * @module model/ClusterFields
- * @version v1.55.10-alpha
+ * @version v1.56.0-alpha
  */
 class ClusterFields {
     /**
@@ -58,6 +58,9 @@ class ClusterFields {
             }
             if (data.hasOwnProperty('environment_name')) {
                 obj['environment_name'] = ApiClient.convertToType(data['environment_name'], 'String');
+            }
+            if (data.hasOwnProperty('has_persistent_storage')) {
+                obj['has_persistent_storage'] = ApiClient.convertToType(data['has_persistent_storage'], 'Boolean');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -181,6 +184,11 @@ ClusterFields.prototype['created_at'] = undefined;
  * @member {String} environment_name
  */
 ClusterFields.prototype['environment_name'] = undefined;
+
+/**
+ * @member {Boolean} has_persistent_storage
+ */
+ClusterFields.prototype['has_persistent_storage'] = undefined;
 
 /**
  * @member {Number} id

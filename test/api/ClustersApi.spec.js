@@ -208,6 +208,16 @@
         done();
       });
     });
+    describe('restoreAHibernatedCluster', function() {
+      it('should call restoreAHibernatedCluster successfully', function(done) {
+        //uncomment below and update the code to test restoreAHibernatedCluster
+        //instance.restoreAHibernatedCluster(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateNodeGroup', function() {
       it('should call updateNodeGroup successfully', function(done) {
         //uncomment below and update the code to test updateNodeGroup

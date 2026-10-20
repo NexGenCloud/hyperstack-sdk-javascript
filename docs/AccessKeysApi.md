@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createAccessKeyEndpoint**](AccessKeysApi.md#createAccessKeyEndpoint) | **POST** /object-storage/access-keys | Generate a new access key
 [**deleteAccessKeyEndpoint**](AccessKeysApi.md#deleteAccessKeyEndpoint) | **DELETE** /object-storage/access-keys/{access_key_id} | Remove an existing access key
 [**listAccessKeysEndpoint**](AccessKeysApi.md#listAccessKeysEndpoint) | **GET** /object-storage/access-keys | List access keys
+[**updateAccessKeyEndpoint**](AccessKeysApi.md#updateAccessKeyEndpoint) | **PATCH** /object-storage/access-keys/{access_key_id} | Rename an existing access key
 
 
 
@@ -159,5 +160,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## updateAccessKeyEndpoint
+
+> ObjectStorageAccessKeyResponse updateAccessKeyEndpoint(accessKeyId, opts)
+
+Rename an existing access key
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.AccessKeysApi();
+let accessKeyId = "accessKeyId_example"; // String | 
+let opts = {
+  'body': new HyperstackApi.ObjectStorageAccessKeyUpdateRequest() // ObjectStorageAccessKeyUpdateRequest | 
+};
+apiInstance.updateAccessKeyEndpoint(accessKeyId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessKeyId** | **String**|  | 
+ **body** | [**ObjectStorageAccessKeyUpdateRequest**](ObjectStorageAccessKeyUpdateRequest.md)|  | [optional] 
+
+### Return type
+
+[**ObjectStorageAccessKeyResponse**](ObjectStorageAccessKeyResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

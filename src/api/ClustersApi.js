@@ -19,6 +19,7 @@ import ClusterNodeGroupsGetResponse from '../model/ClusterNodeGroupsGetResponse'
 import ClusterNodeGroupsListResponse from '../model/ClusterNodeGroupsListResponse';
 import ClusterNodesListResponse from '../model/ClusterNodesListResponse';
 import ClusterResponse from '../model/ClusterResponse';
+import ClusterRestoreResponse from '../model/ClusterRestoreResponse';
 import ClusterVersions from '../model/ClusterVersions';
 import CreateClusterNodeFields from '../model/CreateClusterNodeFields';
 import CreateClusterNodeGroupPayload from '../model/CreateClusterNodeGroupPayload';
@@ -34,7 +35,7 @@ import UpdateClusterNodeGroupPayload from '../model/UpdateClusterNodeGroupPayloa
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.55.10-alpha
+* @version v1.56.0-alpha
 */
 export default class ClustersApi {
 
@@ -823,6 +824,52 @@ export default class ClustersApi {
      */
     reconcileCluster(clusterId) {
       return this.reconcileClusterWithHttpInfo(clusterId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Restore a hibernated cluster's nodes and reconcile the cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClusterRestoreResponse} and HTTP response
+     */
+    restoreAHibernatedClusterWithHttpInfo(clusterId) {
+      let postBody = null;
+      // verify the required parameter 'clusterId' is set
+      if (clusterId === undefined || clusterId === null) {
+        throw new Error("Missing the required parameter 'clusterId' when calling restoreAHibernatedCluster");
+      }
+
+      let pathParams = {
+        'cluster_id': clusterId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ClusterRestoreResponse;
+      return this.apiClient.callApi(
+        '/core/clusters/{cluster_id}/restore', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Restore a hibernated cluster's nodes and reconcile the cluster
+     * @param {Number} clusterId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClusterRestoreResponse}
+     */
+    restoreAHibernatedCluster(clusterId) {
+      return this.restoreAHibernatedClusterWithHttpInfo(clusterId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

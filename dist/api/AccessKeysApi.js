@@ -8,6 +8,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 var _ObjectStorageAccessKeyCreateRequest = _interopRequireDefault(require("../model/ObjectStorageAccessKeyCreateRequest"));
 var _ObjectStorageAccessKeyCreateResponse = _interopRequireDefault(require("../model/ObjectStorageAccessKeyCreateResponse"));
 var _ObjectStorageAccessKeyListResponse = _interopRequireDefault(require("../model/ObjectStorageAccessKeyListResponse"));
+var _ObjectStorageAccessKeyResponse = _interopRequireDefault(require("../model/ObjectStorageAccessKeyResponse"));
+var _ObjectStorageAccessKeyUpdateRequest = _interopRequireDefault(require("../model/ObjectStorageAccessKeyUpdateRequest"));
 var _ObjectStorageDeleteResponse = _interopRequireDefault(require("../model/ObjectStorageDeleteResponse"));
 var _ObjectStorageErrorResponse = _interopRequireDefault(require("../model/ObjectStorageErrorResponse"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -16,7 +18,7 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); } /**
+function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); } /**
  * Infrahub-API
  * Leverage the Infrahub API and Hyperstack platform to easily create, manage, and scale powerful GPU virtual machines and their associated resources.   Access this SDK to automate the deployment of your workloads and streamline your infrastructure management.  To contribute, please raise an issue with a bug report, feature request, feedback, or general inquiry.
  *
@@ -31,7 +33,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
 * AccessKeys service.
 * @module api/AccessKeysApi
-* @version v1.55.10-alpha
+* @version v1.56.0-alpha
 */
 var AccessKeysApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -161,6 +163,50 @@ var AccessKeysApi = exports["default"] = /*#__PURE__*/function () {
     key: "listAccessKeysEndpoint",
     value: function listAccessKeysEndpoint(opts) {
       return this.listAccessKeysEndpointWithHttpInfo(opts).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Rename an existing access key
+     * @param {String} accessKeyId 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ObjectStorageAccessKeyUpdateRequest} [body] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ObjectStorageAccessKeyResponse} and HTTP response
+     */
+  }, {
+    key: "updateAccessKeyEndpointWithHttpInfo",
+    value: function updateAccessKeyEndpointWithHttpInfo(accessKeyId, opts) {
+      opts = opts || {};
+      var postBody = opts['body'];
+      // verify the required parameter 'accessKeyId' is set
+      if (accessKeyId === undefined || accessKeyId === null) {
+        throw new Error("Missing the required parameter 'accessKeyId' when calling updateAccessKeyEndpoint");
+      }
+      var pathParams = {
+        'access_key_id': accessKeyId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _ObjectStorageAccessKeyResponse["default"];
+      return this.apiClient.callApi('/object-storage/access-keys/{access_key_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Rename an existing access key
+     * @param {String} accessKeyId 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ObjectStorageAccessKeyUpdateRequest} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ObjectStorageAccessKeyResponse}
+     */
+  }, {
+    key: "updateAccessKeyEndpoint",
+    value: function updateAccessKeyEndpoint(accessKeyId, opts) {
+      return this.updateAccessKeyEndpointWithHttpInfo(accessKeyId, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

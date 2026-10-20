@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**listClusters**](ClustersApi.md#listClusters) | **GET** /core/clusters | List Clusters
 [**listNodeGroups**](ClustersApi.md#listNodeGroups) | **GET** /core/clusters/{cluster_id}/node-groups | List node groups for a cluster
 [**reconcileCluster**](ClustersApi.md#reconcileCluster) | **POST** /core/clusters/{cluster_id}/reconcile | Reconcile a cluster
+[**restoreAHibernatedCluster**](ClustersApi.md#restoreAHibernatedCluster) | **POST** /core/clusters/{cluster_id}/restore | Restore a hibernated cluster&#39;s nodes and reconcile the cluster
 [**updateNodeGroup**](ClustersApi.md#updateNodeGroup) | **PATCH** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Update a node group in a cluster
 
 
@@ -803,6 +804,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ManualReconciliationModel**](ManualReconciliationModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## restoreAHibernatedCluster
+
+> ClusterRestoreResponse restoreAHibernatedCluster(clusterId)
+
+Restore a hibernated cluster&#39;s nodes and reconcile the cluster
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.ClustersApi();
+let clusterId = 56; // Number | 
+apiInstance.restoreAHibernatedCluster(clusterId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterId** | **Number**|  | 
+
+### Return type
+
+[**ClusterRestoreResponse**](ClusterRestoreResponse.md)
 
 ### Authorization
 

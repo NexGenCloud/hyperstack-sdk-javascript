@@ -16,13 +16,15 @@ import ApiClient from "../ApiClient";
 import ObjectStorageAccessKeyCreateRequest from '../model/ObjectStorageAccessKeyCreateRequest';
 import ObjectStorageAccessKeyCreateResponse from '../model/ObjectStorageAccessKeyCreateResponse';
 import ObjectStorageAccessKeyListResponse from '../model/ObjectStorageAccessKeyListResponse';
+import ObjectStorageAccessKeyResponse from '../model/ObjectStorageAccessKeyResponse';
+import ObjectStorageAccessKeyUpdateRequest from '../model/ObjectStorageAccessKeyUpdateRequest';
 import ObjectStorageDeleteResponse from '../model/ObjectStorageDeleteResponse';
 import ObjectStorageErrorResponse from '../model/ObjectStorageErrorResponse';
 
 /**
 * AccessKeys service.
 * @module api/AccessKeysApi
-* @version v1.55.10-alpha
+* @version v1.56.0-alpha
 */
 export default class AccessKeysApi {
 
@@ -174,6 +176,57 @@ export default class AccessKeysApi {
      */
     listAccessKeysEndpoint(opts) {
       return this.listAccessKeysEndpointWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Rename an existing access key
+     * @param {String} accessKeyId 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ObjectStorageAccessKeyUpdateRequest} [body] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ObjectStorageAccessKeyResponse} and HTTP response
+     */
+    updateAccessKeyEndpointWithHttpInfo(accessKeyId, opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'accessKeyId' is set
+      if (accessKeyId === undefined || accessKeyId === null) {
+        throw new Error("Missing the required parameter 'accessKeyId' when calling updateAccessKeyEndpoint");
+      }
+
+      let pathParams = {
+        'access_key_id': accessKeyId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apiKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ObjectStorageAccessKeyResponse;
+      return this.apiClient.callApi(
+        '/object-storage/access-keys/{access_key_id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Rename an existing access key
+     * @param {String} accessKeyId 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ObjectStorageAccessKeyUpdateRequest} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ObjectStorageAccessKeyResponse}
+     */
+    updateAccessKeyEndpoint(accessKeyId, opts) {
+      return this.updateAccessKeyEndpointWithHttpInfo(accessKeyId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -17,7 +17,7 @@ import UserDefaultChoiceForUserFields from './UserDefaultChoiceForUserFields';
 /**
  * The UserDefaultChoicesForUserResponse model module.
  * @module model/UserDefaultChoicesForUserResponse
- * @version v1.55.10-alpha
+ * @version v1.56.0-alpha
  */
 class UserDefaultChoicesForUserResponse {
     /**

@@ -375,6 +375,18 @@ Object.defineProperty(exports, "ClusterResponse", {
     return _ClusterResponse["default"];
   }
 });
+Object.defineProperty(exports, "ClusterRestoreFailedNode", {
+  enumerable: true,
+  get: function get() {
+    return _ClusterRestoreFailedNode["default"];
+  }
+});
+Object.defineProperty(exports, "ClusterRestoreResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ClusterRestoreResponse["default"];
+  }
+});
 Object.defineProperty(exports, "ClusterVersion", {
   enumerable: true,
   get: function get() {
@@ -1279,6 +1291,12 @@ Object.defineProperty(exports, "ObjectStorageAccessKeyResponse", {
   enumerable: true,
   get: function get() {
     return _ObjectStorageAccessKeyResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ObjectStorageAccessKeyUpdateRequest", {
+  enumerable: true,
+  get: function get() {
+    return _ObjectStorageAccessKeyUpdateRequest["default"];
   }
 });
 Object.defineProperty(exports, "ObjectStorageBucketListResponse", {
@@ -2331,6 +2349,18 @@ Object.defineProperty(exports, "WorkloadBillingHistoryResponse", {
     return _WorkloadBillingHistoryResponse["default"];
   }
 });
+Object.defineProperty(exports, "ZendeskApi", {
+  enumerable: true,
+  get: function get() {
+    return _ZendeskApi["default"];
+  }
+});
+Object.defineProperty(exports, "ZendeskMessagingToken", {
+  enumerable: true,
+  get: function get() {
+    return _ZendeskMessagingToken["default"];
+  }
+});
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 var _AccessTokenField = _interopRequireDefault(require("./model/AccessTokenField"));
 var _AddUserInfoSuccessResponseModel = _interopRequireDefault(require("./model/AddUserInfoSuccessResponseModel"));
@@ -2381,6 +2411,8 @@ var _ClusterNodeGroupsListResponse = _interopRequireDefault(require("./model/Clu
 var _ClusterNodeInstanceFields = _interopRequireDefault(require("./model/ClusterNodeInstanceFields"));
 var _ClusterNodesListResponse = _interopRequireDefault(require("./model/ClusterNodesListResponse"));
 var _ClusterResponse = _interopRequireDefault(require("./model/ClusterResponse"));
+var _ClusterRestoreFailedNode = _interopRequireDefault(require("./model/ClusterRestoreFailedNode"));
+var _ClusterRestoreResponse = _interopRequireDefault(require("./model/ClusterRestoreResponse"));
 var _ClusterVersion = _interopRequireDefault(require("./model/ClusterVersion"));
 var _ClusterVersions = _interopRequireDefault(require("./model/ClusterVersions"));
 var _Colors = _interopRequireDefault(require("./model/Colors"));
@@ -2516,6 +2548,7 @@ var _ObjectStorageAccessKeyCreateRequest = _interopRequireDefault(require("./mod
 var _ObjectStorageAccessKeyCreateResponse = _interopRequireDefault(require("./model/ObjectStorageAccessKeyCreateResponse"));
 var _ObjectStorageAccessKeyListResponse = _interopRequireDefault(require("./model/ObjectStorageAccessKeyListResponse"));
 var _ObjectStorageAccessKeyResponse = _interopRequireDefault(require("./model/ObjectStorageAccessKeyResponse"));
+var _ObjectStorageAccessKeyUpdateRequest = _interopRequireDefault(require("./model/ObjectStorageAccessKeyUpdateRequest"));
 var _ObjectStorageBucketListResponse = _interopRequireDefault(require("./model/ObjectStorageBucketListResponse"));
 var _ObjectStorageBucketResponse = _interopRequireDefault(require("./model/ObjectStorageBucketResponse"));
 var _ObjectStorageDeleteResponse = _interopRequireDefault(require("./model/ObjectStorageDeleteResponse"));
@@ -2666,6 +2699,7 @@ var _VolumesFields = _interopRequireDefault(require("./model/VolumesFields"));
 var _Voucher = _interopRequireDefault(require("./model/Voucher"));
 var _VoucherRedeemResponseSchema = _interopRequireDefault(require("./model/VoucherRedeemResponseSchema"));
 var _WorkloadBillingHistoryResponse = _interopRequireDefault(require("./model/WorkloadBillingHistoryResponse"));
+var _ZendeskMessagingToken = _interopRequireDefault(require("./model/ZendeskMessagingToken"));
 var _AccessKeysApi = _interopRequireDefault(require("./api/AccessKeysApi"));
 var _AliveApi = _interopRequireDefault(require("./api/AliveApi"));
 var _ApiKeyApi = _interopRequireDefault(require("./api/ApiKeyApi"));
@@ -2719,4 +2753,5 @@ var _VncUrlApi = _interopRequireDefault(require("./api/VncUrlApi"));
 var _VolumeApi = _interopRequireDefault(require("./api/VolumeApi"));
 var _VolumeAttachmentApi = _interopRequireDefault(require("./api/VolumeAttachmentApi"));
 var _VouchersApi = _interopRequireDefault(require("./api/VouchersApi"));
+var _ZendeskApi = _interopRequireDefault(require("./api/ZendeskApi"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }

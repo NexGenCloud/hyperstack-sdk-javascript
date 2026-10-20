@@ -17,7 +17,7 @@ import OrganizationLevelBillingHistoryResources from './OrganizationLevelBilling
 /**
  * The OrganizationLevelBillingHistory model module.
  * @module model/OrganizationLevelBillingHistory
- * @version v1.55.10-alpha
+ * @version v1.56.0-alpha
  */
 class OrganizationLevelBillingHistory {
     /**

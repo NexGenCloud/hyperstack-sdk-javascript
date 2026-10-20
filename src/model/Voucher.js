@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Voucher model module.
  * @module model/Voucher
- * @version v1.55.10-alpha
+ * @version v1.56.0-alpha
  */
 class Voucher {
     /**

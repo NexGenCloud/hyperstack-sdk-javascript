@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **apiAddress** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **environmentName** | **String** |  | [optional] 
+**hasPersistentStorage** | **Boolean** |  | [optional] 
 **id** | **Number** |  | [optional] 
 **isReconciling** | **Boolean** |  | [optional] 
 **keypairName** | **String** |  | [optional] 
