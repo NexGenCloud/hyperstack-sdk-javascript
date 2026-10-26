@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateImage model module.
  * @module model/CreateImage
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class CreateImage {
     /**

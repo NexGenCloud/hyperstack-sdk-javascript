@@ -17,7 +17,7 @@ import ImageFields from './ImageFields';
 /**
  * The Image model module.
  * @module model/Image
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class Image {
     /**

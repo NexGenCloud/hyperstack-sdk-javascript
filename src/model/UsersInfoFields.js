@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UsersInfoFields model module.
  * @module model/UsersInfoFields
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class UsersInfoFields {
     /**

@@ -18,7 +18,7 @@ import ResourceLevelGraphBillingDetailsMetrics from './ResourceLevelGraphBilling
 /**
  * The ResourceLevelGraphBillingVolumeDetailsResources model module.
  * @module model/ResourceLevelGraphBillingVolumeDetailsResources
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class ResourceLevelGraphBillingVolumeDetailsResources {
     /**

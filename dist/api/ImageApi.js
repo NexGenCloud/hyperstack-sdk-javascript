@@ -31,7 +31,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Image service.
 * @module api/ImageApi
-* @version v1.56.0-alpha
+* @version v1.56.1-alpha
 */
 var ImageApi = exports["default"] = /*#__PURE__*/function () {
   /**

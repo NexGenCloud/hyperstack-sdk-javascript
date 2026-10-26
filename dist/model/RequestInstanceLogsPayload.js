@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The RequestInstanceLogsPayload model module.
  * @module model/RequestInstanceLogsPayload
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var RequestInstanceLogsPayload = /*#__PURE__*/function () {
   /**

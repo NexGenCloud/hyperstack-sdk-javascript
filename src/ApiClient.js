@@ -16,7 +16,7 @@ import superagent from "superagent"; import applyHyperstackHeaders from "./Hyper
 
 /**
 * @module ApiClient
-* @version v1.56.0-alpha
+* @version v1.56.1-alpha
 */
 
 /**
@@ -54,7 +54,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'hyperstack-javascript-sdk/v1.56.0-alpha'
+            'User-Agent': 'hyperstack-javascript-sdk/v1.56.1-alpha'
         };
 
         /**

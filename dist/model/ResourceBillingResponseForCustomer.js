@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ResourceBillingResponseForCustomer model module.
  * @module model/ResourceBillingResponseForCustomer
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var ResourceBillingResponseForCustomer = /*#__PURE__*/function () {
   /**

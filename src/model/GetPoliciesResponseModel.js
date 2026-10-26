@@ -17,7 +17,7 @@ import PolicyFields from './PolicyFields';
 /**
  * The GetPoliciesResponseModel model module.
  * @module model/GetPoliciesResponseModel
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class GetPoliciesResponseModel {
     /**

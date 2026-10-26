@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * FirewallAttachment service.
 * @module api/FirewallAttachmentApi
-* @version v1.56.0-alpha
+* @version v1.56.1-alpha
 */
 var FirewallAttachmentApi = exports["default"] = /*#__PURE__*/function () {
   /**

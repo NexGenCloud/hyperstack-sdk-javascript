@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The OrganizationUserResponseModel model module.
  * @module model/OrganizationUserResponseModel
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var OrganizationUserResponseModel = /*#__PURE__*/function () {
   /**

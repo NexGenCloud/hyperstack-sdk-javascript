@@ -24,7 +24,7 @@ import UserConsentsResponse from '../model/UserConsentsResponse';
 /**
 * UserConsent service.
 * @module api/UserConsentApi
-* @version v1.56.0-alpha
+* @version v1.56.1-alpha
 */
 export default class UserConsentApi {
 

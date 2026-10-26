@@ -28,7 +28,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * VirtualMachineEvents service.
 * @module api/VirtualMachineEventsApi
-* @version v1.56.0-alpha
+* @version v1.56.1-alpha
 */
 var VirtualMachineEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**

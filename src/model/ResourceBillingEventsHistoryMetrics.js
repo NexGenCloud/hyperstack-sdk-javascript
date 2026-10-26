@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResourceBillingEventsHistoryMetrics model module.
  * @module model/ResourceBillingEventsHistoryMetrics
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class ResourceBillingEventsHistoryMetrics {
     /**

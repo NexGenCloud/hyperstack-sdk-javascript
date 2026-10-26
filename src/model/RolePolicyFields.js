@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RolePolicyFields model module.
  * @module model/RolePolicyFields
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class RolePolicyFields {
     /**

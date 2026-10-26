@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The SecurityGroupRule model module.
  * @module model/SecurityGroupRule
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var SecurityGroupRule = /*#__PURE__*/function () {
   /**

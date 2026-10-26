@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The Instance model module.
  * @module model/Instance
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var Instance = /*#__PURE__*/function () {
   /**

@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The InstanceOverviewFields model module.
  * @module model/InstanceOverviewFields
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var InstanceOverviewFields = /*#__PURE__*/function () {
   /**

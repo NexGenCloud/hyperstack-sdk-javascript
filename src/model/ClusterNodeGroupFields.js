@@ -18,7 +18,7 @@ import ClusterNodeGroupFirewallFields from './ClusterNodeGroupFirewallFields';
 /**
  * The ClusterNodeGroupFields model module.
  * @module model/ClusterNodeGroupFields
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class ClusterNodeGroupFields {
     /**

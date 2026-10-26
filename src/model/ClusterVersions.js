@@ -17,7 +17,7 @@ import ClusterVersion from './ClusterVersion';
 /**
  * The ClusterVersions model module.
  * @module model/ClusterVersions
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class ClusterVersions {
     /**

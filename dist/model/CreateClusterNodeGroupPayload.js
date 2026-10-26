@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The CreateClusterNodeGroupPayload model module.
  * @module model/CreateClusterNodeGroupPayload
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var CreateClusterNodeGroupPayload = /*#__PURE__*/function () {
   /**

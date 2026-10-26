@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NameAvailableModel model module.
  * @module model/NameAvailableModel
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class NameAvailableModel {
     /**

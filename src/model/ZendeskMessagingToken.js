@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ZendeskMessagingToken model module.
  * @module model/ZendeskMessagingToken
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class ZendeskMessagingToken {
     /**

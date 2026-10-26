@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ContractInstanceFields model module.
  * @module model/ContractInstanceFields
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var ContractInstanceFields = /*#__PURE__*/function () {
   /**

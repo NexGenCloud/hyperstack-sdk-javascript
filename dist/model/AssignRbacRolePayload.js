@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The AssignRbacRolePayload model module.
  * @module model/AssignRbacRolePayload
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var AssignRbacRolePayload = /*#__PURE__*/function () {
   /**

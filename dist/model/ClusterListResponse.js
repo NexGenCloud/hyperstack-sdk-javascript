@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ClusterListResponse model module.
  * @module model/ClusterListResponse
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var ClusterListResponse = /*#__PURE__*/function () {
   /**

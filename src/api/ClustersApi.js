@@ -35,7 +35,7 @@ import UpdateClusterNodeGroupPayload from '../model/UpdateClusterNodeGroupPayloa
 /**
 * Clusters service.
 * @module api/ClustersApi
-* @version v1.56.0-alpha
+* @version v1.56.1-alpha
 */
 export default class ClustersApi {
 

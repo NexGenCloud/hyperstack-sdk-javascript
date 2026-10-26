@@ -17,7 +17,7 @@ import ClusterEventsFields from './ClusterEventsFields';
 /**
  * The ClusterEvents model module.
  * @module model/ClusterEvents
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class ClusterEvents {
     /**

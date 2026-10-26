@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentDetailsFields model module.
  * @module model/PaymentDetailsFields
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 class PaymentDetailsFields {
     /**

@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ResourceLevelGraphBillingDetailsBucket model module.
  * @module model/ResourceLevelGraphBillingDetailsBucket
- * @version v1.56.0-alpha
+ * @version v1.56.1-alpha
  */
 var ResourceLevelGraphBillingDetailsBucket = /*#__PURE__*/function () {
   /**
