@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceImageFields model module.
  * @module model/InstanceImageFields
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class InstanceImageFields {
     /**

@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The UpdateAutoTopupPayload model module.
  * @module model/UpdateAutoTopupPayload
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var UpdateAutoTopupPayload = /*#__PURE__*/function () {
   /**

@@ -436,7 +436,7 @@ import ZendeskApi from './api/ZendeskApi';
 * </pre>
 * </p>
 * @module index
-* @version v1.56.1-alpha
+* @version v1.56.2-alpha
 */
 export {
     /**

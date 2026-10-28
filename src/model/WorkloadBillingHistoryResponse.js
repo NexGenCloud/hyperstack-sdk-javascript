@@ -17,7 +17,7 @@ import BillingHistoryFineTuning from './BillingHistoryFineTuning';
 /**
  * The WorkloadBillingHistoryResponse model module.
  * @module model/WorkloadBillingHistoryResponse
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class WorkloadBillingHistoryResponse {
     /**

@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The GPURegionFields model module.
  * @module model/GPURegionFields
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var GPURegionFields = /*#__PURE__*/function () {
   /**

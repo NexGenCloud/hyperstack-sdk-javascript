@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserEnhancedMetricsPayload model module.
  * @module model/UserEnhancedMetricsPayload
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class UserEnhancedMetricsPayload {
     /**

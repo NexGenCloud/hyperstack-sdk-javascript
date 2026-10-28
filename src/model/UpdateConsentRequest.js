@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateConsentRequest model module.
  * @module model/UpdateConsentRequest
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class UpdateConsentRequest {
     /**

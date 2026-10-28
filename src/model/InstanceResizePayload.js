@@ -17,7 +17,7 @@ import FlavorObjectFields from './FlavorObjectFields';
 /**
  * The InstanceResizePayload model module.
  * @module model/InstanceResizePayload
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class InstanceResizePayload {
     /**

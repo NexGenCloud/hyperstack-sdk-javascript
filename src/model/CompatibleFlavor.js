@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompatibleFlavor model module.
  * @module model/CompatibleFlavor
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class CompatibleFlavor {
     /**

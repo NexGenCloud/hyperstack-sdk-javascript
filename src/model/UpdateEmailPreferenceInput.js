@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEmailPreferenceInput model module.
  * @module model/UpdateEmailPreferenceInput
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class UpdateEmailPreferenceInput {
     /**

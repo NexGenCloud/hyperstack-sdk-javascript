@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ObjectStorageAccessKeyResponse model module.
  * @module model/ObjectStorageAccessKeyResponse
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var ObjectStorageAccessKeyResponse = /*#__PURE__*/function () {
   /**

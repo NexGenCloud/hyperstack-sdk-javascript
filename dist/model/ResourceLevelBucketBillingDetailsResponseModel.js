@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ResourceLevelBucketBillingDetailsResponseModel model module.
  * @module model/ResourceLevelBucketBillingDetailsResponseModel
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var ResourceLevelBucketBillingDetailsResponseModel = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConsentBlock model module.
  * @module model/ConsentBlock
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class ConsentBlock {
     /**

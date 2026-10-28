@@ -28,7 +28,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ResourceLevelBillingHistoryResources model module.
  * @module model/ResourceLevelBillingHistoryResources
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var ResourceLevelBillingHistoryResources = /*#__PURE__*/function () {
   /**

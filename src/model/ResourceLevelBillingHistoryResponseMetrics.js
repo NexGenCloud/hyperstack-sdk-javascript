@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResourceLevelBillingHistoryResponseMetrics model module.
  * @module model/ResourceLevelBillingHistoryResponseMetrics
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class ResourceLevelBillingHistoryResponseMetrics {
     /**

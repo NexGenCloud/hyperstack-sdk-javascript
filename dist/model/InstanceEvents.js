@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The InstanceEvents model module.
  * @module model/InstanceEvents
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var InstanceEvents = /*#__PURE__*/function () {
   /**

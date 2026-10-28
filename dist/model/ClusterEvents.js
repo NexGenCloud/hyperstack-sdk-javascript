@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ClusterEvents model module.
  * @module model/ClusterEvents
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var ClusterEvents = /*#__PURE__*/function () {
   /**

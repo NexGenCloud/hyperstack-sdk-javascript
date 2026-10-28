@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ClusterNodeGroupsListResponse model module.
  * @module model/ClusterNodeGroupsListResponse
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var ClusterNodeGroupsListResponse = /*#__PURE__*/function () {
   /**

@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The MetricsFields model module.
  * @module model/MetricsFields
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 var MetricsFields = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClusterNodeGroupFirewallFields model module.
  * @module model/ClusterNodeGroupFirewallFields
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class ClusterNodeGroupFirewallFields {
     /**

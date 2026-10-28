@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClusterRestoreFailedNode model module.
  * @module model/ClusterRestoreFailedNode
- * @version v1.56.1-alpha
+ * @version v1.56.2-alpha
  */
 class ClusterRestoreFailedNode {
     /**
