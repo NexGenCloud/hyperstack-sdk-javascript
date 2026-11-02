@@ -18,7 +18,7 @@ import SubResourceGraphBillingDetailsMetrics from './SubResourceGraphBillingDeta
 /**
  * The SubResourcesGraphBillingHistoryFields model module.
  * @module model/SubResourcesGraphBillingHistoryFields
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class SubResourcesGraphBillingHistoryFields {
     /**

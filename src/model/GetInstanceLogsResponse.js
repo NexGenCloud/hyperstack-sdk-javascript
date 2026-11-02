@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetInstanceLogsResponse model module.
  * @module model/GetInstanceLogsResponse
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class GetInstanceLogsResponse {
     /**

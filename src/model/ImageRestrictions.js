@@ -17,7 +17,7 @@ import CompatibleImage from './CompatibleImage';
 /**
  * The ImageRestrictions model module.
  * @module model/ImageRestrictions
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class ImageRestrictions {
     /**

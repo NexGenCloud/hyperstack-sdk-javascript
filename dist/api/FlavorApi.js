@@ -28,7 +28,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Flavor service.
 * @module api/FlavorApi
-* @version v1.56.2-alpha
+* @version v1.56.3-alpha
 */
 var FlavorApi = exports["default"] = /*#__PURE__*/function () {
   /**

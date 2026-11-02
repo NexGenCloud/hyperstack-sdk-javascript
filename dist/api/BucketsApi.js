@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Buckets service.
 * @module api/BucketsApi
-* @version v1.56.2-alpha
+* @version v1.56.3-alpha
 */
 var BucketsApi = exports["default"] = /*#__PURE__*/function () {
   /**

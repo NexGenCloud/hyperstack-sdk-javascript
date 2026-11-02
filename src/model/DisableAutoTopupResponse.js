@@ -17,7 +17,7 @@ import AutoTopup from './AutoTopup';
 /**
  * The DisableAutoTopupResponse model module.
  * @module model/DisableAutoTopupResponse
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class DisableAutoTopupResponse {
     /**

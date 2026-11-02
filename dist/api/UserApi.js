@@ -31,7 +31,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * User service.
 * @module api/UserApi
-* @version v1.56.2-alpha
+* @version v1.56.3-alpha
 */
 var UserApi = exports["default"] = /*#__PURE__*/function () {
   /**

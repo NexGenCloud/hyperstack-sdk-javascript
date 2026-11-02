@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The GPUList model module.
  * @module model/GPUList
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 var GPUList = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateProfilePayload model module.
  * @module model/CreateProfilePayload
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class CreateProfilePayload {
     /**

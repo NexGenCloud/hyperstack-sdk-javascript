@@ -17,7 +17,7 @@ import PaymentDetailsFields from './PaymentDetailsFields';
 /**
  * The PaymentDetailsResponse model module.
  * @module model/PaymentDetailsResponse
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class PaymentDetailsResponse {
     /**

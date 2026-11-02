@@ -21,7 +21,7 @@ import UpdateEmailPreferenceResponse from '../model/UpdateEmailPreferenceRespons
 /**
 * EmailOptInOut service.
 * @module api/EmailOptInOutApi
-* @version v1.56.2-alpha
+* @version v1.56.3-alpha
 */
 export default class EmailOptInOutApi {
 

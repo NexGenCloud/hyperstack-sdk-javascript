@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The DataSynthesisBillingHistoryDetailsResponseSchema model module.
  * @module model/DataSynthesisBillingHistoryDetailsResponseSchema
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 var DataSynthesisBillingHistoryDetailsResponseSchema = /*#__PURE__*/function () {
   /**

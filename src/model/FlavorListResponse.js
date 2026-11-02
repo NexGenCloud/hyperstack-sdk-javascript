@@ -17,7 +17,7 @@ import FlavorItemGetResponse from './FlavorItemGetResponse';
 /**
  * The FlavorListResponse model module.
  * @module model/FlavorListResponse
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class FlavorListResponse {
     /**

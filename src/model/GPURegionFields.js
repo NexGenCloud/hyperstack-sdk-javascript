@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GPURegionFields model module.
  * @module model/GPURegionFields
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class GPURegionFields {
     /**

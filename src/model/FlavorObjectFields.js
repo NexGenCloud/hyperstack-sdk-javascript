@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FlavorObjectFields model module.
  * @module model/FlavorObjectFields
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class FlavorObjectFields {
     /**

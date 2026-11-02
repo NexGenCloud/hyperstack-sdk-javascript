@@ -26,7 +26,7 @@ import Volumes from '../model/Volumes';
 /**
 * Volume service.
 * @module api/VolumeApi
-* @version v1.56.2-alpha
+* @version v1.56.3-alpha
 */
 export default class VolumeApi {
 

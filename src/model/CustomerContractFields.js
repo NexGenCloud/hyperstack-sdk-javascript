@@ -17,7 +17,7 @@ import ContractDiscountPlanFields from './ContractDiscountPlanFields';
 /**
  * The CustomerContractFields model module.
  * @module model/CustomerContractFields
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class CustomerContractFields {
     /**

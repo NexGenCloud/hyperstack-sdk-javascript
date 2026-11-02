@@ -18,7 +18,7 @@ import ObjectStorageHealthResponse from '../model/ObjectStorageHealthResponse';
 /**
 * Health service.
 * @module api/HealthApi
-* @version v1.56.2-alpha
+* @version v1.56.3-alpha
 */
 export default class HealthApi {
 

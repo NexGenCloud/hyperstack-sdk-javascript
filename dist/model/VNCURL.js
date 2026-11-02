@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The VNCURL model module.
  * @module model/VNCURL
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 var VNCURL = /*#__PURE__*/function () {
   /**

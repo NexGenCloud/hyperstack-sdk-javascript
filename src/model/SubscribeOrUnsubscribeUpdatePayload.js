@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubscribeOrUnsubscribeUpdatePayload model module.
  * @module model/SubscribeOrUnsubscribeUpdatePayload
- * @version v1.56.2-alpha
+ * @version v1.56.3-alpha
  */
 class SubscribeOrUnsubscribeUpdatePayload {
     /**

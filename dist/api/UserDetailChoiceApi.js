@@ -28,7 +28,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * UserDetailChoice service.
 * @module api/UserDetailChoiceApi
-* @version v1.56.2-alpha
+* @version v1.56.3-alpha
 */
 var UserDetailChoiceApi = exports["default"] = /*#__PURE__*/function () {
   /**
