@@ -17,7 +17,7 @@ import FirewallAttachmentVMModel from './FirewallAttachmentVMModel';
 /**
  * The FirewallAttachmentModel model module.
  * @module model/FirewallAttachmentModel
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class FirewallAttachmentModel {
     /**

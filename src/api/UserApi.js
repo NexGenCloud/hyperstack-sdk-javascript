@@ -22,7 +22,7 @@ import UsersInfoListResponse from '../model/UsersInfoListResponse';
 /**
 * User service.
 * @module api/UserApi
-* @version v1.56.3-alpha
+* @version v1.56.4-alpha
 */
 export default class UserApi {
 

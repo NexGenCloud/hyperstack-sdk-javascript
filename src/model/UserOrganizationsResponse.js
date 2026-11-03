@@ -17,7 +17,7 @@ import OrganizationFields from './OrganizationFields';
 /**
  * The UserOrganizationsResponse model module.
  * @module model/UserOrganizationsResponse
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class UserOrganizationsResponse {
     /**

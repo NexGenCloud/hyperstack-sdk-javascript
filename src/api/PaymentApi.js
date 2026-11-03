@@ -22,7 +22,7 @@ import PaymentReceiptResponse from '../model/PaymentReceiptResponse';
 /**
 * Payment service.
 * @module api/PaymentApi
-* @version v1.56.3-alpha
+* @version v1.56.4-alpha
 */
 export default class PaymentApi {
 

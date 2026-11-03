@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceKeypairFields model module.
  * @module model/InstanceKeypairFields
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class InstanceKeypairFields {
     /**

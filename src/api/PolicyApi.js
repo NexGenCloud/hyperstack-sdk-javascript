@@ -19,7 +19,7 @@ import GetPoliciesResponseModel from '../model/GetPoliciesResponseModel';
 /**
 * Policy service.
 * @module api/PolicyApi
-* @version v1.56.3-alpha
+* @version v1.56.4-alpha
 */
 export default class PolicyApi {
 

@@ -17,7 +17,7 @@ import OrganizationThresholdFields from './OrganizationThresholdFields';
 /**
  * The OrganizationThresholdsResponse model module.
  * @module model/OrganizationThresholdsResponse
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class OrganizationThresholdsResponse {
     /**

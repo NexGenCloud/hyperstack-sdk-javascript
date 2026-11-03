@@ -19,7 +19,7 @@ import SecurityGroupRuleFields from './SecurityGroupRuleFields';
 /**
  * The FirewallDetailFields model module.
  * @module model/FirewallDetailFields
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class FirewallDetailFields {
     /**

@@ -17,7 +17,7 @@ import InstanceFields from './InstanceFields';
 /**
  * The Instance model module.
  * @module model/Instance
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class Instance {
     /**

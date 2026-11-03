@@ -17,7 +17,7 @@ import BillingHistoryServerlessInferenceDetails from './BillingHistoryServerless
 /**
  * The ServerlessInferencedBillingHistoryDetailsResponseSchema model module.
  * @module model/ServerlessInferencedBillingHistoryDetailsResponseSchema
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class ServerlessInferencedBillingHistoryDetailsResponseSchema {
     /**

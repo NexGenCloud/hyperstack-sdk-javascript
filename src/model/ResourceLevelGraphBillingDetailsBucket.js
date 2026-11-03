@@ -17,7 +17,7 @@ import ResourceLevelBillingBucketDetailsResources from './ResourceLevelBillingBu
 /**
  * The ResourceLevelGraphBillingDetailsBucket model module.
  * @module model/ResourceLevelGraphBillingDetailsBucket
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class ResourceLevelGraphBillingDetailsBucket {
     /**

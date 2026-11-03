@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnvironmentFeatures model module.
  * @module model/EnvironmentFeatures
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class EnvironmentFeatures {
     /**

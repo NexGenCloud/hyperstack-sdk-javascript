@@ -17,7 +17,7 @@ import ConsentBlock from './ConsentBlock';
 /**
  * The ConsentTemplate model module.
  * @module model/ConsentTemplate
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class ConsentTemplate {
     /**

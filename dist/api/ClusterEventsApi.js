@@ -28,7 +28,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * ClusterEvents service.
 * @module api/ClusterEventsApi
-* @version v1.56.3-alpha
+* @version v1.56.4-alpha
 */
 var ClusterEventsApi = exports["default"] = /*#__PURE__*/function () {
   /**

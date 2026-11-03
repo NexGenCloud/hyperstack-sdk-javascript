@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ImageGenerationBillingHistoryDetailsResponseSchema model module.
  * @module model/ImageGenerationBillingHistoryDetailsResponseSchema
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 var ImageGenerationBillingHistoryDetailsResponseSchema = /*#__PURE__*/function () {
   /**

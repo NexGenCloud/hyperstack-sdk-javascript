@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Vouchers service.
 * @module api/VouchersApi
-* @version v1.56.3-alpha
+* @version v1.56.4-alpha
 */
 var VouchersApi = exports["default"] = /*#__PURE__*/function () {
   /**

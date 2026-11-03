@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The UpdateOrganizationResponseModel model module.
  * @module model/UpdateOrganizationResponseModel
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 var UpdateOrganizationResponseModel = /*#__PURE__*/function () {
   /**

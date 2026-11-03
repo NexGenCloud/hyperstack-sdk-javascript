@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentReceiptResponse model module.
  * @module model/PaymentReceiptResponse
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class PaymentReceiptResponse {
     /**

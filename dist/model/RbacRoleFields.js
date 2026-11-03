@@ -31,7 +31,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The RbacRoleFields model module.
  * @module model/RbacRoleFields
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 var RbacRoleFields = /*#__PURE__*/function () {
   /**

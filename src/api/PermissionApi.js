@@ -19,7 +19,7 @@ import GetPermissionsResponseModel from '../model/GetPermissionsResponseModel';
 /**
 * Permission service.
 * @module api/PermissionApi
-* @version v1.56.3-alpha
+* @version v1.56.4-alpha
 */
 export default class PermissionApi {
 

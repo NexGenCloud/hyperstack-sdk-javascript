@@ -18,7 +18,7 @@ import UserConsentEvent from './UserConsentEvent';
 /**
  * The ConsentEventsResponse model module.
  * @module model/ConsentEventsResponse
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class ConsentEventsResponse {
     /**

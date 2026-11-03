@@ -17,7 +17,7 @@ import AttachVolumeFields from './AttachVolumeFields';
 /**
  * The DetachVolumes model module.
  * @module model/DetachVolumes
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class DetachVolumes {
     /**

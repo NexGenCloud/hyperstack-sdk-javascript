@@ -17,7 +17,7 @@ import ImageGetResponse from './ImageGetResponse';
 /**
  * The Images model module.
  * @module model/Images
- * @version v1.56.3-alpha
+ * @version v1.56.4-alpha
  */
 class Images {
     /**

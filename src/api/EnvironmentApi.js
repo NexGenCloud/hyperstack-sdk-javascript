@@ -25,7 +25,7 @@ import VMQuota from '../model/VMQuota';
 /**
 * Environment service.
 * @module api/EnvironmentApi
-* @version v1.56.3-alpha
+* @version v1.56.4-alpha
 */
 export default class EnvironmentApi {
 
