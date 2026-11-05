@@ -54,7 +54,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Billing service.
 * @module api/BillingApi
-* @version v1.56.4-alpha
+* @version v1.56.6-alpha
 */
 var BillingApi = exports["default"] = /*#__PURE__*/function () {
   /**

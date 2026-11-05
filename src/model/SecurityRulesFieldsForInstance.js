@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecurityRulesFieldsForInstance model module.
  * @module model/SecurityRulesFieldsForInstance
- * @version v1.56.4-alpha
+ * @version v1.56.6-alpha
  */
 class SecurityRulesFieldsForInstance {
     /**

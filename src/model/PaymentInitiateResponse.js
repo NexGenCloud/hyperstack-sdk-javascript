@@ -17,7 +17,7 @@ import PaymentInitiateFields from './PaymentInitiateFields';
 /**
  * The PaymentInitiateResponse model module.
  * @module model/PaymentInitiateResponse
- * @version v1.56.4-alpha
+ * @version v1.56.6-alpha
  */
 class PaymentInitiateResponse {
     /**

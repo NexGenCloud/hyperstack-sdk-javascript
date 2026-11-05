@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The EnvironmentFields model module.
  * @module model/EnvironmentFields
- * @version v1.56.4-alpha
+ * @version v1.56.6-alpha
  */
 var EnvironmentFields = /*#__PURE__*/function () {
   /**

@@ -34,7 +34,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Keypair service.
 * @module api/KeypairApi
-* @version v1.56.4-alpha
+* @version v1.56.6-alpha
 */
 var KeypairApi = exports["default"] = /*#__PURE__*/function () {
   /**

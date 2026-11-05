@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStorageAccessKeyUpdateRequest model module.
  * @module model/ObjectStorageAccessKeyUpdateRequest
- * @version v1.56.4-alpha
+ * @version v1.56.6-alpha
  */
 class ObjectStorageAccessKeyUpdateRequest {
     /**

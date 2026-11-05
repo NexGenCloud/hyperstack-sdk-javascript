@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The UpdateKeypairName model module.
  * @module model/UpdateKeypairName
- * @version v1.56.4-alpha
+ * @version v1.56.6-alpha
  */
 var UpdateKeypairName = /*#__PURE__*/function () {
   /**

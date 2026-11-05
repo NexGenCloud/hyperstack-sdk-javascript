@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaginationData model module.
  * @module model/PaginationData
- * @version v1.56.4-alpha
+ * @version v1.56.6-alpha
  */
 class PaginationData {
     /**

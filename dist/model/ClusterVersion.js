@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ClusterVersion model module.
  * @module model/ClusterVersion
- * @version v1.56.4-alpha
+ * @version v1.56.6-alpha
  */
 var ClusterVersion = /*#__PURE__*/function () {
   /**
