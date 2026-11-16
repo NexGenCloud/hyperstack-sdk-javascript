@@ -19,7 +19,7 @@ import ZendeskMessagingToken from '../model/ZendeskMessagingToken';
 /**
 * Zendesk service.
 * @module api/ZendeskApi
-* @version v1.56.6-alpha
+* @version v1.56.9-alpha
 */
 export default class ZendeskApi {
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RemoveMemberPayload model module.
  * @module model/RemoveMemberPayload
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class RemoveMemberPayload {
     /**

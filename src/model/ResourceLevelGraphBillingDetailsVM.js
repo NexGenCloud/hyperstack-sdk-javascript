@@ -17,7 +17,7 @@ import ResourceLevelGraphBillingVMDetailsResources from './ResourceLevelGraphBil
 /**
  * The ResourceLevelGraphBillingDetailsVM model module.
  * @module model/ResourceLevelGraphBillingDetailsVM
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class ResourceLevelGraphBillingDetailsVM {
     /**

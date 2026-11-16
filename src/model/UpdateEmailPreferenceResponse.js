@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEmailPreferenceResponse model module.
  * @module model/UpdateEmailPreferenceResponse
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class UpdateEmailPreferenceResponse {
     /**

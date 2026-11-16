@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCreditAndThresholdInfo model module.
  * @module model/GetCreditAndThresholdInfo
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class GetCreditAndThresholdInfo {
     /**

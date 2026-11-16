@@ -17,7 +17,7 @@ import UserEnhancedMetricsResponseFields from './UserEnhancedMetricsResponseFiel
 /**
  * The UserEnhancedMetricsResponse model module.
  * @module model/UserEnhancedMetricsResponse
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class UserEnhancedMetricsResponse {
     /**

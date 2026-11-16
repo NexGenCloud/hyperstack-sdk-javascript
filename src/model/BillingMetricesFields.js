@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingMetricesFields model module.
  * @module model/BillingMetricesFields
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class BillingMetricesFields {
     /**

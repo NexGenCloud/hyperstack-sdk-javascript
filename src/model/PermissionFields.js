@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PermissionFields model module.
  * @module model/PermissionFields
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class PermissionFields {
     /**

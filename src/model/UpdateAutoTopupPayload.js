@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAutoTopupPayload model module.
  * @module model/UpdateAutoTopupPayload
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class UpdateAutoTopupPayload {
     /**

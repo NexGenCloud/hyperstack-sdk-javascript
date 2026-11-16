@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateKeypairName model module.
  * @module model/UpdateKeypairName
- * @version v1.56.6-alpha
+ * @version v1.56.9-alpha
  */
 class UpdateKeypairName {
     /**
