@@ -22,7 +22,7 @@ import InviteUserResponseModel from '../model/InviteUserResponseModel';
 /**
 * Invite service.
 * @module api/InviteApi
-* @version v1.57.7-alpha1
+* @version v1.57.8-alpha
 */
 export default class InviteApi {
 

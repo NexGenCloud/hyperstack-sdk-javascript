@@ -34,7 +34,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * AutoTopup service.
 * @module api/AutoTopupApi
-* @version v1.57.7-alpha1
+* @version v1.57.8-alpha
 */
 var AutoTopupApi = exports["default"] = /*#__PURE__*/function () {
   /**

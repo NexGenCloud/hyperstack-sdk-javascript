@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The CreateImagePayload model module.
  * @module model/CreateImagePayload
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var CreateImagePayload = /*#__PURE__*/function () {
   /**

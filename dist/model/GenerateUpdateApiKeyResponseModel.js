@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The GenerateUpdateApiKeyResponseModel model module.
  * @module model/GenerateUpdateApiKeyResponseModel
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var GenerateUpdateApiKeyResponseModel = /*#__PURE__*/function () {
   /**

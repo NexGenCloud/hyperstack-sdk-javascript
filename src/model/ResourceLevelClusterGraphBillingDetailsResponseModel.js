@@ -17,7 +17,7 @@ import ResourceLevelGraphBillingDetailVolume from './ResourceLevelGraphBillingDe
 /**
  * The ResourceLevelClusterGraphBillingDetailsResponseModel model module.
  * @module model/ResourceLevelClusterGraphBillingDetailsResponseModel
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 class ResourceLevelClusterGraphBillingDetailsResponseModel {
     /**

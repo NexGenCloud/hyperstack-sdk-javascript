@@ -21,7 +21,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Callbacks service.
 * @module api/CallbacksApi
-* @version v1.57.7-alpha1
+* @version v1.57.8-alpha
 */
 export default class CallbacksApi {
 

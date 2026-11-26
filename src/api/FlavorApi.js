@@ -19,7 +19,7 @@ import FlavorListResponse from '../model/FlavorListResponse';
 /**
 * Flavor service.
 * @module api/FlavorApi
-* @version v1.57.7-alpha1
+* @version v1.57.8-alpha
 */
 export default class FlavorApi {
 

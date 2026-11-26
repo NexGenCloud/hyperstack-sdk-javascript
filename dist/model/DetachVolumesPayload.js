@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The DetachVolumesPayload model module.
  * @module model/DetachVolumesPayload
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var DetachVolumesPayload = /*#__PURE__*/function () {
   /**

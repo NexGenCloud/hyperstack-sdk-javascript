@@ -17,7 +17,7 @@ import ObjectStorageRegionsEnum from './ObjectStorageRegionsEnum';
 /**
  * The ObjectStorageBucketResponse model module.
  * @module model/ObjectStorageBucketResponse
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 class ObjectStorageBucketResponse {
     /**

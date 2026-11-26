@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The UpdateVolumePayload model module.
  * @module model/UpdateVolumePayload
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var UpdateVolumePayload = /*#__PURE__*/function () {
   /**

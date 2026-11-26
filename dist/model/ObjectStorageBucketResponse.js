@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ObjectStorageBucketResponse model module.
  * @module model/ObjectStorageBucketResponse
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var ObjectStorageBucketResponse = /*#__PURE__*/function () {
   /**

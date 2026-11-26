@@ -17,7 +17,7 @@ import ResourceLevelBillingVolumeDetailsResources from './ResourceLevelBillingVo
 /**
  * The ResourceLevelBillingDetailsVolume model module.
  * @module model/ResourceLevelBillingDetailsVolume
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 class ResourceLevelBillingDetailsVolume {
     /**

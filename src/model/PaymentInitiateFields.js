@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentInitiateFields model module.
  * @module model/PaymentInitiateFields
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 class PaymentInitiateFields {
     /**

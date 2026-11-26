@@ -32,7 +32,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ResourceLevelBillingHistoryResourcesCluster model module.
  * @module model/ResourceLevelBillingHistoryResourcesCluster
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var ResourceLevelBillingHistoryResourcesCluster = /*#__PURE__*/function () {
   /**

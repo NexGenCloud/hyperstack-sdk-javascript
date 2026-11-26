@@ -17,7 +17,7 @@ import BillingHistoryDataSynthesisDetails from './BillingHistoryDataSynthesisDet
 /**
  * The DataSynthesisBillingHistoryDetailsResponseSchema model module.
  * @module model/DataSynthesisBillingHistoryDetailsResponseSchema
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 class DataSynthesisBillingHistoryDetailsResponseSchema {
     /**

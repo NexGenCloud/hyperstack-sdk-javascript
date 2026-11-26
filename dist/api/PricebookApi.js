@@ -28,7 +28,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Pricebook service.
 * @module api/PricebookApi
-* @version v1.57.7-alpha1
+* @version v1.57.8-alpha
 */
 var PricebookApi = exports["default"] = /*#__PURE__*/function () {
   /**

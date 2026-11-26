@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ClusterNodeFields model module.
  * @module model/ClusterNodeFields
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var ClusterNodeFields = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceEnhancedMetricsFields model module.
  * @module model/InstanceEnhancedMetricsFields
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 class InstanceEnhancedMetricsFields {
     /**

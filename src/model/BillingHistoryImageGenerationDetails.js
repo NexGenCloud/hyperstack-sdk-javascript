@@ -18,7 +18,7 @@ import Pagination from './Pagination';
 /**
  * The BillingHistoryImageGenerationDetails model module.
  * @module model/BillingHistoryImageGenerationDetails
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 class BillingHistoryImageGenerationDetails {
     /**

@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The AutoTopupErrorResponse model module.
  * @module model/AutoTopupErrorResponse
- * @version v1.57.7-alpha1
+ * @version v1.57.8-alpha
  */
 var AutoTopupErrorResponse = /*#__PURE__*/function () {
   /**
