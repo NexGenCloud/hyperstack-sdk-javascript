@@ -31,7 +31,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The ImageFields model module.
  * @module model/ImageFields
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 var ImageFields = /*#__PURE__*/function () {
   /**

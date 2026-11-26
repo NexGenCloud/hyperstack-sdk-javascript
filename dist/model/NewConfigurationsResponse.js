@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The NewConfigurationsResponse model module.
  * @module model/NewConfigurationsResponse
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 var NewConfigurationsResponse = /*#__PURE__*/function () {
   /**

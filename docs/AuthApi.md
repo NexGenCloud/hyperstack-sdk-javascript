@@ -5,6 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**changeOrganizationForToken**](AuthApi.md#changeOrganizationForToken) | **GET** /auth/token/change-org/{org_id} | 
+[**checkAccessTokenStatus**](AuthApi.md#checkAccessTokenStatus) | **GET** /auth/token/status | Check the authenticated access token
 [**getUserMFAStatus**](AuthApi.md#getUserMFAStatus) | **GET** /auth/me/mfa | Get MFA status for authenticated user
 [**getUserOrganizations**](AuthApi.md#getUserOrganizations) | **GET** /auth/me/organizations | Get User Organizations
 [**retrieveAuthenticatedUserDetails**](AuthApi.md#retrieveAuthenticatedUserDetails) | **GET** /auth/me | Retrieve Authenticated User Details
@@ -50,6 +51,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuthGetTokenResponseModel**](AuthGetTokenResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## checkAccessTokenStatus
+
+> checkAccessTokenStatus()
+
+Check the authenticated access token
+
+Returns active&#x3D;true when the token is accepted, otherwise 401 with error_reason &#x60;token_revoked&#x60; (logged out, or issued before a password change / MFA disable / admin revoke) or &#x60;unauthorized&#x60; (expired, invalid, from another environment, or the user no longer exists). Only Bearer access tokens are accepted; API keys are rejected.
+
+### Example
+
+```javascript
+import HyperstackApi from '@nexgencloud/hyperstack-sdk-javascript';
+let defaultClient = HyperstackApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new HyperstackApi.AuthApi();
+apiInstance.checkAccessTokenStatus().then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

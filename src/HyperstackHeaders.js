@@ -7,7 +7,7 @@
  */
 
 const SDK_NAME = 'hyperstack-javascript-sdk';
-const SDK_VERSION = 'v1.56.9-alpha';
+const SDK_VERSION = 'v1.57.7-alpha1';
 
 export const CLIENT_HEADER = 'Hyperstack-Client';
 export const USER_AGENT_HEADER = 'User-Agent';

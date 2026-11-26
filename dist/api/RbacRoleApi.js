@@ -32,7 +32,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * RbacRole service.
 * @module api/RbacRoleApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 var RbacRoleApi = exports["default"] = /*#__PURE__*/function () {
   /**

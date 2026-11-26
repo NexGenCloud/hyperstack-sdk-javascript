@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The VolumeAttachmentFields model module.
  * @module model/VolumeAttachmentFields
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 var VolumeAttachmentFields = /*#__PURE__*/function () {
   /**

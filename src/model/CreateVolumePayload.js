@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateVolumePayload model module.
  * @module model/CreateVolumePayload
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class CreateVolumePayload {
     /**

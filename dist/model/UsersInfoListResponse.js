@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The UsersInfoListResponse model module.
  * @module model/UsersInfoListResponse
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 var UsersInfoListResponse = /*#__PURE__*/function () {
   /**

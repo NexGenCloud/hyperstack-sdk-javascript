@@ -17,7 +17,7 @@ import MetricItemFields from './MetricItemFields';
 /**
  * The MetricsFields model module.
  * @module model/MetricsFields
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class MetricsFields {
     /**

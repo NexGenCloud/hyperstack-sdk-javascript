@@ -17,7 +17,7 @@ import BetaAccessStatusItem from './BetaAccessStatusItem';
 /**
  * The BetaAccessStatusResponseModel model module.
  * @module model/BetaAccessStatusResponseModel
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class BetaAccessStatusResponseModel {
     /**

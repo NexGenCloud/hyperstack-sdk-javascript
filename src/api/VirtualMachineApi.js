@@ -38,7 +38,7 @@ import UserEnhancedMetricsResponse from '../model/UserEnhancedMetricsResponse';
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 export default class VirtualMachineApi {
 

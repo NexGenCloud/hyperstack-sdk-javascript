@@ -24,7 +24,7 @@ import ObjectStorageErrorResponse from '../model/ObjectStorageErrorResponse';
 /**
 * AccessKeys service.
 * @module api/AccessKeysApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 export default class AccessKeysApi {
 

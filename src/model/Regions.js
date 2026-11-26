@@ -17,7 +17,7 @@ import RegionFields from './RegionFields';
 /**
  * The Regions model module.
  * @module model/Regions
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class Regions {
     /**

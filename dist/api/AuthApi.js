@@ -31,7 +31,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * Auth service.
 * @module api/AuthApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 var AuthApi = exports["default"] = /*#__PURE__*/function () {
   /**
@@ -81,6 +81,39 @@ var AuthApi = exports["default"] = /*#__PURE__*/function () {
     key: "changeOrganizationForToken",
     value: function changeOrganizationForToken(orgId) {
       return this.changeOrganizationForTokenWithHttpInfo(orgId).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * Check the authenticated access token
+     * Returns active=true when the token is accepted, otherwise 401 with error_reason `token_revoked` (logged out, or issued before a password change / MFA disable / admin revoke) or `unauthorized` (expired, invalid, from another environment, or the user no longer exists). Only Bearer access tokens are accepted; API keys are rejected.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+  }, {
+    key: "checkAccessTokenStatusWithHttpInfo",
+    value: function checkAccessTokenStatusWithHttpInfo() {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['apiKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/auth/token/status', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+
+    /**
+     * Check the authenticated access token
+     * Returns active=true when the token is accepted, otherwise 401 with error_reason `token_revoked` (logged out, or issued before a password change / MFA disable / admin revoke) or `unauthorized` (expired, invalid, from another environment, or the user no longer exists). Only Bearer access tokens are accepted; API keys are rejected.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+  }, {
+    key: "checkAccessTokenStatus",
+    value: function checkAccessTokenStatus() {
+      return this.checkAccessTokenStatusWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

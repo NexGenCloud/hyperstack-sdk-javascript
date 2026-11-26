@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConsentTemplatesResponse model module.
  * @module model/ConsentTemplatesResponse
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class ConsentTemplatesResponse {
     /**

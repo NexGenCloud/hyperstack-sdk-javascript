@@ -19,7 +19,7 @@ import UserDefaultChoicesForUserResponse from '../model/UserDefaultChoicesForUse
 /**
 * UserDetailChoice service.
 * @module api/UserDetailChoiceApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 export default class UserDetailChoiceApi {
 

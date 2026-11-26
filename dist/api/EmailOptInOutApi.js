@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * EmailOptInOut service.
 * @module api/EmailOptInOutApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 var EmailOptInOutApi = exports["default"] = /*#__PURE__*/function () {
   /**

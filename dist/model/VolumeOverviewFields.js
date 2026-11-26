@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The VolumeOverviewFields model module.
  * @module model/VolumeOverviewFields
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 var VolumeOverviewFields = /*#__PURE__*/function () {
   /**

@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The InstanceResizePayload model module.
  * @module model/InstanceResizePayload
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 var InstanceResizePayload = /*#__PURE__*/function () {
   /**

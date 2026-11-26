@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssignRbacRolePayload model module.
  * @module model/AssignRbacRolePayload
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class AssignRbacRolePayload {
     /**

@@ -17,7 +17,7 @@ import ClusterRestoreFailedNode from './ClusterRestoreFailedNode';
 /**
  * The ClusterRestoreResponse model module.
  * @module model/ClusterRestoreResponse
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class ClusterRestoreResponse {
     /**

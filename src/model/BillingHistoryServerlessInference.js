@@ -18,7 +18,7 @@ import Pagination from './Pagination';
 /**
  * The BillingHistoryServerlessInference model module.
  * @module model/BillingHistoryServerlessInference
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class BillingHistoryServerlessInference {
     /**

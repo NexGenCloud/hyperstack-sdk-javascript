@@ -29,7 +29,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The RemoveMemberPayload model module.
  * @module model/RemoveMemberPayload
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 var RemoveMemberPayload = /*#__PURE__*/function () {
   /**

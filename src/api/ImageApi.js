@@ -22,7 +22,7 @@ import ResponseModel from '../model/ResponseModel';
 /**
 * Image service.
 * @module api/ImageApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 export default class ImageApi {
 

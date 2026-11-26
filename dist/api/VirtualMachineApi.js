@@ -47,7 +47,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * VirtualMachine service.
 * @module api/VirtualMachineApi
-* @version v1.56.9-alpha
+* @version v1.57.7-alpha1
 */
 var VirtualMachineApi = exports["default"] = /*#__PURE__*/function () {
   /**

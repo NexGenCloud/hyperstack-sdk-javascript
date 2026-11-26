@@ -18,7 +18,7 @@ import RolePolicyFields from './RolePolicyFields';
 /**
  * The RbacRoleFields model module.
  * @module model/RbacRoleFields
- * @version v1.56.9-alpha
+ * @version v1.57.7-alpha1
  */
 class RbacRoleFields {
     /**
