@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LastDayCostFields model module.
  * @module model/LastDayCostFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class LastDayCostFields {
     /**

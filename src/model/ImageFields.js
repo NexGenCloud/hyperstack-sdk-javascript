@@ -18,7 +18,7 @@ import LableResonse from './LableResonse';
 /**
  * The ImageFields model module.
  * @module model/ImageFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class ImageFields {
     /**

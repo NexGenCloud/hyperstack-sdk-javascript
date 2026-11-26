@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompatibleImage model module.
  * @module model/CompatibleImage
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class CompatibleImage {
     /**

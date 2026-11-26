@@ -17,7 +17,7 @@ import EmailCategory from './EmailCategory';
 /**
  * The EmailPreferencesResponse model module.
  * @module model/EmailPreferencesResponse
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class EmailPreferencesResponse {
     /**

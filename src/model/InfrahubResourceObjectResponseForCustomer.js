@@ -17,7 +17,7 @@ import PricebookResourceObjectResponseForCustomer from './PricebookResourceObjec
 /**
  * The InfrahubResourceObjectResponseForCustomer model module.
  * @module model/InfrahubResourceObjectResponseForCustomer
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class InfrahubResourceObjectResponseForCustomer {
     /**

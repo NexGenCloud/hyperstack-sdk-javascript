@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The PaymentInitiateFields model module.
  * @module model/PaymentInitiateFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var PaymentInitiateFields = /*#__PURE__*/function () {
   /**
@@ -59,8 +59,20 @@ var PaymentInitiateFields = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new PaymentInitiateFields();
+        if (data.hasOwnProperty('auto_topup_linked')) {
+          obj['auto_topup_linked'] = _ApiClient["default"].convertToType(data['auto_topup_linked'], 'Boolean');
+        }
+        if (data.hasOwnProperty('checkout_url')) {
+          obj['checkout_url'] = _ApiClient["default"].convertToType(data['checkout_url'], 'String');
+        }
+        if (data.hasOwnProperty('expires_at')) {
+          obj['expires_at'] = _ApiClient["default"].convertToType(data['expires_at'], 'Date');
+        }
         if (data.hasOwnProperty('payment_id')) {
           obj['payment_id'] = _ApiClient["default"].convertToType(data['payment_id'], 'String');
+        }
+        if (data.hasOwnProperty('session_id')) {
+          obj['session_id'] = _ApiClient["default"].convertToType(data['session_id'], 'String');
         }
       }
       return obj;
@@ -75,15 +87,44 @@ var PaymentInitiateFields = /*#__PURE__*/function () {
     key: "validateJSON",
     value: function validateJSON(data) {
       // ensure the json data is a string
+      if (data['checkout_url'] && !(typeof data['checkout_url'] === 'string' || data['checkout_url'] instanceof String)) {
+        throw new Error("Expected the field `checkout_url` to be a primitive type in the JSON string but got " + data['checkout_url']);
+      }
+      // ensure the json data is a string
       if (data['payment_id'] && !(typeof data['payment_id'] === 'string' || data['payment_id'] instanceof String)) {
         throw new Error("Expected the field `payment_id` to be a primitive type in the JSON string but got " + data['payment_id']);
+      }
+      // ensure the json data is a string
+      if (data['session_id'] && !(typeof data['session_id'] === 'string' || data['session_id'] instanceof String)) {
+        throw new Error("Expected the field `session_id` to be a primitive type in the JSON string but got " + data['session_id']);
       }
       return true;
     }
   }]);
 }();
 /**
+ * Whether the purchase is linked to a pending auto top up. If true, the checkout saves the card for off-session use (setup_future_usage=off_session).
+ * @member {Boolean} auto_topup_linked
+ */
+PaymentInitiateFields.prototype['auto_topup_linked'] = undefined;
+
+/**
+ * @member {String} checkout_url
+ */
+PaymentInitiateFields.prototype['checkout_url'] = undefined;
+
+/**
+ * @member {Date} expires_at
+ */
+PaymentInitiateFields.prototype['expires_at'] = undefined;
+
+/**
  * @member {String} payment_id
  */
 PaymentInitiateFields.prototype['payment_id'] = undefined;
+
+/**
+ * @member {String} session_id
+ */
+PaymentInitiateFields.prototype['session_id'] = undefined;
 var _default = exports["default"] = PaymentInitiateFields;

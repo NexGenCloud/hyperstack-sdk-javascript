@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **billingAddress1** | **String** |  | [optional] 
 **billingAddress2** | **String** |  | [optional] 
 **business** | **Boolean** |  | [optional] 
+**city** | **String** |  | [optional] 
 **companyName** | **String** |  | [optional] 
 **country** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 

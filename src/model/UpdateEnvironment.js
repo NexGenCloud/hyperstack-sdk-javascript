@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEnvironment model module.
  * @module model/UpdateEnvironment
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class UpdateEnvironment {
     /**

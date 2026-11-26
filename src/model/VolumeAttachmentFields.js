@@ -17,7 +17,7 @@ import VolumeFieldsForInstance from './VolumeFieldsForInstance';
 /**
  * The VolumeAttachmentFields model module.
  * @module model/VolumeAttachmentFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class VolumeAttachmentFields {
     /**

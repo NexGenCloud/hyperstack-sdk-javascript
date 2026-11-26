@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserConsentEvent model module.
  * @module model/UserConsentEvent
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class UserConsentEvent {
     /**

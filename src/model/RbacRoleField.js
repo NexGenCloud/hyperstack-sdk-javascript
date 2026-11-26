@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RbacRoleField model module.
  * @module model/RbacRoleField
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class RbacRoleField {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BetaAccessRequestPayload model module.
  * @module model/BetaAccessRequestPayload
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class BetaAccessRequestPayload {
     /**

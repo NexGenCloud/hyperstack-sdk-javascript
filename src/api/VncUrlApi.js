@@ -20,7 +20,7 @@ import VNCURL from '../model/VNCURL';
 /**
 * VncUrl service.
 * @module api/VncUrlApi
-* @version v1.57.8-alpha
+* @version v1.57.9-alpha
 */
 export default class VncUrlApi {
 

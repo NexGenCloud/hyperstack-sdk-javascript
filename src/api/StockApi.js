@@ -19,7 +19,7 @@ import NewStockRetriveResponse from '../model/NewStockRetriveResponse';
 /**
 * Stock service.
 * @module api/StockApi
-* @version v1.57.8-alpha
+* @version v1.57.9-alpha
 */
 export default class StockApi {
 

@@ -18,7 +18,7 @@ import ObjectStorageRegionListResponse from '../model/ObjectStorageRegionListRes
 /**
 * Regions service.
 * @module api/RegionsApi
-* @version v1.57.8-alpha
+* @version v1.57.9-alpha
 */
 export default class RegionsApi {
 

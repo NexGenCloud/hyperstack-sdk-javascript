@@ -18,7 +18,7 @@ import SecondaryColor from './SecondaryColor';
 /**
  * The Colors model module.
  * @module model/Colors
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class Colors {
     /**

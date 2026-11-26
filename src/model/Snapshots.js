@@ -17,7 +17,7 @@ import SnapshotFields from './SnapshotFields';
 /**
  * The Snapshots model module.
  * @module model/Snapshots
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class Snapshots {
     /**

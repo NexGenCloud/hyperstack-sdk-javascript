@@ -25,7 +25,7 @@ import UpdateAutoTopupResponse from '../model/UpdateAutoTopupResponse';
 /**
 * AutoTopup service.
 * @module api/AutoTopupApi
-* @version v1.57.8-alpha
+* @version v1.57.9-alpha
 */
 export default class AutoTopupApi {
 

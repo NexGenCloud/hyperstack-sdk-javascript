@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAutoTopupPayload model module.
  * @module model/CreateAutoTopupPayload
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class CreateAutoTopupPayload {
     /**

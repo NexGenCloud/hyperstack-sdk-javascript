@@ -28,7 +28,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The OverviewInfo model module.
  * @module model/OverviewInfo
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var OverviewInfo = /*#__PURE__*/function () {
   /**

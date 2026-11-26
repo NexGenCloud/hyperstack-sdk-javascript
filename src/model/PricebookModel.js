@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PricebookModel model module.
  * @module model/PricebookModel
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class PricebookModel {
     /**

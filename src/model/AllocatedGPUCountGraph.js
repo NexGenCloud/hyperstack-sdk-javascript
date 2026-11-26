@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllocatedGPUCountGraph model module.
  * @module model/AllocatedGPUCountGraph
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class AllocatedGPUCountGraph {
     /**

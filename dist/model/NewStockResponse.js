@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The NewStockResponse model module.
  * @module model/NewStockResponse
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var NewStockResponse = /*#__PURE__*/function () {
   /**

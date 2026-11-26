@@ -54,8 +54,32 @@
       //expect(instance).to.be.a(HyperstackApi.PaymentInitiateFields);
     });
 
+    it('should have the property autoTopupLinked (base name: "auto_topup_linked")', function() {
+      // uncomment below and update the code to test the property autoTopupLinked
+      //var instance = new HyperstackApi.PaymentInitiateFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property checkoutUrl (base name: "checkout_url")', function() {
+      // uncomment below and update the code to test the property checkoutUrl
+      //var instance = new HyperstackApi.PaymentInitiateFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiresAt (base name: "expires_at")', function() {
+      // uncomment below and update the code to test the property expiresAt
+      //var instance = new HyperstackApi.PaymentInitiateFields();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentId (base name: "payment_id")', function() {
       // uncomment below and update the code to test the property paymentId
+      //var instance = new HyperstackApi.PaymentInitiateFields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sessionId (base name: "session_id")', function() {
+      // uncomment below and update the code to test the property sessionId
       //var instance = new HyperstackApi.PaymentInitiateFields();
       //expect(instance).to.be();
     });

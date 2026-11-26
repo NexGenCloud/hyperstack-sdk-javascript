@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property city (base name: "city")', function() {
+      // uncomment below and update the code to test the property city
+      //var instance = new HyperstackApi.UserInfoPostPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property companyName (base name: "company_name")', function() {
       // uncomment below and update the code to test the property companyName
       //var instance = new HyperstackApi.UserInfoPostPayload();

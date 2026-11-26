@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VolumeTypes model module.
  * @module model/VolumeTypes
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class VolumeTypes {
     /**

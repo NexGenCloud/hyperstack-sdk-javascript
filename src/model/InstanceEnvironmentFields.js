@@ -17,7 +17,7 @@ import EnvironmentFeatures from './EnvironmentFeatures';
 /**
  * The InstanceEnvironmentFields model module.
  * @module model/InstanceEnvironmentFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class InstanceEnvironmentFields {
     /**

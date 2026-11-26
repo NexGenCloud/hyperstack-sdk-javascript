@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The EditLabelOfAnExistingVMPayload model module.
  * @module model/EditLabelOfAnExistingVMPayload
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var EditLabelOfAnExistingVMPayload = /*#__PURE__*/function () {
   /**

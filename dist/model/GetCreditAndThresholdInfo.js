@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The GetCreditAndThresholdInfo model module.
  * @module model/GetCreditAndThresholdInfo
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var GetCreditAndThresholdInfo = /*#__PURE__*/function () {
   /**

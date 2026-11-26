@@ -26,7 +26,7 @@ import Snapshots from '../model/Snapshots';
 /**
 * Snapshots service.
 * @module api/SnapshotsApi
-* @version v1.57.8-alpha
+* @version v1.57.9-alpha
 */
 export default class SnapshotsApi {
 

@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The MasterFlavorsResponse model module.
  * @module model/MasterFlavorsResponse
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var MasterFlavorsResponse = /*#__PURE__*/function () {
   /**

@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The UsersInfoFields model module.
  * @module model/UsersInfoFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var UsersInfoFields = /*#__PURE__*/function () {
   /**
@@ -67,6 +67,9 @@ var UsersInfoFields = /*#__PURE__*/function () {
         }
         if (data.hasOwnProperty('business')) {
           obj['business'] = _ApiClient["default"].convertToType(data['business'], 'Boolean');
+        }
+        if (data.hasOwnProperty('city')) {
+          obj['city'] = _ApiClient["default"].convertToType(data['city'], 'String');
         }
         if (data.hasOwnProperty('company_name')) {
           obj['company_name'] = _ApiClient["default"].convertToType(data['company_name'], 'String');
@@ -125,6 +128,10 @@ var UsersInfoFields = /*#__PURE__*/function () {
         throw new Error("Expected the field `billing_address2` to be a primitive type in the JSON string but got " + data['billing_address2']);
       }
       // ensure the json data is a string
+      if (data['city'] && !(typeof data['city'] === 'string' || data['city'] instanceof String)) {
+        throw new Error("Expected the field `city` to be a primitive type in the JSON string but got " + data['city']);
+      }
+      // ensure the json data is a string
       if (data['company_name'] && !(typeof data['company_name'] === 'string' || data['company_name'] instanceof String)) {
         throw new Error("Expected the field `company_name` to be a primitive type in the JSON string but got " + data['company_name']);
       }
@@ -178,6 +185,11 @@ UsersInfoFields.prototype['billing_address2'] = undefined;
  * @member {Boolean} business
  */
 UsersInfoFields.prototype['business'] = undefined;
+
+/**
+ * @member {String} city
+ */
+UsersInfoFields.prototype['city'] = undefined;
 
 /**
  * @member {String} company_name

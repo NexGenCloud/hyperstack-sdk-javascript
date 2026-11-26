@@ -17,7 +17,7 @@ import ClusterNodeInstanceFields from './ClusterNodeInstanceFields';
 /**
  * The ClusterNodeFields model module.
  * @module model/ClusterNodeFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class ClusterNodeFields {
     /**

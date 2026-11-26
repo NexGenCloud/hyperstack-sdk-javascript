@@ -30,7 +30,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
 * CustomerContract service.
 * @module api/CustomerContractApi
-* @version v1.57.8-alpha
+* @version v1.57.9-alpha
 */
 var CustomerContractApi = exports["default"] = /*#__PURE__*/function () {
   /**

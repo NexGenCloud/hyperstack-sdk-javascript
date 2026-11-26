@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RecordConsentRequest model module.
  * @module model/RecordConsentRequest
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class RecordConsentRequest {
     /**

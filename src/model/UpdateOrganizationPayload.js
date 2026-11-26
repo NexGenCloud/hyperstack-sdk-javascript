@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateOrganizationPayload model module.
  * @module model/UpdateOrganizationPayload
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class UpdateOrganizationPayload {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStorageErrorResponse model module.
  * @module model/ObjectStorageErrorResponse
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class ObjectStorageErrorResponse {
     /**

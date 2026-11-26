@@ -27,7 +27,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The Image model module.
  * @module model/Image
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var Image = /*#__PURE__*/function () {
   /**

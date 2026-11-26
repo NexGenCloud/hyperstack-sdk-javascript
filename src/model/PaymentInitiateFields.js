@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentInitiateFields model module.
  * @module model/PaymentInitiateFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class PaymentInitiateFields {
     /**
@@ -47,8 +47,20 @@ class PaymentInitiateFields {
         if (data) {
             obj = obj || new PaymentInitiateFields();
 
+            if (data.hasOwnProperty('auto_topup_linked')) {
+                obj['auto_topup_linked'] = ApiClient.convertToType(data['auto_topup_linked'], 'Boolean');
+            }
+            if (data.hasOwnProperty('checkout_url')) {
+                obj['checkout_url'] = ApiClient.convertToType(data['checkout_url'], 'String');
+            }
+            if (data.hasOwnProperty('expires_at')) {
+                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'Date');
+            }
             if (data.hasOwnProperty('payment_id')) {
                 obj['payment_id'] = ApiClient.convertToType(data['payment_id'], 'String');
+            }
+            if (data.hasOwnProperty('session_id')) {
+                obj['session_id'] = ApiClient.convertToType(data['session_id'], 'String');
             }
         }
         return obj;
@@ -61,8 +73,16 @@ class PaymentInitiateFields {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['checkout_url'] && !(typeof data['checkout_url'] === 'string' || data['checkout_url'] instanceof String)) {
+            throw new Error("Expected the field `checkout_url` to be a primitive type in the JSON string but got " + data['checkout_url']);
+        }
+        // ensure the json data is a string
         if (data['payment_id'] && !(typeof data['payment_id'] === 'string' || data['payment_id'] instanceof String)) {
             throw new Error("Expected the field `payment_id` to be a primitive type in the JSON string but got " + data['payment_id']);
+        }
+        // ensure the json data is a string
+        if (data['session_id'] && !(typeof data['session_id'] === 'string' || data['session_id'] instanceof String)) {
+            throw new Error("Expected the field `session_id` to be a primitive type in the JSON string but got " + data['session_id']);
         }
 
         return true;
@@ -74,9 +94,30 @@ class PaymentInitiateFields {
 
 
 /**
+ * Whether the purchase is linked to a pending auto top up. If true, the checkout saves the card for off-session use (setup_future_usage=off_session).
+ * @member {Boolean} auto_topup_linked
+ */
+PaymentInitiateFields.prototype['auto_topup_linked'] = undefined;
+
+/**
+ * @member {String} checkout_url
+ */
+PaymentInitiateFields.prototype['checkout_url'] = undefined;
+
+/**
+ * @member {Date} expires_at
+ */
+PaymentInitiateFields.prototype['expires_at'] = undefined;
+
+/**
  * @member {String} payment_id
  */
 PaymentInitiateFields.prototype['payment_id'] = undefined;
+
+/**
+ * @member {String} session_id
+ */
+PaymentInitiateFields.prototype['session_id'] = undefined;
 
 
 

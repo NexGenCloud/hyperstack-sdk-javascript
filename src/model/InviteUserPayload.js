@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InviteUserPayload model module.
  * @module model/InviteUserPayload
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class InviteUserPayload {
     /**

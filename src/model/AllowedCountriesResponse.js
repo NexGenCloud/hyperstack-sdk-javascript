@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedCountriesResponse model module.
  * @module model/AllowedCountriesResponse
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class AllowedCountriesResponse {
     /**

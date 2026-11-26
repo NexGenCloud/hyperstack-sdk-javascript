@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserEnhancedMetricsResponseFields model module.
  * @module model/UserEnhancedMetricsResponseFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class UserEnhancedMetricsResponseFields {
     /**

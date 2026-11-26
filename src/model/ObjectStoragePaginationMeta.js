@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStoragePaginationMeta model module.
  * @module model/ObjectStoragePaginationMeta
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class ObjectStoragePaginationMeta {
     /**

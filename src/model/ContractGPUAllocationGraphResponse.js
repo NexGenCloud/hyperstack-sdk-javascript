@@ -17,7 +17,7 @@ import Contract from './Contract';
 /**
  * The ContractGPUAllocationGraphResponse model module.
  * @module model/ContractGPUAllocationGraphResponse
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class ContractGPUAllocationGraphResponse {
     /**

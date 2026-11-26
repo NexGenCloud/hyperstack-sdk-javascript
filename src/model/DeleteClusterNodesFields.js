@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteClusterNodesFields model module.
  * @module model/DeleteClusterNodesFields
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class DeleteClusterNodesFields {
     /**

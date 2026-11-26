@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RemoveMemberFromOrganizationResponseModel model module.
  * @module model/RemoveMemberFromOrganizationResponseModel
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class RemoveMemberFromOrganizationResponseModel {
     /**

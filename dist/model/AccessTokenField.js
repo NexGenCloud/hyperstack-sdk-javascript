@@ -26,7 +26,7 @@ function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r;
 /**
  * The AccessTokenField model module.
  * @module model/AccessTokenField
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 var AccessTokenField = /*#__PURE__*/function () {
   /**

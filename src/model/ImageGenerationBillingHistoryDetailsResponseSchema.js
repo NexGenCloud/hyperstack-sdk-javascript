@@ -17,7 +17,7 @@ import BillingHistoryImageGenerationDetails from './BillingHistoryImageGeneratio
 /**
  * The ImageGenerationBillingHistoryDetailsResponseSchema model module.
  * @module model/ImageGenerationBillingHistoryDetailsResponseSchema
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class ImageGenerationBillingHistoryDetailsResponseSchema {
     /**

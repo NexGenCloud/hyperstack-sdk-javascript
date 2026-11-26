@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserInfoPostPayload model module.
  * @module model/UserInfoPostPayload
- * @version v1.57.8-alpha
+ * @version v1.57.9-alpha
  */
 class UserInfoPostPayload {
     /**
@@ -61,6 +61,9 @@ class UserInfoPostPayload {
             }
             if (data.hasOwnProperty('business')) {
                 obj['business'] = ApiClient.convertToType(data['business'], 'Boolean');
+            }
+            if (data.hasOwnProperty('city')) {
+                obj['city'] = ApiClient.convertToType(data['city'], 'String');
             }
             if (data.hasOwnProperty('company_name')) {
                 obj['company_name'] = ApiClient.convertToType(data['company_name'], 'String');
@@ -109,6 +112,10 @@ class UserInfoPostPayload {
         // ensure the json data is a string
         if (data['billing_address2'] && !(typeof data['billing_address2'] === 'string' || data['billing_address2'] instanceof String)) {
             throw new Error("Expected the field `billing_address2` to be a primitive type in the JSON string but got " + data['billing_address2']);
+        }
+        // ensure the json data is a string
+        if (data['city'] && !(typeof data['city'] === 'string' || data['city'] instanceof String)) {
+            throw new Error("Expected the field `city` to be a primitive type in the JSON string but got " + data['city']);
         }
         // ensure the json data is a string
         if (data['company_name'] && !(typeof data['company_name'] === 'string' || data['company_name'] instanceof String)) {
@@ -165,6 +172,11 @@ UserInfoPostPayload.prototype['billing_address2'] = undefined;
  * @member {Boolean} business
  */
 UserInfoPostPayload.prototype['business'] = undefined;
+
+/**
+ * @member {String} city
+ */
+UserInfoPostPayload.prototype['city'] = undefined;
 
 /**
  * @member {String} company_name
